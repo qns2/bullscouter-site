@@ -1,2 +1,0 @@
-# bullscouter-site
-Bullscouter website

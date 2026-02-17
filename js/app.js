@@ -196,7 +196,9 @@ const App = (() => {
     document.getElementById('stat-growth').textContent = s.growth_qualified || 0;
     document.getElementById('stat-accel').textContent = s.accel_qualified || 0;
 
-    document.getElementById('scan-date').textContent = data.scan_date || '';
+    const dateLabel = data.scan_date || '';
+    const timeLabel = data.scan_time ? ` ${data.scan_time}` : '';
+    document.getElementById('scan-date').textContent = dateLabel + timeLabel;
     document.getElementById('version-badge').textContent = data.version ? `v${data.version}` : '';
 
     const buys = opps.filter(o => o.recommendation === 'BUY');
