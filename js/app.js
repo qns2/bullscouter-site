@@ -101,6 +101,73 @@ const App = (() => {
     }).join(' ');
   }
 
+  function fundamentalsHtml(f) {
+    if (!f || !Object.keys(f).length) return '';
+    const parts = [];
+    if (f.pe) {
+      const c = f.pe < 25 ? 'text-green-400' : f.pe < 50 ? 'text-amber-400' : 'text-red-400';
+      parts.push(`<b>P/E:</b> <span class="${c}">${f.pe}</span>`);
+    }
+    if (f.rev_growth_pct !== undefined) {
+      const c = f.rev_growth_pct > 0 ? 'text-green-400' : 'text-red-400';
+      parts.push(`<b>Rev:</b> <span class="${c}">${f.rev_growth_pct > 0 ? '+' : ''}${f.rev_growth_pct}%</span>`);
+    }
+    if (f.margin_pct !== undefined) {
+      const c = f.margin_pct > 0 ? 'text-green-400' : 'text-red-400';
+      parts.push(`<b>Margin:</b> <span class="${c}">${f.margin_pct}%</span>`);
+    }
+    if (f.target_price) {
+      const c = f.target_upside_pct >= 0 ? 'text-green-400' : 'text-red-400';
+      parts.push(`<b>Target:</b> $${f.target_price.toFixed(0)} (<span class="${c}">${f.target_upside_pct > 0 ? '+' : ''}${f.target_upside_pct}%</span>)`);
+    }
+    if (!parts.length) return '';
+    return `<div class="text-xs text-gray-400 mt-2 font-mono">${parts.join(' <span class="text-gray-700">|</span> ')}</div>`;
+  }
+
+  function badgesHtml(opp) {
+    const parts = [];
+    // Congress
+    if (opp.congress && opp.congress.signal) {
+      const bi = opp.congress.bipartisan ? ' bipartisan' : '';
+      parts.push(`<span class="chip" style="color:#93c5fd;background:rgba(59,130,246,0.15)">Congress ${opp.congress.signal} (${opp.congress.buyers} buyers${bi})</span>`);
+    }
+    // Insider
+    if (opp.insider && opp.insider.signal) {
+      const c = opp.insider.signal === 'STRONG' ? 'color:#4ade80;background:rgba(34,197,94,0.15)' : 'color:#fb923c;background:rgba(251,146,60,0.15)';
+      parts.push(`<span class="chip" style="${c}">Insider ${opp.insider.signal} (${opp.insider.buys}B/${opp.insider.sells}S)</span>`);
+    }
+    // Analyst
+    if (opp.analyst && (opp.analyst.upgrades || opp.analyst.downgrades)) {
+      const u = opp.analyst.upgrades, d = opp.analyst.downgrades;
+      if (u > d) {
+        parts.push(`<span class="chip" style="color:#4ade80;background:rgba(34,197,94,0.15)">Analyst &#x2191;${u}${d ? ` &#x2193;${d}` : ''}</span>`);
+      } else if (d > u) {
+        parts.push(`<span class="chip" style="color:#f87171;background:rgba(248,113,113,0.15)">Analyst &#x2193;${d}${u ? ` &#x2191;${u}` : ''}</span>`);
+      }
+    }
+    // Squeeze
+    if (opp.squeeze_potential) {
+      const reason = opp.squeeze_reasons && opp.squeeze_reasons[0] ? ` (${opp.squeeze_reasons[0]})` : '';
+      parts.push(`<span class="chip" style="color:#f472b6;background:rgba(244,114,182,0.15)">Squeeze${reason}</span>`);
+    }
+    // Trajectory
+    if (opp.trajectory && opp.trajectory.match) {
+      const t = opp.trajectory;
+      parts.push(`<span class="chip" style="color:#c4b5fd;background:rgba(168,85,247,0.15)">${t.phase}: ${t.match} (r=${t.correlation}, ~${Math.round(t.months_est)}mo)</span>`);
+    }
+    if (opp.trajectory && opp.trajectory.catalyst_match) {
+      const t = opp.trajectory;
+      parts.push(`<span class="chip" style="color:#fb923c;background:rgba(251,146,60,0.15)">${t.catalyst_phase}: ${t.catalyst_match} (r=${t.catalyst_correlation})</span>`);
+    }
+    if (!parts.length) return '';
+    return `<div class="flex flex-wrap gap-1 mt-2">${parts.join('')}</div>`;
+  }
+
+  function thesisHtml(thesis) {
+    if (!thesis) return '';
+    return `<div class="mt-2 px-3 py-2 text-xs text-green-200/80 bg-green-900/20 border border-green-800/30 rounded italic leading-relaxed">${thesis}</div>`;
+  }
+
   function catalystCountdown(days) {
     if (days === null || days === undefined) return '';
     if (days <= 0) return '<span class="text-red-400">Imminent</span>';
@@ -171,8 +238,11 @@ const App = (() => {
       <div class="text-xs text-gray-600 mb-2">Confidence: ${opp.confidence}/100</div>
       <div class="flex flex-wrap gap-1 mb-2">${formatBreakdown(opp.breakdown)}</div>
       ${aggHtml(opp.aggregate)}
+      ${fundamentalsHtml(opp.fundamentals)}
+      ${badgesHtml(opp)}
       ${opp.events && opp.events.length ? `<div class="flex flex-wrap gap-1 mb-2 mt-2">${formatEvents(opp.events)}</div>` : ''}
-      ${opp.hysteresis_note ? `<div class="text-xs text-amber-600 italic">${opp.hysteresis_note}</div>` : ''}
+      ${thesisHtml(opp.ai_thesis)}
+      ${opp.hysteresis_note ? `<div class="text-xs text-amber-600 italic mt-1">${opp.hysteresis_note}</div>` : ''}
       <div class="flex items-center justify-between mt-2">
         <span class="text-xs text-gray-600">${opp.scans_tracked} scans${opp.first_detected ? ` &middot; since ${opp.first_detected.slice(0, 10)}` : ''}</span>
         <div class="sparkline-container" style="width:80px;height:30px;">
