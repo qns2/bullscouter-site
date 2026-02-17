@@ -40,7 +40,9 @@ const App = (() => {
   // ── Data fetching ──
 
   async function fetchJSON(path) {
-    const resp = await fetch(`${DATA_BASE}/${path}`);
+    const cacheBust = `_cb=${Date.now()}`;
+    const sep = path.includes('?') ? '&' : '?';
+    const resp = await fetch(`${DATA_BASE}/${path}${sep}${cacheBust}`);
     if (!resp.ok) throw new Error(`${resp.status} ${resp.statusText}`);
     return resp.json();
   }
