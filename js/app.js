@@ -211,7 +211,7 @@ const App = (() => {
     card.innerHTML = `
       <div class="flex items-start justify-between mb-2">
         <div>
-          <span class="text-lg font-bold font-mono">${opp.ticker}</span>
+          <a href="https://finance.yahoo.com/quote/${opp.ticker}" target="_blank" rel="noopener" class="text-lg font-bold font-mono hover:text-green-400 transition-colors">${opp.ticker}</a>
           <span class="profile-badge ${rec === 'buy' ? opp.profile : rec} ml-2">${profileLabel}</span>
           <span class="text-xs text-gray-500 ml-1">T${opp.tier}</span>
           ${trendIcon(opp.trend_direction)}
@@ -263,7 +263,7 @@ const App = (() => {
     const catalystLabel = CATALYST_LABELS[opp.catalyst_type] || opp.catalyst_type || '-';
 
     return `<tr>
-      <td class="font-bold">${opp.ticker}</td>
+      <td class="font-bold"><a href="https://finance.yahoo.com/quote/${opp.ticker}" target="_blank" rel="noopener" class="hover:text-green-400 transition-colors">${opp.ticker}</a></td>
       <td>${opp.score}</td>
       <td>$${opp.price.toFixed(2)}</td>
       <td><span class="profile-badge ${opp.profile}">${profileLabel}</span></td>
