@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bull Scouter - Stock Catalyst Detection</title>
+  <meta name="description" content="Automated stock catalyst detection. Daily picks surfaced 90-120 days before binary catalysts.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bull: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' },
+            warn: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706' },
+            slate: { 750: '#293548', 850: '#172033' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <h1 class="text-xl font-bold tracking-tight">Bull Scouter</h1>
+        <span class="text-xs text-gray-500 font-mono" id="version-badge"></span>
+      </div>
+      <nav class="flex items-center gap-4">
+        <button id="tab-today" class="tab-btn tab-active text-sm font-medium px-3 py-1.5 rounded-md">Today</button>
+        <button id="tab-history" class="tab-btn text-sm font-medium px-3 py-1.5 rounded-md text-gray-400 hover:text-gray-200">Dashboard</button>
+        <span class="text-xs text-gray-600 font-mono" id="scan-date"></span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Stats Bar -->
+  <div id="stats-bar" class="border-b border-gray-800 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap gap-4 text-xs font-mono">
+      <span class="text-gray-500">Scanned: <span id="stat-total" class="text-gray-300">-</span></span>
+      <span class="text-green-500">BUY: <span id="stat-buy" class="font-bold">-</span></span>
+      <span class="text-amber-500">WATCH: <span id="stat-watch" class="font-bold">-</span></span>
+      <span class="text-gray-400">MOMENTUM: <span id="stat-momentum">-</span></span>
+      <span class="text-gray-600">|</span>
+      <span class="text-gray-500">T1: <span id="stat-t1" class="text-gray-400">-</span></span>
+      <span class="text-gray-500">T2: <span id="stat-t2" class="text-gray-400">-</span></span>
+      <span class="text-gray-500">Growth: <span id="stat-growth" class="text-gray-400">-</span></span>
+      <span class="text-gray-500">Accel: <span id="stat-accel" class="text-gray-400">-</span></span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <!-- Today View -->
+    <div id="view-today">
+      <!-- BUY Section -->
+      <section id="section-buy" class="mb-8 hidden">
+        <h2 class="text-sm font-bold text-green-500 uppercase tracking-wider mb-3">BUY Signals</h2>
+        <div id="cards-buy" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </section>
+
+      <!-- WATCHLIST Section -->
+      <section id="section-watchlist" class="mb-8 hidden">
+        <h2 class="text-sm font-bold text-amber-500 uppercase tracking-wider mb-3">Watchlist</h2>
+        <div id="cards-watchlist" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </section>
+
+      <!-- MOMENTUM Section -->
+      <section id="section-momentum" class="mb-8 hidden">
+        <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Momentum</h2>
+        <div class="overflow-x-auto">
+          <table id="table-momentum" class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-gray-500 text-xs uppercase">
+                <th class="pb-2 pr-4">Ticker</th>
+                <th class="pb-2 pr-4">Score</th>
+                <th class="pb-2 pr-4">Price</th>
+                <th class="pb-2 pr-4">Profile</th>
+                <th class="pb-2 pr-4">Catalyst</th>
+                <th class="pb-2">Trend</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-momentum" class="font-mono"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="hidden text-center py-20">
+        <p class="text-gray-500 text-lg">No signals today</p>
+        <p class="text-gray-600 text-sm mt-1">Check back after the next scan</p>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loading-state" class="text-center py-20">
+        <p class="text-gray-500">Loading scan data...</p>
+      </div>
+
+      <!-- Error State -->
+      <div id="error-state" class="hidden text-center py-20">
+        <p class="text-red-400 text-lg">Failed to load data</p>
+        <p class="text-gray-600 text-sm mt-1" id="error-msg"></p>
+      </div>
+    </div>
+
+    <!-- History View -->
+    <div id="view-history" class="hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <!-- Signal Count Chart -->
+        <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
+          <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Signal Count Over Time</h3>
+          <canvas id="chart-signals" height="200"></canvas>
+        </div>
+        <!-- Score Distribution Chart -->
+        <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
+          <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Score Distribution</h3>
+          <canvas id="chart-scores" height="200"></canvas>
+        </div>
+      </div>
+
+      <!-- Ticker Search -->
+      <div class="bg-gray-900 rounded-lg border border-gray-800 p-4 mb-8">
+        <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Ticker Search</h3>
+        <div class="flex gap-2 mb-4">
+          <input id="ticker-search" type="text" placeholder="e.g. LUNR"
+            class="bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm font-mono uppercase w-32
+                   focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600">
+          <button id="btn-search" class="bg-green-700 hover:bg-green-600 text-white text-sm px-4 py-1.5 rounded font-medium">Search</button>
+        </div>
+        <div id="ticker-result" class="hidden">
+          <canvas id="chart-ticker" height="160"></canvas>
+          <div id="ticker-history-table" class="mt-4 overflow-x-auto"></div>
+        </div>
+      </div>
+
+      <!-- Date Picker -->
+      <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
+        <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Browse Past Scans</h3>
+        <div class="flex flex-wrap gap-2" id="date-picker"></div>
+        <div id="past-scan-view" class="mt-4 hidden">
+          <div id="past-scan-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-4 text-center text-xs text-gray-600">
+      <p>Bull Scouter &mdash; Automated catalyst detection. Not financial advice.</p>
+      <p class="mt-1">Data refreshed daily. Past performance does not guarantee future results.</p>
+    </div>
+  </footer>
+
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* Bull Scouter Dashboard Styles */
+
+/* Tab buttons */
+.tab-btn {
+  transition: color 0.15s, background-color 0.15s;
+}
+.tab-active {
+  color: #e2e8f0;
+  background-color: rgba(34, 197, 94, 0.15);
+}
+
+/* Cards */
+.opp-card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: border-color 0.15s;
+}
+.opp-card:hover {
+  border-color: #374151;
+}
+.opp-card.buy {
+  border-left: 3px solid #22c55e;
+}
+.opp-card.watchlist {
+  border-left: 3px solid #f59e0b;
+}
+
+/* Score badge */
+.score-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  font-family: ui-monospace, monospace;
+}
+.score-badge.buy { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
+.score-badge.watchlist { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.score-badge.momentum { background: rgba(107, 114, 128, 0.15); color: #9ca3af; }
+
+/* Profile badge */
+.profile-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+.profile-badge.recovery { background: rgba(59, 130, 246, 0.15); color: #93c5fd; }
+.profile-badge.acceleration { background: rgba(168, 85, 247, 0.15); color: #c4b5fd; }
+.profile-badge.growth { background: rgba(34, 197, 94, 0.15); color: #86efac; }
+
+/* Confidence bar */
+.conf-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: #1f2937;
+  overflow: hidden;
+}
+.conf-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+/* Breakdown chips */
+.chip {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-family: ui-monospace, monospace;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  background: #1f2937;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+.chip.positive { color: #4ade80; }
+.chip.negative { color: #f87171; }
+
+/* Catalyst countdown */
+.catalyst-countdown {
+  font-size: 0.75rem;
+  font-family: ui-monospace, monospace;
+}
+
+/* Sparkline container */
+.sparkline-container {
+  width: 100%;
+  height: 40px;
+}
+
+/* Momentum table */
+#table-momentum tbody tr {
+  border-bottom: 1px solid #1f2937;
+}
+#table-momentum tbody tr:hover {
+  background: rgba(34, 197, 94, 0.05);
+}
+#table-momentum td {
+  padding: 0.5rem 1rem 0.5rem 0;
+  white-space: nowrap;
+}
+
+/* Event pills */
+.event-pill {
+  display: inline-block;
+  font-size: 0.6rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 9999px;
+  border: 1px solid #374151;
+  color: #9ca3af;
+}
+.event-pill.bull { border-color: rgba(34, 197, 94, 0.3); color: #86efac; }
+.event-pill.bear { border-color: rgba(239, 68, 68, 0.3); color: #fca5a5; }
+
+/* Date picker pills */
+.date-pill {
+  font-size: 0.75rem;
+  font-family: ui-monospace, monospace;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #374151;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: transparent;
+}
+.date-pill:hover { border-color: #4b5563; color: #e5e7eb; }
+.date-pill.active { border-color: #22c55e; color: #4ade80; background: rgba(34, 197, 94, 0.1); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #4b5563; }
