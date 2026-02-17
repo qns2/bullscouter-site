@@ -109,6 +109,24 @@ const App = (() => {
 
   // ── Card rendering ──
 
+  function trendIcon(dir) {
+    if (dir === 'improving') return '<span class="text-green-400 font-semibold">&#x2191; improving</span>';
+    if (dir === 'declining') return '<span class="text-red-400 font-semibold">&#x2193; declining</span>';
+    if (dir === 'stable') return '<span class="text-gray-500">&#x2192; stable</span>';
+    return '<span class="text-gray-600">&#x2728; new</span>';
+  }
+
+  function aggHtml(agg) {
+    if (!agg || !agg.avg_score) return '';
+    const parts = [`Avg: <b>${agg.avg_score}</b>`, `Peak: <b>${agg.peak_score}</b>`];
+    if (agg.buy_pct > 0) parts.push(`BUY: ${agg.buy_pct}%`);
+    if (agg.price_change_pct !== undefined) {
+      const c = agg.price_change_pct >= 0 ? 'text-green-400' : 'text-red-400';
+      parts.push(`Price: <span class="${c}">${agg.price_change_pct > 0 ? '+' : ''}${agg.price_change_pct}%</span>`);
+    }
+    return `<div class="text-xs text-gray-500 mt-1 px-2 py-1 bg-gray-800/50 rounded font-mono">${parts.join(' &middot; ')}</div>`;
+  }
+
   function renderCard(opp) {
     const rec = opp.recommendation.toLowerCase();
     const card = el('div', `opp-card ${rec}`);
@@ -127,12 +145,13 @@ const App = (() => {
           <span class="text-lg font-bold font-mono">${opp.ticker}</span>
           <span class="profile-badge ${rec === 'buy' ? opp.profile : rec} ml-2">${profileLabel}</span>
           <span class="text-xs text-gray-500 ml-1">T${opp.tier}</span>
+          ${trendIcon(opp.trend_direction)}
         </div>
         <div class="score-badge ${rec}">${opp.score > 100 ? '100+' : opp.score}</div>
       </div>
       <div class="flex items-center gap-3 text-xs text-gray-400 mb-2">
         <span class="font-mono">$${opp.price.toFixed(2)}</span>
-        <span>${opp.market_cap_fmt}</span>
+        ${opp.market_cap_fmt ? `<span>${opp.market_cap_fmt}</span>` : ''}
         ${opp.down_from_high_pct ? `<span class="text-red-400">-${opp.down_from_high_pct}% from high</span>` : ''}
         ${opp.short_interest_pct ? `<span>SI ${opp.short_interest_pct.toFixed(1)}%</span>` : ''}
         ${squeezeBadge}
@@ -149,7 +168,8 @@ const App = (() => {
       </div>
       <div class="text-xs text-gray-600 mb-2">Confidence: ${opp.confidence}/100</div>
       <div class="flex flex-wrap gap-1 mb-2">${formatBreakdown(opp.breakdown)}</div>
-      ${opp.events && opp.events.length ? `<div class="flex flex-wrap gap-1 mb-2">${formatEvents(opp.events)}</div>` : ''}
+      ${aggHtml(opp.aggregate)}
+      ${opp.events && opp.events.length ? `<div class="flex flex-wrap gap-1 mb-2 mt-2">${formatEvents(opp.events)}</div>` : ''}
       ${opp.hysteresis_note ? `<div class="text-xs text-amber-600 italic">${opp.hysteresis_note}</div>` : ''}
       <div class="flex items-center justify-between mt-2">
         <span class="text-xs text-gray-600">${opp.scans_tracked} scans${opp.first_detected ? ` &middot; since ${opp.first_detected.slice(0, 10)}` : ''}</span>
