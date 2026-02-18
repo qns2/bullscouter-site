@@ -163,9 +163,13 @@ const App = (() => {
     return `<div class="flex flex-wrap gap-1 mt-2">${parts.join('')}</div>`;
   }
 
-  function thesisHtml(thesis) {
+  function thesisHtml(thesis, ticker) {
     if (!thesis) return '';
-    return `<div class="mt-2 px-3 py-2 text-xs text-green-200/80 bg-green-900/20 border border-green-800/30 rounded italic leading-relaxed">${thesis}</div>`;
+    const id = `thesis-${ticker}`;
+    return `<div class="mt-2">
+      <button onclick="document.getElementById('${id}').classList.toggle('hidden');this.querySelector('span').textContent=document.getElementById('${id}').classList.contains('hidden')?'▸':'▾'" class="text-xs text-green-400/80 hover:text-green-300 font-medium cursor-pointer"><span>▸</span> AI Thesis</button>
+      <div id="${id}" class="hidden mt-1 px-3 py-2 text-xs text-green-200/80 bg-green-900/20 border border-green-800/30 rounded italic leading-relaxed">${thesis}</div>
+    </div>`;
   }
 
   function catalystCountdown(days) {
@@ -241,7 +245,7 @@ const App = (() => {
       ${fundamentalsHtml(opp.fundamentals)}
       ${badgesHtml(opp)}
       ${opp.events && opp.events.length ? `<div class="flex flex-wrap gap-1 mb-2 mt-2">${formatEvents(opp.events)}</div>` : ''}
-      ${thesisHtml(opp.ai_thesis)}
+      ${thesisHtml(opp.ai_thesis, opp.ticker)}
       ${opp.hysteresis_note ? `<div class="text-xs text-amber-600 italic mt-1">${opp.hysteresis_note}</div>` : ''}
       <div class="flex items-center justify-between mt-2">
         <span class="text-xs text-gray-600">${opp.scans_tracked} scans${opp.first_detected ? ` &middot; since ${opp.first_detected.slice(0, 10)}` : ''}</span>
