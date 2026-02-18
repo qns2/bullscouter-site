@@ -26,32 +26,31 @@
 <body class="bg-gray-950 text-gray-100 min-h-screen">
   <!-- Header -->
   <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <h1 class="text-xl font-bold tracking-tight">Bull Scouter</h1>
-        <span class="text-xs text-gray-500 font-mono" id="version-badge"></span>
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2 shrink-0">
+        <h1 class="text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap">Bull Scouter</h1>
+        <span class="text-xs text-gray-500 font-mono hidden sm:inline" id="version-badge"></span>
       </div>
-      <nav class="flex items-center gap-4">
-        <button id="tab-today" class="tab-btn tab-active text-sm font-medium px-3 py-1.5 rounded-md">Today</button>
-        <button id="tab-history" class="tab-btn text-sm font-medium px-3 py-1.5 rounded-md text-gray-400 hover:text-gray-200">Dashboard</button>
-        <a href="guide.html" class="text-sm font-medium px-3 py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
-        <span class="text-xs text-gray-600 font-mono" id="scan-date"></span>
+      <nav class="flex items-center gap-2 sm:gap-4">
+        <button id="tab-today" class="tab-btn tab-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Today</button>
+        <button id="tab-history" class="tab-btn text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">History</button>
+        <a href="guide.html" class="text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
+        <span class="text-xs text-gray-600 font-mono hidden md:inline" id="scan-date"></span>
       </nav>
     </div>
   </header>
 
   <!-- Stats Bar -->
   <div id="stats-bar" class="border-b border-gray-800 bg-gray-900/50">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap gap-4 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap gap-x-3 gap-y-1 text-xs font-mono">
       <span class="text-gray-500">Scanned: <span id="stat-total" class="text-gray-300">-</span></span>
       <span class="text-green-500">BUY: <span id="stat-buy" class="font-bold">-</span></span>
       <span class="text-amber-500">WATCH: <span id="stat-watch" class="font-bold">-</span></span>
-      <span class="text-gray-400">MOMENTUM: <span id="stat-momentum">-</span></span>
-      <span class="text-gray-600">|</span>
+      <span class="text-gray-400">MOM: <span id="stat-momentum">-</span></span>
       <span class="text-gray-500">T1: <span id="stat-t1" class="text-gray-400">-</span></span>
       <span class="text-gray-500">T2: <span id="stat-t2" class="text-gray-400">-</span></span>
-      <span class="text-gray-500">Growth: <span id="stat-growth" class="text-gray-400">-</span></span>
-      <span class="text-gray-500">Accel: <span id="stat-accel" class="text-gray-400">-</span></span>
+      <span class="text-gray-500">Gr: <span id="stat-growth" class="text-gray-400">-</span></span>
+      <span class="text-gray-500">Acc: <span id="stat-accel" class="text-gray-400">-</span></span>
     </div>
   </div>
 
@@ -60,18 +59,16 @@
     <!-- Today View -->
     <div id="view-today">
       <!-- Filter Bar -->
-      <div id="filter-bar" class="flex flex-wrap items-center gap-3 mb-5">
-        <div class="flex items-center gap-1">
-          <span class="text-xs text-gray-600 mr-1">Profile:</span>
+      <div id="filter-bar" class="overflow-x-auto mb-4 -mx-4 px-4">
+        <div class="flex items-center gap-1 whitespace-nowrap">
           <button class="filter-btn active" data-profile="all">All</button>
           <button class="filter-btn" data-profile="value">Value</button>
-          <button class="filter-btn" data-profile="quality_growth">Growth Q</button>
+          <button class="filter-btn" data-profile="quality_growth">GrowthQ</button>
           <button class="filter-btn" data-profile="growth">Growth</button>
           <button class="filter-btn" data-profile="recovery">Recovery</button>
           <button class="filter-btn" data-profile="acceleration">Accel</button>
-        </div>
-        <div class="flex items-center gap-1">
-          <button class="filter-btn" id="btn-new-only" data-active="false">New Only</button>
+          <span class="text-gray-700 mx-1">|</span>
+          <button class="filter-btn" id="btn-new-only" data-active="false">New</button>
         </div>
       </div>
 
