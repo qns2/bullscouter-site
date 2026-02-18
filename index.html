@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bull Scouter - Stock Catalyst Detection</title>
   <meta name="description" content="Automated stock catalyst detection. Daily picks surfaced 90-120 days before binary catalysts.">
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script>
@@ -114,12 +114,12 @@
         <!-- Signal Count Chart -->
         <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
           <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Signal Count Over Time</h3>
-          <canvas id="chart-signals" height="200"></canvas>
+          <div class="chart-wrap" style="position:relative;height:200px"><canvas id="chart-signals"></canvas></div>
         </div>
         <!-- Score Distribution Chart -->
         <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
           <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Score Distribution</h3>
-          <canvas id="chart-scores" height="200"></canvas>
+          <div class="chart-wrap" style="position:relative;height:200px"><canvas id="chart-scores"></canvas></div>
         </div>
       </div>
 
@@ -133,7 +133,7 @@
           <button id="btn-search" class="bg-green-700 hover:bg-green-600 text-white text-sm px-4 py-1.5 rounded font-medium">Search</button>
         </div>
         <div id="ticker-result" class="hidden">
-          <canvas id="chart-ticker" height="160"></canvas>
+          <div class="chart-wrap" style="position:relative;height:160px"><canvas id="chart-ticker"></canvas></div>
           <div id="ticker-history-table" class="mt-4 overflow-x-auto"></div>
         </div>
       </div>
@@ -157,7 +157,7 @@
     </div>
   </footer>
 
-  <script src="js/charts.js?v=5"></script>
-  <script src="js/app.js?v=5"></script>
+  <script src="js/charts.js?v=6"></script>
+  <script src="js/app.js?v=6"></script>
 </body>
 </html>
