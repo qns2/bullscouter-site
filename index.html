@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bull Scouter - Stock Catalyst Detection</title>
   <meta name="description" content="Automated stock catalyst detection. Daily picks surfaced 90-120 days before binary catalysts.">
-  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="css/style.css?v=8">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script>
@@ -60,13 +60,29 @@
     <div id="view-today">
       <!-- BUY Section -->
       <section id="section-buy" class="mb-8 hidden">
-        <h2 class="text-sm font-bold text-green-500 uppercase tracking-wider mb-3">BUY Signals</h2>
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-sm font-bold text-green-500 uppercase tracking-wider">BUY Signals</h2>
+          <div class="sort-bar flex items-center gap-1" data-section="buy">
+            <span class="text-xs text-gray-600 mr-1">Sort:</span>
+            <button class="sort-btn active" data-sort="score">Score</button>
+            <button class="sort-btn" data-sort="confidence">Confidence</button>
+            <button class="sort-btn" data-sort="catalyst">Catalyst</button>
+          </div>
+        </div>
         <div id="cards-buy" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
       </section>
 
       <!-- WATCHLIST Section -->
       <section id="section-watchlist" class="mb-8 hidden">
-        <h2 class="text-sm font-bold text-amber-500 uppercase tracking-wider mb-3">Watchlist</h2>
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-sm font-bold text-amber-500 uppercase tracking-wider">Watchlist</h2>
+          <div class="sort-bar flex items-center gap-1" data-section="watchlist">
+            <span class="text-xs text-gray-600 mr-1">Sort:</span>
+            <button class="sort-btn active" data-sort="score">Score</button>
+            <button class="sort-btn" data-sort="confidence">Confidence</button>
+            <button class="sort-btn" data-sort="catalyst">Catalyst</button>
+          </div>
+        </div>
         <div id="cards-watchlist" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
       </section>
 
@@ -157,7 +173,7 @@
     </div>
   </footer>
 
-  <script src="js/charts.js?v=7"></script>
-  <script src="js/app.js?v=7"></script>
+  <script src="js/charts.js?v=8"></script>
+  <script src="js/app.js?v=8"></script>
 </body>
 </html>

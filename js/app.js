@@ -21,11 +21,20 @@ const App = (() => {
     margin_expansion: 'Margins', price_trend: 'Price/RS',
     volume_expansion: 'Volume', conviction: 'Conviction',
     social_discovery: 'Discovery',
+    // Track C: Value + Growth Quality
+    profitability: 'Profitability', fcf: 'FCF', discount: '52w Discount',
+    sector_panic: 'Panic Signal', pe_discount: 'PE Discount',
+    no_dilution: 'No Dilution', revenue_growth_q: 'Rev Growth',
+    gross_margins_q: 'Gross Margins', nrr: 'NRR', tam: 'TAM',
+    rule40: 'Rule of 40', sbc: 'SBC', convergence_bonus: 'Convergence',
+    overvalued_cap: 'Overvalued Cap', bankruptcy_risk_cap: 'Bankruptcy Risk',
+    low_upside: 'Low Upside', insider_sell_penalty: 'Insider Selling',
   };
 
   // Profile display names
   const PROFILE_LABELS = {
     recovery: 'Recovery', acceleration: 'Acceleration', growth: 'Growth',
+    value: 'Value', quality_growth: 'Quality Growth',
   };
 
   // Catalyst type labels
@@ -36,6 +45,8 @@ const App = (() => {
   };
 
   let historyCache = {};
+  let currentData = { buys: [], watches: [], momentum: [] };
+  let currentSort = { buy: 'score', watchlist: 'score' };
 
   // ── Data fetching ──
 
@@ -163,6 +174,23 @@ const App = (() => {
     return `<div class="flex flex-wrap gap-1 mt-2">${parts.join('')}</div>`;
   }
 
+  function checklistHtml(opp) {
+    const checklist = opp.checklist;
+    if (!checklist || !Object.keys(checklist).length) return '';
+    const framework = opp.quality_framework === 'value' ? 'Value' : opp.quality_framework === 'quality_growth' ? 'Growth Quality' : opp.quality_framework || '';
+    const score = opp.checklist_score || 0;
+    const statusIcon = { pass: '\u2705', partial: '\u26A0\uFE0F', fail: '\u274C' };
+    const items = Object.entries(checklist).map(([name, status]) =>
+      `<span class="text-xs mr-2">${statusIcon[status] || '?'} ${name}</span>`
+    ).join('');
+    const convergence = opp.convergence_signal
+      ? '<span class="chip" style="color:#fb923c;background:rgba(251,146,60,0.15)">Convergence: Social + Financial</span>'
+      : '';
+    return `<div class="text-xs text-gray-400 mt-2 px-2 py-1 border border-gray-700 rounded">
+      <span class="font-semibold">${framework} (${score}/6)</span>: ${items}${convergence}
+    </div>`;
+  }
+
   function thesisHtml(thesis, ticker) {
     if (!thesis) return '';
     const id = `thesis-${ticker}`;
@@ -178,6 +206,46 @@ const App = (() => {
     if (days <= 7) return `<span class="text-amber-400">${days}d</span>`;
     if (days <= 30) return `<span class="text-amber-500">${days}d</span>`;
     return `<span class="text-gray-400">${days}d</span>`;
+  }
+
+  // ── Sorting ──
+
+  function sortOpps(opps, key) {
+    const sorted = [...opps];
+    if (key === 'confidence') {
+      sorted.sort((a, b) => (b.confidence || 0) - (a.confidence || 0));
+    } else if (key === 'catalyst') {
+      // Soonest catalyst first; nulls to the bottom
+      sorted.sort((a, b) => {
+        const da = a.days_to_catalyst;
+        const db = b.days_to_catalyst;
+        if (da == null && db == null) return (b.score || 0) - (a.score || 0);
+        if (da == null) return 1;
+        if (db == null) return -1;
+        return da - db;
+      });
+    } else {
+      // Default: score descending
+      sorted.sort((a, b) => (b.score || 0) - (a.score || 0));
+    }
+    return sorted;
+  }
+
+  function rerenderSection(section, opps) {
+    const containerId = section === 'buy' ? 'cards-buy' : 'cards-watchlist';
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+    opps.forEach(opp => container.appendChild(renderCard(opp)));
+    // Re-draw sparklines
+    requestAnimationFrame(() => {
+      opps.forEach(opp => {
+        const canvas = document.getElementById(`spark-${opp.ticker}`);
+        if (canvas && opp.score_trend && opp.score_trend.length >= 2) {
+          const color = opp.recommendation === 'BUY' ? '#22c55e' : '#f59e0b';
+          Charts.sparkline(canvas, opp.score_trend, color);
+        }
+      });
+    });
   }
 
   // ── Card rendering ──
@@ -244,6 +312,7 @@ const App = (() => {
       ${aggHtml(opp.aggregate)}
       ${fundamentalsHtml(opp.fundamentals)}
       ${badgesHtml(opp)}
+      ${checklistHtml(opp)}
       ${opp.events && opp.events.length ? `<div class="flex flex-wrap gap-1 mb-2 mt-2">${formatEvents(opp.events)}</div>` : ''}
       ${thesisHtml(opp.ai_thesis, opp.ticker)}
       ${opp.hysteresis_note ? `<div class="text-xs text-amber-600 italic mt-1">${opp.hysteresis_note}</div>` : ''}
@@ -300,6 +369,13 @@ const App = (() => {
     const buys = opps.filter(o => o.recommendation === 'BUY');
     const watches = opps.filter(o => o.recommendation === 'WATCHLIST');
     const momentum = opps.filter(o => o.recommendation === 'MOMENTUM');
+
+    // Store for re-sorting
+    currentData.buys = buys;
+    currentData.watches = watches;
+    currentData.momentum = momentum;
+    currentSort.buy = 'score';
+    currentSort.watchlist = 'score';
 
     // BUY cards
     const buySection = document.getElementById('section-buy');
@@ -520,6 +596,22 @@ const App = (() => {
 
   async function init() {
     setupTabs();
+
+    // Sort buttons
+    document.querySelectorAll('.sort-bar').forEach(bar => {
+      const section = bar.dataset.section; // 'buy' or 'watchlist'
+      bar.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.sort;
+          if (currentSort[section] === key) return;
+          currentSort[section] = key;
+          bar.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const source = section === 'buy' ? currentData.buys : currentData.watches;
+          rerenderSection(section, sortOpps(source, key));
+        });
+      });
+    });
 
     // Ticker search
     const searchBtn = document.getElementById('btn-search');
