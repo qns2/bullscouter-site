@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bull Scouter - Reading Guide</title>
+  <link rel="stylesheet" href="css/style.css?v=8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: {
+        bull: { 50: '#f0fdf4', 500: '#22c55e', 700: '#15803d' },
+        warn: { 500: '#f59e0b' },
+        slate: { 750: '#293548', 850: '#172033' }
+      }}}
+    }
+  </script>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+  <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <h1 class="text-xl font-bold tracking-tight">Bull Scouter</h1>
+      </div>
+      <nav class="flex items-center gap-4">
+        <a href="index.html" class="text-sm font-medium px-3 py-1.5 rounded-md text-gray-400 hover:text-gray-200">Dashboard</a>
+        <span class="text-sm font-medium px-3 py-1.5 rounded-md tab-active">Guide</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-6">How to Read the Dashboard</h2>
+
+    <!-- Signal Types -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Signal Types</h3>
+      <div class="space-y-3 text-sm text-gray-300">
+        <div class="flex items-start gap-3">
+          <span class="score-badge buy text-sm" style="min-width:3rem">85</span>
+          <div><b class="text-green-400">BUY</b> &mdash; Score &ge; 75, confidence &ge; 50, and confirmed across 2 consecutive market days. The highest-conviction signal. These stocks passed all quality gates.</div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="score-badge watchlist text-sm" style="min-width:3rem">68</span>
+          <div><b class="text-amber-400">WATCHLIST</b> &mdash; Score 60&ndash;74 or missing one BUY requirement (low confidence, first day seen, etc.). Worth monitoring&mdash;many BUY signals start here.</div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="score-badge momentum text-sm" style="min-width:3rem">45</span>
+          <div><b class="text-gray-400">MOMENTUM</b> &mdash; Score &lt; 60. Early-stage signals still building evidence. Shown in the compact table at the bottom.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profiles -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Profiles (Investment Thesis)</h3>
+      <p class="text-sm text-gray-400 mb-3">Each stock is scored against multiple frameworks. The best-fitting profile wins:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3">
+          <span class="profile-badge recovery mb-1">Recovery</span>
+          <p class="text-gray-300 mt-2"><b>Tier 1</b> &mdash; Small/mid-cap stocks with upcoming binary catalysts (FDA approvals, launches, key data readouts). High risk/reward.</p>
+          <p class="text-gray-300 mt-1"><b>Tier 2</b> &mdash; Fallen angels: quality companies beaten down &gt;30% that are re-accelerating revenue. Contrarian plays.</p>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3">
+          <span class="profile-badge acceleration mb-1">Acceleration</span>
+          <p class="text-gray-300 mt-2"><b>Tier 3</b> &mdash; Large-cap momentum breakouts. Strong price trend, expanding volume, positive revenue momentum. Riding the wave.</p>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3">
+          <span class="profile-badge growth mb-1">Growth</span>
+          <p class="text-gray-300 mt-2"><b>Tier 4</b> &mdash; Revenue-quality companies with catalysts. Fills the gap between Tier 1 (pure catalyst) and Tier 2 (pure recovery). Must have real revenue growth + margins.</p>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-3">
+          <span class="profile-badge" style="background:rgba(168,85,247,0.15);color:#c4b5fd">Value / Growth Q</span>
+          <p class="text-gray-300 mt-2"><b>Tier 5/6</b> &mdash; Fundamental quality from the financial screener. <b>Value</b>: profitable + strong FCF + beaten down. <b>Growth Quality</b>: 30%+ revenue growth + 60%+ gross margins + Rule of 40.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Score Breakdown -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Score Breakdown Chips</h3>
+      <p class="text-sm text-gray-400 mb-3">Each colored chip shows a scoring component and its point contribution:</p>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="chip positive">Catalyst +25</span>
+        <span class="chip positive">Social +12</span>
+        <span class="chip positive">News +8</span>
+        <span class="chip positive">AI +5</span>
+        <span class="chip negative">Risk -8</span>
+        <span class="chip negative">Decay -3</span>
+      </div>
+      <div class="text-sm text-gray-300 space-y-2">
+        <p><span class="text-green-400">Green chips (+)</span> add points: Catalyst, Social buzz, Growth/Margin quality, News boost, AI enhancement, Momentum bonus, Breakout pattern match.</p>
+        <p><span class="text-red-400">Red chips (-)</span> subtract points: Fundamental Risk (overvaluation, weak margins), Thesis Decay (stale evidence), Controversy penalty, Pre-revenue discount.</p>
+      </div>
+    </section>
+
+    <!-- Fundamental Gates -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Fundamental Safety Gates</h3>
+      <p class="text-sm text-gray-400 mb-3">After all scoring, these hard caps prevent obviously flawed stocks from getting high scores:</p>
+      <div class="space-y-2 text-sm text-gray-300">
+        <div><span class="chip negative">Overvalued Cap -26</span> &mdash; PE &gt; 40x with margins &lt; 10%. Score capped at 70. The company isn't earning enough to justify its valuation.</div>
+        <div><span class="chip negative">Bankruptcy Risk -46</span> &mdash; AI thesis mentions bankruptcy/insolvency, OR stock is &gt;80% down from highs with margins &lt;10% or negative FCF. Capped at 60.</div>
+        <div><span class="chip negative">Low Upside -10</span> &mdash; Analyst consensus target implies &lt;15% upside (-10pts) or &lt;25% upside (-5pts). Limited room to run.</div>
+        <div><span class="chip negative">Insider Selling -5</span> &mdash; Officers/directors are net sellers (Value and Growth Quality profiles only). They know something you don't.</div>
+      </div>
+    </section>
+
+    <!-- Confidence -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Confidence Score (0&ndash;100)</h3>
+      <div class="conf-bar mb-2" style="max-width:300px">
+        <div class="conf-bar-fill" style="width:72%;background:#22c55e"></div>
+      </div>
+      <p class="text-sm text-gray-300 mb-3">Measures <b>signal reliability</b>&mdash;how trustworthy the evidence is, independent of the score itself. A stock can score 90 but have low confidence (single stale source). Confidence &ge; 50 is required for BUY.</p>
+      <div class="text-sm text-gray-300 space-y-1">
+        <p><b>Source Quality (0&ndash;35)</b>: How many independent sources discovered this stock (Reddit + FDA + Perplexity + earnings + congress).</p>
+        <p><b>Cross-Source Agreement (0&ndash;25)</b>: Do multiple sources point to the same catalyst/thesis?</p>
+        <p><b>Freshness (0&ndash;25)</b>: How recent is the evidence? Decays as data ages.</p>
+        <p><b>Data Completeness (0&ndash;15)</b>: Does yfinance have full fundamentals, insider data, analyst targets?</p>
+      </div>
+      <div class="flex items-center gap-4 mt-3 text-xs font-mono">
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#22c55e"></span> 70+ Strong</span>
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#f59e0b"></span> 50&ndash;69 Moderate</span>
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#ef4444"></span> &lt;50 Weak</span>
+      </div>
+    </section>
+
+    <!-- Quality Checklist -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Quality Checklist</h3>
+      <p class="text-sm text-gray-400 mb-3">Stocks scored by the fundamental quality framework show a 6-point checklist:</p>
+      <div class="text-xs text-gray-400 px-2 py-2 border border-gray-700 rounded inline-block">
+        <span class="font-semibold">Value (5/6)</span>:
+        <span class="mr-2">&#x2705; Profitable</span>
+        <span class="mr-2">&#x2705; FCF</span>
+        <span class="mr-2">&#x2705; 52w Low</span>
+        <span class="mr-2">&#x26A0;&#xFE0F; Panic</span>
+        <span class="mr-2">&#x2705; PE</span>
+        <span class="mr-2">&#x2705; No Dilution</span>
+      </div>
+      <div class="text-sm text-gray-300 mt-3 space-y-1">
+        <p><b>Value checklist</b>: Profitable, Strong FCF, Near 52w Lows, Sector Panic (fundamentals intact while price crashed), Low PE, No Dilution.</p>
+        <p><b>Growth Quality checklist</b>: Revenue Growth (30%+), Gross Margins (60%+), NRR proxy, TAM proxy, Rule of 40, Low SBC.</p>
+        <p>&#x2705; = pass, &#x26A0;&#xFE0F; = partial, &#x274C; = fail. A 5/6 typically maps to ~80+ points.</p>
+      </div>
+    </section>
+
+    <!-- Badges -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Badges</h3>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="chip" style="color:#93c5fd;background:rgba(59,130,246,0.15)">Congress BUY (3 buyers)</span>
+        <span class="chip" style="color:#4ade80;background:rgba(34,197,94,0.15)">Insider STRONG (5B/0S)</span>
+        <span class="chip" style="color:#4ade80;background:rgba(34,197,94,0.15)">Analyst &#x2191;3</span>
+        <span class="chip" style="color:#f472b6;background:rgba(244,114,182,0.15)">Squeeze</span>
+        <span class="chip" style="color:#fb923c;background:rgba(251,146,60,0.15)">Convergence: Social + Financial</span>
+      </div>
+      <div class="text-sm text-gray-300 space-y-1">
+        <p><b>Congress</b>: Members of congress recently bought this stock. "Bipartisan" = both parties buying.</p>
+        <p><b>Insider</b>: Corporate insider activity. STRONG = heavy buying, NEGATIVE = net selling. Format: Buys/Sells in last 90 days.</p>
+        <p><b>Analyst</b>: Recent upgrades (&#x2191;) vs downgrades (&#x2193;) from Wall Street analysts.</p>
+        <p><b>Squeeze</b>: High short interest + catalyst = potential short squeeze setup.</p>
+        <p><b>Convergence</b>: Stock discovered by BOTH social/catalyst sources AND the financial screener independently. Highest conviction&mdash;fundamentals + timing aligned.</p>
+      </div>
+    </section>
+
+    <!-- Catalyst Events -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Catalyst Events &amp; Countdown</h3>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="event-pill bull">FDA 2026-04-15</span>
+        <span class="event-pill bull">Earnings 2026-03-01</span>
+        <span class="event-pill bear">Lockup 2026-05-20</span>
+      </div>
+      <div class="text-sm text-gray-300 space-y-1">
+        <p>Event pills show upcoming catalysts with dates. <span class="text-green-400">Green border</span> = bullish catalyst, <span class="text-red-400">red border</span> = bearish (lockup expirations, etc.).</p>
+        <p>The countdown badge shows days until the nearest catalyst: <span class="text-amber-400">7d</span> (imminent), <span class="text-amber-500">25d</span> (approaching), <span class="text-gray-400">45d</span> (distant).</p>
+      </div>
+    </section>
+
+    <!-- Trend & History -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Trend &amp; History</h3>
+      <div class="text-sm text-gray-300 space-y-2">
+        <p><span class="text-green-400 font-semibold">&#x2191; improving</span> &mdash; Score has been increasing over recent scans. Building momentum.</p>
+        <p><span class="text-red-400 font-semibold">&#x2193; declining</span> &mdash; Score dropping. Thesis may be weakening.</p>
+        <p><span class="text-gray-500">&#x2192; stable</span> &mdash; Consistent score. Steady signal.</p>
+        <p><span class="text-gray-600">&#x2728; new</span> &mdash; First time this stock appeared. Fresh discovery.</p>
+        <p>The <b>sparkline</b> in the bottom-right of each card shows score history over the last 14 scans.</p>
+        <p>The <b>aggregate row</b> shows: average score, peak score, % of scans as BUY, and price change since first detection.</p>
+      </div>
+    </section>
+
+    <!-- Fundamentals Row -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Fundamentals Row</h3>
+      <div class="text-xs text-gray-400 font-mono mb-3">
+        <b>P/E:</b> <span class="text-green-400">18</span> | <b>Rev:</b> <span class="text-green-400">+25%</span> | <b>Margin:</b> <span class="text-green-400">15%</span> | <b>Target:</b> $180 (<span class="text-green-400">+32%</span>)
+      </div>
+      <div class="text-sm text-gray-300 space-y-1">
+        <p><b>P/E</b>: Price-to-earnings ratio. <span class="text-green-400">&lt;25 (green)</span>, <span class="text-amber-400">25&ndash;50 (amber)</span>, <span class="text-red-400">&gt;50 (red)</span>.</p>
+        <p><b>Rev</b>: Year-over-year revenue growth.</p>
+        <p><b>Margin</b>: Net profit margin.</p>
+        <p><b>Target</b>: Analyst consensus price target and % upside from current price.</p>
+      </div>
+    </section>
+
+    <!-- AI Thesis -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">AI Thesis</h3>
+      <p class="text-sm text-gray-300">Click the expandable <span class="text-green-400/80 font-medium">&#x25B8; AI Thesis</span> section on any card to read a Claude-generated investment thesis. This summarizes the bull case, key catalysts, and risk factors in 2&ndash;3 sentences. Generated only for BUY-quality signals.</p>
+    </section>
+
+    <!-- Hysteresis -->
+    <section class="mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-3">Hysteresis (Streak Requirement)</h3>
+      <p class="text-sm text-gray-300">A stock must qualify as BUY for <b>2 consecutive market days</b> before it's promoted. This prevents one-day spikes from triggering premature signals. If you see <span class="text-amber-600 italic">"Streak 1/2: needs 1 more qualifying scan"</span>, the stock scored high enough today but needs to confirm tomorrow.</p>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-gray-800 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-4 text-center text-xs text-gray-600">
+      <p>Bull Scouter &mdash; Automated catalyst detection. Not financial advice.</p>
+    </div>
+  </footer>
+</body>
+</html>
