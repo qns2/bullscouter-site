@@ -58,6 +58,22 @@
   <main class="max-w-7xl mx-auto px-4 py-6">
     <!-- Today View -->
     <div id="view-today">
+      <!-- Filter Bar -->
+      <div id="filter-bar" class="flex flex-wrap items-center gap-3 mb-5">
+        <div class="flex items-center gap-1">
+          <span class="text-xs text-gray-600 mr-1">Profile:</span>
+          <button class="filter-btn active" data-profile="all">All</button>
+          <button class="filter-btn" data-profile="value">Value</button>
+          <button class="filter-btn" data-profile="quality_growth">Growth Q</button>
+          <button class="filter-btn" data-profile="growth">Growth</button>
+          <button class="filter-btn" data-profile="recovery">Recovery</button>
+          <button class="filter-btn" data-profile="acceleration">Accel</button>
+        </div>
+        <div class="flex items-center gap-1">
+          <button class="filter-btn" id="btn-new-only" data-active="false">New Only</button>
+        </div>
+      </div>
+
       <!-- BUY Section -->
       <section id="section-buy" class="mb-8 hidden">
         <div class="flex items-center justify-between mb-3">

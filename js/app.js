@@ -47,6 +47,7 @@ const App = (() => {
   let historyCache = {};
   let currentData = { buys: [], watches: [], momentum: [] };
   let currentSort = { buy: 'score', watchlist: 'score' };
+  let currentFilters = { profile: 'all', newOnly: false };
 
   // ── Data fetching ──
 
@@ -246,6 +247,59 @@ const App = (() => {
         }
       });
     });
+  }
+
+  // ── Filtering ──
+
+  function filterOpps(opps) {
+    let result = opps;
+    if (currentFilters.profile !== 'all') {
+      result = result.filter(o => o.profile === currentFilters.profile);
+    }
+    if (currentFilters.newOnly) {
+      result = result.filter(o => (o.scans_tracked || 0) <= 1);
+    }
+    return result;
+  }
+
+  function applyFiltersAndSort() {
+    // BUY
+    const filteredBuys = filterOpps(currentData.buys);
+    const sortedBuys = sortOpps(filteredBuys, currentSort.buy);
+    rerenderSection('buy', sortedBuys);
+    const buySection = document.getElementById('section-buy');
+    if (filteredBuys.length) buySection.classList.remove('hidden');
+    else buySection.classList.add('hidden');
+
+    // WATCHLIST
+    const filteredWatches = filterOpps(currentData.watches);
+    const sortedWatches = sortOpps(filteredWatches, currentSort.watchlist);
+    rerenderSection('watchlist', sortedWatches);
+    const watchSection = document.getElementById('section-watchlist');
+    if (filteredWatches.length) watchSection.classList.remove('hidden');
+    else watchSection.classList.add('hidden');
+
+    // MOMENTUM table
+    const filteredMom = filterOpps(currentData.momentum);
+    const momSection = document.getElementById('section-momentum');
+    const momBody = document.getElementById('tbody-momentum');
+    momBody.innerHTML = '';
+    if (filteredMom.length) {
+      momSection.classList.remove('hidden');
+      momBody.innerHTML = filteredMom.map(renderMomentumRow).join('');
+    } else {
+      momSection.classList.add('hidden');
+    }
+
+    // Empty state
+    const total = filteredBuys.length + filteredWatches.length + filteredMom.length;
+    const emptyState = document.getElementById('empty-state');
+    if (total === 0 && (currentData.buys.length + currentData.watches.length + currentData.momentum.length) > 0) {
+      emptyState.innerHTML = '<p class="text-gray-500 text-lg">No matches for current filters</p>';
+      emptyState.classList.remove('hidden');
+    } else if (total > 0) {
+      emptyState.classList.add('hidden');
+    }
   }
 
   // ── Card rendering ──
@@ -607,10 +661,28 @@ const App = (() => {
           currentSort[section] = key;
           bar.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          const source = section === 'buy' ? currentData.buys : currentData.watches;
-          rerenderSection(section, sortOpps(source, key));
+          applyFiltersAndSort();
         });
       });
+    });
+
+    // Profile filter buttons
+    document.querySelectorAll('#filter-bar .filter-btn[data-profile]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const profile = btn.dataset.profile;
+        if (currentFilters.profile === profile) return;
+        currentFilters.profile = profile;
+        document.querySelectorAll('#filter-bar .filter-btn[data-profile]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFiltersAndSort();
+      });
+    });
+
+    // New only toggle
+    document.getElementById('btn-new-only').addEventListener('click', (e) => {
+      currentFilters.newOnly = !currentFilters.newOnly;
+      e.currentTarget.classList.toggle('active', currentFilters.newOnly);
+      applyFiltersAndSort();
     });
 
     // Ticker search
