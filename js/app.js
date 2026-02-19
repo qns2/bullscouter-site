@@ -20,7 +20,7 @@ const App = (() => {
     thesis_decay: 'Decay', revenue_momentum: 'Rev Momentum',
     margin_expansion: 'Margins', price_trend: 'Price/RS',
     volume_expansion: 'Volume', conviction: 'Conviction',
-    social_discovery: 'Discovery',
+    social_discovery: 'Discovery', acceleration_influence: 'Accel→FA',
     // Track C: Value + Growth Quality
     profitability: 'Profitability', fcf: 'FCF', discount: '52w Discount',
     sector_panic: 'Panic Signal', pe_discount: 'PE Discount',
@@ -215,6 +215,8 @@ const App = (() => {
     const sorted = [...opps];
     if (key === 'confidence') {
       sorted.sort((a, b) => (b.confidence || 0) - (a.confidence || 0));
+    } else if (key === 'satellite') {
+      sorted.sort((a, b) => (b.satellite_score || 0) - (a.satellite_score || 0));
     } else if (key === 'catalyst') {
       // Soonest catalyst first; nulls to the bottom
       sorted.sort((a, b) => {
@@ -361,7 +363,7 @@ const App = (() => {
       <div class="conf-bar mb-2">
         <div class="conf-bar-fill" style="width:${Math.min(opp.confidence, 100)}%;background:${confColor(opp.confidence)}"></div>
       </div>
-      <div class="text-xs text-gray-600 mb-2">Confidence: ${opp.confidence}/100</div>
+      <div class="text-xs text-gray-600 mb-2">Confidence: ${opp.confidence}/100${opp.satellite_fit ? ` <span class="text-gray-700">|</span> Satellite: <span class="${opp.satellite_fit >= 1.0 ? 'text-green-400' : opp.satellite_fit >= 0.8 ? 'text-amber-400' : 'text-red-400'}">${opp.satellite_score}</span> <span class="text-gray-700">(${opp.satellite_fit}x)</span>` : ''}</div>
       <div class="flex flex-wrap gap-1 mb-2">${formatBreakdown(opp.breakdown)}</div>
       ${aggHtml(opp.aggregate)}
       ${fundamentalsHtml(opp.fundamentals)}
