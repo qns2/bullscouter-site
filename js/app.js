@@ -363,7 +363,7 @@ const App = (() => {
       <div class="conf-bar mb-2">
         <div class="conf-bar-fill" style="width:${Math.min(opp.confidence, 100)}%;background:${confColor(opp.confidence)}"></div>
       </div>
-      <div class="text-xs text-gray-600 mb-2">Confidence: ${opp.confidence}/100${opp.satellite_fit ? ` <span class="text-gray-700">|</span> Satellite: <span class="${opp.satellite_fit >= 1.0 ? 'text-green-400' : opp.satellite_fit >= 0.8 ? 'text-amber-400' : 'text-red-400'}">${opp.satellite_score}</span> <span class="text-gray-700">(${opp.satellite_fit}x)</span>` : ''}</div>
+      <div class="text-xs text-gray-400 mb-2">Confidence: <span class="${opp.confidence >= 70 ? 'text-green-400' : opp.confidence >= 50 ? 'text-amber-400' : 'text-red-400'}">${opp.confidence}</span>/100${opp.satellite_fit ? ` <span class="text-gray-600">|</span> Satellite: <span class="font-bold ${opp.satellite_fit >= 1.0 ? 'text-green-400' : opp.satellite_fit >= 0.8 ? 'text-amber-400' : 'text-red-400'}">${opp.satellite_score}</span> <span class="text-gray-500">(${opp.satellite_fit}x)</span>` : ''}</div>
       <div class="flex flex-wrap gap-1 mb-2">${formatBreakdown(opp.breakdown)}</div>
       ${aggHtml(opp.aggregate)}
       ${fundamentalsHtml(opp.fundamentals)}
