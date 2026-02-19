@@ -217,9 +217,9 @@
     <section class="mb-10">
       <h3 class="text-lg font-bold text-green-400 mb-3">Satellite Fit Value (SFV)</h3>
       <div class="text-xs text-gray-400 font-mono mb-3">
-        <b>Satellite:</b> <span class="text-green-400">110</span> <span class="text-gray-600">(1.29x)</span>
+        <b>Satellite:</b> <span class="text-green-400">99</span><span class="text-gray-500">/100 (1.29x)</span>
       </div>
-      <p class="text-sm text-gray-300 mb-3">SFV re-ranks stocks for <b>small tactical positions</b> (satellite bets). It's a multiplier (0.5&ndash;1.3x) applied to the base score. A stock that scores 85 with SFV 1.2x becomes satellite score 102&mdash;meaning it's a better satellite bet than a 95-scoring mega-cap with SFV 0.6x (satellite 57).</p>
+      <p class="text-sm text-gray-300 mb-3">SFV re-ranks stocks for <b>small tactical positions</b> (satellite bets). The SFV multiplier (0.5&ndash;1.3x) is converted to a 0&ndash;100 satellite score: 0.5x&rarr;0, 1.0x&rarr;63, 1.3x&rarr;100. A small-cap with SFV 1.2x gets satellite 88, while a mega-cap with SFV 0.6x gets satellite 13&mdash;making satellite quality easy to compare at a glance.</p>
       <div class="text-sm text-gray-300 space-y-1">
         <p><b>Market Cap</b>: Small-caps get a boost (1.10x), mega-caps get penalized (0.60x). Smaller companies have more room to re-rate.</p>
         <p><b>52w Range Width</b>: Wide range (&gt;50%) means the stock has demonstrated large moves (1.15x). Narrow range = sleepy stock (0.85x).</p>
@@ -228,9 +228,9 @@
         <p><b>Short Interest Fuel</b>: 5&ndash;15% SI is the sweet spot (1.05x)&mdash;enough to fuel a squeeze but not so much it signals fundamental problems.</p>
       </div>
       <div class="flex items-center gap-4 mt-3 text-xs font-mono">
-        <span><span class="inline-block w-3 h-3 rounded" style="background:#22c55e"></span> &ge;1.0x Good satellite</span>
-        <span><span class="inline-block w-3 h-3 rounded" style="background:#f59e0b"></span> 0.8&ndash;1.0x Neutral</span>
-        <span><span class="inline-block w-3 h-3 rounded" style="background:#ef4444"></span> &lt;0.8x Poor satellite fit</span>
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#22c55e"></span> &ge;63 Good satellite</span>
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#f59e0b"></span> 38&ndash;62 Neutral</span>
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#ef4444"></span> &lt;38 Poor satellite fit</span>
       </div>
     </section>
 
