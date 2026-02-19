@@ -29,6 +29,10 @@ const App = (() => {
     rule40: 'Rule of 40', sbc: 'SBC', convergence_bonus: 'Convergence',
     overvalued_cap: 'Overvalued Cap', bankruptcy_risk_cap: 'Bankruptcy Risk',
     low_upside: 'Low Upside', insider_sell_penalty: 'Insider Selling',
+    neg_revenue_cap: 'Neg Revenue', low_margin: 'Low Margin',
+    si_no_catalyst: 'SI No Catalyst',
+    controversy_insider_compound: 'Controversy+Insider',
+    quality_auto_remove: 'Weak Quality',
   };
 
   // Profile display names
