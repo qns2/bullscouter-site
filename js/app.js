@@ -220,7 +220,10 @@ const App = (() => {
     if (key === 'confidence') {
       sorted.sort((a, b) => (b.confidence || 0) - (a.confidence || 0));
     } else if (key === 'satellite') {
-      sorted.sort((a, b) => (b.satellite_score || 0) - (a.satellite_score || 0));
+      // Filter to satellite-worthy stocks (score >= 50), then sort descending
+      const satFiltered = sorted.filter(o => (o.satellite_score || 0) >= 50);
+      satFiltered.sort((a, b) => (b.satellite_score || 0) - (a.satellite_score || 0));
+      return satFiltered;
     } else if (key === 'catalyst') {
       // Soonest catalyst first; nulls to the bottom
       sorted.sort((a, b) => {
