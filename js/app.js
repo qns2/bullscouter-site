@@ -29,6 +29,7 @@ const App = (() => {
     rule40: 'Rule of 40', sbc: 'SBC', convergence_bonus: 'Convergence',
     overvalued_cap: 'Overvalued Cap', bankruptcy_risk_cap: 'Bankruptcy Risk',
     low_upside: 'Low Upside', insider_sell_penalty: 'Insider Selling',
+    insider_buy_boost: 'Insider Buying', thesis_feedback: 'AI Thesis',
     neg_revenue_cap: 'Neg Revenue', low_margin: 'Low Margin',
     si_no_catalyst: 'SI No Catalyst',
     controversy_insider_compound: 'Controversy+Insider',
@@ -224,6 +225,18 @@ const App = (() => {
       const satFiltered = sorted.filter(o => (o.satellite_score || 0) >= 50);
       satFiltered.sort((a, b) => (b.satellite_score || 0) - (a.satellite_score || 0));
       return satFiltered;
+    } else if (key === 'insider') {
+      // Sort by insider conviction: buy_boost > 0 first, then sell_penalty, by score within tier
+      sorted.sort((a, b) => {
+        const aBoost = (a.breakdown || {}).insider_buy_boost || 0;
+        const bBoost = (b.breakdown || {}).insider_buy_boost || 0;
+        const aSell = (a.breakdown || {}).insider_sell_penalty || 0;
+        const bSell = (b.breakdown || {}).insider_sell_penalty || 0;
+        const aInsider = aBoost + aSell;
+        const bInsider = bBoost + bSell;
+        if (aInsider !== bInsider) return bInsider - aInsider;
+        return (b.score || 0) - (a.score || 0);
+      });
     } else if (key === 'catalyst') {
       // Soonest catalyst first; nulls to the bottom
       sorted.sort((a, b) => {
