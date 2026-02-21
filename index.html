@@ -34,6 +34,7 @@
       <nav class="flex items-center gap-2 sm:gap-4">
         <button id="tab-today" class="tab-btn tab-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Today</button>
         <button id="tab-history" class="tab-btn text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">History</button>
+        <button id="tab-portfolio" class="tab-btn text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Paper</button>
         <a href="guide.html" class="text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
         <span class="text-xs text-gray-600 font-mono hidden md:inline" id="scan-date"></span>
       </nav>
@@ -83,6 +84,7 @@
             <button class="sort-btn" data-sort="catalyst">Catalyst</button>
             <button class="sort-btn" data-sort="satellite">Satellite</button>
             <button class="sort-btn" data-sort="insider">Insider</button>
+            <button class="sort-btn" data-sort="entry">Entry</button>
           </div>
         </div>
         <div id="cards-buy" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
@@ -99,6 +101,7 @@
             <button class="sort-btn" data-sort="catalyst">Catalyst</button>
             <button class="sort-btn" data-sort="satellite">Satellite</button>
             <button class="sort-btn" data-sort="insider">Insider</button>
+            <button class="sort-btn" data-sort="entry">Entry</button>
           </div>
         </div>
         <div id="cards-watchlist" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
@@ -180,6 +183,53 @@
           <div id="past-scan-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </div>
       </div>
+    </div>
+
+    <!-- Portfolio View -->
+    <div id="view-portfolio" class="hidden">
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Open</div>
+          <div class="text-2xl font-bold font-mono" id="pp-open">-</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Total P&amp;L</div>
+          <div class="text-2xl font-bold font-mono" id="pp-pnl">-</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Win Rate</div>
+          <div class="text-2xl font-bold font-mono" id="pp-winrate">-</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Avg Return</div>
+          <div class="text-2xl font-bold font-mono" id="pp-avgret">-</div>
+        </div>
+      </div>
+      <!-- Timing Analysis -->
+      <div id="pp-timing-analysis" class="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-6 hidden">
+        <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Entry Timing Analysis</h3>
+        <div class="text-sm font-mono" id="pp-timing-content"></div>
+      </div>
+      <!-- Positions Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-gray-500 text-xs uppercase">
+              <th class="pb-2 pr-4">Ticker</th>
+              <th class="pb-2 pr-4">Entry</th>
+              <th class="pb-2 pr-4">Current</th>
+              <th class="pb-2 pr-4">Return</th>
+              <th class="pb-2 pr-4">P&amp;L</th>
+              <th class="pb-2 pr-4">Timing</th>
+              <th class="pb-2 pr-4">Days</th>
+              <th class="pb-2">Peak / Trough</th>
+            </tr>
+          </thead>
+          <tbody id="pp-positions" class="font-mono"></tbody>
+        </table>
+      </div>
+      <div id="pp-empty" class="hidden text-center py-12 text-gray-500">No paper positions yet</div>
     </div>
   </main>
 

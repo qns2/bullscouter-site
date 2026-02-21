@@ -237,6 +237,12 @@ const App = (() => {
         if (aInsider !== bInsider) return bInsider - aInsider;
         return (b.score || 0) - (a.score || 0);
       });
+    } else if (key === 'entry') {
+      sorted.sort((a, b) => {
+        const aScore = (a.entry_timing || {}).score || 0;
+        const bScore = (b.entry_timing || {}).score || 0;
+        return bScore - aScore;
+      });
     } else if (key === 'catalyst') {
       // Soonest catalyst first; nulls to the bottom
       sorted.sort((a, b) => {
@@ -383,7 +389,7 @@ const App = (() => {
       <div class="conf-bar mb-2">
         <div class="conf-bar-fill" style="width:${Math.min(opp.confidence, 100)}%;background:${confColor(opp.confidence)}"></div>
       </div>
-      <div class="text-xs text-gray-400 mb-2">Confidence: <span class="${opp.confidence >= 70 ? 'text-green-400' : opp.confidence >= 50 ? 'text-amber-400' : 'text-red-400'}">${opp.confidence}</span>/100${opp.satellite_fit && opp.satellite_fit !== 1.0 ? ` <span class="text-gray-500">|</span> Satellite: <span class="font-bold ${opp.satellite_score >= 50 ? 'text-green-400' : opp.satellite_score >= 25 ? 'text-amber-400' : 'text-red-400'}">${opp.satellite_score}</span><span class="text-gray-500">/100 (${opp.satellite_fit}x)</span>` : ''}</div>
+      <div class="text-xs text-gray-400 mb-2">Confidence: <span class="${opp.confidence >= 70 ? 'text-green-400' : opp.confidence >= 50 ? 'text-amber-400' : 'text-red-400'}">${opp.confidence}</span>/100${opp.satellite_fit && opp.satellite_fit !== 1.0 ? ` <span class="text-gray-500">|</span> Satellite: <span class="font-bold ${opp.satellite_score >= 50 ? 'text-green-400' : opp.satellite_score >= 25 ? 'text-amber-400' : 'text-red-400'}">${opp.satellite_score}</span><span class="text-gray-500">/100 (${opp.satellite_fit}x)</span>` : ''}${opp.entry_timing ? ` <span class="text-gray-500">|</span> Entry: <span class="font-bold ${opp.entry_timing.label === 'Enter' ? 'text-green-400' : opp.entry_timing.label === 'Wait' ? 'text-amber-400' : 'text-red-400'}">${opp.entry_timing.score}</span><span class="text-gray-500"> ${opp.entry_timing.label}${opp.entry_timing.label === 'Wait' && opp.entry_timing.recommended_entry ? ' @ $' + opp.entry_timing.recommended_entry.toFixed(2) : ''}</span>` : ''}</div>
       <div class="flex flex-wrap gap-1 mb-2">${formatBreakdown(opp.breakdown)}</div>
       ${aggHtml(opp.aggregate)}
       ${fundamentalsHtml(opp.fundamentals)}
@@ -424,6 +430,7 @@ const App = (() => {
   // ── Main rendering ──
 
   function renderToday(data) {
+    currentData.latestPayload = data;
     const opps = data.opportunities || [];
 
     // Stats
@@ -643,29 +650,99 @@ const App = (() => {
   // ── Tab switching ──
 
   function setupTabs() {
-    const tabToday = document.getElementById('tab-today');
-    const tabHistory = document.getElementById('tab-history');
-    const viewToday = document.getElementById('view-today');
-    const viewHistory = document.getElementById('view-history');
+    const tabs = [
+      { btn: document.getElementById('tab-today'), view: document.getElementById('view-today') },
+      { btn: document.getElementById('tab-history'), view: document.getElementById('view-history') },
+      { btn: document.getElementById('tab-portfolio'), view: document.getElementById('view-portfolio') },
+    ];
 
-    tabToday.addEventListener('click', () => {
-      tabToday.classList.add('tab-active');
-      tabToday.classList.remove('text-gray-400');
-      tabHistory.classList.remove('tab-active');
-      tabHistory.classList.add('text-gray-400');
-      viewToday.classList.remove('hidden');
-      viewHistory.classList.add('hidden');
-    });
+    function activateTab(idx) {
+      tabs.forEach((t, i) => {
+        if (i === idx) {
+          t.btn.classList.add('tab-active');
+          t.btn.classList.remove('text-gray-400');
+          t.view.classList.remove('hidden');
+        } else {
+          t.btn.classList.remove('tab-active');
+          t.btn.classList.add('text-gray-400');
+          t.view.classList.add('hidden');
+        }
+      });
+    }
 
-    tabHistory.addEventListener('click', async () => {
-      tabHistory.classList.add('tab-active');
-      tabHistory.classList.remove('text-gray-400');
-      tabToday.classList.remove('tab-active');
-      tabToday.classList.add('text-gray-400');
-      viewHistory.classList.remove('hidden');
-      viewToday.classList.add('hidden');
+    tabs[0].btn.addEventListener('click', () => activateTab(0));
+    tabs[1].btn.addEventListener('click', async () => {
+      activateTab(1);
       await renderHistory();
     });
+    tabs[2].btn.addEventListener('click', () => {
+      activateTab(2);
+      renderPortfolio();
+    });
+  }
+
+  // ── Portfolio view ──
+
+  function renderPortfolio() {
+    if (!currentData.latestPayload) return;
+    const pp = currentData.latestPayload.paper_portfolio;
+
+    if (!pp) {
+      document.getElementById('pp-empty').classList.remove('hidden');
+      return;
+    }
+
+    const stats = pp.stats || {};
+    const positions = pp.positions || [];
+
+    // Stats cards
+    const pnlColor = stats.total_pnl_eur >= 0 ? 'text-green-400' : 'text-red-400';
+    document.getElementById('pp-open').textContent = stats.total_open || 0;
+    const pnlEl = document.getElementById('pp-pnl');
+    pnlEl.textContent = `${stats.total_pnl_eur >= 0 ? '+' : ''}${(stats.total_pnl_eur || 0).toFixed(0)}`;
+    pnlEl.className = `text-2xl font-bold font-mono ${pnlColor}`;
+    document.getElementById('pp-winrate').textContent = stats.total_closed > 0 ? `${stats.win_rate}%` : '-';
+    const avgRet = stats.avg_open_return || 0;
+    const avgRetEl = document.getElementById('pp-avgret');
+    avgRetEl.textContent = `${avgRet >= 0 ? '+' : ''}${avgRet.toFixed(1)}%`;
+    avgRetEl.className = `text-2xl font-bold font-mono ${avgRet >= 0 ? 'text-green-400' : 'text-red-400'}`;
+
+    // Timing analysis
+    const tc = stats.timing_correlation;
+    if (tc) {
+      document.getElementById('pp-timing-analysis').classList.remove('hidden');
+      const hiColor = tc.high_timing_avg >= 0 ? 'text-green-400' : 'text-red-400';
+      const loColor = tc.low_timing_avg >= 0 ? 'text-green-400' : 'text-red-400';
+      document.getElementById('pp-timing-content').innerHTML =
+        `High timing (${tc.high_count} pos): <span class="${hiColor}">${tc.high_timing_avg >= 0 ? '+' : ''}${tc.high_timing_avg}%</span> avg ` +
+        `<span class="text-gray-600">|</span> ` +
+        `Low timing (${tc.low_count} pos): <span class="${loColor}">${tc.low_timing_avg >= 0 ? '+' : ''}${tc.low_timing_avg}%</span> avg`;
+    }
+
+    // Positions table
+    const tbody = document.getElementById('pp-positions');
+    if (!positions.length) {
+      document.getElementById('pp-empty').classList.remove('hidden');
+      tbody.innerHTML = '';
+      return;
+    }
+
+    document.getElementById('pp-empty').classList.add('hidden');
+    tbody.innerHTML = positions.map(p => {
+      const retColor = p.return_pct >= 0 ? 'text-green-400' : 'text-red-400';
+      const pnlColor = p.pnl_eur >= 0 ? 'text-green-400' : 'text-red-400';
+      const timingColor = p.entry_timing_score >= 70 ? 'text-green-400' : p.entry_timing_score >= 40 ? 'text-amber-400' : 'text-red-400';
+      return `<tr class="border-b border-gray-800">
+        <td class="py-2 pr-4 font-bold"><a href="https://finance.yahoo.com/quote/${p.ticker}" target="_blank" rel="noopener" class="hover:text-green-400">${p.ticker}</a></td>
+        <td class="py-2 pr-4">$${p.entry_price.toFixed(2)}</td>
+        <td class="py-2 pr-4">${p.current_price ? '$' + p.current_price.toFixed(2) : '-'}</td>
+        <td class="py-2 pr-4 ${retColor}">${p.return_pct >= 0 ? '+' : ''}${p.return_pct.toFixed(1)}%</td>
+        <td class="py-2 pr-4 ${pnlColor}">${p.pnl_eur >= 0 ? '+' : ''}${p.pnl_eur.toFixed(0)}</td>
+        <td class="py-2 pr-4 ${timingColor}">${p.entry_timing_score}</td>
+        <td class="py-2 pr-4">${p.holding_days}d</td>
+        <td class="py-2"><span class="text-green-400">+${(p.peak_return_pct || 0).toFixed(0)}%</span> / <span class="text-red-400">${(p.trough_return_pct || 0).toFixed(0)}%</span></td>
+      </tr>`;
+    }).join('');
   }
 
   // ── Init ──
