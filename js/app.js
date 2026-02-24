@@ -153,8 +153,14 @@ const App = (() => {
       const c = opp.insider.signal === 'STRONG' ? 'color:#4ade80;background:rgba(34,197,94,0.15)' : 'color:#fb923c;background:rgba(251,146,60,0.15)';
       parts.push(`<span class="chip" style="${c}">Insider ${opp.insider.signal} (${opp.insider.buys}B/${opp.insider.sells}S)</span>`);
     }
-    // Analyst
-    if (opp.analyst && (opp.analyst.upgrades || opp.analyst.downgrades)) {
+    // Analyst distribution or upgrade/downgrade fallback
+    if (opp.analyst && opp.analyst.distribution && opp.analyst.distribution.total >= 3) {
+      const dist = opp.analyst.distribution;
+      const buyN = (dist.strong_buy || 0) + (dist.buy || 0);
+      const holdN = dist.hold || 0;
+      const sellN = (dist.sell || 0) + (dist.strong_sell || 0);
+      parts.push(`<span class="chip" style="color:#60a5fa;background:rgba(59,130,246,0.15)">${buyN} Buy &middot; ${holdN} Hold &middot; ${sellN} Sell</span>`);
+    } else if (opp.analyst && (opp.analyst.upgrades || opp.analyst.downgrades)) {
       const u = opp.analyst.upgrades, d = opp.analyst.downgrades;
       if (u > d) {
         parts.push(`<span class="chip" style="color:#4ade80;background:rgba(34,197,94,0.15)">Analyst &#x2191;${u}${d ? ` &#x2193;${d}` : ''}</span>`);
@@ -697,7 +703,8 @@ const App = (() => {
 
     // Stats cards
     const pnlColor = stats.total_pnl_eur >= 0 ? 'text-green-400' : 'text-red-400';
-    document.getElementById('pp-open').textContent = stats.total_open || 0;
+    const pendingCount = stats.total_pending || 0;
+    document.getElementById('pp-open').textContent = (stats.total_open || 0) + (pendingCount ? ` (+${pendingCount} pending)` : '');
     const pnlEl = document.getElementById('pp-pnl');
     pnlEl.textContent = `${stats.total_pnl_eur >= 0 ? '+' : ''}${(stats.total_pnl_eur || 0).toFixed(0)}`;
     pnlEl.className = `text-2xl font-bold font-mono ${pnlColor}`;
@@ -729,18 +736,22 @@ const App = (() => {
 
     document.getElementById('pp-empty').classList.add('hidden');
     tbody.innerHTML = positions.map(p => {
+      const isPending = p.status === 'pending';
       const retColor = p.return_pct >= 0 ? 'text-green-400' : 'text-red-400';
       const pnlColor = p.pnl_eur >= 0 ? 'text-green-400' : 'text-red-400';
       const timingColor = p.entry_timing_score >= 70 ? 'text-green-400' : p.entry_timing_score >= 40 ? 'text-amber-400' : 'text-red-400';
-      return `<tr class="border-b border-gray-800">
-        <td class="py-2 pr-4 font-bold"><a href="https://finance.yahoo.com/quote/${p.ticker}" target="_blank" rel="noopener" class="hover:text-green-400">${p.ticker}</a></td>
-        <td class="py-2 pr-4">$${p.entry_price.toFixed(2)}</td>
+      const statusBadge = isPending
+        ? `<span class="text-xs bg-amber-900 text-amber-300 px-1.5 py-0.5 rounded ml-1">Pending @ $${(p.trigger_price || 0).toFixed(2)}</span>`
+        : '';
+      return `<tr class="border-b border-gray-800${isPending ? ' opacity-70' : ''}">
+        <td class="py-2 pr-4 font-bold"><a href="https://finance.yahoo.com/quote/${p.ticker}" target="_blank" rel="noopener" class="hover:text-green-400">${p.ticker}</a>${statusBadge}</td>
+        <td class="py-2 pr-4">${isPending ? '-' : '$' + p.entry_price.toFixed(2)}</td>
         <td class="py-2 pr-4">${p.current_price ? '$' + p.current_price.toFixed(2) : '-'}</td>
-        <td class="py-2 pr-4 ${retColor}">${p.return_pct >= 0 ? '+' : ''}${p.return_pct.toFixed(1)}%</td>
-        <td class="py-2 pr-4 ${pnlColor}">${p.pnl_eur >= 0 ? '+' : ''}${p.pnl_eur.toFixed(0)}</td>
+        <td class="py-2 pr-4 ${isPending ? 'text-gray-500' : retColor}">${isPending ? '-' : (p.return_pct >= 0 ? '+' : '') + p.return_pct.toFixed(1) + '%'}</td>
+        <td class="py-2 pr-4 ${isPending ? 'text-gray-500' : pnlColor}">${isPending ? '-' : (p.pnl_eur >= 0 ? '+' : '') + p.pnl_eur.toFixed(0)}</td>
         <td class="py-2 pr-4 ${timingColor}">${p.entry_timing_score}</td>
-        <td class="py-2 pr-4">${p.holding_days}d</td>
-        <td class="py-2"><span class="text-green-400">+${(p.peak_return_pct || 0).toFixed(0)}%</span> / <span class="text-red-400">${(p.trough_return_pct || 0).toFixed(0)}%</span></td>
+        <td class="py-2 pr-4">${isPending ? (p.pending_scans || 0) + ' scans' : p.holding_days + 'd'}</td>
+        <td class="py-2">${isPending ? '-' : '<span class="text-green-400">+' + (p.peak_return_pct || 0).toFixed(0) + '%</span> / <span class="text-red-400">' + (p.trough_return_pct || 0).toFixed(0) + '%</span>'}</td>
       </tr>`;
     }).join('');
   }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bull Scouter - Deep Dive</title>
+  <meta name="description" content="Opus deep-dive investment analysis: Value 6/6 + Growth 6/6 dual framework.">
+  <link rel="stylesheet" href="css/style.css?v=8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bull: { 50: '#f0fdf4', 500: '#22c55e', 700: '#15803d' },
+            warn: { 500: '#f59e0b' },
+            slate: { 750: '#293548', 850: '#172033' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <h1 class="text-lg sm:text-xl font-bold tracking-tight">Bull Scouter</h1>
+      </div>
+      <nav class="flex items-center gap-2 sm:gap-4">
+        <a href="index.html" class="text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Dashboard</a>
+        <span class="text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md tab-active">Deep Dive</span>
+        <a href="guide.html" class="text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Subtitle Bar -->
+  <div class="border-b border-gray-800 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap gap-x-4 gap-y-1 text-xs font-mono">
+      <span class="text-gray-500">Opus Deep Dive</span>
+      <span class="text-gray-500">Date: <span id="dd-date" class="text-gray-300">-</span></span>
+      <span class="text-gray-500">Tickers: <span id="dd-count" class="text-gray-300">-</span></span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <!-- Cards Grid -->
+    <div id="dd-cards" class="grid grid-cols-1 lg:grid-cols-2 gap-6"></div>
+
+    <!-- Loading State -->
+    <div id="dd-loading" class="text-center py-20">
+      <p class="text-gray-500">Loading deep dive data...</p>
+    </div>
+
+    <!-- Empty State -->
+    <div id="dd-empty" class="hidden text-center py-20">
+      <p class="text-gray-500 text-lg">No deep dive analysis available</p>
+      <p class="text-gray-600 text-sm mt-1">Run the deep dive after the daily scan</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="dd-error" class="hidden text-center py-20">
+      <p class="text-red-400 text-lg">Failed to load data</p>
+      <p class="text-gray-600 text-sm mt-1" id="dd-error-msg"></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-4 text-center text-xs text-gray-600">
+      <p>Bull Scouter &mdash; Automated catalyst detection. Not financial advice.</p>
+      <p class="mt-1">Deep dive analysis by Claude Opus. Past performance does not guarantee future results.</p>
+    </div>
+  </footer>
+
+  <script src="js/deep-dive.js?v=1"></script>
+</body>
+</html>
