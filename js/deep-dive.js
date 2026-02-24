@@ -32,7 +32,8 @@ const DeepDive = (() => {
             if (f.range_52w) parts.push(`52w: ${f.range_52w}`);
           }
           if (a.ideal_entry) parts.push(`Entry: $${Number(a.ideal_entry.price).toFixed(2)}`);
-          if (a.catalysts && a.catalysts.length) parts.push(`Catalysts: ${a.catalysts.join('; ')}`);
+          const allCats = [].concat(a.catalysts_verified || [], a.catalysts_general || [], (!a.catalysts_verified && !a.catalysts_general) ? (a.catalysts || []) : []);
+          if (allCats.length) parts.push(`Catalysts: ${allCats.join('; ')}`);
           if (a.analyst_take) parts.push(`\n  Take: ${a.analyst_take}`);
           return parts.join(' | ');
         });
@@ -175,12 +176,24 @@ const DeepDive = (() => {
       card.appendChild(section);
     }
 
-    // Catalysts
-    if (a.catalysts && a.catalysts.length > 0) {
+    // Catalysts (structured or flat — backward compatible)
+    const hasVerified = a.catalysts_verified && a.catalysts_verified.length > 0;
+    const hasGeneral = a.catalysts_general && a.catalysts_general.length > 0;
+    const hasFlat = a.catalysts && a.catalysts.length > 0;
+    if (hasVerified || hasGeneral || hasFlat) {
       const section = el('div', 'dd-section');
-      section.innerHTML =
-        `<div class="dd-section-title">Catalysts</div>` +
-        `<ul class="dd-list">${a.catalysts.map(c => `<li>${esc(c)}</li>`).join('')}</ul>`;
+      let html = '<div class="dd-section-title">Catalysts</div><ul class="dd-list">';
+      if (hasVerified) {
+        html += a.catalysts_verified.map(c => `<li><span class="text-green-400 mr-1">&#x2705;</span>${esc(c)}</li>`).join('');
+      }
+      if (hasGeneral) {
+        html += a.catalysts_general.map(c => `<li>${esc(c)}</li>`).join('');
+      }
+      if (!hasVerified && !hasGeneral && hasFlat) {
+        html += a.catalysts.map(c => `<li>${esc(c)}</li>`).join('');
+      }
+      html += '</ul>';
+      section.innerHTML = html;
       card.appendChild(section);
     }
 
