@@ -90,8 +90,9 @@ const DeepDive = (() => {
     // Header row
     const header = el('div', 'dd-card-header');
     const tickerEl = el('div', 'dd-ticker');
+    const yf = `https://finance.yahoo.com/quote/${encodeURIComponent(a.ticker)}`;
     tickerEl.innerHTML =
-      `<span class="text-lg font-bold font-mono">${esc(a.ticker)}</span>` +
+      `<a href="${yf}" target="_blank" rel="noopener" class="text-lg font-bold font-mono hover:text-green-400 transition-colors">${esc(a.ticker)}</a>` +
       `<span class="text-sm text-gray-400 ml-2">${esc(a.name || '')}</span>`;
     header.appendChild(tickerEl);
 
