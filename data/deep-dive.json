@@ -2,30 +2,187 @@
   "scan_date": "2026-02-24",
   "analyses": [
     {
+      "ticker": "ACN",
+      "name": "Accenture plc",
+      "price": 199.81,
+      "opus_recommendation": "BUY",
+      "value_framework": {
+        "profitable": {
+          "verdict": "pass",
+          "detail": "10.8% profit margins, 17.0% operating margins, $12.5B EBITDA on $70.7B revenue"
+        },
+        "strong_fcf": {
+          "verdict": "pass",
+          "detail": "$11.1B FCF on $70.7B revenue — 15.7% FCF margin, 9.0% FCF yield on $124B market cap"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "45.4% below 52w high of $365.58, trading at $199.81 within 2% of 52w low $196.09"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "IT services under broad pressure — down 27.6% in 20d and 20.7% in 90d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; current 13.4x forward PE vs 16.5x trailing"
+        },
+        "no_dilution": {
+          "verdict": "pass",
+          "detail": "Net cash positive ($9.7B cash vs $8.2B debt), dividend yield 3.24% covered at 50.2% payout ratio"
+        },
+        "score": 5
+      },
+      "growth_framework": {
+        "revenue_growth_30": {
+          "verdict": "fail",
+          "detail": "6% revenue growth — consulting services model limits growth rate"
+        },
+        "gross_margins_60": {
+          "verdict": "fail",
+          "detail": "32.0% gross margins — typical for services business, not pure software"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "fail",
+          "detail": "6% growth + 17.0% operating margin = 23"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
+        "score": 0
+      },
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "IT consulting positioned to implement enterprise AI solutions. Company provides strategy, consulting, and technology services per description. AI adoption drives consulting demand for implementation and change management."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": null,
+        "assessment": null
+      },
+      "financials": {
+        "current_price": 199.81,
+        "range_52w": "$196.09 - $365.58",
+        "forward_pe": "13.4x",
+        "historical_pe_avg": "N/A"
+      },
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "17 buy/strong-buy vs 1 sell out of 28 analysts",
+        "Analyst median target $300 — 50% upside from current price",
+        "3.24% dividend yield covered at 50% payout ratio",
+        "Trading within 2% of 52w low — near maximum pessimism",
+        "9.0% FCF yield ($11.1B FCF on $124B market cap)"
+      ],
+      "downside_scenarios": [
+        {
+          "price": 180,
+          "pe_at_level": "12.1",
+          "scenario": "IT services spending contracts as enterprises cut consulting budgets"
+        },
+        {
+          "price": 160,
+          "pe_at_level": "10.7",
+          "scenario": "AI automation reduces demand for traditional consulting engagements"
+        }
+      ],
+      "ideal_entry": {
+        "price": 196,
+        "reasoning": "At/below 52w low of $196.09 would represent max pessimism pricing; 13.2x forward PE at that level with $11B FCF backing"
+      },
+      "comparables": [
+        {
+          "ticker": "CRM",
+          "forward_pe": "14.2x",
+          "growth": "8.6%",
+          "note": "Software platform, higher margins but similar drawdown"
+        },
+        {
+          "ticker": "ADBE",
+          "forward_pe": "9.7x",
+          "growth": "10.5%",
+          "note": "Software, even cheaper on PE with higher margins"
+        }
+      ],
+      "analyst_take": "Elite cash flow machine at a generational discount. 45% drawdown prices in an earnings recession that the numbers don't fully support — $11.1B annual FCF on a $124B market cap yields 9%. Dividend yield of 3.24% is comfortably covered at a 50% payout. 17 of 28 analysts rate buy with median target 50% higher. The risk is AI commoditizing consulting, but Accenture's description as a technology and consulting provider suggests it's positioned as an implementation partner rather than a target."
+    },
+    {
       "ticker": "ADBE",
       "name": "Adobe Inc.",
       "price": 256.36,
       "opus_recommendation": "BUY",
       "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "30.0% profit margins, 36.5% operating margins — elite profitability"},
-        "strong_fcf": {"verdict": "pass", "detail": "$8.8B FCF on $23.8B revenue — 37.0% FCF margin"},
-        "near_52w_lows": {"verdict": "pass", "detail": "43.4% below 52w high of $453.26, near 52w low of $244.28"},
-        "sector_panic": {"verdict": "pass", "detail": "Software sector under broad multiple compression; AI disruption narrative weighing on creative tools"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 9.7x forward is extremely low for a company with 89.3% gross margins"},
-        "no_dilution": {"verdict": "pass", "detail": "Near-zero net debt ($6.7B debt vs $6.6B cash), no dividend dilution (payout 0%)"},
+        "profitable": {
+          "verdict": "pass",
+          "detail": "30.0% profit margins, 36.5% operating margins — elite profitability"
+        },
+        "strong_fcf": {
+          "verdict": "pass",
+          "detail": "$8.8B FCF on $23.8B revenue — 37.0% FCF margin, 8.2% FCF yield on $107B market cap"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "43.4% below 52w high of $453.26, near 52w low of $244.28"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "Software sector under broad multiple compression, down 13.8% in 20d and 20.9% in 90d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 9.7x forward PE is extremely low for 89.3% gross margin software"
+        },
+        "no_dilution": {
+          "verdict": "pass",
+          "detail": "Near-zero net debt ($6.7B debt vs $6.6B cash), no dividend dilution (payout 0%)"
+        },
         "score": 5
       },
       "growth_framework": {
-        "revenue_growth_30": {"verdict": "fail", "detail": "10.5% revenue growth — well below 30% threshold"},
-        "gross_margins_60": {"verdict": "pass", "detail": "89.3% gross margins — among the highest in all of software"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "NRR not in input data"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "pass", "detail": "10.5% growth + 36.5% operating margins = 47"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "SBC as % of revenue not in input data"},
+        "revenue_growth_30": {
+          "verdict": "fail",
+          "detail": "10.5% revenue growth — well below 30% threshold"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "89.3% gross margins — among the highest in all of software"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "10.5% growth + 36.5% operating margins = 47"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
         "score": 2
       },
-      "ai_exposure": {"verdict": "threat", "detail": "AI image/video generation tools compete with Creative Cloud. Options data confirms market concern: Mar 6 P/C ratio of 3.18 and Mar 20 P/C of 3.84 show heavy put positioning. Company description references digital media and experience platforms."},
-      "deal_radar": {"capex_exposure": null, "options_signal": "Bearish put skew across weeklies: Feb 27 P/C 0.59 (normal), Mar 6 P/C 3.18, Mar 13 P/C 1.48, Mar 20 P/C 3.84. Mar 20 monthly shows 58,970 call OI vs 34,100 put OI, but put volume dominates near-term.", "assessment": "Near-term options flow is bearish with put volume 3-4x call volume on weeklies. However, the monthly OI shows more balanced positioning. The elevated put activity may represent protective hedging by long holders given the 43.4% drawdown. The 2.91% SI is modest."},
+      "ai_exposure": {
+        "verdict": "threat",
+        "detail": "AI image/video generation competes with Creative Cloud. Company description references digital media and experience platforms — core products face AI substitution risk. Options show elevated near-term put positioning: Mar 6 put OI 4,051 on 5,661 call OI, Mar 13 put OI 2,504 on 4,100 call OI."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": "Feb 27: 15,599 call OI vs 10,359 put OI (bullish). Mar 6: 5,661 call vs 4,051 put. Mar 13: 4,100 call vs 2,504 put. Overall balanced to slightly bullish positioning with 2.91% short interest.",
+        "assessment": "Options flow is moderately bullish with call OI exceeding put OI across all expirations. The 2.91% SI is modest. Combined with the 43.4% drawdown, smart money appears to be positioning for recovery rather than further downside."
+      },
       "financials": {
         "current_price": 256.36,
         "range_52w": "$244.28 - $453.26",
@@ -33,311 +190,443 @@
         "historical_pe_avg": "N/A"
       },
       "catalysts_verified": [],
-      "catalysts_general": ["Analyst median target $400 (56% upside)", "20 buy/strong-buy vs 4 sell out of 39 analysts", "37% FCF margin at 9.7x forward creates hard value floor"],
+      "catalysts_general": [
+        "20 buy/strong-buy vs 4 sell out of 39 analysts",
+        "Analyst median target $400 — 56% upside",
+        "37.0% FCF margin on $23.8B revenue",
+        "17.2% earnings growth despite slowing revenue",
+        "89.3% gross margins — highest among peers"
+      ],
       "downside_scenarios": [
-        {"price": 220, "pe_at_level": 8, "scenario": "AI disruption accelerates — creative professionals adopt multi-tool workflows"},
-        {"price": 180, "pe_at_level": 7, "scenario": "Revenue growth decelerates below 8%, earnings growth (-17.2% current) worsens"},
-        {"price": 140, "pe_at_level": 5, "scenario": "Open-source AI tools commoditize image/video creation; enterprise renewals decline"}
+        {
+          "price": 230,
+          "pe_at_level": "8.7",
+          "scenario": "AI tools erode Creative Cloud subscriptions, revenue growth turns negative"
+        },
+        {
+          "price": 200,
+          "pe_at_level": "7.6",
+          "scenario": "Full creative AI disruption narrative — market prices in 20%+ revenue decline"
+        }
       ],
-      "ideal_entry": {"price": 244, "reasoning": "Buy near 52w low of $244.28. At that price, ADBE trades at ~9.3x forward with $8.8B FCF yielding 8.2% on the $107B market cap. The 89.3% gross margins and 37% FCF margin provide a hard floor even in a bear scenario."},
+      "ideal_entry": {
+        "price": 244,
+        "reasoning": "At 52w low of $244.28, would trade at 9.2x forward PE — exceptional for 89.3% gross margin software with $8.8B FCF"
+      },
       "comparables": [
-        {"ticker": "CRM", "forward_pe": "14.2x", "growth": "8.6%", "note": "Similar growth rate but 1.5x ADBE's multiple — CRM has higher revenue scale"},
-        {"ticker": "MSFT", "forward_pe": "20.6x", "growth": "16.7%", "note": "Higher growth justifies premium; ADBE is much cheaper per unit of margin"}
+        {
+          "ticker": "CRM",
+          "forward_pe": "14.2x",
+          "growth": "8.6%",
+          "note": "Similar growth rate but 47% more expensive on forward PE"
+        },
+        {
+          "ticker": "ADSK",
+          "forward_pe": "18.9x",
+          "growth": "18%",
+          "note": "Design software peer, 2x the PE but higher growth"
+        }
       ],
-      "analyst_take": "ADBE at 9.7x forward with 89.3% gross margins and $8.8B FCF is the deepest quality-software discount in the scan. The 43.4% drawdown and 3.48% decline in short interest suggest the worst of the selling may be done. With 20 buy/strong-buy vs 4 sells, analysts still lean bullish despite the AI disruption narrative. The options flow is bearish near-term (3-4x put/call on weeklies) but the monthly shows more balanced positioning. At these levels, even flat growth supports a 12-15x re-rating — 24-55% upside."
+      "analyst_take": "Adobe at 9.7x forward PE is pricing in permanent AI disruption that may be overstated. $8.8B annual FCF provides massive buyback and investment capacity. The 43.4% drawdown creates an 8.2% FCF yield — typically reserved for ex-growth companies, not one growing revenue 10.5% with 89.3% gross margins. AI is a real risk to creative tools, but Adobe has resources to integrate AI features. 20 of 39 analysts maintain buy ratings with median target 56% above current."
     },
     {
-      "ticker": "CRM",
-      "name": "Salesforce, Inc.",
-      "price": 186.73,
-      "opus_recommendation": "BUY",
+      "ticker": "IREN",
+      "name": "IREN LIMITED",
+      "price": 45.09,
+      "opus_recommendation": "WATCHLIST",
       "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "17.9% profit margins, 23.9% operating margins"},
-        "strong_fcf": {"verdict": "pass", "detail": "$14.5B FCF on $40.3B revenue — 36.0% FCF margin"},
-        "near_52w_lows": {"verdict": "pass", "detail": "40.5% below 52w high of $313.70, near 52w low of $174.57"},
-        "sector_panic": {"verdict": "pass", "detail": "Enterprise SaaS under broad multiple compression; AI disruption concerns weigh on the sector"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 14.2x forward is low for a company with 77.7% gross margins"},
-        "no_dilution": {"verdict": "pass", "detail": "Near-zero net debt ($11.6B debt vs $11.3B cash), 22% payout ratio, active buybacks"},
-        "score": 5
+        "profitable": {
+          "verdict": "borderline",
+          "detail": "51.5% profit margins but -45.8% operating margins (GAAP distortion from non-cash items), $194M EBITDA"
+        },
+        "strong_fcf": {
+          "verdict": "fail",
+          "detail": "-$1.25B FCF — heavy capital investment phase for data center buildout"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "41.3% below 52w high of $76.87, though up massively from 52w low of $5.13"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "Data center stocks sold off broadly, IREN down 24.8% in 20d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Negative forward PE (-222.7x) — not meaningful for valuation"
+        },
+        "no_dilution": {
+          "verdict": "fail",
+          "detail": "$3.8B debt vs $3.3B cash, D/E 153% — heavily leveraged for growth"
+        },
+        "score": 2
       },
       "growth_framework": {
-        "revenue_growth_30": {"verdict": "fail", "detail": "8.6% revenue growth — below 30% threshold"},
-        "gross_margins_60": {"verdict": "pass", "detail": "77.7% gross margins — strong for enterprise SaaS"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "NRR not in input data"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "fail", "detail": "8.6% growth + 23.9% operating margins = 32.5, fails Rule of 40"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "SBC as % of revenue not in input data"},
-        "score": 1
+        "revenue_growth_30": {
+          "verdict": "pass",
+          "detail": "59% revenue growth — rapidly scaling data center capacity"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "68.1% gross margins"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "insufficient_data",
+          "detail": "Operating margins deeply negative — metric not applicable during heavy capex phase"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
+        "score": 2
       },
-      "ai_exposure": {"verdict": "tailwind", "detail": "Company description references Agentforce (agentic AI layer) and Data Cloud as core platform components. Enterprise AI deployment requires CRM data orchestration. CRM is building the infrastructure layer for enterprise AI agents."},
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "Pure play AI infrastructure — company description states it 'operates in the vertically integrated data center business.' Direct beneficiary of AI compute demand scaling."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": "Feb 27: 110,280 call OI vs 118,937 put OI (slightly bearish). Mar 6: 24,666 call vs 18,393 put (bullish). Mar 13: 8,549 call vs 8,689 put (neutral). Heavy near-term put positioning but longer-dated calls gaining.",
+        "assessment": "Near-term options flow is slightly bearish with puts exceeding calls on the weekly. The 12.78% SI is high but declining (-18.13%), suggesting shorts are covering. The combination of declining SI and call buildup at further expirations could signal a sentiment shift."
+      },
       "financials": {
-        "current_price": 186.73,
-        "range_52w": "$174.57 - $313.70",
-        "forward_pe": "14.2x",
+        "current_price": 45.09,
+        "range_52w": "$5.13 - $76.87",
+        "forward_pe": "N/A (negative EPS)",
         "historical_pe_avg": "N/A"
       },
       "catalysts_verified": [],
-      "catalysts_general": ["Analyst median target $300 (64% upside)", "44 buy/strong-buy vs 1 strong sell out of 57 analysts", "38.6% earnings growth signals operating leverage kicking in", "$14.5B FCF yields 8.2% on $178B market cap"],
+      "catalysts_general": [
+        "11 buy/strong-buy out of 14 analysts (79%)",
+        "Analyst median target $80 — 77% upside",
+        "59% revenue growth with 68.1% gross margins",
+        "Short interest declining from 18.13% — shorts covering",
+        "Beta 4.28 — extremely high leverage to market sentiment"
+      ],
       "downside_scenarios": [
-        {"price": 160, "pe_at_level": 12, "scenario": "Enterprise spending pullback; Agentforce adoption slower than expected"},
-        {"price": 130, "pe_at_level": 10, "scenario": "Revenue growth decelerates below 5%, losing share to vertical SaaS specialists"},
-        {"price": 100, "pe_at_level": 8, "scenario": "AI-native CRM alternatives disintermediate Salesforce's platform"}
+        {
+          "price": 30,
+          "pe_at_level": "N/A",
+          "scenario": "AI compute demand slows, data center overcapacity drives margin compression"
+        },
+        {
+          "price": 15,
+          "pe_at_level": "N/A",
+          "scenario": "Debt refinancing risk if interest rates stay elevated on $3.8B debt load"
+        }
       ],
-      "ideal_entry": {"price": 175, "reasoning": "Buy near 52w low of $174.57 for ~13.3x forward. CRM at 14.2x with $14.5B FCF (36% margin) and 38.6% earnings growth is being valued like a no-growth legacy vendor. The 5.55% increase in short interest creates squeeze potential if Agentforce gains traction."},
+      "ideal_entry": {
+        "price": 35,
+        "reasoning": "SMA50 at $45.86 provides support; a pullback to $35-37 range (near analyst low target of $37) would improve risk/reward for this high-beta name"
+      },
       "comparables": [
-        {"ticker": "ADBE", "forward_pe": "9.7x", "growth": "10.5%", "note": "Similar growth, cheaper — but ADBE has higher margins (89% vs 78% gross)"},
-        {"ticker": "MSFT", "forward_pe": "20.6x", "growth": "16.7%", "note": "Higher growth and multiple; CRM is significantly cheaper on FCF yield"}
+        {
+          "ticker": "CRWV",
+          "forward_pe": "N/A",
+          "growth": "133.7%",
+          "note": "AI infrastructure peer, faster growth but larger losses and more debt"
+        }
       ],
-      "analyst_take": "CRM at 14.2x forward with $14.5B FCF is the largest absolute free cash flow generator among enterprise SaaS at one of the deepest discounts. The 40.5% drawdown reflects growth deceleration to 8.6%, but the 38.6% earnings growth shows margin expansion is real. With 44 buy/strong-buy ratings and only 1 strong sell, near-universal analyst consensus sees value here. The 1.94% SI with 5.55% increase shows modest but growing bearish conviction — a contrarian signal at these levels."
+      "analyst_take": "High-conviction AI infrastructure play with genuine 59% revenue growth and 68.1% gross margins. The bull case is straightforward: AI compute demand continues scaling and IREN's data centers fill up. The risk is the -$1.25B FCF and $3.8B debt — if demand slows, the capital structure becomes a problem. The 41% drawdown and declining short interest (-18.13%) suggest the worst fears are fading, but -45.8% operating margins mean profitability is still distant. 11 of 14 analysts rate buy, but this is a conviction bet on the AI infrastructure cycle, not a value play."
     },
     {
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "price": 387.65,
-      "opus_recommendation": "BUY",
+      "ticker": "PAYX",
+      "name": "Paychex, Inc.",
+      "price": 88.53,
+      "opus_recommendation": "WATCHLIST",
       "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "39.0% profit margins, 47.1% operating margins — among highest of any mega-cap"},
-        "strong_fcf": {"verdict": "fail", "detail": "$53.6B FCF, but on $305.5B revenue is 17.6% FCF margin — below 25% threshold"},
-        "near_52w_lows": {"verdict": "pass", "detail": "30.2% below 52w high of $555.45"},
-        "sector_panic": {"verdict": "borderline", "detail": "AI capex ROI concerns weigh on mega-cap tech broadly"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 20.6x forward is modest for a company with 47.1% operating margins"},
-        "no_dilution": {"verdict": "pass", "detail": "21.3% payout ratio, 0.95% dividend yield, conservative balance sheet"},
+        "profitable": {
+          "verdict": "pass",
+          "detail": "26.4% profit margins, 41.7% operating margins, $2.9B EBITDA"
+        },
+        "strong_fcf": {
+          "verdict": "pass",
+          "detail": "$2.1B FCF on $6.0B revenue — 34.1% FCF margin"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "45.1% below 52w high of $161.24, near 52w low of $86.89"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "HCM/payroll stocks under pressure, down 15.6% in 20d, 20.6% in 90d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 15.0x forward vs 20.0x trailing suggests compression"
+        },
+        "no_dilution": {
+          "verdict": "borderline",
+          "detail": "$5.0B debt vs $1.5B cash, payout ratio 95.5% — dividend barely covered"
+        },
         "score": 4
       },
       "growth_framework": {
-        "revenue_growth_30": {"verdict": "fail", "detail": "16.7% revenue growth — strong for a $2.9T company but below 30%"},
-        "gross_margins_60": {"verdict": "pass", "detail": "68.6% gross margins from cloud + software mix"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "NRR not in input data"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "pass", "detail": "16.7% growth + 47.1% operating margins = 63.8"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
+        "revenue_growth_30": {
+          "verdict": "fail",
+          "detail": "18.3% revenue growth — solid but below 30% threshold"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "73.4% gross margins"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "18.3% growth + 41.7% operating margin = 60"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
         "score": 2
       },
-      "ai_exposure": {"verdict": "tailwind", "detail": "Company description references Copilot across Office/GitHub/Security and Azure cloud infrastructure. MSFT is the primary enterprise AI deployment platform through Azure OpenAI integration."},
-      "deal_radar": {"capex_exposure": null, "options_signal": "Bullish call positioning across all 4 expiries: Feb 25 P/C 0.50, Feb 27 P/C 0.28, Mar 2 P/C 0.28, Mar 4 P/C 0.31. Feb 27 has largest OI: 151,672 call OI vs 68,181 put OI. Max call strikes at $385-400 near current price.", "assessment": "Options flow is consistently bullish with P/C ratios of 0.28-0.50 across all expiries. The Feb 27 2.2:1 call-to-put OI ratio suggests net bullish positioning. Max call strikes near current price ($385-400) indicate near-the-money accumulation."},
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "Payroll/HCM platform — AI could enhance HR analytics and automation but not a primary disruptor or beneficiary. Description references payroll, benefits, and HR services for SMBs."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": null,
+        "assessment": null
+      },
       "financials": {
-        "current_price": 387.65,
-        "range_52w": "$344.79 - $555.45",
-        "forward_pe": "20.6x",
+        "current_price": 88.53,
+        "range_52w": "$86.89 - $161.24",
+        "forward_pe": "15.0x",
         "historical_pe_avg": "N/A"
       },
       "catalysts_verified": [],
-      "catalysts_general": ["Analyst median target $600 (54% upside)", "54 buy/strong-buy vs 0 sell out of 57 analysts", "59.8% earnings growth signals accelerating profitability", "Options flow consistently bullish across all expiries"],
+      "catalysts_general": [
+        "4.94% dividend yield at current price",
+        "Rule of 40 at 60 (18.3% growth + 41.7% op margin)",
+        "73.4% gross margins with 34.1% FCF margin",
+        "Only 2 buy out of 18 analysts — consensus is cautious",
+        "Analyst mean target $119 — 34% upside"
+      ],
       "downside_scenarios": [
-        {"price": 345, "pe_at_level": 18, "scenario": "Azure growth decelerates as enterprise AI spending normalizes"},
-        {"price": 300, "pe_at_level": 16, "scenario": "AI capex overshoot — GPU investment doesn't convert to proportional revenue"},
-        {"price": 260, "pe_at_level": 14, "scenario": "Antitrust regulation fragments the Windows/Office/Azure bundle"}
+        {
+          "price": 78,
+          "pe_at_level": "13.2",
+          "scenario": "SMB employment weakens, payroll volume declines; 95.5% payout forces dividend cut"
+        },
+        {
+          "price": 65,
+          "pe_at_level": "11.0",
+          "scenario": "Recession scenario — SMB clients churn, float income drops as rates fall"
+        }
       ],
-      "ideal_entry": {"price": 370, "reasoning": "Buy below $370 for sub-20x forward. MSFT at 20.6x with 47.1% operating margins, $53.6B FCF, and 59.8% earnings growth offers quality at a historically rare discount. The 10.32% increase in short interest is contrarian — shorts building on quality names often marks a bottom."},
+      "ideal_entry": {
+        "price": 87,
+        "reasoning": "At/below 52w low of $86.89 — 14.7x forward PE with 4.94% dividend yield. But the 95.5% payout ratio is a red flag; any earnings miss could trigger a dividend cut"
+      },
       "comparables": [
-        {"ticker": "META", "forward_pe": "17.9x", "growth": "23.8%", "note": "Cheaper with faster growth, but more concentrated ad revenue risk"},
-        {"ticker": "ADBE", "forward_pe": "9.7x", "growth": "10.5%", "note": "Much cheaper but much slower growth; MSFT's operating leverage is superior"}
+        {
+          "ticker": "ACN",
+          "forward_pe": "13.4x",
+          "growth": "6%",
+          "note": "Lower growth but also cheaper PE and more conservative payout"
+        }
       ],
-      "analyst_take": "MSFT at 20.6x forward with $53.6B FCF, 47.1% operating margins, and 16.7% revenue growth is the quintessential quality compounder at a discount. The 30.2% drawdown is the market pricing in AI capex concerns, but MSFT is the company best positioned to monetize that capex. With 54 buy/strong-buy and 0 sells out of 57 analysts, this is near-universal conviction. Options flow is consistently bullish (P/C 0.28-0.50) across all expiries. The 10.32% SI increase is a contrarian buy signal."
+      "analyst_take": "Attractive 45% drawdown with 4.94% dividend yield and strong operating metrics — Rule of 40 at 60 is exceptional for a payroll company. However, the 95.5% payout ratio is a flashing warning sign: earnings growth of -3.5% means the dividend is barely covered and any further weakness would force a cut. Only 2 of 18 analysts rate buy, with 3 sells — the consensus sees the same risk. The value is real at 15x forward PE, but the dividend sustainability question keeps this at watchlist until earnings stabilize."
     },
     {
-      "ticker": "META",
-      "name": "Meta Platforms, Inc.",
-      "price": 640.63,
+      "ticker": "TTD",
+      "name": "The Trade Desk, Inc.",
+      "price": 24.92,
       "opus_recommendation": "BUY",
       "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "30.1% profit margins, 41.3% operating margins"},
-        "strong_fcf": {"verdict": "fail", "detail": "$23.4B FCF on $201.0B revenue — 11.7% FCF margin, below 25% due to massive capex"},
-        "near_52w_lows": {"verdict": "fail", "detail": "Only 19.5% below 52w high of $796.25 — not near lows"},
-        "sector_panic": {"verdict": "borderline", "detail": "Internet ad stocks face macro pressure, but META is less affected than peers"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 17.9x forward is modest for 23.8% growth"},
-        "no_dilution": {"verdict": "pass", "detail": "Near-zero net debt ($85.1B debt vs $81.6B cash), 8.9% payout ratio, minimal dilution"},
-        "score": 3
-      },
-      "growth_framework": {
-        "revenue_growth_30": {"verdict": "fail", "detail": "23.8% revenue growth — strong but below 30% threshold"},
-        "gross_margins_60": {"verdict": "pass", "detail": "82.0% gross margins — exceptional for an internet platform"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "Ad-based model, not subscription NRR"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "pass", "detail": "23.8% growth + 41.3% operating margins = 65.1"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "score": 2
-      },
-      "ai_exposure": {"verdict": "tailwind", "detail": "Company description references AI glasses, VR headsets, and AI-powered products. META is both a consumer of AI (recommendations, content ranking) and a producer (Llama models). AI improves ad targeting and engagement."},
-      "financials": {
-        "current_price": 640.63,
-        "range_52w": "$479.80 - $796.25",
-        "forward_pe": "17.9x",
-        "historical_pe_avg": "N/A"
-      },
-      "catalysts_verified": ["Communications sector valuations narrowing — META surged as sector discount narrowed from 9% to 4% in February 2026"],
-      "catalysts_general": ["Analyst median target $855 (33% upside)", "62 buy/strong-buy vs 0 sell out of 67 analysts", "1.96% decline in short interest — bears covering"],
-      "downside_scenarios": [
-        {"price": 550, "pe_at_level": 15, "scenario": "Ad revenue growth slows as macro pressure hits digital advertising budgets"},
-        {"price": 450, "pe_at_level": 13, "scenario": "Reality Labs losses widen; investors lose patience with VR/metaverse spending"},
-        {"price": 350, "pe_at_level": 10, "scenario": "Regulatory action restricts data usage for ad targeting; revenue model impaired"}
-      ],
-      "ideal_entry": {"price": 580, "reasoning": "Buy below $580 for ~16x forward. META at 17.9x with 82% gross margins, 41.3% operating margins, and 23.8% revenue growth is cheap for a Rule of 65 company. The sector rotation catalyst (narrowing discount) provides near-term momentum."},
-      "comparables": [
-        {"ticker": "MSFT", "forward_pe": "20.6x", "growth": "16.7%", "note": "Higher multiple, lower growth — META is cheaper per unit of growth"},
-        {"ticker": "CRM", "forward_pe": "14.2x", "growth": "8.6%", "note": "Cheaper but much slower growth; META has 4x CRM's growth rate"}
-      ],
-      "analyst_take": "META at 17.9x forward with 82% gross margins and 23.8% growth is the best PEG ratio among mega-caps. With 62 buy/strong-buy and 0 sells out of 67 analysts, this is consensus favorite territory. The 1.96% decline in short interest confirms bears are covering. The sector rotation catalyst from February validates the recovery thesis. The main risk is the $85B debt load from Reality Labs capex, but the 2.6x current ratio and massive cash generation provide safety."
-    },
-    {
-      "ticker": "APP",
-      "name": "Applovin Corporation",
-      "price": 396.18,
-      "opus_recommendation": "BUY",
-      "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "60.8% profit margins, 76.9% operating margins — extraordinary profitability"},
-        "strong_fcf": {"verdict": "pass", "detail": "$2.7B FCF on $5.5B revenue — 49.2% FCF margin"},
-        "near_52w_lows": {"verdict": "pass", "detail": "46.9% below 52w high of $745.61"},
-        "sector_panic": {"verdict": "pass", "detail": "Ad-tech and high-multiple growth stocks under heavy selling pressure"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 26.8x forward relative to 65.9% growth implies a PEG of 0.41"},
-        "no_dilution": {"verdict": "borderline", "detail": "High debt-to-equity (171.8) but $2.5B cash vs $3.7B debt, 3.3x current ratio"},
+        "profitable": {
+          "verdict": "pass",
+          "detail": "15.7% profit margins, 21.8% operating margins, $620M EBITDA on $2.8B revenue"
+        },
+        "strong_fcf": {
+          "verdict": "pass",
+          "detail": "$544M FCF on $2.8B revenue — 19.5% FCF margin, 4.5% FCF yield on $12.2B market cap"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "72.8% below 52w high of $91.45, near 52w low of $23.78 — extreme drawdown"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "Ad tech under heavy selling — down 22.6% in 20d and 37.2% in 90d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; current 12.1x forward vs 28.3x trailing shows severe compression"
+        },
+        "no_dilution": {
+          "verdict": "pass",
+          "detail": "Net cash positive ($1.4B cash vs $376M debt, D/E 14.5%), no dividend"
+        },
         "score": 5
       },
       "growth_framework": {
-        "revenue_growth_30": {"verdict": "pass", "detail": "65.9% revenue growth — well above 30% threshold"},
-        "gross_margins_60": {"verdict": "pass", "detail": "87.9% gross margins — exceptional for any company"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "Ad-tech model, not subscription NRR"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "pass", "detail": "65.9% growth + 76.9% operating margins = 142.8 — off the charts"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "score": 3
-      },
-      "ai_exposure": {"verdict": "tailwind", "detail": "Company description explicitly states AppLovin provides 'end-to-end artificial intelligence-powered advertising solutions.' Axon AI engine is the core product. AI IS the business, not an add-on."},
-      "financials": {
-        "current_price": 396.18,
-        "range_52w": "$200.50 - $745.61",
-        "forward_pe": "26.8x",
-        "historical_pe_avg": "N/A"
-      },
-      "catalysts_verified": [],
-      "catalysts_general": ["Analyst median target $700 (77% upside)", "25 buy/strong-buy vs 1 sell out of 28 analysts", "84.7% earnings growth on top of 65.9% revenue growth", "16.8% decline in short interest — bears covering rapidly"],
-      "downside_scenarios": [
-        {"price": 300, "pe_at_level": 20, "scenario": "Mobile gaming ad market saturates; growth decelerates to 30%"},
-        {"price": 200, "pe_at_level": 14, "scenario": "Apple/Google privacy changes reduce ad targeting effectiveness"},
-        {"price": 150, "pe_at_level": 10, "scenario": "Competition from Google/Meta's in-house ad-tech erodes APP's market position"}
-      ],
-      "ideal_entry": {"price": 380, "reasoning": "Buy below $380 for ~25.7x forward on a Rule of 143 company. The 46.9% drawdown from highs, 16.8% decline in short interest, and 77% upside to analyst median target create asymmetric risk/reward. The 49.2% FCF margin is best-in-class."},
-      "comparables": [
-        {"ticker": "META", "forward_pe": "17.9x", "growth": "23.8%", "note": "Cheaper but much slower growth; APP has 2.8x META's growth rate"},
-        {"ticker": "PLTR", "forward_pe": "70.9x", "growth": "70.0%", "note": "Similar growth, 2.6x APP's multiple — APP is dramatically cheaper per unit of growth"}
-      ],
-      "analyst_take": "APP is the most extreme growth-at-a-discount setup in the scan. A Rule of 143 company (65.9% growth + 76.9% operating margins) at 26.8x forward with 49.2% FCF margins is deeply mispriced after the 46.9% drawdown. The 87.9% gross margins and AI-native business model provide structural advantages. Bears are covering (SI down 16.8%), and 25 out of 28 analysts rate it buy/strong-buy. The 84.7% earnings growth means the PE is compressing rapidly. This is the highest-conviction BUY in the scan."
-    },
-    {
-      "ticker": "KKR",
-      "name": "KKR & Co. Inc.",
-      "price": 96.76,
-      "opus_recommendation": "BUY",
-      "value_framework": {
-        "profitable": {"verdict": "borderline", "detail": "9.2% profit margins — asset manager margins are lumpy due to performance fees and carry"},
-        "strong_fcf": {"verdict": "insufficient_data", "detail": "Free cash flow not reported in input; asset manager FCF is complex to calculate"},
-        "near_52w_lows": {"verdict": "pass", "detail": "37.1% below 52w high of $153.87"},
-        "sector_panic": {"verdict": "pass", "detail": "Alternative asset managers sold off broadly on rate sensitivity and growth concerns"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 12.2x forward is low for a premier alt manager"},
-        "no_dilution": {"verdict": "pass", "detail": "31.2% payout ratio, 0.8% dividend yield, GP economics"},
-        "score": 3
-      },
-      "growth_framework": {
-        "revenue_growth_30": {"verdict": "pass", "detail": "77.5% revenue growth — driven by realization events, lumpy but massive"},
-        "gross_margins_60": {"verdict": "borderline", "detail": "57.2% gross margins — decent for asset management"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "LP capital is committed for fund life; not comparable to SaaS NRR"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "pass", "detail": "77.5% growth + 32.8% operating margins = 110.3"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "score": 3
-      },
-      "ai_exposure": {"verdict": "neutral", "detail": "AI has limited direct impact on KKR's core PE/credit/infrastructure investing. Could enhance deal sourcing and portfolio operations but not a meaningful revenue driver."},
-      "deal_radar": {"capex_exposure": null, "options_signal": "Mixed positioning: Feb 27 P/C 2.04 (bearish), Mar 6 P/C 1.05, Mar 13 P/C 0.56 (bullish), Mar 20 P/C 1.85 (bearish). Mar 20 monthly shows 21,491 call OI vs 25,524 put OI. Max call strike at $115 for March (19% above current).", "assessment": "Near-term hedging with some longer-dated bullish bets. The $115 March max call strike suggests positioning for a snapback. The divergence between near-term puts and longer-dated calls could indicate institutional accumulation with near-term protection."},
-      "financials": {
-        "current_price": 96.76,
-        "range_52w": "$86.15 - $153.87",
-        "forward_pe": "12.2x",
-        "historical_pe_avg": "N/A"
-      },
-      "catalysts_verified": [],
-      "catalysts_general": ["Analyst median target $136 (41% upside)", "19 buy/strong-buy vs 0 sell out of 21 analysts", "77.5% revenue growth driven by realization events"],
-      "downside_scenarios": [
-        {"price": 80, "pe_at_level": 10, "scenario": "PE exit market freezes; performance fees dry up for 2-3 quarters"},
-        {"price": 65, "pe_at_level": 8, "scenario": "LP commitments slow; fundraising for new vintages disappoints"},
-        {"price": 50, "pe_at_level": 6, "scenario": "Rate spike hits portfolio company valuations; write-downs across vintage years"}
-      ],
-      "ideal_entry": {"price": 88, "reasoning": "Buy near 52w low of $86.15 for sub-11x forward. At 12.2x forward, KKR is priced for no-growth — incorrect for a company with 77.5% revenue growth and 32.8% operating margins. The $115 March max call strike suggests some institutional buyers see a snapback coming."},
-      "comparables": [
-        {"ticker": "BX", "forward_pe": "14.7x", "growth": "50.6%", "note": "Higher multiple for lower growth — KKR is relatively cheaper"},
-        {"ticker": "MSFT", "forward_pe": "20.6x", "growth": "16.7%", "note": "Cross-sector comp: MSFT trades at nearly 2x KKR's multiple for 4.6x less growth"}
-      ],
-      "analyst_take": "KKR at 12.2x forward with 77.5% revenue growth and 19 buy/0 sell analyst ratings is absurdly cheap for one of the world's premier alternative asset managers. The 37.1% drawdown reflects rate sensitivity fears, but the -1.8% earnings growth masks the lumpy nature of realized carry. Options show mixed positioning with near-term hedging but longer-dated bullish bets at $115 strikes. At 12.2x, the market is pricing no growth — any realization event triggers re-rating."
-    },
-    {
-      "ticker": "GDDY",
-      "name": "GoDaddy Inc.",
-      "price": 92.01,
-      "opus_recommendation": "BUY",
-      "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "17.0% profit margins, 23.9% operating margins"},
-        "strong_fcf": {"verdict": "pass", "detail": "$1.2B FCF on $4.9B revenue — 25.0% FCF margin"},
-        "near_52w_lows": {"verdict": "pass", "detail": "52.5% below 52w high of $193.55, near 52w low of $86.78"},
-        "sector_panic": {"verdict": "pass", "detail": "SMB internet services under AI disruption pressure; broad software de-rating"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 8.6x forward is extremely low for a company with 63.6% gross margins"},
-        "no_dilution": {"verdict": "borderline", "detail": "Heavy debt ($3.9B) vs minimal cash ($983M), but FCF covers debt service"},
-        "score": 5
-      },
-      "growth_framework": {
-        "revenue_growth_30": {"verdict": "fail", "detail": "10.3% revenue growth — steady but below 30%"},
-        "gross_margins_60": {"verdict": "pass", "detail": "63.6% gross margins — solid for internet/hosting platform"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "fail", "detail": "10.3% growth + 23.9% operating margins = 34.2, misses Rule of 40"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
+        "revenue_growth_30": {
+          "verdict": "fail",
+          "detail": "17.7% revenue growth — below 30% threshold"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "78.8% gross margins"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "borderline",
+          "detail": "17.7% growth + 21.8% operating margin = 39.5 — just below 40"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
         "score": 1
       },
-      "ai_exposure": {"verdict": "tailwind", "detail": "Company description references AI-powered website building, marketing, and online store creation tools for SMBs. AI enhances GDDY's value proposition by reducing the complexity of building an online presence."},
-      "deal_radar": {"capex_exposure": null, "options_signal": "Mixed: Feb 27 P/C 3.39 (very bearish), Mar 6 P/C 0.27 (bullish), Mar 13 P/C 4.14 (bearish), Mar 20 P/C 0.65 (mildly bullish). Low OI overall — thin options market. Mar 20 max call strike at $160.", "assessment": "Options flow is erratic with low volume, making directional reads unreliable. The $160 March max call strike (74% above current) is speculative. Near-term put skew may reflect earnings hedging rather than directional bets."},
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "Programmatic advertising platform benefits from AI-powered ad targeting and optimization. Company description references self-service cloud-based ad-buying with data-driven optimization."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": null,
+        "assessment": null
+      },
       "financials": {
-        "current_price": 92.01,
-        "range_52w": "$86.78 - $193.55",
-        "forward_pe": "8.6x",
+        "current_price": 24.92,
+        "range_52w": "$23.78 - $91.45",
+        "forward_pe": "12.1x",
         "historical_pe_avg": "N/A"
       },
       "catalysts_verified": [],
-      "catalysts_general": ["Analyst target mean $170 (85% upside)", "9 buy/strong-buy vs 0 sell out of 16 analysts", "$1.2B FCF yields 9.6% on $12.7B market cap — deep value territory"],
+      "catalysts_general": [
+        "20 buy/strong-buy vs 3 sell out of 38 analysts",
+        "Analyst median target $50 — 101% upside from current price",
+        "Net cash position ($1.4B cash vs $376M debt)",
+        "78.8% gross margins with 21.1% earnings growth",
+        "10.08% short interest — potential squeeze catalyst if sentiment shifts"
+      ],
       "downside_scenarios": [
-        {"price": 75, "pe_at_level": 7, "scenario": "SMB spending cuts in recession; domain renewal rates decline"},
-        {"price": 60, "pe_at_level": 6, "scenario": "AI website builders commoditize GDDY's offering; revenue growth goes flat"},
-        {"price": 45, "pe_at_level": 4, "scenario": "Debt refinancing at higher rates compresses margins; growth goes negative"}
+        {
+          "price": 20,
+          "pe_at_level": "9.7",
+          "scenario": "Ad spending recession, CTV growth decelerates below expectations"
+        },
+        {
+          "price": 15,
+          "pe_at_level": "7.3",
+          "scenario": "Structural shift to walled gardens (Google, Meta) reduces demand for independent DSPs"
+        }
       ],
-      "ideal_entry": {"price": 87, "reasoning": "Buy near 52w low of $86.78. GDDY at 8.6x forward with 25% FCF margins and a 9.6% FCF yield is extreme value for an internet platform. The 85% upside to analyst mean target ($170) is the largest gap in the mid-cap universe. The 9.74% increase in shorts creates squeeze potential."},
+      "ideal_entry": {
+        "price": 24,
+        "reasoning": "Near 52w low of $23.78 — at that level, 11.7x forward PE for a net-cash company with 78.8% gross margins and 17.7% growth is a generational entry"
+      },
       "comparables": [
-        {"ticker": "GEN", "forward_pe": "7.7x", "growth": "25.8%", "note": "Similar deep-value setup, higher growth rate"},
-        {"ticker": "ADBE", "forward_pe": "9.7x", "growth": "10.5%", "note": "Similar growth, slightly higher multiple; ADBE has higher margins but also higher expectations"}
+        {
+          "ticker": "ADBE",
+          "forward_pe": "9.7x",
+          "growth": "10.5%",
+          "note": "Even cheaper PE but lower growth and different risk profile"
+        },
+        {
+          "ticker": "CRM",
+          "forward_pe": "14.2x",
+          "growth": "8.6%",
+          "note": "Enterprise software, higher PE with lower growth"
+        }
       ],
-      "analyst_take": "GDDY at 8.6x forward with a 9.6% FCF yield is being valued like a dying business — but 10.3% growth, 63.6% gross margins, and 25% FCF margins say otherwise. The 52.5% drawdown has been extreme for a company with stable domain renewal revenue. With 9 buy/0 sell and 85% upside to analyst target, the consensus strongly disagrees with the current price. The 6% short interest with 9.74% recent increase creates squeeze asymmetry. Debt load ($3.9B) is the main risk."
+      "analyst_take": "A 72.8% drawdown for a profitable, net-cash programmatic advertising platform with 78.8% gross margins is extreme punishment. The market is pricing TTD at 12.1x forward PE — a level typically reserved for legacy businesses, not a company growing revenue 17.7% with 21.1% earnings growth. 20 of 38 analysts rate buy with a median target suggesting 101% upside. The 10% short interest could fuel a squeeze if any positive catalyst emerges. The primary risk is that connected TV ad spending decelerates, but at this valuation the bar for positive surprise is very low."
     },
     {
       "ticker": "GEN",
       "name": "Gen Digital Inc.",
       "price": 21.97,
-      "opus_recommendation": "BUY",
+      "opus_recommendation": "WATCHLIST",
       "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "12.8% profit margins, 35.8% operating margins"},
-        "strong_fcf": {"verdict": "pass", "detail": "$1.3B FCF on $4.7B revenue — 27.8% FCF margin"},
-        "near_52w_lows": {"verdict": "pass", "detail": "31.8% below 52w high of $32.22, near 52w low of $21.33"},
-        "sector_panic": {"verdict": "pass", "detail": "Consumer security software under pressure from free alternatives and bundled OS security"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 7.7x forward is extremely low for 78.8% gross margins"},
-        "no_dilution": {"verdict": "borderline", "detail": "Heavy debt ($8.5B vs $616M cash, D/E 363.4), but 51.6% payout ratio and 2.31% dividend yield"},
-        "score": 5
+        "profitable": {
+          "verdict": "pass",
+          "detail": "12.8% profit margins, 35.8% operating margins"
+        },
+        "strong_fcf": {
+          "verdict": "pass",
+          "detail": "$1.3B FCF on $4.7B revenue — 27.8% FCF margin"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "31.8% below 52w high of $32.22, near 52w low of $21.33"
+        },
+        "sector_panic": {
+          "verdict": "borderline",
+          "detail": "Cybersecurity mixed — GEN down 12.9% in 20d but not sector-wide panic"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 7.7x forward vs 22.6x trailing shows heavy compression"
+        },
+        "no_dilution": {
+          "verdict": "fail",
+          "detail": "Massive debt: $8.5B debt vs $616M cash, D/E 363%, current ratio 0.47"
+        },
+        "score": 4
       },
       "growth_framework": {
-        "revenue_growth_30": {"verdict": "fail", "detail": "25.8% revenue growth — strong but below 30% threshold"},
-        "gross_margins_60": {"verdict": "pass", "detail": "78.8% gross margins — excellent for consumer software"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "pass", "detail": "25.8% growth + 35.8% operating margins = 61.6"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
+        "revenue_growth_30": {
+          "verdict": "fail",
+          "detail": "25.8% revenue growth — close to but below 30% threshold"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "78.8% gross margins"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "25.8% growth + 35.8% operating margin = 61.6"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
         "score": 2
       },
-      "ai_exposure": {"verdict": "tailwind", "detail": "Company description references Norton, LifeLock, and Avast cybersecurity brands. AI-driven threats increase demand for consumer security solutions. AI also enhances threat detection capabilities."},
-      "deal_radar": {"capex_exposure": null, "options_signal": "Mar 20 P/C 0.71, Apr 17 P/C 0.40 (bullish). Very low volume — thin options market. Max call strike at $32 for April matches analyst median target.", "assessment": "Modest options activity but leaning bullish on the April expiry. The $32 max call strike aligns with the analyst median target, suggesting some are positioning for a return to consensus fair value."},
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "Consumer cybersecurity (Norton, Avast per description) — AI not a primary disruptor or enabler. AI could enhance threat detection but also lower barriers for competitors."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": "Mar 20: 1,081 call OI vs 4,161 put OI (bearish). Apr 17: 4,544 call OI vs 1,493 put OI (bullish). Jul 17: 605 call vs 873 put (neutral). Near-term bears vs medium-term bulls.",
+        "assessment": "Options flow shows a time-based divergence: heavy put positioning on Mar 20 (3.85:1 put/call) suggests near-term concern, but Apr 17 shows strong call positioning (3.04:1 call/put). Smart money may be betting on a near-term dip followed by recovery. The 4.16% SI is modest."
+      },
       "financials": {
         "current_price": 21.97,
         "range_52w": "$21.33 - $32.22",
@@ -345,150 +634,476 @@
         "historical_pe_avg": "N/A"
       },
       "catalysts_verified": [],
-      "catalysts_general": ["Analyst median target $32 (46% upside)", "5 buy vs 0 sell out of 11 analysts", "2.31% dividend yield at 51.6% payout provides income floor", "$1.3B FCF yields 9.7% on $13.5B market cap"],
+      "catalysts_general": [
+        "7.7x forward PE with 25.8% revenue growth — cheapest in security software",
+        "Rule of 40 at 61.6 (25.8% growth + 35.8% op margin)",
+        "2.31% dividend yield",
+        "5 buy out of 11 analysts, median target $32 — 46% upside",
+        "20.1% earnings growth"
+      ],
       "downside_scenarios": [
-        {"price": 18, "pe_at_level": 6, "scenario": "Consumer security spending declines as OS-bundled security improves"},
-        {"price": 14, "pe_at_level": 5, "scenario": "Debt refinancing at higher rates compresses margins; dividend cut"},
-        {"price": 10, "pe_at_level": 3, "scenario": "AI-powered free security tools erode subscription base"}
+        {
+          "price": 18,
+          "pe_at_level": "6.3",
+          "scenario": "Consumer security pricing pressure, churn increases from free alternatives"
+        },
+        {
+          "price": 14,
+          "pe_at_level": "4.9",
+          "scenario": "Debt servicing strain — refinancing $8.5B at higher rates compresses earnings"
+        }
       ],
-      "ideal_entry": {"price": 21.33, "reasoning": "Buy at 52w low of $21.33 for ~7.4x forward. GEN at 7.7x with a 9.7% FCF yield and 2.31% dividend is a classic deep-value setup. The Rule of 62 (25.8% growth + 35.8% operating margins) is exceptional for the valuation. Heavy debt ($8.5B) is the key risk."},
+      "ideal_entry": {
+        "price": 21,
+        "reasoning": "Below 52w low of $21.33 — 7.3x forward PE with 27.8% FCF margin. But the $8.5B debt overhang is the key risk; any entry requires conviction that cash flows can service the load"
+      },
       "comparables": [
-        {"ticker": "GDDY", "forward_pe": "8.6x", "growth": "10.3%", "note": "Similar deep-value internet, slower growth — GEN is cheaper with faster growth"},
-        {"ticker": "PYPL", "forward_pe": "7.6x", "growth": "3.7%", "note": "Similar valuation but GEN has 7x faster growth rate"}
+        {
+          "ticker": "PYPL",
+          "forward_pe": "7.6x",
+          "growth": "3.7%",
+          "note": "Similar PE but much lower growth — GEN is cheaper on growth-adjusted basis"
+        }
       ],
-      "analyst_take": "GEN at 7.7x forward is the cheapest Rule of 60+ company in the scan. The 25.8% revenue growth + 35.8% operating margins + 78.8% gross margins at under 8x forward is a mispricing that only the heavy debt load ($8.5B) can explain. The 2.31% dividend provides a floor, and the 9.7% FCF yield means the stock pays for itself in ~10 years of cash generation. With 5 buy and 0 sell ratings, analysts see 46% upside. The 1.99% decline in SI suggests bears are covering."
+      "analyst_take": "GEN offers compelling value metrics: 7.7x forward PE, 25.8% revenue growth, 78.8% gross margins, and Rule of 40 at 62. The problem is the balance sheet — $8.5B of debt against only $616M cash with a current ratio of 0.47 means the company lives or dies by cash flow consistency. At 27.8% FCF margin the debt is serviceable, but there's no margin for error. The options market's time divergence (Mar bearish, Apr bullish) suggests a possible near-term catalyst event. At this price the value is undeniable, but the leverage risk keeps it at watchlist."
     },
     {
-      "ticker": "LLY",
-      "name": "Eli Lilly and Company",
-      "price": 1045.01,
-      "opus_recommendation": "WATCHLIST",
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "price": 186.73,
+      "opus_recommendation": "BUY",
       "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "31.7% profit margins, 44.9% operating margins — best-in-class pharma"},
-        "strong_fcf": {"verdict": "fail", "detail": "$1.95B FCF on $65.2B revenue — 3.0% FCF margin, low due to heavy capex"},
-        "near_52w_lows": {"verdict": "fail", "detail": "Only 7.8% below 52w high of $1,133.95 — not near lows"},
-        "sector_panic": {"verdict": "fail", "detail": "GLP-1 franchise is a market darling, not in panic"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 25.0x forward is not especially cheap for pharma"},
-        "no_dilution": {"verdict": "borderline", "detail": "High debt ($43.9B vs $7.3B cash, D/E 165.3), 26.1% payout ratio, 0.59% dividend yield"},
-        "score": 2
+        "profitable": {
+          "verdict": "pass",
+          "detail": "17.9% profit margins, 23.9% operating margins, $11.8B EBITDA on $40.3B revenue"
+        },
+        "strong_fcf": {
+          "verdict": "pass",
+          "detail": "$14.5B FCF on $40.3B revenue — 36.0% FCF margin, 8.2% FCF yield on $178B market cap"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "40.5% below 52w high of $313.70, near 52w low of $174.57"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "Enterprise software under broad selling — down 18.3% in 20d, 28.8% in 50d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 14.2x forward vs 25.0x trailing shows major compression"
+        },
+        "no_dilution": {
+          "verdict": "pass",
+          "detail": "Near-zero net debt ($11.6B debt vs $11.3B cash), modest 22% payout ratio"
+        },
+        "score": 5
       },
       "growth_framework": {
-        "revenue_growth_30": {"verdict": "pass", "detail": "42.6% revenue growth — exceptional, driven by GLP-1 franchise"},
-        "gross_margins_60": {"verdict": "pass", "detail": "83.0% gross margins — elite pharma margins"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "Pharma is prescription-based, not subscription"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "pass", "detail": "42.6% growth + 44.9% operating margins = 87.5"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "score": 3
+        "revenue_growth_30": {
+          "verdict": "fail",
+          "detail": "8.6% revenue growth — large-cap maturation"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "77.7% gross margins"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "fail",
+          "detail": "8.6% growth + 23.9% operating margin = 32.5"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
+        "score": 1
       },
-      "ai_exposure": {"verdict": "neutral", "detail": "AI has minimal direct impact on GLP-1 drug sales. Could accelerate pipeline drug discovery, a mild tailwind for future products but no near-term revenue impact."},
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "Company description references Agentforce platform — AI-native CRM positioning. Enterprise AI agent adoption directly drives Salesforce platform demand and potential pricing power."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": null,
+        "assessment": null
+      },
       "financials": {
-        "current_price": 1045.01,
-        "range_52w": "$623.78 - $1,133.95",
-        "forward_pe": "25.0x",
+        "current_price": 186.73,
+        "range_52w": "$174.57 - $313.70",
+        "forward_pe": "14.2x",
         "historical_pe_avg": "N/A"
       },
-      "catalysts_verified": ["Orforglipron (first-time approval for obesity/weight management) FDA decision due March 25, 2026"],
-      "catalysts_general": ["Analyst median target $1,255 (20% upside)", "23 buy/strong-buy vs 1 strong sell out of 30 analysts", "42.6% revenue growth + 51.4% earnings growth from GLP-1 franchise"],
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "Earnings in ~3 days — near-term catalyst",
+        "44 buy/strong-buy vs 1 sell out of 57 analysts (77%)",
+        "Analyst median target $300 — 61% upside",
+        "8.2% FCF yield ($14.5B on $178B market cap)",
+        "38.6% earnings growth despite slowing revenue"
+      ],
       "downside_scenarios": [
-        {"price": 900, "pe_at_level": 22, "scenario": "Orforglipron PDUFA delayed or receives complete response letter"},
-        {"price": 750, "pe_at_level": 18, "scenario": "GLP-1 competition from NVO and Amgen intensifies; pricing pressure"},
-        {"price": 600, "pe_at_level": 14, "scenario": "Oral GLP-1 competitors reach market faster; LLY's manufacturing capacity bottleneck persists"}
+        {
+          "price": 160,
+          "pe_at_level": "12.2",
+          "scenario": "Earnings miss triggers another leg down; AI cannibalizes traditional CRM workflows"
+        },
+        {
+          "price": 140,
+          "pe_at_level": "10.7",
+          "scenario": "Enterprise spending contraction, Agentforce monetization disappoints"
+        }
       ],
-      "ideal_entry": {"price": 950, "reasoning": "WATCHLIST — wait for a pullback to ~$950 (23x forward) or until orforglipron PDUFA resolution on March 25. At current price, LLY is only 7.8% off its high and 25x forward is not cheap for pharma. The orforglipron decision is a true binary catalyst that could move the stock 10-15% in either direction."},
+      "ideal_entry": {
+        "price": 175,
+        "reasoning": "Near 52w low of $174.57 — 13.3x forward PE for the dominant CRM platform with $14.5B FCF. Post-earnings clarity could provide that level if guidance disappoints"
+      },
       "comparables": [
-        {"ticker": "NVO", "forward_pe": "11.2x", "growth": "-7.6%", "note": "Direct GLP-1 competitor at half the multiple — reflects NVO's competitive erosion concerns"},
-        {"ticker": "ADBE", "forward_pe": "9.7x", "growth": "10.5%", "note": "Cross-sector: ADBE is much cheaper with similar earnings growth trajectory"}
+        {
+          "ticker": "ADBE",
+          "forward_pe": "9.7x",
+          "growth": "10.5%",
+          "note": "Cheaper PE, similar growth, different AI exposure (threat vs tailwind)"
+        },
+        {
+          "ticker": "ADSK",
+          "forward_pe": "18.9x",
+          "growth": "18%",
+          "note": "Higher PE but faster growth with 92.1% gross margins"
+        }
       ],
-      "analyst_take": "LLY at 25x forward near its 52w high is not a value play — it's a binary catalyst play. The orforglipron PDUFA decision on March 25 is the defining event. If approved, the first oral GLP-1 for obesity expands LLY's addressable market dramatically. If delayed, the stock pulls back to a more attractive entry. At $1,045, the risk/reward is balanced rather than asymmetric. WATCHLIST until either the PDUFA resolves or the stock pulls back to $950."
+      "analyst_take": "The dominant CRM platform at 14.2x forward PE with $14.5B annual FCF — Salesforce has never been this cheap relative to its cash generation. The 40.5% drawdown prices in a permanent deceleration, but 38.6% earnings growth suggests operating leverage is kicking in. With earnings in 3 days, this is a time-sensitive opportunity: a beat could catalyze rapid re-rating given the 77% analyst buy rate and $300 median target. The Agentforce AI platform, referenced in the company description, provides a credible growth narrative. 8.2% FCF yield is a margin of safety rarely seen in large-cap software."
     },
     {
-      "ticker": "ORCL",
-      "name": "Oracle Corporation",
-      "price": 146.25,
-      "opus_recommendation": "WATCHLIST",
+      "ticker": "EXPE",
+      "name": "Expedia Group, Inc.",
+      "price": 198.04,
+      "opus_recommendation": "BUY",
       "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "25.3% profit margins, 32.0% operating margins"},
-        "strong_fcf": {"verdict": "fail", "detail": "FCF is NEGATIVE at -$10.2B — massive capex investment cycle"},
-        "near_52w_lows": {"verdict": "pass", "detail": "57.7% below 52w high of $345.72"},
-        "sector_panic": {"verdict": "pass", "detail": "Cloud infrastructure under broad de-rating from AI capex ROI concerns"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 18.5x forward is modest for cloud infrastructure"},
-        "no_dilution": {"verdict": "fail", "detail": "Massive debt ($131.7B vs $19.8B cash, D/E 432.5), current ratio 0.91"},
-        "score": 3
-      },
-      "growth_framework": {
-        "revenue_growth_30": {"verdict": "fail", "detail": "14.2% revenue growth — below 30% threshold"},
-        "gross_margins_60": {"verdict": "pass", "detail": "68.5% gross margins"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "pass", "detail": "14.2% growth + 32.0% operating margins = 46.2"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "score": 2
-      },
-      "ai_exposure": {"verdict": "tailwind", "detail": "Company description references cloud ERP, HCM, database, and AI infrastructure. Oracle Cloud Infrastructure (OCI) is gaining AI workload share. The 90.9% earnings growth suggests operating leverage from cloud transition."},
-      "financials": {
-        "current_price": 146.25,
-        "range_52w": "$118.86 - $345.72",
-        "forward_pe": "18.5x",
-        "historical_pe_avg": "N/A"
-      },
-      "catalysts_verified": ["Q3 FY2026 earnings release scheduled for early March with analyst forecasts for ~20% revenue growth and potential guidance on backlog"],
-      "catalysts_general": ["Analyst median target $275 (88% upside)", "31 buy/strong-buy vs 2 sell out of 43 analysts", "90.9% earnings growth signals massive operating leverage"],
-      "downside_scenarios": [
-        {"price": 120, "pe_at_level": 15, "scenario": "Q3 earnings disappoint; backlog growth slows as AI demand normalizes"},
-        {"price": 100, "pe_at_level": 13, "scenario": "Debt refinancing pressure; $131.7B debt at higher rates compresses margins"},
-        {"price": 80, "pe_at_level": 10, "scenario": "Cloud transition stalls; OCI loses share to AWS/Azure/GCP"}
-      ],
-      "ideal_entry": {"price": 130, "reasoning": "WATCHLIST — wait for $130 (sub-16.5x forward) or Q3 earnings resolution in early March. The negative FCF (-$10.2B) and massive debt ($131.7B) are serious red flags despite the attractive 90.9% earnings growth. The 28.49% increase in short interest shows bears are actively pressing."},
-      "comparables": [
-        {"ticker": "MSFT", "forward_pe": "20.6x", "growth": "16.7%", "note": "Similar growth, slightly higher multiple; MSFT has positive FCF and stronger balance sheet"},
-        {"ticker": "CRM", "forward_pe": "14.2x", "growth": "8.6%", "note": "Slower growth, cheaper; CRM has $14.5B positive FCF vs ORCL's negative"}
-      ],
-      "analyst_take": "ORCL at 57.7% off its high with 88% upside to analyst median target looks compelling until you see the -$10.2B FCF and $131.7B in debt. The 90.9% earnings growth is real and the cloud transition is gaining momentum, but the balance sheet is stretched. Q3 earnings in early March is a near-term catalyst that could resolve the debate. The 28.49% increase in SI suggests bears see the debt risk as underpriced. WATCHLIST until earnings or a lower entry point."
-    },
-    {
-      "ticker": "SHOP",
-      "name": "Shopify Inc.",
-      "price": 119.52,
-      "opus_recommendation": "WATCHLIST",
-      "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "10.7% profit margins, 20.3% operating margins — profitable at scale"},
-        "strong_fcf": {"verdict": "fail", "detail": "$1.3B FCF on $11.6B revenue — 11.1% FCF margin, below 25%"},
-        "near_52w_lows": {"verdict": "pass", "detail": "34.4% below 52w high of $182.19"},
-        "sector_panic": {"verdict": "pass", "detail": "E-commerce software under broad SaaS de-rating pressure"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 52x forward is still expensive by value standards"},
-        "no_dilution": {"verdict": "pass", "detail": "Minimal debt ($188M vs $5.8B cash), 5.96x current ratio, 1.4% D/E"},
+        "profitable": {
+          "verdict": "pass",
+          "detail": "8.8% profit margins, 15.5% operating margins, 90.1% gross margins"
+        },
+        "strong_fcf": {
+          "verdict": "pass",
+          "detail": "$2.9B FCF on $14.7B revenue — 19.9% FCF margin, 12.1% FCF yield on $24.3B market cap"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "34.8% below 52w high of $303.80"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "Travel stocks under pressure — down 25.8% in 20d, 29.6% in 50d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 8.7x forward vs 20.2x trailing shows severe compression"
+        },
+        "no_dilution": {
+          "verdict": "fail",
+          "detail": "$6.5B debt vs $5.7B cash, D/E 254.7% — significant leverage"
+        },
         "score": 4
       },
       "growth_framework": {
-        "revenue_growth_30": {"verdict": "pass", "detail": "30.6% revenue growth — above 30% threshold"},
-        "gross_margins_60": {"verdict": "fail", "detail": "48.1% gross margins — below 60%, reflects payments processing mix"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "pass", "detail": "30.6% growth + 20.3% operating margins = 50.9"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "score": 2
+        "revenue_growth_30": {
+          "verdict": "fail",
+          "detail": "11.4% revenue growth"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "90.1% gross margins — exceptional take-rate business"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "fail",
+          "detail": "11.4% growth + 15.5% operating margin = 26.9"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
+        "score": 1
       },
-      "ai_exposure": {"verdict": "tailwind", "detail": "Company description mentions enabling merchants to manage products, payments, and fulfillment. AI-powered commerce tools (agentic commerce, mentioned in analyst upgrades) enhance SHOP's platform for merchants."},
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "Travel platform — AI could disintermediate OTAs with direct booking assistants, but Expedia could also integrate AI into search and booking. Per description, operates B2C, B2B, and trivago segments."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": null,
+        "assessment": null
+      },
       "financials": {
-        "current_price": 119.52,
-        "range_52w": "$69.84 - $182.19",
-        "forward_pe": "52.0x",
+        "current_price": 198.04,
+        "range_52w": "$130.01 - $303.80",
+        "forward_pe": "8.7x",
         "historical_pe_avg": "N/A"
       },
-      "catalysts_verified": ["Phillip Securities upgraded to Buy from Neutral, raised target to $160, citing agentic commerce positioning", "Truist upgraded to Buy from Hold, raised target to $150"],
-      "catalysts_general": ["Analyst median target $160 (34% upside)", "39 buy/strong-buy vs 1 sell out of 51 analysts", "43.4% decline in short interest — bears covering rapidly"],
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "12.1% FCF yield — $2.9B FCF on $24.3B market cap",
+        "15 buy/strong-buy out of 38 analysts",
+        "Analyst median target $268 — 35% upside",
+        "8.7x forward PE with 90.1% gross margins",
+        "Short interest 7.43%, rising 7.51% — bears increasing bets"
+      ],
       "downside_scenarios": [
-        {"price": 90, "pe_at_level": 39, "scenario": "GMV growth slows; merchant churn increases in economic downturn"},
-        {"price": 70, "pe_at_level": 31, "scenario": "Amazon and platform marketplaces erode DTC e-commerce demand"},
-        {"price": 50, "pe_at_level": 22, "scenario": "Payment processing margins compress further; 48.1% gross margins decline"}
+        {
+          "price": 160,
+          "pe_at_level": "7.0",
+          "scenario": "Travel demand slows as consumer spending weakens"
+        },
+        {
+          "price": 130,
+          "pe_at_level": "5.7",
+          "scenario": "Recession drives travel volume decline; tests 52w low of $130.01"
+        }
       ],
-      "ideal_entry": {"price": 105, "reasoning": "WATCHLIST — 52x forward is still expensive despite the 34.4% drawdown. The 30.6% growth and analyst upgrades from Phillip Securities and Truist are bullish signals, but the -42.3% earnings growth decline suggests margin pressure. Wait for $105 (sub-46x) or positive earnings inflection before committing."},
+      "ideal_entry": {
+        "price": 180,
+        "reasoning": "7.9x forward PE with 12.1% FCF yield — provides additional 9% margin of safety from current levels given rising short interest"
+      },
       "comparables": [
-        {"ticker": "APP", "forward_pe": "26.8x", "growth": "65.9%", "note": "Similar drawdown but much faster growth at half SHOP's multiple"},
-        {"ticker": "UBER", "forward_pe": "16.7x", "growth": "20.1%", "note": "Platform comp, much cheaper; SHOP has higher growth but 3x the multiple"}
+        {
+          "ticker": "PYPL",
+          "forward_pe": "7.6x",
+          "growth": "3.7%",
+          "note": "Similar PE range, different sector, lower growth"
+        }
       ],
-      "analyst_take": "SHOP has the most bullish recent catalyst flow in the scan — two analyst upgrades in one week and a 43.4% decline in short interest. The 30.6% growth and Rule of 51 are compelling. But 52x forward with 48.1% gross margins and -42.3% earnings growth decline is hard to justify for a BUY. The two analyst upgrades to Buy (Phillip Securities target $160, Truist target $150) validate the thesis but the stock needs either lower price or earnings inflection to offer asymmetric risk/reward. WATCHLIST for now."
+      "analyst_take": "Expedia at 8.7x forward PE with 90.1% gross margins and a 12.1% FCF yield is priced for a recession that hasn't arrived. The 34.8% drawdown and 25.8% decline in 20 days suggests panic selling rather than fundamental deterioration — 11.4% revenue growth is still healthy for a mature travel platform. The $2.9B in annual FCF on a $24.3B market cap provides genuine downside protection. Rising short interest (7.43%, up 7.51%) is a concern, but the bears are betting against a company generating $2.9B in free cash. 15 of 38 analysts rate buy with median target 35% higher."
+    },
+    {
+      "ticker": "QCOM",
+      "name": "QUALCOMM Incorporated",
+      "price": 145.93,
+      "opus_recommendation": "WATCHLIST",
+      "value_framework": {
+        "profitable": {
+          "verdict": "pass",
+          "detail": "12.0% profit margins, 27.5% operating margins, $13.8B EBITDA on $44.9B revenue"
+        },
+        "strong_fcf": {
+          "verdict": "pass",
+          "detail": "$10.4B FCF on $44.9B revenue — 23.2% FCF margin, 6.7% FCF yield on $156B market cap"
+        },
+        "near_52w_lows": {
+          "verdict": "borderline",
+          "detail": "29.1% below 52w high of $205.95, but well above 52w low of $120.80"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "Semiconductor stocks under pressure — down 19.5% in 50d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 12.9x forward vs 29.4x trailing"
+        },
+        "no_dilution": {
+          "verdict": "pass",
+          "detail": "$14.8B debt vs $11.8B cash, dividend yield 2.54% covered at 71% payout ratio"
+        },
+        "score": 4
+      },
+      "growth_framework": {
+        "revenue_growth_30": {
+          "verdict": "fail",
+          "detail": "5% revenue growth"
+        },
+        "gross_margins_60": {
+          "verdict": "fail",
+          "detail": "55.1% gross margins — below 60% threshold (hardware-heavy model)"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "fail",
+          "detail": "5% growth + 27.5% operating margin = 32.5"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
+        "score": 0
+      },
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "Mobile AI chip leader — Snapdragon platform for on-device AI inference per description. META capex signal: $115-135B (+60% to +87%) earmarked for AI infrastructure benefits QCOM as secondary supplier."
+      },
+      "deal_radar": {
+        "capex_exposure": "META: secondary tier supplier; META guiding $115-135B capex (+60% to +87%) for AI infrastructure, data centers, Meta Superintelligence Labs",
+        "options_signal": null,
+        "assessment": "META's massive capex ramp ($115-135B) benefits QCOM as a secondary supplier through Snapdragon AI compute chips. The 'secondary' tier classification suggests indirect rather than primary beneficiary — margin impact may be limited."
+      },
+      "financials": {
+        "current_price": 145.93,
+        "range_52w": "$120.80 - $205.95",
+        "forward_pe": "12.9x",
+        "historical_pe_avg": "N/A"
+      },
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "META capex signal: $115-135B AI infrastructure spend, QCOM as secondary supplier",
+        "2.54% dividend yield covered at 71% payout",
+        "12 buy/strong-buy out of 37 analysts, median target $155",
+        "Short interest rising 15.49% to 3.58% — bears adding",
+        "$10.4B annual FCF provides buyback capacity"
+      ],
+      "downside_scenarios": [
+        {
+          "price": 125,
+          "pe_at_level": "11.1",
+          "scenario": "Smartphone cycle doesn't recover, ARM-based competition intensifies"
+        },
+        {
+          "price": 105,
+          "pe_at_level": "9.3",
+          "scenario": "Apple fully in-house modem, licensing revenue at risk"
+        }
+      ],
+      "ideal_entry": {
+        "price": 130,
+        "reasoning": "11.5x forward PE near 52w low of $120.80 — would provide better risk/reward given rising short interest and only 5% revenue growth"
+      },
+      "comparables": [
+        {
+          "ticker": "TTD",
+          "forward_pe": "12.1x",
+          "growth": "17.7%",
+          "note": "Similar PE but 3.5x the growth rate and net cash"
+        }
+      ],
+      "analyst_take": "QCOM at 12.9x forward PE with $10.4B FCF is reasonably valued for a semiconductor company with 5% revenue growth. The META capex tailwind ($115-135B spend) is real but QCOM is classified as 'secondary' tier — the benefit is indirect. Rising short interest (+15.49%) suggests the market is concerned about mobile chip commoditization and ARM competition. The 2.54% dividend yield and massive FCF provide a floor, but the growth profile doesn't justify a premium. Wait for signs of revenue re-acceleration or a deeper pullback toward $130 for better risk/reward."
+    },
+    {
+      "ticker": "HALO",
+      "name": "Halozyme Therapeutics, Inc.",
+      "price": 70.33,
+      "opus_recommendation": "BUY",
+      "value_framework": {
+        "profitable": {
+          "verdict": "pass",
+          "detail": "22.7% profit margins, 56.3% operating margins, $898M EBITDA on $1.4B revenue"
+        },
+        "strong_fcf": {
+          "verdict": "borderline",
+          "detail": "$185M FCF on $1.4B revenue — 13.2% FCF margin (low relative to operating margins)"
+        },
+        "near_52w_lows": {
+          "verdict": "fail",
+          "detail": "Only 14.5% below 52w high of $82.22, well above 52w low of $47.50"
+        },
+        "sector_panic": {
+          "verdict": "fail",
+          "detail": "Biotech not in panic — HALO up 13.6% in 50d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 7.1x forward vs 27.5x trailing shows earnings ramp"
+        },
+        "no_dilution": {
+          "verdict": "fail",
+          "detail": "D/E 4,460% — extreme leverage ($2.2B debt vs $143M cash)"
+        },
+        "score": 2
+      },
+      "growth_framework": {
+        "revenue_growth_30": {
+          "verdict": "pass",
+          "detail": "51.6% revenue growth — rapid ENHANZE royalty ramp"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "77.8% gross margins"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "51.6% growth + 56.3% operating margin = 107.9 — exceptional"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
+        "score": 3
+      },
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "Biopharmaceutical platform company — ENHANZE enzyme technology per description. AI not a primary factor."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": null,
+        "assessment": null
+      },
+      "financials": {
+        "current_price": 70.33,
+        "range_52w": "$47.50 - $82.22",
+        "forward_pe": "7.1x",
+        "historical_pe_avg": "N/A"
+      },
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "7.1x forward PE with 51.6% revenue growth — Rule of 40 at 108",
+        "6 buy/strong-buy out of 9 analysts (67%), median target $90",
+        "ROE of 153.6% — extreme return on equity from platform model",
+        "16.01% short interest — significant squeeze potential",
+        "56.3% operating margins on a royalty-driven model"
+      ],
+      "downside_scenarios": [
+        {
+          "price": 56,
+          "pe_at_level": "5.7",
+          "scenario": "Key ENHANZE partner drug fails clinical trial, royalty stream at risk"
+        },
+        {
+          "price": 45,
+          "pe_at_level": "4.6",
+          "scenario": "Multiple partner program setbacks plus debt refinancing concern"
+        }
+      ],
+      "ideal_entry": {
+        "price": 65,
+        "reasoning": "6.6x forward PE near SMA50 of $71.72 — provides margin of safety against the 16% short interest while preserving upside to $90 analyst target"
+      },
+      "comparables": [
+        {
+          "ticker": "SOFI",
+          "forward_pe": "23.6x",
+          "growth": "40.2%",
+          "note": "Similar growth rate but HALO trades at 70% cheaper PE with higher margins"
+        }
+      ],
+      "analyst_take": "Halozyme at 7.1x forward PE with 51.6% revenue growth is the cheapest growth story in this universe. The ENHANZE platform model — described as proprietary enzyme technology — generates royalties with 56.3% operating margins. Rule of 40 at 108 is extraordinary. The 16% short interest is the key tension: shorts see the 4,460% D/E and $2.2B debt against $143M cash. But if the royalty ramp continues, the leverage works in the bulls' favor — ROE of 153.6% shows the model converts equity to earnings efficiently. 6 of 9 analysts rate buy with median target $90, suggesting 28% upside. The growth + margin combination at this PE is rare."
     },
     {
       "ticker": "PYPL",
@@ -496,25 +1111,68 @@
       "price": 44.35,
       "opus_recommendation": "WATCHLIST",
       "value_framework": {
-        "profitable": {"verdict": "pass", "detail": "15.8% profit margins, 17.5% operating margins"},
-        "strong_fcf": {"verdict": "fail", "detail": "$3.3B FCF on $33.2B revenue — 9.9% FCF margin, below 25%"},
-        "near_52w_lows": {"verdict": "pass", "detail": "44.2% below 52w high of $79.50, near 52w low of $38.46"},
-        "sector_panic": {"verdict": "pass", "detail": "Fintech deeply out of favor; embedded finance and Apple Pay fears"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Historical PE not in input; 7.6x forward is extremely low for any profitable tech company"},
-        "no_dilution": {"verdict": "pass", "detail": "Near-zero net debt ($12.3B debt vs $10.4B cash), 2.6% payout, 1.27% dividend yield"},
+        "profitable": {
+          "verdict": "pass",
+          "detail": "15.8% profit margins, 17.5% operating margins, $6.6B EBITDA on $33.2B revenue"
+        },
+        "strong_fcf": {
+          "verdict": "borderline",
+          "detail": "$3.3B FCF on $33.2B revenue — 9.9% FCF margin (low for fintech), 7.9% FCF yield"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "44.2% below 52w high of $79.50, near 52w low of $38.46"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "Fintech broadly sold off — down 20.1% in 20d, 26.8% in 90d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 7.6x forward vs 8.2x trailing"
+        },
+        "no_dilution": {
+          "verdict": "pass",
+          "detail": "Manageable balance sheet ($12.3B debt vs $10.4B cash), dividend at 1.27% with 2.6% payout ratio"
+        },
         "score": 4
       },
       "growth_framework": {
-        "revenue_growth_30": {"verdict": "fail", "detail": "3.7% revenue growth — near-stagnant"},
-        "gross_margins_60": {"verdict": "fail", "detail": "41.5% gross margins — payment processing margins are structurally low"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "Not SaaS; merchant retention varies"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "fail", "detail": "3.7% growth + 17.5% operating margins = 21.2, fails Rule of 40"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
+        "revenue_growth_30": {
+          "verdict": "fail",
+          "detail": "3.7% revenue growth — well below 30% threshold"
+        },
+        "gross_margins_60": {
+          "verdict": "fail",
+          "detail": "41.5% gross margins — payment processing has lower margins"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "fail",
+          "detail": "3.7% growth + 17.5% operating margin = 21.2"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
         "score": 0
       },
-      "ai_exposure": {"verdict": "neutral", "detail": "AI has modest impact on payment processing. Fraud detection improvements are a mild tailwind. Embedded finance powered by AI could be a threat to standalone checkout."},
-      "deal_radar": {"capex_exposure": null, "options_signal": "Mildly bullish: Feb 27 P/C 0.50, Mar 6 P/C 0.68, Mar 13 P/C 0.41, Mar 20 P/C 0.50. Mar 20 has massive 273,776 call OI vs 80,249 put OI (3.4:1 call ratio). Max call strike at $120 on March monthly — speculative.", "assessment": "Options flow leans bullish with P/C ratios of 0.41-0.68. The 3.4:1 call-to-put OI ratio on March monthly is notable. However, the $120 max call strike (170% above current) suggests speculative lottery tickets rather than institutional conviction."},
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "Payment processing infrastructure — AI neither a major threat nor tailwind. Per description, operates two-sided payment network connecting merchants and consumers."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": "Feb 27: 100,386 call OI vs 30,802 put OI (3.26:1 bullish). Mar 6: 36,529 call vs 16,126 put (2.27:1 bullish). Mar 13: 10,295 call vs 16,146 put (1.57:1 bearish). Near-term call dominance with put buildup at Mar 13.",
+        "assessment": "Heavy call positioning on Feb 27 (3.26:1 ratio) and Mar 6 (2.27:1) suggests institutional optimism for a near-term bounce. The Mar 13 put-heavy positioning may represent hedging. Combined with the 44.2% drawdown, options flow suggests smart money is positioning for recovery."
+      },
       "financials": {
         "current_price": 44.35,
         "range_52w": "$38.46 - $79.50",
@@ -522,62 +1180,475 @@
         "historical_pe_avg": "N/A"
       },
       "catalysts_verified": [],
-      "catalysts_general": ["Analyst target mean $52 (17% upside)", "10 buy/strong-buy vs 4 sell out of 45 analysts", "4.31% decline in short interest — bears covering", "39.4% earnings growth despite revenue stagnation suggests margin expansion"],
+      "catalysts_general": [
+        "7.6x forward PE with 39.4% earnings growth",
+        "10 buy/strong-buy out of 45 analysts, median target $47",
+        "Bullish options flow: Feb 27 call/put OI ratio 3.26:1",
+        "7.9% FCF yield ($3.3B on $41.5B market cap)",
+        "4.68% short interest, declining 4.31%"
+      ],
       "downside_scenarios": [
-        {"price": 35, "pe_at_level": 6, "scenario": "Revenue growth goes flat or negative; checkout share declines accelerate"},
-        {"price": 28, "pe_at_level": 5, "scenario": "Take rate compression accelerates; Venmo monetization fails to offset"},
-        {"price": 20, "pe_at_level": 3, "scenario": "Embedded finance fully disintermediates PYPL's checkout button"}
+        {
+          "price": 38,
+          "pe_at_level": "6.5",
+          "scenario": "Revenue growth stalls, market share loss to Apple Pay / Block accelerates"
+        },
+        {
+          "price": 30,
+          "pe_at_level": "5.2",
+          "scenario": "Payment network commoditization, take rate compression"
+        }
       ],
-      "ideal_entry": {"price": 38, "reasoning": "WATCHLIST — value trap risk is real. Only 10 buy ratings vs 31 holds and 4 sells shows deep analyst skepticism. At $38 (near 52w low of $38.46), the 7.9% FCF yield would provide enough margin of safety. Wait for revenue growth inflection above 5% or a test of the 52w low before committing."},
+      "ideal_entry": {
+        "price": 40,
+        "reasoning": "Near 52w low of $38.46 — 6.9x forward PE would provide sufficient margin of safety given only 3.7% revenue growth"
+      },
       "comparables": [
-        {"ticker": "GEN", "forward_pe": "7.7x", "growth": "25.8%", "note": "Same valuation but 7x faster growth — GEN is more compelling at similar price"},
-        {"ticker": "GDDY", "forward_pe": "8.6x", "growth": "10.3%", "note": "Similar multiple, nearly 3x PYPL's growth; GDDY has higher FCF margins"}
+        {
+          "ticker": "GEN",
+          "forward_pe": "7.7x",
+          "growth": "25.8%",
+          "note": "Similar PE but much higher growth — GEN is better value per dollar of growth"
+        },
+        {
+          "ticker": "EXPE",
+          "forward_pe": "8.7x",
+          "growth": "11.4%",
+          "note": "Slightly more expensive but 3x the revenue growth"
+        }
       ],
-      "analyst_take": "PYPL at 7.6x forward is the cheapest profitable tech name in the scan — 6/6 on value proxies but 0/6 on growth. This is the market's verdict that PYPL is a permanently impaired business. The 31 holds and 4 sells (vs only 10 buy) show the analyst community largely agrees. The 39.4% earnings growth is a silver lining — management is extracting margin from the existing base. But without revenue reacceleration above 5%, this is a yield play, not a growth play. The options flow is mildly bullish (0.41-0.68 P/C) but the speculative $120 call strikes suggest retail enthusiasm rather than institutional conviction."
+      "analyst_take": "PayPal at 7.6x forward PE looks cheap on paper, but only 3.7% revenue growth and 41.5% gross margins explain the discount — the market sees a maturing payments platform losing share. The 39.4% earnings growth is encouraging but driven by cost-cutting rather than topline expansion. Bullish options positioning (3.26:1 call/put on Feb 27) suggests some institutional optimism for a near-term bounce. However, only 10 of 45 analysts rate buy — the consensus is neutral. The turnaround thesis requires revenue re-acceleration, which hasn't materialized yet. Wait for signs of topline inflection."
     },
     {
-      "ticker": "RKLB",
-      "name": "Rocket Lab Corporation",
-      "price": 69.32,
-      "opus_recommendation": "WATCHLIST",
+      "ticker": "ADSK",
+      "name": "Autodesk, Inc.",
+      "price": 220.81,
+      "opus_recommendation": "BUY",
       "value_framework": {
-        "profitable": {"verdict": "fail", "detail": "-35.6% profit margins, -38.0% operating margins — pre-profit growth company"},
-        "strong_fcf": {"verdict": "fail", "detail": "FCF is negative at -$111M"},
-        "near_52w_lows": {"verdict": "pass", "detail": "30.4% below 52w high of $99.58, but 371% above 52w low of $14.71"},
-        "sector_panic": {"verdict": "fail", "detail": "Space/defense sector is not in panic; RKLB is near the middle of its 52w range"},
-        "low_pe_vs_history": {"verdict": "insufficient_data", "detail": "Negative forward PE (-445x) — pre-profit, standard PE analysis doesn't apply"},
-        "no_dilution": {"verdict": "pass", "detail": "Net cash position ($977M cash vs $517M debt), 3.18x current ratio"},
-        "score": 2
+        "profitable": {
+          "verdict": "pass",
+          "detail": "16.1% profit margins, 25.7% operating margins"
+        },
+        "strong_fcf": {
+          "verdict": "pass",
+          "detail": "$2.5B FCF on $6.9B revenue — 36.9% FCF margin, 5.4% FCF yield on $47B market cap"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "32.9% below 52w high of $329.09, near 52w low of $215.01"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "Design software under broad selling — down 17.6% in 20d, 24.1% in 90d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 18.9x forward vs 42.8x trailing shows major compression"
+        },
+        "no_dilution": {
+          "verdict": "pass",
+          "detail": "Near-zero net debt ($2.7B debt vs $2.3B cash), no dividend"
+        },
+        "score": 5
       },
       "growth_framework": {
-        "revenue_growth_30": {"verdict": "pass", "detail": "48.0% revenue growth — strong acceleration"},
-        "gross_margins_60": {"verdict": "fail", "detail": "31.7% gross margins — hardware/launch services have structural margin limits"},
-        "nrr_120": {"verdict": "insufficient_data", "detail": "Launch/space systems model, not subscription"},
-        "tam_under_10": {"verdict": "insufficient_data", "detail": "TAM penetration not in input data"},
-        "rule_of_40": {"verdict": "fail", "detail": "48.0% growth + (-38.0%) operating margins = 10.0, fails Rule of 40"},
-        "low_sbc": {"verdict": "insufficient_data", "detail": "Not in input data"},
-        "score": 1
+        "revenue_growth_30": {
+          "verdict": "fail",
+          "detail": "18% revenue growth — below 30% threshold"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "92.1% gross margins — among the highest in enterprise software"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "18% growth + 25.7% operating margin = 43.7"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
+        "score": 2
       },
-      "ai_exposure": {"verdict": "neutral", "detail": "AI has limited direct impact on launch services. AI could enhance satellite operations and mission planning, but it's not a material revenue driver for RKLB's core business."},
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "AI enhances design workflows — per description, provides 3D design, engineering, and entertainment technology including simulation and BIM. AI-powered generative design and automated workflows strengthen moat."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": null,
+        "assessment": null
+      },
       "financials": {
-        "current_price": 69.32,
-        "range_52w": "$14.71 - $99.58",
-        "forward_pe": "N/A (pre-profit)",
+        "current_price": 220.81,
+        "range_52w": "$215.01 - $329.09",
+        "forward_pe": "18.9x",
         "historical_pe_avg": "N/A"
       },
-      "catalysts_verified": ["$816M U.S. Space Force contract — company's largest-ever, signaling expansion potential", "Cassowary Vex HASTE rocket mission for Defense Innovation Unit scheduled late February 2026", "Neutron rocket pad operations expected to begin Q1 2026 with first flights thereafter", "Electron 80 launch completed January 22, 2026 — demonstrating operational momentum"],
-      "catalysts_general": ["Analyst median target $83 (19% upside)", "10 buy/strong-buy vs 0 sell out of 15 analysts", "4.59% decline in short interest — bears covering despite 7.97% SI"],
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "29 buy/strong-buy out of 32 analysts (91%) — near-unanimity",
+        "Analyst median target $350 — 59% upside",
+        "92.1% gross margins with 36.9% FCF margin",
+        "Rule of 40 at 43.7 (18% growth + 25.7% op margin)",
+        "26% earnings growth"
+      ],
       "downside_scenarios": [
-        {"price": 50, "pe_at_level": null, "scenario": "Neutron first flight delayed or fails; investor confidence in medium-lift capability shaken"},
-        {"price": 35, "pe_at_level": null, "scenario": "SpaceX and Blue Origin capture medium-lift market share before Neutron operational"},
-        {"price": 20, "pe_at_level": null, "scenario": "Revenue growth stalls; cash burn accelerates, forcing dilutive capital raise"}
+        {
+          "price": 200,
+          "pe_at_level": "17.2",
+          "scenario": "Construction/AEC spending slows, subscription growth decelerates"
+        },
+        {
+          "price": 175,
+          "pe_at_level": "15.0",
+          "scenario": "Enterprise budget cuts delay design software upgrades"
+        }
       ],
-      "ideal_entry": {"price": 55, "reasoning": "WATCHLIST — RKLB is a pre-profit, high-burn, binary-catalyst story. The $816M Space Force contract and Neutron milestones provide strong catalysts, but at 67x revenue (P/S) with negative margins, valuation requires faith in execution. Wait for $55 (40x P/S) or successful Neutron test flight before committing. The 7.97% SI creates squeeze potential on catalyst hits."},
+      "ideal_entry": {
+        "price": 215,
+        "reasoning": "At 52w low of $215.01 — 18.4x forward PE for 92.1% gross margin software with 91% analyst buy rate. Strong switching costs in design/engineering software provide downside protection"
+      },
       "comparables": [
-        {"ticker": "PLTR", "forward_pe": "70.9x", "growth": "70.0%", "note": "Similar growth trajectory; PLTR has achieved profitability, RKLB has not"},
-        {"ticker": "UBER", "forward_pe": "16.7x", "growth": "20.1%", "note": "Profitable platform at fraction of RKLB's revenue multiple; different maturity stage"}
+        {
+          "ticker": "ADBE",
+          "forward_pe": "9.7x",
+          "growth": "10.5%",
+          "note": "Much cheaper PE but faces AI disruption threat that ADSK doesn't"
+        },
+        {
+          "ticker": "CRM",
+          "forward_pe": "14.2x",
+          "growth": "8.6%",
+          "note": "Cheaper PE, lower growth, different end-market"
+        }
       ],
-      "analyst_take": "RKLB has the richest catalyst pipeline in the entire scan — 16 events including a $816M Space Force contract, Neutron rocket milestones, and multiple launch missions. The 48% revenue growth confirms operational momentum. But at 67x revenue with -35.6% profit margins, this is a pure execution bet. The 4.59% SI decline and 10 buy/0 sell analyst consensus show growing conviction. WATCHLIST because the catalysts are real but the valuation requires successful Neutron execution to justify."
+      "analyst_take": "Autodesk is the highest-conviction name in this universe by analyst consensus: 29 of 32 rate buy/strong-buy (91%) with median target 59% above current. The numbers support it — 92.1% gross margins, 36.9% FCF margin, 18% revenue growth, Rule of 40 at 44. The 32.9% drawdown is sector-driven rather than company-specific. Unlike ADBE, Autodesk's design/engineering/construction tools have deep switching costs and are AI-enhanced rather than AI-disrupted. At 18.9x forward PE the valuation isn't as cheap as some peers, but the quality deserves a premium."
+    },
+    {
+      "ticker": "AGI",
+      "name": "Alamos Gold Inc.",
+      "price": 50.21,
+      "opus_recommendation": "WATCHLIST",
+      "value_framework": {
+        "profitable": {
+          "verdict": "pass",
+          "detail": "49.0% profit margins, 87.2% operating margins (gold mining), $1.3B EBITDA"
+        },
+        "strong_fcf": {
+          "verdict": "pass",
+          "detail": "$414M FCF on $1.8B revenue — 22.9% FCF margin"
+        },
+        "near_52w_lows": {
+          "verdict": "fail",
+          "detail": "Only 0.67% below 52w high of $50.55 — trading at all-time high"
+        },
+        "sector_panic": {
+          "verdict": "fail",
+          "detail": "Gold sector is NOT in panic — AGI is up 53.9% in 90d and 15.1% in 20d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 15.6x forward, 23.9x trailing"
+        },
+        "no_dilution": {
+          "verdict": "pass",
+          "detail": "Very low debt: $223M debt vs $682M cash, D/E 5.0%"
+        },
+        "score": 3
+      },
+      "growth_framework": {
+        "revenue_growth_30": {
+          "verdict": "pass",
+          "detail": "53.1% revenue growth — driven by gold price appreciation and production ramp"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "66.8% gross margins"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not applicable to gold mining"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "Not applicable to commodity producers"
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "53.1% growth + 87.2% operating margin = 140 (metric less meaningful for miners)"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
+        "score": 3
+      },
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "Gold mining — per description, operates gold deposits in Canada and Mexico. AI not a relevant factor."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": "Mar 20: 30,036 call OI vs 9,299 put OI (3.23:1 bullish). Apr 17: 438 call vs 764 put (bearish but thin). Jun 18: 13,200 call vs 4,507 put (2.93:1 bullish). Strong call dominance across expirations.",
+        "assessment": "Options flow is decisively bullish with call OI exceeding puts by 3:1 on the two largest expirations (Mar 20 and Jun 18). This aligns with the stock's momentum — up 53.9% in 90d. Short interest declining 11% confirms the trend."
+      },
+      "financials": {
+        "current_price": 50.21,
+        "range_52w": "$22.04 - $50.55",
+        "forward_pe": "15.6x",
+        "historical_pe_avg": "N/A"
+      },
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "100% analyst buy rate (13 of 13) — unanimous",
+        "Analyst mean target $54.25 — 8% upside",
+        "396% earnings growth",
+        "Near-zero debt ($223M vs $682M cash)",
+        "Options 3:1 call/put ratio across major expirations"
+      ],
+      "downside_scenarios": [
+        {
+          "price": 40,
+          "pe_at_level": "12.5",
+          "scenario": "Gold price correction from current highs"
+        },
+        {
+          "price": 30,
+          "pe_at_level": "9.3",
+          "scenario": "Sharp gold price decline plus production issues at key mines"
+        }
+      ],
+      "ideal_entry": {
+        "price": 42,
+        "reasoning": "15-20% pullback from ATH would provide better entry — analyst low target at $48 suggests limited analyst-defined downside, but gold price volatility could create opportunities"
+      },
+      "comparables": [],
+      "analyst_take": "Alamos Gold has near-perfect fundamentals for a gold miner: 49% profit margins, 87.2% operating margins, near-zero debt, 53.1% revenue growth, and unanimous analyst buy ratings (13 of 13). The problem is timing — up 53.9% in 90d and trading within 0.67% of the 52w high. Buying at ATH in a commodity-driven stock is risky; the 396% earnings growth is a function of gold prices, which are macro-dependent and could reverse. Options flow is very bullish (3:1 call/put), confirming momentum. This is a quality name for a gold allocation, but entry at current levels offers limited risk/reward with only 8% upside to mean analyst target."
+    },
+    {
+      "ticker": "SOFI",
+      "name": "SoFi Technologies, Inc.",
+      "price": 18.65,
+      "opus_recommendation": "WATCHLIST",
+      "value_framework": {
+        "profitable": {
+          "verdict": "borderline",
+          "detail": "13.4% profit margins, 18.2% operating margins, trailing EPS only $0.39"
+        },
+        "strong_fcf": {
+          "verdict": "insufficient_data",
+          "detail": "Banking model — FCF metric less meaningful for financial institutions"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "43.0% below 52w high of $32.73"
+        },
+        "sector_panic": {
+          "verdict": "pass",
+          "detail": "Fintech/growth stocks sold off heavily — down 26.8% in 20d, 26.0% in 90d"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Historical PE not in input; 23.6x forward, 47.9x trailing"
+        },
+        "no_dilution": {
+          "verdict": "pass",
+          "detail": "$5.0B cash vs $1.9B debt, D/E 18.5% — healthy for a bank"
+        },
+        "score": 3
+      },
+      "growth_framework": {
+        "revenue_growth_30": {
+          "verdict": "pass",
+          "detail": "40.2% revenue growth"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "83.0% gross margins"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "40.2% growth + 18.2% operating margin = 58.4"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
+        "score": 3
+      },
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "Digital banking platform — per description, provides financial services including lending and technology platform. AI enhances underwriting, fraud detection, and personalized financial products."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": "Feb 27: 140,046 call OI vs 84,751 put OI (1.65:1 bullish). Mar 6: 62,440 call vs 43,737 put (1.43:1 bullish). Mar 13: 26,911 call vs 19,369 put (1.39:1 bullish). Consistent call dominance across all expirations.",
+        "assessment": "Options flow is moderately bullish across all three expirations with call OI exceeding puts by 1.4-1.7x. The heavy absolute volume (140K call OI on Feb 27) reflects retail/institutional interest. The 9.27% SI is declining (-1.38%), and consistent call positioning suggests money is betting on recovery from the 43% drawdown."
+      },
+      "financials": {
+        "current_price": 18.65,
+        "range_52w": "$8.60 - $32.73",
+        "forward_pe": "23.6x",
+        "historical_pe_avg": "N/A"
+      },
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "40.2% revenue growth with 83.0% gross margins",
+        "Rule of 40 at 58.4",
+        "8 buy/strong-buy out of 22 analysts, median target $26 — 39% upside",
+        "Consistent bullish options positioning (1.4-1.7x call/put across expirations)",
+        "9.27% short interest declining — shorts covering"
+      ],
+      "downside_scenarios": [
+        {
+          "price": 14,
+          "pe_at_level": "17.7",
+          "scenario": "Credit losses spike, lending portfolio quality deteriorates"
+        },
+        {
+          "price": 10,
+          "pe_at_level": "12.7",
+          "scenario": "Recession + rising defaults + membership growth stalls"
+        }
+      ],
+      "ideal_entry": {
+        "price": 15,
+        "reasoning": "19x forward PE — provides 20% margin of safety from current levels. The -57% earnings growth and 2.18 beta warrant a wider margin than normal"
+      },
+      "comparables": [
+        {
+          "ticker": "PYPL",
+          "forward_pe": "7.6x",
+          "growth": "3.7%",
+          "note": "Much cheaper but near-zero growth; SOFI is the growth alternative in fintech"
+        }
+      ],
+      "analyst_take": "SoFi offers the best growth profile in fintech — 40.2% revenue growth with 83.0% gross margins and Rule of 40 at 58. The bank charter model provides structural cost-of-capital advantages over pure fintechs. However, -57% earnings growth is a red flag: the company is growing revenue rapidly but profitability isn't scaling yet. At 23.6x forward PE with only $0.39 trailing EPS, the stock is priced for the bull case. Options flow is consistently bullish (1.4-1.7x call/put) and short interest is declining. The 43% drawdown creates opportunity, but the 2.18 beta means volatility is extreme. Wait for earnings trajectory to stabilize — the growth is real but the path to profitability needs more visibility."
+    },
+    {
+      "ticker": "CRWV",
+      "name": "CoreWeave, Inc.",
+      "price": 98.22,
+      "opus_recommendation": "WATCHLIST",
+      "value_framework": {
+        "profitable": {
+          "verdict": "fail",
+          "detail": "-17.8% profit margins, 3.8% operating margins, -$1.65 trailing EPS"
+        },
+        "strong_fcf": {
+          "verdict": "fail",
+          "detail": "-$6.95B FCF — massive capital expenditure for GPU infrastructure buildout"
+        },
+        "near_52w_lows": {
+          "verdict": "pass",
+          "detail": "47.5% below 52w high of $187.00"
+        },
+        "sector_panic": {
+          "verdict": "borderline",
+          "detail": "Down 9.8% in 20d but up 37.1% in 90d — recent selling after strong run"
+        },
+        "low_pe_vs_history": {
+          "verdict": "insufficient_data",
+          "detail": "Negative PE — not meaningful for a pre-profit infrastructure builder"
+        },
+        "no_dilution": {
+          "verdict": "fail",
+          "detail": "Extreme leverage: $18.8B debt vs $1.9B cash, D/E 485%"
+        },
+        "score": 1
+      },
+      "growth_framework": {
+        "revenue_growth_30": {
+          "verdict": "pass",
+          "detail": "133.7% revenue growth — exceptional scaling"
+        },
+        "gross_margins_60": {
+          "verdict": "pass",
+          "detail": "73.9% gross margins"
+        },
+        "nrr_120": {
+          "verdict": "insufficient_data",
+          "detail": "NRR not in input data"
+        },
+        "tam_under_10": {
+          "verdict": "insufficient_data",
+          "detail": "TAM penetration not in input data"
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "133.7% growth + 3.8% operating margin = 137.5"
+        },
+        "low_sbc": {
+          "verdict": "insufficient_data",
+          "detail": "SBC as % of revenue not in input data"
+        },
+        "score": 3
+      },
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "Pure play AI infrastructure — per description: 'cloud platform that provides scaling, support, and acceleration for GenAI.' Directly benefits from AI compute demand."
+      },
+      "deal_radar": {
+        "capex_exposure": null,
+        "options_signal": "Feb 27: 71,814 call OI vs 79,390 put OI (slightly bearish). Mar 6: 19,144 call vs 16,698 put (slightly bullish). Mar 13: 9,302 call vs 8,008 put (slightly bullish). Near-term put-heavy, longer-dated call buildup.",
+        "assessment": "Near-term options are slightly bearish (put-heavy on Feb 27) but longer-dated expirations show call buildup. The 17.36% SI is very high but declining (-11.68%), suggesting some shorts are covering. The combination of declining SI and lengthening call positioning could indicate a sentiment turn."
+      },
+      "financials": {
+        "current_price": 98.22,
+        "range_52w": "$33.52 - $187.00",
+        "forward_pe": "N/A (negative EPS)",
+        "historical_pe_avg": "N/A"
+      },
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "133.7% revenue growth — fastest in this universe",
+        "18 buy/strong-buy out of 30 analysts (60%), median target $120",
+        "Short interest 17.36%, declining 11.68% — shorts covering",
+        "73.9% gross margins on AI infrastructure",
+        "Analyst high target $251 — 156% upside"
+      ],
+      "downside_scenarios": [
+        {
+          "price": 60,
+          "pe_at_level": "N/A",
+          "scenario": "AI compute demand growth slows, GPU utilization rates drop below breakeven"
+        },
+        {
+          "price": 35,
+          "pe_at_level": "N/A",
+          "scenario": "Debt refinancing crisis — $18.8B debt becomes unsustainable if revenue growth stalls"
+        }
+      ],
+      "ideal_entry": {
+        "price": 75,
+        "reasoning": "25% pullback from current levels would improve risk/reward for this high-leverage, high-growth story. Near SMA50 of $86.85 would be a reasonable technical entry"
+      },
+      "comparables": [
+        {
+          "ticker": "IREN",
+          "forward_pe": "N/A",
+          "growth": "59%",
+          "note": "AI infrastructure peer, slower growth but smaller debt burden"
+        }
+      ],
+      "analyst_take": "CoreWeave is the highest-growth name in this universe at 133.7% revenue growth with 73.9% gross margins — a pure play on AI infrastructure demand. Per description, it builds GPU cloud infrastructure for GenAI workloads. The bull case is straightforward: AI compute demand continues scaling and CRWV captures share. The bear case is equally clear: -$6.95B FCF and $18.8B debt on a $51B market cap is an existential risk if demand slows. The 17.36% short interest (declining) reflects this tension. 18 of 30 analysts rate buy with targets ranging from $41 to $251 — the range itself tells the story of binary outcomes. This is a high-conviction directional bet on the AI infrastructure cycle, not a value investment."
     }
   ]
 }
