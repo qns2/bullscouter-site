@@ -803,6 +803,44 @@ const App = (() => {
       if (e.key === 'Enter') searchTicker(searchInput.value);
     });
 
+    // Copy signals to clipboard
+    document.getElementById('btn-copy-signals').addEventListener('click', () => {
+      const signals = [...(currentData.buys || []), ...(currentData.watches || [])];
+      if (!signals.length) return;
+      const lines = signals.map(o => {
+        const parts = [`${o.ticker} (${o.recommendation})`];
+        if (o.price) parts.push(`$${Number(o.price).toFixed(2)}`);
+        if (o.score) parts.push(`Score: ${o.score}`);
+        if (o.profile) parts.push(`Profile: ${o.profile}`);
+        if (o.confidence) parts.push(`Conf: ${o.confidence}`);
+        if (o.market_cap_fmt) parts.push(`MCap: ${o.market_cap_fmt}`);
+        if (o.down_from_high_pct) parts.push(`Down: ${Number(o.down_from_high_pct).toFixed(1)}%`);
+        const f = o.fundamentals || {};
+        if (f.pe) parts.push(`PE: ${f.pe}`);
+        if (f.revenue_growth) parts.push(`RevGr: ${f.revenue_growth}`);
+        if (f.margin) parts.push(`Margin: ${f.margin}`);
+        if (f.target_upside) parts.push(`Upside: ${f.target_upside}`);
+        if (o.catalyst_type) {
+          let cat = o.catalyst_type;
+          if (o.days_to_catalyst != null) cat += ` (${o.days_to_catalyst}d)`;
+          parts.push(`Cat: ${cat}`);
+        }
+        if (o.short_interest_pct) parts.push(`SI: ${Number(o.short_interest_pct).toFixed(1)}%`);
+        if (o.ai_thesis) parts.push(`\n  Thesis: ${o.ai_thesis}`);
+        return parts.join(' | ');
+      });
+      const header = `Bull Scouter Signals — ${currentData.latestPayload?.scan_date || 'today'}\n` +
+        `${currentData.buys?.length || 0} BUY + ${currentData.watches?.length || 0} WATCHLIST\n\n`;
+      const text = header + lines.join('\n');
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('btn-copy-signals');
+        const label = btn.querySelector('.copy-label');
+        btn.classList.add('copied');
+        label.textContent = 'Copied!';
+        setTimeout(() => { btn.classList.remove('copied'); label.textContent = 'Copy for Claude'; }, 2000);
+      });
+    });
+
     // Load today's data
     try {
       const data = await loadLatest();

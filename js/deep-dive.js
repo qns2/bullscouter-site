@@ -5,14 +5,53 @@
 
 const DeepDive = (() => {
   const DATA_PATH = 'data/deep-dive.json';
+  let pageData = null;
 
   // ── Init ──
 
   async function init() {
+    // Copy button
+    const copyBtn = document.getElementById('btn-copy-dd');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        if (!pageData || !pageData.analyses) return;
+        const buys = pageData.analyses.filter(a => (a.opus_recommendation || '').toUpperCase() === 'BUY');
+        const watches = pageData.analyses.filter(a => (a.opus_recommendation || '').toUpperCase() === 'WATCHLIST');
+        const signals = [...buys, ...watches];
+        if (!signals.length) return;
+        const lines = signals.map(a => {
+          const parts = [`${a.ticker} (${a.opus_recommendation})`];
+          if (a.price) parts.push(`$${Number(a.price).toFixed(2)}`);
+          if (a.value_framework) parts.push(`Value: ${a.value_framework.score || '?'}/6`);
+          if (a.growth_framework) parts.push(`Growth: ${a.growth_framework.score || '?'}/6`);
+          if (a.ai_exposure) parts.push(`AI: ${(a.ai_exposure.verdict || 'neutral').toUpperCase()}`);
+          if (a.deal_radar && a.deal_radar.assessment) parts.push(`DealRadar: ${a.deal_radar.assessment}`);
+          if (a.financials) {
+            const f = a.financials;
+            if (f.forward_pe) parts.push(`FwdPE: ${f.forward_pe}x`);
+            if (f.range_52w) parts.push(`52w: ${f.range_52w}`);
+          }
+          if (a.ideal_entry) parts.push(`Entry: $${Number(a.ideal_entry.price).toFixed(2)}`);
+          if (a.catalysts && a.catalysts.length) parts.push(`Catalysts: ${a.catalysts.join('; ')}`);
+          if (a.analyst_take) parts.push(`\n  Take: ${a.analyst_take}`);
+          return parts.join(' | ');
+        });
+        const header = `Opus Deep Dive — ${pageData.scan_date || 'today'}\n` +
+          `${buys.length} BUY + ${watches.length} WATCHLIST\n\n`;
+        navigator.clipboard.writeText(header + lines.join('\n')).then(() => {
+          const label = copyBtn.querySelector('.copy-label');
+          copyBtn.classList.add('copied');
+          label.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.classList.remove('copied'); label.textContent = 'Copy for Claude'; }, 2000);
+        });
+      });
+    }
+
     try {
       const resp = await fetch(DATA_PATH + '?_cb=' + Date.now());
       if (!resp.ok) throw new Error(resp.status + ' ' + resp.statusText);
       const data = await resp.json();
+      pageData = data;
       hide('dd-loading');
       if (!data.analyses || data.analyses.length === 0) {
         show('dd-empty');
@@ -43,8 +82,8 @@ const DeepDive = (() => {
   function renderCard(a) {
     const card = el('div', 'dd-card');
 
-    // Recommendation color class
-    const rec = (a.recommendation || '').toUpperCase();
+    // Opus recommendation color class
+    const rec = (a.opus_recommendation || '').toUpperCase();
     if (rec === 'BUY') card.classList.add('buy');
     else if (rec === 'WATCHLIST') card.classList.add('watchlist');
 
@@ -59,8 +98,7 @@ const DeepDive = (() => {
     const badges = el('div', 'flex items-center gap-2');
     badges.innerHTML =
       `<span class="text-sm font-mono">$${fmt(a.price)}</span>` +
-      `<span class="dd-rec-badge ${rec.toLowerCase()}">${rec}</span>` +
-      `<span class="dd-score-badge">${a.bull_scouter_score || '-'}</span>`;
+      (rec ? `<span class="dd-rec-badge ${rec.toLowerCase()}">${rec}</span>` : '');
     header.appendChild(badges);
     card.appendChild(header);
 
@@ -87,6 +125,39 @@ const DeepDive = (() => {
       ]));
     }
     card.appendChild(fwRow);
+
+    // AI Exposure
+    if (a.ai_exposure) {
+      const ai = a.ai_exposure;
+      const vClass = ai.verdict === 'tailwind' ? 'text-green-400' : ai.verdict === 'threat' ? 'text-red-400' : 'text-gray-400';
+      const vLabel = (ai.verdict || 'neutral').toUpperCase();
+      const section = el('div', 'dd-section');
+      section.innerHTML =
+        `<div class="dd-section-title">AI Exposure</div>` +
+        `<p class="text-sm"><span class="${vClass} font-bold font-mono">${esc(vLabel)}</span>` +
+        `<span class="text-gray-400 ml-2">${esc(ai.detail || '')}</span></p>`;
+      card.appendChild(section);
+    }
+
+    // Deal Radar
+    if (a.deal_radar) {
+      const dr = a.deal_radar;
+      const section = el('div', 'dd-section');
+      let html = `<div class="dd-section-title">Deal Radar</div>`;
+      if (dr.capex_exposure) {
+        html += `<p class="text-sm"><span class="text-amber-400 font-bold font-mono">CAPEX</span>` +
+          `<span class="text-gray-400 ml-2">${esc(dr.capex_exposure)}</span></p>`;
+      }
+      if (dr.options_signal) {
+        html += `<p class="text-sm"><span class="text-blue-400 font-bold font-mono">OPTIONS</span>` +
+          `<span class="text-gray-400 ml-2">${esc(dr.options_signal)}</span></p>`;
+      }
+      if (dr.assessment) {
+        html += `<p class="text-sm text-gray-300 mt-1">${esc(dr.assessment)}</p>`;
+      }
+      section.innerHTML = html;
+      card.appendChild(section);
+    }
 
     // Financials
     if (a.financials) {
@@ -171,6 +242,7 @@ const DeepDive = (() => {
   function verdictIcon(v) {
     if (v === 'pass') return '<span class="text-green-400">&#x2705;</span>';
     if (v === 'fail') return '<span class="text-red-400">&#x274C;</span>';
+    if (v === 'insufficient_data') return '<span class="text-gray-500">&#x2014;</span>';
     return '<span class="text-amber-400">&#x26A0;&#xFE0F;</span>';
   }
 
