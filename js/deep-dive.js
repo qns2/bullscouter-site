@@ -1,11 +1,52 @@
 /**
  * Bull Scouter - Deep Dive Page
  * Fetches deep-dive.json and renders Opus analysis cards.
+ * Supports two formats:
+ *   - Legacy: { analyses: [...] }
+ *   - Two-path: { value_picks: [...], growth_picks: [...] }
  */
 
 const DeepDive = (() => {
   const DATA_PATH = 'data/deep-dive.json';
   let pageData = null;
+
+  // Framework criteria labels per path
+  const VALUE_CRITERIA = [
+    ['fcf_yield', 'FCF Yield'],
+    ['pe_discount', 'PE Discount'],
+    ['drawdown', 'Drawdown'],
+    ['balance_sheet', 'Balance Sheet'],
+    ['dividend', 'Dividend'],
+    ['institutional', 'Institutional'],
+  ];
+
+  const GROWTH_CRITERIA = [
+    ['revenue_growth', 'Revenue Growth'],
+    ['gross_margins', 'Gross Margins'],
+    ['rule_of_40', 'Rule of 40'],
+    ['earnings_accel', 'Earnings Accel'],
+    ['capital_efficiency', 'Capital Efficiency'],
+    ['short_dynamics', 'SI Dynamics'],
+  ];
+
+  // Legacy criteria (old format)
+  const LEGACY_VALUE_CRITERIA = [
+    ['profitable', 'Profitable'],
+    ['strong_fcf', 'Strong FCF'],
+    ['near_52w_lows', 'Near 52w Lows'],
+    ['sector_panic', 'Sector Panic'],
+    ['low_pe_vs_history', 'Low PE vs History'],
+    ['no_dilution', 'No Dilution'],
+  ];
+
+  const LEGACY_GROWTH_CRITERIA = [
+    ['revenue_growth_30', '30%+ Rev Growth'],
+    ['gross_margins_60', '60%+ Margins'],
+    ['nrr_120', '120%+ NRR'],
+    ['tam_under_10', '<10% TAM'],
+    ['rule_of_40', 'Rule of 40'],
+    ['low_sbc', 'Low SBC'],
+  ];
 
   // ── Init ──
 
@@ -13,39 +54,7 @@ const DeepDive = (() => {
     // Copy button
     const copyBtn = document.getElementById('btn-copy-dd');
     if (copyBtn) {
-      copyBtn.addEventListener('click', () => {
-        if (!pageData || !pageData.analyses) return;
-        const buys = pageData.analyses.filter(a => (a.opus_recommendation || '').toUpperCase() === 'BUY');
-        const watches = pageData.analyses.filter(a => (a.opus_recommendation || '').toUpperCase() === 'WATCHLIST');
-        const signals = [...buys, ...watches];
-        if (!signals.length) return;
-        const lines = signals.map(a => {
-          const parts = [`${a.ticker} (${a.opus_recommendation})`];
-          if (a.price) parts.push(`$${Number(a.price).toFixed(2)}`);
-          if (a.value_framework) parts.push(`Value: ${a.value_framework.score || '?'}/6`);
-          if (a.growth_framework) parts.push(`Growth: ${a.growth_framework.score || '?'}/6`);
-          if (a.ai_exposure) parts.push(`AI: ${(a.ai_exposure.verdict || 'neutral').toUpperCase()}`);
-          if (a.deal_radar && a.deal_radar.assessment) parts.push(`DealRadar: ${a.deal_radar.assessment}`);
-          if (a.financials) {
-            const f = a.financials;
-            if (f.forward_pe) parts.push(`FwdPE: ${f.forward_pe}x`);
-            if (f.range_52w) parts.push(`52w: ${f.range_52w}`);
-          }
-          if (a.ideal_entry) parts.push(`Entry: $${Number(a.ideal_entry.price).toFixed(2)}`);
-          const allCats = [].concat(a.catalysts_verified || [], a.catalysts_general || [], (!a.catalysts_verified && !a.catalysts_general) ? (a.catalysts || []) : []);
-          if (allCats.length) parts.push(`Catalysts: ${allCats.join('; ')}`);
-          if (a.analyst_take) parts.push(`\n  Take: ${a.analyst_take}`);
-          return parts.join(' | ');
-        });
-        const header = `Opus Deep Dive — ${pageData.scan_date || 'today'}\n` +
-          `${buys.length} BUY + ${watches.length} WATCHLIST\n\n`;
-        navigator.clipboard.writeText(header + lines.join('\n')).then(() => {
-          const label = copyBtn.querySelector('.copy-label');
-          copyBtn.classList.add('copied');
-          label.textContent = 'Copied!';
-          setTimeout(() => { copyBtn.classList.remove('copied'); label.textContent = 'Copy for Claude'; }, 2000);
-        });
-      });
+      copyBtn.addEventListener('click', () => copyData(copyBtn));
     }
 
     try {
@@ -54,7 +63,12 @@ const DeepDive = (() => {
       const data = await resp.json();
       pageData = data;
       hide('dd-loading');
-      if (!data.analyses || data.analyses.length === 0) {
+
+      // Detect format
+      const isNewFormat = data.value_picks || data.growth_picks;
+      const isLegacy = data.analyses && data.analyses.length > 0;
+
+      if (!isNewFormat && !isLegacy) {
         show('dd-empty');
         return;
       }
@@ -67,20 +81,92 @@ const DeepDive = (() => {
     }
   }
 
+  // ── Copy ──
+
+  function copyData(copyBtn) {
+    if (!pageData) return;
+
+    // Gather all picks from either format
+    let allPicks;
+    if (pageData.value_picks || pageData.growth_picks) {
+      allPicks = [].concat(pageData.value_picks || [], pageData.growth_picks || []);
+    } else {
+      allPicks = pageData.analyses || [];
+    }
+
+    const buys = allPicks.filter(a => (a.opus_recommendation || '').toUpperCase() === 'BUY');
+    const watches = allPicks.filter(a => (a.opus_recommendation || '').toUpperCase() === 'WATCHLIST');
+    const signals = [...buys, ...watches];
+    if (!signals.length) return;
+
+    const lines = signals.map(a => {
+      const parts = [`${a.ticker} (${a.opus_recommendation})`];
+      if (a.price) parts.push(`$${Number(a.price).toFixed(2)}`);
+      const fw = a.framework || a.value_framework || a.growth_framework;
+      if (fw) parts.push(`Score: ${fw.score || '?'}/6`);
+      if (a.ai_exposure) parts.push(`AI: ${(a.ai_exposure.verdict || 'neutral').toUpperCase()}`);
+      if (a.deal_radar && a.deal_radar.assessment) parts.push(`DealRadar: ${a.deal_radar.assessment}`);
+      if (a.financials) {
+        const f = a.financials;
+        if (f.forward_pe) parts.push(`FwdPE: ${f.forward_pe}x`);
+        if (f.range_52w) parts.push(`52w: ${f.range_52w}`);
+      }
+      if (a.ideal_entry) parts.push(`Entry: $${Number(a.ideal_entry.price).toFixed(2)}`);
+      const allCats = [].concat(a.catalysts_verified || [], a.catalysts_general || [], (!a.catalysts_verified && !a.catalysts_general) ? (a.catalysts || []) : []);
+      if (allCats.length) parts.push(`Catalysts: ${allCats.join('; ')}`);
+      if (a.analyst_take) parts.push(`\n  Take: ${a.analyst_take}`);
+      return parts.join(' | ');
+    });
+    const header = `Opus Deep Dive — ${pageData.scan_date || 'today'}\n` +
+      `${buys.length} BUY + ${watches.length} WATCHLIST\n\n`;
+    navigator.clipboard.writeText(header + lines.join('\n')).then(() => {
+      const label = copyBtn.querySelector('.copy-label');
+      copyBtn.classList.add('copied');
+      label.textContent = 'Copied!';
+      setTimeout(() => { copyBtn.classList.remove('copied'); label.textContent = 'Copy for Claude'; }, 2000);
+    });
+  }
+
   // ── Render ──
 
   function renderPage(data) {
     document.getElementById('dd-date').textContent = data.scan_date || '-';
-    document.getElementById('dd-count').textContent = data.analyses.length;
 
-    const container = document.getElementById('dd-cards');
-    container.innerHTML = '';
-    for (const a of data.analyses) {
-      container.appendChild(renderCard(a));
+    // Legacy format: single analyses array
+    if (data.analyses && !data.value_picks && !data.growth_picks) {
+      document.getElementById('dd-count').textContent = data.analyses.length;
+      const container = document.getElementById('dd-cards');
+      container.innerHTML = '';
+      for (const a of data.analyses) {
+        container.appendChild(renderCard(a, 'legacy'));
+      }
+      return;
+    }
+
+    // New format: two sections
+    const total = (data.value_picks?.length || 0) + (data.growth_picks?.length || 0);
+    document.getElementById('dd-count').textContent = total;
+
+    if (data.value_picks?.length) {
+      show('dd-value-section');
+      const container = document.getElementById('dd-value-cards');
+      container.innerHTML = '';
+      for (const a of data.value_picks) {
+        container.appendChild(renderCard(a, 'value'));
+      }
+    }
+
+    if (data.growth_picks?.length) {
+      show('dd-growth-section');
+      const container = document.getElementById('dd-growth-cards');
+      container.innerHTML = '';
+      for (const a of data.growth_picks) {
+        container.appendChild(renderCard(a, 'growth'));
+      }
     }
   }
 
-  function renderCard(a) {
+  function renderCard(a, pathType) {
     const card = el('div', 'dd-card');
 
     // Opus recommendation color class
@@ -104,27 +190,29 @@ const DeepDive = (() => {
     header.appendChild(badges);
     card.appendChild(header);
 
-    // Frameworks side by side
+    // Framework — pick the right criteria and data based on path type
     const fwRow = el('div', 'dd-fw-row');
-    if (a.value_framework) {
-      fwRow.appendChild(renderFramework('Value Framework', a.value_framework, [
-        ['profitable', 'Profitable'],
-        ['strong_fcf', 'Strong FCF'],
-        ['near_52w_lows', 'Near 52w Lows'],
-        ['sector_panic', 'Sector Panic'],
-        ['low_pe_vs_history', 'Low PE vs History'],
-        ['no_dilution', 'No Dilution'],
-      ]));
-    }
-    if (a.growth_framework) {
-      fwRow.appendChild(renderFramework('Growth Framework', a.growth_framework, [
-        ['revenue_growth_30', '30%+ Rev Growth'],
-        ['gross_margins_60', '60%+ Margins'],
-        ['nrr_120', '120%+ NRR'],
-        ['tam_under_10', '<10% TAM'],
-        ['rule_of_40', 'Rule of 40'],
-        ['low_sbc', 'Low SBC'],
-      ]));
+
+    if (pathType === 'value') {
+      // New value path: framework key is "framework"
+      const fw = a.framework;
+      if (fw) {
+        fwRow.appendChild(renderFramework('Value Framework', fw, VALUE_CRITERIA));
+      }
+    } else if (pathType === 'growth') {
+      // New growth path: framework key is "framework"
+      const fw = a.framework;
+      if (fw) {
+        fwRow.appendChild(renderFramework('Growth Framework', fw, GROWTH_CRITERIA));
+      }
+    } else {
+      // Legacy: side-by-side value + growth
+      if (a.value_framework) {
+        fwRow.appendChild(renderFramework('Value Framework', a.value_framework, LEGACY_VALUE_CRITERIA));
+      }
+      if (a.growth_framework) {
+        fwRow.appendChild(renderFramework('Growth Framework', a.growth_framework, LEGACY_GROWTH_CRITERIA));
+      }
     }
     card.appendChild(fwRow);
 
@@ -171,7 +259,6 @@ const DeepDive = (() => {
         finItem('Price', '$' + fmt(fin.current_price)) +
         finItem('52w Range', fin.range_52w || '-') +
         finItem('Forward PE', fin.forward_pe ? fin.forward_pe + 'x' : '-') +
-        finItem('Hist. PE', fin.historical_pe_avg || '-') +
         `</div>`;
       card.appendChild(section);
     }
@@ -324,8 +411,8 @@ const DeepDive = (() => {
     return `<div class="dd-fin-item"><span class="text-gray-500">${label}</span><span class="font-mono">${value}</span></div>`;
   }
 
-  function show(id) { document.getElementById(id).classList.remove('hidden'); }
-  function hide(id) { document.getElementById(id).classList.add('hidden'); }
+  function show(id) { document.getElementById(id)?.classList.remove('hidden'); }
+  function hide(id) { document.getElementById(id)?.classList.add('hidden'); }
 
   document.addEventListener('DOMContentLoaded', init);
 })();
