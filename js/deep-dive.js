@@ -149,6 +149,8 @@ const DeepDive = (() => {
 
     if (data.value_picks?.length) {
       show('dd-value-section');
+      const vh = document.querySelector('#dd-value-section h2');
+      if (vh) vh.innerHTML = `Value Picks <span class="text-sm text-gray-500 font-normal ml-2">${data.value_picks.length} stocks &middot; FCF + Balance Sheet + Drawdown</span>`;
       const container = document.getElementById('dd-value-cards');
       container.innerHTML = '';
       for (const a of data.value_picks) {
@@ -158,6 +160,8 @@ const DeepDive = (() => {
 
     if (data.growth_picks?.length) {
       show('dd-growth-section');
+      const gh = document.querySelector('#dd-growth-section h2');
+      if (gh) gh.innerHTML = `Growth Picks <span class="text-sm text-gray-500 font-normal ml-2">${data.growth_picks.length} stocks &middot; Revenue + Margins + Rule of 40</span>`;
       const container = document.getElementById('dd-growth-cards');
       container.innerHTML = '';
       for (const a of data.growth_picks) {
@@ -183,9 +187,14 @@ const DeepDive = (() => {
       `<span class="text-sm text-gray-400 ml-2">${esc(a.name || '')}</span>`;
     header.appendChild(tickerEl);
 
+    // Score badge + price + recommendation
+    const fw = a.framework || a.value_framework || a.growth_framework;
+    const score = fw?.score;
+    const scoreClass = score >= 5 ? 'high' : score >= 3 ? 'mid' : 'low';
     const badges = el('div', 'flex items-center gap-2');
     badges.innerHTML =
-      `<span class="text-sm font-mono">$${fmt(a.price)}</span>` +
+      (score != null ? `<span class="dd-score-badge ${scoreClass}">${score}/6</span>` : '') +
+      `<span class="text-sm font-mono text-gray-400">$${fmt(a.price)}</span>` +
       (rec ? `<span class="dd-rec-badge ${rec.toLowerCase()}">${rec}</span>` : '');
     header.appendChild(badges);
     card.appendChild(header);
@@ -194,16 +203,14 @@ const DeepDive = (() => {
     const fwRow = el('div', 'dd-fw-row');
 
     if (pathType === 'value') {
-      // New value path: framework key is "framework"
-      const fw = a.framework;
-      if (fw) {
-        fwRow.appendChild(renderFramework('Value Framework', fw, VALUE_CRITERIA));
+      fwRow.classList.add('single');
+      if (a.framework) {
+        fwRow.appendChild(renderFramework('Value Framework', a.framework, VALUE_CRITERIA));
       }
     } else if (pathType === 'growth') {
-      // New growth path: framework key is "framework"
-      const fw = a.framework;
-      if (fw) {
-        fwRow.appendChild(renderFramework('Growth Framework', fw, GROWTH_CRITERIA));
+      fwRow.classList.add('single');
+      if (a.framework) {
+        fwRow.appendChild(renderFramework('Growth Framework', a.framework, GROWTH_CRITERIA));
       }
     } else {
       // Legacy: side-by-side value + growth
@@ -229,38 +236,46 @@ const DeepDive = (() => {
       card.appendChild(section);
     }
 
-    // Deal Radar
+    // Deal Radar — only show if there's actual signal data
     if (a.deal_radar) {
       const dr = a.deal_radar;
-      const section = el('div', 'dd-section');
-      let html = `<div class="dd-section-title">Deal Radar</div>`;
-      if (dr.capex_exposure) {
-        html += `<p class="text-sm"><span class="text-amber-400 font-bold font-mono">CAPEX</span>` +
-          `<span class="text-gray-400 ml-2">${esc(dr.capex_exposure)}</span></p>`;
+      const hasSignals = dr.capex_exposure || dr.options_signal;
+      if (hasSignals) {
+        const section = el('div', 'dd-section');
+        let html = `<div class="dd-section-title">Deal Radar</div>`;
+        if (dr.capex_exposure) {
+          html += `<p class="text-sm"><span class="text-amber-400 font-bold font-mono">CAPEX</span>` +
+            `<span class="text-gray-400 ml-2">${esc(dr.capex_exposure)}</span></p>`;
+        }
+        if (dr.options_signal) {
+          html += `<p class="text-sm"><span class="text-blue-400 font-bold font-mono">OPTIONS</span>` +
+            `<span class="text-gray-400 ml-2">${esc(dr.options_signal)}</span></p>`;
+        }
+        if (dr.assessment) {
+          html += `<p class="text-sm text-gray-300 mt-1">${esc(dr.assessment)}</p>`;
+        }
+        section.innerHTML = html;
+        card.appendChild(section);
       }
-      if (dr.options_signal) {
-        html += `<p class="text-sm"><span class="text-blue-400 font-bold font-mono">OPTIONS</span>` +
-          `<span class="text-gray-400 ml-2">${esc(dr.options_signal)}</span></p>`;
-      }
-      if (dr.assessment) {
-        html += `<p class="text-sm text-gray-300 mt-1">${esc(dr.assessment)}</p>`;
-      }
-      section.innerHTML = html;
-      card.appendChild(section);
     }
 
-    // Financials
+    // Financials — compact key metrics bar
     if (a.financials) {
       const fin = a.financials;
       const section = el('div', 'dd-section');
-      section.innerHTML =
-        `<div class="dd-section-title">Financials</div>` +
-        `<div class="dd-fin-grid">` +
-        finItem('Price', '$' + fmt(fin.current_price)) +
-        finItem('52w Range', fin.range_52w || '-') +
-        finItem('Forward PE', fin.forward_pe ? fin.forward_pe + 'x' : '-') +
-        `</div>`;
-      card.appendChild(section);
+      const items = [];
+      if (fin.range_52w) items.push(finItem('52w Range', fin.range_52w));
+      if (fin.forward_pe) items.push(finItem('Fwd PE', fin.forward_pe + 'x'));
+      if (fin.market_cap) items.push(finItem('Mkt Cap', fin.market_cap));
+      if (fin.revenue_growth) items.push(finItem('Rev Growth', fin.revenue_growth));
+      if (fin.gross_margins) items.push(finItem('Gross Margin', fin.gross_margins));
+      if (fin.free_cashflow) items.push(finItem('FCF', fin.free_cashflow));
+      if (items.length) {
+        section.innerHTML =
+          `<div class="dd-section-title">Key Metrics</div>` +
+          `<div class="dd-fin-grid">${items.join('')}</div>`;
+        card.appendChild(section);
+      }
     }
 
     // Catalysts (structured or flat — backward compatible)
@@ -330,13 +345,9 @@ const DeepDive = (() => {
       </tr>`;
     }
 
-    const score = fw.score != null ? fw.score : '-';
-    const scoreClass = score >= 5 ? 'text-green-400' : score >= 3 ? 'text-amber-400' : 'text-red-400';
-
     wrap.innerHTML =
       `<div class="dd-fw-title">${esc(title)}</div>` +
-      `<table class="dd-fw-table"><tbody>${rows}</tbody></table>` +
-      `<div class="dd-fw-score ${scoreClass}">Score: ${score}/6</div>`;
+      `<table class="dd-fw-table"><tbody>${rows}</tbody></table>`;
     return wrap;
   }
 
