@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bull Scouter - Stock Catalyst Detection</title>
   <meta name="description" content="Automated stock catalyst detection. Daily picks surfaced 90-120 days before binary catalysts.">
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script>
@@ -28,34 +28,41 @@
   <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
       <div class="flex items-center gap-2 shrink-0">
-        <h1 class="text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap">Bull Scouter</h1>
+        <a href="index.html" class="text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap hover:text-white transition-colors">Bull Scouter</a>
         <span class="text-xs text-gray-500 font-mono hidden sm:inline" id="version-badge"></span>
       </div>
-      <nav class="flex items-center gap-2 sm:gap-4">
-        <button id="tab-today" class="tab-btn tab-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Today</button>
-        <button id="tab-history" class="tab-btn text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">History</button>
-        <button id="tab-portfolio" class="tab-btn text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Paper</button>
-        <a href="deep-dive.html" class="text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Deep Dive</a>
-        <a href="guide.html" class="text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
-        <span class="text-xs text-gray-600 font-mono hidden md:inline" id="scan-date"></span>
+      <nav class="flex items-center gap-1 sm:gap-2">
+        <a href="index.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Dashboard</a>
+        <a href="deep-dive.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Deep Dive</a>
+        <a href="guide.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
+        <span class="text-gray-700 mx-0.5 hidden sm:inline">|</span>
+        <span class="text-xs text-gray-600 font-mono hidden sm:inline" id="scan-date"></span>
       </nav>
     </div>
   </header>
 
-  <!-- Stats Bar -->
+  <!-- Sub-nav + Stats Bar -->
   <div id="stats-bar" class="border-b border-gray-800 bg-gray-900/50">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap gap-x-3 gap-y-1 text-xs font-mono">
-      <span class="text-gray-500">Scanned: <span id="stat-total" class="text-gray-300">-</span></span>
-      <span class="text-green-500">BUY: <span id="stat-buy" class="font-bold">-</span></span>
-      <span class="text-amber-500">WATCH: <span id="stat-watch" class="font-bold">-</span></span>
-      <span class="text-gray-400">MOM: <span id="stat-momentum">-</span></span>
-      <span class="text-gray-500">T1: <span id="stat-t1" class="text-gray-400">-</span></span>
-      <span class="text-gray-500">T2: <span id="stat-t2" class="text-gray-400">-</span></span>
-      <span class="text-gray-500">Gr: <span id="stat-growth" class="text-gray-400">-</span></span>
-      <span class="text-gray-500">Acc: <span id="stat-accel" class="text-gray-400">-</span></span>
-      <button id="btn-copy-signals" class="ml-auto copy-btn text-gray-500 hover:text-green-400 transition-colors" title="Copy BUY & WATCHLIST data for Claude">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-x-3 gap-y-1 text-xs font-mono">
+      <div class="flex items-center gap-1 shrink-0">
+        <button id="tab-today" class="tab-btn tab-active text-xs font-medium px-2 py-1 rounded-md">Today</button>
+        <button id="tab-history" class="tab-btn text-xs font-medium px-2 py-1 rounded-md text-gray-500 hover:text-gray-300">History</button>
+        <button id="tab-portfolio" class="tab-btn text-xs font-medium px-2 py-1 rounded-md text-gray-500 hover:text-gray-300">Paper</button>
+      </div>
+      <span class="text-gray-700">|</span>
+      <div class="flex flex-wrap gap-x-3 gap-y-1">
+        <span class="text-gray-500">Scanned: <span id="stat-total" class="text-gray-300">-</span></span>
+        <span class="text-green-500">BUY: <span id="stat-buy" class="font-bold">-</span></span>
+        <span class="text-amber-500">WATCH: <span id="stat-watch" class="font-bold">-</span></span>
+        <span class="text-gray-400">MOM: <span id="stat-momentum">-</span></span>
+        <span class="text-gray-500 hidden sm:inline">T1: <span id="stat-t1" class="text-gray-400">-</span></span>
+        <span class="text-gray-500 hidden sm:inline">T2: <span id="stat-t2" class="text-gray-400">-</span></span>
+        <span class="text-gray-500 hidden sm:inline">Gr: <span id="stat-growth" class="text-gray-400">-</span></span>
+        <span class="text-gray-500 hidden sm:inline">Acc: <span id="stat-accel" class="text-gray-400">-</span></span>
+      </div>
+      <button id="btn-copy-signals" class="ml-auto copy-btn text-gray-500 hover:text-green-400 transition-colors shrink-0" title="Copy BUY & WATCHLIST data for Claude">
         <svg class="inline w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/></svg>
-        <span class="copy-label">Copy for Claude</span>
+        <span class="copy-label hidden sm:inline">Copy for Claude</span>
       </button>
     </div>
   </div>
@@ -246,7 +253,7 @@
     </div>
   </footer>
 
-  <script src="js/charts.js?v=8"></script>
-  <script src="js/app.js?v=8"></script>
+  <script src="js/charts.js?v=9"></script>
+  <script src="js/app.js?v=9"></script>
 </body>
 </html>
