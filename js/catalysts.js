@@ -66,9 +66,11 @@ const CatalystReport = (() => {
         return;
       }
 
-      // Date in nav
+      // Date + version in nav
       const dateNav = document.getElementById('cat-date-nav');
       if (dateNav && data.scan_date) dateNav.textContent = data.scan_date;
+      const vBadge = document.getElementById('version-badge');
+      if (vBadge && data.version) vBadge.textContent = 'v' + data.version;
 
       render();
     } catch (e) {

@@ -110,9 +110,11 @@ const DeepDive = (() => {
         return;
       }
 
-      // Set date in nav
+      // Set date + version in nav
       const dateNav = document.getElementById('dd-date-nav');
       if (dateNav && data.scan_date) dateNav.textContent = data.scan_date;
+      const vBadge = document.getElementById('version-badge');
+      if (vBadge && data.version) vBadge.textContent = 'v' + data.version;
 
       updateStats();
       renderCards();

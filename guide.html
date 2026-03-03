@@ -34,7 +34,7 @@
         <a href="catalysts.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Catalysts</a>
         <a href="guide.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Guide</a>
         <span class="text-gray-700 mx-0.5 hidden sm:inline">|</span>
-        <span class="text-xs text-gray-600 font-mono hidden sm:inline"></span>
+        <span class="text-xs text-gray-600 font-mono hidden sm:inline" id="guide-date-nav"></span>
       </nav>
     </div>
   </header>
@@ -256,5 +256,18 @@
       <p>Bull Scouter &mdash; Automated catalyst detection. Not financial advice.</p>
     </div>
   </footer>
+
+  <script>
+    fetch('data/latest.json?_cb=' + Date.now())
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d) return;
+        const v = document.getElementById('version-badge');
+        if (v && d.version) v.textContent = 'v' + d.version;
+        const dt = document.getElementById('guide-date-nav');
+        if (dt && d.scan_date) dt.textContent = d.scan_date;
+      })
+      .catch(() => {});
+  </script>
 </body>
 </html>
