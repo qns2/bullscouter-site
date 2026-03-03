@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bull Scouter - Catalyst Report</title>
+  <meta name="description" content="Upcoming stock catalysts: FDA approvals, launches, earnings, and AI-enriched beneficiary tickers.">
+  <link rel="stylesheet" href="css/style.css?v=11">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bull: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' },
+            warn: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706' },
+            slate: { 750: '#293548', 850: '#172033' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="index.html" class="text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap hover:text-white transition-colors">Bull Scouter</a>
+      </div>
+      <nav class="flex items-center gap-1 sm:gap-2">
+        <a href="index.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Dashboard</a>
+        <a href="deep-dive.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Deep Dive</a>
+        <a href="catalysts.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Catalysts</a>
+        <a href="guide.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
+        <span class="text-gray-700 mx-0.5 hidden sm:inline">|</span>
+        <span class="text-xs text-gray-600 font-mono hidden sm:inline" id="cat-date-nav">-</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sub-nav + Stats Bar -->
+  <div class="border-b border-gray-800 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-x-3 gap-y-1 text-xs font-mono">
+      <div class="flex items-center gap-1 shrink-0">
+        <button class="filter-btn active" data-cat-filter="all">All</button>
+        <button class="filter-btn" data-cat-filter="fda">FDA</button>
+        <button class="filter-btn" data-cat-filter="launch">Launches</button>
+        <button class="filter-btn" data-cat-filter="earnings">Earnings</button>
+        <button class="filter-btn" data-cat-filter="other">Other</button>
+      </div>
+      <span class="text-gray-700">|</span>
+      <div class="flex flex-wrap gap-x-3 gap-y-1">
+        <span class="text-gray-500">Total: <span id="cat-stat-total" class="text-gray-300">-</span></span>
+        <span class="text-green-500">7d: <span id="cat-stat-7d" class="font-bold">-</span></span>
+        <span class="text-amber-500">30d: <span id="cat-stat-30d" class="font-bold">-</span></span>
+        <span class="text-blue-400 hidden sm:inline">Enriched: <span id="cat-stat-enriched" class="font-bold">-</span></span>
+      </div>
+      <div class="ml-auto flex items-center gap-1 shrink-0">
+        <span class="text-xs text-gray-600 mr-1">Sort:</span>
+        <button class="sort-btn active" data-cat-sort="date">Date</button>
+        <button class="sort-btn" data-cat-sort="ticker">Ticker</button>
+        <button class="sort-btn" data-cat-sort="type">Type</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <div id="cat-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <!-- Empty State -->
+    <div id="cat-empty" class="hidden text-center py-20">
+      <p class="text-gray-500 text-lg">No catalyst data available</p>
+      <p class="text-gray-600 text-sm mt-1">Catalyst report is generated during the daily scan</p>
+    </div>
+
+    <!-- Loading State -->
+    <div id="cat-loading" class="text-center py-20">
+      <p class="text-gray-500">Loading catalyst data...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="cat-error" class="hidden text-center py-20">
+      <p class="text-red-400 text-lg">Failed to load data</p>
+      <p class="text-gray-600 text-sm mt-1" id="cat-error-msg"></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-4 text-center text-xs text-gray-600">
+      <p>Bull Scouter &mdash; Automated catalyst detection. Not financial advice.</p>
+      <p class="mt-1">Data refreshed daily. Past performance does not guarantee future results.</p>
+    </div>
+  </footer>
+
+  <script src="js/catalysts.js?v=1"></script>
+</body>
+</html>
