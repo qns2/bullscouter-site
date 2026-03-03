@@ -1,14 +1,15 @@
 /**
  * Bull Scouter - Deep Dive Page
  * Fetches deep-dive.json and renders Opus analysis cards.
- * Supports two formats:
- *   - Legacy: { analyses: [...] }
- *   - Two-path: { value_picks: [...], growth_picks: [...] }
+ * Cards grouped by recommendation (BUY / WATCHLIST / AVOID),
+ * with Value/Growth filter tabs and sort controls.
  */
 
 const DeepDive = (() => {
   const DATA_PATH = 'data/deep-dive.json';
   let pageData = null;
+  let allPicks = [];
+  let activeFilter = 'all';
 
   // Framework criteria labels per path
   const VALUE_CRITERIA = [
@@ -53,9 +54,27 @@ const DeepDive = (() => {
   async function init() {
     // Copy button
     const copyBtn = document.getElementById('btn-copy-dd');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', () => copyData(copyBtn));
-    }
+    if (copyBtn) copyBtn.addEventListener('click', () => copyData(copyBtn));
+
+    // Filter tabs
+    document.querySelectorAll('[data-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        renderCards();
+      });
+    });
+
+    // Sort buttons
+    document.querySelectorAll('.sort-btn[data-sort]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const bar = btn.closest('.sort-bar');
+        bar.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderCards();
+      });
+    });
 
     try {
       const resp = await fetch(DATA_PATH + '?_cb=' + Date.now());
@@ -64,15 +83,39 @@ const DeepDive = (() => {
       pageData = data;
       hide('dd-loading');
 
-      // Detect format
-      const isNewFormat = data.value_picks || data.growth_picks;
-      const isLegacy = data.analyses && data.analyses.length > 0;
+      // Collect all picks with path metadata
+      allPicks = [];
+      if (data.value_picks) {
+        for (const p of data.value_picks) {
+          p._path = 'value';
+          allPicks.push(p);
+        }
+      }
+      if (data.growth_picks) {
+        for (const p of data.growth_picks) {
+          p._path = 'growth';
+          allPicks.push(p);
+        }
+      }
+      // Legacy format
+      if (data.analyses && !data.value_picks && !data.growth_picks) {
+        for (const p of data.analyses) {
+          p._path = 'legacy';
+          allPicks.push(p);
+        }
+      }
 
-      if (!isNewFormat && !isLegacy) {
+      if (!allPicks.length) {
         show('dd-empty');
         return;
       }
-      renderPage(data);
+
+      // Set date in nav
+      const dateNav = document.getElementById('dd-date-nav');
+      if (dateNav && data.scan_date) dateNav.textContent = data.scan_date;
+
+      updateStats();
+      renderCards();
     } catch (e) {
       hide('dd-loading');
       show('dd-error');
@@ -81,102 +124,98 @@ const DeepDive = (() => {
     }
   }
 
-  // ── Copy ──
+  // ── Stats ──
 
-  function copyData(copyBtn) {
-    if (!pageData) return;
+  function updateStats() {
+    const filtered = getFiltered();
+    const buys = filtered.filter(p => rec(p) === 'BUY');
+    const watches = filtered.filter(p => rec(p) === 'WATCHLIST');
+    const avoids = filtered.filter(p => rec(p) === 'AVOID');
 
-    // Gather all picks from either format
-    let allPicks;
-    if (pageData.value_picks || pageData.growth_picks) {
-      allPicks = [].concat(pageData.value_picks || [], pageData.growth_picks || []);
-    } else {
-      allPicks = pageData.analyses || [];
-    }
+    setText('dd-stat-total', filtered.length);
+    setText('dd-stat-buy', buys.length);
+    setText('dd-stat-watch', watches.length);
+    setText('dd-stat-avoid', avoids.length);
+  }
 
-    const buys = allPicks.filter(a => (a.opus_recommendation || '').toUpperCase() === 'BUY');
-    const watches = allPicks.filter(a => (a.opus_recommendation || '').toUpperCase() === 'WATCHLIST');
-    const signals = [...buys, ...watches];
-    if (!signals.length) return;
+  // ── Filtering ──
 
-    const lines = signals.map(a => {
-      const parts = [`${a.ticker} (${a.opus_recommendation})`];
-      if (a.price) parts.push(`$${Number(a.price).toFixed(2)}`);
-      const fw = a.framework || a.value_framework || a.growth_framework;
-      if (fw) parts.push(`Score: ${fw.score || '?'}/6`);
-      if (a.ai_exposure) parts.push(`AI: ${(a.ai_exposure.verdict || 'neutral').toUpperCase()}`);
-      if (a.deal_radar && a.deal_radar.assessment) parts.push(`DealRadar: ${a.deal_radar.assessment}`);
-      if (a.financials) {
-        const f = a.financials;
-        if (f.forward_pe) parts.push(`FwdPE: ${f.forward_pe}x`);
-        if (f.range_52w) parts.push(`52w: ${f.range_52w}`);
-      }
-      if (a.ideal_entry) parts.push(`Entry: $${Number(a.ideal_entry.price).toFixed(2)}`);
-      const allCats = [].concat(a.catalysts_verified || [], a.catalysts_general || [], (!a.catalysts_verified && !a.catalysts_general) ? (a.catalysts || []) : []);
-      if (allCats.length) parts.push(`Catalysts: ${allCats.join('; ')}`);
-      if (a.analyst_take) parts.push(`\n  Take: ${a.analyst_take}`);
-      return parts.join(' | ');
+  function getFiltered() {
+    if (activeFilter === 'all') return allPicks;
+    return allPicks.filter(p => p._path === activeFilter);
+  }
+
+  function getActiveSort(section) {
+    const bar = document.querySelector(`#dd-section-${section} .sort-bar`);
+    if (!bar) return 'score';
+    const active = bar.querySelector('.sort-btn.active');
+    return active ? active.dataset.sort : 'score';
+  }
+
+  function sortPicks(picks, sortKey) {
+    return [...picks].sort((a, b) => {
+      if (sortKey === 'ticker') return (a.ticker || '').localeCompare(b.ticker || '');
+      if (sortKey === 'path') return (a._path || '').localeCompare(b._path || '');
+      // Default: score descending
+      const sa = getScore(a);
+      const sb = getScore(b);
+      return sb - sa;
     });
-    const header = `Opus Deep Dive — ${pageData.scan_date || 'today'}\n` +
-      `${buys.length} BUY + ${watches.length} WATCHLIST\n\n`;
-    navigator.clipboard.writeText(header + lines.join('\n')).then(() => {
-      const label = copyBtn.querySelector('.copy-label');
-      copyBtn.classList.add('copied');
-      label.textContent = 'Copied!';
-      setTimeout(() => { copyBtn.classList.remove('copied'); label.textContent = 'Copy for Claude'; }, 2000);
-    });
+  }
+
+  function getScore(p) {
+    const fw = p.framework || p.value_framework || p.growth_framework;
+    return fw?.score || 0;
+  }
+
+  function rec(p) {
+    return (p.opus_recommendation || '').toUpperCase();
   }
 
   // ── Render ──
 
-  function renderPage(data) {
-    document.getElementById('dd-date').textContent = data.scan_date || '-';
+  function renderCards() {
+    const filtered = getFiltered();
+    updateStats();
 
-    // Legacy format: single analyses array
-    if (data.analyses && !data.value_picks && !data.growth_picks) {
-      document.getElementById('dd-count').textContent = data.analyses.length;
-      const container = document.getElementById('dd-cards');
-      container.innerHTML = '';
-      for (const a of data.analyses) {
-        container.appendChild(renderCard(a, 'legacy'));
-      }
-      return;
-    }
+    const buys = sortPicks(filtered.filter(p => rec(p) === 'BUY'), getActiveSort('buy'));
+    const watches = sortPicks(filtered.filter(p => rec(p) === 'WATCHLIST'), getActiveSort('watchlist'));
+    const avoids = filtered.filter(p => rec(p) === 'AVOID');
 
-    // New format: two sections
-    const total = (data.value_picks?.length || 0) + (data.growth_picks?.length || 0);
-    document.getElementById('dd-count').textContent = total;
+    renderSection('dd-section-buy', 'dd-cards-buy', buys);
+    renderSection('dd-section-watchlist', 'dd-cards-watchlist', watches);
+    renderSection('dd-section-avoid', 'dd-cards-avoid', avoids);
 
-    if (data.value_picks?.length) {
-      show('dd-value-section');
-      const vh = document.querySelector('#dd-value-section h2');
-      if (vh) vh.innerHTML = `Value Picks <span class="text-sm text-gray-500 font-normal ml-2">${data.value_picks.length} stocks &middot; FCF + Balance Sheet + Drawdown</span>`;
-      const container = document.getElementById('dd-value-cards');
-      container.innerHTML = '';
-      for (const a of data.value_picks) {
-        container.appendChild(renderCard(a, 'value'));
-      }
-    }
-
-    if (data.growth_picks?.length) {
-      show('dd-growth-section');
-      const gh = document.querySelector('#dd-growth-section h2');
-      if (gh) gh.innerHTML = `Growth Picks <span class="text-sm text-gray-500 font-normal ml-2">${data.growth_picks.length} stocks &middot; Revenue + Margins + Rule of 40</span>`;
-      const container = document.getElementById('dd-growth-cards');
-      container.innerHTML = '';
-      for (const a of data.growth_picks) {
-        container.appendChild(renderCard(a, 'growth'));
-      }
+    // Show empty state if nothing visible
+    if (!buys.length && !watches.length && !avoids.length) {
+      show('dd-empty');
+    } else {
+      hide('dd-empty');
     }
   }
 
-  function renderCard(a, pathType) {
-    const card = el('div', 'dd-card');
+  function renderSection(sectionId, containerId, picks) {
+    const section = document.getElementById(sectionId);
+    const container = document.getElementById(containerId);
+    if (!section || !container) return;
 
-    // Opus recommendation color class
-    const rec = (a.opus_recommendation || '').toUpperCase();
-    if (rec === 'BUY') card.classList.add('buy');
-    else if (rec === 'WATCHLIST') card.classList.add('watchlist');
+    if (!picks.length) {
+      section.classList.add('hidden');
+      return;
+    }
+
+    section.classList.remove('hidden');
+    container.innerHTML = '';
+    for (const p of picks) {
+      container.appendChild(renderCard(p));
+    }
+  }
+
+  function renderCard(a) {
+    const card = el('div', 'dd-card');
+    const r = rec(a);
+    if (r === 'BUY') card.classList.add('buy');
+    else if (r === 'WATCHLIST') card.classList.add('watchlist');
 
     // Header row
     const header = el('div', 'dd-card-header');
@@ -187,39 +226,31 @@ const DeepDive = (() => {
       `<span class="text-sm text-gray-400 ml-2">${esc(a.name || '')}</span>`;
     header.appendChild(tickerEl);
 
-    // Score badge + price + recommendation
+    // Score badge + price + recommendation + path badge
     const fw = a.framework || a.value_framework || a.growth_framework;
     const score = fw?.score;
     const scoreClass = score >= 5 ? 'high' : score >= 3 ? 'mid' : 'low';
+    const pathLabel = a._path === 'value' ? 'Value' : a._path === 'growth' ? 'Growth' : '';
+    const pathClass = a._path === 'value' ? 'recovery' : a._path === 'growth' ? 'growth' : '';
     const badges = el('div', 'flex items-center gap-2');
     badges.innerHTML =
       (score != null ? `<span class="dd-score-badge ${scoreClass}">${score}/6</span>` : '') +
       `<span class="text-sm font-mono text-gray-400">$${fmt(a.price)}</span>` +
-      (rec ? `<span class="dd-rec-badge ${rec.toLowerCase()}">${rec}</span>` : '');
+      (r ? `<span class="dd-rec-badge ${r.toLowerCase()}">${r}</span>` : '') +
+      (pathLabel ? `<span class="profile-badge ${pathClass}">${pathLabel}</span>` : '');
     header.appendChild(badges);
     card.appendChild(header);
 
-    // Framework — pick the right criteria and data based on path type
-    const fwRow = el('div', 'dd-fw-row');
-
-    if (pathType === 'value') {
-      fwRow.classList.add('single');
-      if (a.framework) {
-        fwRow.appendChild(renderFramework('Value Framework', a.framework, VALUE_CRITERIA));
-      }
-    } else if (pathType === 'growth') {
-      fwRow.classList.add('single');
-      if (a.framework) {
-        fwRow.appendChild(renderFramework('Growth Framework', a.framework, GROWTH_CRITERIA));
-      }
-    } else {
-      // Legacy: side-by-side value + growth
-      if (a.value_framework) {
-        fwRow.appendChild(renderFramework('Value Framework', a.value_framework, LEGACY_VALUE_CRITERIA));
-      }
-      if (a.growth_framework) {
-        fwRow.appendChild(renderFramework('Growth Framework', a.growth_framework, LEGACY_GROWTH_CRITERIA));
-      }
+    // Framework
+    const fwRow = el('div', 'dd-fw-row single');
+    if (a._path === 'value' && a.framework) {
+      fwRow.appendChild(renderFramework('Value Framework', a.framework, VALUE_CRITERIA));
+    } else if (a._path === 'growth' && a.framework) {
+      fwRow.appendChild(renderFramework('Growth Framework', a.framework, GROWTH_CRITERIA));
+    } else if (a._path === 'legacy') {
+      fwRow.classList.remove('single');
+      if (a.value_framework) fwRow.appendChild(renderFramework('Value Framework', a.value_framework, LEGACY_VALUE_CRITERIA));
+      if (a.growth_framework) fwRow.appendChild(renderFramework('Growth Framework', a.growth_framework, LEGACY_GROWTH_CRITERIA));
     }
     card.appendChild(fwRow);
 
@@ -236,30 +267,21 @@ const DeepDive = (() => {
       card.appendChild(section);
     }
 
-    // Deal Radar — only show if there's actual signal data
+    // Deal Radar
     if (a.deal_radar) {
       const dr = a.deal_radar;
-      const hasSignals = dr.capex_exposure || dr.options_signal;
-      if (hasSignals) {
+      if (dr.capex_exposure || dr.options_signal) {
         const section = el('div', 'dd-section');
         let html = `<div class="dd-section-title">Deal Radar</div>`;
-        if (dr.capex_exposure) {
-          html += `<p class="text-sm"><span class="text-amber-400 font-bold font-mono">CAPEX</span>` +
-            `<span class="text-gray-400 ml-2">${esc(dr.capex_exposure)}</span></p>`;
-        }
-        if (dr.options_signal) {
-          html += `<p class="text-sm"><span class="text-blue-400 font-bold font-mono">OPTIONS</span>` +
-            `<span class="text-gray-400 ml-2">${esc(dr.options_signal)}</span></p>`;
-        }
-        if (dr.assessment) {
-          html += `<p class="text-sm text-gray-300 mt-1">${esc(dr.assessment)}</p>`;
-        }
+        if (dr.capex_exposure) html += `<p class="text-sm"><span class="text-amber-400 font-bold font-mono">CAPEX</span><span class="text-gray-400 ml-2">${esc(dr.capex_exposure)}</span></p>`;
+        if (dr.options_signal) html += `<p class="text-sm"><span class="text-blue-400 font-bold font-mono">OPTIONS</span><span class="text-gray-400 ml-2">${esc(dr.options_signal)}</span></p>`;
+        if (dr.assessment) html += `<p class="text-sm text-gray-300 mt-1">${esc(dr.assessment)}</p>`;
         section.innerHTML = html;
         card.appendChild(section);
       }
     }
 
-    // Financials — compact key metrics bar
+    // Financials
     if (a.financials) {
       const fin = a.financials;
       const section = el('div', 'dd-section');
@@ -278,22 +300,16 @@ const DeepDive = (() => {
       }
     }
 
-    // Catalysts (structured or flat — backward compatible)
+    // Catalysts
     const hasVerified = a.catalysts_verified && a.catalysts_verified.length > 0;
     const hasGeneral = a.catalysts_general && a.catalysts_general.length > 0;
     const hasFlat = a.catalysts && a.catalysts.length > 0;
     if (hasVerified || hasGeneral || hasFlat) {
       const section = el('div', 'dd-section');
       let html = '<div class="dd-section-title">Catalysts</div><ul class="dd-list">';
-      if (hasVerified) {
-        html += a.catalysts_verified.map(c => `<li><span class="text-green-400 mr-1">&#x2705;</span>${esc(c)}</li>`).join('');
-      }
-      if (hasGeneral) {
-        html += a.catalysts_general.map(c => `<li>${esc(c)}</li>`).join('');
-      }
-      if (!hasVerified && !hasGeneral && hasFlat) {
-        html += a.catalysts.map(c => `<li>${esc(c)}</li>`).join('');
-      }
+      if (hasVerified) html += a.catalysts_verified.map(c => `<li><span class="text-green-400 mr-1">&#x2705;</span>${esc(c)}</li>`).join('');
+      if (hasGeneral) html += a.catalysts_general.map(c => `<li>${esc(c)}</li>`).join('');
+      if (!hasVerified && !hasGeneral && hasFlat) html += a.catalysts.map(c => `<li>${esc(c)}</li>`).join('');
       html += '</ul>';
       section.innerHTML = html;
       card.appendChild(section);
@@ -344,7 +360,6 @@ const DeepDive = (() => {
         <td class="dd-fw-detail">${esc(item.detail || '')}</td>
       </tr>`;
     }
-
     wrap.innerHTML =
       `<div class="dd-fw-title">${esc(title)}</div>` +
       `<table class="dd-fw-table"><tbody>${rows}</tbody></table>`;
@@ -399,6 +414,45 @@ const DeepDive = (() => {
     return section;
   }
 
+  // ── Copy ──
+
+  function copyData(copyBtn) {
+    if (!allPicks.length) return;
+
+    const buys = allPicks.filter(a => rec(a) === 'BUY');
+    const watches = allPicks.filter(a => rec(a) === 'WATCHLIST');
+    const signals = [...buys, ...watches];
+    if (!signals.length) return;
+
+    const lines = signals.map(a => {
+      const parts = [`${a.ticker} (${a.opus_recommendation})`];
+      if (a.price) parts.push(`$${Number(a.price).toFixed(2)}`);
+      const fw = a.framework || a.value_framework || a.growth_framework;
+      if (fw) parts.push(`Score: ${fw.score || '?'}/6`);
+      if (a._path) parts.push(`Path: ${a._path}`);
+      if (a.ai_exposure) parts.push(`AI: ${(a.ai_exposure.verdict || 'neutral').toUpperCase()}`);
+      if (a.deal_radar && a.deal_radar.assessment) parts.push(`DealRadar: ${a.deal_radar.assessment}`);
+      if (a.financials) {
+        const f = a.financials;
+        if (f.forward_pe) parts.push(`FwdPE: ${f.forward_pe}x`);
+        if (f.range_52w) parts.push(`52w: ${f.range_52w}`);
+      }
+      if (a.ideal_entry) parts.push(`Entry: $${Number(a.ideal_entry.price).toFixed(2)}`);
+      const allCats = [].concat(a.catalysts_verified || [], a.catalysts_general || [], (!a.catalysts_verified && !a.catalysts_general) ? (a.catalysts || []) : []);
+      if (allCats.length) parts.push(`Catalysts: ${allCats.join('; ')}`);
+      if (a.analyst_take) parts.push(`\n  Take: ${a.analyst_take}`);
+      return parts.join(' | ');
+    });
+    const header = `Opus Deep Dive — ${pageData.scan_date || 'today'}\n` +
+      `${buys.length} BUY + ${watches.length} WATCHLIST\n\n`;
+    navigator.clipboard.writeText(header + lines.join('\n')).then(() => {
+      const label = copyBtn.querySelector('.copy-label');
+      copyBtn.classList.add('copied');
+      if (label) label.textContent = 'Copied!';
+      setTimeout(() => { copyBtn.classList.remove('copied'); if (label) label.textContent = 'Copy for Claude'; }, 2000);
+    });
+  }
+
   // ── Helpers ──
 
   function el(tag, cls) {
@@ -420,6 +474,11 @@ const DeepDive = (() => {
 
   function finItem(label, value) {
     return `<div class="dd-fin-item"><span class="text-gray-500">${label}</span><span class="font-mono">${value}</span></div>`;
+  }
+
+  function setText(id, val) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
   }
 
   function show(id) { document.getElementById(id)?.classList.remove('hidden'); }
