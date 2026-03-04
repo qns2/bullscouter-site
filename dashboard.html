@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bull Scouter - Dashboard</title>
+  <meta name="description" content="Bull Scouter dashboard: daily BUY/WATCHLIST signals, scoring breakdowns, and history.">
+  <link rel="stylesheet" href="css/style.css?v=10">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bull: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' },
+            warn: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706' },
+            slate: { 750: '#293548', 850: '#172033' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="index.html" class="text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap hover:text-white transition-colors">Bull Scouter</a>
+        <span class="text-xs text-gray-500 font-mono hidden sm:inline" id="version-badge"></span>
+      </div>
+      <nav class="flex items-center gap-1 sm:gap-2">
+        <a href="index.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Top Picks</a>
+        <a href="dashboard.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Dashboard</a>
+        <a href="deep-dive.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Deep Dive</a>
+        <a href="catalysts.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Catalysts</a>
+        <a href="contrarian.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Contrarian</a>
+        <a href="watchlist.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Watchlist</a>
+        <a href="guide.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
+        <span class="text-gray-700 mx-0.5 hidden sm:inline">|</span>
+        <span class="text-xs text-gray-600 font-mono hidden sm:inline" id="scan-date"></span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sub-nav + Stats Bar -->
+  <div id="stats-bar" class="border-b border-gray-800 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-x-3 gap-y-1 text-xs font-mono">
+      <div class="flex items-center gap-1 shrink-0">
+        <button id="tab-today" class="tab-btn tab-active text-xs font-medium px-2 py-1 rounded-md">Today</button>
+        <button id="tab-history" class="tab-btn text-xs font-medium px-2 py-1 rounded-md text-gray-500 hover:text-gray-300">History</button>
+        <button id="tab-portfolio" class="tab-btn text-xs font-medium px-2 py-1 rounded-md text-gray-500 hover:text-gray-300">Paper</button>
+      </div>
+      <span class="text-gray-700">|</span>
+      <div class="flex flex-wrap gap-x-3 gap-y-1">
+        <span class="text-gray-500">Scanned: <span id="stat-total" class="text-gray-300">-</span></span>
+        <span class="text-green-500">BUY: <span id="stat-buy" class="font-bold">-</span></span>
+        <span class="text-amber-500">WATCH: <span id="stat-watch" class="font-bold">-</span></span>
+        <span class="text-gray-400">MOM: <span id="stat-momentum">-</span></span>
+        <span class="text-gray-500 hidden sm:inline">T1: <span id="stat-t1" class="text-gray-400">-</span></span>
+        <span class="text-gray-500 hidden sm:inline">T2: <span id="stat-t2" class="text-gray-400">-</span></span>
+        <span class="text-gray-500 hidden sm:inline">Gr: <span id="stat-growth" class="text-gray-400">-</span></span>
+        <span class="text-gray-500 hidden sm:inline">Acc: <span id="stat-accel" class="text-gray-400">-</span></span>
+      </div>
+      <button id="btn-copy-signals" class="ml-auto copy-btn text-gray-500 hover:text-green-400 transition-colors shrink-0" title="Copy BUY & WATCHLIST data for Claude">
+        <svg class="inline w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/></svg>
+        <span class="copy-label hidden sm:inline">Copy for Claude</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <!-- Today View -->
+    <div id="view-today">
+      <!-- Filter Bar -->
+      <div id="filter-bar" class="overflow-x-auto mb-4 -mx-4 px-4">
+        <div class="flex items-center gap-1 whitespace-nowrap">
+          <button class="filter-btn active" data-profile="all">All</button>
+          <button class="filter-btn" data-profile="value">Value</button>
+          <button class="filter-btn" data-profile="quality_growth">GrowthQ</button>
+          <button class="filter-btn" data-profile="growth">Growth</button>
+          <button class="filter-btn" data-profile="recovery">Recovery</button>
+          <button class="filter-btn" data-profile="acceleration">Accel</button>
+          <span class="text-gray-700 mx-1">|</span>
+          <button class="filter-btn" id="btn-new-only" data-active="false">New</button>
+        </div>
+      </div>
+
+      <!-- BUY Section -->
+      <section id="section-buy" class="mb-8 hidden">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-sm font-bold text-green-500 uppercase tracking-wider">BUY Signals</h2>
+          <div class="sort-bar flex items-center gap-1" data-section="buy">
+            <span class="text-xs text-gray-600 mr-1">Sort:</span>
+            <button class="sort-btn active" data-sort="score">Score</button>
+            <button class="sort-btn" data-sort="confidence">Confidence</button>
+            <button class="sort-btn" data-sort="catalyst">Catalyst</button>
+            <button class="sort-btn" data-sort="satellite">Satellite</button>
+            <button class="sort-btn" data-sort="insider">Insider</button>
+            <button class="sort-btn" data-sort="entry">Entry</button>
+          </div>
+        </div>
+        <div id="cards-buy" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </section>
+
+      <!-- WATCHLIST Section -->
+      <section id="section-watchlist" class="mb-8 hidden">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-sm font-bold text-amber-500 uppercase tracking-wider">Watchlist</h2>
+          <div class="sort-bar flex items-center gap-1" data-section="watchlist">
+            <span class="text-xs text-gray-600 mr-1">Sort:</span>
+            <button class="sort-btn active" data-sort="score">Score</button>
+            <button class="sort-btn" data-sort="confidence">Confidence</button>
+            <button class="sort-btn" data-sort="catalyst">Catalyst</button>
+            <button class="sort-btn" data-sort="satellite">Satellite</button>
+            <button class="sort-btn" data-sort="insider">Insider</button>
+            <button class="sort-btn" data-sort="entry">Entry</button>
+          </div>
+        </div>
+        <div id="cards-watchlist" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </section>
+
+      <!-- MOMENTUM Section -->
+      <section id="section-momentum" class="mb-8 hidden">
+        <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Momentum</h2>
+        <div class="overflow-x-auto">
+          <table id="table-momentum" class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-gray-500 text-xs uppercase">
+                <th class="pb-2 pr-4">Ticker</th>
+                <th class="pb-2 pr-4">Score</th>
+                <th class="pb-2 pr-4">Price</th>
+                <th class="pb-2 pr-4">Profile</th>
+                <th class="pb-2 pr-4">Catalyst</th>
+                <th class="pb-2">Trend</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-momentum" class="font-mono"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="hidden text-center py-20">
+        <p class="text-gray-500 text-lg">No signals today</p>
+        <p class="text-gray-600 text-sm mt-1">Check back after the next scan</p>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loading-state" class="text-center py-20">
+        <p class="text-gray-500">Loading scan data...</p>
+      </div>
+
+      <!-- Error State -->
+      <div id="error-state" class="hidden text-center py-20">
+        <p class="text-red-400 text-lg">Failed to load data</p>
+        <p class="text-gray-600 text-sm mt-1" id="error-msg"></p>
+      </div>
+    </div>
+
+    <!-- History View -->
+    <div id="view-history" class="hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <!-- Signal Count Chart -->
+        <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
+          <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Signal Count Over Time</h3>
+          <div class="chart-wrap" style="position:relative;height:200px"><canvas id="chart-signals"></canvas></div>
+        </div>
+        <!-- Score Distribution Chart -->
+        <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
+          <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Score Distribution</h3>
+          <div class="chart-wrap" style="position:relative;height:200px"><canvas id="chart-scores"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Ticker Search -->
+      <div class="bg-gray-900 rounded-lg border border-gray-800 p-4 mb-8">
+        <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Ticker Search</h3>
+        <div class="flex gap-2 mb-4">
+          <input id="ticker-search" type="text" placeholder="e.g. LUNR"
+            class="bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm font-mono uppercase w-32
+                   focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600">
+          <button id="btn-search" class="bg-green-700 hover:bg-green-600 text-white text-sm px-4 py-1.5 rounded font-medium">Search</button>
+        </div>
+        <div id="ticker-result" class="hidden">
+          <div class="chart-wrap" style="position:relative;height:160px"><canvas id="chart-ticker"></canvas></div>
+          <div id="ticker-history-table" class="mt-4 overflow-x-auto"></div>
+        </div>
+      </div>
+
+      <!-- Date Picker -->
+      <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
+        <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Browse Past Scans</h3>
+        <div class="flex flex-wrap gap-2" id="date-picker"></div>
+        <div id="past-scan-view" class="mt-4 hidden">
+          <div id="past-scan-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio View -->
+    <div id="view-portfolio" class="hidden">
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Open</div>
+          <div class="text-2xl font-bold font-mono" id="pp-open">-</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Total P&amp;L</div>
+          <div class="text-2xl font-bold font-mono" id="pp-pnl">-</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Win Rate</div>
+          <div class="text-2xl font-bold font-mono" id="pp-winrate">-</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Avg Return</div>
+          <div class="text-2xl font-bold font-mono" id="pp-avgret">-</div>
+        </div>
+      </div>
+      <!-- Timing Analysis -->
+      <div id="pp-timing-analysis" class="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-6 hidden">
+        <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Entry Timing Analysis</h3>
+        <div class="text-sm font-mono" id="pp-timing-content"></div>
+      </div>
+      <!-- Positions Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-gray-500 text-xs uppercase">
+              <th class="pb-2 pr-4">Ticker</th>
+              <th class="pb-2 pr-4">Entry</th>
+              <th class="pb-2 pr-4">Current</th>
+              <th class="pb-2 pr-4">Return</th>
+              <th class="pb-2 pr-4">P&amp;L</th>
+              <th class="pb-2 pr-4">Timing</th>
+              <th class="pb-2 pr-4">Days</th>
+              <th class="pb-2">Peak / Trough</th>
+            </tr>
+          </thead>
+          <tbody id="pp-positions" class="font-mono"></tbody>
+        </table>
+      </div>
+      <div id="pp-empty" class="hidden text-center py-12 text-gray-500">No paper positions yet</div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-4 text-center text-xs text-gray-600">
+      <p>Bull Scouter &mdash; Automated catalyst detection. Not financial advice.</p>
+      <p class="mt-1">Data refreshed daily. Past performance does not guarantee future results.</p>
+    </div>
+  </footer>
+
+  <script src="js/charts.js?v=10"></script>
+  <script src="js/app.js?v=10"></script>
+</body>
+</html>
