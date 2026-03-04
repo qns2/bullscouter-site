@@ -200,8 +200,9 @@ const App = (() => {
     const convergence = opp.convergence_signal
       ? '<span class="chip" style="color:#fb923c;background:rgba(251,146,60,0.15)">Convergence: Social + Financial</span>'
       : '';
+    const denom = opp.checklist_denominator || 6;
     return `<div class="text-xs text-gray-400 mt-2 px-2 py-1 border border-gray-700 rounded">
-      <span class="font-semibold">${framework} (${score}/6)</span>: ${items}${convergence}
+      <span class="font-semibold">${framework} (${score}/${denom})</span>: ${items}${convergence}
     </div>`;
   }
 
