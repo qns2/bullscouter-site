@@ -64,6 +64,17 @@ const Contrarian = (() => {
     }
   }
 
+  const CHECKLIST_ICONS = { pass: '\u2705', partial: '\u26A0\uFE0F', fail: '\u274C' };
+
+  function renderChecklist(qc) {
+    if (!qc || !qc.items) return '';
+    const fw = qc.framework === 'value' ? 'Value' : 'Growth Quality';
+    const items = Object.entries(qc.items)
+      .map(([name, status]) => `<span class="inline-block mr-1">${CHECKLIST_ICONS[status] || '?'} ${esc(name)}</span>`)
+      .join('');
+    return `<div class="mt-2 text-xs text-gray-400 leading-relaxed"><span class="font-semibold text-gray-300">${fw} (${qc.score}/${qc.denominator})</span>: ${items}</div>`;
+  }
+
   function renderStrongCard(c) {
     const bd = c.breakdown || {};
     const chips = [
@@ -95,11 +106,14 @@ const Contrarian = (() => {
         </div>
         <div class="flex flex-wrap gap-1">${chips}</div>
         ${activist}
+        ${renderChecklist(c.quality_checklist)}
       </div>`;
   }
 
   function renderCandidateRow(c) {
     const bd = c.breakdown || {};
+    const qc = c.quality_checklist;
+    const qcLabel = qc ? `${qc.framework === 'value' ? 'V' : 'G'} ${qc.score}/${qc.denominator}` : '-';
     return `
       <tr class="border-b border-gray-800/50 hover:bg-gray-900/50">
         <td class="py-2 pr-4 font-bold text-gray-200">${esc(c.ticker)}</td>
@@ -110,7 +124,8 @@ const Contrarian = (() => {
         <td class="py-2 pr-4 text-gray-400">${bd.quality || '-'}</td>
         <td class="py-2 pr-4 text-gray-400">${bd.activist_potential || '-'}</td>
         <td class="py-2 pr-4 text-gray-400">${bd.insider_signal || '-'}</td>
-        <td class="py-2 text-gray-400">${bd.squeeze || '-'}</td>
+        <td class="py-2 pr-4 text-gray-400">${bd.squeeze || '-'}</td>
+        <td class="py-2 text-gray-400">${qcLabel}</td>
       </tr>`;
   }
 
