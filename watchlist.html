@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bull Scouter - Catalyst Report</title>
-  <meta name="description" content="Upcoming stock catalysts: FDA approvals, launches, earnings, and AI-enriched beneficiary tickers.">
+  <title>Bull Scouter - Watchlist</title>
+  <meta name="description" content="Conviction watchlist: curated stocks monitored for dip-buy opportunities.">
   <link rel="stylesheet" href="css/style.css?v=11">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -33,61 +33,70 @@
       <nav class="flex items-center gap-1 sm:gap-2">
         <a href="index.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Dashboard</a>
         <a href="deep-dive.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Deep Dive</a>
-        <a href="catalysts.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Catalysts</a>
+        <a href="catalysts.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Catalysts</a>
         <a href="contrarian.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Contrarian</a>
-        <a href="watchlist.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Watchlist</a>
+        <a href="watchlist.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Watchlist</a>
         <a href="guide.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
         <span class="text-gray-700 mx-0.5 hidden sm:inline">|</span>
-        <span class="text-xs text-gray-600 font-mono hidden sm:inline" id="cat-date-nav">-</span>
+        <span class="text-xs text-gray-600 font-mono hidden sm:inline" id="wl-date-nav">-</span>
       </nav>
     </div>
   </header>
 
-  <!-- Sub-nav + Stats Bar -->
+  <!-- Stats Bar -->
   <div class="border-b border-gray-800 bg-gray-900/50">
     <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-x-3 gap-y-1 text-xs font-mono">
-      <div class="flex items-center gap-1 shrink-0">
-        <button class="filter-btn active" data-cat-filter="all">All</button>
-        <button class="filter-btn" data-cat-filter="fda">FDA</button>
-        <button class="filter-btn" data-cat-filter="launch">Launches</button>
-        <button class="filter-btn" data-cat-filter="earnings">Earnings</button>
-        <button class="filter-btn" data-cat-filter="other">Other</button>
-      </div>
-      <span class="text-gray-700">|</span>
-      <div class="flex flex-wrap gap-x-3 gap-y-1">
-        <span class="text-gray-500">Total: <span id="cat-stat-total" class="text-gray-300">-</span></span>
-        <span class="text-green-500">7d: <span id="cat-stat-7d" class="font-bold">-</span></span>
-        <span class="text-amber-500">30d: <span id="cat-stat-30d" class="font-bold">-</span></span>
-        <span class="text-blue-400 hidden sm:inline">Enriched: <span id="cat-stat-enriched" class="font-bold">-</span></span>
-      </div>
-      <div class="ml-auto flex items-center gap-1 shrink-0">
-        <span class="text-xs text-gray-600 mr-1">Sort:</span>
-        <button class="sort-btn active" data-cat-sort="date">Date</button>
-        <button class="sort-btn" data-cat-sort="ticker">Ticker</button>
-        <button class="sort-btn" data-cat-sort="type">Type</button>
-      </div>
+      <span class="text-gray-500">Stocks: <span id="stat-stocks" class="text-gray-300">-</span></span>
+      <span class="text-amber-500">Alerts (7d): <span id="stat-alerts" class="font-bold">-</span></span>
+      <span class="text-blue-400">Tickers Alerted: <span id="stat-tickers" class="font-bold">-</span></span>
     </div>
   </div>
 
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 py-6">
-    <div id="cat-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-
-    <!-- Empty State -->
-    <div id="cat-empty" class="hidden text-center py-20">
-      <p class="text-gray-500 text-lg">No catalyst data available</p>
-      <p class="text-gray-600 text-sm mt-1">Catalyst report is generated during the daily scan</p>
-    </div>
-
     <!-- Loading State -->
-    <div id="cat-loading" class="text-center py-20">
-      <p class="text-gray-500">Loading catalyst data...</p>
+    <div id="loading-state" class="text-center py-20">
+      <p class="text-gray-500">Loading watchlist data...</p>
     </div>
 
     <!-- Error State -->
-    <div id="cat-error" class="hidden text-center py-20">
+    <div id="error-state" class="hidden text-center py-20">
       <p class="text-red-400 text-lg">Failed to load data</p>
-      <p class="text-gray-600 text-sm mt-1" id="cat-error-msg"></p>
+      <p class="text-gray-600 text-sm mt-1" id="error-msg"></p>
+    </div>
+
+    <!-- Recent Alerts -->
+    <section id="section-alerts" class="mb-8 hidden">
+      <h2 class="text-sm font-bold text-amber-500 uppercase tracking-wider mb-3">Recent Alerts</h2>
+      <div id="cards-alerts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- Conviction Watchlist Table -->
+    <section id="section-stocks" class="mb-8 hidden">
+      <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Conviction Watchlist</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-gray-500 text-xs uppercase">
+              <th class="pb-2 pr-4">Ticker</th>
+              <th class="pb-2 pr-4">Name</th>
+              <th class="pb-2 pr-4">Profile</th>
+              <th class="pb-2 pr-4">Target</th>
+              <th class="pb-2 pr-4">Entry Zone</th>
+              <th class="pb-2 pr-4">Fwd PE</th>
+              <th class="pb-2 pr-4">Thesis</th>
+              <th class="pb-2">Alerts</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-stocks" class="font-mono"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden text-center py-20">
+      <p class="text-gray-500 text-lg">No watchlist data yet</p>
+      <p class="text-gray-600 text-sm mt-1">Seed the watchlist to populate data</p>
     </div>
   </main>
 
@@ -99,6 +108,6 @@
     </div>
   </footer>
 
-  <script src="js/catalysts.js?v=1"></script>
+  <script src="js/watchlist.js?v=1"></script>
 </body>
 </html>
