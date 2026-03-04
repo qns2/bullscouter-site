@@ -54,6 +54,37 @@
 
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 py-6">
+    <!-- Info Banner -->
+    <div class="mb-6 p-4 rounded-lg border border-gray-800 bg-gray-900/60">
+      <button onclick="document.getElementById('wl-legend').classList.toggle('hidden')" class="w-full flex items-center justify-between text-left">
+        <div>
+          <span class="text-sm font-semibold text-gray-200">Conviction Watchlist</span>
+          <span class="text-xs text-gray-500 ml-2">Curated stocks monitored for dip-buy entry points</span>
+        </div>
+        <span class="text-gray-500 text-xs">Show legend</span>
+      </button>
+      <div id="wl-legend" class="hidden mt-3 pt-3 border-t border-gray-800 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-400">
+        <div>
+          <p class="font-semibold text-gray-300 mb-1.5">Alert Types</p>
+          <div class="space-y-1">
+            <p><span class="inline-block w-2 h-2 rounded-full bg-amber-500 mr-1.5"></span><b class="text-amber-400">DIP</b> &mdash; Price dropped 7%+ from 5-day high</p>
+            <p><span class="inline-block w-2 h-2 rounded-full bg-green-500 mr-1.5"></span><b class="text-green-400">ABS_TARGET</b> &mdash; Price hit absolute buy target</p>
+            <p><span class="inline-block w-2 h-2 rounded-full bg-blue-500 mr-1.5"></span><b class="text-blue-400">ENTRY_ZONE</b> &mdash; Price within defined entry range</p>
+            <p><span class="inline-block w-2 h-2 rounded-full bg-red-500 mr-1.5"></span><b class="text-red-400">DEEP_VALUE</b> &mdash; Extreme dip, 15%+ from recent high</p>
+          </div>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-300 mb-1.5">Priority Levels</p>
+          <div class="space-y-1">
+            <p><span class="inline-block w-2 h-2 rounded-full bg-red-500 mr-1.5"></span><b class="text-red-400">CRITICAL</b> &mdash; 10%+ dip or deep value signal</p>
+            <p><span class="inline-block w-2 h-2 rounded-full bg-amber-500 mr-1.5"></span><b class="text-amber-400">HIGH</b> &mdash; Target hit or strong dip signal</p>
+            <p><span class="inline-block w-2 h-2 rounded-full bg-gray-500 mr-1.5"></span><b class="text-gray-400">NORMAL</b> &mdash; Entry zone or moderate dip</p>
+          </div>
+          <p class="mt-2 text-gray-500">Alerts suppressed 3 days before earnings to avoid volatility traps.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Loading State -->
     <div id="loading-state" class="text-center py-20">
       <p class="text-gray-500">Loading watchlist data...</p>
