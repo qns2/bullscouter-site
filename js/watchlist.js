@@ -80,7 +80,7 @@ const Watchlist = (() => {
     return `
       <div class="opp-card" style="${borderStyle}">
         <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">${esc(a.ticker)}</span>
+          <a href="https://finance.yahoo.com/quote/${esc(a.ticker)}" target="_blank" rel="noopener" class="text-lg font-bold hover:text-green-400 transition-colors">${esc(a.ticker)}</a>
           <span class="profile-badge" style="background:${pc.bg};color:${pc.color}">${a.priority}</span>
         </div>
         <div class="flex flex-wrap gap-1 mb-2">
@@ -108,7 +108,7 @@ const Watchlist = (() => {
 
     return `
       <tr class="border-b border-gray-800/50 hover:bg-gray-900/50">
-        <td class="py-2 pr-4 font-bold text-gray-200">${esc(s.ticker)}</td>
+        <td class="py-2 pr-4 font-bold text-gray-200"><a href="https://finance.yahoo.com/quote/${esc(s.ticker)}" target="_blank" rel="noopener" class="hover:text-green-400 transition-colors">${esc(s.ticker)}</a></td>
         <td class="py-2 pr-4 text-gray-400">${esc(s.name || '-')}</td>
         <td class="py-2 pr-4 text-gray-400">${esc(s.profile || '-')}</td>
         <td class="py-2 pr-4">${s.abs_target ? '$' + s.abs_target.toFixed(2) : '-'}</td>

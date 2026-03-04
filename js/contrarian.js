@@ -87,6 +87,17 @@ const Contrarian = (() => {
      .map(ch => `<span class="chip positive">${ch.label}: ${ch.value}</span>`)
      .join(' ');
 
+    // Modifier chips
+    const modChips = [];
+    if (c.quality_modifier) {
+      const sign = c.quality_modifier > 0 ? '+' : '';
+      modChips.push(`<span class="chip" style="background:rgba(20,184,166,0.15);color:#5eead4">QC ${sign}${c.quality_modifier}</span>`);
+    }
+    if (c.catalyst_modifier) {
+      modChips.push(`<span class="chip" style="background:rgba(251,146,60,0.15);color:#fdba74">Cat +${c.catalyst_modifier}</span>`);
+    }
+    const modHtml = modChips.length ? ' ' + modChips.join(' ') : '';
+
     const activist = c.has_activist_filing
       ? `<div class="mt-2"><span class="profile-badge" style="background:rgba(168,85,247,0.15);color:#c4b5fd">Activist Filing</span>${c.activist_names ? ` <span class="text-xs text-gray-500">${esc(c.activist_names)}</span>` : ''}</div>`
       : '';
@@ -95,7 +106,7 @@ const Contrarian = (() => {
       <div class="opp-card" style="border-left:3px solid #22c55e">
         <div class="flex items-start justify-between mb-2">
           <div>
-            <span class="text-lg font-bold">${esc(c.ticker)}</span>
+            <a href="https://finance.yahoo.com/quote/${esc(c.ticker)}" target="_blank" rel="noopener" class="text-lg font-bold hover:text-green-400 transition-colors">${esc(c.ticker)}</a>
             <span class="text-xs text-gray-500 ml-2">${esc(c.market_cap_fmt)}</span>
           </div>
           <div class="score-badge buy">${c.score}</div>
@@ -104,7 +115,7 @@ const Contrarian = (() => {
           ${c.down_from_high_pct ? `Down ${c.down_from_high_pct}% from high` : ''}
           ${c.current_price ? ` &middot; $${c.current_price.toFixed(2)}` : ''}
         </div>
-        <div class="flex flex-wrap gap-1">${chips}</div>
+        <div class="flex flex-wrap gap-1">${chips}${modHtml}</div>
         ${activist}
         ${renderChecklist(c.quality_checklist)}
       </div>`;
@@ -114,9 +125,15 @@ const Contrarian = (() => {
     const bd = c.breakdown || {};
     const qc = c.quality_checklist;
     const qcLabel = qc ? `${qc.framework === 'value' ? 'V' : 'G'} ${qc.score}/${qc.denominator}` : '-';
+    const qmVal = c.quality_modifier || 0;
+    const cmVal = c.catalyst_modifier || 0;
+    const qmColor = qmVal > 0 ? 'text-teal-400' : qmVal < 0 ? 'text-red-400' : 'text-gray-600';
+    const cmColor = cmVal > 0 ? 'text-orange-400' : 'text-gray-600';
+    const qmLabel = qmVal ? `${qmVal > 0 ? '+' : ''}${qmVal}` : '-';
+    const cmLabel = cmVal ? `+${cmVal}` : '-';
     return `
       <tr class="border-b border-gray-800/50 hover:bg-gray-900/50">
-        <td class="py-2 pr-4 font-bold text-gray-200">${esc(c.ticker)}</td>
+        <td class="py-2 pr-4 font-bold text-gray-200"><a href="https://finance.yahoo.com/quote/${esc(c.ticker)}" target="_blank" rel="noopener" class="hover:text-green-400 transition-colors">${esc(c.ticker)}</a></td>
         <td class="py-2 pr-4"><span class="text-amber-400 font-bold">${c.score}</span></td>
         <td class="py-2 pr-4">${c.down_from_high_pct ? c.down_from_high_pct + '%' : '-'}</td>
         <td class="py-2 pr-4 text-gray-400">${esc(c.market_cap_fmt)}</td>
@@ -125,6 +142,8 @@ const Contrarian = (() => {
         <td class="py-2 pr-4 text-gray-400">${bd.activist_potential || '-'}</td>
         <td class="py-2 pr-4 text-gray-400">${bd.insider_signal || '-'}</td>
         <td class="py-2 pr-4 text-gray-400">${bd.squeeze || '-'}</td>
+        <td class="py-2 pr-4 ${qmColor}">${qmLabel}</td>
+        <td class="py-2 pr-4 ${cmColor}">${cmLabel}</td>
         <td class="py-2 text-gray-400">${qcLabel}</td>
       </tr>`;
   }

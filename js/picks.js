@@ -306,7 +306,7 @@ const Picks = (() => {
       const catLabel = o.catalyst_type ? (CATALYST_LABELS[o.catalyst_type] || o.catalyst_type) : '';
       return `<div class="flex items-center justify-between py-1.5 border-b border-gray-800/50 text-sm">
         <div class="flex items-center gap-2">
-          <span class="font-bold font-mono">${esc(o.ticker)}</span>
+          <a href="https://finance.yahoo.com/quote/${esc(o.ticker)}" target="_blank" rel="noopener" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(o.ticker)}</a>
           <span class="${recCls} text-xs font-semibold">${rec}</span>
           ${profileLabel ? `<span class="profile-badge ${o.profile}">${profileLabel}</span>` : ''}
         </div>
@@ -344,7 +344,7 @@ const Picks = (() => {
       const qcLabel = qc ? `${qc.framework === 'value' ? 'V' : 'G'} ${qc.score}/${qc.denominator}` : '';
       return `<div class="flex items-center justify-between py-1.5 border-b border-gray-800/50 text-sm">
         <div class="flex items-center gap-2">
-          <span class="font-bold font-mono">${esc(c.ticker)}</span>
+          <a href="https://finance.yahoo.com/quote/${esc(c.ticker)}" target="_blank" rel="noopener" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(c.ticker)}</a>
           ${isStrong ? '<span class="profile-badge" style="background:rgba(168,85,247,0.15);color:#c4b5fd">STRONG</span>' : '<span class="text-xs text-gray-500">CANDIDATE</span>'}
         </div>
         <div class="flex items-center gap-3 text-xs text-gray-400">
@@ -391,7 +391,7 @@ const Picks = (() => {
       const entry = p.ideal_entry ? `$${Number(p.ideal_entry.price).toFixed(2)}` : '';
       return `<div class="flex items-center justify-between py-1.5 border-b border-gray-800/50 text-sm">
         <div class="flex items-center gap-2">
-          <span class="font-bold font-mono">${esc(p.ticker)}</span>
+          <a href="https://finance.yahoo.com/quote/${esc(p.ticker)}" target="_blank" rel="noopener" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(p.ticker)}</a>
           <span class="text-green-400 text-xs font-semibold">BUY</span>
           <span class="profile-badge ${pathCls}">${pathLabel}</span>
         </div>
@@ -430,7 +430,7 @@ const Picks = (() => {
       const pc = PRIORITY_COLORS[a.priority] || '#9ca3af';
       return `<div class="flex items-center justify-between py-1.5 border-b border-gray-800/50 text-sm">
         <div class="flex items-center gap-2">
-          <span class="font-bold font-mono">${esc(a.ticker)}</span>
+          <a href="https://finance.yahoo.com/quote/${esc(a.ticker)}" target="_blank" rel="noopener" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(a.ticker)}</a>
           <span class="text-xs font-semibold" style="color:${ac}">${a.alert_type}</span>
         </div>
         <div class="flex items-center gap-3 text-xs text-gray-400">
