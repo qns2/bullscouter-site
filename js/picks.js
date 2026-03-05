@@ -61,13 +61,14 @@ const Picks = (() => {
   }
 
   async function loadAllData() {
-    const [dashboard, contrarian, deepdive, watchlist] = await Promise.all([
+    const [dashboard, contrarian, deepdive, watchlist, catalysts] = await Promise.all([
       fetchJSON('latest.json').catch(() => null),
       fetchJSON('contrarian.json').catch(() => null),
       fetchJSON('deep-dive.json').catch(() => null),
       fetchJSON('watchlist.json').catch(() => null),
+      fetchJSON('catalysts.json').catch(() => null),
     ]);
-    return { dashboard, contrarian, deepdive, watchlist };
+    return { dashboard, contrarian, deepdive, watchlist, catalysts };
   }
 
   // ── Top picks computation ──
@@ -403,6 +404,52 @@ const Picks = (() => {
     }).join('');
   }
 
+  const SIGNAL_TYPE_LABELS = {
+    fda: 'FDA', launch: 'Launch', earnings: 'Earnings',
+    insider_buy: 'Insider Buy', activist_filing: 'Activist',
+    partnership: 'Partnership', buyback: 'Buyback',
+    analyst_upgrade: 'Upgrade', analyst_downgrade: 'Downgrade',
+    dilution: 'Dilution', earnings_beat: 'Beat',
+  };
+
+  const SIGNAL_COLORS = {
+    insider_buy: '#fbbf24', activist_filing: '#c4b5fd', partnership: '#93c5fd',
+    buyback: '#4ade80', analyst_upgrade: '#6ee7b7', fda: '#4ade80',
+    earnings_beat: '#4ade80', analyst_downgrade: '#fca5a5', dilution: '#fca5a5',
+  };
+
+  function renderCatalystSummary(catalysts) {
+    const container = document.getElementById('summary-catalysts');
+    if (!container) return;
+
+    if (!catalysts || !catalysts.heatmap || !catalysts.heatmap.length) {
+      container.innerHTML = '<p class="text-gray-500 text-sm">No data yet</p>';
+      return;
+    }
+
+    const top = catalysts.heatmap.slice(0, 5);
+    container.innerHTML = top.map(h => {
+      const scoreClass = h.heatmap_score >= 30 ? 'text-green-400' : h.heatmap_score >= 15 ? 'text-amber-400' : 'text-gray-400';
+      const topSignals = (h.signals || []).slice(0, 2).map(s => {
+        const label = SIGNAL_TYPE_LABELS[s.type] || s.type;
+        const color = SIGNAL_COLORS[s.type] || '#9ca3af';
+        return `<span style="color:${color}" class="text-xs">${label}</span>`;
+      }).join(' ');
+      const recBadge = h.recommendation ? `<span class="text-xs font-semibold ${h.recommendation === 'BUY' ? 'text-green-400' : 'text-amber-400'}">${h.recommendation}</span>` : '';
+      return `<div class="flex items-center justify-between py-1.5 border-b border-gray-800/50 text-sm">
+        <div class="flex items-center gap-2">
+          <a href="https://finance.yahoo.com/quote/${esc(h.ticker)}" target="_blank" rel="noopener" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(h.ticker)}</a>
+          ${recBadge}
+          ${topSignals}
+        </div>
+        <div class="flex items-center gap-3 text-xs text-gray-400">
+          <span>${h.signal_count} signal${h.signal_count !== 1 ? 's' : ''}</span>
+          <span class="font-bold font-mono ${scoreClass}">${h.heatmap_score}</span>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
   function renderWatchlistSummary(watchlist) {
     const container = document.getElementById('summary-watchlist');
     if (!container) return;
@@ -472,6 +519,12 @@ const Picks = (() => {
       ? (data.watchlist.alerts || []).length
       : 0;
     setText('stat-wl-alerts', wlAlerts);
+
+    // Catalyst heatmap tickers
+    const hmTickers = data.catalysts
+      ? (data.catalysts.heatmap || []).length
+      : 0;
+    setText('stat-hm-tickers', hmTickers);
   }
 
   // ── Init ──
@@ -494,6 +547,10 @@ const Picks = (() => {
         }
       }
 
+      // Copy button
+      const copyBtn = document.getElementById('btn-copy-picks');
+      if (copyBtn) copyBtn.addEventListener('click', () => copyData(copyBtn, data));
+
       // Compute top picks
       const picks = computeTopPicks(data);
 
@@ -514,12 +571,42 @@ const Picks = (() => {
       renderContrarianSummary(data.contrarian);
       renderDeepDiveSummary(data.deepdive);
       renderWatchlistSummary(data.watchlist);
+      renderCatalystSummary(data.catalysts);
 
     } catch (e) {
       document.getElementById('loading-state').classList.add('hidden');
       document.getElementById('error-state').classList.remove('hidden');
       document.getElementById('error-msg').textContent = e.message;
     }
+  }
+
+  function copyData(copyBtn, data) {
+    const picks = computeTopPicks(data);
+    if (!picks.length) return;
+    const lines = picks.map((p, i) => {
+      const d = p.data;
+      const parts = [`#${i + 1} ${p.ticker}`];
+      parts.push(`Source: ${p.sources.map(s => s.label).join(', ')}`);
+      if (d.score) parts.push(`Score: ${d.score}`);
+      if (d.price) parts.push(`$${d.price.toFixed(2)}`);
+      else if (d.current_price) parts.push(`$${d.current_price.toFixed(2)}`);
+      if (d.market_cap_fmt) parts.push(`MCap: ${d.market_cap_fmt}`);
+      if (d.down_from_high_pct) parts.push(`Down: ${d.down_from_high_pct}%`);
+      if (d.confidence) parts.push(`Conf: ${d.confidence}`);
+      if (d.profile) parts.push(`Profile: ${d.profile}`);
+      if (d.catalyst_type) parts.push(`Cat: ${d.catalyst_type}`);
+      parts.push(`Pick: ${p.pick_score.toFixed(1)}`);
+      return parts.join(' | ');
+    });
+    const scanDate = data.dashboard?.scan_date || 'today';
+    const scanTime = data.dashboard?.scan_time ? ` ${data.dashboard.scan_time}` : '';
+    const header = `Bull Scouter Top Picks — ${scanDate}${scanTime}\n${picks.length} picks\n\n`;
+    navigator.clipboard.writeText(header + lines.join('\n')).then(() => {
+      const label = copyBtn.querySelector('.copy-label');
+      copyBtn.classList.add('copied');
+      if (label) label.textContent = 'Copied!';
+      setTimeout(() => { copyBtn.classList.remove('copied'); if (label) label.textContent = 'Copy for Claude'; }, 2000);
+    });
   }
 
   if (document.readyState === 'loading') {

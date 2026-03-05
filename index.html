@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bull Scouter - Top Picks</title>
   <meta name="description" content="Top picks across all Bull Scouter scanner paths: highest-conviction signals at a glance.">
-  <link rel="stylesheet" href="css/style.css?v=11">
+  <link rel="stylesheet" href="css/style.css?v=12">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -35,6 +35,7 @@
         <a href="dashboard.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Daily Trends</a>
         <a href="deep-dive.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">AI Picks</a>
         <a href="catalysts.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Catalysts</a>
+        <a href="calendar.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Calendar</a>
         <a href="contrarian.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Contrarian</a>
         <a href="watchlist.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Entry Opps</a>
         <a href="guide.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
@@ -52,6 +53,11 @@
       <span class="text-purple-400">Strong: <span id="stat-strong" class="font-bold">-</span></span>
       <span class="text-gray-500 hidden sm:inline">DD BUY: <span id="stat-dd-buy" class="text-gray-300">-</span></span>
       <span class="text-gray-500 hidden sm:inline">WL Alerts: <span id="stat-wl-alerts" class="text-gray-300">-</span></span>
+      <span class="text-gray-500 hidden sm:inline">Catalysts: <span id="stat-hm-tickers" class="text-gray-300">-</span></span>
+      <button id="btn-copy-picks" class="ml-auto copy-btn text-gray-500 hover:text-green-400 transition-colors shrink-0" title="Copy top picks data for Claude">
+        <svg class="inline w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/></svg>
+        <span class="copy-label hidden sm:inline">Copy for Claude</span>
+      </button>
     </div>
   </div>
 
@@ -108,6 +114,15 @@
         </div>
         <div id="summary-watchlist"><p class="text-gray-500 text-sm">Loading...</p></div>
       </div>
+
+      <!-- Catalyst heatmap summary -->
+      <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-bold text-red-400 uppercase tracking-wider">Catalyst Heatmap</h3>
+          <a href="catalysts.html" class="text-xs text-gray-500 hover:text-red-400 transition-colors">View all &rarr;</a>
+        </div>
+        <div id="summary-catalysts"><p class="text-gray-500 text-sm">Loading...</p></div>
+      </div>
     </div>
 
     <!-- Loading State -->
@@ -130,6 +145,6 @@
     </div>
   </footer>
 
-  <script src="js/picks.js?v=1"></script>
+  <script src="js/picks.js?v=3"></script>
 </body>
 </html>
