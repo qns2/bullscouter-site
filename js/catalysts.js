@@ -303,9 +303,12 @@ const CatalystHeatmap = (() => {
   function copyData(copyBtn) {
     if (!heatmapData.length) return;
     const filtered = getFiltered();
-    const lines = filtered.map(h => {
+    const pharma = getPharma();
+    const all = [...filtered, ...pharma];
+    const lines = all.map(h => {
       const parts = [`${h.ticker} (score=${h.heatmap_score})`];
-      if (h.large_cap) parts.push('LARGE-CAP');
+      if (h.category === 'pharma') parts.push('PHARMA');
+      else if (h.large_cap) parts.push('LARGE-CAP');
       if (h.recommendation) parts.push(h.recommendation);
       if (h.score) parts.push(`${h.score}pts`);
       if (h.profile) parts.push(h.profile);
@@ -322,7 +325,7 @@ const CatalystHeatmap = (() => {
       return parts.join(' | ');
     });
     const filterLabel = activeFilter === 'all' ? '' : ` [${activeFilter}]`;
-    const header = `Bull Scouter Catalyst Heatmap${filterLabel} — ${pageData?.scan_date || 'today'}\n${filtered.length} tickers\n\n`;
+    const header = `Bull Scouter Catalyst Heatmap${filterLabel} — ${pageData?.scan_date || 'today'}\n${all.length} tickers\n\n`;
     navigator.clipboard.writeText(header + lines.join('\n')).then(() => {
       const label = copyBtn.querySelector('.copy-label');
       copyBtn.classList.add('copied');
