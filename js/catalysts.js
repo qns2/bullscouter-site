@@ -8,6 +8,7 @@ const CatalystHeatmap = (() => {
   const DATA_PATH = 'data/catalysts.json';
   let pageData = null;
   let heatmapData = [];
+  let activeFilter = 'all';
 
   // Type label map
   const TYPE_LABELS = {
@@ -16,6 +17,7 @@ const CatalystHeatmap = (() => {
     partnership: 'Partnership', buyback: 'Buyback',
     analyst_upgrade: 'Upgrade', analyst_downgrade: 'Downgrade',
     dilution: 'Dilution', earnings_beat: 'Beat',
+    contract: 'Contract', dividend: 'Dividend',
   };
 
   // Signal chip colors by type
@@ -29,6 +31,8 @@ const CatalystHeatmap = (() => {
     earnings_beat:     { bg: 'rgba(34,197,94,0.15)',   text: '#4ade80' },
     launch:            { bg: 'rgba(59,130,246,0.15)',  text: '#93c5fd' },
     earnings:          { bg: 'rgba(245,158,11,0.15)',  text: '#fbbf24' },
+    contract:          { bg: 'rgba(59,130,246,0.15)',  text: '#93c5fd' },
+    dividend:          { bg: 'rgba(16,185,129,0.15)',  text: '#6ee7b7' },
     analyst_downgrade: { bg: 'rgba(239,68,68,0.15)',   text: '#fca5a5' },
     dilution:          { bg: 'rgba(239,68,68,0.15)',   text: '#fca5a5' },
   };
@@ -43,7 +47,7 @@ const CatalystHeatmap = (() => {
   const SOURCE_LABELS = {
     finnhub: 'Finnhub', sec_edgar: 'SEC', seekingalpha: 'SA',
     perplexity: 'Perplexity', rttnews: 'RTTNews', spacedevs: 'SpaceDevs',
-    catalystalert: 'CatalystAlert', nasdaq: 'NASDAQ',
+    catalystalert: 'CatalystAlert', nasdaq: 'NASDAQ', benzinga: 'Benzinga',
   };
 
   const CHECKLIST_ICONS = { pass: '\u2705', partial: '\u26A0\uFE0F', fail: '\u274C' };
@@ -51,6 +55,16 @@ const CatalystHeatmap = (() => {
   // ── Init ──
 
   async function init() {
+    // Filter tabs
+    document.querySelectorAll('[data-hm-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-hm-filter]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.hmFilter;
+        render();
+      });
+    });
+
     try {
       const resp = await fetch(DATA_PATH + '?_cb=' + Date.now());
       if (!resp.ok) throw new Error(resp.status + ' ' + resp.statusText);
@@ -77,17 +91,7 @@ const CatalystHeatmap = (() => {
       if (vBadge && data.version) vBadge.textContent = 'v' + data.version;
 
       // Stats
-      setText('hm-stat-tickers', heatmapData.length);
-      const totalSignals = heatmapData.reduce((sum, h) => sum + h.signal_count, 0);
-      setText('hm-stat-signals', totalSignals);
-      // Count unique sources
-      const sources = new Set();
-      for (const h of heatmapData) {
-        for (const s of (h.signals || [])) {
-          if (s.source) sources.add(s.source);
-        }
-      }
-      setText('hm-stat-sources', sources.size);
+      updateStats(heatmapData);
 
       render();
     } catch (e) {
@@ -98,14 +102,43 @@ const CatalystHeatmap = (() => {
     }
   }
 
+  function updateStats(items) {
+    setText('hm-stat-tickers', items.length);
+    const totalSignals = items.reduce((sum, h) => sum + h.signal_count, 0);
+    setText('hm-stat-signals', totalSignals);
+    const sources = new Set();
+    for (const h of items) {
+      for (const s of (h.signals || [])) {
+        if (s.source) sources.add(s.source);
+      }
+    }
+    setText('hm-stat-sources', sources.size);
+  }
+
   // ── Render ──
 
+  function getFiltered() {
+    if (activeFilter === 'all') return heatmapData;
+    if (activeFilter === 'smallmid') return heatmapData.filter(h => !h.large_cap);
+    if (activeFilter === 'largecap') return heatmapData.filter(h => h.large_cap);
+    return heatmapData;
+  }
+
   function render() {
+    const filtered = getFiltered();
+    updateStats(filtered);
+
     const container = document.getElementById('hm-cards');
     if (!container) return;
     container.innerHTML = '';
 
-    for (const entry of heatmapData) {
+    if (!filtered.length) {
+      show('hm-empty');
+      return;
+    }
+    hide('hm-empty');
+
+    for (const entry of filtered) {
       container.appendChild(renderCard(entry));
     }
   }
@@ -113,7 +146,7 @@ const CatalystHeatmap = (() => {
   function renderCard(entry) {
     const card = el('div', 'heatmap-card');
 
-    // Top row: score badge + ticker + recommendation + profile + score
+    // Top row: score badge + ticker + large-cap tag + recommendation + scanner score
     const topRow = el('div', 'flex items-center gap-2 mb-2');
 
     // Score badge
@@ -132,6 +165,13 @@ const CatalystHeatmap = (() => {
     tickerLink.textContent = entry.ticker;
     topRow.appendChild(tickerLink);
 
+    // Large-cap badge
+    if (entry.large_cap) {
+      const lcBadge = el('span', 'text-[0.6rem] font-bold uppercase px-1.5 py-0.5 rounded bg-gray-500/20 text-gray-400 border border-gray-500/30');
+      lcBadge.textContent = 'LARGE CAP';
+      topRow.appendChild(lcBadge);
+    }
+
     // Recommendation badge
     if (entry.recommendation) {
       const recClass = REC_COLORS[entry.recommendation] || 'bg-gray-500/20 text-gray-400 border border-gray-500/30';
@@ -140,19 +180,19 @@ const CatalystHeatmap = (() => {
       topRow.appendChild(recBadge);
     }
 
-    // Profile badge
+    // Right side: profile + scanner score
+    const rightSide = el('div', 'ml-auto flex items-center gap-2');
     if (entry.profile) {
-      const profBadge = el('span', 'text-[0.6rem] font-mono text-gray-500 ml-auto');
+      const profBadge = el('span', 'text-[0.6rem] font-mono text-gray-500');
       profBadge.textContent = entry.profile.replace(/_/g, ' ');
-      topRow.appendChild(profBadge);
+      rightSide.appendChild(profBadge);
     }
-
-    // Scanner score
     if (entry.score) {
       const scoreEl = el('span', 'text-xs font-mono text-gray-500');
       scoreEl.textContent = `${entry.score}pts`;
-      topRow.appendChild(scoreEl);
+      rightSide.appendChild(scoreEl);
     }
+    topRow.appendChild(rightSide);
 
     card.appendChild(topRow);
 
@@ -180,9 +220,8 @@ const CatalystHeatmap = (() => {
         chip.style.background = colors.bg;
         chip.style.color = colors.text;
         const weightStr = sig.weight >= 0 ? `+${sig.weight}` : `${sig.weight}`;
-        const srcStr = sig.source ? ` (${SOURCE_LABELS[sig.source] || sig.source})` : '';
         chip.textContent = `${TYPE_LABELS[sig.type] || capitalize(sig.type)} ${weightStr}`;
-        chip.title = (sig.name || '') + srcStr;
+        chip.title = (sig.name || '') + (sig.source ? ` (${SOURCE_LABELS[sig.source] || sig.source})` : '');
         chipRow.appendChild(chip);
       }
       card.appendChild(chipRow);
@@ -200,10 +239,13 @@ const CatalystHeatmap = (() => {
       card.appendChild(checklistRow);
     }
 
-    // Signal count
-    const countRow = el('div', 'text-[0.6rem] text-gray-600');
-    countRow.textContent = `${entry.signal_count} catalyst signal${entry.signal_count !== 1 ? 's' : ''}`;
-    card.appendChild(countRow);
+    // Signal count + source attribution
+    const footRow = el('div', 'text-[0.6rem] text-gray-600 mt-1');
+    const srcSet = new Set((entry.signals || []).map(s => s.source).filter(Boolean));
+    const srcStr = [...srcSet].map(s => SOURCE_LABELS[s] || s).join(', ');
+    footRow.textContent = `${entry.signal_count} signal${entry.signal_count !== 1 ? 's' : ''}` +
+      (srcStr ? ` via ${srcStr}` : '');
+    card.appendChild(footRow);
 
     return card;
   }
@@ -235,8 +277,10 @@ const CatalystHeatmap = (() => {
 
   function copyData(copyBtn) {
     if (!heatmapData.length) return;
-    const lines = heatmapData.map(h => {
+    const filtered = getFiltered();
+    const lines = filtered.map(h => {
       const parts = [`${h.ticker} (score=${h.heatmap_score})`];
+      if (h.large_cap) parts.push('LARGE-CAP');
       if (h.recommendation) parts.push(h.recommendation);
       if (h.score) parts.push(`${h.score}pts`);
       if (h.profile) parts.push(h.profile);
@@ -252,7 +296,8 @@ const CatalystHeatmap = (() => {
       if (qc) parts.push(`${qc.framework === 'value' ? 'Value' : 'Growth'} ${qc.score}/${qc.denominator}`);
       return parts.join(' | ');
     });
-    const header = `Bull Scouter Catalyst Heatmap — ${pageData?.scan_date || 'today'}\n${heatmapData.length} tickers\n\n`;
+    const filterLabel = activeFilter === 'all' ? '' : ` [${activeFilter}]`;
+    const header = `Bull Scouter Catalyst Heatmap${filterLabel} — ${pageData?.scan_date || 'today'}\n${filtered.length} tickers\n\n`;
     navigator.clipboard.writeText(header + lines.join('\n')).then(() => {
       const label = copyBtn.querySelector('.copy-label');
       copyBtn.classList.add('copied');
