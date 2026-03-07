@@ -839,8 +839,8 @@ const App = (() => {
         const btn = document.getElementById('btn-copy-signals');
         const label = btn.querySelector('.copy-label');
         btn.classList.add('copied');
-        label.textContent = 'Copied!';
-        setTimeout(() => { btn.classList.remove('copied'); label.textContent = 'Copy for Claude'; }, 2000);
+        if (label) label.textContent = 'Copied!';
+        setTimeout(() => { btn.classList.remove('copied'); if (label) label.textContent = 'Copy for Claude'; }, 2000);
       });
     });
 
