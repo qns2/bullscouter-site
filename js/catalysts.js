@@ -118,21 +118,27 @@ const CatalystHeatmap = (() => {
   // ── Render ──
 
   function getFiltered() {
-    if (activeFilter === 'all') return heatmapData;
-    if (activeFilter === 'smallmid') return heatmapData.filter(h => !h.large_cap);
-    if (activeFilter === 'largecap') return heatmapData.filter(h => h.large_cap);
-    return heatmapData;
+    const nonPharma = heatmapData.filter(h => h.category !== 'pharma');
+    if (activeFilter === 'all') return nonPharma;
+    if (activeFilter === 'smallmid') return nonPharma.filter(h => !h.large_cap);
+    if (activeFilter === 'largecap') return nonPharma.filter(h => h.large_cap);
+    return nonPharma;
+  }
+
+  function getPharma() {
+    return heatmapData.filter(h => h.category === 'pharma');
   }
 
   function render() {
     const filtered = getFiltered();
-    updateStats(filtered);
+    const pharma = getPharma();
+    updateStats([...filtered, ...pharma]);
 
     const container = document.getElementById('hm-cards');
     if (!container) return;
     container.innerHTML = '';
 
-    if (!filtered.length) {
+    if (!filtered.length && !pharma.length) {
       show('hm-empty');
       return;
     }
@@ -140,6 +146,21 @@ const CatalystHeatmap = (() => {
 
     for (const entry of filtered) {
       container.appendChild(renderCard(entry));
+    }
+
+    // Pharma section
+    const pharmaSection = document.getElementById('hm-pharma-section');
+    const pharmaContainer = document.getElementById('hm-pharma-cards');
+    if (pharmaSection && pharmaContainer) {
+      pharmaContainer.innerHTML = '';
+      if (pharma.length) {
+        pharmaSection.classList.remove('hidden');
+        for (const entry of pharma) {
+          pharmaContainer.appendChild(renderCard(entry));
+        }
+      } else {
+        pharmaSection.classList.add('hidden');
+      }
     }
   }
 
@@ -165,8 +186,12 @@ const CatalystHeatmap = (() => {
     tickerLink.textContent = entry.ticker;
     topRow.appendChild(tickerLink);
 
-    // Large-cap badge
-    if (entry.large_cap) {
+    // Category badge
+    if (entry.category === 'pharma') {
+      const lcBadge = el('span', 'text-[0.6rem] font-bold uppercase px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-400 border border-purple-500/30');
+      lcBadge.textContent = 'PHARMA';
+      topRow.appendChild(lcBadge);
+    } else if (entry.large_cap) {
       const lcBadge = el('span', 'text-[0.6rem] font-bold uppercase px-1.5 py-0.5 rounded bg-gray-500/20 text-gray-400 border border-gray-500/30');
       lcBadge.textContent = 'LARGE CAP';
       topRow.appendChild(lcBadge);

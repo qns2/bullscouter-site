@@ -85,8 +85,17 @@
       <p class="text-gray-600 text-sm mt-1">Catalyst heatmap is generated during the daily scan</p>
     </div>
 
-    <!-- Heatmap Cards -->
+    <!-- Heatmap Cards (non-pharma) -->
     <div id="hm-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <!-- Big Pharma Section -->
+    <div id="hm-pharma-section" class="hidden mt-10">
+      <div class="flex items-center gap-2 mb-4">
+        <h2 class="text-sm font-semibold text-purple-400 uppercase tracking-wide">Big Pharma</h2>
+        <span class="text-xs text-gray-600">FDA weight discounted for large-cap (&gt;$50B)</span>
+      </div>
+      <div id="hm-pharma-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -97,6 +106,6 @@
     </div>
   </footer>
 
-  <script src="js/catalysts.js?v=6"></script>
+  <script src="js/catalysts.js?v=7"></script>
 </body>
 </html>
