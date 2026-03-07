@@ -112,7 +112,7 @@ const DeepDive = (() => {
 
       // Set date + version in nav
       const dateNav = document.getElementById('dd-date-nav');
-      if (dateNav && data.scan_date) dateNav.textContent = data.scan_date;
+      if (dateNav && data.scan_date) dateNav.textContent = data.scan_date + (data.scan_time ? ' ' + data.scan_time : '');
       const vBadge = document.getElementById('version-badge');
       if (vBadge && data.version) vBadge.textContent = 'v' + data.version;
 

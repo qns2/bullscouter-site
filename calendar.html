@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
   <meta name="theme-color" content="#030712">
-  <title>Bull Scouter - Catalyst Heatmap</title>
-  <meta name="description" content="Catalyst heatmap: tickers ranked by combined catalyst signal strength from insider buying, activist filings, partnerships, and more.">
+  <title>Bull Scouter - Catalyst Calendar</title>
+  <meta name="description" content="Date-sorted catalyst calendar: FDA approvals, launches, earnings, insider buying, partnerships, and more.">
   <link rel="stylesheet" href="css/style.css?v=13">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -36,8 +36,8 @@
         <a href="index.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Top Picks</a>
         <a href="dashboard.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Daily Trends</a>
         <a href="deep-dive.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">AI Picks</a>
-        <a href="catalysts.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Catalysts</a>
-        <a href="calendar.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Calendar</a>
+        <a href="catalysts.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Catalysts</a>
+        <a href="calendar.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Calendar</a>
         <a href="contrarian.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Contrarian</a>
         <a href="watchlist.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Entry Opps</a>
         <a href="guide.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Guide</a>
@@ -45,59 +45,61 @@
     </div>
   </header>
 
-  <!-- Stats Bar -->
+  <!-- Sub-nav + Stats Bar -->
   <div class="border-b border-gray-800 bg-gray-900/50">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-x-3 gap-y-1 text-xs font-mono">
-      <span class="text-gray-300" id="hm-date-nav">-</span>
+    <div class="max-w-7xl mx-auto px-4 py-2 stats-scroll flex items-center gap-x-3 gap-y-1 text-xs font-mono flex-wrap">
+      <span class="text-gray-300" id="cal-date-nav">-</span>
       <span class="text-gray-700">|</span>
-      <div class="flex items-center gap-1 shrink-0">
-        <button class="filter-btn active" data-hm-filter="all">All</button>
-        <button class="filter-btn" data-hm-filter="smallmid">Small/Mid</button>
-        <button class="filter-btn" data-hm-filter="largecap">Large Cap</button>
+      <div class="flex items-center gap-1 shrink-0 flex-wrap">
+        <button class="filter-btn active" data-cal-filter="all">All</button>
+        <button class="filter-btn" data-cal-filter="fda">FDA</button>
+        <button class="filter-btn" data-cal-filter="launch">Launches</button>
+        <button class="filter-btn" data-cal-filter="earnings">Earnings</button>
+        <button class="filter-btn" data-cal-filter="insider_buy">Insider</button>
+        <button class="filter-btn" data-cal-filter="activist_filing">Activist</button>
+        <button class="filter-btn" data-cal-filter="other">Other</button>
       </div>
       <span class="text-gray-700">|</span>
-      <span class="text-gray-500">Tickers: <span id="hm-stat-tickers" class="text-gray-300">-</span></span>
-      <span class="text-green-500">Signals: <span id="hm-stat-signals" class="font-bold">-</span></span>
-      <span class="text-amber-500">Sources: <span id="hm-stat-sources" class="font-bold">-</span></span>
-      <button id="btn-copy-heatmap" class="ml-auto copy-btn text-gray-500 hover:text-green-400 transition-colors shrink-0" title="Copy heatmap data for Claude">
+      <div class="flex flex-wrap gap-x-3 gap-y-1">
+        <span class="text-gray-500">Total: <span id="cal-stat-total" class="text-gray-300">-</span></span>
+        <span class="text-green-500">7d: <span id="cal-stat-7d" class="font-bold">-</span></span>
+        <span class="text-amber-500">30d: <span id="cal-stat-30d" class="font-bold">-</span></span>
+        <span class="text-blue-400 hidden sm:inline">Enriched: <span id="cal-stat-enriched" class="font-bold">-</span></span>
+      </div>
+      <button id="btn-copy-calendar" class="copy-btn text-gray-500 hover:text-green-400 transition-colors shrink-0" title="Copy catalyst data for Claude">
         <svg class="inline w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/></svg>
         <span class="copy-label hidden sm:inline">Copy for Claude</span>
       </button>
+      <div class="ml-auto flex items-center gap-1 shrink-0">
+        <span class="text-xs text-gray-600 mr-1">Sort:</span>
+        <button class="sort-btn active" data-cal-sort="date">Date</button>
+        <button class="sort-btn" data-cal-sort="ticker">Ticker</button>
+        <button class="sort-btn" data-cal-sort="type">Type</button>
+      </div>
     </div>
   </div>
 
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 py-6">
-    <p class="text-xs text-gray-500 mb-4">Tickers ranked by combined catalyst signal strength: insider buying, activist filings, FDA events, partnerships, earnings, and more.</p>
+    <p class="text-xs text-gray-500 mb-4">Date-sorted event calendar: FDA approvals, space launches, earnings, insider buying, partnerships, and AI-enriched beneficiary tickers.</p>
+    <div id="cal-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <!-- Empty State -->
+    <div id="cal-empty" class="hidden text-center py-20">
+      <p class="text-gray-500 text-lg">No catalyst data available</p>
+      <p class="text-gray-600 text-sm mt-1">Catalyst report is generated during the daily scan</p>
+    </div>
 
     <!-- Loading State -->
-    <div id="hm-loading" class="text-center py-20">
+    <div id="cal-loading" class="text-center py-20">
       <div class="loading-pulse mx-auto mb-3"></div>
-      <p class="text-gray-500">Loading catalyst heatmap...</p>
+      <p class="text-gray-500">Loading catalyst data...</p>
     </div>
 
     <!-- Error State -->
-    <div id="hm-error" class="hidden text-center py-20">
+    <div id="cal-error" class="hidden text-center py-20">
       <p class="text-red-400 text-lg">Failed to load data</p>
-      <p class="text-gray-600 text-sm mt-1" id="hm-error-msg"></p>
-    </div>
-
-    <!-- Empty State -->
-    <div id="hm-empty" class="hidden text-center py-20">
-      <p class="text-gray-500 text-lg">No heatmap data available</p>
-      <p class="text-gray-600 text-sm mt-1">Catalyst heatmap is generated during the daily scan</p>
-    </div>
-
-    <!-- Heatmap Cards (non-pharma) -->
-    <div id="hm-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-
-    <!-- Big Pharma Section -->
-    <div id="hm-pharma-section" class="hidden mt-10">
-      <div class="flex items-center gap-2 mb-4">
-        <h2 class="text-sm font-semibold text-purple-400 uppercase tracking-wide">Big Pharma</h2>
-        <span class="text-xs text-gray-600">FDA weight discounted for large-cap (&gt;$50B)</span>
-      </div>
-      <div id="hm-pharma-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      <p class="text-gray-600 text-sm mt-1" id="cal-error-msg"></p>
     </div>
   </main>
 
@@ -109,6 +111,6 @@
     </div>
   </footer>
 
-  <script src="js/catalysts.js?v=7"></script>
+  <script src="js/calendar.js?v=1"></script>
 </body>
 </html>

@@ -7,9 +7,19 @@ html, body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* ── Mobile-friendly nav ── */
+.site-nav {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+.site-nav::-webkit-scrollbar { display: none; }
+
 /* Primary nav links */
 .nav-link {
   transition: color 0.15s, background-color 0.15s;
+  white-space: nowrap;
 }
 .nav-active {
   color: #e2e8f0;
@@ -531,4 +541,41 @@ html, body {
   font-size: 0.7rem;
   font-family: ui-monospace, monospace;
   color: #9ca3af;
+}
+
+/* ── Loading animation ── */
+.loading-pulse {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #1f2937;
+  border-top-color: #22c55e;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Card entrance ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.opp-card, .dd-card, .cat-card, .heatmap-card {
+  animation: fadeUp 0.25s ease-out both;
+}
+
+/* ── Stats bar mobile scroll ── */
+.stats-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.stats-scroll::-webkit-scrollbar { display: none; }
+
+/* ── Focus-visible for keyboard nav ── */
+.nav-link:focus-visible, .filter-btn:focus-visible, .sort-btn:focus-visible, .copy-btn:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
 }

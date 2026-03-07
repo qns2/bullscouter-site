@@ -19,6 +19,8 @@ const Watchlist = (() => {
     NORMAL:   { bg: 'rgba(107,114,128,0.15)', color: '#9ca3af' },
   };
 
+  let pageData = null;
+
   function init() {
     fetch(DATA_URL)
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
@@ -31,13 +33,18 @@ const Watchlist = (() => {
   }
 
   function render(data) {
+    pageData = data;
     document.getElementById('loading-state').classList.add('hidden');
+
+    // Copy button
+    const copyBtn = document.getElementById('btn-copy-watchlist');
+    if (copyBtn) copyBtn.addEventListener('click', () => copyData(copyBtn));
 
     // Version + date
     const vb = document.getElementById('version-badge');
     if (vb && data.version) vb.textContent = `v${data.version}`;
     const dn = document.getElementById('wl-date-nav');
-    if (dn && data.scan_date) dn.textContent = data.scan_date;
+    if (dn && data.scan_date) dn.textContent = data.scan_date + (data.scan_time ? ' ' + data.scan_time : '');
 
     // Stats
     const stats = data.stats || {};
@@ -117,6 +124,42 @@ const Watchlist = (() => {
         <td class="py-2 pr-4 text-gray-500 text-xs" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${thesis}</td>
         <td class="py-2">${countBadge}</td>
       </tr>`;
+  }
+
+  function copyData(copyBtn) {
+    if (!pageData) return;
+    const alerts = pageData.alerts || [];
+    const stocks = pageData.stocks || [];
+    const parts = [];
+    if (alerts.length) {
+      parts.push(`ALERTS (${alerts.length}):`);
+      for (const a of alerts) {
+        const line = [a.ticker, a.alert_type, a.priority];
+        if (a.price) line.push(`$${a.price.toFixed(2)}`);
+        if (a.created_at) line.push(a.created_at.slice(0, 16).replace('T', ' '));
+        parts.push('  ' + line.join(' | '));
+      }
+      parts.push('');
+    }
+    if (stocks.length) {
+      parts.push(`WATCHLIST (${stocks.length}):`);
+      for (const s of stocks) {
+        const line = [s.ticker];
+        if (s.name) line.push(s.name);
+        if (s.profile) line.push(s.profile);
+        if (s.abs_target) line.push(`Target: $${s.abs_target.toFixed(2)}`);
+        if (s.entry_low && s.entry_high) line.push(`Entry: $${s.entry_low.toFixed(2)}-$${s.entry_high.toFixed(2)}`);
+        if (s.thesis) line.push(s.thesis);
+        parts.push('  ' + line.join(' | '));
+      }
+    }
+    const header = `Bull Scouter Entry Opps — ${pageData.scan_date || 'today'}\n`;
+    navigator.clipboard.writeText(header + parts.join('\n')).then(() => {
+      const label = copyBtn.querySelector('.copy-label');
+      copyBtn.classList.add('copied');
+      if (label) label.textContent = 'Copied!';
+      setTimeout(() => { copyBtn.classList.remove('copied'); if (label) label.textContent = 'Copy for Claude'; }, 2000);
+    });
   }
 
   function setText(id, val) {

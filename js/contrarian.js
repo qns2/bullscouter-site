@@ -17,14 +17,21 @@ const Contrarian = (() => {
       });
   }
 
+  let pageData = null;
+
   function render(data) {
+    pageData = data;
     document.getElementById('loading-state').classList.add('hidden');
+
+    // Copy button
+    const copyBtn = document.getElementById('btn-copy-contrarian');
+    if (copyBtn) copyBtn.addEventListener('click', () => copyData(copyBtn));
 
     // Version + date
     const vb = document.getElementById('version-badge');
     if (vb && data.version) vb.textContent = `v${data.version}`;
     const dn = document.getElementById('ct-date-nav');
-    if (dn && data.scan_date) dn.textContent = data.scan_date;
+    if (dn && data.scan_date) dn.textContent = data.scan_date + (data.scan_time ? ' ' + data.scan_time : '');
 
     // Stats
     const stats = data.stats || {};
@@ -162,6 +169,42 @@ const Contrarian = (() => {
         <td class="py-2 pr-4 text-gray-400">${esc(f.filer_style || '-')}</td>
         <td class="py-2">${activistBadge}</td>
       </tr>`;
+  }
+
+  function copyData(copyBtn) {
+    if (!pageData) return;
+    const strong = pageData.strong_candidates || [];
+    const candidates = pageData.candidates || [];
+    const all = [...strong, ...candidates];
+    if (!all.length) return;
+    const lines = all.map(c => {
+      const isStrong = strong.some(s => s.ticker === c.ticker);
+      const bd = c.breakdown || {};
+      const parts = [`${c.ticker} (${isStrong ? 'STRONG' : 'CANDIDATE'})`];
+      if (c.score) parts.push(`Score: ${c.score}`);
+      if (c.current_price) parts.push(`$${c.current_price.toFixed(2)}`);
+      if (c.market_cap_fmt) parts.push(`MCap: ${c.market_cap_fmt}`);
+      if (c.down_from_high_pct) parts.push(`Down: ${c.down_from_high_pct}%`);
+      const bdParts = [];
+      if (bd.value) bdParts.push(`Val:${bd.value}`);
+      if (bd.quality) bdParts.push(`Qual:${bd.quality}`);
+      if (bd.activist_potential) bdParts.push(`Act:${bd.activist_potential}`);
+      if (bd.insider_signal) bdParts.push(`Ins:${bd.insider_signal}`);
+      if (bd.squeeze) bdParts.push(`Sqz:${bd.squeeze}`);
+      if (bdParts.length) parts.push(bdParts.join(' '));
+      if (c.quality_modifier) parts.push(`QC:${c.quality_modifier > 0 ? '+' : ''}${c.quality_modifier}`);
+      if (c.catalyst_modifier) parts.push(`Cat:+${c.catalyst_modifier}`);
+      const qc = c.quality_checklist;
+      if (qc) parts.push(`${qc.framework === 'value' ? 'V' : 'G'} ${qc.score}/${qc.denominator}`);
+      return parts.join(' | ');
+    });
+    const header = `Bull Scouter Contrarian — ${pageData.scan_date || 'today'}\n${strong.length} STRONG + ${candidates.length} CANDIDATE\n\n`;
+    navigator.clipboard.writeText(header + lines.join('\n')).then(() => {
+      const label = copyBtn.querySelector('.copy-label');
+      copyBtn.classList.add('copied');
+      if (label) label.textContent = 'Copied!';
+      setTimeout(() => { copyBtn.classList.remove('copied'); if (label) label.textContent = 'Copy for Claude'; }, 2000);
+    });
   }
 
   function setText(id, val) {
