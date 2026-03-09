@@ -105,6 +105,31 @@ const Picks = (() => {
       }
     }
 
+    // Assessor: STRONG BUY / BUY picks from deep dive (5-expert system)
+    if (data.deepdive) {
+      const allDDPicks = [
+        ...(data.deepdive.value_picks || []),
+        ...(data.deepdive.growth_picks || []),
+      ];
+      for (const dd of allDDPicks) {
+        const rec = (dd.opus_recommendation || '').toUpperCase();
+        if (rec !== 'BUY' && rec !== 'STRONG BUY') continue;
+        const v = dd.framework?.value?.verdict === 'pass' ? 1 : 0;
+        const q = dd.framework?.quality?.verdict === 'pass' ? 1 : 0;
+        const cat = dd.framework?.catalyst?.verdict === 'pass' ? 1 : 0;
+        const fwScore = (dd.framework?.score || 0) * 16; // 0-6 scale → ~0-96
+        const convBonus = rec === 'STRONG BUY' ? 15 : 0;
+        const pickScore = fwScore + convBonus;
+        candidates.push({
+          ticker: dd.ticker,
+          pick_score: pickScore,
+          sources: [{ label: 'Assessor ' + rec, color: '#3b82f6' }],
+          type: 'deepdive',
+          data: dd,
+        });
+      }
+    }
+
     // Dedup by ticker: merge source labels, keep higher pick_score data
     const byTicker = {};
     for (const c of candidates) {
@@ -160,6 +185,7 @@ const Picks = (() => {
     const color = RANK_COLORS[rank] || '#6b7280';
     const label = RANK_LABELS[rank] || `#${rank + 1}`;
     const isDashboard = pick.type === 'dashboard';
+    const isDeepDive = pick.type === 'deepdive';
 
     let html = `<div class="opp-card" style="border-left:3px solid ${color}">`;
 
@@ -174,11 +200,17 @@ const Picks = (() => {
       const profileLabel = PROFILE_LABELS[d.profile] || d.profile;
       html += `<span class="profile-badge ${d.profile}">${profileLabel}</span>`;
     }
+    if (isDeepDive && d.conviction) {
+      const convColor = d.conviction === 'HIGH' ? '#22c55e' : d.conviction === 'MEDIUM' ? '#f59e0b' : '#6b7280';
+      html += `<span class="profile-badge" style="background:${hexToRgba(convColor, 0.15)};color:${convColor}">${d.conviction}</span>`;
+    }
     html += `</div>`;
 
     // Score badge
     if (isDashboard) {
       html += `<div class="score-badge buy">${d.score > 100 ? '100+' : d.score}</div>`;
+    } else if (isDeepDive && d.framework) {
+      html += `<div class="score-badge buy">${d.framework.score?.toFixed(1) || '?'}</div>`;
     } else {
       html += `<div class="score-badge buy">${d.score}</div>`;
     }
@@ -197,7 +229,15 @@ const Picks = (() => {
       html += `<span class="font-mono">$${d.price.toFixed(2)}</span>`;
       if (d.market_cap_fmt) html += `<span>${d.market_cap_fmt}</span>`;
       if (d.down_from_high_pct) html += `<span class="text-red-400">-${d.down_from_high_pct}% from high</span>`;
-    } else if (!isDashboard) {
+    } else if (isDeepDive) {
+      if (d.price) html += `<span class="font-mono">$${d.price.toFixed(2)}</span>`;
+      if (d.ideal_entry?.price) html += `<span class="text-green-400">Entry: $${d.ideal_entry.price.toFixed(2)}</span>`;
+      if (d.source) {
+        const srcColor = d.source === 'both' ? '#22c55e' : d.source === 'discovery' ? '#3b82f6' : '#6b7280';
+        const srcLabel = d.source === 'both' ? 'OVERLAP' : d.source === 'discovery' ? 'DISCOVERY' : 'SCANNER';
+        html += `<span style="color:${srcColor}">${srcLabel}</span>`;
+      }
+    } else {
       if (d.current_price) html += `<span class="font-mono">$${d.current_price.toFixed(2)}</span>`;
       if (d.market_cap_fmt) html += `<span>${esc(d.market_cap_fmt)}</span>`;
       if (d.down_from_high_pct) html += `<span class="text-red-400">-${d.down_from_high_pct}% from high</span>`;
@@ -226,6 +266,23 @@ const Picks = (() => {
         else html += `<span class="text-gray-400">${d.days_to_catalyst}d</span>`;
       }
       html += `</div>`;
+    }
+
+    // Deep dive: framework chips (value/quality/catalyst/risk)
+    if (isDeepDive && d.framework) {
+      html += `<div class="flex flex-wrap gap-1 mb-2">`;
+      for (const dim of ['value', 'quality', 'catalyst', 'risk']) {
+        const f = d.framework[dim];
+        if (!f) continue;
+        const cls = f.verdict === 'pass' ? 'positive' : f.verdict === 'fail' ? 'negative' : '';
+        const icon = f.verdict === 'pass' ? '\u2705' : f.verdict === 'fail' ? '\u274C' : '\u26A0\uFE0F';
+        html += `<span class="chip ${cls}">${icon} ${dim.charAt(0).toUpperCase() + dim.slice(1)}</span>`;
+      }
+      html += `</div>`;
+      // Analyst take
+      if (d.analyst_take) {
+        html += `<div class="text-xs text-gray-400 mb-2">${esc(d.analyst_take)}</div>`;
+      }
     }
 
     // Top 3 breakdown chips (sorted by |value|)
