@@ -30,6 +30,14 @@ const DeepDive = (() => {
     ['short_dynamics', 'SI Dynamics'],
   ];
 
+  // Independent assessor framework (4 dimensions)
+  const INDEPENDENT_CRITERIA = [
+    ['value', 'Value'],
+    ['quality', 'Quality'],
+    ['catalyst', 'Catalyst'],
+    ['risk', 'Risk'],
+  ];
+
   // Legacy criteria (old format)
   const LEGACY_VALUE_CRITERIA = [
     ['profitable', 'Profitable'],
@@ -85,15 +93,22 @@ const DeepDive = (() => {
 
       // Collect all picks with path metadata
       allPicks = [];
+      const isIndependent = data.generated_by === 'independent-assessor-v2';
       if (data.value_picks) {
         for (const p of data.value_picks) {
-          p._path = 'value';
+          p._path = isIndependent ? 'independent' : 'value';
           allPicks.push(p);
         }
       }
       if (data.growth_picks) {
         for (const p of data.growth_picks) {
-          p._path = 'growth';
+          p._path = isIndependent ? 'independent' : 'growth';
+          allPicks.push(p);
+        }
+      }
+      if (data.avoid_picks) {
+        for (const p of data.avoid_picks) {
+          p._path = isIndependent ? 'independent' : 'value';
           allPicks.push(p);
         }
       }
@@ -102,6 +117,15 @@ const DeepDive = (() => {
         for (const p of data.analyses) {
           p._path = 'legacy';
           allPicks.push(p);
+        }
+      }
+
+      // Show market regime + discovery stats for independent assessor
+      if (isIndependent) {
+        const regime = document.getElementById('dd-regime');
+        if (regime && data.market_regime) {
+          regime.textContent = data.market_regime;
+          regime.closest('.hidden')?.classList.remove('hidden');
         }
       }
 
@@ -144,6 +168,8 @@ const DeepDive = (() => {
 
   function getFiltered() {
     if (activeFilter === 'all') return allPicks;
+    // Independent assessor has no value/growth split — show all for any filter
+    if (allPicks.length && allPicks[0]._path === 'independent') return allPicks;
     return allPicks.filter(p => p._path === activeFilter);
   }
 
@@ -243,9 +269,29 @@ const DeepDive = (() => {
     header.appendChild(badges);
     card.appendChild(header);
 
+    // Source + conviction badges (independent assessor)
+    if (a.source || a.conviction) {
+      const meta = el('div', 'flex items-center gap-2 mt-1 mb-2');
+      if (a.source) {
+        const srcClass = a.source === 'both' ? 'text-green-400' : a.source === 'discovery' ? 'text-blue-400' : 'text-gray-400';
+        const srcLabel = a.source === 'both' ? 'OVERLAP' : a.source === 'discovery' ? 'DISCOVERY' : 'SCANNER';
+        meta.innerHTML += `<span class="text-xs font-mono ${srcClass} border border-current px-1.5 py-0.5 rounded">${srcLabel}</span>`;
+      }
+      if (a.conviction) {
+        const convClass = a.conviction === 'HIGH' ? 'text-green-400' : a.conviction === 'MEDIUM' ? 'text-amber-400' : 'text-gray-500';
+        meta.innerHTML += `<span class="text-xs ${convClass}">${esc(a.conviction)} conviction</span>`;
+      }
+      if (a.source_detail) {
+        meta.innerHTML += `<span class="text-xs text-gray-500">${esc(a.source_detail)}</span>`;
+      }
+      card.appendChild(meta);
+    }
+
     // Framework
     const fwRow = el('div', 'dd-fw-row single');
-    if (a._path === 'value' && a.framework) {
+    if (a._path === 'independent' && a.framework) {
+      fwRow.appendChild(renderFramework('Independent Assessment', a.framework, INDEPENDENT_CRITERIA));
+    } else if (a._path === 'value' && a.framework) {
       fwRow.appendChild(renderFramework('Value Framework', a.framework, VALUE_CRITERIA));
     } else if (a._path === 'growth' && a.framework) {
       fwRow.appendChild(renderFramework('Growth Framework', a.framework, GROWTH_CRITERIA));
