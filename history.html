@@ -5,21 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
   <meta name="theme-color" content="#0a0b0d">
-  <title>Bull Scouter - Catalyst Heatmap</title>
-  <meta name="description" content="Catalyst heatmap: tickers ranked by combined catalyst signal strength from insider buying, activist filings, partnerships, and more.">
-  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/catalysts.html">
+  <title>Bull Scouter - Scan History</title>
+  <meta name="description" content="Timeline of daily scan summaries showing what the system found each day.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/history.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/catalysts.html">
-  <meta property="og:title" content="Bull Scouter - Catalyst Heatmap">
-  <meta property="og:description" content="Catalyst heatmap: tickers ranked by combined catalyst signal strength from insider buying, activist filings, partnerships, and more.">
+  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/history.html">
+  <meta property="og:title" content="Bull Scouter - Scan History">
+  <meta property="og:description" content="Timeline of daily scan summaries showing what the system found each day.">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Bull Scouter - Catalyst Heatmap">
-  <meta name="twitter:description" content="Catalyst heatmap: tickers ranked by combined catalyst signal strength from insider buying, activist filings, partnerships, and more.">
+  <meta name="twitter:title" content="Bull Scouter - Scan History">
+  <meta name="twitter:description" content="Timeline of daily scan summaries showing what the system found each day.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=16">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -43,11 +44,46 @@
   <style>
     body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
     .glass-card {
-      background: rgba(20, 22, 26, 0.6);
+      background: rgba(20, 22, 26, 0.7);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 0.75rem;
+    }
+    .history-card {
+      animation: fadeUp 0.25s ease-out both;
+    }
+    .history-card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    .rec-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.25rem;
+    }
+    .rec-badge.buy { background: rgba(0, 255, 136, 0.12); color: #00ff88; }
+    .rec-badge.watchlist { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+    .rec-badge.momentum { background: rgba(107, 114, 128, 0.15); color: #9ca3af; }
+    .expand-btn {
+      font-size: 0.7rem;
+      font-family: ui-monospace, monospace;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: color 0.15s;
+      background: none;
+      border: none;
+      padding: 0.25rem 0;
+    }
+    .expand-btn:hover { color: #00ff88; }
+    .expanded-list {
+      display: none;
+    }
+    .expanded-list.open {
+      display: block;
     }
   </style>
 </head>
@@ -65,7 +101,7 @@
         <div class="flex items-center space-x-4 sm:space-x-8 text-sm font-medium">
           <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
-          <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
+          <a class="text-bull-accent" href="history.html">History</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
         </div>
       </div>
@@ -74,19 +110,13 @@
 
   <!-- Stats Bar -->
   <div class="border-b border-bull-border bg-bull-dark/50">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-x-3 gap-y-1 text-xs font-mono">
-      <span class="text-white/70" id="hm-date-nav">-</span>
+    <div class="max-w-7xl mx-auto px-4 py-2 stats-scroll flex items-center gap-x-3 gap-y-1 text-xs font-mono">
+      <span class="text-white/70" id="stat-date-range">-</span>
       <span class="text-white/10">|</span>
-      <div class="flex items-center gap-1 shrink-0">
-        <button class="filter-btn active" data-hm-filter="all">All</button>
-        <button class="filter-btn" data-hm-filter="smallmid">Small/Mid</button>
-        <button class="filter-btn" data-hm-filter="largecap">Large Cap</button>
-      </div>
-      <span class="text-white/10">|</span>
-      <span class="text-bull-muted">Tickers: <span id="hm-stat-tickers" class="text-white/70">-</span></span>
-      <span class="text-bull-accent">Signals: <span id="hm-stat-signals" class="font-bold">-</span></span>
-      <span class="text-amber-500">Sources: <span id="hm-stat-sources" class="font-bold">-</span></span>
-      <button id="btn-copy-heatmap" class="ml-auto copy-btn text-bull-muted hover:text-bull-accent transition-colors shrink-0" title="Copy heatmap data">
+      <span class="text-bull-muted">Scan Days: <span id="stat-scan-days" class="text-white/70">-</span></span>
+      <span class="text-bull-accent">Avg BUY: <span id="stat-avg-buy" class="font-bold">-</span></span>
+      <span class="text-amber-500">Avg Total: <span id="stat-avg-total" class="font-bold">-</span></span>
+      <button id="btn-copy-history" class="ml-auto copy-btn text-bull-muted hover:text-bull-accent transition-colors shrink-0" title="Copy scan history as text">
         <svg class="inline w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/></svg>
         <span class="copy-label hidden sm:inline">Copy</span>
       </button>
@@ -95,37 +125,34 @@
 
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 py-6">
-    <p class="text-xs text-bull-muted mb-4">Tickers ranked by combined catalyst signal strength: insider buying, activist filings, FDA events, partnerships, earnings, and more.</p>
+    <p class="text-xs text-bull-muted mb-4">Timeline of daily scan summaries -- what the system found each day over the last 30 trading days.</p>
+
+    <!-- Trend Chart -->
+    <div class="glass-card rounded-xl p-4 mb-6">
+      <h3 class="text-sm font-bold text-white/70 uppercase tracking-wider mb-3">Signal Trend</h3>
+      <div style="position:relative;height:220px"><canvas id="chart-history-trend"></canvas></div>
+    </div>
 
     <!-- Loading State -->
-    <div id="hm-loading" class="text-center py-20">
+    <div id="loading-state" class="text-center py-20">
       <div class="loading-pulse mx-auto mb-3"></div>
-      <p class="text-bull-muted">Loading catalyst heatmap...</p>
+      <p class="text-bull-muted">Loading scan history...</p>
     </div>
 
     <!-- Error State -->
-    <div id="hm-error" class="hidden text-center py-20">
+    <div id="error-state" class="hidden text-center py-20">
       <p class="text-red-400 text-lg">Failed to load data</p>
-      <p class="text-white/30 text-sm mt-1" id="hm-error-msg"></p>
+      <p class="text-white/30 text-sm mt-1" id="error-msg"></p>
     </div>
 
     <!-- Empty State -->
-    <div id="hm-empty" class="hidden text-center py-20">
-      <p class="text-bull-muted text-lg">No heatmap data available</p>
-      <p class="text-white/30 text-sm mt-1">Catalyst heatmap is generated during the daily scan</p>
+    <div id="empty-state" class="hidden text-center py-20">
+      <p class="text-bull-muted text-lg">No scan history available</p>
+      <p class="text-white/30 text-sm mt-1">Daily scan data files not found</p>
     </div>
 
-    <!-- Heatmap Cards (non-pharma) -->
-    <div id="hm-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-
-    <!-- Big Pharma Section -->
-    <div id="hm-pharma-section" class="hidden mt-10">
-      <div class="flex items-center gap-2 mb-4">
-        <h2 class="text-sm font-semibold text-purple-400 uppercase tracking-wide">Big Pharma</h2>
-        <span class="text-xs text-white/30">FDA weight discounted for large-cap (&gt;$50B)</span>
-      </div>
-      <div id="hm-pharma-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-    </div>
+    <!-- Daily Cards Container -->
+    <div id="history-cards" class="space-y-4"></div>
   </main>
 
   <!-- Footer -->
@@ -144,6 +171,6 @@
     </div>
   </footer>
 
-  <script src="js/catalysts.js?v=8"></script>
+  <script src="js/history.js?v=1"></script>
 </body>
 </html>

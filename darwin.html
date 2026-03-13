@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Bull Scouter - Darwin Log</title>
+  <meta name="description" content="Watch the system evolve — every code change, review, and accuracy improvement tracked over time.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/darwin.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/darwin.html">
+  <meta property="og:title" content="Bull Scouter - Darwin Log">
+  <meta property="og:description" content="Watch the system evolve — every code change, review, and accuracy improvement tracked over time.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bull Scouter - Darwin Log">
+  <meta name="twitter:description" content="Watch the system evolve — every code change, review, and accuracy improvement tracked over time.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            bull: {
+              dark: '#0a0b0d',
+              card: '#14161a',
+              accent: '#00ff88',
+              blue: '#3b82f6',
+              muted: '#94a3b8',
+              border: 'rgba(255,255,255,0.1)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 0.75rem;
+    }
+
+    /* Timeline */
+    .darwin-timeline {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .darwin-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .darwin-entry {
+      position: relative;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.25s ease-out both;
+    }
+    .darwin-entry::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 1.1rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    .darwin-card {
+      background: rgba(20, 22, 26, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 0.75rem;
+      border-left: 3px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 1.25rem;
+      transition: border-color 0.15s;
+    }
+    .darwin-card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Agent badges */
+    .agent-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.125rem 0.4rem;
+      border-radius: 0.25rem;
+      white-space: nowrap;
+    }
+
+    /* Type badges */
+    .darwin-type-badge {
+      display: inline-block;
+      font-size: 0.55rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.1rem 0.35rem;
+      border-radius: 0.25rem;
+      white-space: nowrap;
+    }
+
+    /* Details expand */
+    .darwin-details {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.75rem;
+      font-family: ui-monospace, monospace;
+      color: #6b7280;
+    }
+    .darwin-details-toggle {
+      font-size: 0.65rem;
+      color: #6b7280;
+      cursor: pointer;
+      transition: color 0.15s;
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: ui-monospace, monospace;
+    }
+    .darwin-details-toggle:hover {
+      color: #d1d5db;
+    }
+
+    /* Date group header */
+    .darwin-date-header {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4b5563;
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+      padding-left: 0.25rem;
+    }
+    .darwin-date-header:first-child {
+      margin-top: 0;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans">
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-white">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
+        </a>
+        <div class="flex items-center space-x-4 sm:space-x-8 text-sm font-medium">
+          <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+          <a class="text-bull-accent" href="darwin.html">Darwin</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Stats Bar + Filters -->
+  <div class="border-b border-bull-border bg-bull-dark/50">
+    <div class="max-w-7xl mx-auto px-4 py-2 stats-scroll flex items-center gap-x-3 gap-y-1 text-xs font-mono flex-wrap">
+      <span class="text-white/70" id="darwin-date-nav">-</span>
+      <span class="text-white/10">|</span>
+      <div class="flex items-center gap-1 shrink-0 flex-wrap">
+        <button class="filter-btn active" data-darwin-filter="all">All</button>
+        <button class="filter-btn" data-darwin-filter="code_change">Code</button>
+        <button class="filter-btn" data-darwin-filter="review">Review</button>
+        <button class="filter-btn" data-darwin-filter="assessment">Assessment</button>
+        <button class="filter-btn" data-darwin-filter="calibration">Calibration</button>
+        <button class="filter-btn" data-darwin-filter="version">Version</button>
+      </div>
+      <span class="text-white/10">|</span>
+      <div class="flex flex-wrap gap-x-3 gap-y-1">
+        <span class="text-bull-muted">Total: <span id="stat-total" class="text-white/70">-</span></span>
+        <span class="text-[#ec4899]">Code: <span id="stat-code" class="font-bold">-</span></span>
+        <span class="text-[#a855f7]">Reviews: <span id="stat-reviews" class="font-bold">-</span></span>
+        <span class="text-[#f59e0b]">Versions: <span id="stat-versions" class="font-bold">-</span></span>
+      </div>
+      <button id="btn-copy-darwin" class="ml-auto copy-btn text-bull-muted hover:text-bull-accent transition-colors shrink-0" title="Copy evolution log">
+        <svg class="inline w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/></svg>
+        <span class="copy-label hidden sm:inline">Copy</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-4 py-8">
+    <!-- Hero -->
+    <div class="mb-8">
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2">Darwin Log</h1>
+      <p class="text-sm text-bull-muted">Watch the system evolve &mdash; every code change, review, and accuracy improvement.</p>
+    </div>
+
+    <!-- Timeline Container -->
+    <div id="darwin-timeline" class="darwin-timeline"></div>
+
+    <!-- Loading State -->
+    <div id="darwin-loading" class="text-center py-20">
+      <div class="loading-pulse mx-auto mb-3"></div>
+      <p class="text-bull-muted">Loading evolution log...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="darwin-error" class="hidden text-center py-20">
+      <p class="text-red-400 text-lg">Failed to load data</p>
+      <p class="text-white/30 text-sm mt-1" id="darwin-error-msg"></p>
+    </div>
+
+    <!-- Empty State -->
+    <div id="darwin-empty" class="hidden text-center py-20">
+      <p class="text-bull-muted text-lg">No evolution data yet</p>
+      <p class="text-white/30 text-sm mt-1">The Darwin exporter will populate this as agents make changes</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-bull-border py-12 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="w-6 h-6 bg-bull-muted/20 rounded flex items-center justify-center">
+          <svg class="w-4 h-4 text-bull-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <span class="text-sm font-bold tracking-tight text-bull-muted">Bull Scouter</span>
+      </div>
+      <p class="text-xs text-bull-muted max-w-lg mx-auto leading-loose">
+        Autonomous AI agents for stock catalyst detection. Not financial advice.<br>
+        Data refreshed 3x daily. Past performance does not guarantee future results.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/darwin.js?v=1"></script>
+</body>
+</html>
