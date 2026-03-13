@@ -343,7 +343,7 @@ const Picks = (() => {
     if (!container) return;
 
     if (!dashboard || !dashboard.opportunities || !dashboard.opportunities.length) {
-      container.innerHTML = '<p class="text-gray-500 text-sm">No data yet</p>';
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No data yet</p>';
       return;
     }
 
@@ -353,7 +353,7 @@ const Picks = (() => {
       .slice(0, 5);
 
     if (!opps.length) {
-      container.innerHTML = '<p class="text-gray-500 text-sm">No signals today</p>';
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No signals today</p>';
       return;
     }
 
@@ -362,7 +362,7 @@ const Picks = (() => {
       const recCls = rec === 'BUY' ? 'text-green-400' : 'text-amber-400';
       const profileLabel = PROFILE_LABELS[o.profile] || o.profile || '';
       const catLabel = o.catalyst_type ? (CATALYST_LABELS[o.catalyst_type] || o.catalyst_type) : '';
-      return `<div class="flex items-center justify-between py-1.5 border-b border-gray-800/50 text-sm">
+      return `<div class="flex items-center justify-between py-3.5 text-sm">
         <div class="flex items-center gap-2">
           <a href="https://finance.yahoo.com/quote/${esc(o.ticker)}" target="_blank" rel="noopener" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(o.ticker)}</a>
           <span class="${recCls} text-xs font-semibold">${rec}</span>
@@ -382,7 +382,7 @@ const Picks = (() => {
     if (!container) return;
 
     if (!contrarian) {
-      container.innerHTML = '<p class="text-gray-500 text-sm">No data yet</p>';
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No data yet</p>';
       return;
     }
 
@@ -392,7 +392,7 @@ const Picks = (() => {
     ].slice(0, 5);
 
     if (!all.length) {
-      container.innerHTML = '<p class="text-gray-500 text-sm">No candidates found</p>';
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No candidates found</p>';
       return;
     }
 
@@ -400,7 +400,7 @@ const Picks = (() => {
       const isStrong = (contrarian.strong_candidates || []).some(s => s.ticker === c.ticker);
       const qc = c.quality_checklist;
       const qcLabel = qc ? `${qc.framework === 'value' ? 'V' : 'G'} ${qc.score}/${qc.denominator}` : '';
-      return `<div class="flex items-center justify-between py-1.5 border-b border-gray-800/50 text-sm">
+      return `<div class="flex items-center justify-between py-3.5 text-sm">
         <div class="flex items-center gap-2">
           <a href="https://finance.yahoo.com/quote/${esc(c.ticker)}" target="_blank" rel="noopener" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(c.ticker)}</a>
           ${isStrong ? '<span class="profile-badge" style="background:rgba(168,85,247,0.15);color:#c4b5fd">STRONG</span>' : '<span class="text-xs text-gray-500">CANDIDATE</span>'}
@@ -419,7 +419,7 @@ const Picks = (() => {
     if (!container) return;
 
     if (!deepdive) {
-      container.innerHTML = '<p class="text-gray-500 text-sm">No data yet</p>';
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No data yet</p>';
       return;
     }
 
@@ -438,7 +438,7 @@ const Picks = (() => {
       .slice(0, 5);
 
     if (!buys.length) {
-      container.innerHTML = '<p class="text-gray-500 text-sm">No BUY picks</p>';
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No BUY picks</p>';
       return;
     }
 
@@ -447,7 +447,7 @@ const Picks = (() => {
       const pathLabel = p._path === 'value' ? 'Value' : 'Growth';
       const pathCls = p._path === 'value' ? 'recovery' : 'growth';
       const entry = p.ideal_entry ? `$${Number(p.ideal_entry.price).toFixed(2)}` : '';
-      return `<div class="flex items-center justify-between py-1.5 border-b border-gray-800/50 text-sm">
+      return `<div class="flex items-center justify-between py-3.5 text-sm">
         <div class="flex items-center gap-2">
           <a href="https://finance.yahoo.com/quote/${esc(p.ticker)}" target="_blank" rel="noopener" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(p.ticker)}</a>
           <span class="text-green-400 text-xs font-semibold">BUY</span>
@@ -480,7 +480,7 @@ const Picks = (() => {
     if (!container) return;
 
     if (!catalysts || !catalysts.heatmap || !catalysts.heatmap.length) {
-      container.innerHTML = '<p class="text-gray-500 text-sm">No data yet</p>';
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No data yet</p>';
       return;
     }
 
@@ -493,7 +493,7 @@ const Picks = (() => {
         return `<span style="color:${color}" class="text-xs">${label}</span>`;
       }).join(' ');
       const recBadge = h.recommendation ? `<span class="text-xs font-semibold ${h.recommendation === 'BUY' ? 'text-green-400' : 'text-amber-400'}">${h.recommendation}</span>` : '';
-      return `<div class="flex items-center justify-between py-1.5 border-b border-gray-800/50 text-sm">
+      return `<div class="flex items-center justify-between py-3.5 text-sm">
         <div class="flex items-center gap-2">
           <a href="https://finance.yahoo.com/quote/${esc(h.ticker)}" target="_blank" rel="noopener" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(h.ticker)}</a>
           ${recBadge}
@@ -512,14 +512,14 @@ const Picks = (() => {
     if (!container) return;
 
     if (!watchlist) {
-      container.innerHTML = '<p class="text-gray-500 text-sm">No data yet</p>';
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No data yet</p>';
       return;
     }
 
     const alerts = (watchlist.alerts || []).slice(0, 5);
 
     if (!alerts.length) {
-      container.innerHTML = '<p class="text-gray-500 text-sm">No recent alerts</p>';
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No recent alerts</p>';
       return;
     }
 
@@ -532,7 +532,7 @@ const Picks = (() => {
     container.innerHTML = alerts.map(a => {
       const ac = ALERT_COLORS[a.alert_type] || '#9ca3af';
       const pc = PRIORITY_COLORS[a.priority] || '#9ca3af';
-      return `<div class="flex items-center justify-between py-1.5 border-b border-gray-800/50 text-sm">
+      return `<div class="flex items-center justify-between py-3.5 text-sm">
         <div class="flex items-center gap-2">
           <a href="https://finance.yahoo.com/quote/${esc(a.ticker)}" target="_blank" rel="noopener" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(a.ticker)}</a>
           <span class="text-xs font-semibold" style="color:${ac}">${a.alert_type}</span>
