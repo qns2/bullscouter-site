@@ -162,6 +162,27 @@
         its own fixes.
       </p>
 
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Schedule</h2>
+      <p class="text-gray-300 mb-3">
+        Everything runs on <code class="text-amber-400/80 bg-gray-800 px-1 rounded">launchd</code> cron jobs, weekdays only.
+        The daily signal loop runs 3 iterations timed around the US market:
+      </p>
+      <div class="font-mono text-xs text-gray-400 bg-gray-900/60 border border-gray-800 rounded-lg p-4 mb-3 space-y-1 overflow-x-auto">
+        <div class="text-gray-500 mb-2">All times GMT+2 (ET+7)</div>
+        <div><span class="text-amber-400">07:45</span> Rick (discovery) &rarr; <span class="text-green-400">08:30</span> Scan &rarr; <span class="text-blue-400">09:00</span> Oracle (analysis)</div>
+        <div><span class="text-amber-400">12:00</span> Rick &rarr; <span class="text-green-400">15:30</span> Scan &rarr; <span class="text-cyan-400">15:55</span> Options Flow &rarr; <span class="text-blue-400">16:00</span> Oracle</div>
+        <div><span class="text-amber-400">19:00</span> Rick &rarr; <span class="text-green-400">23:05</span> Scan &rarr; <span class="text-cyan-400">23:30</span> Options Flow &rarr; <span class="text-blue-400">23:45</span> Oracle</div>
+        <div class="border-t border-gray-700 pt-1 mt-2"></div>
+        <div><span class="text-gray-500">16:30&ndash;23:00</span> Price monitor (every 15 min) + Insider monitor (every 30 min)</div>
+        <div class="border-t border-gray-700 pt-1 mt-2"></div>
+        <div class="text-gray-500">Nightly maintenance (Tue&ndash;Sat):</div>
+        <div><span class="text-red-400">00:15</span> Tony (developer) &rarr; <span class="text-purple-400">00:30</span> Linus (reviewer) &rarr; <span class="text-gray-300">00:45</span> Backfill + Calibration</div>
+      </div>
+      <p class="text-gray-300 mb-3">
+        The schedule is designed so each agent's output feeds the next. Rick discovers before the scan runs.
+        The scan finishes before Oracle reviews. Oracle's assessment is ready before Tony starts coding fixes.
+      </p>
+
       <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Stack</h2>
       <p class="text-gray-300 mb-3">
         Deliberately simple. Python 3.11, SQLite (one file, no migrations &mdash; tables auto-create), yfinance for
