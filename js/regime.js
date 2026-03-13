@@ -9,7 +9,7 @@ const RegimePage = (() => {
   let data = null;
   let mainChart = null;
   let scoreChart = null;
-  let currentRange = 90;
+  let currentRange = 30;
   let filteredReadings = [];
 
   const REGIME_COLORS = {
@@ -92,9 +92,9 @@ const RegimePage = (() => {
   }
 
   function getTimeUnit(days) {
+    if (days > 0 && days <= 14) return 'day';
     if (days > 0 && days <= 60) return 'week';
-    if (days > 0 && days <= 365) return 'month';
-    return 'quarter';
+    return 'month';
   }
 
   // Background plugin for regime coloring
