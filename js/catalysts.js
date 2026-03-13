@@ -330,7 +330,7 @@ const CatalystHeatmap = (() => {
       const label = copyBtn.querySelector('.copy-label');
       copyBtn.classList.add('copied');
       if (label) label.textContent = 'Copied!';
-      setTimeout(() => { copyBtn.classList.remove('copied'); if (label) label.textContent = 'Copy for Claude'; }, 2000);
+      setTimeout(() => { copyBtn.classList.remove('copied'); if (label) label.textContent = 'Copy'; }, 2000);
     });
   }
 

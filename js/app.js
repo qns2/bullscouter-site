@@ -840,7 +840,7 @@ const App = (() => {
         const label = btn.querySelector('.copy-label');
         btn.classList.add('copied');
         if (label) label.textContent = 'Copied!';
-        setTimeout(() => { btn.classList.remove('copied'); if (label) label.textContent = 'Copy for Claude'; }, 2000);
+        setTimeout(() => { btn.classList.remove('copied'); if (label) label.textContent = 'Copy'; }, 2000);
       });
     });
 
