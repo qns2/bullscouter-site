@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Bull Scouter - Market Regime Gauge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            bull: {
+              dark: '#0a0b0d',
+              card: '#14161a',
+              accent: '#00ff88',
+              blue: '#3b82f6',
+              muted: '#94a3b8',
+              border: 'rgba(255,255,255,0.1)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="index.html" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
+        <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+          <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+        </div>
+        <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter</span>
+      </a>
+      <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
+        <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+        <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
+        <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
+        <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
+      </div>
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="sm:hidden p-2 text-bull-muted hover:text-white" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md">
+    <div class="px-4 py-3 space-y-2 text-sm font-medium">
+      <a class="block py-2 text-bull-muted" href="index.html">Home</a>
+      <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
+      <a class="block py-2 text-bull-muted" href="history.html">History</a>
+      <a class="block py-2 text-bull-muted" href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- Header -->
+  <div class="mb-6">
+    <h1 class="text-2xl font-extrabold tracking-tight">Market Regime Gauge</h1>
+    <p class="text-sm text-bull-muted mt-1">Composite risk-on/risk-off indicator. Updated 3x daily. Contrarian signal: risk-off = historically best forward returns.</p>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
+    <div class="glass-card p-3 text-center">
+      <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">Regime</div>
+      <div id="rg-regime" class="text-sm font-bold">—</div>
+    </div>
+    <div class="glass-card p-3 text-center">
+      <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">Score</div>
+      <div id="rg-score" class="text-lg font-bold">—</div>
+    </div>
+    <div class="glass-card p-3 text-center">
+      <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">SPY</div>
+      <div id="rg-spy" class="text-lg font-bold">—</div>
+    </div>
+    <div class="glass-card p-3 text-center">
+      <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">VIX</div>
+      <div id="rg-vix" class="text-lg font-bold">—</div>
+    </div>
+    <div class="glass-card p-3 text-center">
+      <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">Hist. Avg 5d</div>
+      <div id="rg-avg5" class="text-lg font-bold text-green-400">—</div>
+    </div>
+    <div class="glass-card p-3 text-center">
+      <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">Hist. Avg 20d</div>
+      <div id="rg-avg20" class="text-lg font-bold text-green-400">—</div>
+    </div>
+  </div>
+
+  <!-- Range buttons -->
+  <div class="flex gap-2 mb-4">
+    <button data-range="30" class="px-3 py-1.5 rounded text-xs font-medium bg-bull-card text-bull-muted border border-bull-border hover:bg-white/10 transition-colors">1M</button>
+    <button data-range="90" class="px-3 py-1.5 rounded text-xs font-medium bg-bull-accent text-bull-dark font-bold border border-bull-accent">3M</button>
+    <button data-range="0" class="px-3 py-1.5 rounded text-xs font-medium bg-bull-card text-bull-muted border border-bull-border hover:bg-white/10 transition-colors">ALL</button>
+  </div>
+
+  <!-- Content (hidden until loaded) -->
+  <div id="rg-content" class="hidden space-y-4">
+
+    <!-- SPY chart -->
+    <div class="glass-card p-4" style="height: 350px;">
+      <canvas id="mainChart"></canvas>
+    </div>
+
+    <!-- Legend -->
+    <div class="flex flex-wrap gap-4 text-xs text-bull-muted">
+      <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#ef4444"></span> Strong Risk-Off</span>
+      <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#fb923c"></span> Risk-Off</span>
+      <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#6b7280"></span> Neutral</span>
+      <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:#4ade80"></span> Risk-On</span>
+      <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm" style="background:rgba(96,165,250,0.5)"></span> Projected range</span>
+    </div>
+
+    <!-- Score chart -->
+    <div class="glass-card p-4" style="height: 220px;">
+      <div class="text-xs text-bull-muted mb-2 font-medium">Composite Score (-100 to +100)</div>
+      <canvas id="scoreChart"></canvas>
+    </div>
+
+    <!-- Two columns: stats + projections -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+      <!-- Regime stats table -->
+      <div class="glass-card p-4">
+        <div class="text-xs text-bull-muted font-medium mb-3 uppercase tracking-wider">Historical Performance by Regime (4yr backtest)</div>
+        <table class="w-full text-sm">
+          <thead><tr class="border-b border-bull-border">
+            <th class="text-left py-2 px-3 text-xs text-bull-muted font-medium">Regime</th>
+            <th class="text-left py-2 px-3 text-xs text-bull-muted font-medium">Avg 5d</th>
+            <th class="text-left py-2 px-3 text-xs text-bull-muted font-medium">Avg 20d</th>
+            <th class="text-left py-2 px-3 text-xs text-bull-muted font-medium">Signal</th>
+          </tr></thead>
+          <tbody>
+            <tr id="rs-strong_risk_off"></tr>
+            <tr id="rs-risk_off"></tr>
+            <tr id="rs-neutral"></tr>
+            <tr id="rs-risk_on"></tr>
+            <tr id="rs-strong_risk_on"></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Projection tracking -->
+      <div class="glass-card p-4">
+        <div class="text-xs text-bull-muted font-medium mb-3 uppercase tracking-wider">Projection vs Actual (1-week)</div>
+        <table class="w-full text-sm">
+          <thead><tr class="border-b border-bull-border">
+            <th class="text-left py-2 px-3 text-xs text-bull-muted font-medium">Date</th>
+            <th class="text-left py-2 px-3 text-xs text-bull-muted font-medium">Regime</th>
+            <th class="text-left py-2 px-3 text-xs text-bull-muted font-medium">Projected</th>
+            <th class="text-left py-2 px-3 text-xs text-bull-muted font-medium">Actual</th>
+            <th class="text-left py-2 px-3 text-xs text-bull-muted font-medium">Error</th>
+          </tr></thead>
+          <tbody id="rg-proj-body">
+            <tr><td colspan="5" class="text-center text-bull-muted py-4 text-xs">Tracking starts after first week of data</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Loading -->
+  <div id="rg-loading" class="text-center py-20">
+    <div class="w-8 h-8 border-2 border-bull-accent/30 border-t-bull-accent rounded-full animate-spin mx-auto mb-3"></div>
+    <p class="text-bull-muted text-sm">Loading regime data...</p>
+  </div>
+
+  <!-- Error -->
+  <div id="rg-error" class="hidden text-center py-20">
+    <p class="text-red-400">Failed to load regime data</p>
+    <p class="text-white/30 text-xs mt-1" id="rg-error-msg"></p>
+  </div>
+
+  <!-- Date -->
+  <div class="text-right text-[10px] text-bull-muted mt-4">Last updated: <span id="rg-date">—</span></div>
+
+</main>
+
+<footer class="border-t border-bull-border py-8 px-4 mt-8">
+  <div class="max-w-7xl mx-auto text-center">
+    <p class="text-xs text-bull-muted">Not financial advice. Contrarian indicator: risk-off historically = best buying opportunity.</p>
+  </div>
+</footer>
+
+<script src="js/regime.js?v=1"></script>
+</body>
+</html>
