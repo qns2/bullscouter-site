@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Bull Scouter — About</title>
+  <meta name="description" content="How I built a self-improving stock scanner with 10 autonomous AI agents running on a Mac Mini.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/about.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/about.html">
+  <meta property="og:title" content="Bull Scouter — About">
+  <meta property="og:description" content="How I built a self-improving stock scanner with 10 autonomous AI agents running on a Mac Mini.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bull Scouter — About">
+  <meta name="twitter:description" content="How I built a self-improving stock scanner with 10 autonomous AI agents running on a Mac Mini.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=14">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            'bull-dark': '#0a0b0d',
+            'bull-card': '#14161a',
+            'bull-accent': '#00ff88',
+            'bull-blue': '#3b82f6',
+            'bull-muted': '#94a3b8',
+            'bull-border': 'rgba(255, 255, 255, 0.1)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .prose-bull h2 { color: #e2e8f0; }
+    .prose-bull p { color: #94a3b8; }
+    .prose-bull strong { color: #f1f5f9; }
+    .prose-bull code {
+      color: #00ff88;
+      background: rgba(0, 255, 136, 0.08);
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+      font-size: 0.875em;
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+          <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+        </div>
+        <span class="text-xl font-extrabold tracking-tight">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
+      </div>
+      <div class="flex items-center space-x-4 sm:space-x-8 text-sm font-medium">
+        <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+        <a class="text-bull-accent" href="about.html">About</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="relative pt-16 sm:pt-24 pb-8 sm:pb-12 px-4 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-bull-accent/10 blur-[120px] rounded-full"></div>
+  </div>
+  <div class="max-w-3xl mx-auto text-center relative z-10">
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter mb-4 bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
+      I built a stock scanner <br> that improves itself.
+    </h1>
+    <p class="text-sm sm:text-base text-bull-muted">A builder's log &mdash; March 2026</p>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="max-w-3xl mx-auto px-4 py-8 sm:py-12">
+  <article class="prose-bull space-y-12">
+
+    <!-- The Problem -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">The Problem</h2>
+      <p class="leading-relaxed mb-3">
+        Stock catalysts &mdash; FDA approvals, insider buying clusters, activist filings, earnings surprises &mdash; move prices
+        before most retail investors notice them. By the time you read about it on Reddit or see the Seeking Alpha headline,
+        the move is half over.
+      </p>
+      <p class="leading-relaxed">
+        I wanted a system that would surface these catalysts 30&ndash;90 days early. Not a screener with static filters,
+        but something that could discover opportunities I wasn't even looking for. The tools that exist are either
+        too basic (finviz screens) or too expensive (Bloomberg terminal). None of them learn from their own mistakes.
+      </p>
+    </section>
+
+    <!-- The Architecture -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">The Architecture</h2>
+      <p class="leading-relaxed mb-3">
+        Bull Scouter runs two loops. The <strong>daily signal loop</strong> runs 3x per day: an assessor discovers
+        opportunities blindly via web research, a 9-step scanner scores them against market data, and an analyst
+        synthesizes everything into verdicts. The <strong>nightly maintenance loop</strong> is where it gets interesting:
+        the analyst flags what the scanner got wrong, a developer agent writes code fixes, and a reviewer agent
+        posts inline comments on the PR. I wake up to a pull request with the fix already reviewed.
+      </p>
+      <p class="leading-relaxed">
+        There are 10 AI agents total &mdash; 5 top-level agents and 5 discovery sub-agents. They run on <code>launchd</code>
+        cron jobs on a Mac Mini. No cloud infrastructure. No Kubernetes. Just Python, SQLite, and Claude Opus
+        talking to each other through the filesystem.
+      </p>
+    </section>
+
+    <!-- The Agents -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">The Agents</h2>
+      <p class="leading-relaxed mb-6">
+        Each agent is a Claude Opus instance with a specialized system prompt, running via <code>claude -p</code>
+        on the CLI. They're named after characters that fit their roles:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="glass-card rounded-xl p-5">
+          <div class="text-bull-accent font-bold">Rick <span class="text-bull-muted font-normal text-sm">the Assessor</span></div>
+          <p class="text-sm mt-2 text-white/60 leading-relaxed">Chaotic multi-dimensional explorer. Sends 5 expert sub-agents &mdash; Homer, Marge, Bart, Lisa, and Antonis &mdash; on blind discovery missions with zero scanner data. Whatever they find independently that the scanner also found? That's the highest-conviction signal.</p>
+        </div>
+        <div class="glass-card rounded-xl p-5">
+          <div class="text-bull-blue font-bold">Oracle <span class="text-bull-muted font-normal text-sm">the Analyst</span></div>
+          <p class="text-sm mt-2 text-white/60 leading-relaxed">Sees all possible futures. Reviews all scanner paths &mdash; daily signals, contrarian plays, watchlist dips, catalyst heatmap &mdash; and issues verdicts. Produces adjustment files that feed back into the next scan cycle.</p>
+        </div>
+        <div class="glass-card rounded-xl p-5">
+          <div class="text-pink-500 font-bold">Tony <span class="text-bull-muted font-normal text-sm">the Developer</span></div>
+          <p class="text-sm mt-2 text-white/60 leading-relaxed">Builds and fixes everything. Reads Oracle's assessment, identifies bugs and config issues, implements fixes on a branch, runs the full test suite, and creates a PR. Max 5 changes per run.</p>
+        </div>
+        <div class="glass-card rounded-xl p-5">
+          <div class="text-purple-400 font-bold">Linus <span class="text-bull-muted font-normal text-sm">the Reviewer</span></div>
+          <p class="text-sm mt-2 text-white/60 leading-relaxed">Legendary code reviewer with uncompromising standards. Four parallel review sub-agents check Tony's PR for bugs and compliance violations. Posts inline comments with committable suggestions. Auto-approves or requests changes.</p>
+        </div>
+      </div>
+      <p class="leading-relaxed mt-4">
+        There's also <strong>Darwin</strong> the Optimizer &mdash; evolves configuration parameters through
+        natural selection. And Rick's 5 discovery experts each specialize in a domain: general catalysts, geopolitics,
+        AI/tech, insider/flow signals, and contrarian value.
+      </p>
+    </section>
+
+    <!-- Blind Discovery -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">Blind Discovery</h2>
+      <p class="leading-relaxed mb-3">
+        This is the part I'm most proud of. Rick's 5 experts search the web for stock opportunities with <em>zero</em>
+        knowledge of what the scanner found. They don't see scores, recommendations, or even the ticker list. They
+        start from scratch every time &mdash; scanning news, SEC filings, options flow, macro trends.
+      </p>
+      <p class="leading-relaxed">
+        After discovery, the results merge with the scanner's picks. Tickers found by <em>both</em> systems independently
+        get tagged as &ldquo;overlap&rdquo; &mdash; the highest conviction signal in the system. Tickers found only by the experts
+        become &ldquo;scanner blind spots&rdquo; that feed back into the scanner's improvement cycle.
+      </p>
+    </section>
+
+    <!-- The Data Pipeline -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">The Data Pipeline</h2>
+      <p class="leading-relaxed mb-3">
+        The scanner pulls from 8+ sources every run: Reddit mentions (ApeWisdom), FDA calendars, space launch manifests,
+        earnings dates, SEC filings, Seeking Alpha &amp; Benzinga RSS, and Perplexity AI for structured event discovery.
+        Each source contributes tickers and catalyst events that feed into the scoring engine.
+      </p>
+      <p class="leading-relaxed">
+        On top of that, two real-time monitors run during market hours. The <strong>price monitor</strong> polls every 15 minutes
+        for dip entries and cross-path opportunities. The <strong>options flow monitor</strong> captures put/call ratios, IV skew,
+        and unusual volume twice daily &mdash; institutional positioning that's invisible to price and news scanners.
+        Insider buying is tracked via SEC Form 4 filings, with Telegram alerts for purchases above $500K.
+      </p>
+    </section>
+
+    <!-- The Scoring Engine -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">The Scoring Engine</h2>
+      <p class="leading-relaxed mb-3">
+        Not all opportunities are the same, so the scanner runs multiple scoring frameworks in parallel and picks the best fit.
+        <strong>Tier 1</strong> targets binary catalysts in small caps &mdash; FDA decisions, contract announcements, the setups
+        that move 50%+ overnight. <strong>Tier 2</strong> catches fallen angels and reacceleration plays.
+        <strong>Track B</strong> scores large-cap momentum breakouts. <strong>Fundamental quality</strong> frameworks evaluate
+        value (8 components) and growth (7 components) separately.
+      </p>
+      <p class="leading-relaxed">
+        A stock needs more than a high score to earn a BUY. Three independent gates must pass: the composite score (&ge;75),
+        a confidence score that measures signal reliability (&ge;50), and a hysteresis check requiring 2 consecutive qualifying
+        scans. This prevents one-day spikes from triggering false signals. The system also decays stale evidence over time &mdash;
+        yesterday's catalyst is worth less than today's.
+      </p>
+    </section>
+
+    <!-- Notifications -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">Notifications</h2>
+      <p class="leading-relaxed mb-3">
+        The system pushes alerts through two channels. <strong>Telegram</strong> for real-time, actionable signals during market
+        hours. <strong>Email</strong> for the daily summary after the final scan.
+      </p>
+      <p class="leading-relaxed mb-3">
+        <strong>Telegram alerts</strong> fire throughout the day: price dips on watchlist stocks (every 15 min), insider buys
+        above $500K (every 30 min), unusual options flow (twice daily), and Rick's high-conviction blind discoveries.
+        Each alert includes the current price, score, and key context so you can act without opening the dashboard.
+      </p>
+      <p class="leading-relaxed">
+        <strong>The daily email</strong> goes out after the evening scan &mdash; a single unified report combining all paths.
+        Top picks with full breakdowns, contrarian candidates, watchlist dip alerts, and a catalyst heatmap.
+        It's the one place where everything the system found that day comes together.
+      </p>
+    </section>
+
+    <!-- The Schedule -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">The Schedule</h2>
+      <p class="leading-relaxed mb-4">
+        Everything runs on <code>launchd</code> cron jobs, weekdays only.
+        The daily signal loop runs 3 iterations timed around the US market:
+      </p>
+      <div class="glass-card rounded-xl p-5 mb-4 font-mono text-xs space-y-1.5 overflow-x-auto">
+        <div class="text-bull-muted mb-3 text-[11px]">All times GMT+2 (ET+7)</div>
+        <div><span class="text-bull-accent">07:45</span> <span class="text-white/60">Rick (discovery)</span> <span class="text-white/20">&rarr;</span> <span class="text-bull-accent">08:30</span> <span class="text-white/60">Scan</span> <span class="text-white/20">&rarr;</span> <span class="text-bull-blue">09:00</span> <span class="text-white/60">Oracle (analysis)</span></div>
+        <div><span class="text-bull-accent">12:00</span> <span class="text-white/60">Rick</span> <span class="text-white/20">&rarr;</span> <span class="text-bull-accent">15:30</span> <span class="text-white/60">Scan</span> <span class="text-white/20">&rarr;</span> <span class="text-cyan-400">15:55</span> <span class="text-white/60">Options Flow</span> <span class="text-white/20">&rarr;</span> <span class="text-bull-blue">16:00</span> <span class="text-white/60">Oracle</span></div>
+        <div><span class="text-bull-accent">19:00</span> <span class="text-white/60">Rick</span> <span class="text-white/20">&rarr;</span> <span class="text-bull-accent">23:05</span> <span class="text-white/60">Scan</span> <span class="text-white/20">&rarr;</span> <span class="text-cyan-400">23:30</span> <span class="text-white/60">Options Flow</span> <span class="text-white/20">&rarr;</span> <span class="text-bull-blue">23:45</span> <span class="text-white/60">Oracle</span></div>
+        <div class="border-t border-white/5 pt-2 mt-3"></div>
+        <div><span class="text-white/30">16:30&ndash;23:00</span> <span class="text-white/60">Price monitor (every 15 min) + Insider monitor (every 30 min)</span></div>
+        <div class="border-t border-white/5 pt-2 mt-3"></div>
+        <div class="text-white/30 text-[11px]">Nightly maintenance (Tue&ndash;Sat):</div>
+        <div><span class="text-pink-500">00:15</span> <span class="text-white/60">Tony (developer)</span> <span class="text-white/20">&rarr;</span> <span class="text-purple-400">00:30</span> <span class="text-white/60">Linus (reviewer)</span> <span class="text-white/20">&rarr;</span> <span class="text-white/40">00:45</span> <span class="text-white/60">Backfill + Calibration</span></div>
+      </div>
+      <p class="leading-relaxed">
+        The schedule is designed so each agent's output feeds the next. Rick discovers before the scan runs.
+        The scan finishes before Oracle reviews. Oracle's assessment is ready before Tony starts coding fixes.
+      </p>
+    </section>
+
+    <!-- The Self-Improvement Loop -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">The Self-Improvement Loop</h2>
+      <p class="leading-relaxed mb-3">
+        Every night after the final scan, Oracle reviews the day's results and writes an assessment.
+        Tony reads this assessment, identifies what to fix &mdash; maybe a scoring threshold is too aggressive,
+        maybe a data source is returning stale data &mdash; and implements the change on a branch.
+        Linus reviews the PR within 15 minutes. If it passes, I merge it in the morning.
+        If not, Linus posts inline comments explaining why.
+      </p>
+      <p class="leading-relaxed">
+        The scanner has made hundreds of self-improvements this way. Config tuning, bug fixes, data pipeline
+        repairs &mdash; all without me writing a line of code. I review the PRs, but the system proposes and validates
+        its own fixes.
+      </p>
+    </section>
+
+    <!-- The Stack -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">The Stack</h2>
+      <p class="leading-relaxed mb-3">
+        Deliberately simple. Python 3.11, SQLite (one file, no migrations &mdash; tables auto-create), yfinance for
+        market data, Claude Opus via the <code>claude</code> CLI (subscription, not API &mdash; no per-call billing).
+        Scheduled with macOS <code>launchd</code> plists. The website is static HTML + Tailwind + vanilla JS
+        reading from JSON files, hosted on GitHub Pages.
+      </p>
+      <p class="leading-relaxed">
+        The whole thing runs on a Mac Mini sitting on my desk. Total infrastructure cost: $0 beyond the Claude
+        subscription. The scanner, all 10 agents, the database, the exports &mdash; all local.
+      </p>
+    </section>
+
+    <!-- What's Next -->
+    <section>
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">What's Next</h2>
+      <p class="leading-relaxed mb-3">
+        Right now: collecting data and letting the calibration system prove itself. The nightly backfill tracks
+        forward returns (5d, 20d, 60d, 120d) for every signal the scanner has ever produced. As that dataset grows,
+        the system can measure which scoring components actually predict returns and which are noise &mdash; then
+        tune weights accordingly. The agents already propose config changes based on Oracle's assessments;
+        calibration data will make those proposals evidence-based instead of heuristic.
+      </p>
+      <p class="leading-relaxed">
+        The architecture scales to N agents. The constraint isn't compute &mdash; it's designing the right prompts and
+        feedback loops so the agents actually make each other better instead of just adding noise.
+      </p>
+    </section>
+
+  </article>
+
+  <!-- Divider -->
+  <div class="border-t border-white/5 my-12 sm:my-16"></div>
+
+  <!-- Part 2: Reading Guide (collapsed) -->
+  <details class="group">
+    <summary class="cursor-pointer text-lg sm:text-xl font-bold text-white/80 hover:text-white transition-colors py-2 flex items-center gap-2">
+      <svg class="w-5 h-5 text-bull-accent transform transition-transform group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      How to Read the Data
+      <span class="text-bull-muted text-sm font-normal ml-2">click to expand</span>
+    </summary>
+    <div class="mt-8 space-y-10">
+
+    <!-- Signal Types -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Signal Types</h3>
+      <div class="space-y-3 text-sm">
+        <div class="flex items-start gap-3">
+          <span class="score-badge buy text-sm" style="min-width:3rem">85</span>
+          <div class="text-white/60"><b class="text-bull-accent">BUY</b> &mdash; Score &ge; 75, confidence &ge; 50, and confirmed across 2 consecutive market days. The highest-conviction signal. These stocks passed all quality gates.</div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="score-badge watchlist text-sm" style="min-width:3rem">68</span>
+          <div class="text-white/60"><b class="text-amber-400">WATCHLIST</b> &mdash; Score 60&ndash;74 or missing one BUY requirement (low confidence, first day seen, etc.). Worth monitoring&mdash;many BUY signals start here.</div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="score-badge momentum text-sm" style="min-width:3rem">45</span>
+          <div class="text-white/60"><b class="text-white/40">MOMENTUM</b> &mdash; Score &lt; 60. Early-stage signals still building evidence. Shown in the compact table at the bottom.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profiles -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Profiles (Investment Thesis)</h3>
+      <p class="text-sm text-white/40 mb-4">Each stock is scored against multiple frameworks. The best-fitting profile wins:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <div class="glass-card rounded-xl p-4">
+          <span class="profile-badge recovery mb-1">Recovery</span>
+          <p class="text-white/60 mt-2"><b class="text-white/80">Tier 1</b> &mdash; Small/mid-cap stocks with upcoming binary catalysts (FDA approvals, launches, key data readouts). High risk/reward.</p>
+          <p class="text-white/60 mt-1"><b class="text-white/80">Tier 2</b> &mdash; Fallen angels: quality companies beaten down &gt;30% that are re-accelerating revenue. Contrarian plays.</p>
+        </div>
+        <div class="glass-card rounded-xl p-4">
+          <span class="profile-badge acceleration mb-1">Acceleration</span>
+          <p class="text-white/60 mt-2"><b class="text-white/80">Tier 3</b> &mdash; Large-cap momentum breakouts. Strong price trend, expanding volume, positive revenue momentum. Riding the wave.</p>
+        </div>
+        <div class="glass-card rounded-xl p-4">
+          <span class="profile-badge growth mb-1">Growth</span>
+          <p class="text-white/60 mt-2"><b class="text-white/80">Tier 4</b> &mdash; Revenue-quality companies with catalysts. Fills the gap between Tier 1 (pure catalyst) and Tier 2 (pure recovery). Must have real revenue growth + margins.</p>
+        </div>
+        <div class="glass-card rounded-xl p-4">
+          <span class="profile-badge" style="background:rgba(168,85,247,0.15);color:#c4b5fd">Value / Growth Q</span>
+          <p class="text-white/60 mt-2"><b class="text-white/80">Tier 5/6</b> &mdash; Fundamental quality from the financial screener. <b>Value</b>: profitable + strong FCF + beaten down. <b>Growth Quality</b>: 30%+ revenue growth + 60%+ gross margins + Rule of 40.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Score Breakdown -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Score Breakdown Chips</h3>
+      <p class="text-sm text-white/40 mb-3">Each colored chip shows a scoring component and its point contribution:</p>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="chip positive">Catalyst +25</span>
+        <span class="chip positive">Social +12</span>
+        <span class="chip positive">News +8</span>
+        <span class="chip positive">AI +5</span>
+        <span class="chip negative">Risk -8</span>
+        <span class="chip negative">Decay -3</span>
+      </div>
+      <div class="text-sm text-white/60 space-y-2">
+        <p><span class="text-bull-accent">Green chips (+)</span> add points: Catalyst, Social buzz, Growth/Margin quality, News boost, AI enhancement, Momentum bonus, Breakout pattern match.</p>
+        <p><span class="text-red-400">Red chips (-)</span> subtract points: Fundamental Risk (overvaluation, weak margins), Thesis Decay (stale evidence), Controversy penalty, Pre-revenue discount.</p>
+      </div>
+    </section>
+
+    <!-- Fundamental Gates -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Fundamental Safety Gates</h3>
+      <p class="text-sm text-white/40 mb-3">After all scoring, these hard caps prevent obviously flawed stocks from getting high scores:</p>
+      <div class="space-y-2 text-sm text-white/60">
+        <div><span class="chip negative">Overvalued Cap -26</span> &mdash; PE &gt; 40x with margins &lt; 10%. Score capped at 70. The company isn't earning enough to justify its valuation.</div>
+        <div><span class="chip negative">Bankruptcy Risk -46</span> &mdash; AI thesis mentions bankruptcy/insolvency, OR stock is &gt;80% down from highs with margins &lt;10% or negative FCF. Capped at 60.</div>
+        <div><span class="chip negative">Low Upside -10</span> &mdash; Analyst consensus target implies &lt;15% upside (-10pts) or &lt;25% upside (-5pts). Limited room to run.</div>
+        <div><span class="chip negative">Insider Selling -5</span> &mdash; Officers/directors are net sellers (Value and Growth Quality profiles only). They know something you don't.</div>
+      </div>
+    </section>
+
+    <!-- Confidence -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Confidence Score (0&ndash;100)</h3>
+      <div class="conf-bar mb-2" style="max-width:300px">
+        <div class="conf-bar-fill" style="width:72%;background:#00ff88"></div>
+      </div>
+      <p class="text-sm text-white/60 mb-3">Measures <b class="text-white/80">signal reliability</b>&mdash;how trustworthy the evidence is, independent of the score itself. A stock can score 90 but have low confidence (single stale source). Confidence &ge; 50 is required for BUY.</p>
+      <div class="text-sm text-white/60 space-y-1">
+        <p><b class="text-white/80">Source Quality (0&ndash;35)</b>: How many independent sources discovered this stock (Reddit + FDA + Perplexity + earnings + congress).</p>
+        <p><b class="text-white/80">Cross-Source Agreement (0&ndash;25)</b>: Do multiple sources point to the same catalyst/thesis?</p>
+        <p><b class="text-white/80">Freshness (0&ndash;25)</b>: How recent is the evidence? Decays as data ages.</p>
+        <p><b class="text-white/80">Data Completeness (0&ndash;15)</b>: Does yfinance have full fundamentals, insider data, analyst targets?</p>
+      </div>
+      <div class="flex items-center gap-4 mt-3 text-xs font-mono">
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#00ff88"></span> 70+ Strong</span>
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#f59e0b"></span> 50&ndash;69 Moderate</span>
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#ef4444"></span> &lt;50 Weak</span>
+      </div>
+    </section>
+
+    <!-- Quality Checklist -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Quality Checklist</h3>
+      <p class="text-sm text-white/40 mb-3">Stocks scored by the fundamental quality framework show a 6-point checklist:</p>
+      <div class="text-xs text-white/40 px-3 py-2.5 border border-white/10 rounded-lg inline-block">
+        <span class="font-semibold text-white/60">Value (5/6)</span>:
+        <span class="mr-2">&#x2705; Profitable</span>
+        <span class="mr-2">&#x2705; FCF</span>
+        <span class="mr-2">&#x2705; 52w Low</span>
+        <span class="mr-2">&#x26A0;&#xFE0F; Panic</span>
+        <span class="mr-2">&#x2705; PE</span>
+        <span class="mr-2">&#x2705; No Dilution</span>
+      </div>
+      <div class="text-sm text-white/60 mt-3 space-y-1">
+        <p><b class="text-white/80">Value checklist</b>: Profitable, Strong FCF, Near 52w Lows, Sector Panic (fundamentals intact while price crashed), Low PE, No Dilution.</p>
+        <p><b class="text-white/80">Growth Quality checklist</b>: Revenue Growth (30%+), Gross Margins (60%+), NRR proxy, TAM proxy, Rule of 40, Low SBC.</p>
+        <p>&#x2705; = pass, &#x26A0;&#xFE0F; = partial, &#x274C; = fail. A 5/6 typically maps to ~80+ points.</p>
+      </div>
+    </section>
+
+    <!-- Badges -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Badges</h3>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="chip" style="color:#93c5fd;background:rgba(59,130,246,0.15)">Congress BUY (3 buyers)</span>
+        <span class="chip" style="color:#4ade80;background:rgba(34,197,94,0.15)">Insider STRONG (5B/0S)</span>
+        <span class="chip" style="color:#4ade80;background:rgba(34,197,94,0.15)">Analyst &#x2191;3</span>
+        <span class="chip" style="color:#f472b6;background:rgba(244,114,182,0.15)">Squeeze</span>
+        <span class="chip" style="color:#fb923c;background:rgba(251,146,60,0.15)">Convergence: Social + Financial</span>
+      </div>
+      <div class="text-sm text-white/60 space-y-1">
+        <p><b class="text-white/80">Congress</b>: Members of congress recently bought this stock. "Bipartisan" = both parties buying.</p>
+        <p><b class="text-white/80">Insider</b>: Corporate insider activity. STRONG = heavy buying, NEGATIVE = net selling. Format: Buys/Sells in last 90 days.</p>
+        <p><b class="text-white/80">Analyst</b>: Recent upgrades (&#x2191;) vs downgrades (&#x2193;) from Wall Street analysts.</p>
+        <p><b class="text-white/80">Squeeze</b>: High short interest + catalyst = potential short squeeze setup.</p>
+        <p><b class="text-white/80">Convergence</b>: Stock discovered by BOTH social/catalyst sources AND the financial screener independently. Highest conviction&mdash;fundamentals + timing aligned.</p>
+      </div>
+    </section>
+
+    <!-- Catalyst Events -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Catalyst Events &amp; Countdown</h3>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="event-pill bull">FDA 2026-04-15</span>
+        <span class="event-pill bull">Earnings 2026-03-01</span>
+        <span class="event-pill bear">Lockup 2026-05-20</span>
+      </div>
+      <div class="text-sm text-white/60 space-y-1">
+        <p>Event pills show upcoming catalysts with dates. <span class="text-bull-accent">Green border</span> = bullish catalyst, <span class="text-red-400">red border</span> = bearish (lockup expirations, etc.).</p>
+        <p>The countdown badge shows days until the nearest catalyst: <span class="text-amber-400">7d</span> (imminent), <span class="text-amber-500">25d</span> (approaching), <span class="text-white/40">45d</span> (distant).</p>
+      </div>
+    </section>
+
+    <!-- Trend & History -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Trend &amp; History</h3>
+      <div class="text-sm text-white/60 space-y-2">
+        <p><span class="text-bull-accent font-semibold">&#x2191; improving</span> &mdash; Score has been increasing over recent scans. Building momentum.</p>
+        <p><span class="text-red-400 font-semibold">&#x2193; declining</span> &mdash; Score dropping. Thesis may be weakening.</p>
+        <p><span class="text-white/30">&#x2192; stable</span> &mdash; Consistent score. Steady signal.</p>
+        <p><span class="text-white/30">&#x2728; new</span> &mdash; First time this stock appeared. Fresh discovery.</p>
+        <p>The <b class="text-white/80">sparkline</b> in the bottom-right of each card shows score history over the last 14 scans.</p>
+        <p>The <b class="text-white/80">aggregate row</b> shows: average score, peak score, % of scans as BUY, and price change since first detection.</p>
+      </div>
+    </section>
+
+    <!-- Fundamentals Row -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Fundamentals Row</h3>
+      <div class="text-xs text-white/40 font-mono mb-3">
+        <b>P/E:</b> <span class="text-bull-accent">18</span> | <b>Rev:</b> <span class="text-bull-accent">+25%</span> | <b>Margin:</b> <span class="text-bull-accent">15%</span> | <b>Target:</b> $180 (<span class="text-bull-accent">+32%</span>)
+      </div>
+      <div class="text-sm text-white/60 space-y-1">
+        <p><b class="text-white/80">P/E</b>: Price-to-earnings ratio. <span class="text-bull-accent">&lt;25 (green)</span>, <span class="text-amber-400">25&ndash;50 (amber)</span>, <span class="text-red-400">&gt;50 (red)</span>.</p>
+        <p><b class="text-white/80">Rev</b>: Year-over-year revenue growth.</p>
+        <p><b class="text-white/80">Margin</b>: Net profit margin.</p>
+        <p><b class="text-white/80">Target</b>: Analyst consensus price target and % upside from current price.</p>
+      </div>
+    </section>
+
+    <!-- AI Thesis -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">AI Thesis</h3>
+      <p class="text-sm text-white/60">Click the expandable <span class="text-bull-accent font-medium">&#x25B8; AI Thesis</span> section on any card to read a Claude-generated investment thesis. This summarizes the bull case, key catalysts, and risk factors in 2&ndash;3 sentences. Generated only for BUY-quality signals.</p>
+    </section>
+
+    <!-- Satellite Fit Value -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Satellite Fit Value (SFV)</h3>
+      <div class="text-xs text-white/40 font-mono mb-3">
+        <b>Satellite:</b> <span class="text-bull-accent">73</span><span class="text-white/30">/100 (1.23x)</span>
+      </div>
+      <p class="text-sm text-white/60 mb-3">SFV re-ranks stocks for <b class="text-white/80">small tactical positions</b> (satellite bets). The SFV multiplier (0.5&ndash;1.5x) is converted to a 0&ndash;100 satellite score: 0.5x&rarr;0, 1.0x&rarr;50, 1.5x&rarr;100. A small-cap ($5B) with SFV 1.2x gets satellite 70, while a mega-cap ($300B) with SFV 0.55x gets satellite 5&mdash;making satellite quality easy to compare at a glance.</p>
+      <div class="text-sm text-white/60 space-y-1">
+        <p><b class="text-white/80">Market Cap</b> (5 buckets): Micro (&lt;$2B, 1.15x), Small ($2&ndash;10B, 1.10x), Mid ($10&ndash;50B, 0.90x), Large ($50&ndash;200B, 0.70x), Mega (&gt;$200B, 0.50x).</p>
+        <p><b class="text-white/80">52w Range Width</b>: Wide range (&gt;50%) means the stock has demonstrated large moves (1.15x). Narrow range = sleepy stock (0.85x).</p>
+        <p><b class="text-white/80">Acceleration</b>: Earnings growing faster than revenue signals operating leverage (1.10x). Decelerating revenue = headwind (0.85x).</p>
+        <p><b class="text-white/80">Core Overlap</b>: If you already own this in your core portfolio (top S&amp;P 500 names), it's penalized (0.70x). You don't need a satellite bet on AAPL.</p>
+        <p><b class="text-white/80">Short Interest Fuel</b>: 5&ndash;15% SI is the sweet spot (1.05x)&mdash;enough to fuel a squeeze but not so much it signals fundamental problems.</p>
+      </div>
+      <div class="flex items-center gap-4 mt-3 text-xs font-mono">
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#00ff88"></span> &ge;50 Good satellite</span>
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#f59e0b"></span> 25&ndash;49 Neutral</span>
+        <span><span class="inline-block w-3 h-3 rounded" style="background:#ef4444"></span> &lt;25 Poor satellite fit</span>
+      </div>
+    </section>
+
+    <!-- Hysteresis -->
+    <section>
+      <h3 class="text-base font-bold text-bull-accent mb-4">Hysteresis (Streak Requirement)</h3>
+      <p class="text-sm text-white/60">A stock must qualify as BUY for <b class="text-white/80">2 consecutive market days</b> before it's promoted. This prevents one-day spikes from triggering premature signals. If you see <span class="text-amber-600 italic">"Streak 1/2: needs 1 more qualifying scan"</span>, the stock scored high enough today but needs to confirm tomorrow.</p>
+    </section>
+
+    </div>
+  </details>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-bull-border py-12 px-4 mt-12">
+  <div class="max-w-7xl mx-auto text-center">
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <div class="w-6 h-6 bg-bull-muted/20 rounded flex items-center justify-center">
+        <svg class="w-4 h-4 text-bull-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </div>
+      <span class="text-sm font-bold tracking-tight text-bull-muted">Bull Scouter</span>
+    </div>
+    <p class="text-xs text-bull-muted max-w-lg mx-auto leading-loose">
+      Autonomous AI agents for stock catalyst detection. Not financial advice.<br>
+      Data refreshed 3x daily. Past performance does not guarantee future results.
+    </p>
+  </div>
+</footer>
+
+<script>
+  fetch('data/latest.json?_cb=' + Date.now())
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      if (!d) return;
+      const v = document.getElementById('version-badge');
+      if (v && d.version) v.textContent = 'v' + d.version;
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>
