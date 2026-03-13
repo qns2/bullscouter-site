@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
-  <meta name="theme-color" content="#030712">
+  <meta name="theme-color" content="#0a0b0d">
   <title>Bull Scouter - Catalyst Heatmap</title>
   <meta name="description" content="Catalyst heatmap: tickers ranked by combined catalyst signal strength from insider buying, activist filings, partnerships, and more.">
   <link rel="canonical" href="https://qns2.github.io/bullscouter-site/catalysts.html">
@@ -15,53 +15,76 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bull Scouter - Catalyst Heatmap">
   <meta name="twitter:description" content="Catalyst heatmap: tickers ranked by combined catalyst signal strength from insider buying, activist filings, partnerships, and more.">
-  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
           colors: {
-            bull: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' },
-            warn: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706' },
-            slate: { 750: '#293548', 850: '#172033' }
+            bull: {
+              dark: '#0a0b0d',
+              card: '#14161a',
+              accent: '#00ff88',
+              blue: '#3b82f6',
+              muted: '#94a3b8',
+              border: 'rgba(255,255,255,0.1)'
+            }
           }
         }
       }
     }
   </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-950 text-gray-100 min-h-screen">
-  <!-- Header -->
-  <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
-      <div class="shrink-0">
-        <a href="index.html" class="text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap hover:text-white transition-colors">Bull Scouter</a>
-        <div class="text-xs text-gray-500 font-mono" id="version-badge"></div>
+<body class="min-h-screen font-sans">
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
+        </div>
+        <div class="flex items-center space-x-4 sm:space-x-8 text-sm font-medium">
+          <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
+        </div>
       </div>
-      <nav class="site-nav flex items-center gap-1 sm:gap-2">
-        <a href="index.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Home</a>
-        <a href="about.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">About</a>
-      </nav>
     </div>
-  </header>
+  </nav>
 
   <!-- Stats Bar -->
-  <div class="border-b border-gray-800 bg-gray-900/50">
+  <div class="border-b border-bull-border bg-bull-dark/50">
     <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-x-3 gap-y-1 text-xs font-mono">
-      <span class="text-gray-300" id="hm-date-nav">-</span>
-      <span class="text-gray-700">|</span>
+      <span class="text-white/70" id="hm-date-nav">-</span>
+      <span class="text-white/10">|</span>
       <div class="flex items-center gap-1 shrink-0">
         <button class="filter-btn active" data-hm-filter="all">All</button>
         <button class="filter-btn" data-hm-filter="smallmid">Small/Mid</button>
         <button class="filter-btn" data-hm-filter="largecap">Large Cap</button>
       </div>
-      <span class="text-gray-700">|</span>
-      <span class="text-gray-500">Tickers: <span id="hm-stat-tickers" class="text-gray-300">-</span></span>
-      <span class="text-green-500">Signals: <span id="hm-stat-signals" class="font-bold">-</span></span>
+      <span class="text-white/10">|</span>
+      <span class="text-bull-muted">Tickers: <span id="hm-stat-tickers" class="text-white/70">-</span></span>
+      <span class="text-bull-accent">Signals: <span id="hm-stat-signals" class="font-bold">-</span></span>
       <span class="text-amber-500">Sources: <span id="hm-stat-sources" class="font-bold">-</span></span>
-      <button id="btn-copy-heatmap" class="ml-auto copy-btn text-gray-500 hover:text-green-400 transition-colors shrink-0" title="Copy heatmap data">
+      <button id="btn-copy-heatmap" class="ml-auto copy-btn text-bull-muted hover:text-bull-accent transition-colors shrink-0" title="Copy heatmap data">
         <svg class="inline w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/></svg>
         <span class="copy-label hidden sm:inline">Copy</span>
       </button>
@@ -70,24 +93,24 @@
 
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 py-6">
-    <p class="text-xs text-gray-500 mb-4">Tickers ranked by combined catalyst signal strength: insider buying, activist filings, FDA events, partnerships, earnings, and more.</p>
+    <p class="text-xs text-bull-muted mb-4">Tickers ranked by combined catalyst signal strength: insider buying, activist filings, FDA events, partnerships, earnings, and more.</p>
 
     <!-- Loading State -->
     <div id="hm-loading" class="text-center py-20">
       <div class="loading-pulse mx-auto mb-3"></div>
-      <p class="text-gray-500">Loading catalyst heatmap...</p>
+      <p class="text-bull-muted">Loading catalyst heatmap...</p>
     </div>
 
     <!-- Error State -->
     <div id="hm-error" class="hidden text-center py-20">
       <p class="text-red-400 text-lg">Failed to load data</p>
-      <p class="text-gray-600 text-sm mt-1" id="hm-error-msg"></p>
+      <p class="text-white/30 text-sm mt-1" id="hm-error-msg"></p>
     </div>
 
     <!-- Empty State -->
     <div id="hm-empty" class="hidden text-center py-20">
-      <p class="text-gray-500 text-lg">No heatmap data available</p>
-      <p class="text-gray-600 text-sm mt-1">Catalyst heatmap is generated during the daily scan</p>
+      <p class="text-bull-muted text-lg">No heatmap data available</p>
+      <p class="text-white/30 text-sm mt-1">Catalyst heatmap is generated during the daily scan</p>
     </div>
 
     <!-- Heatmap Cards (non-pharma) -->
@@ -97,17 +120,25 @@
     <div id="hm-pharma-section" class="hidden mt-10">
       <div class="flex items-center gap-2 mb-4">
         <h2 class="text-sm font-semibold text-purple-400 uppercase tracking-wide">Big Pharma</h2>
-        <span class="text-xs text-gray-600">FDA weight discounted for large-cap (&gt;$50B)</span>
+        <span class="text-xs text-white/30">FDA weight discounted for large-cap (&gt;$50B)</span>
       </div>
       <div id="hm-pharma-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-800 mt-12">
-    <div class="max-w-7xl mx-auto px-4 py-4 text-center text-xs text-gray-600">
-      <p>Bull Scouter &mdash; Autonomous AI agents for stock catalyst detection. Not financial advice.</p>
-      <p class="mt-1">Data refreshed 3x daily. Past performance does not guarantee future results.</p>
+  <footer class="border-t border-bull-border py-12 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="w-6 h-6 bg-bull-muted/20 rounded flex items-center justify-center">
+          <svg class="w-4 h-4 text-bull-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <span class="text-sm font-bold tracking-tight text-bull-muted">Bull Scouter</span>
+      </div>
+      <p class="text-xs text-bull-muted max-w-lg mx-auto leading-loose">
+        Autonomous AI agents for stock catalyst detection. Not financial advice.<br>
+        Data refreshed 3x daily. Past performance does not guarantee future results.
+      </p>
     </div>
   </footer>
 
