@@ -221,10 +221,11 @@
 
       <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">What's Next</h2>
       <p class="text-gray-300 mb-3">
-        Adding more signal sources &mdash; options flow analysis is already live, tracking put/call ratios and IV skew
-        across the watchlist. Building a calibration system that measures actual forward returns against predictions
-        to tune the scoring model with real data. And eventually, letting the agents coordinate more directly
-        instead of communicating through files.
+        Right now: collecting data and letting the calibration system prove itself. The nightly backfill tracks
+        forward returns (5d, 20d, 60d, 120d) for every signal the scanner has ever produced. As that dataset grows,
+        the system can measure which scoring components actually predict returns and which are noise &mdash; then
+        tune weights accordingly. The agents already propose config changes based on Oracle's assessments;
+        calibration data will make those proposals evidence-based instead of heuristic.
       </p>
       <p class="text-gray-300 mb-3">
         The architecture scales to N agents. The constraint isn't compute &mdash; it's designing the right prompts and
