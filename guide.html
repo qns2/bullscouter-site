@@ -87,7 +87,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
         <div class="bg-gray-900/60 border border-gray-800 rounded-lg p-4">
           <div class="text-amber-400 font-semibold">Rick <span class="text-gray-500 font-normal text-sm">the Assessor</span></div>
-          <div class="text-gray-400 text-sm mt-1">Chaotic multi-dimensional explorer (Rick &amp; Morty). Sends 5 expert sub-agents &mdash; Homer, Marge, Bart, Lisa, and Antonis &mdash; on blind discovery missions with zero scanner data. Whatever they find independently that the scanner also found? That's the highest-conviction signal.</div>
+          <div class="text-gray-400 text-sm mt-1">Chaotic multi-dimensional explorer. Sends 5 expert sub-agents &mdash; Homer, Marge, Bart, Lisa, and Antonis &mdash; on blind discovery missions with zero scanner data. Whatever they find independently that the scanner also found? That's the highest-conviction signal.</div>
         </div>
         <div class="bg-gray-900/60 border border-gray-800 rounded-lg p-4">
           <div class="text-blue-400 font-semibold">Oracle <span class="text-gray-500 font-normal text-sm">the Analyst</span></div>
@@ -120,6 +120,34 @@
         become &ldquo;scanner blind spots&rdquo; that feed back into the scanner's improvement cycle.
       </p>
 
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Data Pipeline</h2>
+      <p class="text-gray-300 mb-3">
+        The scanner pulls from 8+ sources every run: Reddit mentions (ApeWisdom), FDA calendars, space launch manifests,
+        earnings dates, SEC filings, Seeking Alpha &amp; Benzinga RSS, and Perplexity AI for structured event discovery.
+        Each source contributes tickers and catalyst events that feed into the scoring engine.
+      </p>
+      <p class="text-gray-300 mb-3">
+        On top of that, two real-time monitors run during market hours. The <strong>price monitor</strong> polls every 15 minutes
+        for dip entries and cross-path opportunities. The <strong>options flow monitor</strong> captures put/call ratios, IV skew,
+        and unusual volume twice daily &mdash; institutional positioning that's invisible to price and news scanners.
+        Insider buying is tracked via SEC Form 4 filings, with Telegram alerts for purchases above $500K.
+      </p>
+
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Scoring Engine</h2>
+      <p class="text-gray-300 mb-3">
+        Not all opportunities are the same, so the scanner runs multiple scoring frameworks in parallel and picks the best fit.
+        <strong>Tier 1</strong> targets binary catalysts in small caps &mdash; FDA decisions, contract announcements, the setups
+        that move 50%+ overnight. <strong>Tier 2</strong> catches fallen angels and reacceleration plays.
+        <strong>Track B</strong> scores large-cap momentum breakouts. <strong>Fundamental quality</strong> frameworks evaluate
+        value (8 components) and growth (7 components) separately.
+      </p>
+      <p class="text-gray-300 mb-3">
+        A stock needs more than a high score to earn a BUY. Three independent gates must pass: the composite score (&ge;75),
+        a confidence score that measures signal reliability (&ge;50), and a hysteresis check requiring 2 consecutive qualifying
+        scans. This prevents one-day spikes from triggering false signals. The system also decays stale evidence over time &mdash;
+        yesterday's catalyst is worth less than today's.
+      </p>
+
       <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Self-Improvement Loop</h2>
       <p class="text-gray-300 mb-3">
         Every night after the final scan, Oracle reviews the day's results and writes an assessment.
@@ -142,7 +170,7 @@
         reading from JSON files, hosted on GitHub Pages.
       </p>
       <p class="text-gray-300 mb-3">
-        The whole thing runs on a MacBook sitting on my desk. Total infrastructure cost: $0 beyond the Claude
+        The whole thing runs on a Mac Mini sitting on my desk. Total infrastructure cost: $0 beyond the Claude
         subscription. The scanner, all 10 agents, the database, the exports &mdash; all local.
       </p>
 
