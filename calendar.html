@@ -53,6 +53,7 @@
 </head>
 <body class="min-h-screen font-sans">
   <!-- Header -->
+  <!-- Nav -->
   <nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
@@ -60,14 +61,25 @@
           <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
             <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
           </div>
-          <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1 hidden sm:inline" id="version-badge"></span></span>
+          <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
         </a>
-        <div class="flex items-center space-x-3 sm:space-x-8 text-sm font-medium">
+        <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
           <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
         </div>
+        <button id="burger-btn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="sm:hidden p-2 text-bull-muted hover:text-white transition-colors" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md">
+      <div class="px-4 py-3 space-y-2 text-sm font-medium">
+        <a class="block py-2 text-bull-muted" href="index.html">Home</a>
+        <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
+        <a class="block py-2 text-bull-muted" href="history.html">History</a>
+        <a class="block py-2 text-bull-muted" href="about.html">About</a>
       </div>
     </div>
   </nav>
