@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
-  <meta name="theme-color" content="#030712">
+  <meta name="theme-color" content="#0a0b0d">
   <title>Bull Scouter — Autonomous AI Agents for Stock Catalyst Detection</title>
   <meta name="description" content="10 AI agents discover, analyze, and improve a stock scanning system autonomously. Live data updated 3x daily.">
   <link rel="canonical" href="https://qns2.github.io/bullscouter-site/">
@@ -15,204 +15,265 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bull Scouter — Autonomous AI Agents for Stock Catalyst Detection">
   <meta name="twitter:description" content="10 AI agents discover, analyze, and improve a stock scanning system autonomously. Live data updated 3x daily.">
-  <link rel="stylesheet" href="css/style.css?v=13">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=14">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
           colors: {
-            bull: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' },
-            warn: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706' },
-            slate: { 750: '#293548', 850: '#172033' }
+            'bull-dark': '#0a0b0d',
+            'bull-card': '#14161a',
+            'bull-accent': '#00ff88',
+            'bull-blue': '#3b82f6',
+            'bull-muted': '#94a3b8',
+            'bull-border': 'rgba(255, 255, 255, 0.1)',
           }
         }
       }
     }
   </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
 </head>
-<body class="bg-gray-950 text-gray-100 min-h-screen">
-  <!-- Header -->
-  <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
-      <div class="shrink-0">
-        <a href="index.html" class="text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap hover:text-white transition-colors">Bull Scouter</a>
-        <div class="text-xs text-gray-500 font-mono" id="version-badge"></div>
-      </div>
-      <nav class="site-nav flex items-center gap-1 sm:gap-2">
-        <a href="index.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Home</a>
-        <a href="guide.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">About</a>
-      </nav>
-    </div>
-  </header>
+<body class="font-sans">
 
-  <!-- Hero -->
-  <section class="max-w-7xl mx-auto px-4 pt-10 pb-8 text-center">
-    <h1 class="text-3xl sm:text-4xl font-bold mb-3 tracking-tight">
-      A stock scanner that improves itself.
-    </h1>
-    <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mb-6">
-      10 autonomous AI agents run on cron jobs &mdash; discovering opportunities, scanning catalysts, assessing results, writing code fixes, and reviewing each other's pull requests. No human in the loop.
-    </p>
-
-    <!-- Pipeline Diagram -->
-    <div class="max-w-3xl mx-auto mb-6">
-      <!-- Daily Loop -->
-      <div class="bg-gray-900/60 border border-gray-800 rounded-lg p-4 mb-3">
-        <div class="text-xs text-gray-500 uppercase tracking-wider mb-3">Daily Loop &mdash; 3x/day</div>
-        <div class="flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
-          <div class="text-center">
-            <div class="text-amber-400 font-semibold text-sm">Rick</div>
-            <div class="text-gray-500 text-xs">Assessor</div>
-            <div class="text-gray-600 text-xs">5 experts discover</div>
-          </div>
-          <div class="text-gray-600">&rarr;</div>
-          <div class="text-center">
-            <div class="text-green-400 font-semibold text-sm">Scanner</div>
-            <div class="text-gray-500 text-xs">9-step pipeline</div>
-            <div class="text-gray-600 text-xs">score &amp; rank</div>
-          </div>
-          <div class="text-gray-600">&rarr;</div>
-          <div class="text-center">
-            <div class="text-blue-400 font-semibold text-sm">Oracle</div>
-            <div class="text-gray-500 text-xs">Analyst</div>
-            <div class="text-gray-600 text-xs">synthesize verdicts</div>
-          </div>
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+          <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
         </div>
+        <span class="text-xl font-extrabold tracking-tight">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
       </div>
-      <!-- Nightly Maintenance -->
-      <div class="bg-gray-900/60 border border-gray-800 rounded-lg p-4">
-        <div class="text-xs text-gray-500 uppercase tracking-wider mb-3">Nightly Maintenance</div>
-        <div class="flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
-          <div class="text-center">
-            <div class="text-blue-400 font-semibold text-sm">Oracle</div>
-            <div class="text-gray-500 text-xs">flags issues</div>
-          </div>
-          <div class="text-gray-600">&rarr;</div>
-          <div class="text-center">
-            <div class="text-red-400 font-semibold text-sm">Tony</div>
-            <div class="text-gray-500 text-xs">Developer</div>
-            <div class="text-gray-600 text-xs">codes fixes</div>
-          </div>
-          <div class="text-gray-600">&rarr;</div>
-          <div class="text-center">
-            <div class="text-purple-400 font-semibold text-sm">Linus</div>
-            <div class="text-gray-500 text-xs">Reviewer</div>
-            <div class="text-gray-600 text-xs">reviews PR</div>
-          </div>
-        </div>
+      <div class="flex items-center space-x-4 sm:space-x-8 text-sm font-medium">
+        <a class="text-bull-accent" href="index.html">Home</a>
+        <a class="text-bull-muted hover:text-white transition-colors" href="guide.html">About</a>
       </div>
-    </div>
-
-    <a href="guide.html" class="inline-block text-sm font-medium text-amber-400 hover:text-amber-300 border border-amber-400/30 hover:border-amber-400/60 rounded-lg px-5 py-2 transition-colors">
-      Read the full story &rarr;
-    </a>
-  </section>
-
-  <!-- Stats Bar -->
-  <div class="border-b border-gray-800 bg-gray-900/50">
-    <div class="max-w-7xl mx-auto px-4 py-2 stats-scroll flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono">
-      <span class="text-gray-300" id="scan-date">-</span>
-      <span class="text-gray-700">|</span>
-      <span class="text-gray-500">Picks: <span id="stat-picks" class="text-gray-300 font-bold">-</span></span>
-      <span class="text-green-500">BUY: <span id="stat-buys" class="font-bold">-</span></span>
-      <span class="text-purple-400">Strong: <span id="stat-strong" class="font-bold">-</span></span>
-      <span class="text-gray-500 hidden sm:inline">DD BUY: <span id="stat-dd-buy" class="text-gray-300">-</span></span>
-      <span class="text-gray-500 hidden sm:inline">WL Alerts: <span id="stat-wl-alerts" class="text-gray-300">-</span></span>
-      <span class="text-gray-500 hidden sm:inline">Catalysts: <span id="stat-hm-tickers" class="text-gray-300">-</span></span>
-      <button id="btn-copy-picks" class="ml-auto copy-btn text-gray-500 hover:text-green-400 transition-colors shrink-0" title="Copy top picks data">
-        <svg class="inline w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/></svg>
-        <span class="copy-label hidden sm:inline">Copy</span>
-      </button>
     </div>
   </div>
+</nav>
 
-  <!-- Main Content -->
-  <main class="max-w-7xl mx-auto px-4 py-6">
-    <p class="text-xs text-gray-500 mb-4">Highest-conviction signals across all scanner paths, ranked by composite score.</p>
-
-    <!-- Top Picks Hero -->
-    <section id="section-picks" class="mb-8 hidden">
-      <h2 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-3">Top Picks</h2>
-      <div id="cards-picks" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-    </section>
-
-    <!-- Empty picks state -->
-    <div id="empty-picks" class="hidden text-center py-12">
-      <p class="text-gray-500 text-lg">No top picks today</p>
-      <p class="text-gray-600 text-sm mt-1">BUY and STRONG_CANDIDATE signals will appear here</p>
+<!-- Hero -->
+<header class="relative pt-16 sm:pt-24 pb-12 sm:pb-16 px-4 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-bull-accent/10 blur-[120px] rounded-full"></div>
+  </div>
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
+      A stock scanner that <br> improves itself.
+    </h1>
+    <p class="text-base sm:text-lg md:text-xl text-bull-muted mb-10 leading-relaxed max-w-2xl mx-auto">
+      10 autonomous AI agents run on cron jobs &mdash; discovering opportunities, scanning catalysts,
+      assessing results, and reviewing code. <span class="text-white font-semibold">No human in the loop.</span>
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#live-data" class="w-full sm:w-auto px-8 py-4 bg-bull-accent text-bull-dark font-bold rounded-xl text-lg hover:shadow-[0_0_30px_rgba(0,255,136,0.3)] transition-all text-center">View Latest Scan</a>
+      <a href="guide.html" class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl text-lg hover:bg-white/10 transition-all text-center">Read the full story &rarr;</a>
     </div>
+  </div>
+</header>
 
-    <!-- Path Summaries -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-      <!-- Dashboard summary -->
-      <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
-        <div class="flex items-center justify-between mb-3">
-          <h3 class="text-sm font-bold text-green-400 uppercase tracking-wider">Daily Trends</h3>
-          <a href="dashboard.html" class="text-xs text-gray-500 hover:text-green-400 transition-colors">View all &rarr;</a>
+<!-- AI Pipeline -->
+<section class="max-w-7xl mx-auto px-4 py-12 sm:py-20">
+  <div class="text-center mb-12">
+    <h2 class="text-xs font-black uppercase tracking-[0.3em] text-bull-accent mb-3">The Pipeline</h2>
+    <h3 class="text-2xl sm:text-3xl font-bold">Autonomous AI Lifecycle</h3>
+  </div>
+  <div class="glass-card rounded-2xl sm:rounded-[40px] p-6 sm:p-8 md:p-12 relative overflow-hidden">
+    <!-- Background phase indicators -->
+    <div class="absolute inset-0 flex">
+      <div class="w-1/2 h-full bg-bull-accent/[0.02] border-r border-white/5"></div>
+      <div class="w-1/2 h-full bg-purple-500/[0.02]"></div>
+    </div>
+    <!-- Phase labels -->
+    <div class="relative flex flex-col sm:flex-row justify-between gap-2 mb-8 sm:mb-12">
+      <div class="flex items-center gap-3">
+        <div class="p-1.5 bg-bull-accent/10 rounded-full text-bull-accent">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
         </div>
-        <div id="summary-dashboard"><p class="text-gray-500 text-sm">Loading...</p></div>
+        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-bull-muted">Market Hours: Discovery &amp; Analysis</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-bull-muted">After Hours: Maintenance &amp; Optimization</span>
+        <div class="p-1.5 bg-purple-500/10 rounded-full text-purple-400">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+      </div>
+    </div>
+    <!-- Flow nodes -->
+    <div class="relative flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-2">
+      <div class="flex-1 text-center">
+        <p class="text-bull-accent font-bold text-lg">Rick</p>
+        <p class="text-[10px] text-bull-muted uppercase mt-1">Assessor</p>
+        <p class="text-[11px] mt-2 text-white/60">5 experts discover</p>
+      </div>
+      <div class="text-bull-border rotate-90 lg:rotate-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+      <div class="flex-1 text-center bg-white/5 py-6 px-4 rounded-2xl border border-white/5 shadow-xl">
+        <p class="text-white font-bold text-lg">Scanner</p>
+        <p class="text-[10px] text-bull-muted uppercase mt-1">Pipeline</p>
+        <p class="text-[11px] mt-2 text-white/60">Score &amp; rank</p>
+      </div>
+      <div class="text-bull-border rotate-90 lg:rotate-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+      <div class="flex-1 text-center">
+        <p class="text-bull-blue font-bold text-lg">Oracle</p>
+        <p class="text-[10px] text-bull-muted uppercase mt-1">Analyst</p>
+        <p class="text-[11px] mt-2 text-white/60">Synthesize verdicts</p>
+      </div>
+      <!-- Phase transition -->
+      <div class="hidden lg:block w-12 h-[1px] bg-gradient-to-r from-bull-blue to-purple-500 relative">
+        <div class="absolute -right-1 -top-[9px] text-purple-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+      </div>
+      <div class="lg:hidden text-purple-400 rotate-90"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+      <div class="flex-1 text-center">
+        <p class="text-bull-blue font-bold text-lg">Oracle</p>
+        <p class="text-[10px] text-bull-muted uppercase mt-1">QA Agent</p>
+        <p class="text-[11px] mt-2 text-white/60">Flags issues</p>
+      </div>
+      <div class="text-bull-border rotate-90 lg:rotate-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+      <div class="flex-1 text-center bg-white/5 py-6 px-4 rounded-2xl border border-white/5 shadow-xl">
+        <p class="text-pink-500 font-bold text-lg">Tony</p>
+        <p class="text-[10px] text-bull-muted uppercase mt-1">Dev</p>
+        <p class="text-[11px] mt-2 text-white/60">Fixes code</p>
+      </div>
+      <div class="text-bull-border rotate-90 lg:rotate-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+      <div class="flex-1 text-center">
+        <p class="text-purple-400 font-bold text-lg">Linus</p>
+        <p class="text-[10px] text-bull-muted uppercase mt-1">Reviewer</p>
+        <p class="text-[11px] mt-2 text-white/60">Reviews PRs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="max-w-7xl mx-auto px-4 mb-12 sm:mb-16" id="live-data">
+  <div class="border-y border-bull-border py-6 flex flex-wrap justify-between items-center gap-4 sm:gap-6 text-sm font-medium">
+    <div class="flex items-center gap-4 sm:gap-6 flex-wrap">
+      <span class="text-bull-muted" id="scan-date">-</span>
+      <div class="hidden sm:block h-4 w-[1px] bg-bull-border"></div>
+      <div class="flex gap-3 sm:gap-4 flex-wrap">
+        <span>Picks: <span class="text-white font-bold" id="stat-picks">-</span></span>
+        <span>BUY: <span class="text-bull-accent font-bold" id="stat-buys">-</span></span>
+        <span>Strong: <span class="text-purple-400 font-bold" id="stat-strong">-</span></span>
+        <span class="hidden sm:inline">DD BUY: <span class="text-white" id="stat-dd-buy">-</span></span>
+        <span class="hidden sm:inline">WL Alerts: <span class="text-white" id="stat-wl-alerts">-</span></span>
+        <span class="hidden sm:inline">Catalysts: <span class="text-bull-accent" id="stat-hm-tickers">-</span></span>
+      </div>
+    </div>
+    <button id="btn-copy-picks" class="flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10 transition-colors" title="Copy top picks data">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      <span class="copy-label hidden sm:inline">Copy</span>
+    </button>
+  </div>
+</div>
+
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4">
+  <!-- Top Picks -->
+  <section id="section-picks" class="mb-12 sm:mb-20 hidden">
+    <h2 class="text-xs font-black uppercase tracking-[0.3em] text-bull-accent mb-8">Top Conviction Picks</h2>
+    <div id="cards-picks" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- Empty picks state -->
+  <div id="empty-picks" class="hidden text-center py-12">
+    <p class="text-bull-muted text-lg">No top picks today</p>
+    <p class="text-white/30 text-sm mt-1">BUY and STRONG_CANDIDATE signals will appear here</p>
+  </div>
+
+  <!-- Path Summaries -->
+  <section class="pb-12 sm:pb-20">
+    <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+      <!-- Dashboard summary -->
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <div class="p-5 border-b border-bull-border flex justify-between items-center">
+          <h3 class="font-bold uppercase tracking-wider text-sm">Daily Trends</h3>
+          <a href="dashboard.html" class="text-xs text-bull-muted hover:text-white transition-colors">View all &rarr;</a>
+        </div>
+        <div id="summary-dashboard" class="divide-y divide-bull-border"><p class="text-bull-muted text-sm p-4">Loading...</p></div>
       </div>
 
       <!-- Contrarian summary -->
-      <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
-        <div class="flex items-center justify-between mb-3">
-          <h3 class="text-sm font-bold text-purple-400 uppercase tracking-wider">Contrarian</h3>
-          <a href="contrarian.html" class="text-xs text-gray-500 hover:text-purple-400 transition-colors">View all &rarr;</a>
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <div class="p-5 border-b border-bull-border flex justify-between items-center">
+          <h3 class="font-bold uppercase tracking-wider text-sm text-red-400">Contrarian</h3>
+          <a href="contrarian.html" class="text-xs text-bull-muted hover:text-white transition-colors">View all &rarr;</a>
         </div>
-        <div id="summary-contrarian"><p class="text-gray-500 text-sm">Loading...</p></div>
+        <div id="summary-contrarian" class="divide-y divide-bull-border"><p class="text-bull-muted text-sm p-4">Loading...</p></div>
       </div>
 
       <!-- Deep Dive summary -->
-      <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
-        <div class="flex items-center justify-between mb-3">
-          <h3 class="text-sm font-bold text-blue-400 uppercase tracking-wider">AI Picks</h3>
-          <a href="deep-dive.html" class="text-xs text-gray-500 hover:text-blue-400 transition-colors">View all &rarr;</a>
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <div class="p-5 border-b border-bull-border flex justify-between items-center">
+          <h3 class="font-bold uppercase tracking-wider text-sm text-bull-blue">AI Picks</h3>
+          <a href="deep-dive.html" class="text-xs text-bull-muted hover:text-white transition-colors">View all &rarr;</a>
         </div>
-        <div id="summary-deepdive"><p class="text-gray-500 text-sm">Loading...</p></div>
+        <div id="summary-deepdive" class="divide-y divide-bull-border"><p class="text-bull-muted text-sm p-4">Loading...</p></div>
       </div>
 
       <!-- Watchlist summary -->
-      <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
-        <div class="flex items-center justify-between mb-3">
-          <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider">Entry Opportunities</h3>
-          <a href="watchlist.html" class="text-xs text-gray-500 hover:text-amber-400 transition-colors">View all &rarr;</a>
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <div class="p-5 border-b border-bull-border flex justify-between items-center">
+          <h3 class="font-bold uppercase tracking-wider text-sm text-amber-400">Entry Opportunities</h3>
+          <a href="watchlist.html" class="text-xs text-bull-muted hover:text-white transition-colors">View all &rarr;</a>
         </div>
-        <div id="summary-watchlist"><p class="text-gray-500 text-sm">Loading...</p></div>
+        <div id="summary-watchlist" class="divide-y divide-bull-border"><p class="text-bull-muted text-sm p-4">Loading...</p></div>
       </div>
 
       <!-- Catalyst heatmap summary -->
-      <div class="bg-gray-900 rounded-lg border border-gray-800 p-4">
-        <div class="flex items-center justify-between mb-3">
-          <h3 class="text-sm font-bold text-red-400 uppercase tracking-wider">Catalyst Heatmap</h3>
-          <a href="catalysts.html" class="text-xs text-gray-500 hover:text-red-400 transition-colors">View all &rarr;</a>
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <div class="p-5 border-b border-bull-border flex justify-between items-center">
+          <h3 class="font-bold uppercase tracking-wider text-sm text-bull-accent">Catalyst Heatmap</h3>
+          <a href="catalysts.html" class="text-xs text-bull-muted hover:text-white transition-colors">View all &rarr;</a>
         </div>
-        <div id="summary-catalysts"><p class="text-gray-500 text-sm">Loading...</p></div>
+        <div id="summary-catalysts" class="divide-y divide-bull-border"><p class="text-bull-muted text-sm p-4">Loading...</p></div>
       </div>
     </div>
+  </section>
 
-    <!-- Loading State -->
-    <div id="loading-state" class="text-center py-20">
-      <div class="loading-pulse mx-auto mb-3"></div>
-      <p class="text-gray-500">Loading scan data...</p>
+  <!-- Loading State -->
+  <div id="loading-state" class="text-center py-20">
+    <div class="loading-pulse mx-auto mb-3"></div>
+    <p class="text-bull-muted">Loading scan data...</p>
+  </div>
+
+  <!-- Error State -->
+  <div id="error-state" class="hidden text-center py-20">
+    <p class="text-red-400 text-lg">Failed to load data</p>
+    <p class="text-white/30 text-sm mt-1" id="error-msg"></p>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-bull-border py-12 px-4 mt-12">
+  <div class="max-w-7xl mx-auto text-center">
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <div class="w-6 h-6 bg-bull-muted/20 rounded flex items-center justify-center">
+        <svg class="w-4 h-4 text-bull-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+      </div>
+      <span class="text-sm font-bold tracking-tight text-bull-muted">Bull Scouter</span>
     </div>
+    <p class="text-xs text-bull-muted max-w-lg mx-auto leading-loose">
+      Autonomous AI agents for stock catalyst detection. Not financial advice.<br>
+      Data refreshed 3x daily. Past performance does not guarantee future results.
+    </p>
+  </div>
+</footer>
 
-    <!-- Error State -->
-    <div id="error-state" class="hidden text-center py-20">
-      <p class="text-red-400 text-lg">Failed to load data</p>
-      <p class="text-gray-600 text-sm mt-1" id="error-msg"></p>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="border-t border-gray-800 mt-12">
-    <div class="max-w-7xl mx-auto px-4 py-4 text-center text-xs text-gray-600">
-      <p>Bull Scouter &mdash; Autonomous AI agents for stock catalyst detection. Not financial advice.</p>
-      <p class="mt-1">Data refreshed 3x daily. Past performance does not guarantee future results.</p>
-    </div>
-  </footer>
-
-  <script src="js/picks.js?v=3"></script>
+<script src="js/picks.js?v=4"></script>
 </body>
 </html>
