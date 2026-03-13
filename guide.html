@@ -164,20 +164,6 @@
         It's the one place where everything the system found that day comes together.
       </p>
 
-      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Self-Improvement Loop</h2>
-      <p class="text-gray-300 mb-3">
-        Every night after the final scan, Oracle reviews the day's results and writes an assessment.
-        Tony reads this assessment, identifies what to fix &mdash; maybe a scoring threshold is too aggressive,
-        maybe a data source is returning stale data &mdash; and implements the change on a branch.
-        Linus reviews the PR within 15 minutes. If it passes, I merge it in the morning.
-        If not, Linus posts inline comments explaining why.
-      </p>
-      <p class="text-gray-300 mb-3">
-        The scanner has made hundreds of self-improvements this way. Config tuning, bug fixes, data pipeline
-        repairs &mdash; all without me writing a line of code. I review the PRs, but the system proposes and validates
-        its own fixes.
-      </p>
-
       <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Schedule</h2>
       <p class="text-gray-300 mb-3">
         Everything runs on <code class="text-amber-400/80 bg-gray-800 px-1 rounded">launchd</code> cron jobs, weekdays only.
@@ -197,6 +183,20 @@
       <p class="text-gray-300 mb-3">
         The schedule is designed so each agent's output feeds the next. Rick discovers before the scan runs.
         The scan finishes before Oracle reviews. Oracle's assessment is ready before Tony starts coding fixes.
+      </p>
+
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Self-Improvement Loop</h2>
+      <p class="text-gray-300 mb-3">
+        Every night after the final scan, Oracle reviews the day's results and writes an assessment.
+        Tony reads this assessment, identifies what to fix &mdash; maybe a scoring threshold is too aggressive,
+        maybe a data source is returning stale data &mdash; and implements the change on a branch.
+        Linus reviews the PR within 15 minutes. If it passes, I merge it in the morning.
+        If not, Linus posts inline comments explaining why.
+      </p>
+      <p class="text-gray-300 mb-3">
+        The scanner has made hundreds of self-improvements this way. Config tuning, bug fixes, data pipeline
+        repairs &mdash; all without me writing a line of code. I review the PRs, but the system proposes and validates
+        its own fixes.
       </p>
 
       <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Stack</h2>
