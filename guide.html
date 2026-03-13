@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
   <meta name="theme-color" content="#030712">
-  <title>Bull Scouter - Reading Guide</title>
+  <title>Bull Scouter — About</title>
+  <meta name="description" content="How I built a self-improving stock scanner with autonomous AI agents running on a MacBook.">
   <link rel="stylesheet" href="css/style.css?v=13">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -31,14 +32,8 @@
         <div class="text-xs text-gray-500 font-mono" id="version-badge"></div>
       </div>
       <nav class="site-nav flex items-center gap-1 sm:gap-2">
-        <a href="index.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Top Picks</a>
-        <a href="dashboard.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Daily Trends</a>
-        <a href="deep-dive.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">AI Picks</a>
-        <a href="catalysts.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Catalysts</a>
-        <a href="calendar.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Calendar</a>
-        <a href="contrarian.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Contrarian</a>
-        <a href="watchlist.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Entry Opps</a>
-        <a href="guide.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">Guide</a>
+        <a href="index.html" class="nav-link text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-gray-400 hover:text-gray-200">Home</a>
+        <a href="guide.html" class="nav-link nav-active text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">About</a>
       </nav>
     </div>
   </header>
@@ -51,7 +46,128 @@
   </div>
 
   <main class="max-w-4xl mx-auto px-4 py-8">
-    <h2 class="text-2xl font-bold mb-6">How to Read the Dashboard</h2>
+
+    <!-- Part 1: The Story -->
+    <article class="prose prose-invert prose-sm sm:prose-base max-w-none">
+
+      <h1 class="text-3xl font-bold mb-2">I built a stock scanner that improves itself.</h1>
+      <p class="text-gray-500 text-sm mb-8">A builder's log &mdash; March 2026</p>
+
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Problem</h2>
+      <p class="text-gray-300 mb-3">
+        Stock catalysts &mdash; FDA approvals, insider buying clusters, activist filings, earnings surprises &mdash; move prices
+        before most retail investors notice them. By the time you read about it on Reddit or see the Seeking Alpha headline,
+        the move is half over.
+      </p>
+      <p class="text-gray-300 mb-3">
+        I wanted a system that would surface these catalysts 30&ndash;90 days early. Not a screener with static filters,
+        but something that could discover opportunities I wasn't even looking for. The tools that exist are either
+        too basic (finviz screens) or too expensive (Bloomberg terminal). None of them learn from their own mistakes.
+      </p>
+
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Architecture</h2>
+      <p class="text-gray-300 mb-3">
+        Bull Scouter runs two loops. The <strong>daily signal loop</strong> runs 3x per day: an assessor discovers
+        opportunities blindly via web research, a 9-step scanner scores them against market data, and an analyst
+        synthesizes everything into verdicts. The <strong>nightly maintenance loop</strong> is where it gets interesting:
+        the analyst flags what the scanner got wrong, a developer agent writes code fixes, and a reviewer agent
+        posts inline comments on the PR. I wake up to a pull request with the fix already reviewed.
+      </p>
+      <p class="text-gray-300 mb-3">
+        There are 10 AI agents total &mdash; 5 top-level agents and 5 discovery sub-agents. They run on <code class="text-amber-400/80 bg-gray-800 px-1 rounded">launchd</code>
+        cron jobs on a MacBook. No cloud infrastructure. No Kubernetes. Just Python, SQLite, and Claude Opus
+        talking to each other through the filesystem.
+      </p>
+
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Agents</h2>
+      <p class="text-gray-300 mb-4">
+        Each agent is a Claude Opus instance with a specialized system prompt, running via <code class="text-amber-400/80 bg-gray-800 px-1 rounded">claude -p</code>
+        on the CLI. They're named after characters that fit their roles:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+        <div class="bg-gray-900/60 border border-gray-800 rounded-lg p-4">
+          <div class="text-amber-400 font-semibold">Rick <span class="text-gray-500 font-normal text-sm">the Assessor</span></div>
+          <div class="text-gray-400 text-sm mt-1">Chaotic multi-dimensional explorer (Rick &amp; Morty). Sends 5 expert sub-agents &mdash; Homer, Marge, Bart, Lisa, and Antonis &mdash; on blind discovery missions with zero scanner data. Whatever they find independently that the scanner also found? That's the highest-conviction signal.</div>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 rounded-lg p-4">
+          <div class="text-blue-400 font-semibold">Oracle <span class="text-gray-500 font-normal text-sm">the Analyst</span></div>
+          <div class="text-gray-400 text-sm mt-1">Sees all possible futures (The Matrix). Reviews all scanner paths &mdash; daily signals, contrarian plays, watchlist dips, catalyst heatmap &mdash; and issues verdicts. Produces adjustment files that feed back into the next scan cycle.</div>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 rounded-lg p-4">
+          <div class="text-red-400 font-semibold">Tony <span class="text-gray-500 font-normal text-sm">the Developer</span></div>
+          <div class="text-gray-400 text-sm mt-1">Builds and fixes everything (Iron Man). Reads Oracle's assessment, identifies bugs and config issues, implements fixes on a branch, runs the full test suite, and creates a PR. Max 5 changes per run.</div>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 rounded-lg p-4">
+          <div class="text-purple-400 font-semibold">Linus <span class="text-gray-500 font-normal text-sm">the Reviewer</span></div>
+          <div class="text-gray-400 text-sm mt-1">Legendary code reviewer with uncompromising standards (Torvalds). Four parallel review sub-agents check Tony's PR for bugs and compliance violations. Posts inline comments with committable suggestions. Auto-approves or requests changes.</div>
+        </div>
+      </div>
+      <p class="text-gray-300 mb-3">
+        There's also <strong>Darwin</strong> the Optimizer (Charles Darwin) &mdash; evolves configuration parameters through
+        natural selection. And Rick's 5 discovery experts each specialize in a domain: general catalysts, geopolitics,
+        AI/tech, insider/flow signals, and contrarian value.
+      </p>
+
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">Blind Discovery</h2>
+      <p class="text-gray-300 mb-3">
+        This is the part I'm most proud of. Rick's 5 experts search the web for stock opportunities with <em>zero</em>
+        knowledge of what the scanner found. They don't see scores, recommendations, or even the ticker list. They
+        start from scratch every time &mdash; scanning news, SEC filings, options flow, macro trends.
+      </p>
+      <p class="text-gray-300 mb-3">
+        After discovery, the results merge with the scanner's picks. Tickers found by <em>both</em> systems independently
+        get tagged as &ldquo;overlap&rdquo; &mdash; the highest conviction signal in the system. Tickers found only by the experts
+        become &ldquo;scanner blind spots&rdquo; that feed back into the scanner's improvement cycle.
+      </p>
+
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Self-Improvement Loop</h2>
+      <p class="text-gray-300 mb-3">
+        Every night after the final scan, Oracle reviews the day's results and writes an assessment.
+        Tony reads this assessment, identifies what to fix &mdash; maybe a scoring threshold is too aggressive,
+        maybe a data source is returning stale data &mdash; and implements the change on a branch.
+        Linus reviews the PR within 15 minutes. If it passes, I merge it in the morning.
+        If not, Linus posts inline comments explaining why.
+      </p>
+      <p class="text-gray-300 mb-3">
+        The scanner has made hundreds of self-improvements this way. Config tuning, bug fixes, data pipeline
+        repairs &mdash; all without me writing a line of code. I review the PRs, but the system proposes and validates
+        its own fixes.
+      </p>
+
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">The Stack</h2>
+      <p class="text-gray-300 mb-3">
+        Deliberately simple. Python 3.11, SQLite (one file, no migrations &mdash; tables auto-create), yfinance for
+        market data, Claude Opus via the <code class="text-amber-400/80 bg-gray-800 px-1 rounded">claude</code> CLI (subscription, not API &mdash; no per-call billing).
+        Scheduled with macOS <code class="text-amber-400/80 bg-gray-800 px-1 rounded">launchd</code> plists. The website is static HTML + Tailwind + vanilla JS
+        reading from JSON files, hosted on GitHub Pages.
+      </p>
+      <p class="text-gray-300 mb-3">
+        The whole thing runs on a MacBook sitting on my desk. Total infrastructure cost: $0 beyond the Claude
+        subscription. The scanner, all 10 agents, the database, the exports &mdash; all local.
+      </p>
+
+      <h2 class="text-xl font-bold text-gray-200 mt-8 mb-3">What's Next</h2>
+      <p class="text-gray-300 mb-3">
+        Adding more signal sources &mdash; options flow analysis is already live, tracking put/call ratios and IV skew
+        across the watchlist. Building a calibration system that measures actual forward returns against predictions
+        to tune the scoring model with real data. And eventually, letting the agents coordinate more directly
+        instead of communicating through files.
+      </p>
+      <p class="text-gray-300 mb-3">
+        The architecture scales to N agents. The constraint isn't compute &mdash; it's designing the right prompts and
+        feedback loops so the agents actually make each other better instead of just adding noise.
+      </p>
+    </article>
+
+    <hr class="border-gray-800 my-10">
+
+    <!-- Part 2: Reading Guide (collapsed) -->
+    <details class="group">
+      <summary class="cursor-pointer text-lg font-bold text-gray-300 hover:text-white transition-colors py-2">
+        How to Read the Data
+        <span class="text-gray-600 text-sm font-normal ml-2">click to expand</span>
+      </summary>
+      <div class="mt-6">
 
     <!-- Signal Types -->
     <section class="mb-10">
@@ -260,6 +376,8 @@
       <p class="text-sm text-gray-300">A stock must qualify as BUY for <b>2 consecutive market days</b> before it's promoted. This prevents one-day spikes from triggering premature signals. If you see <span class="text-amber-600 italic">"Streak 1/2: needs 1 more qualifying scan"</span>, the stock scored high enough today but needs to confirm tomorrow.</p>
     </section>
 
+      </div>
+    </details>
   </main>
 
   <footer class="border-t border-gray-800 mt-12">
