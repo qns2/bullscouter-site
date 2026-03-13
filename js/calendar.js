@@ -164,9 +164,7 @@ const CatalystCalendar = (() => {
     header.appendChild(badge);
 
     const tickerLink = document.createElement('a');
-    tickerLink.href = `https://finance.yahoo.com/quote/${encodeURIComponent(c.ticker)}`;
-    tickerLink.target = '_blank';
-    tickerLink.rel = 'noopener';
+    tickerLink.href = `ticker.html?t=${encodeURIComponent(c.ticker)}`;
     tickerLink.className = 'text-base font-bold font-mono hover:text-green-400 transition-colors ml-2';
     tickerLink.textContent = c.ticker;
     header.appendChild(tickerLink);

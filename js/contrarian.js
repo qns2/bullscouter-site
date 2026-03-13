@@ -113,7 +113,7 @@ const Contrarian = (() => {
       <div class="opp-card" style="border-left:3px solid #22c55e">
         <div class="flex items-start justify-between mb-2">
           <div>
-            <a href="https://finance.yahoo.com/quote/${esc(c.ticker)}" target="_blank" rel="noopener" class="text-lg font-bold hover:text-green-400 transition-colors">${esc(c.ticker)}</a>
+            <a href="ticker.html?t=${esc(c.ticker)}" class="text-lg font-bold hover:text-green-400 transition-colors">${esc(c.ticker)}</a>
             <span class="text-xs text-gray-500 ml-2">${esc(c.market_cap_fmt)}</span>
           </div>
           <div class="score-badge buy">${c.score}</div>
@@ -140,7 +140,7 @@ const Contrarian = (() => {
     const cmLabel = cmVal ? `+${cmVal}` : '-';
     return `
       <tr class="border-b border-gray-800/50 hover:bg-gray-900/50">
-        <td class="py-2 pr-4 font-bold text-gray-200"><a href="https://finance.yahoo.com/quote/${esc(c.ticker)}" target="_blank" rel="noopener" class="hover:text-green-400 transition-colors">${esc(c.ticker)}</a></td>
+        <td class="py-2 pr-4 font-bold text-gray-200"><a href="ticker.html?t=${esc(c.ticker)}" class="hover:text-green-400 transition-colors">${esc(c.ticker)}</a></td>
         <td class="py-2 pr-4"><span class="text-amber-400 font-bold">${c.score}</span></td>
         <td class="py-2 pr-4">${c.down_from_high_pct ? c.down_from_high_pct + '%' : '-'}</td>
         <td class="py-2 pr-4 text-gray-400">${esc(c.market_cap_fmt)}</td>

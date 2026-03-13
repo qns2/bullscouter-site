@@ -374,7 +374,7 @@ const App = (() => {
     card.innerHTML = `
       <div class="flex items-start justify-between mb-2">
         <div>
-          <a href="https://finance.yahoo.com/quote/${opp.ticker}" target="_blank" rel="noopener" class="text-lg font-bold font-mono hover:text-green-400 transition-colors">${opp.ticker}</a>
+          <a href="ticker.html?t=${opp.ticker}" class="text-lg font-bold font-mono hover:text-green-400 transition-colors">${opp.ticker}</a>
           <span class="profile-badge ${rec === 'buy' ? opp.profile : rec} ml-2">${profileLabel}</span>
           <span class="text-xs text-gray-500 ml-1">T${opp.tier}</span>
           ${trendIcon(opp.trend_direction)}
@@ -427,7 +427,7 @@ const App = (() => {
     const catalystLabel = CATALYST_LABELS[opp.catalyst_type] || opp.catalyst_type || '-';
 
     return `<tr>
-      <td class="font-bold"><a href="https://finance.yahoo.com/quote/${opp.ticker}" target="_blank" rel="noopener" class="hover:text-green-400 transition-colors">${opp.ticker}</a></td>
+      <td class="font-bold"><a href="ticker.html?t=${opp.ticker}" class="hover:text-green-400 transition-colors">${opp.ticker}</a></td>
       <td>${opp.score}</td>
       <td>$${opp.price.toFixed(2)}</td>
       <td><span class="profile-badge ${opp.profile}">${profileLabel}</span></td>
@@ -747,7 +747,7 @@ const App = (() => {
         ? `<span class="text-xs bg-amber-900 text-amber-300 px-1.5 py-0.5 rounded ml-1">Pending @ $${(p.trigger_price || 0).toFixed(2)}</span>`
         : '';
       return `<tr class="border-b border-gray-800${isPending ? ' opacity-70' : ''}">
-        <td class="py-2 pr-4 font-bold"><a href="https://finance.yahoo.com/quote/${p.ticker}" target="_blank" rel="noopener" class="hover:text-green-400">${p.ticker}</a>${statusBadge}</td>
+        <td class="py-2 pr-4 font-bold"><a href="ticker.html?t=${p.ticker}" class="hover:text-green-400">${p.ticker}</a>${statusBadge}</td>
         <td class="py-2 pr-4">${isPending ? '-' : '$' + p.entry_price.toFixed(2)}</td>
         <td class="py-2 pr-4">${p.current_price ? '$' + p.current_price.toFixed(2) : '-'}</td>
         <td class="py-2 pr-4 ${isPending ? 'text-gray-500' : retColor}">${isPending ? '-' : (p.return_pct >= 0 ? '+' : '') + p.return_pct.toFixed(1) + '%'}</td>

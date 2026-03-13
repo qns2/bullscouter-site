@@ -179,9 +179,7 @@ const CatalystHeatmap = (() => {
 
     // Ticker link
     const tickerLink = document.createElement('a');
-    tickerLink.href = `https://finance.yahoo.com/quote/${encodeURIComponent(entry.ticker)}`;
-    tickerLink.target = '_blank';
-    tickerLink.rel = 'noopener';
+    tickerLink.href = `ticker.html?t=${encodeURIComponent(entry.ticker)}`;
     tickerLink.className = 'text-base font-bold font-mono hover:text-green-400 transition-colors';
     tickerLink.textContent = entry.ticker;
     topRow.appendChild(tickerLink);
