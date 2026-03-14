@@ -345,6 +345,47 @@ const TickerDetail = (() => {
     }).join('');
   }
 
+  function renderNews(latestMatch, ticker) {
+    const section = document.getElementById('section-news');
+    if (!section) return;
+
+    const events = latestMatch.events || [];
+    const thesis = latestMatch.ai_thesis || '';
+    if (!events.length && !thesis) return;
+
+    section.classList.remove('hidden');
+    let html = '';
+
+    // AI thesis
+    if (thesis) {
+      html += `<div class="text-sm text-white/80 mb-4 leading-relaxed">${esc(thesis)}</div>`;
+    }
+
+    // Events with source links
+    if (events.length) {
+      html += '<div class="space-y-2">';
+      for (const ev of events) {
+        const dirColor = ev.direction === 'bull' ? '#4ade80' : ev.direction === 'bear' ? '#f87171' : '#9ca3af';
+        const typeLabel = (ev.type || '').replace(/_/g, ' ');
+        const date = ev.date ? `<span class="text-bull-muted text-xs ml-2">${ev.date}</span>` : '';
+        html += `<div class="border-l-2 pl-3 py-1" style="border-color:${dirColor}">`;
+        html += `<div class="text-xs font-semibold uppercase tracking-wider" style="color:${dirColor}">${esc(typeLabel)}${date}</div>`;
+        html += `<div class="text-sm text-white/70">${esc(ev.summary)}</div>`;
+        if (ev.sources && ev.sources.length) {
+          html += '<div class="mt-1">';
+          for (const src of ev.sources) {
+            html += `<a href="${esc(src.url)}" target="_blank" rel="noopener" class="text-xs text-bull-blue hover:underline mr-3">${esc(src.title || src.url)}</a>`;
+          }
+          html += '</div>';
+        }
+        html += '</div>';
+      }
+      html += '</div>';
+    }
+
+    document.getElementById('news-content').innerHTML = html;
+  }
+
   function renderHistoryTable(entries) {
     const tbody = document.getElementById('tbody-history');
 
@@ -399,6 +440,7 @@ const TickerDetail = (() => {
       renderHeader(ticker, mostRecent);
       renderChart(entries);
       renderBreakdown(mostRecent.breakdown);
+      if (latestMatch) renderNews(latestMatch, ticker);
       renderHistoryTable(entries);
 
     } catch (e) {
