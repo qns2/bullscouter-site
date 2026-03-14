@@ -207,12 +207,7 @@ const App = (() => {
   }
 
   function thesisHtml(thesis, ticker) {
-    if (!thesis) return '';
-    const id = `thesis-${ticker}`;
-    return `<div class="mt-2">
-      <button onclick="document.getElementById('${id}').classList.toggle('hidden');this.querySelector('span').textContent=document.getElementById('${id}').classList.contains('hidden')?'▸':'▾'" class="text-xs text-green-400/80 hover:text-green-300 font-medium cursor-pointer"><span>▸</span> AI Thesis</button>
-      <div id="${id}" class="hidden mt-1 px-3 py-2 text-xs text-green-200/80 bg-green-900/20 border border-green-800/30 rounded italic leading-relaxed">${thesis}</div>
-    </div>`;
+    return '';  // Removed: AI thesis hallucinated scores and contradicted recommendations
   }
 
   function catalystCountdown(days) {
@@ -829,7 +824,7 @@ const App = (() => {
           parts.push(`Cat: ${cat}`);
         }
         if (o.short_interest_pct) parts.push(`SI: ${Number(o.short_interest_pct).toFixed(1)}%`);
-        if (o.ai_thesis) parts.push(`\n  Thesis: ${o.ai_thesis}`);
+        // ai_thesis removed — hallucinated data
         return parts.join(' | ');
       });
       const header = `Bull Scouter Signals — ${currentData.latestPayload?.scan_date || 'today'}\n` +
