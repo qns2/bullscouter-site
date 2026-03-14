@@ -376,11 +376,115 @@ const TickerDetail = (() => {
     });
   }
 
-  function renderBreakdown(breakdown) {
+  // Human-readable descriptions for breakdown components
+  const BREAKDOWN_DESCRIPTIONS = {
+    catalyst: 'upcoming binary catalyst (FDA, earnings, launch)',
+    social: 'social media attention (Reddit, StockTwits)',
+    growth_quality: 'revenue/earnings growth quality',
+    margin_quality: 'profit margin strength',
+    fallen_angel: 'fallen angel recovery pattern',
+    fundamental: 'fundamental valuation metrics',
+    technical: 'technical chart signals',
+    news_boost: 'recent positive news coverage',
+    claude_enhancement: 'AI-assessed upside potential',
+    momentum_bonus: 'price momentum trend',
+    breakout_pattern_bonus: 'breakout chart pattern match',
+    catalyst_pattern_bonus: 'matches historical catalyst winners',
+    fundamental_risk: 'fundamental risk adjustment',
+    narrative_overlap: 'thesis overlap with other signals',
+    pre_revenue_discount: 'pre-revenue stage discount',
+    quality_persistence: 'sustained quality metrics',
+    controversy_penalty: 'negative news or controversy',
+    thesis_decay: 'thesis aging (evidence getting stale)',
+    revenue_momentum: 'revenue acceleration',
+    margin_expansion: 'margin improvement trend',
+    price_trend: 'price trend and relative strength',
+    volume_expansion: 'trading volume increase',
+    conviction: 'cross-source conviction strength',
+    social_discovery: 'social discovery signal',
+    acceleration_influence: 'acceleration profile influence',
+    profitability: 'profitability metrics',
+    fcf: 'free cash flow generation',
+    discount: 'discount from 52-week high',
+    sector_panic: 'sector-wide panic selling',
+    pe_discount: 'PE ratio discount vs peers',
+    no_dilution: 'no recent share dilution',
+    revenue_growth_q: 'quarterly revenue growth',
+    gross_margins_q: 'gross margin quality',
+    nrr: 'net revenue retention',
+    tam: 'total addressable market size',
+    rule40: 'Rule of 40 (growth + margin)',
+    sbc: 'stock-based compensation discipline',
+    earnings_revision: 'earnings estimate revisions',
+    short_pressure: 'short squeeze potential',
+    convergence_bonus: 'multiple signals converging',
+    overvalued_cap: 'overvaluation cap applied',
+    bankruptcy_risk_cap: 'bankruptcy risk cap',
+    insider_buy_boost: 'insider buying activity',
+    insider_sell_penalty: 'insider selling activity',
+    thesis_feedback: 'AI analyst thesis adjustment',
+    neg_revenue_cap: 'negative revenue growth cap',
+    low_margin: 'low margin penalty',
+  };
+
+  function summarizeBreakdown(breakdown, entry) {
+    if (!breakdown || !Object.keys(breakdown).length) return '';
+
+    const items = Object.entries(breakdown)
+      .filter(([_, v]) => v !== 0)
+      .sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
+
+    if (!items.length) return '';
+
+    const positives = items.filter(([_, v]) => v > 0);
+    const negatives = items.filter(([_, v]) => v < 0);
+    const total = items.reduce((sum, [_, v]) => sum + v, 0);
+
+    const parts = [];
+
+    // Top drivers
+    if (positives.length) {
+      const top = positives.slice(0, 3).map(([k, v]) => {
+        const desc = BREAKDOWN_DESCRIPTIONS[k] || BREAKDOWN_LABELS[k] || k;
+        return `${desc} (+${v})`;
+      });
+      parts.push(`Driven by ${top.join(', ')}.`);
+    }
+
+    // Key drags
+    if (negatives.length) {
+      const drags = negatives.slice(0, 2).map(([k, v]) => {
+        const desc = BREAKDOWN_DESCRIPTIONS[k] || BREAKDOWN_LABELS[k] || k;
+        return `${desc} (${v})`;
+      });
+      parts.push(`Held back by ${drags.join(', ')}.`);
+    }
+
+    // BUY status explanation
+    const score = entry.score || 0;
+    const conf = entry.confidence || 0;
+    const rec = entry.recommendation;
+    if (rec === 'BUY') {
+      parts.push(`Score ${score} and confidence ${conf} both above thresholds \u2014 BUY signal active.`);
+    } else if (score >= 75 && conf >= 60) {
+      parts.push(`Score ${score} and confidence ${conf} pass thresholds, but needs 2 consecutive qualifying days for BUY.`);
+    } else if (score >= 75) {
+      parts.push(`Score ${score} passes, but confidence ${conf} is below the 60 gate needed for BUY.`);
+    } else if (conf >= 60) {
+      parts.push(`Confidence ${conf} passes, but score ${score} is below the 75 minimum for BUY.`);
+    } else {
+      parts.push(`Both score ${score} and confidence ${conf} are below BUY thresholds (75 and 60).`);
+    }
+
+    return parts.join(' ');
+  }
+
+  function renderBreakdown(breakdown, entry) {
     if (!breakdown || !Object.keys(breakdown).length) return;
 
     const section = document.getElementById('section-breakdown');
     const container = document.getElementById('breakdown-chips');
+    const summaryEl = document.getElementById('breakdown-summary');
 
     const entries = Object.entries(breakdown)
       .filter(([_, v]) => v !== 0)
@@ -389,6 +493,12 @@ const TickerDetail = (() => {
     if (!entries.length) return;
 
     section.classList.remove('hidden');
+
+    // Summary in plain English
+    if (summaryEl) {
+      summaryEl.textContent = summarizeBreakdown(breakdown, entry);
+    }
+
     container.innerHTML = entries.map(([k, v]) => {
       const label = BREAKDOWN_LABELS[k] || k;
       const cls = v > 0 ? 'positive' : 'negative';
@@ -491,7 +601,7 @@ const TickerDetail = (() => {
       const mostRecent = entries[entries.length - 1];
       renderHeader(ticker, mostRecent);
       renderChart(entries);
-      renderBreakdown(mostRecent.breakdown);
+      renderBreakdown(mostRecent.breakdown, mostRecent);
       if (latestMatch) renderNews(latestMatch, ticker);
       renderHistoryTable(entries);
 
