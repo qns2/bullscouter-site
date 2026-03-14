@@ -210,7 +210,8 @@ const Picks = (() => {
     if (isDashboard) {
       html += `<div class="score-badge buy">${d.score > 100 ? '100+' : d.score}</div>`;
     } else if (isDeepDive && d.framework) {
-      html += `<div class="score-badge buy">${d.framework.score?.toFixed(1) || '?'}</div>`;
+      const fwTotal = Object.keys(d.framework).filter(k => k !== 'score').length || 6;
+      html += `<div class="score-badge buy">${d.framework.score ?? '?'}/${fwTotal}</div>`;
     } else {
       html += `<div class="score-badge buy">${d.score}</div>`;
     }
