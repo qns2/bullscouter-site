@@ -512,16 +512,10 @@ const TickerDetail = (() => {
     if (!section) return;
 
     const events = latestMatch.events || [];
-    const thesis = latestMatch.ai_thesis || '';
-    if (!events.length && !thesis) return;
+    if (!events.length) return;
 
     section.classList.remove('hidden');
     let html = '';
-
-    // AI thesis
-    if (thesis) {
-      html += `<div class="text-sm text-white/80 mb-4 leading-relaxed">${esc(thesis)}</div>`;
-    }
 
     // Events with source links
     if (events.length) {
