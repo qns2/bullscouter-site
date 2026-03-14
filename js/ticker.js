@@ -223,6 +223,27 @@ const TickerDetail = (() => {
     const scores = entries.map(e => e.score);
     const confidences = entries.map(e => e.confidence);
 
+    // BUY zone background plugin — shades columns where recommendation was BUY
+    const buyZonePlugin = {
+      id: 'buyZone',
+      beforeDraw(chart) {
+        const ctx2 = chart.ctx;
+        const xScale = chart.scales.x;
+        const yScale = chart.scales.y;
+        const top = yScale.top;
+        const bottom = yScale.bottom;
+        for (let i = 0; i < entries.length; i++) {
+          if (entries[i].recommendation !== 'BUY') continue;
+          const x = xScale.getPixelForValue(i);
+          const halfStep = i < entries.length - 1
+            ? (xScale.getPixelForValue(i + 1) - x) / 2
+            : i > 0 ? (x - xScale.getPixelForValue(i - 1)) / 2 : 20;
+          ctx2.fillStyle = 'rgba(0, 255, 136, 0.06)';
+          ctx2.fillRect(x - halfStep, top, halfStep * 2, bottom - top);
+        }
+      }
+    };
+
     scoreChart = new Chart(ctx, {
       type: 'line',
       data: {
@@ -235,8 +256,8 @@ const TickerDetail = (() => {
             backgroundColor: 'rgba(0, 255, 136, 0.05)',
             borderWidth: 2,
             pointRadius: 3,
-            pointBackgroundColor: '#00ff88',
-            pointBorderColor: '#00ff88',
+            pointBackgroundColor: entries.map(e => e.recommendation === 'BUY' ? '#00ff88' : '#f59e0b'),
+            pointBorderColor: entries.map(e => e.recommendation === 'BUY' ? '#00ff88' : '#f59e0b'),
             pointHoverRadius: 5,
             tension: 0.3,
             fill: true,
@@ -253,6 +274,26 @@ const TickerDetail = (() => {
             pointBorderColor: '#3b82f6',
             pointHoverRadius: 4,
             tension: 0.3,
+            fill: false,
+          },
+          {
+            label: 'BUY threshold (Score 75)',
+            data: labels.map(() => 75),
+            borderColor: 'rgba(0, 255, 136, 0.25)',
+            borderWidth: 1,
+            borderDash: [3, 6],
+            pointRadius: 0,
+            pointHoverRadius: 0,
+            fill: false,
+          },
+          {
+            label: 'Confidence gate (60)',
+            data: labels.map(() => 60),
+            borderColor: 'rgba(59, 130, 246, 0.25)',
+            borderWidth: 1,
+            borderDash: [3, 6],
+            pointRadius: 0,
+            pointHoverRadius: 0,
             fill: false,
           },
         ],
@@ -306,6 +347,7 @@ const TickerDetail = (() => {
               usePointStyle: true,
               pointStyle: 'line',
               padding: 16,
+              filter: (item) => !item.text.includes('threshold') && !item.text.includes('gate'),
             },
           },
           tooltip: {
@@ -318,9 +360,19 @@ const TickerDetail = (() => {
             bodyFont: { family: 'ui-monospace, monospace', size: 11 },
             padding: 10,
             cornerRadius: 6,
+            filter: (item) => item.datasetIndex <= 1,
+            callbacks: {
+              afterBody: (items) => {
+                const idx = items[0]?.dataIndex;
+                if (idx == null) return '';
+                const e = entries[idx];
+                return e.recommendation === 'BUY' ? '\nBUY signal active' : '\nBelow BUY threshold';
+              },
+            },
           },
         },
       },
+      plugins: [buyZonePlugin],
     });
   }
 
