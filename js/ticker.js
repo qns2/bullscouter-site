@@ -168,7 +168,66 @@ const TickerDetail = (() => {
     // Sort chronologically (oldest first)
     entries.sort((a, b) => a.date.localeCompare(b.date));
 
-    return { entries, latest, latestMatch };
+    // Fallback: if ticker not in main scan, check contrarian + watchlist
+    let altMatch = latestMatch;
+    if (!altMatch) {
+      const [contrarian, watchlist] = await Promise.all([
+        fetchJSON('contrarian.json').catch(() => null),
+        fetchJSON('watchlist.json').catch(() => null),
+      ]);
+      if (contrarian) {
+        const allC = [...(contrarian.strong_candidates || []), ...(contrarian.candidates || [])];
+        const cm = allC.find(c => c.ticker === ticker);
+        if (cm) {
+          altMatch = {
+            ticker: cm.ticker,
+            score: cm.score,
+            confidence: 0,
+            recommendation: cm.recommendation,
+            profile: 'contrarian',
+            price: cm.current_price,
+            breakdown: cm.breakdown,
+            market_cap_fmt: cm.market_cap_fmt,
+            down_from_high_pct: cm.down_from_high_pct,
+            quality_checklist: cm.quality_checklist,
+            events: [],
+          };
+          // Add as most recent entry if no scan history or scan data is stale
+          if (!entries.length || entries[entries.length - 1].date < scanDate) {
+            entries.push({
+              date: scanDate,
+              score: cm.score,
+              confidence: 0,
+              recommendation: cm.recommendation,
+              profile: 'contrarian',
+              price: cm.current_price,
+              breakdown: cm.breakdown,
+              market_cap_fmt: cm.market_cap_fmt,
+              down_from_high_pct: cm.down_from_high_pct,
+            });
+          }
+        }
+      }
+      if (!altMatch && watchlist) {
+        const wm = (watchlist.stocks || []).find(s => s.ticker === ticker);
+        if (wm) {
+          altMatch = {
+            ticker: wm.ticker,
+            score: 0,
+            confidence: 0,
+            recommendation: 'WATCHLIST',
+            profile: '',
+            price: wm.current_price,
+            breakdown: {},
+            market_cap_fmt: '',
+            down_from_high_pct: 0,
+            events: [],
+          };
+        }
+      }
+    }
+
+    return { entries, latest, latestMatch: altMatch };
   }
 
   // ── Rendering ──
