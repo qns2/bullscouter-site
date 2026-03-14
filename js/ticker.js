@@ -122,7 +122,7 @@ const TickerDetail = (() => {
       entries.push({
         date: scanDate,
         score: latestMatch.score,
-        confidence: latestMatch.confidence || 0,
+        confidence: latestMatch.confidence ?? null,
         recommendation: latestMatch.recommendation,
         profile: latestMatch.profile,
         price: latestMatch.price,
@@ -148,7 +148,7 @@ const TickerDetail = (() => {
         return {
           date: dateStr,
           score: match.score,
-          confidence: match.confidence || 0,
+          confidence: match.confidence ?? null,
           recommendation: match.recommendation,
           profile: match.profile,
           price: match.price,
@@ -182,7 +182,7 @@ const TickerDetail = (() => {
           altMatch = {
             ticker: cm.ticker,
             score: cm.score,
-            confidence: 0,
+            confidence: null,
             recommendation: cm.recommendation,
             profile: 'contrarian',
             price: cm.current_price,
@@ -197,7 +197,7 @@ const TickerDetail = (() => {
             entries.push({
               date: scanDate,
               score: cm.score,
-              confidence: 0,
+              confidence: null,
               recommendation: cm.recommendation,
               profile: 'contrarian',
               price: cm.current_price,
@@ -214,7 +214,7 @@ const TickerDetail = (() => {
           altMatch = {
             ticker: wm.ticker,
             score: 0,
-            confidence: 0,
+            confidence: null,
             recommendation: 'WATCHLIST',
             profile: '',
             price: wm.current_price,
@@ -280,7 +280,7 @@ const TickerDetail = (() => {
 
     const labels = entries.map(e => e.date);
     const scores = entries.map(e => e.score);
-    const confidences = entries.map(e => e.confidence);
+    const confidences = entries.map(e => e.confidence != null ? e.confidence : null);
 
     // BUY zone background plugin — shades columns where recommendation was BUY
     const buyZonePlugin = {
@@ -521,18 +521,20 @@ const TickerDetail = (() => {
 
     // BUY status explanation
     const score = entry.score || 0;
-    const conf = entry.confidence || 0;
+    const conf = entry.confidence;
     const rec = entry.recommendation;
-    if (rec === 'BUY') {
-      parts.push(`Score ${score} and confidence ${conf} both above thresholds \u2014 BUY signal active.`);
-    } else if (score >= 75 && conf >= 60) {
-      parts.push(`Score ${score} and confidence ${conf} pass thresholds, but needs 2 consecutive qualifying days for BUY.`);
-    } else if (score >= 75) {
-      parts.push(`Score ${score} passes, but confidence ${conf} is below the 60 gate needed for BUY.`);
-    } else if (conf >= 60) {
-      parts.push(`Confidence ${conf} passes, but score ${score} is below the 75 minimum for BUY.`);
-    } else {
-      parts.push(`Both score ${score} and confidence ${conf} are below BUY thresholds (75 and 60).`);
+    if (conf != null) {
+      if (rec === 'BUY') {
+        parts.push(`Score ${score} and confidence ${conf} both above thresholds \u2014 BUY signal active.`);
+      } else if (score >= 75 && conf >= 60) {
+        parts.push(`Score ${score} and confidence ${conf} pass thresholds, but needs 2 consecutive qualifying days for BUY.`);
+      } else if (score >= 75) {
+        parts.push(`Score ${score} passes, but confidence ${conf} is below the 60 gate needed for BUY.`);
+      } else if (conf >= 60) {
+        parts.push(`Confidence ${conf} passes, but score ${score} is below the 75 minimum for BUY.`);
+      } else {
+        parts.push(`Both score ${score} and confidence ${conf} are below BUY thresholds (75 and 60).`);
+      }
     }
 
     return parts.join(' ');
@@ -616,7 +618,7 @@ const TickerDetail = (() => {
       return `<tr>
         <td>${esc(e.date)}</td>
         <td class="font-bold">${e.score}</td>
-        <td><span style="${confStyle}">${e.confidence}</span></td>
+        <td><span style="${confStyle}">${e.confidence != null ? e.confidence : '-'}</span></td>
         <td><span style="${recStyle};font-weight:600">${esc(e.recommendation)}</span></td>
         <td><span class="profile-badge ${profileCls}">${esc(profileLabel)}</span></td>
         <td>${e.price != null ? '$' + e.price.toFixed(2) : '-'}</td>
