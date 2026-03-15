@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
   <meta name="theme-color" content="#0a0b0d">
-  <title>Bull Scouter - Daily Buy List</title>
-  <meta name="description" content="Lifecycle-aware buy list: tickers in the optimal Day 3-10 entry window with 60% win rate.">
+  <title>Bull Scouter - Portfolio Bundle</title>
+  <meta name="description" content="Equal-weight portfolio bundle with market mood awareness. Lifecycle-qualified signals with 60% win rate.">
   <link rel="canonical" href="https://qns2.github.io/bullscouter-site/index2.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +56,22 @@
     .change-neutral { color: #94a3b8; }
     .conf-bar { height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
     .conf-bar-fill { height: 100%; border-radius: 2px; transition: width 0.5s; }
+    .mood-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px; border-radius: 9999px; font-size: 0.7rem;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .mood-strong_risk_on { background: rgba(34,197,94,0.2); color: #4ade80; }
+    .mood-risk_on { background: rgba(34,197,94,0.12); color: #86efac; }
+    .mood-neutral { background: rgba(148,163,184,0.15); color: #94a3b8; }
+    .mood-risk_off { background: rgba(251,146,60,0.15); color: #fb923c; }
+    .mood-strong_risk_off { background: rgba(248,113,113,0.2); color: #f87171; }
+    .mood-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .mood-strong_risk_on .mood-dot { background: #4ade80; }
+    .mood-risk_on .mood-dot { background: #86efac; }
+    .mood-neutral .mood-dot { background: #94a3b8; }
+    .mood-risk_off .mood-dot { background: #fb923c; }
+    .mood-strong_risk_off .mood-dot { background: #f87171; }
   </style>
 </head>
 <body class="font-sans">
@@ -98,14 +114,19 @@
   <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
     <div>
       <h1 class="text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-        Daily Buy List
+        Portfolio Bundle
       </h1>
       <p class="mt-2 text-bull-muted text-sm max-w-xl">
-        Lifecycle-aware signal list. Tickers first detected in the last 10 market days with score 60-79.
-        Calibration data shows this window has a <span class="text-bull-accent font-semibold">60% win rate</span> and <span class="text-bull-accent font-semibold">+2.83% avg 5d return</span>.
+        Equal-weight portfolio of lifecycle-qualified signals. <span id="portfolio-alloc" class="text-white font-semibold"></span>
+        Calibration: <span class="text-bull-accent font-semibold">60% win rate</span>, <span class="text-bull-accent font-semibold">+2.83% avg 5d return</span>.
+        Curated by Oracle (AI analyst) — tickers can be removed but not added.
       </p>
     </div>
     <div class="flex items-center gap-3">
+      <span id="mood-badge" class="mood-badge mood-neutral hidden">
+        <span class="mood-dot"></span>
+        <span id="mood-label">-</span>
+      </span>
       <span id="update-time" class="text-xs text-gray-500"></span>
       <button id="btn-copy" class="flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10 transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
@@ -126,6 +147,12 @@
     <div class="flex items-center gap-2">
       <span class="text-gray-400 text-xs uppercase tracking-wider font-semibold">SPY</span>
       <span id="bench-spy" class="font-mono font-bold text-gray-400">-</span>
+      <span id="bench-spy-price" class="font-mono text-xs text-gray-500"></span>
+    </div>
+    <div class="w-px h-6 bg-bull-border hidden sm:block"></div>
+    <div class="flex items-center gap-2">
+      <span class="text-gray-400 text-xs uppercase tracking-wider font-semibold">VIX</span>
+      <span id="bench-vix" class="font-mono font-bold text-gray-400">-</span>
     </div>
     <div class="w-px h-6 bg-bull-border hidden sm:block"></div>
     <div class="flex items-center gap-2">
@@ -203,6 +230,7 @@
       <p><span class="text-white font-semibold">Entry criteria:</span> First detected in last 10 market days, best score 60-79, confidence > 0.</p>
       <p><span class="text-white font-semibold">Why this works:</span> Calibration analysis (742 signals, Feb-Mar 2026) shows Day 3-10 from first detection is the optimal entry window. Score 60-79 outperforms 80+ because high first-time scores are "too late" signals.</p>
       <p><span class="text-white font-semibold">Benchmarks:</span> SPY and MAG7 returns computed over identical holding periods (each buy list entry date to today).</p>
+      <p><span class="text-white font-semibold">Market Mood:</span> 7-component composite gauge (-100 to +100): VIX, SPY momentum, market breadth, options flow, insider buying, news sentiment, yield curve. Risk-off regimes warrant caution; risk-on favors deployment.</p>
       <p><span class="text-white font-semibold">Not financial advice.</span> This is an experimental AI-driven system for educational purposes.</p>
     </div>
   </div>
@@ -276,7 +304,19 @@ const BuyList = (() => {
     });
   }
 
-  function renderBenchmarks(benchmarks) {
+  function renderMood(mood) {
+    if (!mood) return;
+    const badge = document.getElementById('mood-badge');
+    const label = document.getElementById('mood-label');
+    const regime = mood.regime || 'neutral';
+    const display = regime.replace(/_/g, ' ');
+    badge.className = `mood-badge mood-${regime}`;
+    label.textContent = `${display} (${mood.composite > 0 ? '+' : ''}${mood.composite})`;
+    badge.classList.remove('hidden');
+    badge.title = `VIX ${mood.vix} | SPY $${mood.spy_price} | as of ${mood.as_of}`;
+  }
+
+  function renderBenchmarks(benchmarks, mood) {
     // Top bar
     const setBench = (id, val, isAlpha) => {
       const el = document.getElementById(id);
@@ -288,6 +328,18 @@ const BuyList = (() => {
     setBench('bench-spy', benchmarks.spy_avg);
     setBench('bench-mag7', benchmarks.mag7_avg);
     setBench('bench-alpha', benchmarks.alpha_vs_spy);
+
+    // SPY price + VIX from mood
+    if (mood) {
+      if (mood.spy_price) {
+        document.getElementById('bench-spy-price').textContent = `($${mood.spy_price.toFixed(0)})`;
+      }
+      if (mood.vix) {
+        const vixEl = document.getElementById('bench-vix');
+        vixEl.textContent = mood.vix.toFixed(1);
+        vixEl.className = `font-mono font-bold ${mood.vix > 25 ? 'text-orange-400' : mood.vix > 20 ? 'text-yellow-400' : 'text-green-400'}`;
+      }
+    }
 
     // MAG7 table
     const mag7 = benchmarks.mag7_tickers || {};
@@ -322,7 +374,12 @@ const BuyList = (() => {
   }
 
   function copyData(data) {
-    const lines = ['DAILY BUY LIST — ' + data.date, ''];
+    const lines = ['PORTFOLIO BUNDLE — ' + data.date, ''];
+    if (data.market_mood) {
+      const m = data.market_mood;
+      lines.push(`Market Mood: ${m.regime.replace(/_/g,' ').toUpperCase()} (${m.composite > 0 ? '+' : ''}${m.composite}) | VIX ${m.vix} | SPY $${m.spy_price}`);
+      lines.push('');
+    }
     lines.push('Ticker | Profile | 1st Det | Score | Conf | Entry | Current | Change');
     lines.push('-------|---------|---------|-------|------|-------|---------|-------');
     data.signals.forEach(s => {
@@ -360,7 +417,14 @@ const BuyList = (() => {
       }
 
       renderSignals(data.signals);
-      if (data.benchmarks) renderBenchmarks(data.benchmarks);
+      if (data.market_mood) renderMood(data.market_mood);
+      if (data.benchmarks) renderBenchmarks(data.benchmarks, data.market_mood);
+
+      // Portfolio allocation text
+      if (data.portfolio && data.portfolio.num_tickers > 0) {
+        document.getElementById('portfolio-alloc').textContent =
+          `${data.portfolio.num_tickers} tickers x ~€${data.portfolio.per_ticker} = €${data.portfolio.budget}.`;
+      }
 
       document.getElementById('btn-copy').addEventListener('click', () => copyData(data));
 
