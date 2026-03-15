@@ -140,8 +140,8 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
   <div class="glass-card rounded-xl p-4 flex flex-wrap items-center gap-6 text-sm">
     <div class="flex items-center gap-2">
-      <span class="text-gray-400 text-xs uppercase tracking-wider font-semibold">Buy List</span>
-      <span id="bench-buy" class="font-mono font-bold">-</span>
+      <span class="text-gray-400 text-xs uppercase tracking-wider font-semibold">Portfolio</span>
+      <span id="bench-buy" class="font-mono font-bold text-lg">-</span>
     </div>
     <div class="w-px h-6 bg-bull-border hidden sm:block"></div>
     <div class="flex items-center gap-2">
@@ -194,6 +194,31 @@
           </tr>
         </thead>
         <tbody id="buy-list-body" class="divide-y divide-gray-800/50"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Stopped Out -->
+<div id="stopped-section" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+  <div class="glass-card rounded-2xl overflow-hidden border-red-900/30">
+    <div class="p-5 border-b border-bull-border flex justify-between items-center">
+      <h2 class="font-bold uppercase tracking-wider text-sm text-red-400">Stopped Out (-10%)</h2>
+      <span id="stopped-count" class="text-xs text-red-400/60">0</span>
+    </div>
+    <div id="stopped-container" class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-bull-border text-xs text-gray-500 uppercase tracking-wider">
+            <th class="px-5 py-3 text-left">Ticker</th>
+            <th class="px-3 py-3 text-left">Profile</th>
+            <th class="px-3 py-3 text-left hidden sm:table-cell">1st Detected</th>
+            <th class="px-3 py-3 text-right">Entry $</th>
+            <th class="px-3 py-3 text-right">Current $</th>
+            <th class="px-5 py-3 text-right">Change</th>
+          </tr>
+        </thead>
+        <tbody id="stopped-body" class="divide-y divide-gray-800/50"></tbody>
       </table>
     </div>
   </div>
@@ -299,6 +324,28 @@ const BuyList = (() => {
         <td class="px-3 py-4 text-right font-mono text-gray-400">${fmtPrice(s.entry_price)}</td>
         <td class="px-3 py-4 text-right font-mono">${fmtPrice(s.current_price)}</td>
         <td class="px-5 py-4 text-right font-mono font-bold ${changeClass(s.change_pct)}">${fmtPct(s.change_pct)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function renderStopped(stopped) {
+    if (!stopped || stopped.length === 0) return;
+    const section = document.getElementById('stopped-section');
+    section.classList.remove('hidden');
+    document.getElementById('stopped-count').textContent = stopped.length + ' ticker' + (stopped.length !== 1 ? 's' : '');
+    const tbody = document.getElementById('stopped-body');
+    tbody.innerHTML = '';
+    stopped.forEach(s => {
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-white/[0.02] transition-colors opacity-60';
+      tr.innerHTML = `
+        <td class="px-5 py-3 font-bold font-mono text-red-400">${esc(s.ticker)}</td>
+        <td class="px-3 py-3"><span class="profile-badge ${esc(s.profile)}">${esc(s.profile.replace('_',' '))}</span></td>
+        <td class="px-3 py-3 text-gray-500 hidden sm:table-cell">${esc(s.first_detected)}</td>
+        <td class="px-3 py-3 text-right font-mono text-gray-500">${fmtPrice(s.entry_price)}</td>
+        <td class="px-3 py-3 text-right font-mono text-gray-500">${fmtPrice(s.current_price)}</td>
+        <td class="px-5 py-3 text-right font-mono font-bold text-red-400">${fmtPct(s.change_pct)}</td>
       `;
       tbody.appendChild(tr);
     });
@@ -417,6 +464,7 @@ const BuyList = (() => {
       }
 
       renderSignals(data.signals);
+      if (data.stopped_out) renderStopped(data.stopped_out);
       if (data.market_mood) renderMood(data.market_mood);
       if (data.benchmarks) renderBenchmarks(data.benchmarks, data.market_mood);
 
