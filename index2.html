@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Bull Scouter - Daily Buy List</title>
+  <meta name="description" content="Lifecycle-aware buy list: tickers in the optimal Day 3-10 entry window with 60% win rate.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/index2.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            'bull-dark': '#0a0b0d',
+            'bull-card': '#14161a',
+            'bull-accent': '#00ff88',
+            'bull-blue': '#3b82f6',
+            'bull-muted': '#94a3b8',
+            'bull-border': 'rgba(255, 255, 255, 0.1)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .profile-badge {
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .profile-badge.recovery { background: rgba(59,130,246,0.15); color: #60a5fa; }
+    .profile-badge.value { background: rgba(168,85,247,0.15); color: #c084fc; }
+    .profile-badge.quality_growth { background: rgba(34,197,94,0.15); color: #4ade80; }
+    .profile-badge.growth { background: rgba(251,191,36,0.15); color: #fbbf24; }
+    .profile-badge.acceleration { background: rgba(251,146,60,0.15); color: #fb923c; }
+    .change-positive { color: #4ade80; }
+    .change-negative { color: #f87171; }
+    .change-neutral { color: #94a3b8; }
+    .conf-bar { height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+    .conf-bar-fill { height: 100%; border-radius: 2px; transition: width 0.5s; }
+  </style>
+</head>
+<body class="font-sans">
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="index.html" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
+        <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+          <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+        </div>
+        <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter</span>
+      </a>
+      <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
+        <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+        <a class="text-bull-accent" href="index2.html">Buy List</a>
+        <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
+        <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
+        <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
+      </div>
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="sm:hidden p-2 text-bull-muted hover:text-white transition-colors" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md">
+    <div class="px-4 py-3 space-y-2 text-sm font-medium">
+      <a class="block py-2 text-bull-muted" href="index.html">Home</a>
+      <a class="block py-2 text-bull-accent" href="index2.html">Buy List</a>
+      <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
+      <a class="block py-2 text-bull-muted" href="history.html">History</a>
+      <a class="block py-2 text-bull-muted" href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6">
+  <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+    <div>
+      <h1 class="text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+        Daily Buy List
+      </h1>
+      <p class="mt-2 text-bull-muted text-sm max-w-xl">
+        Lifecycle-aware signal list. Tickers first detected in the last 10 market days with score 60-79.
+        Calibration data shows this window has a <span class="text-bull-accent font-semibold">60% win rate</span> and <span class="text-bull-accent font-semibold">+2.83% avg 5d return</span>.
+      </p>
+    </div>
+    <div class="flex items-center gap-3">
+      <span id="update-time" class="text-xs text-gray-500"></span>
+      <button id="btn-copy" class="flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+        <span class="copy-label hidden sm:inline">Copy for Claude</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Benchmark Bar -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+  <div class="glass-card rounded-xl p-4 flex flex-wrap items-center gap-6 text-sm">
+    <div class="flex items-center gap-2">
+      <span class="text-gray-400 text-xs uppercase tracking-wider font-semibold">Buy List</span>
+      <span id="bench-buy" class="font-mono font-bold">-</span>
+    </div>
+    <div class="w-px h-6 bg-bull-border hidden sm:block"></div>
+    <div class="flex items-center gap-2">
+      <span class="text-gray-400 text-xs uppercase tracking-wider font-semibold">SPY</span>
+      <span id="bench-spy" class="font-mono font-bold text-gray-400">-</span>
+    </div>
+    <div class="w-px h-6 bg-bull-border hidden sm:block"></div>
+    <div class="flex items-center gap-2">
+      <span class="text-gray-400 text-xs uppercase tracking-wider font-semibold">MAG7</span>
+      <span id="bench-mag7" class="font-mono font-bold text-gray-400">-</span>
+    </div>
+    <div class="w-px h-6 bg-bull-border hidden sm:block"></div>
+    <div class="flex items-center gap-2">
+      <span class="text-gray-400 text-xs uppercase tracking-wider font-semibold">Alpha vs SPY</span>
+      <span id="bench-alpha" class="font-mono font-bold">-</span>
+    </div>
+  </div>
+</div>
+
+<!-- Buy List Table -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+  <div class="glass-card rounded-2xl overflow-hidden">
+    <div class="p-5 border-b border-bull-border flex justify-between items-center">
+      <h2 class="font-bold uppercase tracking-wider text-sm">Active Signals</h2>
+      <span id="signal-count" class="text-xs text-bull-muted">0 signals</span>
+    </div>
+
+    <div id="loading" class="p-12 text-center text-gray-500">Loading buy list...</div>
+    <div id="empty" class="hidden p-12 text-center text-gray-500">No signals in buy window</div>
+    <div id="error" class="hidden p-12 text-center text-red-400">Failed to load data</div>
+
+    <div id="table-container" class="hidden overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-bull-border text-xs text-gray-500 uppercase tracking-wider">
+            <th class="px-5 py-3 text-left">Ticker</th>
+            <th class="px-3 py-3 text-left">Profile</th>
+            <th class="px-3 py-3 text-left hidden sm:table-cell">1st Detected</th>
+            <th class="px-3 py-3 text-right">Score</th>
+            <th class="px-3 py-3 text-right hidden sm:table-cell">Confidence</th>
+            <th class="px-3 py-3 text-right">Entry $</th>
+            <th class="px-3 py-3 text-right">Current $</th>
+            <th class="px-5 py-3 text-right">Change</th>
+          </tr>
+        </thead>
+        <tbody id="buy-list-body" class="divide-y divide-gray-800/50"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- MAG7 Benchmark Table -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+  <div class="glass-card rounded-2xl overflow-hidden">
+    <div class="p-5 border-b border-bull-border">
+      <h2 class="font-bold uppercase tracking-wider text-sm">MAG7 + SPY Benchmark</h2>
+      <p class="text-xs text-gray-500 mt-1">Same-period returns as buy list entries for comparison</p>
+    </div>
+
+    <div id="mag7-container" class="hidden overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-bull-border text-xs text-gray-500 uppercase tracking-wider">
+            <th class="px-5 py-3 text-left">Ticker</th>
+            <th class="px-3 py-3 text-right">Price</th>
+            <th class="px-5 py-3 text-right">Avg Return</th>
+          </tr>
+        </thead>
+        <tbody id="mag7-body" class="divide-y divide-gray-800/50"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Methodology -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+  <div class="glass-card rounded-2xl p-6">
+    <h2 class="font-bold uppercase tracking-wider text-sm mb-4">Methodology</h2>
+    <div class="text-xs text-gray-400 space-y-2 max-w-3xl">
+      <p><span class="text-white font-semibold">Entry criteria:</span> First detected in last 10 market days, best score 60-79, confidence > 0.</p>
+      <p><span class="text-white font-semibold">Why this works:</span> Calibration analysis (742 signals, Feb-Mar 2026) shows Day 3-10 from first detection is the optimal entry window. Score 60-79 outperforms 80+ because high first-time scores are "too late" signals.</p>
+      <p><span class="text-white font-semibold">Benchmarks:</span> SPY and MAG7 returns computed over identical holding periods (each buy list entry date to today).</p>
+      <p><span class="text-white font-semibold">Not financial advice.</span> This is an experimental AI-driven system for educational purposes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="border-t border-bull-border py-8">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <div class="flex items-center justify-center gap-2 mb-2">
+      <div class="w-5 h-5 bg-bull-accent rounded flex items-center justify-center">
+        <svg class="w-3 h-3 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
+      </div>
+      <span class="text-sm font-bold text-white">Bull Scouter</span>
+    </div>
+    <p class="text-xs text-gray-600">Autonomous AI agents for stock catalyst detection. Not financial advice.</p>
+  </div>
+</footer>
+
+<script>
+const BuyList = (() => {
+  function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  function changeClass(val) {
+    if (val == null) return 'change-neutral';
+    return val > 0.1 ? 'change-positive' : val < -0.1 ? 'change-negative' : 'change-neutral';
+  }
+
+  function fmtPct(val) {
+    if (val == null) return '-';
+    return (val > 0 ? '+' : '') + val.toFixed(1) + '%';
+  }
+
+  function fmtPrice(val) {
+    if (val == null) return '-';
+    return '$' + val.toFixed(2);
+  }
+
+  function confColor(conf) {
+    if (conf >= 70) return '#4ade80';
+    if (conf >= 50) return '#fbbf24';
+    return '#f87171';
+  }
+
+  function renderSignals(signals) {
+    const tbody = document.getElementById('buy-list-body');
+    tbody.innerHTML = '';
+
+    signals.forEach(s => {
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-white/[0.02] transition-colors';
+      tr.innerHTML = `
+        <td class="px-5 py-4">
+          <a href="ticker.html?t=${esc(s.ticker)}" class="font-bold font-mono text-white hover:text-green-400 transition-colors">${esc(s.ticker)}</a>
+        </td>
+        <td class="px-3 py-4">
+          <span class="profile-badge ${esc(s.profile)}">${esc(s.profile.replace('_', ' '))}</span>
+        </td>
+        <td class="px-3 py-4 text-gray-400 hidden sm:table-cell">${esc(s.first_detected)}</td>
+        <td class="px-3 py-4 text-right font-mono font-bold">${s.score}</td>
+        <td class="px-3 py-4 text-right hidden sm:table-cell">
+          <div class="inline-flex flex-col items-end gap-1">
+            <span class="font-mono text-xs" style="color:${confColor(s.confidence)}">${s.confidence}</span>
+            <div class="conf-bar w-12"><div class="conf-bar-fill" style="width:${s.confidence}%;background:${confColor(s.confidence)}"></div></div>
+          </div>
+        </td>
+        <td class="px-3 py-4 text-right font-mono text-gray-400">${fmtPrice(s.entry_price)}</td>
+        <td class="px-3 py-4 text-right font-mono">${fmtPrice(s.current_price)}</td>
+        <td class="px-5 py-4 text-right font-mono font-bold ${changeClass(s.change_pct)}">${fmtPct(s.change_pct)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function renderBenchmarks(benchmarks) {
+    // Top bar
+    const setBench = (id, val, isAlpha) => {
+      const el = document.getElementById(id);
+      if (val == null) { el.textContent = '-'; return; }
+      el.textContent = fmtPct(val);
+      el.className = `font-mono font-bold ${changeClass(val)}`;
+    };
+    setBench('bench-buy', benchmarks.buy_list_avg);
+    setBench('bench-spy', benchmarks.spy_avg);
+    setBench('bench-mag7', benchmarks.mag7_avg);
+    setBench('bench-alpha', benchmarks.alpha_vs_spy);
+
+    // MAG7 table
+    const mag7 = benchmarks.mag7_tickers || {};
+    const tickers = ['SPY'].concat(['AAPL','MSFT','GOOGL','AMZN','META','NVDA','TSLA']);
+    const tbody = document.getElementById('mag7-body');
+    tbody.innerHTML = '';
+
+    // Add SPY row using spy_avg
+    const spyTr = document.createElement('tr');
+    spyTr.className = 'hover:bg-white/[0.02] transition-colors';
+    spyTr.innerHTML = `
+      <td class="px-5 py-3 font-bold font-mono">SPY</td>
+      <td class="px-3 py-3 text-right font-mono text-gray-400">-</td>
+      <td class="px-5 py-3 text-right font-mono font-bold ${changeClass(benchmarks.spy_avg)}">${fmtPct(benchmarks.spy_avg)}</td>
+    `;
+    tbody.appendChild(spyTr);
+
+    ['AAPL','MSFT','GOOGL','AMZN','META','NVDA','TSLA'].forEach(t => {
+      const d = mag7[t];
+      if (!d) return;
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-white/[0.02] transition-colors';
+      tr.innerHTML = `
+        <td class="px-5 py-3 font-bold font-mono">${t}</td>
+        <td class="px-3 py-3 text-right font-mono text-gray-400">${fmtPrice(d.current_price)}</td>
+        <td class="px-5 py-3 text-right font-mono font-bold ${changeClass(d.avg_return)}">${fmtPct(d.avg_return)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById('mag7-container').classList.remove('hidden');
+  }
+
+  function copyData(data) {
+    const lines = ['DAILY BUY LIST — ' + data.date, ''];
+    lines.push('Ticker | Profile | 1st Det | Score | Conf | Entry | Current | Change');
+    lines.push('-------|---------|---------|-------|------|-------|---------|-------');
+    data.signals.forEach(s => {
+      lines.push(`${s.ticker} | ${s.profile} | ${s.first_detected} | ${s.score} | ${s.confidence} | ${fmtPrice(s.entry_price)} | ${fmtPrice(s.current_price)} | ${fmtPct(s.change_pct)}`);
+    });
+    const b = data.benchmarks;
+    lines.push('');
+    lines.push(`Buy List avg: ${fmtPct(b.buy_list_avg)} | SPY avg: ${fmtPct(b.spy_avg)} | MAG7 avg: ${fmtPct(b.mag7_avg)} | Alpha vs SPY: ${fmtPct(b.alpha_vs_spy)}`);
+
+    navigator.clipboard.writeText(lines.join('\n')).then(() => {
+      const btn = document.getElementById('btn-copy');
+      const label = btn.querySelector('.copy-label');
+      if (label) { label.textContent = 'Copied!'; setTimeout(() => { label.textContent = 'Copy for Claude'; }, 2000); }
+    });
+  }
+
+  async function init() {
+    try {
+      const resp = await fetch(`data/buy-list.json?_cb=${Date.now()}`);
+      if (!resp.ok) throw new Error('fetch failed');
+      const data = await resp.json();
+
+      document.getElementById('loading').classList.add('hidden');
+
+      if (!data.signals || data.signals.length === 0) {
+        document.getElementById('empty').classList.remove('hidden');
+        return;
+      }
+
+      document.getElementById('table-container').classList.remove('hidden');
+      document.getElementById('signal-count').textContent = data.signals.length + ' signal' + (data.signals.length !== 1 ? 's' : '');
+
+      if (data.generated_at) {
+        document.getElementById('update-time').textContent = 'Updated: ' + new Date(data.generated_at).toLocaleString();
+      }
+
+      renderSignals(data.signals);
+      if (data.benchmarks) renderBenchmarks(data.benchmarks);
+
+      document.getElementById('btn-copy').addEventListener('click', () => copyData(data));
+
+    } catch (e) {
+      document.getElementById('loading').classList.add('hidden');
+      document.getElementById('error').classList.remove('hidden');
+      console.error('Buy list load error:', e);
+    }
+  }
+
+  return { init };
+})();
+
+document.addEventListener('DOMContentLoaded', BuyList.init);
+</script>
+
+</body>
+</html>
