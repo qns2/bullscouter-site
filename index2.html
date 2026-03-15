@@ -51,6 +51,7 @@
     .profile-badge.quality_growth { background: rgba(34,197,94,0.15); color: #4ade80; }
     .profile-badge.growth { background: rgba(251,191,36,0.15); color: #fbbf24; }
     .profile-badge.acceleration { background: rgba(251,146,60,0.15); color: #fb923c; }
+    .profile-badge.contrarian { background: rgba(168,85,247,0.15); color: #c084fc; }
     .change-positive { color: #4ade80; }
     .change-negative { color: #f87171; }
     .change-neutral { color: #94a3b8; }
@@ -224,6 +225,64 @@
   </div>
 </div>
 
+<!-- Contrarian Portfolio -->
+<div id="contrarian-section" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+  <div class="glass-card rounded-2xl overflow-hidden">
+    <div class="p-5 border-b border-bull-border flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+      <div>
+        <h2 class="font-bold uppercase tracking-wider text-sm">Contrarian Portfolio</h2>
+        <p class="text-xs text-gray-500 mt-1">Deep-value plays: score 60-79, down 40%+ from 52w high</p>
+      </div>
+      <div class="flex items-center gap-4 text-sm">
+        <span id="contrarian-alloc" class="text-xs text-gray-500"></span>
+        <span id="contrarian-avg" class="font-mono font-bold">-</span>
+      </div>
+    </div>
+
+    <div id="contrarian-table" class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-bull-border text-xs text-gray-500 uppercase tracking-wider">
+            <th class="px-5 py-3 text-left">Ticker</th>
+            <th class="px-3 py-3 text-right">Score</th>
+            <th class="px-3 py-3 text-right hidden sm:table-cell">Down%</th>
+            <th class="px-3 py-3 text-center hidden sm:table-cell">Activist</th>
+            <th class="px-3 py-3 text-right">Entry $</th>
+            <th class="px-3 py-3 text-right">Current $</th>
+            <th class="px-5 py-3 text-right">Change</th>
+          </tr>
+        </thead>
+        <tbody id="contrarian-body" class="divide-y divide-gray-800/50"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Contrarian Stopped Out -->
+<div id="contrarian-stopped-section" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+  <div class="glass-card rounded-2xl overflow-hidden border-red-900/30">
+    <div class="p-5 border-b border-bull-border flex justify-between items-center">
+      <h2 class="font-bold uppercase tracking-wider text-sm text-red-400">Contrarian Stopped Out (-10%)</h2>
+      <span id="contrarian-stopped-count" class="text-xs text-red-400/60">0</span>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-bull-border text-xs text-gray-500 uppercase tracking-wider">
+            <th class="px-5 py-3 text-left">Ticker</th>
+            <th class="px-3 py-3 text-right">Score</th>
+            <th class="px-3 py-3 text-right hidden sm:table-cell">Down%</th>
+            <th class="px-3 py-3 text-right">Entry $</th>
+            <th class="px-3 py-3 text-right">Current $</th>
+            <th class="px-5 py-3 text-right">Change</th>
+          </tr>
+        </thead>
+        <tbody id="contrarian-stopped-body" class="divide-y divide-gray-800/50"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 <!-- MAG7 Benchmark Table -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
   <div class="glass-card rounded-2xl overflow-hidden">
@@ -254,6 +313,7 @@
     <div class="text-xs text-gray-400 space-y-2 max-w-3xl">
       <p><span class="text-white font-semibold">Entry criteria:</span> First detected in last 10 market days, best score 60-79, confidence > 0.</p>
       <p><span class="text-white font-semibold">Why this works:</span> Calibration analysis (742 signals, Feb-Mar 2026) shows Day 3-10 from first detection is the optimal entry window. Score 60-79 outperforms 80+ because high first-time scores are "too late" signals.</p>
+      <p><span class="text-white font-semibold">Contrarian portfolio:</span> Beaten-down value plays from Path 3 scanner. Filter: contrarian score 60-79, down 40%+ from 52-week high, price >= $5. Different risk profile — deep value with activist/recovery catalysts.</p>
       <p><span class="text-white font-semibold">Benchmarks:</span> SPY and MAG7 returns computed over identical holding periods (each buy list entry date to today).</p>
       <p><span class="text-white font-semibold">Market Mood:</span> 7-component composite gauge (-100 to +100): VIX, SPY momentum, market breadth, options flow, insider buying, news sentiment, yield curve. Risk-off regimes warrant caution; risk-on favors deployment.</p>
       <p><span class="text-white font-semibold">Not financial advice.</span> This is an experimental AI-driven system for educational purposes.</p>
@@ -351,6 +411,69 @@ const BuyList = (() => {
     });
   }
 
+  function renderContrarian(contrarian) {
+    if (!contrarian || !contrarian.signals || contrarian.signals.length === 0) return;
+    const section = document.getElementById('contrarian-section');
+    section.classList.remove('hidden');
+
+    // Allocation text
+    const p = contrarian.portfolio;
+    if (p && p.num_tickers > 0) {
+      document.getElementById('contrarian-alloc').textContent =
+        `${p.num_tickers} tickers x ~€${p.per_ticker} = €${p.budget}`;
+    }
+
+    // Avg return
+    if (contrarian.avg_return != null) {
+      const el = document.getElementById('contrarian-avg');
+      el.textContent = fmtPct(contrarian.avg_return);
+      el.className = `font-mono font-bold ${changeClass(contrarian.avg_return)}`;
+    }
+
+    // Signals table
+    const tbody = document.getElementById('contrarian-body');
+    tbody.innerHTML = '';
+    contrarian.signals.forEach(s => {
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-white/[0.02] transition-colors';
+      tr.innerHTML = `
+        <td class="px-5 py-4">
+          <a href="ticker.html?t=${esc(s.ticker)}" class="font-bold font-mono text-white hover:text-purple-400 transition-colors">${esc(s.ticker)}</a>
+        </td>
+        <td class="px-3 py-4 text-right font-mono font-bold">${s.score}</td>
+        <td class="px-3 py-4 text-right font-mono text-gray-400 hidden sm:table-cell">${s.down_from_high_pct}%</td>
+        <td class="px-3 py-4 text-center hidden sm:table-cell">${s.has_activist ? '<span class="text-yellow-400 text-xs font-semibold">YES</span>' : '<span class="text-gray-600">-</span>'}</td>
+        <td class="px-3 py-4 text-right font-mono text-gray-400">${fmtPrice(s.entry_price)}</td>
+        <td class="px-3 py-4 text-right font-mono">${fmtPrice(s.current_price)}</td>
+        <td class="px-5 py-4 text-right font-mono font-bold ${changeClass(s.change_pct)}">${fmtPct(s.change_pct)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // Stopped out
+    if (contrarian.stopped_out && contrarian.stopped_out.length > 0) {
+      const stSection = document.getElementById('contrarian-stopped-section');
+      stSection.classList.remove('hidden');
+      document.getElementById('contrarian-stopped-count').textContent =
+        contrarian.stopped_out.length + ' ticker' + (contrarian.stopped_out.length !== 1 ? 's' : '');
+      const stBody = document.getElementById('contrarian-stopped-body');
+      stBody.innerHTML = '';
+      contrarian.stopped_out.forEach(s => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-white/[0.02] transition-colors opacity-60';
+        tr.innerHTML = `
+          <td class="px-5 py-3 font-bold font-mono text-red-400">${esc(s.ticker)}</td>
+          <td class="px-3 py-3 text-right font-mono text-gray-500">${s.score}</td>
+          <td class="px-3 py-3 text-right font-mono text-gray-500 hidden sm:table-cell">${s.down_from_high_pct}%</td>
+          <td class="px-3 py-3 text-right font-mono text-gray-500">${fmtPrice(s.entry_price)}</td>
+          <td class="px-3 py-3 text-right font-mono text-gray-500">${fmtPrice(s.current_price)}</td>
+          <td class="px-5 py-3 text-right font-mono font-bold text-red-400">${fmtPct(s.change_pct)}</td>
+        `;
+        stBody.appendChild(tr);
+      });
+    }
+  }
+
   function renderMood(mood) {
     if (!mood) return;
     const badge = document.getElementById('mood-badge');
@@ -436,6 +559,19 @@ const BuyList = (() => {
     lines.push('');
     lines.push(`Buy List avg: ${fmtPct(b.buy_list_avg)} | SPY avg: ${fmtPct(b.spy_avg)} | MAG7 avg: ${fmtPct(b.mag7_avg)} | Alpha vs SPY: ${fmtPct(b.alpha_vs_spy)}`);
 
+    if (data.contrarian && data.contrarian.signals && data.contrarian.signals.length > 0) {
+      lines.push('');
+      lines.push('CONTRARIAN PORTFOLIO');
+      lines.push('Ticker | Score | Down% | Activist | Entry | Current | Change');
+      lines.push('-------|-------|-------|----------|-------|---------|-------');
+      data.contrarian.signals.forEach(s => {
+        lines.push(`${s.ticker} | ${s.score} | ${s.down_from_high_pct}% | ${s.has_activist ? 'Yes' : '-'} | ${fmtPrice(s.entry_price)} | ${fmtPrice(s.current_price)} | ${fmtPct(s.change_pct)}`);
+      });
+      if (data.contrarian.avg_return != null) {
+        lines.push(`Contrarian avg: ${fmtPct(data.contrarian.avg_return)}`);
+      }
+    }
+
     navigator.clipboard.writeText(lines.join('\n')).then(() => {
       const btn = document.getElementById('btn-copy');
       const label = btn.querySelector('.copy-label');
@@ -465,6 +601,7 @@ const BuyList = (() => {
 
       renderSignals(data.signals);
       if (data.stopped_out) renderStopped(data.stopped_out);
+      if (data.contrarian) renderContrarian(data.contrarian);
       if (data.market_mood) renderMood(data.market_mood);
       if (data.benchmarks) renderBenchmarks(data.benchmarks, data.market_mood);
 
