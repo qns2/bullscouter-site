@@ -231,7 +231,7 @@
     <div class="p-5 border-b border-bull-border flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
       <div>
         <h2 class="font-bold uppercase tracking-wider text-sm">Contrarian Portfolio</h2>
-        <p class="text-xs text-gray-500 mt-1">Deep-value plays: score 60-79, down 40%+ from 52w high</p>
+        <p class="text-xs text-gray-500 mt-1">Deep-value plays: score 60-79, down 40%+ from high. Top 5 by score = portfolio.</p>
       </div>
       <div class="flex items-center gap-4 text-sm">
         <span id="contrarian-alloc" class="text-xs text-gray-500"></span>
@@ -416,29 +416,34 @@ const BuyList = (() => {
     const section = document.getElementById('contrarian-section');
     section.classList.remove('hidden');
 
+    const portfolioTickers = new Set((contrarian.portfolio && contrarian.portfolio.tickers) || []);
+
     // Allocation text
     const p = contrarian.portfolio;
     if (p && p.num_tickers > 0) {
       document.getElementById('contrarian-alloc').textContent =
-        `${p.num_tickers} tickers x ~€${p.per_ticker} = €${p.budget}`;
+        `Top ${p.num_tickers} x ~€${p.per_ticker} = €${p.budget}`;
     }
 
-    // Avg return
-    if (contrarian.avg_return != null) {
+    // Portfolio avg (top N only)
+    const avgVal = contrarian.portfolio_avg != null ? contrarian.portfolio_avg : contrarian.avg_return;
+    if (avgVal != null) {
       const el = document.getElementById('contrarian-avg');
-      el.textContent = fmtPct(contrarian.avg_return);
-      el.className = `font-mono font-bold ${changeClass(contrarian.avg_return)}`;
+      el.textContent = fmtPct(avgVal);
+      el.className = `font-mono font-bold ${changeClass(avgVal)}`;
     }
 
-    // Signals table
+    // Signals table — portfolio picks highlighted
     const tbody = document.getElementById('contrarian-body');
     tbody.innerHTML = '';
     contrarian.signals.forEach(s => {
+      const inPortfolio = portfolioTickers.has(s.ticker);
       const tr = document.createElement('tr');
-      tr.className = 'hover:bg-white/[0.02] transition-colors';
+      tr.className = 'hover:bg-white/[0.02] transition-colors' + (inPortfolio ? '' : ' opacity-50');
       tr.innerHTML = `
         <td class="px-5 py-4">
-          <a href="ticker.html?t=${esc(s.ticker)}" class="font-bold font-mono text-white hover:text-purple-400 transition-colors">${esc(s.ticker)}</a>
+          <a href="ticker.html?t=${esc(s.ticker)}" class="font-bold font-mono ${inPortfolio ? 'text-white hover:text-purple-400' : 'text-gray-500 hover:text-gray-300'} transition-colors">${esc(s.ticker)}</a>
+          ${inPortfolio ? '<span class="ml-1.5 text-[0.6rem] text-purple-400 font-semibold uppercase">portfolio</span>' : ''}
         </td>
         <td class="px-3 py-4 text-right font-mono font-bold">${s.score}</td>
         <td class="px-3 py-4 text-right font-mono text-gray-400 hidden sm:table-cell">${s.down_from_high_pct}%</td>
