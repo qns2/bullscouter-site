@@ -6,12 +6,12 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
   <meta name="theme-color" content="#0a0b0d">
   <title>Bull Scouter - Portfolio Bundle</title>
-  <meta name="description" content="Equal-weight portfolio bundle with market mood awareness. Lifecycle-qualified signals with 60% win rate.">
+  <meta name="description" content="Unified equal-weight portfolio with market mood awareness. Curated by Oracle.">
   <link rel="canonical" href="https://qns2.github.io/bullscouter-site/index2.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=16">
+  <link rel="stylesheet" href="css/style.css?v=17">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -38,6 +38,16 @@
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
+    .path-badge {
+      font-size: 0.6rem;
+      padding: 2px 6px;
+      border-radius: 9999px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .path-badge.path1 { background: rgba(0,255,136,0.12); color: #4ade80; }
+    .path-badge.contrarian { background: rgba(168,85,247,0.12); color: #c084fc; }
     .profile-badge {
       font-size: 0.65rem;
       padding: 2px 8px;
@@ -51,7 +61,6 @@
     .profile-badge.quality_growth { background: rgba(34,197,94,0.15); color: #4ade80; }
     .profile-badge.growth { background: rgba(251,191,36,0.15); color: #fbbf24; }
     .profile-badge.acceleration { background: rgba(251,146,60,0.15); color: #fb923c; }
-    .profile-badge.contrarian { background: rgba(168,85,247,0.15); color: #c084fc; }
     .change-positive { color: #4ade80; }
     .change-negative { color: #f87171; }
     .change-neutral { color: #94a3b8; }
@@ -118,9 +127,9 @@
         Portfolio Bundle
       </h1>
       <p class="mt-2 text-bull-muted text-sm max-w-xl">
-        Equal-weight portfolio of lifecycle-qualified signals. <span id="portfolio-alloc" class="text-white font-semibold"></span>
-        Calibration: <span class="text-bull-accent font-semibold">60% win rate</span>, <span class="text-bull-accent font-semibold">+2.83% avg 5d return</span>.
-        Curated by Oracle (AI analyst) — tickers can be removed but not added.
+        Unified portfolio combining Path 1 (lifecycle signals) and Path 3 (contrarian deep-value).
+        <span id="portfolio-alloc" class="text-white font-semibold"></span>
+        Curated by Oracle — tickers can be removed or reranked, not added.
       </p>
     </div>
     <div class="flex items-center gap-3">
@@ -168,16 +177,16 @@
   </div>
 </div>
 
-<!-- Buy List Table -->
+<!-- Unified Portfolio Table -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
   <div class="glass-card rounded-2xl overflow-hidden">
     <div class="p-5 border-b border-bull-border flex justify-between items-center">
-      <h2 class="font-bold uppercase tracking-wider text-sm">Active Signals</h2>
+      <h2 class="font-bold uppercase tracking-wider text-sm">Active Portfolio</h2>
       <span id="signal-count" class="text-xs text-bull-muted">0 signals</span>
     </div>
 
-    <div id="loading" class="p-12 text-center text-gray-500">Loading buy list...</div>
-    <div id="empty" class="hidden p-12 text-center text-gray-500">No signals in buy window</div>
+    <div id="loading" class="p-12 text-center text-gray-500">Loading portfolio...</div>
+    <div id="empty" class="hidden p-12 text-center text-gray-500">No signals in portfolio</div>
     <div id="error" class="hidden p-12 text-center text-red-400">Failed to load data</div>
 
     <div id="table-container" class="hidden overflow-x-auto">
@@ -185,35 +194,33 @@
         <thead>
           <tr class="border-b border-bull-border text-xs text-gray-500 uppercase tracking-wider">
             <th class="px-5 py-3 text-left">Ticker</th>
-            <th class="px-3 py-3 text-left">Profile</th>
-            <th class="px-3 py-3 text-left hidden sm:table-cell">1st Detected</th>
+            <th class="px-3 py-3 text-left">Path</th>
             <th class="px-3 py-3 text-right">Score</th>
-            <th class="px-3 py-3 text-right hidden sm:table-cell">Confidence</th>
+            <th class="px-3 py-3 text-right hidden sm:table-cell">Detail</th>
             <th class="px-3 py-3 text-right">Entry $</th>
             <th class="px-3 py-3 text-right">Current $</th>
             <th class="px-5 py-3 text-right">Change</th>
           </tr>
         </thead>
-        <tbody id="buy-list-body" class="divide-y divide-gray-800/50"></tbody>
+        <tbody id="portfolio-body" class="divide-y divide-gray-800/50"></tbody>
       </table>
     </div>
   </div>
 </div>
 
-<!-- Stopped Out -->
+<!-- Stopped Out (unified) -->
 <div id="stopped-section" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
   <div class="glass-card rounded-2xl overflow-hidden border-red-900/30">
     <div class="p-5 border-b border-bull-border flex justify-between items-center">
       <h2 class="font-bold uppercase tracking-wider text-sm text-red-400">Stopped Out (-10%)</h2>
       <span id="stopped-count" class="text-xs text-red-400/60">0</span>
     </div>
-    <div id="stopped-container" class="overflow-x-auto">
+    <div class="overflow-x-auto">
       <table class="w-full text-sm">
         <thead>
           <tr class="border-b border-bull-border text-xs text-gray-500 uppercase tracking-wider">
             <th class="px-5 py-3 text-left">Ticker</th>
-            <th class="px-3 py-3 text-left">Profile</th>
-            <th class="px-3 py-3 text-left hidden sm:table-cell">1st Detected</th>
+            <th class="px-3 py-3 text-left">Path</th>
             <th class="px-3 py-3 text-right">Entry $</th>
             <th class="px-3 py-3 text-right">Current $</th>
             <th class="px-5 py-3 text-right">Change</th>
@@ -225,70 +232,12 @@
   </div>
 </div>
 
-<!-- Contrarian Portfolio -->
-<div id="contrarian-section" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
-  <div class="glass-card rounded-2xl overflow-hidden">
-    <div class="p-5 border-b border-bull-border flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-      <div>
-        <h2 class="font-bold uppercase tracking-wider text-sm">Contrarian Portfolio <span class="text-yellow-500/60 text-[0.6rem] ml-1">EXPERIMENTAL</span></h2>
-        <p class="text-xs text-gray-500 mt-1">Deep-value plays: score 60-79, down 40%+ from high. Curated by Oracle via blocklist.</p>
-      </div>
-      <div class="flex items-center gap-4 text-sm">
-        <span id="contrarian-alloc" class="text-xs text-gray-500"></span>
-        <span id="contrarian-avg" class="font-mono font-bold">-</span>
-      </div>
-    </div>
-
-    <div id="contrarian-table" class="overflow-x-auto">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="border-b border-bull-border text-xs text-gray-500 uppercase tracking-wider">
-            <th class="px-5 py-3 text-left">Ticker</th>
-            <th class="px-3 py-3 text-right">Score</th>
-            <th class="px-3 py-3 text-right hidden sm:table-cell">Down%</th>
-            <th class="px-3 py-3 text-center hidden sm:table-cell">Activist</th>
-            <th class="px-3 py-3 text-right">Entry $</th>
-            <th class="px-3 py-3 text-right">Current $</th>
-            <th class="px-5 py-3 text-right">Change</th>
-          </tr>
-        </thead>
-        <tbody id="contrarian-body" class="divide-y divide-gray-800/50"></tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- Contrarian Stopped Out -->
-<div id="contrarian-stopped-section" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
-  <div class="glass-card rounded-2xl overflow-hidden border-red-900/30">
-    <div class="p-5 border-b border-bull-border flex justify-between items-center">
-      <h2 class="font-bold uppercase tracking-wider text-sm text-red-400">Contrarian Stopped Out (-10%)</h2>
-      <span id="contrarian-stopped-count" class="text-xs text-red-400/60">0</span>
-    </div>
-    <div class="overflow-x-auto">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="border-b border-bull-border text-xs text-gray-500 uppercase tracking-wider">
-            <th class="px-5 py-3 text-left">Ticker</th>
-            <th class="px-3 py-3 text-right">Score</th>
-            <th class="px-3 py-3 text-right hidden sm:table-cell">Down%</th>
-            <th class="px-3 py-3 text-right">Entry $</th>
-            <th class="px-3 py-3 text-right">Current $</th>
-            <th class="px-5 py-3 text-right">Change</th>
-          </tr>
-        </thead>
-        <tbody id="contrarian-stopped-body" class="divide-y divide-gray-800/50"></tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
 <!-- MAG7 Benchmark Table -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
   <div class="glass-card rounded-2xl overflow-hidden">
     <div class="p-5 border-b border-bull-border">
       <h2 class="font-bold uppercase tracking-wider text-sm">MAG7 + SPY Benchmark</h2>
-      <p class="text-xs text-gray-500 mt-1">Same-period returns as buy list entries for comparison</p>
+      <p class="text-xs text-gray-500 mt-1">Same-period returns as portfolio entries for comparison</p>
     </div>
 
     <div id="mag7-container" class="hidden overflow-x-auto">
@@ -311,11 +260,12 @@
   <div class="glass-card rounded-2xl p-6">
     <h2 class="font-bold uppercase tracking-wider text-sm mb-4">Methodology</h2>
     <div class="text-xs text-gray-400 space-y-2 max-w-3xl">
-      <p><span class="text-white font-semibold">Entry criteria:</span> First detected in last 10 market days, best score 60-79, confidence > 0.</p>
-      <p><span class="text-white font-semibold">Why this works:</span> Calibration analysis (742 signals, Feb-Mar 2026) shows Day 3-10 from first detection is the optimal entry window. Score 60-79 outperforms 80+ because high first-time scores are "too late" signals.</p>
-      <p><span class="text-white font-semibold">Contrarian portfolio:</span> Beaten-down value plays from Path 3 scanner. Filter: contrarian score 60-79, down 40%+ from 52-week high, price >= $5. Different risk profile — deep value with activist/recovery catalysts.</p>
-      <p><span class="text-white font-semibold">Benchmarks:</span> SPY and MAG7 returns computed over identical holding periods (each buy list entry date to today).</p>
-      <p><span class="text-white font-semibold">Market Mood:</span> 7-component composite gauge (-100 to +100): VIX, SPY momentum, market breadth, options flow, insider buying, news sentiment, yield curve. Risk-off regimes warrant caution; risk-on favors deployment.</p>
+      <p><span class="text-white font-semibold">Unified portfolio:</span> Combines Path 1 (lifecycle signals, score 60-79, first detected in 10-day window) and Path 3 (contrarian deep-value, score 60-79, down 40%+ from high). Equal-weight across all surviving tickers.</p>
+      <p><span class="text-white font-semibold">Path 1:</span> Calibration analysis (742 signals, Feb-Mar 2026) shows Day 3-10 from first detection is the optimal entry window. Score 60-79 outperforms 80+.</p>
+      <p><span class="text-white font-semibold">Path 3 (experimental):</span> Deep-value plays down 40%+ from 52-week high. Hypothesis under forward validation — not yet proven.</p>
+      <p><span class="text-white font-semibold">Oracle curation:</span> AI analyst reviews every ticker. Can blocklist (remove) or rerank via score adjustments. Cannot add tickers — rules-based entry only.</p>
+      <p><span class="text-white font-semibold">Risk controls:</span> $5 minimum price, -10% stop-loss. Market mood gauge (-100 to +100) informs position sizing caution.</p>
+      <p><span class="text-white font-semibold">Benchmarks:</span> SPY and MAG7 returns computed over identical holding periods (Path 1 entry dates).</p>
       <p><span class="text-white font-semibold">Not financial advice.</span> This is an experimental AI-driven system for educational purposes.</p>
     </div>
   </div>
@@ -359,28 +309,40 @@ const BuyList = (() => {
     return '#f87171';
   }
 
-  function renderSignals(signals) {
-    const tbody = document.getElementById('buy-list-body');
+  function renderPortfolio(unified) {
+    const tbody = document.getElementById('portfolio-body');
     tbody.innerHTML = '';
 
-    signals.forEach(s => {
+    unified.forEach(s => {
+      const inP = s.in_portfolio;
       const tr = document.createElement('tr');
-      tr.className = 'hover:bg-white/[0.02] transition-colors';
+      tr.className = 'hover:bg-white/[0.02] transition-colors' + (inP ? '' : ' opacity-40');
+
+      // Detail column: profile+confidence for path1, down%+activist for contrarian
+      let detail = '';
+      if (s.path === 'path1') {
+        if (s.profile) detail = `<span class="profile-badge ${esc(s.profile)}">${esc(s.profile.replace('_', ' '))}</span>`;
+        if (s.confidence != null) {
+          detail += `<span class="ml-2 font-mono text-xs" style="color:${confColor(s.confidence)}">${s.confidence}</span>`;
+        }
+      } else {
+        if (s.down_from_high_pct != null) detail = `<span class="text-gray-400">${s.down_from_high_pct}%</span>`;
+        if (s.has_activist) detail += ' <span class="text-yellow-400 text-xs font-semibold">ACT</span>';
+        if (s.oracle_adj) detail += ` <span class="text-xs ${s.oracle_adj > 0 ? 'text-green-400' : 'text-red-400'}">${s.oracle_adj > 0 ? '+' : ''}${s.oracle_adj}</span>`;
+      }
+
+      const hoverColor = s.path === 'path1' ? 'hover:text-green-400' : 'hover:text-purple-400';
+      const tickerColor = inP ? 'text-white' : 'text-gray-500';
+
       tr.innerHTML = `
         <td class="px-5 py-4">
-          <a href="ticker.html?t=${esc(s.ticker)}" class="font-bold font-mono text-white hover:text-green-400 transition-colors">${esc(s.ticker)}</a>
+          <a href="ticker.html?t=${esc(s.ticker)}" class="font-bold font-mono ${tickerColor} ${hoverColor} transition-colors">${esc(s.ticker)}</a>
         </td>
         <td class="px-3 py-4">
-          <span class="profile-badge ${esc(s.profile)}">${esc(s.profile.replace('_', ' '))}</span>
+          <span class="path-badge ${s.path}">${s.path === 'path1' ? 'Signal' : 'Contrarian'}</span>
         </td>
-        <td class="px-3 py-4 text-gray-400 hidden sm:table-cell">${esc(s.first_detected)}</td>
         <td class="px-3 py-4 text-right font-mono font-bold">${s.score}</td>
-        <td class="px-3 py-4 text-right hidden sm:table-cell">
-          <div class="inline-flex flex-col items-end gap-1">
-            <span class="font-mono text-xs" style="color:${confColor(s.confidence)}">${s.confidence}</span>
-            <div class="conf-bar w-12"><div class="conf-bar-fill" style="width:${s.confidence}%;background:${confColor(s.confidence)}"></div></div>
-          </div>
-        </td>
+        <td class="px-3 py-4 text-right hidden sm:table-cell">${detail}</td>
         <td class="px-3 py-4 text-right font-mono text-gray-400">${fmtPrice(s.entry_price)}</td>
         <td class="px-3 py-4 text-right font-mono">${fmtPrice(s.current_price)}</td>
         <td class="px-5 py-4 text-right font-mono font-bold ${changeClass(s.change_pct)}">${fmtPct(s.change_pct)}</td>
@@ -401,77 +363,13 @@ const BuyList = (() => {
       tr.className = 'hover:bg-white/[0.02] transition-colors opacity-60';
       tr.innerHTML = `
         <td class="px-5 py-3 font-bold font-mono text-red-400">${esc(s.ticker)}</td>
-        <td class="px-3 py-3"><span class="profile-badge ${esc(s.profile)}">${esc(s.profile.replace('_',' '))}</span></td>
-        <td class="px-3 py-3 text-gray-500 hidden sm:table-cell">${esc(s.first_detected)}</td>
+        <td class="px-3 py-3"><span class="path-badge ${s.path}">${s.path === 'path1' ? 'Signal' : 'Contrarian'}</span></td>
         <td class="px-3 py-3 text-right font-mono text-gray-500">${fmtPrice(s.entry_price)}</td>
         <td class="px-3 py-3 text-right font-mono text-gray-500">${fmtPrice(s.current_price)}</td>
         <td class="px-5 py-3 text-right font-mono font-bold text-red-400">${fmtPct(s.change_pct)}</td>
       `;
       tbody.appendChild(tr);
     });
-  }
-
-  function renderContrarian(contrarian) {
-    if (!contrarian || !contrarian.signals || contrarian.signals.length === 0) return;
-    const section = document.getElementById('contrarian-section');
-    section.classList.remove('hidden');
-
-    // Allocation text
-    const p = contrarian.portfolio;
-    if (p && p.num_tickers > 0) {
-      document.getElementById('contrarian-alloc').textContent =
-        `${p.num_tickers} tickers x ~€${p.per_ticker} = €${p.budget}`;
-    }
-
-    // Avg return
-    if (contrarian.avg_return != null) {
-      const el = document.getElementById('contrarian-avg');
-      el.textContent = fmtPct(contrarian.avg_return);
-      el.className = `font-mono font-bold ${changeClass(contrarian.avg_return)}`;
-    }
-
-    // Signals table — all survivors = the portfolio
-    const tbody = document.getElementById('contrarian-body');
-    tbody.innerHTML = '';
-    contrarian.signals.forEach(s => {
-      const tr = document.createElement('tr');
-      tr.className = 'hover:bg-white/[0.02] transition-colors';
-      tr.innerHTML = `
-        <td class="px-5 py-4">
-          <a href="ticker.html?t=${esc(s.ticker)}" class="font-bold font-mono text-white hover:text-purple-400 transition-colors">${esc(s.ticker)}</a>
-        </td>
-        <td class="px-3 py-4 text-right font-mono font-bold">${s.score}</td>
-        <td class="px-3 py-4 text-right font-mono text-gray-400 hidden sm:table-cell">${s.down_from_high_pct}%</td>
-        <td class="px-3 py-4 text-center hidden sm:table-cell">${s.has_activist ? '<span class="text-yellow-400 text-xs font-semibold">YES</span>' : '<span class="text-gray-600">-</span>'}</td>
-        <td class="px-3 py-4 text-right font-mono text-gray-400">${fmtPrice(s.entry_price)}</td>
-        <td class="px-3 py-4 text-right font-mono">${fmtPrice(s.current_price)}</td>
-        <td class="px-5 py-4 text-right font-mono font-bold ${changeClass(s.change_pct)}">${fmtPct(s.change_pct)}</td>
-      `;
-      tbody.appendChild(tr);
-    });
-
-    // Stopped out
-    if (contrarian.stopped_out && contrarian.stopped_out.length > 0) {
-      const stSection = document.getElementById('contrarian-stopped-section');
-      stSection.classList.remove('hidden');
-      document.getElementById('contrarian-stopped-count').textContent =
-        contrarian.stopped_out.length + ' ticker' + (contrarian.stopped_out.length !== 1 ? 's' : '');
-      const stBody = document.getElementById('contrarian-stopped-body');
-      stBody.innerHTML = '';
-      contrarian.stopped_out.forEach(s => {
-        const tr = document.createElement('tr');
-        tr.className = 'hover:bg-white/[0.02] transition-colors opacity-60';
-        tr.innerHTML = `
-          <td class="px-5 py-3 font-bold font-mono text-red-400">${esc(s.ticker)}</td>
-          <td class="px-3 py-3 text-right font-mono text-gray-500">${s.score}</td>
-          <td class="px-3 py-3 text-right font-mono text-gray-500 hidden sm:table-cell">${s.down_from_high_pct}%</td>
-          <td class="px-3 py-3 text-right font-mono text-gray-500">${fmtPrice(s.entry_price)}</td>
-          <td class="px-3 py-3 text-right font-mono text-gray-500">${fmtPrice(s.current_price)}</td>
-          <td class="px-5 py-3 text-right font-mono font-bold text-red-400">${fmtPct(s.change_pct)}</td>
-        `;
-        stBody.appendChild(tr);
-      });
-    }
   }
 
   function renderMood(mood) {
@@ -486,20 +384,18 @@ const BuyList = (() => {
     badge.title = `VIX ${mood.vix} | SPY $${mood.spy_price} | as of ${mood.as_of}`;
   }
 
-  function renderBenchmarks(benchmarks, mood) {
-    // Top bar
-    const setBench = (id, val, isAlpha) => {
+  function renderBenchmarks(benchmarks, mood, portfolio) {
+    const setBench = (id, val) => {
       const el = document.getElementById(id);
       if (val == null) { el.textContent = '-'; return; }
       el.textContent = fmtPct(val);
       el.className = `font-mono font-bold ${changeClass(val)}`;
     };
-    setBench('bench-buy', benchmarks.buy_list_avg);
+    setBench('bench-buy', portfolio ? portfolio.portfolio_avg : benchmarks.buy_list_avg);
     setBench('bench-spy', benchmarks.spy_avg);
     setBench('bench-mag7', benchmarks.mag7_avg);
     setBench('bench-alpha', benchmarks.alpha_vs_spy);
 
-    // SPY price + VIX from mood
     if (mood) {
       if (mood.spy_price) {
         document.getElementById('bench-spy-price').textContent = `($${mood.spy_price.toFixed(0)})`;
@@ -513,11 +409,9 @@ const BuyList = (() => {
 
     // MAG7 table
     const mag7 = benchmarks.mag7_tickers || {};
-    const tickers = ['SPY'].concat(['AAPL','MSFT','GOOGL','AMZN','META','NVDA','TSLA']);
     const tbody = document.getElementById('mag7-body');
     tbody.innerHTML = '';
 
-    // Add SPY row using spy_avg
     const spyTr = document.createElement('tr');
     spyTr.className = 'hover:bg-white/[0.02] transition-colors';
     spyTr.innerHTML = `
@@ -544,33 +438,37 @@ const BuyList = (() => {
   }
 
   function copyData(data) {
+    const unified = data.unified || [];
+    const stopped = data.stopped_out || [];
     const lines = ['PORTFOLIO BUNDLE — ' + data.date, ''];
     if (data.market_mood) {
       const m = data.market_mood;
       lines.push(`Market Mood: ${m.regime.replace(/_/g,' ').toUpperCase()} (${m.composite > 0 ? '+' : ''}${m.composite}) | VIX ${m.vix} | SPY $${m.spy_price}`);
       lines.push('');
     }
-    lines.push('Ticker | Profile | 1st Det | Score | Conf | Entry | Current | Change');
-    lines.push('-------|---------|---------|-------|------|-------|---------|-------');
-    data.signals.forEach(s => {
-      lines.push(`${s.ticker} | ${s.profile} | ${s.first_detected} | ${s.score} | ${s.confidence} | ${fmtPrice(s.entry_price)} | ${fmtPrice(s.current_price)} | ${fmtPct(s.change_pct)}`);
-    });
-    const b = data.benchmarks;
-    lines.push('');
-    lines.push(`Buy List avg: ${fmtPct(b.buy_list_avg)} | SPY avg: ${fmtPct(b.spy_avg)} | MAG7 avg: ${fmtPct(b.mag7_avg)} | Alpha vs SPY: ${fmtPct(b.alpha_vs_spy)}`);
-
-    if (data.contrarian && data.contrarian.signals && data.contrarian.signals.length > 0) {
+    if (data.portfolio) {
+      lines.push(`Portfolio: Top ${data.portfolio.num_tickers} of ${unified.length} | ${data.portfolio.num_tickers} x EUR${data.portfolio.per_ticker} = EUR${data.portfolio.budget}`);
       lines.push('');
-      lines.push('CONTRARIAN PORTFOLIO');
-      lines.push('Ticker | Score | Down% | Activist | Entry | Current | Change');
-      lines.push('-------|-------|-------|----------|-------|---------|-------');
-      data.contrarian.signals.forEach(s => {
-        lines.push(`${s.ticker} | ${s.score} | ${s.down_from_high_pct}% | ${s.has_activist ? 'Yes' : '-'} | ${fmtPrice(s.entry_price)} | ${fmtPrice(s.current_price)} | ${fmtPct(s.change_pct)}`);
-      });
-      if (data.contrarian.avg_return != null) {
-        lines.push(`Contrarian avg: ${fmtPct(data.contrarian.avg_return)}`);
-      }
     }
+    lines.push('Ticker | Path | Score | Portfolio | Entry | Current | Change');
+    lines.push('-------|------|-------|-----------|-------|---------|-------');
+    unified.forEach(s => {
+      const path = s.path === 'path1' ? 'Signal' : 'Contrarian';
+      const pf = s.in_portfolio ? 'YES' : '-';
+      lines.push(`${s.ticker} | ${path} | ${s.score} | ${pf} | ${fmtPrice(s.entry_price)} | ${fmtPrice(s.current_price)} | ${fmtPct(s.change_pct)}`);
+    });
+    if (stopped.length > 0) {
+      lines.push('');
+      lines.push('STOPPED OUT');
+      stopped.forEach(s => {
+        const path = s.path || (s.profile ? 'path1' : 'contrarian');
+        lines.push(`${s.ticker} | ${path === 'path1' ? 'Signal' : 'Contrarian'} | ${fmtPrice(s.entry_price)} | ${fmtPrice(s.current_price)} | ${fmtPct(s.change_pct)}`);
+      });
+    }
+    const b = data.benchmarks;
+    const p = data.portfolio;
+    lines.push('');
+    lines.push(`Portfolio avg (top ${p ? p.num_tickers : '?'}): ${fmtPct(p ? p.portfolio_avg : null)} | SPY avg: ${fmtPct(b.spy_avg)} | MAG7 avg: ${fmtPct(b.mag7_avg)}`);
 
     navigator.clipboard.writeText(lines.join('\n')).then(() => {
       const btn = document.getElementById('btn-copy');
@@ -587,28 +485,31 @@ const BuyList = (() => {
 
       document.getElementById('loading').classList.add('hidden');
 
-      if (!data.signals || data.signals.length === 0) {
+      const unified = data.unified || [];
+      const stopped = data.stopped_out || [];
+
+      if (unified.length === 0) {
         document.getElementById('empty').classList.remove('hidden');
         return;
       }
 
       document.getElementById('table-container').classList.remove('hidden');
-      document.getElementById('signal-count').textContent = data.signals.length + ' signal' + (data.signals.length !== 1 ? 's' : '');
+      document.getElementById('signal-count').textContent = unified.length + ' ticker' + (unified.length !== 1 ? 's' : '');
 
       if (data.generated_at) {
         document.getElementById('update-time').textContent = 'Updated: ' + new Date(data.generated_at).toLocaleString();
       }
 
-      renderSignals(data.signals);
-      if (data.stopped_out) renderStopped(data.stopped_out);
-      if (data.contrarian) renderContrarian(data.contrarian);
+      renderPortfolio(unified);
+      renderStopped(stopped);
       if (data.market_mood) renderMood(data.market_mood);
-      if (data.benchmarks) renderBenchmarks(data.benchmarks, data.market_mood);
+      if (data.benchmarks) renderBenchmarks(data.benchmarks, data.market_mood, data.portfolio);
 
       // Portfolio allocation text
-      if (data.portfolio && data.portfolio.num_tickers > 0) {
+      const p = data.portfolio;
+      if (p && p.num_tickers > 0) {
         document.getElementById('portfolio-alloc').textContent =
-          `${data.portfolio.num_tickers} tickers x ~€${data.portfolio.per_ticker} = €${data.portfolio.budget}.`;
+          `Top ${p.num_tickers} of ${unified.length} x ~\u20AC${p.per_ticker} = \u20AC${p.budget}.`;
       }
 
       document.getElementById('btn-copy').addEventListener('click', () => copyData(data));
@@ -616,7 +517,7 @@ const BuyList = (() => {
     } catch (e) {
       document.getElementById('loading').classList.add('hidden');
       document.getElementById('error').classList.remove('hidden');
-      console.error('Buy list load error:', e);
+      console.error('Portfolio load error:', e);
     }
   }
 
