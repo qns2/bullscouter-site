@@ -71,7 +71,7 @@ const Picks = (() => {
     const opps = dashboard.opportunities
       .filter(o => o.recommendation === 'BUY' || o.recommendation === 'WATCHLIST')
       .sort((a, b) => (b.score || 0) - (a.score || 0))
-      .slice(0, 3);
+      .slice(0, 5);
 
     if (!opps.length) {
       container.innerHTML = '<p class="text-gray-500 text-sm py-4">No signals today</p>';
@@ -110,7 +110,7 @@ const Picks = (() => {
     const all = [
       ...(contrarian.strong_candidates || []),
       ...(contrarian.candidates || []),
-    ].slice(0, 3);
+    ].slice(0, 5);
 
     if (!all.length) {
       container.innerHTML = '<p class="text-gray-500 text-sm py-4">No candidates found</p>';
@@ -156,7 +156,7 @@ const Picks = (() => {
         const sb = (b.framework || {}).score || 0;
         return sb - sa;
       })
-      .slice(0, 3);
+      .slice(0, 5);
 
     if (!buys.length) {
       container.innerHTML = '<p class="text-gray-500 text-sm py-4">No BUY picks</p>';
@@ -205,7 +205,7 @@ const Picks = (() => {
       return;
     }
 
-    const top = warrens.picks.slice(0, 3);
+    const top = warrens.picks.slice(0, 5);
     container.innerHTML = top.map(p => {
       const isStrong = p.recommendation === 'STRONG_QUALITY';
       const recLabel = isStrong ? 'STRONG' : 'QUALITY';
@@ -242,7 +242,7 @@ const Picks = (() => {
       return;
     }
 
-    const top = catalysts.heatmap.slice(0, 3);
+    const top = catalysts.heatmap.slice(0, 5);
     container.innerHTML = top.map(h => {
       const scoreClass = h.heatmap_score >= 30 ? 'text-green-400' : h.heatmap_score >= 15 ? 'text-amber-400' : 'text-gray-400';
       const topSignals = (h.signals || []).slice(0, 2).map(s => {
@@ -274,7 +274,7 @@ const Picks = (() => {
       return;
     }
 
-    const alerts = (watchlist.alerts || []).slice(0, 3);
+    const alerts = (watchlist.alerts || []).slice(0, 5);
 
     if (!alerts.length) {
       container.innerHTML = '<p class="text-gray-500 text-sm py-4">No recent alerts</p>';
@@ -387,7 +387,7 @@ const Picks = (() => {
 
     // Dashboard BUY/WATCHLIST
     if (data.dashboard?.opportunities) {
-      const buys = data.dashboard.opportunities.filter(o => o.recommendation === 'BUY' || o.recommendation === 'WATCHLIST').slice(0, 3);
+      const buys = data.dashboard.opportunities.filter(o => o.recommendation === 'BUY' || o.recommendation === 'WATCHLIST').slice(0, 5);
       if (buys.length) {
         lines.push('## Dashboard');
         for (const o of buys) lines.push(`${o.ticker} (${o.recommendation}) Score:${o.score} Conf:${o.confidence || '-'} ${o.profile || ''}`);
@@ -396,7 +396,7 @@ const Picks = (() => {
     }
     // Contrarian
     if (data.contrarian) {
-      const all = [...(data.contrarian.strong_candidates || []), ...(data.contrarian.candidates || [])].slice(0, 3);
+      const all = [...(data.contrarian.strong_candidates || []), ...(data.contrarian.candidates || [])].slice(0, 5);
       if (all.length) {
         lines.push('## Contrarian');
         for (const c of all) lines.push(`${c.ticker} Score:${c.score} Down:${c.down_from_high_pct || '-'}%`);
@@ -405,7 +405,7 @@ const Picks = (() => {
     }
     // Rick's Picks
     if (data.deepdive) {
-      const picks = [...(data.deepdive.value_picks || []), ...(data.deepdive.growth_picks || [])].filter(p => (p.opus_recommendation || '').toUpperCase() === 'BUY').slice(0, 3);
+      const picks = [...(data.deepdive.value_picks || []), ...(data.deepdive.growth_picks || [])].filter(p => (p.opus_recommendation || '').toUpperCase() === 'BUY').slice(0, 5);
       if (picks.length) {
         lines.push("## Rick's Picks");
         for (const p of picks) lines.push(`${p.ticker} (${p.opus_recommendation}) ${p.framework?.score || '?'}/6`);
@@ -415,7 +415,7 @@ const Picks = (() => {
     // Warren's Picks
     if (data.warrens?.picks) {
       lines.push("## Warren's Picks");
-      for (const p of data.warrens.picks.slice(0, 3)) lines.push(`${p.ticker} (${p.recommendation}) Score:${p.score}/100`);
+      for (const p of data.warrens.picks.slice(0, 5)) lines.push(`${p.ticker} (${p.recommendation}) Score:${p.score}/100`);
       lines.push('');
     }
 
