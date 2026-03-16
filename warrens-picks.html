@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Bull Scouter - Warren's Picks</title>
+  <meta name="description" content="Buffett-style quality screen: 7-component scorer identifying high-quality businesses with durable competitive advantages.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/warrens-picks.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/warrens-picks.html">
+  <meta property="og:title" content="Bull Scouter - Warren's Picks">
+  <meta property="og:description" content="Buffett-style quality screen: 7-component scorer identifying high-quality businesses with durable competitive advantages.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bull Scouter - Warren's Picks">
+  <meta name="twitter:description" content="Buffett-style quality screen: 7-component scorer identifying high-quality businesses with durable competitive advantages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            bull: {
+              dark: '#0a0b0d',
+              card: '#14161a',
+              accent: '#00ff88',
+              blue: '#3b82f6',
+              muted: '#94a3b8',
+              border: 'rgba(255,255,255,0.1)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+    }
+    .wp-bar-bg { background: rgba(255,255,255,0.06); border-radius: 0.25rem; height: 0.5rem; }
+    .wp-bar-fill { height: 100%; border-radius: 0.25rem; transition: width 0.4s ease-out; }
+  </style>
+</head>
+<body class="min-h-screen font-sans">
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
+          <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
+        </div>
+        <button id="burger-btn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="sm:hidden p-2 text-bull-muted hover:text-white transition-colors" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md">
+      <div class="px-4 py-3 space-y-2 text-sm font-medium">
+        <a class="block py-2 text-bull-muted" href="index.html">Home</a>
+        <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
+        <a class="block py-2 text-bull-muted" href="history.html">History</a>
+        <a class="block py-2 text-bull-muted" href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="max-w-7xl mx-auto px-4 pt-8 sm:pt-12 pb-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Warren's Picks</h1>
+        <p class="text-sm text-bull-muted mt-1">Buffett-style quality screen &mdash; <span id="wp-date" class="text-white font-mono">-</span></p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="btn-copy-wp" class="flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10 transition-colors" title="Copy picks data for Claude">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span class="copy-label hidden sm:inline">Copy for Claude</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats bar -->
+  <div class="max-w-7xl mx-auto px-4 mb-8">
+    <div class="border-y border-bull-border py-4 flex flex-wrap gap-4 sm:gap-6 text-sm font-medium">
+      <span>Total: <span class="text-white font-bold" id="wp-stat-total">-</span></span>
+      <span>Strong Quality: <span class="text-green-400 font-bold" id="wp-stat-strong">-</span></span>
+      <span>Quality: <span class="text-amber-400 font-bold" id="wp-stat-quality">-</span></span>
+    </div>
+  </div>
+
+  <!-- Methodology (collapsible) -->
+  <div class="max-w-7xl mx-auto px-4 mb-8">
+    <details class="glass-card p-4">
+      <summary class="cursor-pointer text-sm font-bold uppercase tracking-wider text-bull-muted hover:text-white transition-colors">
+        Methodology: How Warren's Picks Work
+      </summary>
+      <div class="mt-4 text-sm text-gray-400 space-y-3">
+        <p>Warren's Picks uses a <span class="text-white">7-component Buffett-style quality scoring system</span> that screens ~900 S&P 500 + S&P 400 companies for characteristics of durable, high-quality businesses.</p>
+        <div class="grid sm:grid-cols-2 gap-3 mt-3">
+          <div class="bg-white/[0.03] rounded-lg p-3">
+            <p class="text-white font-semibold mb-1">ROE Quality (20 pts)</p>
+            <p class="text-xs">Sustained high return on equity &mdash; Buffett's primary quality signal. Rewards ROE > 15% with consistency.</p>
+          </div>
+          <div class="bg-white/[0.03] rounded-lg p-3">
+            <p class="text-white font-semibold mb-1">Debt Safety (15 pts)</p>
+            <p class="text-xs">Low debt-to-equity, strong interest coverage. Conservative balance sheet management.</p>
+          </div>
+          <div class="bg-white/[0.03] rounded-lg p-3">
+            <p class="text-white font-semibold mb-1">Margin Strength (15 pts)</p>
+            <p class="text-xs">Operating + gross margin quality. Wide margins indicate pricing power and competitive moats.</p>
+          </div>
+          <div class="bg-white/[0.03] rounded-lg p-3">
+            <p class="text-white font-semibold mb-1">FCF Machine (15 pts)</p>
+            <p class="text-xs">Strong free cash flow yield and FCF-to-net-income conversion. Cash generation is king.</p>
+          </div>
+          <div class="bg-white/[0.03] rounded-lg p-3">
+            <p class="text-white font-semibold mb-1">Earnings Consistency (15 pts)</p>
+            <p class="text-xs">Stable, growing earnings trajectory. Penalizes volatile or declining earnings.</p>
+          </div>
+          <div class="bg-white/[0.03] rounded-lg p-3">
+            <p class="text-white font-semibold mb-1">Moat Proxy (10 pts)</p>
+            <p class="text-xs">Institutional ownership + analyst consensus as proxy for competitive advantages. Smart money signals.</p>
+          </div>
+          <div class="bg-white/[0.03] rounded-lg p-3">
+            <p class="text-white font-semibold mb-1">Shareholder Return (10 pts)</p>
+            <p class="text-xs">Dividends + buybacks. Companies that return capital show management discipline.</p>
+          </div>
+        </div>
+        <p class="text-xs text-gray-500 mt-2">Recommendations: <span class="text-green-400">STRONG_QUALITY</span> (65+/100) | <span class="text-amber-400">QUALITY</span> (45+/100). Scores are based on quarterly fundamentals and refresh daily. This is an experimental A/B test against the contrarian approach.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Main content -->
+  <main class="max-w-7xl mx-auto px-4 pb-16">
+    <!-- Cards grid -->
+    <div id="wp-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+    <!-- Loading -->
+    <div id="wp-loading" class="text-center py-20">
+      <div class="loading-pulse mx-auto mb-3"></div>
+      <p class="text-bull-muted">Loading Warren's Picks...</p>
+    </div>
+
+    <!-- Empty -->
+    <div id="wp-empty" class="hidden text-center py-20">
+      <p class="text-bull-muted text-lg">No quality picks yet</p>
+      <p class="text-white/30 text-sm mt-1">The Buffett scanner runs daily &mdash; data will appear after the next scan.</p>
+    </div>
+
+    <!-- Error -->
+    <div id="wp-error" class="hidden text-center py-20">
+      <p class="text-red-400 text-lg">Failed to load data</p>
+      <p class="text-white/30 text-sm mt-1" id="wp-error-msg"></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-bull-border py-12 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="w-6 h-6 bg-bull-muted/20 rounded flex items-center justify-center">
+          <svg class="w-4 h-4 text-bull-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <span class="text-sm font-bold tracking-tight text-bull-muted">Bull Scouter</span>
+      </div>
+      <p class="text-xs text-bull-muted max-w-lg mx-auto">
+        Autonomous AI agents for stock catalyst detection. Not financial advice. Data refreshed daily.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/warrens-picks.js?v=1"></script>
+</body>
+</html>

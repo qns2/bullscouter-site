@@ -61,14 +61,15 @@ const Picks = (() => {
   }
 
   async function loadAllData() {
-    const [dashboard, contrarian, deepdive, watchlist, catalysts] = await Promise.all([
+    const [dashboard, contrarian, deepdive, watchlist, catalysts, warrens] = await Promise.all([
       fetchJSON('latest.json').catch(() => null),
       fetchJSON('contrarian.json').catch(() => null),
       fetchJSON('deep-dive.json').catch(() => null),
       fetchJSON('watchlist.json').catch(() => null),
       fetchJSON('catalysts.json').catch(() => null),
+      fetchJSON('warrens-picks.json').catch(() => null),
     ]);
-    return { dashboard, contrarian, deepdive, watchlist, catalysts };
+    return { dashboard, contrarian, deepdive, watchlist, catalysts, warrens };
   }
 
   // ── Top picks computation ──
@@ -476,6 +477,43 @@ const Picks = (() => {
     earnings_beat: '#4ade80', analyst_downgrade: '#fca5a5', dilution: '#fca5a5',
   };
 
+  function renderWarrensSummary(warrens) {
+    const container = document.getElementById('summary-warrens');
+    if (!container) return;
+
+    if (!warrens || !warrens.picks || !warrens.picks.length) {
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No data yet</p>';
+      return;
+    }
+
+    const top = warrens.picks.slice(0, 5);
+    container.innerHTML = top.map(p => {
+      const isStrong = p.recommendation === 'STRONG_QUALITY';
+      const recLabel = isStrong ? 'STRONG' : 'QUALITY';
+      const recCls = isStrong ? 'text-green-400' : 'text-amber-400';
+      const mcap = fmtMcap(p.market_cap);
+      return `<div class="flex items-center justify-between py-3.5 text-sm">
+        <div class="flex items-center gap-2">
+          <a href="ticker.html?t=${esc(p.ticker)}" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(p.ticker)}</a>
+          <span class="${recCls} text-xs font-semibold">${recLabel}</span>
+          ${p.sector ? `<span class="text-xs text-gray-500">${esc(p.sector)}</span>` : ''}
+        </div>
+        <div class="flex items-center gap-3 text-xs text-gray-400">
+          ${mcap ? `<span>${mcap}</span>` : ''}
+          <span class="font-bold font-mono">${p.score}</span>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  function fmtMcap(val) {
+    if (!val) return '';
+    if (val >= 1e12) return '$' + (val / 1e12).toFixed(1) + 'T';
+    if (val >= 1e9) return '$' + (val / 1e9).toFixed(1) + 'B';
+    if (val >= 1e6) return '$' + (val / 1e6).toFixed(0) + 'M';
+    return '$' + val.toLocaleString();
+  }
+
   function renderCatalystSummary(catalysts) {
     const container = document.getElementById('summary-catalysts');
     if (!container) return;
@@ -628,6 +666,7 @@ const Picks = (() => {
       renderDashboardSummary(data.dashboard);
       renderContrarianSummary(data.contrarian);
       renderDeepDiveSummary(data.deepdive);
+      renderWarrensSummary(data.warrens);
       renderWatchlistSummary(data.watchlist);
       renderCatalystSummary(data.catalysts);
 
