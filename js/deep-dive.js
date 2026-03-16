@@ -491,7 +491,7 @@ const DeepDive = (() => {
       if (a.analyst_take) parts.push(`\n  Take: ${a.analyst_take}`);
       return parts.join(' | ');
     });
-    const header = `Opus Deep Dive — ${pageData.scan_date || 'today'}\n` +
+    const header = `Rick's Picks — ${pageData.scan_date || 'today'}\n` +
       `${buys.length} BUY + ${watches.length} WATCHLIST\n\n`;
     navigator.clipboard.writeText(header + lines.join('\n')).then(() => {
       const label = copyBtn.querySelector('.copy-label');
