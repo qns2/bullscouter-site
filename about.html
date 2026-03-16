@@ -195,10 +195,13 @@
         Each source contributes tickers and catalyst events that feed into the scoring engine.
       </p>
       <p class="leading-relaxed">
-        On top of that, two real-time monitors run during market hours. The <strong>price monitor</strong> polls every 15 minutes
+        On top of that, three monitors run during and around market hours. The <strong>price monitor</strong> polls every 15 minutes
         for dip entries and cross-path opportunities. The <strong>options flow monitor</strong> captures put/call ratios, IV skew,
         and unusual volume twice daily &mdash; institutional positioning that's invisible to price and news scanners.
         Insider buying is tracked via SEC Form 4 filings, with Telegram alerts for purchases above $500K.
+        A <strong>market regime gauge</strong> combines 7 indicators (VIX, SPY momentum, breadth, options flow, insider
+        activity, news sentiment, yield curve) into a single -100/+100 composite that tells the system whether we're
+        in risk-on or risk-off &mdash; the analyst adjusts its aggressiveness accordingly.
       </p>
     </section>
 
@@ -211,6 +214,9 @@
         that move 50%+ overnight. <strong>Tier 2</strong> catches fallen angels and reacceleration plays.
         <strong>Track B</strong> scores large-cap momentum breakouts. <strong>Fundamental quality</strong> frameworks evaluate
         value (8 components) and growth (7 components) separately.
+        And the <strong>Buffett quality screen</strong> scores ~900 S&amp;P stocks across 7 components &mdash; ROE quality,
+        debt safety, margin strength, FCF generation, earnings consistency, moat proxy, and shareholder return &mdash;
+        surfacing the kind of durable, high-quality businesses Warren Buffett would buy.
       </p>
       <p class="leading-relaxed">
         A stock needs more than a high score to earn a BUY. Three independent gates must pass: the composite score (&ge;75),
@@ -365,6 +371,10 @@
         <div class="glass-card rounded-xl p-4">
           <span class="profile-badge" style="background:rgba(168,85,247,0.15);color:#c4b5fd">Value / Growth Q</span>
           <p class="text-white/60 mt-2"><b class="text-white/80">Tier 5/6</b> &mdash; Fundamental quality from the financial screener. <b>Value</b>: profitable + strong FCF + beaten down. <b>Growth Quality</b>: 30%+ revenue growth + 60%+ gross margins + Rule of 40.</p>
+        </div>
+        <div class="glass-card rounded-xl p-4">
+          <span class="profile-badge" style="background:rgba(245,158,11,0.15);color:#fbbf24">Buffett</span>
+          <p class="text-white/60 mt-2"><b class="text-white/80">Tier 7</b> &mdash; Buffett-style quality screen. 7 components (ROE, debt, margins, FCF, earnings consistency, moat, shareholder return) across ~900 S&amp;P stocks. Shows up as <a href="warrens-picks.html" class="text-amber-400 hover:text-amber-300">Warren's Picks</a>.</p>
         </div>
       </div>
     </section>
