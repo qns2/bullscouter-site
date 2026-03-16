@@ -184,6 +184,28 @@
 
 <!-- Main Content -->
 <main class="max-w-7xl mx-auto px-4">
+  <!-- Market Regime -->
+  <div id="regime-bar" class="hidden mb-8">
+    <a href="regime.html" class="glass-card rounded-xl p-4 flex flex-wrap items-center justify-between gap-3 hover:border-white/20 transition-colors block" style="text-decoration:none">
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-bull-muted">Market Regime</span>
+          <span id="regime-label" class="text-sm font-bold font-mono uppercase"></span>
+        </div>
+        <div class="flex items-center gap-1">
+          <div class="w-24 h-2 rounded-full bg-white/5 overflow-hidden">
+            <div id="regime-gauge" class="h-full rounded-full transition-all"></div>
+          </div>
+          <span id="regime-score" class="text-xs font-mono text-bull-muted ml-1"></span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-mono">
+        <span class="text-bull-muted">VIX <span id="regime-vix" class="text-white font-bold"></span></span>
+        <span class="text-bull-muted">SPY <span id="regime-spy" class="text-white font-bold"></span></span>
+      </div>
+    </a>
+  </div>
+
   <!-- Path Summaries -->
   <section class="pb-12 sm:pb-20">
     <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
@@ -263,5 +285,5 @@
   </div>
 </footer>
 
-<script src="js/picks.js?v=8"></script>
+<script src="js/picks.js?v=9"></script>
 </body>

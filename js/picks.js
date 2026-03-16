@@ -26,15 +26,16 @@ const Picks = (() => {
   }
 
   async function loadAllData() {
-    const [dashboard, contrarian, deepdive, watchlist, catalysts, warrens] = await Promise.all([
+    const [dashboard, contrarian, deepdive, watchlist, catalysts, warrens, regime] = await Promise.all([
       fetchJSON('latest.json').catch(() => null),
       fetchJSON('contrarian.json').catch(() => null),
       fetchJSON('deep-dive.json').catch(() => null),
       fetchJSON('watchlist.json').catch(() => null),
       fetchJSON('catalysts.json').catch(() => null),
       fetchJSON('warrens-picks.json').catch(() => null),
+      fetchJSON('regime.json').catch(() => null),
     ]);
-    return { dashboard, contrarian, deepdive, watchlist, catalysts, warrens };
+    return { dashboard, contrarian, deepdive, watchlist, catalysts, warrens, regime };
   }
 
   // ── Rendering helpers ──
@@ -55,6 +56,51 @@ const Picks = (() => {
   function setText(id, val) {
     const el = document.getElementById(id);
     if (el) el.textContent = val;
+  }
+
+  // ── Regime bar ──
+
+  function renderRegimeBar(regime) {
+    const bar = document.getElementById('regime-bar');
+    if (!bar || !regime || !regime.current) return;
+
+    const c = regime.current;
+    const score = c.score || 0;
+    const regimeName = (c.regime || 'neutral').replace(/_/g, ' ');
+
+    // Color by regime
+    const colors = {
+      'strong risk off': '#ef4444',
+      'risk off': '#f97316',
+      'neutral': '#94a3b8',
+      'risk on': '#22c55e',
+      'strong risk on': '#00ff88',
+    };
+    const color = colors[regimeName] || '#94a3b8';
+
+    // Label
+    const label = document.getElementById('regime-label');
+    if (label) {
+      label.textContent = regimeName;
+      label.style.color = color;
+    }
+
+    // Gauge: -100 to +100 mapped to 0-100% width
+    const gauge = document.getElementById('regime-gauge');
+    if (gauge) {
+      const pct = Math.max(0, Math.min(100, (score + 100) / 2));
+      gauge.style.width = pct + '%';
+      gauge.style.background = color;
+    }
+
+    // Score
+    setText('regime-score', (score >= 0 ? '+' : '') + score.toFixed(0));
+
+    // VIX & SPY
+    if (c.vix) setText('regime-vix', c.vix.toFixed(1));
+    if (c.spy) setText('regime-spy', '$' + c.spy.toFixed(2));
+
+    bar.classList.remove('hidden');
   }
 
   // ── Summary renderers ──
@@ -366,6 +412,7 @@ const Picks = (() => {
       updateStats(data);
 
       // Render summaries
+      renderRegimeBar(data.regime);
       renderDashboardSummary(data.dashboard);
       renderContrarianSummary(data.contrarian);
       renderDeepDiveSummary(data.deepdive);
