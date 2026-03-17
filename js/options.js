@@ -342,7 +342,7 @@ const OptionsFlow = (() => {
     else hide('of-empty');
   }
 
-  // ── Copy for Claude ──
+  // ── Copy ──
 
   function copyForClaude() {
     const tickers = allTickers
@@ -403,7 +403,7 @@ const OptionsFlow = (() => {
       if (label) label.textContent = 'Copied!';
       setTimeout(() => {
         btn?.classList.remove('copied');
-        if (label) label.textContent = 'Copy for Claude';
+        if (label) label.textContent = 'Copy';
       }, 2000);
     });
   }
