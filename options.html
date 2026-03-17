@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
   <meta name="theme-color" content="#0a0b0d">
-  <title>Bull Scouter - Warren's Picks</title>
-  <meta name="description" content="Buffett-style quality screen: 7-component scorer identifying high-quality businesses with durable competitive advantages.">
-  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/warrens-picks.html">
+  <title>Bull Scouter - Options Flow</title>
+  <meta name="description" content="Real-time options flow analysis: P/C ratios, IV skew, unusual volume, and aggregate flow scores for institutional positioning signals.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/options.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/warrens-picks.html">
-  <meta property="og:title" content="Bull Scouter - Warren's Picks">
-  <meta property="og:description" content="Buffett-style quality screen: 7-component scorer identifying high-quality businesses with durable competitive advantages.">
+  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/options.html">
+  <meta property="og:title" content="Bull Scouter - Options Flow">
+  <meta property="og:description" content="Real-time options flow analysis: P/C ratios, IV skew, unusual volume, and aggregate flow scores for institutional positioning signals.">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Bull Scouter - Warren's Picks">
-  <meta name="twitter:description" content="Buffett-style quality screen: 7-component scorer identifying high-quality businesses with durable competitive advantages.">
+  <meta name="twitter:title" content="Bull Scouter - Options Flow">
+  <meta name="twitter:description" content="Real-time options flow analysis: P/C ratios, IV skew, unusual volume, and aggregate flow scores.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -49,8 +49,13 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 0.75rem;
     }
-    .wp-bar-bg { background: rgba(255,255,255,0.06); border-radius: 0.25rem; height: 0.5rem; }
-    .wp-bar-fill { height: 100%; border-radius: 0.25rem; transition: width 0.4s ease-out; }
+    .flow-bar-bg { background: rgba(255,255,255,0.06); border-radius: 0.25rem; height: 0.5rem; position: relative; }
+    .flow-bar-fill { height: 100%; border-radius: 0.25rem; transition: width 0.4s ease-out; }
+    .flow-gauge { position: relative; height: 0.5rem; background: rgba(255,255,255,0.06); border-radius: 0.25rem; overflow: visible; }
+    .flow-gauge-center { position: absolute; left: 50%; top: -2px; width: 1px; height: calc(100% + 4px); background: rgba(255,255,255,0.2); }
+    .flow-gauge-fill { position: absolute; height: 100%; border-radius: 0.25rem; transition: all 0.4s ease-out; }
+    .flow-gauge-fill.bullish { right: 50%; }
+    .flow-gauge-fill.bearish { left: 50%; }
   </style>
 </head>
 <body class="min-h-screen font-sans">
@@ -67,7 +72,7 @@
         <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
           <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
-          <a class="text-bull-muted hover:text-white transition-colors" href="options.html">Options</a>
+          <a class="text-white transition-colors" href="options.html">Options</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
         </div>
@@ -80,7 +85,7 @@
       <div class="px-4 py-3 space-y-2 text-sm font-medium">
         <a class="block py-2 text-bull-muted" href="index.html">Home</a>
         <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
-        <a class="block py-2 text-bull-muted" href="options.html">Options</a>
+        <a class="block py-2 text-white" href="options.html">Options</a>
         <a class="block py-2 text-bull-muted" href="history.html">History</a>
         <a class="block py-2 text-bull-muted" href="about.html">About</a>
       </div>
@@ -91,11 +96,11 @@
   <header class="max-w-7xl mx-auto px-4 pt-8 sm:pt-12 pb-6">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Warren's Picks</h1>
-        <p class="text-sm text-bull-muted mt-1">Buffett-style quality screen &mdash; <span id="wp-date" class="text-white font-mono">-</span></p>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Options Flow</h1>
+        <p class="text-sm text-bull-muted mt-1">Institutional positioning signals &mdash; <span id="of-date" class="text-white font-mono">-</span></p>
       </div>
       <div class="flex items-center gap-3">
-        <button id="btn-copy-wp" class="flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10 transition-colors" title="Copy picks data for Claude">
+        <button id="btn-copy-of" class="flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10 transition-colors" title="Copy options flow data for Claude">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
           <span class="copy-label hidden sm:inline">Copy for Claude</span>
         </button>
@@ -106,76 +111,75 @@
   <!-- Stats bar -->
   <div class="max-w-7xl mx-auto px-4 mb-8">
     <div class="border-y border-bull-border py-4 flex flex-wrap gap-4 sm:gap-6 text-sm font-medium">
-      <span>Total: <span class="text-white font-bold" id="wp-stat-total">-</span></span>
-      <span>Strong Quality: <span class="text-green-400 font-bold" id="wp-stat-strong">-</span></span>
-      <span>Quality: <span class="text-amber-400 font-bold" id="wp-stat-quality">-</span></span>
+      <span>Tickers: <span class="text-white font-bold" id="of-stat-total">-</span></span>
+      <span>Bullish: <span class="text-green-400 font-bold" id="of-stat-bullish">-</span></span>
+      <span>Bearish: <span class="text-red-400 font-bold" id="of-stat-bearish">-</span></span>
+      <span>Neutral: <span class="text-gray-400 font-bold" id="of-stat-neutral">-</span></span>
     </div>
   </div>
 
-  <!-- Methodology (collapsible) -->
+  <!-- Methodology -->
   <div class="max-w-7xl mx-auto px-4 mb-8">
     <details class="glass-card p-4">
       <summary class="cursor-pointer text-sm font-bold uppercase tracking-wider text-bull-muted hover:text-white transition-colors">
-        Methodology: How Warren's Picks Work
+        How Options Flow Works
       </summary>
       <div class="mt-4 text-sm text-gray-400 space-y-3">
-        <p>Warren's Picks uses a <span class="text-white">7-component Buffett-style quality scoring system</span> that screens ~900 S&P 500 + S&P 400 companies for characteristics of durable, high-quality businesses.</p>
-        <div class="grid sm:grid-cols-2 gap-3 mt-3">
+        <p>Options flow measures <span class="text-white">institutional money positioning</span> &mdash; what the smart money is doing with real capital, not what analysts are saying.</p>
+        <p>Each ticker gets a <span class="text-white">flow score from -15 to +15</span> based on 5 signal components:</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-3">
           <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">ROE Quality (20 pts)</p>
-            <p class="text-xs">Sustained high return on equity &mdash; Buffett's primary quality signal. Rewards ROE > 15% with consistency.</p>
+            <p class="text-white font-semibold mb-1">P/C Volume Ratio (&plusmn;3)</p>
+            <p class="text-xs">More calls than puts being traded today = bullish positioning.</p>
           </div>
           <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">Debt Safety (15 pts)</p>
-            <p class="text-xs">Low debt-to-equity, strong interest coverage. Conservative balance sheet management.</p>
+            <p class="text-white font-semibold mb-1">P/C OI Ratio (&plusmn;3)</p>
+            <p class="text-xs">Accumulated open interest bias. Sustained call OI = longer-term bullish.</p>
           </div>
           <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">Margin Strength (15 pts)</p>
-            <p class="text-xs">Operating + gross margin quality. Wide margins indicate pricing power and competitive moats.</p>
+            <p class="text-white font-semibold mb-1">IV Skew (&plusmn;3)</p>
+            <p class="text-xs">When call IV exceeds put IV, someone is aggressively buying upside.</p>
           </div>
           <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">FCF Machine (15 pts)</p>
-            <p class="text-xs">Strong free cash flow yield and FCF-to-net-income conversion. Cash generation is king.</p>
+            <p class="text-white font-semibold mb-1">OTM Call Spike (0 to +3)</p>
+            <p class="text-xs">Unusual out-of-the-money call volume = betting on a big move up.</p>
           </div>
           <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">Earnings Consistency (15 pts)</p>
-            <p class="text-xs">Stable, growing earnings trajectory. Penalizes volatile or declining earnings.</p>
-          </div>
-          <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">Moat Proxy (10 pts)</p>
-            <p class="text-xs">Institutional ownership + analyst consensus as proxy for competitive advantages. Smart money signals.</p>
-          </div>
-          <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">Shareholder Return (10 pts)</p>
-            <p class="text-xs">Dividends + buybacks. Companies that return capital show management discipline.</p>
+            <p class="text-white font-semibold mb-1">OTM Put Spike (0 to -3)</p>
+            <p class="text-xs">Unusual OTM put volume = hedging or betting on a drop.</p>
           </div>
         </div>
-        <p class="text-xs text-gray-500 mt-2">Recommendations: <span class="text-green-400">STRONG_QUALITY</span> (65+/100) | <span class="text-amber-400">QUALITY</span> (45+/100). Scores are based on quarterly fundamentals and refresh daily. This is an experimental A/B test against the contrarian approach.</p>
+        <p class="text-xs text-gray-500 mt-2">Interpretation: <span class="text-green-400">&gt;+5 Strongly Bullish</span> | <span class="text-green-400/60">+2 to +5 Bullish</span> | <span class="text-gray-400">-2 to +2 Neutral</span> | <span class="text-red-400/60">-5 to -2 Bearish</span> | <span class="text-red-400">&lt;-5 Strongly Bearish</span>. Scanned twice daily (pre-market + post-close) across ~50 tickers from all paths.</p>
       </div>
     </details>
   </div>
 
+  <!-- Filter tabs -->
+  <div class="max-w-7xl mx-auto px-4 mb-6">
+    <div class="flex gap-2 text-xs font-medium">
+      <button class="of-filter active px-3 py-1.5 rounded-full bg-white/10 text-white" data-filter="all">All</button>
+      <button class="of-filter px-3 py-1.5 rounded-full bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-colors" data-filter="bullish">Bullish</button>
+      <button class="of-filter px-3 py-1.5 rounded-full bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-colors" data-filter="bearish">Bearish</button>
+    </div>
+  </div>
+
   <!-- Main content -->
   <main class="max-w-7xl mx-auto px-4 pb-16">
-    <!-- Cards grid -->
-    <div id="wp-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    <div id="of-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
 
-    <!-- Loading -->
-    <div id="wp-loading" class="text-center py-20">
+    <div id="of-loading" class="text-center py-20">
       <div class="loading-pulse mx-auto mb-3"></div>
-      <p class="text-bull-muted">Loading Warren's Picks...</p>
+      <p class="text-bull-muted">Loading options flow...</p>
     </div>
 
-    <!-- Empty -->
-    <div id="wp-empty" class="hidden text-center py-20">
-      <p class="text-bull-muted text-lg">No quality picks yet</p>
-      <p class="text-white/30 text-sm mt-1">The Buffett scanner runs daily &mdash; data will appear after the next scan.</p>
+    <div id="of-empty" class="hidden text-center py-20">
+      <p class="text-bull-muted text-lg">No options flow data yet</p>
+      <p class="text-white/30 text-sm mt-1">The options flow monitor runs twice daily &mdash; data will appear after the next scan.</p>
     </div>
 
-    <!-- Error -->
-    <div id="wp-error" class="hidden text-center py-20">
+    <div id="of-error" class="hidden text-center py-20">
       <p class="text-red-400 text-lg">Failed to load data</p>
-      <p class="text-white/30 text-sm mt-1" id="wp-error-msg"></p>
+      <p class="text-white/30 text-sm mt-1" id="of-error-msg"></p>
     </div>
   </main>
 
@@ -194,6 +198,6 @@
     </div>
   </footer>
 
-  <script src="js/warrens-picks.js?v=1"></script>
+  <script src="js/options.js?v=1"></script>
 </body>
 </html>
