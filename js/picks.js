@@ -26,7 +26,7 @@ const Picks = (() => {
   }
 
   async function loadAllData() {
-    const [dashboard, contrarian, deepdive, watchlist, catalysts, warrens, regime] = await Promise.all([
+    const [dashboard, contrarian, deepdive, watchlist, catalysts, warrens, regime, optionsFlow] = await Promise.all([
       fetchJSON('latest.json').catch(() => null),
       fetchJSON('contrarian.json').catch(() => null),
       fetchJSON('deep-dive.json').catch(() => null),
@@ -34,8 +34,9 @@ const Picks = (() => {
       fetchJSON('catalysts.json').catch(() => null),
       fetchJSON('warrens-picks.json').catch(() => null),
       fetchJSON('regime.json').catch(() => null),
+      fetchJSON('options-flow.json').catch(() => null),
     ]);
-    return { dashboard, contrarian, deepdive, watchlist, catalysts, warrens, regime };
+    return { dashboard, contrarian, deepdive, watchlist, catalysts, warrens, regime, optionsFlow };
   }
 
   // ── Rendering helpers ──
@@ -349,6 +350,61 @@ const Picks = (() => {
     }).join('');
   }
 
+  function renderOptionsFlowSummary(optionsFlow, dashboard) {
+    const container = document.getElementById('summary-options');
+    if (!container) return;
+
+    if (!optionsFlow || !optionsFlow.tickers || !optionsFlow.tickers.length) {
+      container.innerHTML = '<p class="text-gray-500 text-sm py-4">No data yet</p>';
+      return;
+    }
+
+    // Build fundamentals lookup for convergence detection
+    const fundMap = {};
+    if (dashboard && dashboard.opportunities) {
+      dashboard.opportunities.forEach(o => { fundMap[o.ticker] = o; });
+    }
+
+    // Sort: strongest |flow_score| first, prefer tickers with fundamental backing
+    const scored = optionsFlow.tickers.map(t => {
+      const fund = fundMap[t.ticker];
+      const hasFund = fund && (fund.recommendation === 'BUY' || fund.recommendation === 'WATCHLIST');
+      const hasInsider = fund && fund.breakdown && fund.breakdown.insider_buy_boost > 0;
+      let layers = 0;
+      if (Math.abs(t.flow_score) > 2) layers++;
+      if (hasFund) layers++;
+      if (hasInsider) layers++;
+      return { ...t, _fund: fund, _layers: layers, _hasFund: hasFund, _hasInsider: hasInsider };
+    }).sort((a, b) => {
+      if (a._layers !== b._layers) return b._layers - a._layers;
+      return Math.abs(b.flow_score) - Math.abs(a.flow_score);
+    }).slice(0, 5);
+
+    container.innerHTML = scored.map(t => {
+      const isBullish = t.flow_score > 2;
+      const isBearish = t.flow_score < -2;
+      const scoreCls = isBullish ? 'text-green-400' : isBearish ? 'text-red-400' : 'text-gray-400';
+      const prefix = t.flow_score > 0 ? '+' : '';
+
+      let badges = '';
+      if (t._hasFund) badges += `<span class="text-xs font-semibold ${t._fund.recommendation === 'BUY' ? 'text-green-400' : 'text-amber-400'}">${t._fund.recommendation}</span>`;
+      if (t._hasInsider) badges += '<span class="text-xs text-yellow-400">Insider</span>';
+      if (t._layers >= 3) badges += '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-green-500/20 text-green-400">3×</span>';
+      else if (t._layers >= 2) badges += '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400">2×</span>';
+
+      return `<div class="flex items-center justify-between py-3.5 text-sm">
+        <div class="flex items-center gap-2">
+          <a href="ticker.html?t=${esc(t.ticker)}" class="font-bold font-mono hover:text-green-400 transition-colors">${esc(t.ticker)}</a>
+          ${badges}
+        </div>
+        <div class="flex items-center gap-3 text-xs text-gray-400">
+          <span>P/C ${t.put_call_ratio ? t.put_call_ratio.toFixed(2) : '-'}</span>
+          <span class="font-bold font-mono ${scoreCls}">${prefix}${t.flow_score.toFixed(1)}</span>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
   // ── Stats bar ──
 
   function updateStats(data) {
@@ -419,6 +475,7 @@ const Picks = (() => {
       renderWarrensSummary(data.warrens);
       renderWatchlistSummary(data.watchlist);
       renderCatalystSummary(data.catalysts);
+      renderOptionsFlowSummary(data.optionsFlow, data.dashboard);
 
     } catch (e) {
       document.getElementById('loading-state').classList.add('hidden');
@@ -464,6 +521,15 @@ const Picks = (() => {
       lines.push("## Warren's Picks");
       for (const p of data.warrens.picks.slice(0, 5)) lines.push(`${p.ticker} (${p.recommendation}) Score:${p.score}/100`);
       lines.push('');
+    }
+    // Options Flow
+    if (data.optionsFlow?.tickers) {
+      const top = data.optionsFlow.tickers.sort((a, b) => Math.abs(b.flow_score) - Math.abs(a.flow_score)).slice(0, 5);
+      if (top.length) {
+        lines.push('## Options Flow');
+        for (const t of top) lines.push(`${t.ticker} (${t.direction}) Flow:${t.flow_score > 0 ? '+' : ''}${t.flow_score.toFixed(1)} P/C:${(t.put_call_ratio || 0).toFixed(2)}`);
+        lines.push('');
+      }
     }
 
     if (!lines.length) return;

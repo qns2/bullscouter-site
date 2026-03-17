@@ -100,7 +100,6 @@
         <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
         <a class="text-bull-accent" href="index2.html">Buy List</a>
         <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
-        <a class="text-bull-muted hover:text-white transition-colors" href="options.html">Options</a>
         <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
         <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
       </div>
@@ -114,7 +113,6 @@
       <a class="block py-2 text-bull-muted" href="index.html">Home</a>
       <a class="block py-2 text-bull-accent" href="index2.html">Buy List</a>
       <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
-      <a class="block py-2 text-bull-muted" href="options.html">Options</a>
       <a class="block py-2 text-bull-muted" href="history.html">History</a>
       <a class="block py-2 text-bull-muted" href="about.html">About</a>
     </div>
@@ -201,6 +199,7 @@
             <th class="px-3 py-3 text-right hidden sm:table-cell">Detail</th>
             <th class="px-3 py-3 text-right">Entry $</th>
             <th class="px-3 py-3 text-right">Current $</th>
+            <th class="px-3 py-3 text-right hidden sm:table-cell">Flow</th>
             <th class="px-5 py-3 text-right">Change</th>
           </tr>
         </thead>
@@ -347,6 +346,7 @@ const BuyList = (() => {
         <td class="px-3 py-4 text-right hidden sm:table-cell">${detail}</td>
         <td class="px-3 py-4 text-right font-mono text-gray-400">${fmtPrice(s.entry_price)}</td>
         <td class="px-3 py-4 text-right font-mono">${fmtPrice(s.current_price)}</td>
+        <td class="px-3 py-4 text-right font-mono hidden sm:table-cell ${s.flow_score > 2 ? 'text-green-400' : s.flow_score < -2 ? 'text-red-400' : 'text-gray-500'}">${s.flow_score != null ? (s.flow_score > 0 ? '+' : '') + s.flow_score.toFixed(1) : '-'}</td>
         <td class="px-5 py-4 text-right font-mono font-bold ${changeClass(s.change_pct)}">${fmtPct(s.change_pct)}</td>
       `;
       tbody.appendChild(tr);
