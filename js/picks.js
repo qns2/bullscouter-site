@@ -398,7 +398,7 @@ const Picks = (() => {
           ${badges}
         </div>
         <div class="flex items-center gap-3 text-xs text-gray-400">
-          <span>P/C ${t.put_call_ratio ? t.put_call_ratio.toFixed(2) : '-'}${t.td_put_call_ratio != null ? ` <span class="${t.td_confirmed ? 'text-green-400' : 'text-red-400'}">${t.td_confirmed ? '\u2713' : '\u2717'}${t.td_put_call_ratio.toFixed(2)}</span>` : ''}</span>
+          <span>P/C ${t.put_call_ratio ? t.put_call_ratio.toFixed(2) : '-'}${t.td_put_call_ratio != null ? ' <span class="text-cyan-400">\u0398</span>' : ''}</span>
           <span class="font-bold font-mono ${scoreCls}">${prefix}${t.flow_score.toFixed(1)}</span>
         </div>
       </div>`;

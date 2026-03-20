@@ -304,7 +304,7 @@ const OptionsFlow = (() => {
       <div class="flex flex-wrap gap-1">${signalChips}</div>
 
       <div class="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-gray-500 mt-2">
-        <span>P/C <span class="text-white font-mono">${fmt(t.put_call_ratio, 2)}</span>${t.td_put_call_ratio != null ? ` <span class="${t.td_confirmed ? 'text-green-400' : 'text-red-400'}" title="ThetaData EOD: ${fmt(t.td_put_call_ratio, 2)}">${t.td_confirmed ? '\u2713' : '\u2717'}${fmt(t.td_put_call_ratio, 2)}</span>` : ''}</span>
+        <span>P/C <span class="text-white font-mono">${fmt(t.put_call_ratio, 2)}</span>${t.td_put_call_ratio != null ? ' <span class="text-cyan-400 text-[9px]" title="Confirmed by ThetaData EOD">\u0398</span>' : ''}</span>
         <span>IV Skew <span class="text-white font-mono">${fmt(t.iv_skew, 3)}</span></span>
         <span>Vol <span class="text-white font-mono">${fmtK(t.total_volume)}</span></span>
         <span>OI <span class="text-white font-mono">${fmtK(t.total_oi)}</span></span>
