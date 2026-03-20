@@ -328,8 +328,14 @@ const OptionsFlow = (() => {
     if (filter === 'bullish') filtered = allTickers.filter(t => t.direction === 'BULLISH');
     else if (filter === 'bearish') filtered = allTickers.filter(t => t.direction === 'BEARISH');
 
-    // Sort: convergence level first, then |flow_score|
+    // Sort: bullish descending (+11, +9, +7...), then neutral, then bearish ascending (-5, -6, -9...)
     filtered = [...filtered].sort((a, b) => {
+      const da = a.flow_score > 2 ? 2 : (a.flow_score < -2 ? 0 : 1); // bullish=2, neutral=1, bearish=0
+      const db = b.flow_score > 2 ? 2 : (b.flow_score < -2 ? 0 : 1);
+      if (da !== db) return db - da; // bullish first, bearish last
+      if (da === 2) return b.flow_score - a.flow_score; // bullish: highest first
+      if (da === 0) return Math.abs(b.flow_score) - Math.abs(a.flow_score); // bearish: strongest first
+      // neutral: convergence level, then |flow_score|
       const ca = analyzeConvergence(a);
       const cb = analyzeConvergence(b);
       if (ca.bullish !== cb.bullish) return cb.bullish - ca.bullish;
