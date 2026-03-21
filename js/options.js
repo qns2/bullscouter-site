@@ -308,6 +308,7 @@ const OptionsFlow = (() => {
         <span>IV Skew <span class="text-white font-mono">${fmt(t.iv_skew, 3)}</span></span>
         <span>Vol <span class="text-white font-mono">${fmtK(t.total_volume)}</span></span>
         <span>OI <span class="text-white font-mono">${fmtK(t.total_oi)}</span></span>
+        ${t.fund_count ? `<span title="${esc(t.fund_names || '')}"><span class="text-purple-400">${t.fund_count}</span> funds</span>` : ''}
       </div>
 
       ${fundHtml}
