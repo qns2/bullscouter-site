@@ -1,36 +1,34 @@
 {
   "scan_date": "2026-03-23",
-  "scan_time": "12:47",
+  "scan_time": "12:58",
   "version": "2.7.0",
   "format": "heatmap_v1",
   "stats": {
-    "total": 95,
+    "total": 87,
     "by_type": {
-      "analyst_upgrade": 5,
-      "analyst_price_target_increase": 1,
-      "partnership": 3,
-      "fda": 36,
-      "launch": 6,
-      "earnings": 26,
-      "contract_award": 2,
-      "sector_catalyst": 3,
-      "sec_shelf": 6,
+      "analyst_upgrade": 6,
       "ind_clearance": 2,
-      "contract_win": 1,
-      "merger": 2,
-      "analyst_price_target_increases": 1,
-      "analyst_upgrades": 1
+      "dilution": 4,
+      "fda": 33,
+      "partnership": 2,
+      "launch": 6,
+      "earnings": 27,
+      "contract_award": 1,
+      "sec_shelf": 3,
+      "test_flight": 1,
+      "test_flights": 1,
+      "guidance_change": 1
     },
-    "upcoming_7d": 6,
-    "upcoming_30d": 7,
-    "enriched": 30,
-    "heatmap_tickers": 34
+    "upcoming_7d": 12,
+    "upcoming_30d": 13,
+    "enriched": 16,
+    "heatmap_tickers": 30
   },
   "heatmap": [
     {
       "ticker": "RKLB",
-      "heatmap_score": 49,
-      "signal_count": 6,
+      "heatmap_score": 45,
+      "signal_count": 5,
       "signals": [
         {
           "type": "launch",
@@ -65,14 +63,8 @@
           "event_date": "2026-06-30"
         },
         {
-          "type": "sector_catalyst",
-          "name": "Rocket Lab expects first Neutron rocket launch in early 2026, marking expansion ",
-          "weight": 5,
-          "source": "perplexity"
-        },
-        {
-          "type": "contract_win",
-          "name": "Rocket Lab expansion of defense and government contracts represents significant ",
+          "type": "test_flight",
+          "name": "Rocket Lab plans progress toward the first Neutron rocket launch expected in ear",
           "weight": 5,
           "source": "perplexity"
         }
@@ -121,8 +113,58 @@
         "gross_margin": null
       },
       "recommendation": "MOMENTUM",
-      "score": 57,
+      "score": 54,
       "profile": "recovery"
+    },
+    {
+      "ticker": "LIVN",
+      "heatmap_score": 30,
+      "signal_count": 1,
+      "signals": [
+        {
+          "type": "fda",
+          "name": "LivaNova received FDA premarket approval for aura6000 System to treat moderate t",
+          "weight": 20,
+          "source": "perplexity",
+          "days_until": 0,
+          "event_date": "2026-03-23"
+        }
+      ],
+      "large_cap": false,
+      "category": "smallmid",
+      "financials": {
+        "current_price": 62.19,
+        "market_cap_fmt": "$3.4B",
+        "down_from_high_pct": 13.5,
+        "forward_pe": 13.6,
+        "revenue_growth": 12.1,
+        "gross_margin": 68.0
+      }
+    },
+    {
+      "ticker": "VNDA",
+      "heatmap_score": 30,
+      "signal_count": 1,
+      "signals": [
+        {
+          "type": "fda",
+          "name": "Vanda Pharmaceuticals received FDA approval of BYSANTI (milsaperidone) for treat",
+          "weight": 20,
+          "source": "perplexity",
+          "days_until": 0,
+          "event_date": "2026-03-23"
+        }
+      ],
+      "large_cap": false,
+      "category": "smallmid",
+      "financials": {
+        "current_price": 7.07,
+        "market_cap_fmt": "$418M",
+        "down_from_high_pct": 28.9,
+        "forward_pe": 35.4,
+        "revenue_growth": 7.6,
+        "gross_margin": 94.0
+      }
     },
     {
       "ticker": "ACHV",
@@ -155,44 +197,6 @@
         "forward_pe": -3.4,
         "revenue_growth": null,
         "gross_margin": 0.0
-      }
-    },
-    {
-      "ticker": "KBR",
-      "heatmap_score": 27,
-      "signal_count": 1,
-      "signals": [
-        {
-          "type": "partnership",
-          "name": "KBR Announces Strategic Investment in Applied Computing to Accelerate AI Driven ",
-          "weight": 18,
-          "source": "benzinga",
-          "days_until": 0,
-          "event_date": "2026-03-23"
-        }
-      ],
-      "large_cap": false,
-      "category": "smallmid",
-      "financials": {
-        "current_price": 37.29,
-        "market_cap_fmt": "$4.7B",
-        "down_from_high_pct": 34.3,
-        "forward_pe": 8.7,
-        "revenue_growth": -10.6,
-        "gross_margin": 14.8
-      },
-      "quality_checklist": {
-        "framework": "value",
-        "score": 4,
-        "denominator": 6,
-        "items": {
-          "Profitable": "partial",
-          "Strong FCF": "pass",
-          "Near 52w Lows": "pass",
-          "Sector Panic": "pass",
-          "Low PE": "pass",
-          "No Dilution": "fail"
-        }
       }
     },
     {
@@ -252,40 +256,6 @@
         "revenue_growth": null,
         "gross_margin": 0.0
       }
-    },
-    {
-      "ticker": "A",
-      "heatmap_score": 24,
-      "signal_count": 2,
-      "signals": [
-        {
-          "type": "earnings",
-          "name": "A Earnings",
-          "weight": 8,
-          "source": "finnhub",
-          "days_until": 64,
-          "event_date": "2026-05-26"
-        },
-        {
-          "type": "fda",
-          "name": "Agilent received FDA approval for PD-L1 IHC 22C3 pharmDx diagnostic in epithelia",
-          "weight": 20,
-          "source": "perplexity"
-        }
-      ],
-      "large_cap": false,
-      "category": "smallmid",
-      "financials": {
-        "current_price": 111.3,
-        "market_cap_fmt": "$31.5B",
-        "down_from_high_pct": 30.6,
-        "forward_pe": 17.0,
-        "revenue_growth": 7.0,
-        "gross_margin": null
-      },
-      "recommendation": "MOMENTUM",
-      "score": 61,
-      "profile": "recovery"
     },
     {
       "ticker": "NOC",
@@ -370,7 +340,7 @@
         "gross_margin": null
       },
       "recommendation": "MOMENTUM",
-      "score": 47,
+      "score": 44,
       "profile": "quality_growth",
       "quality_checklist": {
         "framework": "quality_growth",
@@ -677,40 +647,36 @@
       }
     },
     {
-      "ticker": "TGT",
+      "ticker": "DTIL",
       "heatmap_score": 16,
-      "signal_count": 3,
+      "signal_count": 2,
       "signals": [
         {
+          "type": "ind_clearance",
+          "name": "Precision BioSciences received FDA clearance of investigational new drug applica",
+          "weight": 5,
+          "source": "perplexity",
+          "days_until": 0,
+          "event_date": "2026-03-23"
+        },
+        {
           "type": "earnings",
-          "name": "TGT Earnings",
+          "name": "DTIL Earnings",
           "weight": 8,
           "source": "finnhub",
-          "days_until": 57,
-          "event_date": "2026-05-19"
-        },
-        {
-          "type": "analyst_price_target_increases",
-          "name": "Goldman Sachs raised Target's price target from $91 to $112 while maintaining ne",
-          "weight": 5,
-          "source": "perplexity"
-        },
-        {
-          "type": "analyst_upgrades",
-          "name": "Multiple analysts including Telsey Advisory upgraded to Outperform and raised pr",
-          "weight": 5,
-          "source": "perplexity"
+          "days_until": 51,
+          "event_date": "2026-05-13"
         }
       ],
-      "large_cap": true,
-      "category": "largecap",
+      "large_cap": false,
+      "category": "smallmid",
       "financials": {
-        "current_price": 113.26,
-        "market_cap_fmt": "$51.3B",
-        "down_from_high_pct": 10.1,
-        "forward_pe": 13.3,
-        "revenue_growth": -1.5,
-        "gross_margin": 27.9
+        "current_price": 6.52,
+        "market_cap_fmt": "$161M",
+        "down_from_high_pct": 26.1,
+        "forward_pe": -1.9,
+        "revenue_growth": 52.6,
+        "gross_margin": 100.0
       }
     },
     {
@@ -766,7 +732,7 @@
         "gross_margin": null
       },
       "recommendation": "MOMENTUM",
-      "score": 50,
+      "score": 51,
       "profile": "quality_growth",
       "quality_checklist": {
         "framework": "quality_growth",
@@ -857,7 +823,7 @@
         "gross_margin": null
       },
       "recommendation": "MOMENTUM",
-      "score": 33,
+      "score": 32,
       "profile": "growth"
     },
     {
@@ -924,95 +890,40 @@
       }
     },
     {
-      "ticker": "BMRN",
-      "heatmap_score": 16,
-      "signal_count": 1,
+      "ticker": "TGT",
+      "heatmap_score": 14,
+      "signal_count": 3,
       "signals": [
         {
-          "type": "fda",
-          "name": "BioMarin's TransCon CNP (Voxzogo) FDA decision delayed beyond November 2025 dead",
-          "weight": 20,
+          "type": "earnings",
+          "name": "TGT Earnings",
+          "weight": 8,
+          "source": "finnhub",
+          "days_until": 57,
+          "event_date": "2026-05-19"
+        },
+        {
+          "type": "analyst_upgrade",
+          "name": "Goldman Sachs raised price target on Target (TGT) from $91 to $112 with neutral ",
+          "weight": 2,
+          "source": "perplexity"
+        },
+        {
+          "type": "guidance_change",
+          "name": "Target (TGT) raised 2026 adjusted EPS guidance to $7.50\u2013$8.50 above consensus $7",
+          "weight": 5,
           "source": "perplexity"
         }
       ],
-      "large_cap": false,
-      "category": "smallmid",
+      "large_cap": true,
+      "category": "largecap",
       "financials": {
-        "current_price": 54.13,
-        "market_cap_fmt": "$10.4B",
-        "down_from_high_pct": 26.0,
-        "forward_pe": 8.0,
-        "revenue_growth": 17.0,
-        "gross_margin": 52.8
-      }
-    },
-    {
-      "ticker": "GEHC",
-      "heatmap_score": 16,
-      "signal_count": 1,
-      "signals": [
-        {
-          "type": "fda",
-          "name": "GE HealthCare achieved MRI portfolio milestone with FDA clearances for next-gene",
-          "weight": 20,
-          "source": "perplexity"
-        }
-      ],
-      "large_cap": false,
-      "category": "smallmid",
-      "financials": {
-        "current_price": 69.65,
-        "market_cap_fmt": "$31.8B",
-        "down_from_high_pct": 22.4,
-        "forward_pe": 12.5,
-        "revenue_growth": 7.1,
-        "gross_margin": 40.0
-      }
-    },
-    {
-      "ticker": "LIVN",
-      "heatmap_score": 16,
-      "signal_count": 1,
-      "signals": [
-        {
-          "type": "fda",
-          "name": "LivaNova received FDA premarket approval for aura6000 System to treat moderate t",
-          "weight": 20,
-          "source": "perplexity"
-        }
-      ],
-      "large_cap": false,
-      "category": "smallmid",
-      "financials": {
-        "current_price": 62.19,
-        "market_cap_fmt": "$3.4B",
-        "down_from_high_pct": 13.5,
-        "forward_pe": 13.6,
-        "revenue_growth": 12.1,
-        "gross_margin": 68.0
-      }
-    },
-    {
-      "ticker": "VNDA",
-      "heatmap_score": 16,
-      "signal_count": 1,
-      "signals": [
-        {
-          "type": "fda",
-          "name": "FDA approved Vanda Pharmaceuticals' BYSANTI (milsaperidone) for treatment of Bip",
-          "weight": 20,
-          "source": "perplexity"
-        }
-      ],
-      "large_cap": false,
-      "category": "smallmid",
-      "financials": {
-        "current_price": 7.07,
-        "market_cap_fmt": "$418M",
-        "down_from_high_pct": 28.9,
-        "forward_pe": 35.4,
-        "revenue_growth": 7.6,
-        "gross_margin": 94.0
+        "current_price": 113.26,
+        "market_cap_fmt": "$51.3B",
+        "down_from_high_pct": 10.1,
+        "forward_pe": 13.3,
+        "revenue_growth": -1.5,
+        "gross_margin": 27.9
       }
     },
     {
@@ -1062,8 +973,8 @@
           "event_date": "2026-05-13"
         },
         {
-          "type": "sector_catalyst",
-          "name": "Virgin Galactic's Delta fleet commercial spaceflight operations expected to ente",
+          "type": "test_flights",
+          "name": "Virgin Galactic is shifting focus to completing and testing the Delta fleet, exp",
           "weight": 5,
           "source": "perplexity"
         }
@@ -1080,72 +991,34 @@
       }
     },
     {
-      "ticker": "ASTS",
-      "heatmap_score": 12,
+      "ticker": "MLTX",
+      "heatmap_score": 10,
       "signal_count": 2,
       "signals": [
         {
-          "type": "contract_award",
-          "name": "AST SpaceMobile secured a prime contract position on the US missile defense agen",
-          "weight": 10,
-          "source": "perplexity"
+          "type": "analyst_upgrade",
+          "name": "Rothschild & Co upgraded MoonLake (MLTX) from Neutral to Buy and raised price ta",
+          "weight": 2,
+          "source": "perplexity",
+          "days_until": -4,
+          "event_date": "2026-03-19"
         },
         {
-          "type": "sector_catalyst",
-          "name": "AST SpaceMobile expects Block 2 satellite launches over next two quarters with g",
-          "weight": 5,
-          "source": "perplexity"
+          "type": "earnings",
+          "name": "MLTX Earnings",
+          "weight": 8,
+          "source": "finnhub",
+          "days_until": 49,
+          "event_date": "2026-05-11"
         }
       ],
       "large_cap": false,
       "category": "smallmid",
       "financials": {
-        "current_price": 89.93,
-        "market_cap_fmt": "$34.4B",
-        "down_from_high_pct": 30.8,
-        "forward_pe": 6479.1,
-        "revenue_growth": 27.3,
-        "gross_margin": 50.3
-      },
-      "quality_checklist": {
-        "framework": "quality_growth",
-        "score": 0,
-        "denominator": 6,
-        "items": {
-          "Revenue Growth": "fail",
-          "Gross Margins": "partial",
-          "Net Retention": "fail",
-          "TAM Opportunity": "fail",
-          "Rule of 40": "fail",
-          "Low SBC": "partial"
-        }
-      }
-    },
-    {
-      "ticker": "RCKT",
-      "heatmap_score": 12,
-      "signal_count": 2,
-      "signals": [
-        {
-          "type": "fda",
-          "name": "Rocket Pharmaceuticals' Kresladi gene therapy FDA decision pending in Q1 2026; a",
-          "weight": 20,
-          "source": "perplexity"
-        },
-        {
-          "type": "sec_shelf",
-          "name": "Rocket Pharmaceuticals Inc. filed Form S-3 registration statement on March 2, 20",
-          "weight": -5,
-          "source": "perplexity"
-        }
-      ],
-      "large_cap": false,
-      "category": "smallmid",
-      "financials": {
-        "current_price": 4.14,
-        "market_cap_fmt": "$449M",
-        "down_from_high_pct": 53.0,
-        "forward_pe": -3.4,
+        "current_price": 16.27,
+        "market_cap_fmt": "$1.2B",
+        "down_from_high_pct": 74.1,
+        "forward_pe": -4.5,
         "revenue_growth": null,
         "gross_margin": 0.0
       }
@@ -1153,134 +1026,81 @@
   ],
   "catalysts": [
     {
-      "ticker": "CTMX",
-      "type": "analyst_upgrade",
-      "event_name": "JP Morgan upgraded CytomX Therapeutics from Neutral to Overweight and raised price target from $7 to $12.",
-      "event_date": "2026-03-16",
-      "summary": "JP Morgan upgraded CytomX Therapeutics from Neutral to Overweight and raised price target from $7 to $12.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.7,
-      "days_until": -7,
-      "beneficiaries": [
-        {
-          "ticker": "VRTX",
-          "reason": "competing oncology therapeutics pipeline"
-        },
-        {
-          "ticker": "CRSP",
-          "reason": "competing gene therapy biotech"
-        }
-      ]
-    },
-    {
       "ticker": "EPRT",
       "type": "analyst_upgrade",
-      "event_name": "Raymond James upgraded Essential Properties from Outperform to Strong Buy and raised price target from $35 to $37.",
+      "event_name": "Raymond James upgraded Essential Properties (EPRT) from Outperform to Strong Buy and raised price target from $35 to $37",
       "event_date": "2026-03-17",
-      "summary": "Raymond James upgraded Essential Properties from Outperform to Strong Buy and raised price target from $35 to $37.",
+      "summary": "Raymond James upgraded Essential Properties (EPRT) from Outperform to Strong Buy and raised price target from $35 to $37.",
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.7,
-      "days_until": -6,
-      "beneficiaries": [
-        {
-          "ticker": "O",
-          "reason": "competing retail REIT"
-        },
-        {
-          "ticker": "STAG",
-          "reason": "peer in REIT sector"
-        }
-      ]
+      "days_until": -6
     },
     {
       "ticker": "CCRN",
       "type": "analyst_upgrade",
-      "event_name": "Wedbush upgraded Cross Country Healthcare from Neutral to Outperform and raised price target from $11 to $15.",
+      "event_name": "Wedbush upgraded Cross Country Healthcare (CCRN) from Neutral to Outperform and raised price target from $11 to $15.",
       "event_date": "2026-03-19",
-      "summary": "Wedbush upgraded Cross Country Healthcare from Neutral to Outperform and raised price target from $11 to $15.",
+      "summary": "Wedbush upgraded Cross Country Healthcare (CCRN) from Neutral to Outperform and raised price target from $11 to $15.",
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.7,
-      "days_until": -4,
-      "beneficiaries": [
-        {
-          "ticker": "AMED",
-          "reason": "competing healthcare services provider"
-        },
-        {
-          "ticker": "AMN",
-          "reason": "competing healthcare staffing"
-        }
-      ]
+      "days_until": -4
     },
     {
       "ticker": "MLTX",
       "type": "analyst_upgrade",
-      "event_name": "Rothschild & Co upgraded MoonLake from Neutral to Buy and raised price target from $12 to $40.",
+      "event_name": "Rothschild & Co upgraded MoonLake (MLTX) from Neutral to Buy and raised price target from $12 to $40.",
       "event_date": "2026-03-19",
-      "summary": "Rothschild & Co upgraded MoonLake from Neutral to Buy and raised price target from $12 to $40.",
+      "summary": "Rothschild & Co upgraded MoonLake (MLTX) from Neutral to Buy and raised price target from $12 to $40.",
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.7,
-      "days_until": -4,
-      "beneficiaries": [
-        {
-          "ticker": "GILD",
-          "reason": "competing gene therapy company"
-        },
-        {
-          "ticker": "CRSP",
-          "reason": "competing biotech in genetic therapeutics"
-        }
-      ]
+      "days_until": -4
     },
     {
-      "ticker": "STOK",
-      "type": "analyst_price_target_increase",
-      "event_name": "Canaccord Genuity raised price target on Stoke Therapeutics from $36 to $60 maintaining Buy rating.",
+      "ticker": "SPIR",
+      "type": "analyst_upgrade",
+      "event_name": "Canaccord Genuity maintained Buy on Spire Global (SPIR) and raised price target from $10.5 to higher value.",
       "event_date": "2026-03-20",
-      "summary": "Canaccord Genuity raised price target on Stoke Therapeutics from $36 to $60 maintaining Buy rating.",
+      "summary": "Canaccord Genuity maintained Buy on Spire Global (SPIR) and raised price target from $10.5 to higher value.",
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.7,
-      "days_until": -3,
-      "beneficiaries": [
-        {
-          "ticker": "GILD",
-          "reason": "competing in gene therapy space"
-        },
-        {
-          "ticker": "RGEN",
-          "reason": "supplies research tools for gene therapy development"
-        }
-      ]
+      "days_until": -3
     },
     {
-      "ticker": "KBR",
-      "type": "partnership",
-      "event_name": "KBR Announces Strategic Investment in Applied Computing to Accelerate AI Driven Innovation Across Energy and Industrial Markets",
+      "ticker": "DARE",
+      "type": "ind_clearance",
+      "event_name": "Dar\u00e9 Bioscience received FDA clearance of IND for Phase 2 clinical study of DARE-HPV for persistent high-risk HPV infect",
       "event_date": "2026-03-23",
-      "summary": "KBR Announces Strategic Investment in Applied Computing to Accelerate AI Driven Innovation Across Energy and Industrial Markets",
-      "source": "benzinga",
+      "summary": "Dar\u00e9 Bioscience received FDA clearance of IND for Phase 2 clinical study of DARE-HPV for persistent high-risk HPV infection treatment.",
+      "source": "perplexity",
       "direction": "bull",
-      "confidence": null,
-      "days_until": 0,
-      "beneficiaries": [
-        {
-          "ticker": "LMT",
-          "reason": "peer defense contractor with AI innovation focus"
-        },
-        {
-          "ticker": "RTX",
-          "reason": "competing defense/aerospace contractor in industrial AI"
-        },
-        {
-          "ticker": "NVDA",
-          "reason": "AI chip supplier for energy and industrial markets"
-        }
-      ]
+      "confidence": 0.85,
+      "days_until": 0
+    },
+    {
+      "ticker": "DTIL",
+      "type": "ind_clearance",
+      "event_name": "Precision BioSciences received FDA clearance of investigational new drug application for first-in-class PBGENE-DMD for D",
+      "event_date": "2026-03-23",
+      "summary": "Precision BioSciences received FDA clearance of investigational new drug application for first-in-class PBGENE-DMD for Duchenne muscular dystrophy treatment.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.85,
+      "days_until": 0
+    },
+    {
+      "ticker": "LIVN",
+      "type": "fda",
+      "event_name": "LivaNova received FDA premarket approval for aura6000 System to treat moderate to severe obstructive sleep apnea.",
+      "event_date": "2026-03-23",
+      "summary": "LivaNova received FDA premarket approval for aura6000 System to treat moderate to severe obstructive sleep apnea.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.95,
+      "days_until": 0
     },
     {
       "ticker": "NEWS",
@@ -1288,17 +1108,6 @@
       "event_name": "Nautical Ventures Adds AIATA Boat Brand to Its Product Portfolio",
       "event_date": "2026-03-23",
       "summary": "Nautical Ventures Adds AIATA Boat Brand to Its Product Portfolio",
-      "source": "benzinga",
-      "direction": "bull",
-      "confidence": null,
-      "days_until": 0
-    },
-    {
-      "ticker": "NEWS",
-      "type": "analyst_upgrade",
-      "event_name": "Invitation from Niushou Mountain, Nanjing, China: Join Us for a Spring Journey of Intangible Cultural Heritage and Wellness",
-      "event_date": "2026-03-23",
-      "summary": "Invitation from Niushou Mountain, Nanjing, China: Join Us for a Spring Journey of Intangible Cultural Heritage and Wellness",
       "source": "benzinga",
       "direction": "bull",
       "confidence": null,
@@ -1313,21 +1122,7 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.95,
-      "days_until": 0,
-      "beneficiaries": [
-        {
-          "ticker": "LLY",
-          "reason": "competing GLP-1 provider with Tirzepatide"
-        },
-        {
-          "ticker": "AMGN",
-          "reason": "developing competing GLP-1 agents"
-        },
-        {
-          "ticker": "DXCM",
-          "reason": "CGM monitoring used alongside weight loss therapies"
-        }
-      ]
+      "days_until": 0
     },
     {
       "ticker": "VMAR",
@@ -1338,15 +1133,26 @@
       "source": "benzinga",
       "direction": "bull",
       "confidence": null,
+      "days_until": 0
+    },
+    {
+      "ticker": "VNDA",
+      "type": "fda",
+      "event_name": "Vanda Pharmaceuticals received FDA approval of BYSANTI (milsaperidone) for treatment of bipolar I disorder and schizophr",
+      "event_date": "2026-03-23",
+      "summary": "Vanda Pharmaceuticals received FDA approval of BYSANTI (milsaperidone) for treatment of bipolar I disorder and schizophrenia.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.95,
       "days_until": 0,
       "beneficiaries": [
         {
-          "ticker": "MPC",
-          "reason": "competing recreational marine products company"
+          "ticker": "LLY",
+          "reason": "Major antipsychotic competitor; market share pressure from new approved treatment"
         },
         {
-          "ticker": "MBTX",
-          "reason": "competing marine retail platform"
+          "ticker": "PFE",
+          "reason": "Pfizer antipsychotic portfolio exposed to competitive pressure"
         }
       ]
     },
@@ -1373,12 +1179,12 @@
       "days_until": 15,
       "beneficiaries": [
         {
-          "ticker": "RTX",
-          "reason": "Raytheon Technologies supplies rocket motors to Minotaur IV"
+          "ticker": "LMT",
+          "reason": "Defense contractor peer; national security launch success benefits sector"
         },
         {
-          "ticker": "LMT",
-          "reason": "Lockheed Martin benefits from validation of military space launch platform"
+          "ticker": "GD",
+          "reason": "General Dynamics space and defense capabilities benefit from sector momentum"
         }
       ]
     },
@@ -1416,12 +1222,16 @@
       "days_until": 31,
       "beneficiaries": [
         {
-          "ticker": "LILLY",
-          "reason": "Eli Lilly in diabetes; immunotherapy approach validates Type 1D market expansion"
+          "ticker": "AMGN",
+          "reason": "Competing in multiple myeloma (Sarclisa), atopic dermatitis (Enbrel/Otezla)"
         },
         {
-          "ticker": "VRTX",
-          "reason": "Vertex in cell therapy; immunotherapy validation in T1D benefits platform"
+          "ticker": "LLY",
+          "reason": "Competitor across atopic dermatitis, diabetes (Tzield is T1D), immunology markets"
+        },
+        {
+          "ticker": "GILD",
+          "reason": "Competitor in specialty pharma and multiple myeloma space"
         }
       ]
     },
@@ -1437,12 +1247,16 @@
       "days_until": 35,
       "beneficiaries": [
         {
-          "ticker": "LILLY",
-          "reason": "Eli Lilly in diabetes; immunotherapy approach validates Type 1D market expansion"
+          "ticker": "AMGN",
+          "reason": "Competing in multiple myeloma (Sarclisa), atopic dermatitis (Enbrel/Otezla)"
         },
         {
-          "ticker": "VRTX",
-          "reason": "Vertex in cell therapy; immunotherapy validation in T1D benefits platform"
+          "ticker": "LLY",
+          "reason": "Competitor across atopic dermatitis, diabetes (Tzield is T1D), immunology markets"
+        },
+        {
+          "ticker": "GILD",
+          "reason": "Competitor in specialty pharma and multiple myeloma space"
         }
       ]
     },
@@ -1459,11 +1273,7 @@
       "beneficiaries": [
         {
           "ticker": "GILD",
-          "reason": "Gilead competes in HIV with integrase inhibitor regimens"
-        },
-        {
-          "ticker": "ABBV",
-          "reason": "AbbVie competes in HIV antiretroviral therapeutics"
+          "reason": "Dominant HIV market leader; new DoravirinePlusIslatravir competition could pressure market"
         }
       ]
     },
@@ -1479,12 +1289,16 @@
       "days_until": 37,
       "beneficiaries": [
         {
-          "ticker": "LILLY",
-          "reason": "Eli Lilly in diabetes; immunotherapy approach validates Type 1D market expansion"
+          "ticker": "AMGN",
+          "reason": "Competing in multiple myeloma (Sarclisa), atopic dermatitis (Enbrel/Otezla)"
         },
         {
-          "ticker": "VRTX",
-          "reason": "Vertex in cell therapy; immunotherapy validation in T1D benefits platform"
+          "ticker": "LLY",
+          "reason": "Competitor across atopic dermatitis, diabetes (Tzield is T1D), immunology markets"
+        },
+        {
+          "ticker": "GILD",
+          "reason": "Competitor in specialty pharma and multiple myeloma space"
         }
       ]
     },
@@ -1500,12 +1314,8 @@
       "days_until": 38,
       "beneficiaries": [
         {
-          "ticker": "SAGE",
-          "reason": "Sage Therapeutics competes in rapid-acting antidepressant market"
-        },
-        {
-          "ticker": "JNJ",
-          "reason": "J&J competes with Spravato in rapid-onset depression space"
+          "ticker": "LLY",
+          "reason": "Major depression/TRD treatment leader; competitive pressure from AXS-05 approval"
         }
       ]
     },
@@ -1518,17 +1328,7 @@
       "source": "rttnews",
       "direction": "bull",
       "confidence": null,
-      "days_until": 38,
-      "beneficiaries": [
-        {
-          "ticker": "RHHBY",
-          "reason": "Roche competes in hormone receptor-positive breast cancer market"
-        },
-        {
-          "ticker": "LILLY",
-          "reason": "Eli Lilly competes in breast cancer therapeutics"
-        }
-      ]
+      "days_until": 38
     },
     {
       "ticker": "ARGX",
@@ -1580,6 +1380,17 @@
       "event_name": "LOAR Earnings",
       "event_date": "2026-05-11",
       "summary": "LOAR Earnings",
+      "source": "finnhub",
+      "direction": "neutral",
+      "confidence": null,
+      "days_until": 49
+    },
+    {
+      "ticker": "MLTX",
+      "type": "earnings",
+      "event_name": "MLTX Earnings",
+      "event_date": "2026-05-11",
+      "summary": "MLTX Earnings (bmo)",
       "source": "finnhub",
       "direction": "neutral",
       "confidence": null,
@@ -1649,17 +1460,7 @@
       "source": "finnhub",
       "direction": "neutral",
       "confidence": null,
-      "days_until": 50,
-      "beneficiaries": [
-        {
-          "ticker": "VEEV",
-          "reason": "competitor in healthcare IT/data management for medical devices"
-        },
-        {
-          "ticker": "JCI",
-          "reason": "peer in industrial automation and healthcare facility management"
-        }
-      ]
+      "days_until": 50
     },
     {
       "ticker": "ZBRA",
@@ -1670,17 +1471,18 @@
       "source": "finnhub",
       "direction": "neutral",
       "confidence": null,
-      "days_until": 50,
-      "beneficiaries": [
-        {
-          "ticker": "VEEV",
-          "reason": "competitor in enterprise mobility and data capture solutions"
-        },
-        {
-          "ticker": "TRMB",
-          "reason": "peer in mobile computing and location-based technology"
-        }
-      ]
+      "days_until": 50
+    },
+    {
+      "ticker": "DTIL",
+      "type": "earnings",
+      "event_name": "DTIL Earnings",
+      "event_date": "2026-05-13",
+      "summary": "DTIL Earnings",
+      "source": "finnhub",
+      "direction": "neutral",
+      "confidence": null,
+      "days_until": 51
     },
     {
       "ticker": "SPCE",
@@ -1691,17 +1493,7 @@
       "source": "finnhub",
       "direction": "neutral",
       "confidence": null,
-      "days_until": 51,
-      "beneficiaries": [
-        {
-          "ticker": "RKLB",
-          "reason": "competitor in commercial spaceflight and launch services"
-        },
-        {
-          "ticker": "RTX",
-          "reason": "supplier of aerospace components and systems"
-        }
-      ]
+      "days_until": 51
     },
     {
       "ticker": "USAR",
@@ -1723,17 +1515,7 @@
       "source": "rttnews",
       "direction": "bull",
       "confidence": null,
-      "days_until": 56,
-      "beneficiaries": [
-        {
-          "ticker": "GILD",
-          "reason": "competitor in oncology with HER2+ cancer treatments"
-        },
-        {
-          "ticker": "EXEL",
-          "reason": "peer in oncology and targeted cancer therapies"
-        }
-      ]
+      "days_until": 56
     },
     {
       "ticker": "DSKYF",
@@ -1770,11 +1552,11 @@
       "beneficiaries": [
         {
           "ticker": "WMT",
-          "reason": "major competitor in general merchandise retail"
+          "reason": "direct retail competitor, earnings comparison"
         },
         {
           "ticker": "COST",
-          "reason": "competitor in discount/value retail segment"
+          "reason": "retail sector peer, valuation benchmark"
         }
       ]
     },
@@ -1790,12 +1572,12 @@
       "days_until": 58,
       "beneficiaries": [
         {
-          "ticker": "BILL",
-          "reason": "competitor in accounting/financial software"
+          "ticker": "ADP",
+          "reason": "competing HCM/payroll software"
         },
         {
-          "ticker": "PAYC",
-          "reason": "peer in financial management and payroll software"
+          "ticker": "SQ",
+          "reason": "competing financial services platform"
         }
       ]
     },
@@ -1811,12 +1593,12 @@
       "days_until": 58,
       "beneficiaries": [
         {
-          "ticker": "IOVA",
-          "reason": "competitor in immuno-oncology therapies"
+          "ticker": "MRNA",
+          "reason": "competing oncology/immunotherapy pipeline"
         },
         {
-          "ticker": "EDIT",
-          "reason": "peer in cell therapy and gene editing cancer treatments"
+          "ticker": "GILD",
+          "reason": "peer biotech in oncology"
         }
       ]
     },
@@ -1832,12 +1614,12 @@
       "days_until": 58,
       "beneficiaries": [
         {
-          "ticker": "NOW",
-          "reason": "Enterprise software peer benefits from sector strength"
+          "ticker": "ORCL",
+          "reason": "competing cloud ERP/HCM solution"
         },
         {
-          "ticker": "ORCL",
-          "reason": "HCM/ERP competitor, positive sector sentiment lifts valuations"
+          "ticker": "ADBE",
+          "reason": "enterprise cloud software competitor"
         }
       ]
     },
@@ -1853,8 +1635,12 @@
       "days_until": 62,
       "beneficiaries": [
         {
-          "ticker": "LILLY",
-          "reason": "Competing Alzheimer's pipeline (donanemab), validates market opportunity"
+          "ticker": "LLY",
+          "reason": "competing Alzheimer's treatment (donanemab)"
+        },
+        {
+          "ticker": "ELY",
+          "reason": "Leqembi co-developer and partner"
         }
       ]
     },
@@ -1870,27 +1656,6 @@
       "days_until": 62
     },
     {
-      "ticker": "A",
-      "type": "earnings",
-      "event_name": "A Earnings",
-      "event_date": "2026-05-26",
-      "summary": "A Earnings (amc)",
-      "source": "finnhub",
-      "direction": "neutral",
-      "confidence": null,
-      "days_until": 64,
-      "beneficiaries": [
-        {
-          "ticker": "TMO",
-          "reason": "Life sciences equipment/services competitor"
-        },
-        {
-          "ticker": "ILMN",
-          "reason": "Life sciences/diagnostics sector peer"
-        }
-      ]
-    },
-    {
       "ticker": "CRM",
       "type": "earnings",
       "event_name": "CRM Earnings",
@@ -1902,12 +1667,12 @@
       "days_until": 64,
       "beneficiaries": [
         {
-          "ticker": "NOW",
-          "reason": "Enterprise software peer benefits from sector momentum"
+          "ticker": "ORCL",
+          "reason": "competing cloud CRM platform"
         },
         {
           "ticker": "MSFT",
-          "reason": "Cloud/enterprise software competitor"
+          "reason": "enterprise cloud applications competitor"
         }
       ]
     },
@@ -1924,7 +1689,11 @@
       "beneficiaries": [
         {
           "ticker": "AMD",
-          "reason": "Semiconductor competitor, comparative valuation interest"
+          "reason": "competing AI/GPU chip manufacturer"
+        },
+        {
+          "ticker": "LRCX",
+          "reason": "semiconductor equipment supplier"
         }
       ]
     },
@@ -1941,7 +1710,7 @@
       "beneficiaries": [
         {
           "ticker": "CDNS",
-          "reason": "EDA software competitor benefits from sector strength"
+          "reason": "competing EDA/design software"
         }
       ]
     },
@@ -1958,11 +1727,11 @@
       "beneficiaries": [
         {
           "ticker": "LLY",
-          "reason": "Diabetes treatment competitor, validates inhaled insulin market"
+          "reason": "competing diabetes treatment (GLP-1 drugs)"
         },
         {
-          "ticker": "JNJ",
-          "reason": "Diabetes care business benefits from market validation"
+          "ticker": "NVO",
+          "reason": "competing diabetes drug manufacturer"
         }
       ]
     },
@@ -1975,13 +1744,7 @@
       "source": "rttnews",
       "direction": "bull",
       "confidence": null,
-      "days_until": 69,
-      "beneficiaries": [
-        {
-          "ticker": "LLY",
-          "reason": "Depression/MDD treatment portfolio validates market opportunity"
-        }
-      ]
+      "days_until": 69
     },
     {
       "ticker": "CRDO",
@@ -2215,143 +1978,44 @@
       "days_until": 116
     },
     {
-      "ticker": "A",
-      "type": "fda",
-      "event_name": "Agilent received FDA approval for PD-L1 IHC 22C3 pharmDx diagnostic in epithelial ovarian, fallopian tube, or primary pe",
-      "event_date": null,
-      "summary": "Agilent received FDA approval for PD-L1 IHC 22C3 pharmDx diagnostic in epithelial ovarian, fallopian tube, or primary peritoneal carcinoma.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.9,
-      "days_until": null
-    },
-    {
       "ticker": "ASTS",
       "type": "contract_award",
       "event_name": "AST SpaceMobile secured a prime contract position on the US missile defense agency's shield program as part of the Penta",
       "event_date": null,
-      "summary": "AST SpaceMobile secured a prime contract position on the US missile defense agency's shield program as part of the Pentagon's Golden Dome defense strategy.",
+      "summary": "AST SpaceMobile secured a prime contract position on the US missile defense agency's shield program as part of the Pentagon's Golden Dome defense strategy, providing eligibility to compete for future ",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.7,
+      "confidence": 0.8,
       "days_until": null
     },
     {
-      "ticker": "ASTS",
-      "type": "sector_catalyst",
-      "event_name": "AST SpaceMobile expects Block 2 satellite launches over next two quarters with global service expansion planned through ",
+      "ticker": "CAT",
+      "type": "analyst_upgrade",
+      "event_name": "Citigroup upgraded Caterpillar (CAT) with a price target increase from $760 to $785, while JPMorgan raised to $860 and R",
       "event_date": null,
-      "summary": "AST SpaceMobile expects Block 2 satellite launches over next two quarters with global service expansion planned through 2026.",
+      "summary": "Citigroup upgraded Caterpillar (CAT) with a price target increase from $760 to $785, while JPMorgan raised to $860 and Rothschild & Co Redburn to $700.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.65,
-      "days_until": null
-    },
-    {
-      "ticker": "BMRN",
-      "type": "fda",
-      "event_name": "BioMarin's TransCon CNP (Voxzogo) FDA decision delayed beyond November 2025 deadline due to major amendment submission o",
-      "event_date": null,
-      "summary": "BioMarin's TransCon CNP (Voxzogo) FDA decision delayed beyond November 2025 deadline due to major amendment submission on post-marketing requirements.",
-      "source": "perplexity",
-      "direction": "neutral",
-      "confidence": 0.7,
-      "days_until": null
-    },
-    {
-      "ticker": "DARE",
-      "type": "ind_clearance",
-      "event_name": "Dar\u00e9 Bioscience received FDA IND clearance to initiate Phase 2 clinical study of DARE-HPV for persistent high-risk HPV i",
-      "event_date": null,
-      "summary": "Dar\u00e9 Bioscience received FDA IND clearance to initiate Phase 2 clinical study of DARE-HPV for persistent high-risk HPV infection treatment.",
-      "source": "perplexity",
-      "direction": "neutral",
       "confidence": 0.8,
       "days_until": null
     },
     {
       "ticker": "DISC",
       "type": "fda",
-      "event_name": "Disc Medicines' bitopertin FDA decision expected by end of Q1 2026, though FDA requested additional review time and expr",
+      "event_name": "Bitopertin FDA decision expected by end of January 2026, though FDA requested additional review time and some skepticism",
       "event_date": null,
-      "summary": "Disc Medicines' bitopertin FDA decision expected by end of Q1 2026, though FDA requested additional review time and expressed efficacy skepticism.",
+      "summary": "Bitopertin FDA decision expected by end of January 2026, though FDA requested additional review time and some skepticism about efficacy has been expressed.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.75,
-      "days_until": null
-    },
-    {
-      "ticker": "DTIL",
-      "type": "ind_clearance",
-      "event_name": "Precision BioSciences received FDA IND clearance for PBGENE-DMD, first-in-class gene therapy for Duchenne Muscular Dystr",
-      "event_date": null,
-      "summary": "Precision BioSciences received FDA IND clearance for PBGENE-DMD, first-in-class gene therapy for Duchenne Muscular Dystrophy.",
-      "source": "perplexity",
-      "direction": "neutral",
-      "confidence": 0.8,
-      "days_until": null
-    },
-    {
-      "ticker": "GEHC",
-      "type": "fda",
-      "event_name": "GE HealthCare achieved MRI portfolio milestone with FDA clearances for next-generation SIGNA MRI technology for precisio",
-      "event_date": null,
-      "summary": "GE HealthCare achieved MRI portfolio milestone with FDA clearances for next-generation SIGNA MRI technology for precision imaging.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.85,
-      "days_until": null
-    },
-    {
-      "ticker": "LIVN",
-      "type": "fda",
-      "event_name": "LivaNova received FDA premarket approval for aura6000 System to treat moderate to severe obstructive sleep apnea.",
-      "event_date": null,
-      "summary": "LivaNova received FDA premarket approval for aura6000 System to treat moderate to severe obstructive sleep apnea.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.9,
-      "days_until": null
-    },
-    {
-      "ticker": "LMT",
-      "type": "contract_award",
-      "event_name": "Lockheed Martin Missiles and Fire Control was awarded a $50,536,217 firm-fixed-price modification for Joint Air-to-Surfa",
-      "event_date": null,
-      "summary": "Lockheed Martin Missiles and Fire Control was awarded a $50,536,217 firm-fixed-price modification for Joint Air-to-Surface Standoff Missile and Long-Range Anti-Ship Missile Large Lot Procurement.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.9,
-      "days_until": null
-    },
-    {
-      "ticker": "RCKT",
-      "type": "fda",
-      "event_name": "Rocket Pharmaceuticals' Kresladi gene therapy FDA decision pending in Q1 2026; approval would grant priority review vouc",
-      "event_date": null,
-      "summary": "Rocket Pharmaceuticals' Kresladi gene therapy FDA decision pending in Q1 2026; approval would grant priority review voucher worth nine figures to extend runway.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.65,
+      "confidence": 0.7,
       "days_until": null
     },
     {
       "ticker": "RKLB",
-      "type": "sector_catalyst",
-      "event_name": "Rocket Lab expects first Neutron rocket launch in early 2026, marking expansion from Electron to larger reusable launch ",
+      "type": "test_flight",
+      "event_name": "Rocket Lab plans progress toward the first Neutron rocket launch expected in early 2026.",
       "event_date": null,
-      "summary": "Rocket Lab expects first Neutron rocket launch in early 2026, marking expansion from Electron to larger reusable launch vehicle.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.75,
-      "days_until": null
-    },
-    {
-      "ticker": "RKLB",
-      "type": "contract_win",
-      "event_name": "Rocket Lab expansion of defense and government contracts represents significant portion of backlog with ongoing margin i",
-      "event_date": null,
-      "summary": "Rocket Lab expansion of defense and government contracts represents significant portion of backlog with ongoing margin improvement expected.",
+      "summary": "Rocket Lab plans progress toward the first Neutron rocket launch expected in early 2026.",
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.7,
@@ -2359,32 +2023,21 @@
     },
     {
       "ticker": "SPCE",
-      "type": "sector_catalyst",
-      "event_name": "Virgin Galactic's Delta fleet commercial spaceflight operations expected to enter service in late 2026 after completion ",
+      "type": "test_flights",
+      "event_name": "Virgin Galactic is shifting focus to completing and testing the Delta fleet, expected to enter service in late 2026.",
       "event_date": null,
-      "summary": "Virgin Galactic's Delta fleet commercial spaceflight operations expected to enter service in late 2026 after completion and testing phase.",
+      "summary": "Virgin Galactic is shifting focus to completing and testing the Delta fleet, expected to enter service in late 2026.",
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.7,
       "days_until": null
     },
     {
-      "ticker": "SPR",
-      "type": "merger",
-      "event_name": "FTC resolved the Boeing acquisition of Spirit AeroSystems via a divestiture remedy.",
-      "event_date": null,
-      "summary": "FTC resolved the Boeing acquisition of Spirit AeroSystems via a divestiture remedy.",
-      "source": "perplexity",
-      "direction": "neutral",
-      "confidence": 0.9,
-      "days_until": null
-    },
-    {
       "ticker": "TGT",
-      "type": "analyst_price_target_increases",
-      "event_name": "Goldman Sachs raised Target's price target from $91 to $112 while maintaining neutral rating.",
+      "type": "analyst_upgrade",
+      "event_name": "Goldman Sachs raised price target on Target (TGT) from $91 to $112 with neutral rating amid multiple analyst upgrades an",
       "event_date": null,
-      "summary": "Goldman Sachs raised Target's price target from $91 to $112 while maintaining neutral rating.",
+      "summary": "Goldman Sachs raised price target on Target (TGT) from $91 to $112 with neutral rating amid multiple analyst upgrades and target hikes post-earnings.",
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.8,
@@ -2392,35 +2045,13 @@
     },
     {
       "ticker": "TGT",
-      "type": "analyst_upgrades",
-      "event_name": "Multiple analysts including Telsey Advisory upgraded to Outperform and raised price target to $145 from $110 following e",
+      "type": "guidance_change",
+      "event_name": "Target (TGT) raised 2026 adjusted EPS guidance to $7.50\u2013$8.50 above consensus $7.68, triggering analyst upgrades includi",
       "event_date": null,
-      "summary": "Multiple analysts including Telsey Advisory upgraded to Outperform and raised price target to $145 from $110 following earnings beat and $2B 2026 investment plan.",
+      "summary": "Target (TGT) raised 2026 adjusted EPS guidance to $7.50\u2013$8.50 above consensus $7.68, triggering analyst upgrades including Telsey to Outperform with $145 target.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.8,
-      "days_until": null
-    },
-    {
-      "ticker": "UNH",
-      "type": "merger",
-      "event_name": "DOJ settled the UnitedHealth acquisition of Amedisys via divestitures.",
-      "event_date": null,
-      "summary": "DOJ settled the UnitedHealth acquisition of Amedisys via divestitures.",
-      "source": "perplexity",
-      "direction": "neutral",
       "confidence": 0.9,
-      "days_until": null
-    },
-    {
-      "ticker": "VNDA",
-      "type": "fda",
-      "event_name": "FDA approved Vanda Pharmaceuticals' BYSANTI (milsaperidone) for treatment of Bipolar I Disorder and Schizophrenia as a n",
-      "event_date": null,
-      "summary": "FDA approved Vanda Pharmaceuticals' BYSANTI (milsaperidone) for treatment of Bipolar I Disorder and Schizophrenia as a new chemical entity.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.95,
       "days_until": null
     }
   ]
