@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Bull Scouter - Political Sentiment</title>
+  <meta name="description" content="Political sentiment index: real-time tracking of policy statements and their predicted market impact.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/political.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/political.html">
+  <meta property="og:title" content="Bull Scouter - Political Sentiment">
+  <meta property="og:description" content="Political sentiment index: real-time tracking of policy statements and their predicted market impact.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bull Scouter - Political Sentiment">
+  <meta name="twitter:description" content="Political sentiment index: real-time tracking of policy statements and their predicted market impact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            bull: {
+              dark: '#0a0b0d',
+              card: '#14161a',
+              accent: '#00ff88',
+              blue: '#3b82f6',
+              muted: '#94a3b8',
+              border: 'rgba(255,255,255,0.1)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+    }
+    .heat-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(to right, #ef4444, #f59e0b, #6b7280, #4ade80, #22c55e);
+    }
+    .heat-marker {
+      width: 4px;
+      height: 16px;
+      border-radius: 2px;
+      background: white;
+      position: absolute;
+      top: -4px;
+      transform: translateX(-50%);
+      box-shadow: 0 0 6px rgba(255,255,255,0.5);
+    }
+    .stmt-card {
+      background: rgba(20, 22, 26, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      transition: border-color 0.2s;
+    }
+    .stmt-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans">
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
+          <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+          <a class="text-bull-accent" href="political.html">Political</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
+        </div>
+        <button id="burger-btn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="sm:hidden p-2 text-bull-muted hover:text-white transition-colors" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md">
+      <div class="px-4 py-3 space-y-2 text-sm font-medium">
+        <a class="block py-2 text-bull-muted" href="index.html">Home</a>
+        <a class="block py-2 text-bull-accent" href="political.html">Political</a>
+        <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
+        <a class="block py-2 text-bull-muted" href="history.html">History</a>
+        <a class="block py-2 text-bull-muted" href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Stats Bar -->
+  <div class="border-b border-bull-border bg-bull-dark/50">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-x-3 gap-y-1 text-xs font-mono flex-wrap">
+      <span class="text-white/70" id="pol-date-nav">-</span>
+      <span class="text-white/10">|</span>
+      <span class="text-bull-muted">Statements (24h): <span id="stat-count" class="text-white/70">-</span></span>
+      <span class="text-bull-muted">Dominant: <span id="stat-dominant" class="text-white/70">-</span></span>
+      <span class="text-bull-muted">Direction: <span id="stat-direction" class="font-bold">-</span></span>
+      <span class="text-bull-muted">Accuracy: <span id="stat-accuracy" class="font-bold">-</span></span>
+      <button id="btn-copy-political" class="ml-auto copy-btn text-bull-muted hover:text-bull-accent transition-colors shrink-0" title="Copy political data">
+        <svg class="inline w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/></svg>
+        <span class="copy-label hidden sm:inline">Copy for Claude</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <p class="text-xs text-bull-muted mb-4">Political sentiment index: real-time tracking of policy statements from key officials and their predicted market impact.</p>
+
+    <!-- Loading State -->
+    <div id="loading-state" class="text-center py-20">
+      <div class="w-8 h-8 border-2 border-bull-accent/30 border-t-bull-accent rounded-full animate-spin mx-auto mb-3"></div>
+      <p class="text-bull-muted text-sm">Loading political sentiment data...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="error-state" class="hidden text-center py-20">
+      <p class="text-red-400 text-lg">Failed to load data</p>
+      <p class="text-white/30 text-sm mt-1" id="error-msg"></p>
+    </div>
+
+    <!-- Content (hidden until loaded) -->
+    <div id="content" class="hidden">
+
+      <!-- Heat Gauge -->
+      <section class="mb-6">
+        <div class="glass-card p-4">
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">Political Heat Score</div>
+              <div class="flex items-baseline gap-2">
+                <span id="heat-value" class="text-3xl font-extrabold">0.0</span>
+                <span id="heat-label" class="text-sm font-medium text-bull-muted">Neutral</span>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">24h Statements</div>
+              <span id="heat-count" class="text-2xl font-bold text-white/70">0</span>
+            </div>
+          </div>
+          <div class="relative mt-2">
+            <div class="heat-bar"></div>
+            <div id="heat-marker" class="heat-marker" style="left: 50%"></div>
+          </div>
+          <div class="flex justify-between mt-1 text-[10px] text-bull-muted">
+            <span>Bearish</span>
+            <span>Neutral</span>
+            <span>Bullish</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charts -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+        <!-- SPY Timeline Chart -->
+        <div class="glass-card p-4">
+          <div class="text-xs text-bull-muted mb-2 font-medium uppercase tracking-wider">SPY Timeline with Statement Markers</div>
+          <div style="height: 280px;">
+            <canvas id="timelineChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Prediction Accuracy Scatter -->
+        <div class="glass-card p-4">
+          <div class="text-xs text-bull-muted mb-2 font-medium uppercase tracking-wider">Prediction Accuracy</div>
+          <div style="height: 280px;">
+            <canvas id="scatterChart"></canvas>
+          </div>
+          <div id="scatter-stats" class="text-[10px] text-bull-muted mt-2 text-center"></div>
+        </div>
+      </div>
+
+      <!-- Statement Feed -->
+      <section class="mb-6">
+        <h2 class="text-sm font-bold text-white uppercase tracking-wider mb-3">Statement Feed</h2>
+        <div id="statement-feed" class="space-y-2 max-h-[600px] overflow-y-auto pr-1"></div>
+      </section>
+
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden text-center py-20">
+      <p class="text-bull-muted text-lg">No political sentiment data yet</p>
+      <p class="text-white/30 text-sm mt-1">Run the political monitor to populate data</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-bull-border py-12 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="w-6 h-6 bg-bull-muted/20 rounded flex items-center justify-center">
+          <svg class="w-4 h-4 text-bull-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <a href="index.html" class="text-sm font-bold tracking-tight text-bull-muted hover:text-bull-muted" style="text-decoration:none">Bull Scouter</a>
+      </div>
+      <p class="text-xs text-bull-muted max-w-lg mx-auto">
+        Autonomous AI agents for stock catalyst detection. Not financial advice.<br>
+        Data refreshed 3x daily. Past performance does not guarantee future results.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/political.js?v=1"></script>
+</body>
+</html>
