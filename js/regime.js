@@ -335,17 +335,19 @@ const RegimePage = (() => {
     const feedEl = document.getElementById('pol-statements');
     if (!feedEl || !polData) return;
 
-    const stmts = (polData.statements || [])
-      .filter(s => Math.abs(s.composite) >= 0.3)
-      .slice(0, 5);
+    const allStmts = (polData.statements || [])
+      .filter(s => Math.abs(s.composite) >= 0.3);
 
-    if (!stmts.length) {
+    if (!allStmts.length) {
       feedEl.innerHTML = '<p class="text-xs text-bull-muted">No high-impact statements in the last 30 days.</p>';
       return;
     }
 
+    const PAGE_SIZE = 5;
+    let visibleCount = PAGE_SIZE;
     const officialNames = { president: 'President', fed_chair: 'Fed Chair', treasury_sec: 'Treasury Sec' };
-    feedEl.innerHTML = stmts.map(s => {
+
+    function renderStmtCard(s) {
       const emoji = s.direction > 0 ? '🟢' : s.direction < 0 ? '🔴' : '⚪';
       const actual = s.spy_1d != null ? `<span class="text-bull-muted"> → SPY ${s.spy_1d > 0 ? '+' : ''}${s.spy_1d}%</span>` : '';
       const time = s.time ? new Date(s.time).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
@@ -361,7 +363,20 @@ const RegimePage = (() => {
           <p class="text-xs text-bull-muted mt-0.5 truncate">${s.summary || s.text}</p>
         </div>
       </div>`;
-    }).join('');
+    }
+
+    function renderFeed() {
+      const visible = allStmts.slice(0, visibleCount);
+      let html = visible.map(renderStmtCard).join('');
+      if (visibleCount < allStmts.length) {
+        const remaining = allStmts.length - visibleCount;
+        html += `<button id="pol-show-more" class="w-full text-xs text-bull-accent hover:text-white py-2 transition-colors">Show ${Math.min(PAGE_SIZE, remaining)} more (${remaining} remaining)</button>`;
+      }
+      feedEl.innerHTML = html;
+      const btn = document.getElementById('pol-show-more');
+      if (btn) btn.addEventListener('click', () => { visibleCount += PAGE_SIZE; renderFeed(); });
+    }
+    renderFeed();
 
     // Impact chart: predicted composite vs actual SPY 1d
     const withSpy = (polData.statements || []).filter(s => s.spy_1d != null && s.composite !== 0);
