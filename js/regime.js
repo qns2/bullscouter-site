@@ -6,7 +6,9 @@
 
 const RegimePage = (() => {
   const DATA_PATH = 'data/regime.json';
+  const POL_PATH = 'data/political.json';
   let data = null;
+  let polData = null;
   let mainChart = null;
   let scoreChart = null;
   let currentRange = 30;
@@ -39,12 +41,18 @@ const RegimePage = (() => {
       const resp = await fetch(DATA_PATH + '?_cb=' + Date.now());
       if (!resp.ok) throw new Error(resp.status);
       data = await resp.json();
+      // Fetch political data (non-blocking)
+      try {
+        const polResp = await fetch(POL_PATH + '?_cb=' + Date.now());
+        if (polResp.ok) polData = await polResp.json();
+      } catch (_) {}
       hide('rg-loading');
       show('rg-content');
       renderStats();
       renderCharts();
       renderTable();
       renderProjections();
+      renderPolitical();
     } catch (e) {
       hide('rg-loading');
       show('rg-error');
@@ -311,6 +319,107 @@ const RegimePage = (() => {
   function show(id) { const el = document.getElementById(id); if (el) el.classList.remove('hidden'); }
   function hide(id) { const el = document.getElementById(id); if (el) el.classList.add('hidden'); }
   function setText(id, text) { const el = document.getElementById(id); if (el) el.textContent = text; }
+
+  // ── Political Heat ──
+
+  function renderPolitical() {
+    // Heat badge in stats bar
+    const heatEl = document.getElementById('rg-heat');
+    if (heatEl && polData) {
+      const heat = polData.heat_score || 0;
+      heatEl.textContent = (heat >= 0 ? '+' : '') + heat.toFixed(2);
+      heatEl.style.color = heat > 0.5 ? '#4ade80' : heat < -0.5 ? '#f87171' : '#9ca3af';
+    }
+
+    // Statement feed (top 5 high-impact, recent first)
+    const feedEl = document.getElementById('pol-statements');
+    if (!feedEl || !polData) return;
+
+    const stmts = (polData.statements || [])
+      .filter(s => Math.abs(s.composite) >= 0.3)
+      .slice(0, 5);
+
+    if (!stmts.length) {
+      feedEl.innerHTML = '<p class="text-xs text-bull-muted">No high-impact statements in the last 30 days.</p>';
+      return;
+    }
+
+    const officialNames = { president: 'President', fed_chair: 'Fed Chair', treasury_sec: 'Treasury Sec' };
+    feedEl.innerHTML = stmts.map(s => {
+      const emoji = s.direction > 0 ? '🟢' : s.direction < 0 ? '🔴' : '⚪';
+      const actual = s.spy_1d != null ? `<span class="text-bull-muted"> → SPY ${s.spy_1d > 0 ? '+' : ''}${s.spy_1d}%</span>` : '';
+      const time = s.time ? new Date(s.time).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+      return `<div class="flex items-start gap-2 py-1.5 border-b border-bull-border/20">
+        <span class="text-sm shrink-0">${emoji}</span>
+        <div class="min-w-0">
+          <div class="flex items-center gap-2 text-xs">
+            <span class="font-medium text-white">${officialNames[s.official] || s.official}</span>
+            <span class="text-bull-muted">${time}</span>
+            <span class="font-mono ${s.composite > 0 ? 'text-green-400' : s.composite < 0 ? 'text-red-400' : 'text-gray-400'}">${s.composite > 0 ? '+' : ''}${s.composite.toFixed(2)}</span>
+            ${actual}
+          </div>
+          <p class="text-xs text-bull-muted mt-0.5 truncate">${s.summary || s.text}</p>
+        </div>
+      </div>`;
+    }).join('');
+
+    // Impact chart: predicted composite vs actual SPY 1d
+    const withSpy = (polData.statements || []).filter(s => s.spy_1d != null && s.composite !== 0);
+    const chartEl = document.getElementById('polImpactChart');
+    if (!chartEl || withSpy.length < 3) {
+      if (chartEl) chartEl.parentElement.innerHTML += '<p class="text-xs text-bull-muted mt-2">Impact chart needs 3+ statements with SPY data.</p>';
+      return;
+    }
+
+    new Chart(chartEl, {
+      type: 'scatter',
+      data: {
+        datasets: [{
+          label: 'Predicted vs Actual',
+          data: withSpy.map(s => ({ x: s.composite, y: s.spy_1d, text: s.summary || '' })),
+          backgroundColor: withSpy.map(s =>
+            s.official === 'president' ? 'rgba(59,130,246,0.7)' :
+            s.official === 'fed_chair' ? 'rgba(249,115,22,0.7)' : 'rgba(34,197,94,0.7)'
+          ),
+          pointRadius: 5,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => [
+                `Predicted: ${ctx.raw.x > 0 ? '+' : ''}${ctx.raw.x.toFixed(2)}`,
+                `Actual SPY: ${ctx.raw.y > 0 ? '+' : ''}${ctx.raw.y}%`,
+                ctx.raw.text.substring(0, 60),
+              ]
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 'Predicted Composite', color: '#6b7280', font: { size: 10 } },
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            ticks: { color: '#6b7280', font: { size: 9 } },
+          },
+          y: {
+            title: { display: true, text: 'Actual SPY 1d %', color: '#6b7280', font: { size: 10 } },
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            ticks: { color: '#6b7280', font: { size: 9 } },
+          },
+        },
+      },
+    });
+
+    // Show accuracy if available
+    if (polData.accuracy && polData.accuracy.n) {
+      chartEl.insertAdjacentHTML('afterend',
+        `<p class="text-[10px] text-bull-muted mt-1">Direction accuracy: ${polData.accuracy.direction_accuracy_1h}% (N=${polData.accuracy.n}) · <span class="text-blue-400">●</span> President <span class="text-orange-400">●</span> Fed <span class="text-green-400">●</span> Treasury</p>`);
+    }
+  }
 
   return { init };
 })();
