@@ -158,6 +158,29 @@ const OptionsFlow = (() => {
         ? `right:50%;width:${fillPct}%`
         : `left:50%;width:0%`;
 
+    // Streak + momentum strip (shown when DB history available)
+    let streakStrip = '';
+    const hasStreakData = t.bullish_streak != null || t.bullish_count_14d != null || t.delta_5d != null;
+    if (hasStreakData) {
+      const streakN = t.bullish_streak || 0;
+      const streakCls = streakN >= 3 ? 'text-green-400' : streakN > 0 ? 'text-green-400/70' : 'text-gray-500';
+      const streakLabel = streakN > 0 ? `🔥 ${streakN}d streak` : '🔥 0d';
+      const count14 = t.bullish_count_14d ?? 0;
+      const delta = t.delta_5d;
+      let deltaChip = '';
+      if (delta != null) {
+        const dCls = delta > 0.5 ? 'text-green-400' : delta < -0.5 ? 'text-red-400' : 'text-gray-500';
+        const sign = delta > 0 ? '+' : '';
+        deltaChip = `<span class="${dCls}" title="Today vs 5-day avg">Δ5d ${sign}${fmt(delta, 1)}</span>`;
+      }
+      streakStrip = `
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] mb-2">
+          <span class="${streakCls} font-semibold" title="Consecutive ThetaData-confirmed days with score ≥ +3">${streakLabel}</span>
+          <span class="text-gray-500" title="ThetaData-confirmed bullish days in last 14">${count14}/14</span>
+          ${deltaChip}
+        </div>`;
+    }
+
     // Signal component chips
     const signalChips = Object.entries(t.signals || {})
       .filter(([_, v]) => v !== 0)
@@ -301,6 +324,8 @@ const OptionsFlow = (() => {
         <div style="${fillStyle};background:${fillColor};position:absolute;height:100%;border-radius:0.25rem;transition:all 0.4s ease-out"></div>
       </div>
 
+      ${streakStrip}
+
       <div class="flex flex-wrap gap-1">${signalChips}</div>
 
       <div class="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-gray-500 mt-2">
@@ -364,6 +389,11 @@ const OptionsFlow = (() => {
     const lines = tickers.map(t => {
       const parts = [`${t.ticker} (${t.direction || 'NEUTRAL'})`];
       parts.push(`Flow: ${t.flow_score > 0 ? '+' : ''}${fmt(t.flow_score)}`);
+      if (t.bullish_streak != null && t.bullish_streak > 0) {
+        parts.push(`Streak: ${t.bullish_streak}d`);
+      }
+      if (t.bullish_count_14d != null) parts.push(`14d: ${t.bullish_count_14d}/14`);
+      if (t.delta_5d != null) parts.push(`Δ5d: ${t.delta_5d > 0 ? '+' : ''}${fmt(t.delta_5d, 1)}`);
       parts.push(`P/C: ${fmt(t.put_call_ratio, 2)}`);
       parts.push(`IV Skew: ${fmt(t.iv_skew, 3)}`);
       parts.push(`Vol: ${fmtK(t.total_volume)}`);
