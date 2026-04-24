@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Bull Scouter - Options Deep</title>
+  <meta name="description" content="Deep options analytics: 25Δ earnings skew direction + dealer gamma exposure regime + zero-gamma buffer.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/options-deep.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/options-deep.html">
+  <meta property="og:title" content="Bull Scouter - Options Deep">
+  <meta property="og:description" content="Deep options analytics — skew + dealer gamma across held positions and the scanner universe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            bull: {
+              dark: '#0a0b0d', card: '#14161a', accent: '#00ff88',
+              blue: '#3b82f6', muted: '#94a3b8',
+              border: 'rgba(255,255,255,0.1)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+    }
+    /* Signal left-border accent */
+    .row-strong-bull { border-left: 3px solid #00ff88; }
+    .row-bull        { border-left: 3px solid #4ade80; }
+    .row-neutral     { border-left: 3px solid #64748b; }
+    .row-bear        { border-left: 3px solid #f87171; }
+    .row-strong-bear { border-left: 3px solid #ef4444; }
+    .row-no-data     { border-left: 3px solid #334155; }
+
+    /* Pill chips */
+    .chip { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em;
+            padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
+    .chip-bull   { background: rgba(0, 255, 136, 0.12); color: #00ff88; }
+    .chip-bear   { background: rgba(239, 68, 68, 0.15); color: #fca5a5; }
+    .chip-muted  { background: rgba(255, 255, 255, 0.06); color: #94a3b8; }
+    .chip-warn   { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+    .chip-danger { background: rgba(220, 38, 38, 0.2); color: #fca5a5; }
+
+    /* Table-like grid row */
+    .deep-row {
+      display: grid;
+      grid-template-columns:
+        /* ticker */ minmax(72px, 80px)
+        /* flow */   minmax(90px, 100px)
+        /* streak */ minmax(70px, 80px)
+        /* skew dir */ minmax(90px, 1fr)
+        /* skew mag */ minmax(90px, 1fr)
+        /* gex sign */ minmax(90px, 1fr)
+        /* zero-γ */ minmax(100px, 1fr)
+        /* earnings */ minmax(110px, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.015);
+      border-radius: 8px;
+      margin-bottom: 5px;
+      transition: background 0.12s ease;
+      font-size: 0.85rem;
+    }
+    .deep-row:hover { background: rgba(255,255,255,0.04); }
+    .deep-row .tk { font-family: 'SF Mono', monospace; font-weight: 700; color: #fff; }
+    .deep-row .flow { font-family: 'SF Mono', monospace; text-align: right; }
+    .deep-row .streak-num { font-family: 'SF Mono', monospace; font-size: 0.78rem; color: #cbd5e1; }
+
+    /* Header row styling */
+    .deep-head {
+      display: grid;
+      grid-template-columns:
+        minmax(72px, 80px) minmax(90px, 100px) minmax(70px, 80px)
+        minmax(90px, 1fr) minmax(90px, 1fr) minmax(90px, 1fr)
+        minmax(100px, 1fr) minmax(110px, 1fr);
+      gap: 12px;
+      padding: 8px 14px 4px 14px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #64748b;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 6px;
+    }
+    .deep-head .flow { text-align: right; }
+
+    .loading-pulse {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(0, 255, 136, 0.1);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .deep-head { display: none; }
+      .deep-row { grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.8rem; }
+      .deep-row > div { display: flex; gap: 4px; }
+      .deep-row > div::before { content: attr(data-label); color: #64748b; font-size: 0.65rem; }
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans">
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-90">
+          <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
+          <a class="text-bull-muted hover:text-white" href="index.html">Home</a>
+          <a class="text-bull-muted hover:text-white" href="options.html">Options Flow</a>
+          <a class="text-bull-muted hover:text-white" href="darwin.html">Darwin</a>
+          <a class="text-bull-muted hover:text-white" href="about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="max-w-7xl mx-auto px-4 pt-8 sm:pt-12 pb-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Options Deep</h1>
+        <p class="text-sm text-bull-muted mt-1">Skew · Dealer GEX · Zero-γ buffer &mdash; <span id="od-date" class="text-white font-mono">-</span></p>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-bull-muted">provider: <span id="od-provider" class="text-white">-</span></span>
+        <button id="btn-copy-od" class="flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10" title="Copy all data">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span class="copy-label hidden sm:inline">Copy</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Methodology -->
+  <div class="max-w-7xl mx-auto px-4 mb-6">
+    <details class="glass-card p-4">
+      <summary class="cursor-pointer text-xs font-bold uppercase tracking-wider text-bull-muted hover:text-white">How to read this page</summary>
+      <div class="mt-4 text-sm text-gray-400 space-y-2">
+        <p><span class="text-white font-semibold">Flow signal</span>: from the latest options flow scan. 🚀 strong bull (>+5) · 🟢 bull (+2 to +5) · ⚖️ neutral · 🔴 bear · 🚨 strong bear.</p>
+        <p><span class="text-white font-semibold">Skew direction</span>: 25Δ call IV − 25Δ put IV. Bullish = calls bid up (upside speculation). Bearish = puts bid up (hedging / fear).</p>
+        <p><span class="text-white font-semibold">Skew magnitude</span>: |risk reversal| in vol points. Normal ≤2vp · Moderate 2–4vp · Extreme &gt;4vp.</p>
+        <p><span class="text-white font-semibold">GEX sign</span>: dealer gamma exposure. Long γ &gt;+$100M (moves dampened). Short γ &lt;−$100M (moves amplified, squeezes likely).</p>
+        <p><span class="text-white font-semibold">Zero-γ buffer</span>: distance from spot to the dealer-gamma zero crossing. Safe &gt;10% (stable) · Caution 5–10% · Danger &lt;5% (spot can pop regime at any move).</p>
+        <p class="text-xs text-gray-500">Skew computed only when earnings is within 45 days. All Greeks via Black-Scholes from yfinance IV (or Tradier directly when configured).</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- My Stocks section -->
+  <main class="max-w-7xl mx-auto px-4 pb-6">
+    <section class="mb-8">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-lg font-bold flex items-center gap-2">📌 My Stocks <span class="text-xs font-normal text-bull-muted" id="od-mine-count">(0)</span></h2>
+      </div>
+      <div class="glass-card p-4">
+        <div class="deep-head hidden md:grid">
+          <div>Ticker</div><div class="flow">Flow</div><div>Streak</div>
+          <div>Skew dir</div><div>Skew mag</div>
+          <div>GEX</div><div>Zero-γ</div><div>Earnings</div>
+        </div>
+        <div id="od-mine"></div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-lg font-bold flex items-center gap-2">🌐 Bull Scouter Universe <span class="text-xs font-normal text-bull-muted" id="od-bs-count">(0)</span></h2>
+      </div>
+      <div class="glass-card p-4">
+        <div class="deep-head hidden md:grid">
+          <div>Ticker</div><div class="flow">Flow</div><div>Streak</div>
+          <div>Skew dir</div><div>Skew mag</div>
+          <div>GEX</div><div>Zero-γ</div><div>Earnings</div>
+        </div>
+        <div id="od-bs"></div>
+      </div>
+    </section>
+
+    <div id="od-loading" class="text-center py-20">
+      <div class="loading-pulse mx-auto mb-3"></div>
+      <p class="text-bull-muted">Loading options-deep data…</p>
+    </div>
+
+    <div id="od-error" class="hidden text-center py-20">
+      <p class="text-red-400 text-lg">Failed to load data</p>
+      <p class="text-white/30 text-sm mt-1" id="od-error-msg"></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-bull-border py-10 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <div class="w-6 h-6 bg-bull-muted/20 rounded flex items-center justify-center">
+          <svg class="w-4 h-4 text-bull-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <span class="text-sm font-bold tracking-tight text-bull-muted">Bull Scouter</span>
+      </div>
+      <p class="text-xs text-bull-muted max-w-lg mx-auto">Autonomous AI agents for stock catalyst detection. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="js/options-deep.js?v=1"></script>
+</body>
+</html>
