@@ -142,32 +142,42 @@
 
   // ---------- Copy for Claude ----------
 
-  function copyForClaude(data) {
-    const lines = [
-      `Bull Scouter Options Deep — ${data.date} (provider: ${data.provider})`,
-      `Mine: ${data.counts.mine} · Bull Scouter: ${data.counts.bullscouter}`,
-      '',
-    ];
-    const block = (title, rows) => {
-      lines.push(`== ${title} ==`);
-      rows.forEach(e => {
-        const flow = e.flow?.score != null ? `flow ${e.flow.score > 0 ? '+' : ''}${fmt(e.flow.score)}` : 'no flow';
-        const streak = e.flow?.bullish_streak ? `🔥${e.flow.bullish_streak}d` : '';
-        const skew = e.skew ? `skew ${e.skew.direction} ${fmt(e.skew.risk_reversal_vp)}vp (${e.skew.magnitude})` : '';
-        const gex = e.gex ? `${e.gex.regime} Γ₀${fmt(e.gex.zero_gamma_distance_pct)}% ${e.gex.buffer}` : '';
-        const earn = e.earnings_date ? `E:${String(e.earnings_date).slice(0,10)}` : '';
-        lines.push([e.ticker, flow, streak, skew, gex, earn].filter(Boolean).join(' | '));
-      });
-      lines.push('');
-    };
-    block('MY STOCKS', data.mine || []);
-    block('BULL SCOUTER', data.bullscouter || []);
-    navigator.clipboard.writeText(lines.join('\n')).then(() => {
-      const btn = document.getElementById('btn-copy-od');
-      const label = btn?.querySelector('.copy-label');
-      if (label) label.textContent = 'Copied!';
-      setTimeout(() => { if (label) label.textContent = 'Copy'; }, 2000);
+  function _formatRows(rows) {
+    return rows.map(e => {
+      const flow = e.flow?.score != null ? `flow ${e.flow.score > 0 ? '+' : ''}${fmt(e.flow.score)}` : 'no flow';
+      const streak = e.flow?.bullish_streak ? `🔥${e.flow.bullish_streak}d` : '';
+      const skew = e.skew ? `skew ${e.skew.direction} ${fmt(e.skew.risk_reversal_vp)}vp (${e.skew.magnitude})` : '';
+      const gex = e.gex ? `${e.gex.regime} Γ₀${fmt(e.gex.zero_gamma_distance_pct)}% ${e.gex.buffer}` : '';
+      const earn = e.earnings_date ? `E:${String(e.earnings_date).slice(0,10)}` : '';
+      return [e.ticker, flow, streak, skew, gex, earn].filter(Boolean).join(' | ');
     });
+  }
+
+  function copyList(data, which) {
+    // which: 'mine' | 'bullscouter' | 'all'
+    const header = `Bull Scouter Options Deep — ${data.date} (provider: ${data.provider})`;
+    let lines = [header, ''];
+    if (which === 'mine') {
+      lines.push(`== MY STOCKS (${(data.mine || []).length}) ==`);
+      lines = lines.concat(_formatRows(data.mine || []));
+    } else if (which === 'bullscouter') {
+      lines.push(`== BULL SCOUTER UNIVERSE (${(data.bullscouter || []).length}) ==`);
+      lines = lines.concat(_formatRows(data.bullscouter || []));
+    } else {
+      lines.push(`Mine: ${data.counts.mine} · Bull Scouter: ${data.counts.bullscouter}`, '');
+      lines.push('== MY STOCKS ==');
+      lines = lines.concat(_formatRows(data.mine || []));
+      lines.push('', '== BULL SCOUTER ==');
+      lines = lines.concat(_formatRows(data.bullscouter || []));
+    }
+    return navigator.clipboard.writeText(lines.join('\n'));
+  }
+
+  function flashCopied(btn) {
+    const label = btn?.querySelector('.copy-label');
+    const prev = label?.textContent || 'Copy';
+    if (label) label.textContent = 'Copied!';
+    setTimeout(() => { if (label) label.textContent = prev; }, 1800);
   }
 
   // ---------- init ----------
@@ -187,7 +197,19 @@
 
       hide('od-loading');
 
-      document.getElementById('btn-copy-od')?.addEventListener('click', () => copyForClaude(data));
+      // Global copy (all)
+      const globalBtn = document.getElementById('btn-copy-od');
+      globalBtn?.addEventListener('click', () => {
+        copyList(data, 'all').then(() => flashCopied(globalBtn));
+      });
+
+      // Per-list copy buttons
+      document.querySelectorAll('.od-copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const which = btn.dataset.copyList;
+          copyList(data, which).then(() => flashCopied(btn));
+        });
+      });
     } catch (e) {
       hide('od-loading');
       show('od-error');
