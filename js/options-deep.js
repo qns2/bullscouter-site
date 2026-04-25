@@ -163,11 +163,16 @@
     card.dataset.gexRegime = gex?.regime || 'none';
     card.dataset.gexBuffer = gex?.buffer || 'none';
 
+    const frozenBadge = entry.frozen
+      ? '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 whitespace-nowrap" title="Watchlist FROZEN — do not enter">🧊 FROZEN</span>'
+      : '';
+
     card.innerHTML = `
       <div class="flex items-start justify-between mb-3">
         <div class="flex items-center gap-2 flex-wrap">
           <a href="ticker.html?t=${esc(ticker)}" class="text-lg font-bold font-mono hover:text-bull-accent transition-colors">${esc(ticker)}</a>
           ${directionChip}
+          ${frozenBadge}
         </div>
         <div class="flex items-start gap-2 flex-shrink-0">
           <div class="text-right">
@@ -207,6 +212,10 @@
       ${earningsChip ? `
       <div class="mt-3 pt-3 border-t border-white/[0.06]">
         ${earningsChip}
+      </div>` : ''}
+      ${entry.thesis ? `
+      <div class="mt-3 pt-3 border-t border-white/[0.06] text-[11px] text-gray-400 leading-relaxed">
+        ${entry.frozen ? '<span class="text-amber-400 font-semibold">⚠ </span>' : ''}${esc(entry.thesis)}
       </div>` : ''}
     `;
     return card;
