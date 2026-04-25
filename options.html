@@ -137,8 +137,8 @@
             <p class="text-xs">Accumulated open interest bias. Sustained call OI = longer-term bullish.</p>
           </div>
           <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">IV Skew (&plusmn;3)</p>
-            <p class="text-xs">When call IV exceeds put IV, someone is aggressively buying upside.</p>
+            <p class="text-white font-semibold mb-1">ATM Skew (&plusmn;3)</p>
+            <p class="text-xs">OI-weighted call IV − put IV across strikes within ±10% of spot. Positive = calls bid up (bullish). The Options Deep page measures the same direction at the 25Δ wing — different strike basis, same sign convention (call − put).</p>
           </div>
           <div class="bg-white/[0.03] rounded-lg p-3">
             <p class="text-white font-semibold mb-1">OTM Call Spike (0 to +3)</p>
@@ -151,10 +151,10 @@
         </div>
         <p class="text-xs text-gray-500 mt-2">Interpretation: <span class="text-green-400">&gt;+5 Strongly Bullish</span> | <span class="text-green-400/60">+2 to +5 Bullish</span> | <span class="text-gray-400">-2 to +2 Neutral</span> | <span class="text-red-400/60">-5 to -2 Bearish</span> | <span class="text-red-400">&lt;-5 Strongly Bearish</span>. Scanned twice daily (pre-market + post-close) across ~50 tickers from all paths.</p>
         <div class="mt-3 pt-3 border-t border-white/[0.05] text-xs text-gray-500 space-y-1">
-          <p><span class="text-white font-semibold">Persistence indicators</span> (shown on each card when history available, ThetaData-confirmed rows only):</p>
-          <p>🔥 <span class="text-white">Streak</span>: consecutive confirmed days with score ≥ +3. Resets when the ticker goes neutral or drops out of the universe.</p>
-          <p><span class="text-white">X/14</span>: confirmed bullish days in the last 14 calendar days.</p>
-          <p><span class="text-white">Δ5d</span>: today's score minus the 5-day average. <span class="text-green-400">Green</span> = warming, <span class="text-red-400">red</span> = cooling.</p>
+          <p><span class="text-white font-semibold">Persistence indicators</span> (ThetaData-confirmed aggregate flow_score only — not sub-signals like OTM calls):</p>
+          <p>🔥 <span class="text-white">Streak</span>: consecutive trading days where aggregate flow_score ≥ +3. Resets on a sub-threshold day, or when ThetaData stops confirming for &gt;3 days (stale data).</p>
+          <p><span class="text-white">X/14</span>: confirmed bullish days (flow_score ≥ +3) in the last 14 calendar days. Independent of streak — counts non-consecutive days too.</p>
+          <p><span class="text-white">Δ5d</span>: today's flow_score minus the mean of the last 5 confirmed days. <span class="text-green-400">Green</span> = warming, <span class="text-red-400">red</span> = cooling.</p>
         </div>
       </div>
     </details>

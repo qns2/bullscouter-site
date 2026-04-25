@@ -12,7 +12,7 @@ const OptionsFlow = (() => {
   const SIGNAL_LABELS = {
     pc_volume: 'P/C Vol',
     pc_oi: 'P/C OI',
-    iv_skew: 'IV Skew',
+    iv_skew: 'ATM Skew',
     otm_call_spike: 'OTM Call',
     otm_put_spike: 'OTM Put',
   };
@@ -330,7 +330,7 @@ const OptionsFlow = (() => {
 
       <div class="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-gray-500 mt-2">
         <span>P/C <span class="text-white font-mono">${fmt(t.put_call_ratio, 2)}</span>${t.td_put_call_ratio != null ? ' <span class="text-cyan-400 text-[9px]" title="Confirmed by ThetaData EOD">\u0398</span>' : ''}</span>
-        <span>IV Skew <span class="text-white font-mono">${fmt(t.iv_skew, 3)}</span></span>
+        <span title="ATM-band call IV minus put IV (positive = bullish, calls bid up). Same convention as Options Deep page.">RR (ATM, c−p) <span class="text-white font-mono">${fmt(t.risk_reversal != null ? t.risk_reversal : -t.iv_skew, 3)}</span></span>
         <span>Vol <span class="text-white font-mono">${fmtK(t.total_volume)}</span></span>
         <span>OI <span class="text-white font-mono">${fmtK(t.total_oi)}</span></span>
         ${t.fund_count ? `<span title="${esc(t.fund_names || '')} (${esc(t.fund_quarter || 'Q?')})"><span class="text-purple-400">${t.fund_count}</span> funds <span class="text-gray-600">${esc(t.fund_quarter || '')}</span></span>` : ''}
@@ -395,7 +395,8 @@ const OptionsFlow = (() => {
       if (t.bullish_count_14d != null) parts.push(`14d: ${t.bullish_count_14d}/14`);
       if (t.delta_5d != null) parts.push(`Δ5d: ${t.delta_5d > 0 ? '+' : ''}${fmt(t.delta_5d, 1)}`);
       parts.push(`P/C: ${fmt(t.put_call_ratio, 2)}`);
-      parts.push(`IV Skew: ${fmt(t.iv_skew, 3)}`);
+      const rrAtm = t.risk_reversal != null ? t.risk_reversal : -(t.iv_skew || 0);
+      parts.push(`RR (ATM, call-put): ${fmt(rrAtm, 3)}`);
       parts.push(`Vol: ${fmtK(t.total_volume)}`);
       parts.push(`Price: $${fmt(t.spot_price, 2)}`);
 

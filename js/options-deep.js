@@ -72,9 +72,9 @@
     else if (flow?.signal === 'neutral')  directionChip = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/5 text-gray-400 border border-white/10">⚖️ NEUTRAL</span>';
     else                                  directionChip = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/5 text-gray-500 border border-white/10">⚪ NO DATA</span>';
 
-    // Streak chip
+    // Streak chip — explicit label so reader knows what "streak" means
     const streakChip = flow?.bullish_streak
-      ? `<span class="text-[11px] text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded font-semibold">🔥 ${flow.bullish_streak}d streak</span>`
+      ? `<span class="text-[11px] text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded font-semibold" title="Consecutive trading days flow_score ≥ +3 (TD-confirmed aggregate, not sub-signals)">🔥 ${flow.bullish_streak}d flow≥+3</span>`
       : '';
 
     // TD confirmed
