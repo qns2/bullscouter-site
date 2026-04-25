@@ -213,6 +213,10 @@
   }
 
   // ---------- filtering + render ----------
+  function hasAnyData(entry) {
+    return entry.flow?.score != null || entry.skew != null || entry.gex != null;
+  }
+
   function matchesFilter(entry, filter) {
     if (filter === 'all') return true;
     const s = entry.flow?.score;
@@ -228,9 +232,14 @@
     const c = document.getElementById(containerId);
     const countEl = document.getElementById(countId);
     c.innerHTML = '';
-    const filtered = entries.filter(e => matchesFilter(e, currentFilter));
+    // Always drop no-data entries (e.g. BRBR with no flow/skew/GEX) — pure noise.
+    const withData = entries.filter(hasAnyData);
+    const filtered = withData.filter(e => matchesFilter(e, currentFilter));
     filtered.forEach(e => c.appendChild(renderCard(e)));
-    if (countEl) countEl.textContent = `(${filtered.length}${filtered.length !== entries.length ? '/' + entries.length : ''})`;
+    if (countEl) {
+      const suffix = filtered.length !== withData.length ? `/${withData.length}` : '';
+      countEl.textContent = `(${filtered.length}${suffix})`;
+    }
   }
 
   function renderAll() {
@@ -240,13 +249,16 @@
 
   function renderStats(data) {
     const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-    const all = [...(data.mine || []), ...(data.bullscouter || [])];
+    // Stats reflect what the user actually sees (no-data tickers hidden).
+    const mineWithData = (data.mine || []).filter(hasAnyData);
+    const bsWithData = (data.bullscouter || []).filter(hasAnyData);
+    const all = [...mineWithData, ...bsWithData];
     const bull = all.filter(e => e.flow?.score != null && e.flow.score > 2).length;
     const bear = all.filter(e => e.flow?.score != null && e.flow.score < -2).length;
     const shortg = all.filter(e => e.gex?.regime === 'short_gamma').length;
     const extreme = all.filter(e => e.skew?.magnitude === 'extreme').length;
-    setText('od-stat-mine', data.counts?.mine ?? 0);
-    setText('od-stat-bs', data.counts?.bullscouter ?? 0);
+    setText('od-stat-mine', mineWithData.length);
+    setText('od-stat-bs', bsWithData.length);
     setText('od-stat-bull', bull);
     setText('od-stat-bear', bear);
     setText('od-stat-shortg', shortg);
@@ -326,19 +338,21 @@
 
   function copyList(data, which) {
     const header = `Bull Scouter Options Deep — ${data.date} (provider: ${data.provider})`;
+    const mine = (data.mine || []).filter(hasAnyData);
+    const bs = (data.bullscouter || []).filter(hasAnyData);
     let lines = [header, ''];
     if (which === 'mine') {
-      lines.push(`== MY STOCKS (${(data.mine || []).length}) ==`);
-      lines = lines.concat((data.mine || []).map(_formatRow));
+      lines.push(`== MY STOCKS (${mine.length}) ==`);
+      lines = lines.concat(mine.map(_formatRow));
     } else if (which === 'bullscouter') {
-      lines.push(`== BULL SCOUTER UNIVERSE (${(data.bullscouter || []).length}) ==`);
-      lines = lines.concat((data.bullscouter || []).map(_formatRow));
+      lines.push(`== BULL SCOUTER UNIVERSE (${bs.length}) ==`);
+      lines = lines.concat(bs.map(_formatRow));
     } else {
-      lines.push(`Mine: ${data.counts.mine} · Bull Scouter: ${data.counts.bullscouter}`, '');
+      lines.push(`Mine: ${mine.length} · Bull Scouter: ${bs.length}`, '');
       lines.push('== MY STOCKS ==');
-      lines = lines.concat((data.mine || []).map(_formatRow));
+      lines = lines.concat(mine.map(_formatRow));
       lines.push('', '== BULL SCOUTER ==');
-      lines = lines.concat((data.bullscouter || []).map(_formatRow));
+      lines = lines.concat(bs.map(_formatRow));
     }
     return navigator.clipboard.writeText(lines.join('\n'));
   }
