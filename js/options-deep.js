@@ -1,16 +1,20 @@
 /**
  * Bull Scouter — Options Deep page.
  *
- * Loads data/options-deep.json and renders two sections:
- *   - My Stocks (held positions)
- *   - Bull Scouter universe (scanner watchlist)
+ * Renders data/options-deep.json as two card-grid sections:
+ *   - My Stocks (held positions, is_held=1)
+ *   - Bull Scouter universe (scanner watchlist + BUY/WATCHLIST)
  *
- * Each row shows: ticker, flow signal, bullish streak, skew direction,
- * skew magnitude, GEX sign, zero-γ buffer, and earnings date.
+ * Each card shows: flow gauge, signal, skew (direction + magnitude),
+ * GEX (regime + magnitude), zero-γ buffer, bullish streak, earnings.
  */
 
 (() => {
   const DATA_URL = 'data/options-deep.json?_cb=' + Date.now();
+
+  let allMine = [];
+  let allBs = [];
+  let currentFilter = 'all';
 
   // ---------- helpers ----------
   const $ = (sel) => document.querySelector(sel);
@@ -23,152 +27,250 @@
   const hide = (id) => document.getElementById(id)?.classList.add('hidden');
   const fmt = (n, d = 1) => (n == null || Number.isNaN(n)) ? '—' : Number(n).toFixed(d);
 
-  // ---------- cell renderers ----------
+  // ---------- flow classification ----------
+  function flowLevel(s) {
+    if (s == null) return 'none';
+    if (s > 5) return 'strong_bull';
+    if (s > 2) return 'bull';
+    if (s < -5) return 'strong_bear';
+    if (s < -2) return 'bear';
+    return 'neutral';
+  }
 
-  function flowCell(flow) {
+  function flowColor(s) {
+    if (s == null) return '#64748b';
+    if (s > 2) return '#22c55e';
+    if (s < -2) return '#ef4444';
+    return '#6b7280';
+  }
+
+  // ---------- card renderer ----------
+  function renderCard(entry) {
+    const { ticker, flow, skew, gex, earnings_date } = entry;
     const s = flow?.score;
-    if (s == null) return '<span class="chip chip-muted">no data</span>';
-    const abs = Math.abs(s);
-    let cls = 'chip-muted', icon = '⚖️';
-    if (s > 5) { cls = 'chip-bull'; icon = '🚀'; }
-    else if (s > 2) { cls = 'chip-bull'; icon = '🟢'; }
-    else if (s < -5) { cls = 'chip-bear'; icon = '🚨'; }
-    else if (s < -2) { cls = 'chip-bear'; icon = '🔴'; }
-    const conf = flow.td_confirmed ? ' <span style="color:#00ff88" title="ThetaData-confirmed">✓</span>' : '';
-    const days = flow.days_ago == null ? '' : ` <span class="text-[10px] text-gray-500">${flow.days_ago === 0 ? 'today' : flow.days_ago + 'd'}</span>`;
-    return `<span class="chip ${cls}">${icon} ${s > 0 ? '+' : ''}${fmt(s)}</span>${conf}${days}`;
-  }
+    const isBullish = s != null && s > 2;
+    const isBearish = s != null && s < -2;
+    const scoreColor = isBullish ? 'text-green-400'
+                     : isBearish ? 'text-red-400' : 'text-gray-400';
 
-  function streakCell(flow) {
-    const s = flow?.bullish_streak || 0;
-    if (s === 0) return '<span class="text-gray-600 text-xs">—</span>';
-    return `<span class="streak-num">🔥 ${s}d</span>`;
-  }
+    // Flow gauge fill
+    const absScore = Math.min(Math.abs(s ?? 0), 15);
+    const fillPct = (absScore / 15) * 50;
+    const fillColor = flowColor(s);
+    const fillStyle = isBullish
+      ? `left:50%;width:${fillPct}%`
+      : isBearish
+        ? `right:50%;width:${fillPct}%`
+        : `left:50%;width:0%`;
 
-  function skewDirCell(skew) {
-    if (!skew) return '<span class="chip chip-muted">—</span>';
-    const d = skew.direction;  // 'bullish' | 'bearish' | 'neutral'
-    const rr = skew.risk_reversal_vp;
-    if (d === 'bullish') {
-      return `<span class="chip chip-bull">📈 BULL ${rr != null ? '+' + fmt(rr) : ''}</span>`;
+    // Direction label
+    let directionChip = '';
+    if (flow?.signal === 'strong_bull')   directionChip = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-green-500/20 text-green-400 border border-green-500/30">🚀 STRONG BULL</span>';
+    else if (flow?.signal === 'bull')     directionChip = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-green-500/15 text-green-400/80 border border-green-500/20">🟢 BULL</span>';
+    else if (flow?.signal === 'strong_bear') directionChip = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/30">🚨 STRONG BEAR</span>';
+    else if (flow?.signal === 'bear')     directionChip = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-red-500/15 text-red-400/80 border border-red-500/20">🔴 BEAR</span>';
+    else if (flow?.signal === 'neutral')  directionChip = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/5 text-gray-400 border border-white/10">⚖️ NEUTRAL</span>';
+    else                                  directionChip = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/5 text-gray-500 border border-white/10">⚪ NO DATA</span>';
+
+    // Streak chip
+    const streakChip = flow?.bullish_streak
+      ? `<span class="text-[11px] text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded font-semibold">🔥 ${flow.bullish_streak}d streak</span>`
+      : '';
+
+    // TD confirmed
+    const tdChip = flow?.td_confirmed
+      ? '<span class="text-[10px] text-green-400 bg-green-500/10 px-1.5 py-0.5 rounded" title="ThetaData-confirmed">✓ TD</span>'
+      : '';
+
+    // Days ago meta
+    const daysStr = flow?.days_ago == null ? ''
+      : flow.days_ago === 0 ? 'today'
+      : `${flow.days_ago}d ago`;
+    const daysChip = daysStr ? `<span class="text-[10px] text-gray-500">${daysStr}</span>` : '';
+
+    // --- Skew block ---
+    let skewHtml = `<div class="text-[11px] text-gray-500 italic">no skew (earnings &gt;45d)</div>`;
+    if (skew) {
+      const dirCls = skew.direction === 'bullish' ? 'text-green-400 bg-green-500/10 border-green-500/20'
+                   : skew.direction === 'bearish' ? 'text-red-400 bg-red-500/10 border-red-500/20'
+                   : 'text-gray-400 bg-white/5 border-white/10';
+      const dirIcon = skew.direction === 'bullish' ? '📈' : skew.direction === 'bearish' ? '📉' : '⚖';
+      const rr = skew.risk_reversal_vp;
+      const magCls = skew.magnitude === 'extreme'  ? 'text-red-400 bg-red-500/15 border-red-500/25'
+                   : skew.magnitude === 'moderate' ? 'text-amber-400 bg-amber-500/10 border-amber-500/20'
+                   : 'text-gray-400 bg-white/5 border-white/10';
+      const magIcon = skew.magnitude === 'extreme' ? '⚠' : '';
+      skewHtml = `
+        <div class="flex flex-wrap gap-1.5 items-center">
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${dirCls}">${dirIcon} ${skew.direction.toUpperCase()} ${rr != null ? (rr > 0 ? '+' : '') + fmt(rr) + 'vp' : ''}</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${magCls}">${magIcon} ${skew.magnitude.toUpperCase()}</span>
+        </div>
+        <div class="text-[10px] text-gray-500 mt-1">${esc(skew.expiration)} &middot; put ${fmt(skew.put_25d_iv * 100)}% / call ${fmt(skew.call_25d_iv * 100)}%</div>`;
     }
-    if (d === 'bearish') {
-      return `<span class="chip chip-bear">📉 BEAR ${rr != null ? fmt(rr) : ''}</span>`;
+
+    // --- GEX block ---
+    let gexHtml = `<div class="text-[11px] text-gray-500 italic">no GEX data</div>`;
+    if (gex) {
+      const gexM = gex.total_gex_usd / 1e6;
+      const regimeCls = gex.regime === 'long_gamma' ? 'text-green-400 bg-green-500/10 border-green-500/20'
+                      : gex.regime === 'short_gamma' ? 'text-red-400 bg-red-500/10 border-red-500/20'
+                      : 'text-gray-400 bg-white/5 border-white/10';
+      const regimeIcon = gex.regime === 'long_gamma' ? '🟢' : gex.regime === 'short_gamma' ? '🔴' : '⚪';
+      const bufCls = gex.buffer === 'safe' ? 'text-green-400 bg-green-500/10 border-green-500/20'
+                   : gex.buffer === 'caution' ? 'text-amber-400 bg-amber-500/10 border-amber-500/20'
+                   : 'text-red-400 bg-red-500/15 border-red-500/25';
+      const bufIcon = gex.buffer === 'safe' ? '🛡' : gex.buffer === 'caution' ? '⚠' : '🚨';
+      gexHtml = `
+        <div class="flex flex-wrap gap-1.5 items-center">
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${regimeCls}">${regimeIcon} ${gex.regime.replace('_', ' ').toUpperCase()}</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${bufCls}">${bufIcon} Γ₀ ${gex.buffer.toUpperCase()} ${fmt(gex.zero_gamma_distance_pct)}%</span>
+        </div>
+        <div class="text-[10px] text-gray-500 mt-1">GEX $${gexM >= 0 ? '+' : ''}${fmt(gexM)}M &middot; zero-γ $${fmt(gex.zero_gamma_level, 2)}</div>`;
     }
-    return '<span class="chip chip-muted">NEUTRAL</span>';
-  }
 
-  function skewMagCell(skew) {
-    if (!skew) return '<span class="chip chip-muted">—</span>';
-    const m = skew.magnitude;
-    if (m === 'extreme') return '<span class="chip chip-danger">⚠ EXTREME</span>';
-    if (m === 'moderate') return '<span class="chip chip-warn">MODERATE</span>';
-    return '<span class="chip chip-muted">NORMAL</span>';
-  }
-
-  function gexCell(gex) {
-    if (!gex) return '<span class="chip chip-muted">—</span>';
-    const r = gex.regime;  // 'long_gamma' | 'neutral' | 'short_gamma'
-    const gex_m = gex.total_gex_usd / 1e6;
-    if (r === 'long_gamma') {
-      return `<span class="chip chip-bull">🟢 LONG γ <span class="text-[10px] opacity-70">$${gex_m >= 0 ? '+' : ''}${fmt(gex_m)}M</span></span>`;
+    // --- Earnings block ---
+    let earningsChip = '';
+    if (earnings_date) {
+      const dateStr = String(earnings_date).slice(0, 10);
+      const d = new Date(dateStr + 'T00:00:00');
+      if (!isNaN(d)) {
+        const today = new Date(); today.setHours(0, 0, 0, 0);
+        const days = Math.round((d - today) / (86400 * 1000));
+        let cls = 'text-gray-400 bg-white/5';
+        if (days < 0) cls = 'text-gray-600 bg-white/[0.02]';
+        else if (days <= 3) cls = 'text-red-300 bg-red-500/10';
+        else if (days <= 14) cls = 'text-amber-400 bg-amber-500/10';
+        else if (days <= 45) cls = 'text-blue-400 bg-blue-500/10';
+        earningsChip = `<span class="text-[10px] font-semibold px-1.5 py-0.5 rounded ${cls}">📅 ${dateStr} (${days >= 0 ? days + 'd' : 'past'})</span>`;
+      } else {
+        earningsChip = `<span class="text-[10px] text-gray-400 bg-white/5 px-1.5 py-0.5 rounded">📅 ${esc(dateStr)}</span>`;
+      }
     }
-    if (r === 'short_gamma') {
-      return `<span class="chip chip-bear">🔴 SHORT γ <span class="text-[10px] opacity-70">${fmt(gex_m)}M</span></span>`;
-    }
-    return `<span class="chip chip-muted">NEUTRAL <span class="text-[10px] opacity-70">${fmt(gex_m)}M</span></span>`;
+
+    // Card border accent by flow
+    const level = flowLevel(s);
+    const borderCls = level === 'strong_bull' ? 'border-green-500/30 hover:border-green-500/50'
+                    : level === 'bull'        ? 'border-green-500/15 hover:border-green-500/30'
+                    : level === 'strong_bear' ? 'border-red-500/30 hover:border-red-500/50'
+                    : level === 'bear'        ? 'border-red-500/15 hover:border-red-500/30'
+                    : 'hover:border-white/20';
+
+    // Build card
+    const card = document.createElement('div');
+    card.className = `glass-card p-4 transition-colors ${borderCls}`;
+    card.dataset.level = level;
+    card.dataset.skewMag = skew?.magnitude || 'none';
+    card.dataset.gexRegime = gex?.regime || 'none';
+    card.dataset.gexBuffer = gex?.buffer || 'none';
+
+    card.innerHTML = `
+      <div class="flex items-start justify-between mb-3">
+        <div class="flex items-center gap-2 flex-wrap">
+          <a href="ticker.html?t=${esc(ticker)}" class="text-lg font-bold font-mono hover:text-bull-accent transition-colors">${esc(ticker)}</a>
+          ${directionChip}
+        </div>
+        <div class="text-right flex-shrink-0">
+          <div class="text-xl font-bold font-mono ${scoreColor}">${s != null ? (s > 0 ? '+' : '') + fmt(s) : '—'}</div>
+          <div class="text-[10px] text-gray-500 uppercase tracking-wider">flow</div>
+        </div>
+      </div>
+
+      <div class="flow-gauge mb-3">
+        <div class="flow-gauge-center"></div>
+        <div style="${fillStyle};background:${fillColor};position:absolute;height:100%;border-radius:0.25rem;transition:all 0.4s ease-out"></div>
+      </div>
+
+      <div class="flex flex-wrap gap-1.5 mb-3">
+        ${streakChip}
+        ${tdChip}
+        ${daysChip}
+      </div>
+
+      <div class="mt-3 pt-3 border-t border-white/[0.06]">
+        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Skew</div>
+        ${skewHtml}
+      </div>
+
+      <div class="mt-3 pt-3 border-t border-white/[0.06]">
+        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Dealer γ</div>
+        ${gexHtml}
+      </div>
+
+      ${earningsChip ? `
+      <div class="mt-3 pt-3 border-t border-white/[0.06]">
+        ${earningsChip}
+      </div>` : ''}
+    `;
+    return card;
   }
 
-  function zeroGammaCell(gex) {
-    if (!gex) return '<span class="chip chip-muted">—</span>';
-    const buf = gex.buffer;  // 'safe' | 'caution' | 'danger'
-    const d = gex.zero_gamma_distance_pct;
-    const zg = gex.zero_gamma_level;
-    const label = buf === 'safe' ? '🛡 SAFE' : buf === 'caution' ? '⚠ CAUTION' : '🚨 DANGER';
-    const cls = buf === 'safe' ? 'chip-bull' : buf === 'caution' ? 'chip-warn' : 'chip-danger';
-    return `<span class="chip ${cls}">${label} ${fmt(d)}%</span><div class="text-[10px] text-gray-500 mt-0.5">Γ₀ $${fmt(zg, 2)}</div>`;
-  }
-
-  function earningsCell(e) {
-    if (!e) return '<span class="text-gray-600 text-xs">—</span>';
-    // Accept 'YYYY-MM-DD' or ISO datetime; parse first 10 chars
-    const dateStr = String(e).slice(0, 10);
-    const d = new Date(dateStr + 'T00:00:00');
-    if (isNaN(d)) return `<span class="text-xs text-gray-400">${esc(dateStr)}</span>`;
-    const today = new Date(); today.setHours(0,0,0,0);
-    const days = Math.round((d - today) / (86400 * 1000));
-    let cls = 'text-gray-400';
-    if (days < 0) cls = 'text-gray-600';
-    else if (days <= 3) cls = 'text-red-300';
-    else if (days <= 14) cls = 'text-amber-400';
-    else if (days <= 45) cls = 'text-blue-400';
-    return `<span class="text-xs ${cls}">${esc(dateStr)} <span class="text-gray-500">(${days >= 0 ? days + 'd' : 'passed'})</span></span>`;
-  }
-
-  function rowClass(flow) {
-    const s = flow?.score;
-    if (s == null) return 'row-no-data';
-    if (s > 5) return 'row-strong-bull';
-    if (s > 2) return 'row-bull';
-    if (s < -5) return 'row-strong-bear';
-    if (s < -2) return 'row-bear';
-    return 'row-neutral';
-  }
-
-  function renderRow(entry) {
-    return `
-      <div class="deep-row ${rowClass(entry.flow)}">
-        <div class="tk" data-label="Ticker"><a href="ticker.html?t=${esc(entry.ticker)}" class="hover:text-bull-accent">${esc(entry.ticker)}</a></div>
-        <div class="flow" data-label="Flow">${flowCell(entry.flow)}</div>
-        <div data-label="Streak">${streakCell(entry.flow)}</div>
-        <div data-label="Skew dir">${skewDirCell(entry.skew)}</div>
-        <div data-label="Skew mag">${skewMagCell(entry.skew)}</div>
-        <div data-label="GEX">${gexCell(entry.gex)}</div>
-        <div data-label="Zero-γ">${zeroGammaCell(entry.gex)}</div>
-        <div data-label="Earnings">${earningsCell(entry.earnings_date)}</div>
-      </div>`;
+  // ---------- filtering + render ----------
+  function matchesFilter(entry, filter) {
+    if (filter === 'all') return true;
+    const s = entry.flow?.score;
+    if (filter === 'bullish')  return s != null && s > 2;
+    if (filter === 'bearish')  return s != null && s < -2;
+    if (filter === 'extreme')  return entry.skew?.magnitude === 'extreme';
+    if (filter === 'shortgamma') return entry.gex?.regime === 'short_gamma';
+    if (filter === 'danger')   return entry.gex?.buffer === 'danger';
+    return true;
   }
 
   function renderSection(entries, containerId, countId) {
     const c = document.getElementById(containerId);
     const countEl = document.getElementById(countId);
-    if (countEl) countEl.textContent = `(${entries.length})`;
-    if (!entries.length) {
-      c.innerHTML = '<p class="text-bull-muted text-sm italic">No data.</p>';
-      return;
-    }
-    c.innerHTML = entries.map(renderRow).join('');
+    c.innerHTML = '';
+    const filtered = entries.filter(e => matchesFilter(e, currentFilter));
+    filtered.forEach(e => c.appendChild(renderCard(e)));
+    if (countEl) countEl.textContent = `(${filtered.length}${filtered.length !== entries.length ? '/' + entries.length : ''})`;
+  }
+
+  function renderAll() {
+    renderSection(allMine, 'od-mine', 'od-mine-count');
+    renderSection(allBs, 'od-bs', 'od-bs-count');
+  }
+
+  function renderStats(data) {
+    const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    const all = [...(data.mine || []), ...(data.bullscouter || [])];
+    const bull = all.filter(e => e.flow?.score != null && e.flow.score > 2).length;
+    const bear = all.filter(e => e.flow?.score != null && e.flow.score < -2).length;
+    const shortg = all.filter(e => e.gex?.regime === 'short_gamma').length;
+    const extreme = all.filter(e => e.skew?.magnitude === 'extreme').length;
+    setText('od-stat-mine', data.counts?.mine ?? 0);
+    setText('od-stat-bs', data.counts?.bullscouter ?? 0);
+    setText('od-stat-bull', bull);
+    setText('od-stat-bear', bear);
+    setText('od-stat-shortg', shortg);
+    setText('od-stat-extreme', extreme);
   }
 
   // ---------- Copy for Claude ----------
-
-  function _formatRows(rows) {
-    return rows.map(e => {
-      const flow = e.flow?.score != null ? `flow ${e.flow.score > 0 ? '+' : ''}${fmt(e.flow.score)}` : 'no flow';
-      const streak = e.flow?.bullish_streak ? `🔥${e.flow.bullish_streak}d` : '';
-      const skew = e.skew ? `skew ${e.skew.direction} ${fmt(e.skew.risk_reversal_vp)}vp (${e.skew.magnitude})` : '';
-      const gex = e.gex ? `${e.gex.regime} Γ₀${fmt(e.gex.zero_gamma_distance_pct)}% ${e.gex.buffer}` : '';
-      const earn = e.earnings_date ? `E:${String(e.earnings_date).slice(0,10)}` : '';
-      return [e.ticker, flow, streak, skew, gex, earn].filter(Boolean).join(' | ');
-    });
+  function _formatRow(e) {
+    const parts = [e.ticker];
+    if (e.flow?.score != null) parts.push(`flow ${e.flow.score > 0 ? '+' : ''}${fmt(e.flow.score)}`);
+    if (e.flow?.bullish_streak) parts.push(`🔥${e.flow.bullish_streak}d`);
+    if (e.skew) parts.push(`skew ${e.skew.direction} ${fmt(e.skew.risk_reversal_vp)}vp (${e.skew.magnitude})`);
+    if (e.gex) parts.push(`${e.gex.regime} Γ₀${fmt(e.gex.zero_gamma_distance_pct)}% ${e.gex.buffer}`);
+    if (e.earnings_date) parts.push(`E:${String(e.earnings_date).slice(0, 10)}`);
+    return parts.join(' | ');
   }
 
   function copyList(data, which) {
-    // which: 'mine' | 'bullscouter' | 'all'
     const header = `Bull Scouter Options Deep — ${data.date} (provider: ${data.provider})`;
     let lines = [header, ''];
     if (which === 'mine') {
       lines.push(`== MY STOCKS (${(data.mine || []).length}) ==`);
-      lines = lines.concat(_formatRows(data.mine || []));
+      lines = lines.concat((data.mine || []).map(_formatRow));
     } else if (which === 'bullscouter') {
       lines.push(`== BULL SCOUTER UNIVERSE (${(data.bullscouter || []).length}) ==`);
-      lines = lines.concat(_formatRows(data.bullscouter || []));
+      lines = lines.concat((data.bullscouter || []).map(_formatRow));
     } else {
       lines.push(`Mine: ${data.counts.mine} · Bull Scouter: ${data.counts.bullscouter}`, '');
       lines.push('== MY STOCKS ==');
-      lines = lines.concat(_formatRows(data.mine || []));
+      lines = lines.concat((data.mine || []).map(_formatRow));
       lines.push('', '== BULL SCOUTER ==');
-      lines = lines.concat(_formatRows(data.bullscouter || []));
+      lines = lines.concat((data.bullscouter || []).map(_formatRow));
     }
     return navigator.clipboard.writeText(lines.join('\n'));
   }
@@ -192,22 +294,33 @@
       const vBadge = document.getElementById('version-badge');
       if (vBadge && data.version) vBadge.textContent = `v${data.version}`;
 
-      renderSection(data.mine || [], 'od-mine', 'od-mine-count');
-      renderSection(data.bullscouter || [], 'od-bs', 'od-bs-count');
+      allMine = data.mine || [];
+      allBs = data.bullscouter || [];
+
+      renderStats(data);
+      renderAll();
 
       hide('od-loading');
+      if (!allMine.length && !allBs.length) show('od-empty');
 
-      // Global copy (all)
-      const globalBtn = document.getElementById('btn-copy-od');
-      globalBtn?.addEventListener('click', () => {
-        copyList(data, 'all').then(() => flashCopied(globalBtn));
+      // Filter tabs
+      document.querySelectorAll('.od-filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.od-filter').forEach(b => {
+            b.classList.remove('active', 'bg-white/10', 'text-white');
+            b.classList.add('bg-white/5', 'text-gray-400');
+          });
+          btn.classList.add('active', 'bg-white/10', 'text-white');
+          btn.classList.remove('bg-white/5', 'text-gray-400');
+          currentFilter = btn.dataset.filter;
+          renderAll();
+        });
       });
 
-      // Per-list copy buttons
+      // Per-list copy
       document.querySelectorAll('.od-copy-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          const which = btn.dataset.copyList;
-          copyList(data, which).then(() => flashCopied(btn));
+          copyList(data, btn.dataset.copyList).then(() => flashCopied(btn));
         });
       });
     } catch (e) {
