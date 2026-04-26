@@ -1,55 +1,81 @@
 {
   "date": "2026-04-26",
-  "version": "2.11.7",
+  "version": "2.13.1",
   "regime_label": null,
   "regime_score": null,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "earnings_blackout": 21,
-    "below_cutoff": 44,
-    "rr_too_low": 10,
-    "held": 12,
-    "frozen": 2
+    "earnings_blackout": 16,
+    "below_cutoff": 53,
+    "rr_too_low": 7,
+    "frozen": 2,
+    "held": 4,
+    "rescan_below_cutoff_no_note": 6
   },
-  "candidates_evaluated": 90,
-  "picks_count": 1,
-  "picks": [
+  "candidates_evaluated": 82,
+  "picks_count": 0,
+  "picks": [],
+  "oracle_watch_count": 5,
+  "oracle_watch": [
     {
-      "ticker": "QLYS",
-      "composite": 45,
+      "ticker": "CRM",
+      "composite": 20,
       "convergence_paths": [
-        "path3_strong_candidate",
-        "path5_strong_quality"
+        "path3_strong_candidate"
       ],
-      "spot_price": 84.34,
-      "entry": {
-        "low": 75.0,
-        "high": 83.0,
-        "mid": 79.0
+      "spot_price": 178.16,
+      "oracle_note": {
+        "text": "CONF +12, SCORE +5: Triple convergence P3+P4+assessor. NOW contagion selloff with zero CRM-specific news. $25B ASR floor. Burry position. Entry zone widened to $160-175.",
+        "written_at": "2026-04-24"
       },
-      "target": 130.0,
-      "stop": 72.75,
-      "rr_ratio": 8.16,
-      "suggested_size_usd": 948.0,
-      "suggested_shares": 12,
-      "position_risk_usd": 75.0,
-      "earnings_date": "2026-05-05",
-      "earnings_days_away": 9,
-      "components": {
-        "path3": {
-          "score": 20
-        },
-        "path5": {
-          "score": 15
-        },
-        "oracle": {
-          "score": 10
-        }
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "NOC",
+      "composite": 0,
+      "convergence_paths": [
+        "catalyst_near"
+      ],
+      "spot_price": 575.11,
+      "oracle_note": {
+        "text": "CONF +10: Post-Q1 beat-and-raise. $96B backlog. Pegasus XL Apr 25. Citi Buy/$807. Assessor SB HIGH FV $740. In zone $580-600.",
+        "written_at": "2026-04-24"
       },
-      "rationale_one_liner": "Path 3 strong + Buffett quality. Earnings 9d.",
-      "watchlist_thesis": "TRIPLE P3/P4/P5 convergence. Buffett 81 + Contrarian 69. 10.6% SI. Price $84 ABOVE zone. Limit $80. No insider buying despite 46% drawdown.",
-      "rank": 1
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ABT",
+      "composite": -10,
+      "convergence_paths": [],
+      "spot_price": 91.13,
+      "oracle_note": {
+        "text": "CONF -5: Below original zone ($92 vs $97-106). CEO buy at $96 underwater. Recovery profile 59% WR is positive. Hold with mental stop $89.",
+        "written_at": "2026-04-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "LNTH",
+      "composite": -10,
+      "convergence_paths": [],
+      "spot_price": 84.33,
+      "oracle_note": {
+        "text": "CONF +10, SCORE +5: Hard PDUFA Jun 29 (mfg not safety). $266M FCF. IN zone at $83. 66 days = optimal positioning window.",
+        "written_at": "2026-04-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "PODD",
+      "composite": -10,
+      "convergence_paths": [],
+      "spot_price": 189.56,
+      "oracle_note": {
+        "text": "CONF -5, SCORE -5: QG profile 41% WR. At zone floor $192. May 6 earnings binary. Exit if breaks $191.",
+        "written_at": "2026-04-24"
+      },
+      "filter_reason": "below_cutoff"
     }
   ]
 }
