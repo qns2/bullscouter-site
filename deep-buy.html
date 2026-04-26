@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Bull Scouter - Deep Buy</title>
+  <meta name="description" content="Cream-of-the-crop convergence picks: Path 1 + Path 3 + Path 5 + options flow + skew + GEX + catalysts, ranked.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/deep-buy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bull Scouter - Deep Buy">
+  <meta property="og:description" content="Convergence picks across all paths, ranked.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: { bull: { dark: '#0a0b0d', card: '#14161a', accent: '#00ff88', muted: '#94a3b8', border: 'rgba(255,255,255,0.1)' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+    }
+    .composite-bar { height: 0.5rem; background: rgba(255,255,255,0.06); border-radius: 0.25rem; overflow: hidden; }
+    .composite-fill { height: 100%; border-radius: 0.25rem; transition: width 0.4s ease-out; }
+    .loading-pulse { width: 40px; height: 40px; border-radius: 50%; background: rgba(0, 255, 136, 0.1); animation: pulse 1.5s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.4; } 50% { transform: scale(1.1); opacity: 1; } }
+  </style>
+</head>
+<body class="min-h-screen font-sans">
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-90">
+          <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
+          <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="options.html">Flow</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="options-deep.html">Deep</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
+        </div>
+        <button id="burger-btn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="sm:hidden p-2 text-bull-muted hover:text-white" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md">
+      <div class="px-4 py-3 space-y-2 text-sm font-medium">
+        <a class="block py-2 text-bull-muted" href="index.html">Home</a>
+        <a class="block py-2 text-bull-muted" href="options.html">Flow</a>
+        <a class="block py-2 text-bull-muted" href="options-deep.html">Deep</a>
+        <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
+        <a class="block py-2 text-bull-muted" href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="max-w-7xl mx-auto px-4 pt-8 sm:pt-12 pb-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Deep Buy List</h1>
+        <p class="text-sm text-bull-muted mt-1">Cream of the crop · all paths converged · <span id="db-date" class="text-white font-mono">-</span></p>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-bull-muted">regime: <span id="db-regime" class="text-white">-</span></span>
+        <button id="btn-copy-all" class="flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10" title="Copy all picks">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span class="copy-label hidden sm:inline">Copy</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats bar -->
+  <div class="max-w-7xl mx-auto px-4 mb-6">
+    <div class="border-y border-bull-border py-4 flex flex-wrap gap-4 sm:gap-6 text-sm font-medium">
+      <span>Picks: <span class="text-white font-bold" id="db-stat-picks">-</span></span>
+      <span>Evaluated: <span class="text-white font-bold" id="db-stat-eval">-</span></span>
+      <span>Filtered: <span class="text-bull-muted font-bold" id="db-stat-filtered">-</span></span>
+      <span>Held: <span class="text-bull-muted font-bold" id="db-stat-held">-</span></span>
+      <span>Earnings blackout: <span class="text-amber-400 font-bold" id="db-stat-earn">-</span></span>
+      <span>Frozen: <span class="text-amber-400 font-bold" id="db-stat-frozen">-</span></span>
+    </div>
+  </div>
+
+  <!-- Block warning -->
+  <div id="db-block-warn" class="max-w-7xl mx-auto px-4 mb-6 hidden">
+    <div class="glass-card p-4 border-amber-500/30">
+      <p class="text-amber-400 font-bold">🚫 Strategic context blocks new entries</p>
+      <p class="text-sm text-gray-400 mt-1" id="db-block-reason">-</p>
+      <p class="text-xs text-gray-500 mt-2">Edit <span class="font-mono">~/Projects/nanoclaw/groups/bullscouter/strategic-context.md</span> to lift.</p>
+    </div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="max-w-7xl mx-auto px-4 mb-8">
+    <details class="glass-card p-4">
+      <summary class="cursor-pointer text-sm font-bold uppercase tracking-wider text-bull-muted hover:text-white">How the composite is built</summary>
+      <div class="mt-4 text-sm text-gray-400 space-y-3">
+        <p>For every candidate ticker (any signal source), we sum these contributions:</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">+25 Path 1 BUY (conf ≥ 70)</p><p class="text-xs">Tier 1/2/3 scanner BUY with high confidence</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">+20 Path 3 STRONG_CANDIDATE</p><p class="text-xs">Contrarian: deep value + activist or insider</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">+15 Path 5 STRONG_QUALITY</p><p class="text-xs">Buffett quality screen passed</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">+20 Sustained flow</p><p class="text-xs">flow ≥ +5 + TD-confirmed + streak ≥ 3d</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">+10 Skew bullish moderate+</p><p class="text-xs">25Δ RR +2vp+, market validating</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">+5 GEX long-γ safe</p><p class="text-xs">Dealers dampen, low-vol regime</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">+10 Catalyst near (≤14d)</p><p class="text-xs">heatmap_score ≥ 30, FDA/insider/etc</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">+5 Insider buy 14d / +5 Activist 30d</p><p class="text-xs">Smart-money signals</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">−30 Earnings ≤ 7d</p><p class="text-xs">Binary risk too close</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">−20 Strong risk-off regime</p><p class="text-xs">Macro defensive bias</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">−10 GEX danger buffer</p><p class="text-xs">Zero-γ &lt; 5% from spot</p></div>
+          <div class="bg-white/[0.03] rounded-lg p-3"><p class="text-white font-semibold">±N Oracle modifier</p><p class="text-xs">Oracle's prior-cycle adjustment (closed loop)</p></div>
+        </div>
+        <p class="text-xs text-gray-500 mt-3">Min cutoff: 40. Hard filters: held in paper_positions, FROZEN in watchlist thesis, R/R &lt; 1, strategic-context blocks new entries.</p>
+        <p class="text-xs text-gray-500">Targets/entries pulled from <span class="font-mono">watchlist_stocks.abs_target/entry_low/entry_high</span> when set; else synthetic (yfinance analyst mean capped at +20%, entry −3% to +0.5% of current). Stop −8% (or −5% if GEX danger), tightened to be below entry_low.</p>
+      </div>
+    </details>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 pb-16">
+    <div id="db-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+    <div id="db-loading" class="text-center py-20">
+      <div class="loading-pulse mx-auto mb-3"></div>
+      <p class="text-bull-muted">Loading deep-buy picks…</p>
+    </div>
+
+    <div id="db-empty" class="hidden text-center py-20">
+      <p class="text-bull-muted text-lg">No picks above cutoff today</p>
+      <p class="text-white/30 text-sm mt-1">When signals converge, picks will appear here.</p>
+    </div>
+
+    <div id="db-error" class="hidden text-center py-20">
+      <p class="text-red-400 text-lg">Failed to load data</p>
+      <p class="text-white/30 text-sm mt-1" id="db-error-msg"></p>
+    </div>
+  </main>
+
+  <footer class="border-t border-bull-border py-12 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="w-6 h-6 bg-bull-muted/20 rounded flex items-center justify-center">
+          <svg class="w-4 h-4 text-bull-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <span class="text-sm font-bold tracking-tight text-bull-muted">Bull Scouter</span>
+      </div>
+      <p class="text-xs text-bull-muted max-w-lg mx-auto">Autonomous AI agents for stock catalyst detection. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="js/deep-buy.js?v=1"></script>
+</body>
+</html>
