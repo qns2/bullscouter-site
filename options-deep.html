@@ -145,8 +145,12 @@
             <p class="text-white font-semibold mb-1">Γ₀ Zero-γ buffer</p>
             <p class="text-xs">Distance spot → zero-gamma level. Safe &gt;10% · Caution 5–10% · Danger &lt;5% (regime can flip on small moves).</p>
           </div>
+          <div class="bg-white/[0.03] rounded-lg p-3 sm:col-span-2 border border-bull-accent/20">
+            <p class="text-white font-semibold mb-1">⚡ Flow extras (Phase 4 — ThetaData-native)</p>
+            <p class="text-xs"><span class="text-white">$P/C</span> = put/call premium-volume ratio (mid × volume); call-side dominance reads green. <span class="text-white">Δvol</span> = net Σ(volume × |Δ|), positive = bullish flow weighted by directional commitment. <span class="text-white">RV−IV</span> = 20d realized vol minus ATM IV in vol points; positive = options cheap, negative = expensive (e.g. pre-earnings IV spike). Click "▸ more" for smile coefficients (b = skew, c = curvature) and raw $ premium.</p>
+          </div>
         </div>
-        <p class="text-xs text-gray-500 mt-2">Skew computed only when earnings is within 45 days. All Greeks via Black-Scholes from yfinance IV (or Tradier directly when configured).</p>
+        <p class="text-xs text-gray-500 mt-2">Skew computed only when earnings is within 45 days. All Greeks via Black-Scholes inverted from clean ThetaData bid/ask quotes (or yfinance fallback). Flow extras are <span class="text-white">in calibration</span> — Phase 5 reweighting requires 100+ logged signals or 60 trading days.</p>
       </div>
     </details>
   </div>

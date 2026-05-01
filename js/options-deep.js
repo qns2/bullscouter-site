@@ -44,6 +44,90 @@
     return '#6b7280';
   }
 
+  // ---------- flow_extra (Phase 4) ----------
+  // 2-3 high-signal pills shown by default; smile coefficients + raw premium
+  // dollars hidden behind a per-card toggle (codex review v2 open question 1).
+  function renderFlowExtra(fe, errs) {
+    if (!fe) {
+      // If errors but no payload, show a single muted explainer.
+      const anyErr = errs && Object.keys(errs).length > 0;
+      if (!anyErr) return '';
+      return `<div class="text-[11px] text-gray-500 italic">no flow extras (${esc(Object.values(errs)[0])})</div>`;
+    }
+
+    const pills = [];
+
+    // 1. Premium-volume P/C (call-side dominance reads green, put-side red).
+    if (fe.premium_volume_pc != null) {
+      const pc = fe.premium_volume_pc;
+      let cls, label;
+      if (pc < 0.5)      { cls = 'text-green-400 bg-green-500/10 border-green-500/20'; }
+      else if (pc < 0.8) { cls = 'text-green-300 bg-green-500/5 border-green-500/15'; }
+      else if (pc < 1.3) { cls = 'text-gray-400 bg-white/5 border-white/10'; }
+      else if (pc < 3.0) { cls = 'text-red-300 bg-red-500/5 border-red-500/15'; }
+      else               { cls = 'text-red-400 bg-red-500/10 border-red-500/20'; }
+      // Compact format: ratios over 10× shown as "65×"; otherwise 2 decimals.
+      label = pc > 10 ? `${pc.toFixed(0)}×` : pc.toFixed(2);
+      pills.push(`<span class="text-[10px] font-bold px-2 py-0.5 rounded border ${cls}" title="Premium-volume P/C — Σ(mid×vol×100) put-side / call-side">$P/C ${label}</span>`);
+    }
+
+    // 2. Net delta-volume (sign carries the read).
+    if (fe.net_delta_volume != null) {
+      const nv = fe.net_delta_volume;
+      const cls = nv > 0  ? 'text-green-400 bg-green-500/10 border-green-500/20'
+                : nv < 0  ? 'text-red-400 bg-red-500/10 border-red-500/20'
+                : 'text-gray-400 bg-white/5 border-white/10';
+      const sign = nv > 0 ? '+' : '';
+      const abs = Math.abs(nv);
+      const label = abs >= 1000 ? `${(nv / 1000).toFixed(1)}k` : `${sign}${nv.toFixed(0)}`;
+      const labelSigned = nv > 0 && abs < 1000 ? label : (abs >= 1000 && nv > 0 ? '+' + label : label);
+      pills.push(`<span class="text-[10px] font-bold px-2 py-0.5 rounded border ${cls}" title="Net Δ-volume — Σ(volume×|Δ|) calls minus puts. Positive=bullish flow, negative=bearish.">Δvol ${labelSigned}</span>`);
+    }
+
+    // 3. RV-vs-IV gap (positive=cheap, negative=expensive).
+    if (fe.rv_iv_gap != null) {
+      const g = fe.rv_iv_gap;
+      const vp = g * 100;  // vol points
+      let cls;
+      if (g > 0.05)       cls = 'text-green-400 bg-green-500/10 border-green-500/20';
+      else if (g < -0.10) cls = 'text-red-400 bg-red-500/15 border-red-500/25';
+      else if (g < -0.05) cls = 'text-red-300 bg-red-500/5 border-red-500/15';
+      else                cls = 'text-gray-400 bg-white/5 border-white/10';
+      const sign = vp > 0 ? '+' : '';
+      pills.push(`<span class="text-[10px] font-bold px-2 py-0.5 rounded border ${cls}" title="20d realized vol minus ATM IV. Positive=options cheap (RV>IV), negative=options expensive (IV>RV).">RV−IV ${sign}${vp.toFixed(0)}vp</span>`);
+    }
+
+    if (pills.length === 0) return '';
+
+    // Toggle reveals smile coefficients + raw $ premium.
+    const detailParts = [];
+    if (fe.smile_skew_b != null && fe.smile_curvature_c != null) {
+      const sBnum = fe.smile_skew_b;
+      const sCnum = fe.smile_curvature_c;
+      detailParts.push(`smile b=${sBnum >= 0 ? '+' : ''}${sBnum.toFixed(2)} c=${sCnum >= 0 ? '+' : ''}${sCnum.toFixed(2)} (${fe.smile_strike_count || '?'} K, ${esc((fe.smile_expiration_used || '').slice(5))})`);
+    }
+    if (fe.realized_vol_20d != null && fe.atm_iv != null) {
+      detailParts.push(`RV ${(fe.realized_vol_20d * 100).toFixed(0)}% / ATM-IV ${(fe.atm_iv * 100).toFixed(0)}%`);
+    }
+    if (fe.call_premium_usd != null && fe.put_premium_usd != null) {
+      const fmtUsd = (n) => n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M`
+                          : n >= 1e3 ? `$${(n / 1e3).toFixed(0)}k`
+                          : `$${n}`;
+      detailParts.push(`$ calls ${fmtUsd(fe.call_premium_usd)} / puts ${fmtUsd(fe.put_premium_usd)}`);
+    }
+
+    const detailHtml = detailParts.length
+      ? `<button class="fe-toggle text-[10px] text-gray-500 hover:text-white">▸ more</button>
+         <div class="fe-detail hidden mt-1 text-[10px] text-gray-500 leading-relaxed font-mono">${detailParts.join('<br>')}</div>`
+      : '';
+
+    return `
+      <div class="flex flex-wrap gap-1.5 items-center">
+        ${pills.join('')}
+        ${detailHtml}
+      </div>`;
+  }
+
   // ---------- card renderer ----------
   function renderCard(entry) {
     const { ticker, flow, skew, gex, earnings_date } = entry;
@@ -208,6 +292,12 @@
         <div class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Dealer γ</div>
         ${gexHtml}
       </div>
+
+      ${(entry.flow_extra || (entry.flow_extra_errors && Object.keys(entry.flow_extra_errors).length > 0)) ? `
+      <div class="mt-3 pt-3 border-t border-white/[0.06]">
+        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Flow extras</div>
+        ${renderFlowExtra(entry.flow_extra, entry.flow_extra_errors)}
+      </div>` : ''}
 
       ${earningsChip ? `
       <div class="mt-3 pt-3 border-t border-white/[0.06]">
@@ -425,6 +515,17 @@
         const c = document.getElementById(id);
         if (!c) return;
         c.addEventListener('click', (e) => {
+          // Flow-extra "▸ more" toggle (Phase 4): expand/collapse smile + raw $.
+          const tog = e.target.closest('.fe-toggle');
+          if (tog) {
+            e.preventDefault();
+            const detail = tog.parentElement.querySelector('.fe-detail');
+            if (detail) {
+              const open = detail.classList.toggle('hidden');
+              tog.textContent = open ? '▸ more' : '▾ less';
+            }
+            return;
+          }
           const btn = e.target.closest('.od-card-copy');
           if (!btn) return;
           e.preventDefault();
