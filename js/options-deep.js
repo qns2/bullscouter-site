@@ -57,18 +57,30 @@
 
     const pills = [];
 
-    // 1. Premium-volume P/C (call-side dominance reads green, put-side red).
+    // Shared P/C colour ramp — used by both turnover and depth metrics.
+    function pcCls(pc) {
+      if (pc < 0.5)      return 'text-green-400 bg-green-500/10 border-green-500/20';
+      if (pc < 0.8)      return 'text-green-300 bg-green-500/5 border-green-500/15';
+      if (pc < 1.3)      return 'text-gray-400 bg-white/5 border-white/10';
+      if (pc < 3.0)      return 'text-red-300 bg-red-500/5 border-red-500/15';
+      return 'text-red-400 bg-red-500/10 border-red-500/20';
+    }
+    function pcLabel(pc) {
+      return pc > 10 ? `${pc.toFixed(0)}×` : pc.toFixed(2);
+    }
+
+    // 1. Premium-volume P/C — executed turnover.
     if (fe.premium_volume_pc != null) {
       const pc = fe.premium_volume_pc;
-      let cls, label;
-      if (pc < 0.5)      { cls = 'text-green-400 bg-green-500/10 border-green-500/20'; }
-      else if (pc < 0.8) { cls = 'text-green-300 bg-green-500/5 border-green-500/15'; }
-      else if (pc < 1.3) { cls = 'text-gray-400 bg-white/5 border-white/10'; }
-      else if (pc < 3.0) { cls = 'text-red-300 bg-red-500/5 border-red-500/15'; }
-      else               { cls = 'text-red-400 bg-red-500/10 border-red-500/20'; }
-      // Compact format: ratios over 10× shown as "65×"; otherwise 2 decimals.
-      label = pc > 10 ? `${pc.toFixed(0)}×` : pc.toFixed(2);
-      pills.push(`<span class="text-[10px] font-bold px-2 py-0.5 rounded border ${cls}" title="Premium-volume P/C — Σ(mid×vol×100) put-side / call-side">$P/C ${label}</span>`);
+      pills.push(`<span class="text-[10px] font-bold px-2 py-0.5 rounded border ${pcCls(pc)}" title="Premium-volume P/C — Σ(mid×vol×100) put-side / call-side. Executed turnover.">$P/C ${pcLabel(pc)}</span>`);
+    }
+
+    // 1b. Depth-volume P/C — resting NBBO bid_size pressure (Phase 4b).
+    // Different signal from premium_volume_pc: shows positioning intent
+    // even when intraday volume is zero (illiquid / after-hours).
+    if (fe.depth_volume_pc != null) {
+      const pc = fe.depth_volume_pc;
+      pills.push(`<span class="text-[10px] font-bold px-2 py-0.5 rounded border ${pcCls(pc)}" title="Depth P/C — Σ(mid×bid_size×100) put-side / call-side. Resting demand at NBBO bid (positioning intent, not executed turnover).">depth ${pcLabel(pc)}</span>`);
     }
 
     // 2. Net delta-volume (sign carries the read).
@@ -113,7 +125,10 @@
       const fmtUsd = (n) => n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M`
                           : n >= 1e3 ? `$${(n / 1e3).toFixed(0)}k`
                           : `$${n}`;
-      detailParts.push(`$ calls ${fmtUsd(fe.call_premium_usd)} / puts ${fmtUsd(fe.put_premium_usd)}`);
+      detailParts.push(`turnover calls ${fmtUsd(fe.call_premium_usd)} / puts ${fmtUsd(fe.put_premium_usd)}`);
+      if (fe.call_depth_usd != null && fe.put_depth_usd != null) {
+        detailParts.push(`depth$ calls ${fmtUsd(fe.call_depth_usd)} / puts ${fmtUsd(fe.put_depth_usd)}`);
+      }
     }
 
     const detailHtml = detailParts.length
