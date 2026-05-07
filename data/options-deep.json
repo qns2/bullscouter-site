@@ -13,17 +13,50 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 70.68,
+        "put_25d_iv": 0.5,
+        "call_25d_iv": 0.125,
+        "risk_reversal": -0.375,
+        "risk_reversal_vp": -37.5,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 55.0,
+          "call_strike": 75.0
+        },
+        "provider": "yfinance",
+        "error_kind": null,
+        "raw_risk_reversal": -0.375,
+        "raw_risk_reversal_vp": -37.5,
+        "data_quality": "DATA_NOISE"
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 70.68,
+        "total_gex_usd": -71419.0,
+        "regime": "neutral",
+        "zero_gamma_level": 75.0,
+        "zero_gamma_distance_pct": 6.11,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 214648,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-11",
       "frozen": false,
@@ -44,19 +77,33 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 6.11,
+        "total_gex_usd": 265924.0,
+        "regime": "neutral",
+        "zero_gamma_level": 6.11,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 309939,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
-      "earnings_date": "2026-05-06",
+      "earnings_date": "2026-08-04",
       "frozen": false,
-      "thesis": "PEFP T0. Earnings TODAY AMC. Lower 60sh limit to $6.20 by 3:30 PM. Lottery 40sh. Stop $5.40.",
+      "thesis": "PEFP T0. Earnings AMC today. Sell 30sh market + 30sh limit $6.15. Lottery 40sh only. Stop $5.40.",
       "watchlist_target": 7.0,
       "watchlist_entry_low": 5.8,
       "watchlist_entry_high": 6.1
@@ -72,34 +119,34 @@
         "bullish_streak": 0
       },
       "skew": null,
-      "skew_error": "provider_no_data",
+      "skew_error": "empty_chain",
       "gex": {
         "spot": 7.59,
-        "total_gex_usd": 4.0,
+        "total_gex_usd": -152.0,
         "regime": "neutral",
-        "zero_gamma_level": 7.59,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 10.0,
+        "zero_gamma_distance_pct": 31.75,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 1,
+        "total_contracts_analyzed": 2907,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-18",
       "frozen": false,
-      "thesis": "HELD +13.3%. Flow +6.0 (0d streak). GEX danger. Peaked +31%, retracing. Trail stop $7.00. Needs thesis. Earnings 5/18.",
+      "thesis": "HELD 100sh +16.4% (peaked +31%). Flow +6.0 (0d). GEX danger. Trail stop $7.00. Earnings 5/18. Consider trim 50sh at $7.50-8.00.",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
@@ -114,20 +161,39 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 42.88,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.5,
+        "risk_reversal": 0.375,
+        "risk_reversal_vp": 37.5,
+        "read": "speculative",
+        "direction": "bullish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 40.0,
+          "call_strike": 55.0
+        },
+        "provider": "yfinance",
+        "error_kind": null,
+        "raw_risk_reversal": 0.375,
+        "raw_risk_reversal_vp": 37.5,
+        "data_quality": "DATA_NOISE"
+      },
+      "skew_error": null,
       "gex": {
         "spot": 42.88,
-        "total_gex_usd": -98.0,
+        "total_gex_usd": -3193.0,
         "regime": "neutral",
-        "zero_gamma_level": 42.88,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 50.0,
+        "zero_gamma_distance_pct": 16.6,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 12,
+        "total_contracts_analyzed": 29299,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -142,7 +208,7 @@
       },
       "earnings_date": "2026-05-07",
       "frozen": true,
-      "thesis": "FROZEN \u2014 earnings 5/7. Limit sell 30sh @ $46.90 GTC set. Do NOT trade regardless of signals.",
+      "thesis": "FROZEN \u2014 earnings TODAY. GTC sell 30sh @ $46.90 stands. At $42.88 (-8.6%). Near -10% stop. Do NOT trade.",
       "watchlist_target": 65.0,
       "watchlist_entry_low": 40.0,
       "watchlist_entry_high": 44.0
@@ -157,21 +223,54 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 8.38,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.5,
+        "risk_reversal": 0.375,
+        "risk_reversal_vp": 37.5,
+        "read": "speculative",
+        "direction": "bullish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 8.0,
+          "call_strike": 10.5
+        },
+        "provider": "yfinance",
+        "error_kind": null,
+        "raw_risk_reversal": 0.375,
+        "raw_risk_reversal_vp": 37.5,
+        "data_quality": "DATA_NOISE"
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 8.38,
+        "total_gex_usd": 15465.0,
+        "regime": "neutral",
+        "zero_gamma_level": 8.38,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 86133,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
-      "earnings_date": "2026-05-11",
+      "earnings_date": "2026-05-07",
       "frozen": false,
-      "thesis": "HELD +12.1%. Flow +9.0 bullish but skew bearish/extreme -37.5vp CONFLICT. Earnings 5/11 (PEFP Setup). Hold, stop $6.50.",
+      "thesis": "HELD 250sh +24%. Trimmed 100sh 5/6 at $8.20. Earnings 5/11 (PEFP Anticipation). Skew bearish/extreme vs flow +3.5. Evaluate by Thu 5/8; trim another 100sh if divergence persists.",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
@@ -186,21 +285,51 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 24.01,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.25,
+        "risk_reversal": 0.0,
+        "risk_reversal_vp": 0.0,
+        "read": "balanced",
+        "direction": "neutral",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 21.5,
+          "call_strike": 27.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 24.01,
+        "total_gex_usd": 1487.0,
+        "regime": "neutral",
+        "zero_gamma_level": 24.01,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 173930,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
-      "thesis": "PEFP Compression T-1. Only 2/7 diagnostics bullish. TRIM 40-50sh limit $24.25-25 or market by 2PM. Stub 10-20sh, stop $20.50.",
+      "thesis": "PEFP T0 \u2014 earnings TODAY AMC. 0/7 diagnostics bullish. TRIM 40sh at market, keep 20sh stub. Stop $20.50 on stub. -17% from basis.",
       "watchlist_target": 40.0,
       "watchlist_entry_low": 19.0,
       "watchlist_entry_high": 22.0
@@ -219,38 +348,27 @@
       "skew_error": null,
       "gex": {
         "spot": 21.16,
-        "total_gex_usd": -1139908.0,
+        "total_gex_usd": 7210.0,
         "regime": "neutral",
-        "zero_gamma_level": 7.0,
-        "zero_gamma_distance_pct": 66.92,
-        "buffer": "safe",
+        "zero_gamma_level": 21.16,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 93546,
+        "total_contracts_analyzed": 166722,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
-      "flow_extra": {
-        "premium_volume_pc": 0.3626,
-        "call_premium_usd": 38455,
-        "put_premium_usd": 13942,
-        "net_delta_volume": 77.6,
-        "call_delta_volume": 138.3,
-        "put_delta_volume": 60.6,
-        "smile_atm_iv": 0.487,
-        "smile_skew_b": -0.0858,
-        "smile_curvature_c": 3.3501,
-        "smile_expiration_used": "2026-05-29",
-        "smile_strike_count": 24,
-        "realized_vol_20d": 0.5121,
-        "atm_iv": 0.4854,
-        "rv_iv_gap": 0.0267
-      },
+      "flow_extra": null,
       "flow_extra_errors": {
-        "depth_volume_pc": "all_strikes_filtered"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-04",
       "frozen": false,
@@ -269,20 +387,36 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 61.83,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.25,
+        "risk_reversal": 0.0,
+        "risk_reversal_vp": 0.0,
+        "read": "balanced",
+        "direction": "neutral",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 55.0,
+          "call_strike": 70.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 61.83,
-        "total_gex_usd": -222.0,
+        "total_gex_usd": 1520.0,
         "regime": "neutral",
-        "zero_gamma_level": 61.83,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 40.0,
+        "zero_gamma_distance_pct": 35.31,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 8,
+        "total_contracts_analyzed": 2149,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -300,7 +434,7 @@
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
-      "thesis": "HELD -6.4%. 4-insider $11.3M cluster at $54-58 (88% WR). Earnings 5/7. HOLD through \u2014 insider conviction outweighs PEFP trim. Stop $53.",
+      "thesis": "EXITED 5/6 at $62.55 (+1.4% from $61.68). Position closed. Remove HELD label.",
       "watchlist_target": 90.0,
       "watchlist_entry_low": 54.0,
       "watchlist_entry_high": 58.0
@@ -319,31 +453,31 @@
       "skew_error": null,
       "gex": {
         "spot": 89.05,
-        "total_gex_usd": -11145.0,
+        "total_gex_usd": -52974.0,
         "regime": "neutral",
-        "zero_gamma_level": 89.05,
-        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_level": 92.0,
+        "zero_gamma_distance_pct": 3.31,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 2270,
+        "total_contracts_analyzed": 234300,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-22",
       "frozen": false,
-      "thesis": "POST-EARNINGS. CEO $3M buy. Recovery 99/100. HELD 30sh +0.4%. IN ZONE $92. Flow flat. Add 10-20sh limit $90. Stop $82.",
+      "thesis": "POST-EARNINGS. CEO $3M buy. Recovery 99/100. Analyst Day 5/6: AI rev $1.5B, $30B roadmap. HELD 30sh -2.8%. ADD 10-15sh limit $88. Stop $78. IN ZONE $89.",
       "watchlist_target": 140.0,
       "watchlist_entry_low": 80.0,
       "watchlist_entry_high": 95.0
@@ -360,25 +494,98 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 43.88,
+        "total_gex_usd": -975510.0,
+        "regime": "neutral",
+        "zero_gamma_level": 45.0,
+        "zero_gamma_distance_pct": 2.55,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 207664,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-06-25",
       "frozen": false,
-      "thesis": "BLOCKLISTED. Vietnam tariff 46% STRUCTURAL. User overrode 5/4 (hold decision). Respect user choice. No action.",
+      "thesis": "BLOCKLISTED. Vietnam tariff 46% STRUCTURAL. User overrode 5/4 (hold decision). Respect. No action.",
       "watchlist_target": 48.0,
       "watchlist_entry_low": 35.0,
       "watchlist_entry_high": 40.0
     }
   ],
   "bullscouter": [
+    {
+      "ticker": "MTN",
+      "flow": {
+        "score": null,
+        "signal": "no_data",
+        "scan_date": null,
+        "days_ago": null,
+        "td_confirmed": false,
+        "bullish_streak": 0
+      },
+      "skew": {
+        "expiration": "2026-06-18",
+        "spot": 126.32,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.0625,
+        "risk_reversal_vp": -6.25,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 110.0,
+          "call_strike": 135.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 126.32,
+        "total_gex_usd": -9457.0,
+        "regime": "neutral",
+        "zero_gamma_level": 130.0,
+        "zero_gamma_distance_pct": 2.91,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 3407,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
+      },
+      "earnings_date": "2026-06-04",
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
     {
       "ticker": "BMI",
       "flow": {
@@ -391,19 +598,33 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 123.75,
+        "total_gex_usd": 167.0,
+        "regime": "neutral",
+        "zero_gamma_level": 123.75,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 3918,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-04-17",
       "frozen": false,
-      "thesis": "5 C-suite cluster buy $775K. Water infra. Flow +7.5. ABS_TARGET at $121. Post-5/8 limit $115.",
+      "thesis": "5 C-suite cluster buy $775K. Water infra. Flow +9.0. ABS_TARGET at $124. Post-5/8 limit $115.",
       "watchlist_target": 160.0,
       "watchlist_entry_low": 112.0,
       "watchlist_entry_high": 120.0
@@ -418,17 +639,50 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 7.26,
+        "put_25d_iv": 0.5,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.4375,
+        "risk_reversal_vp": -43.75,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 5.0,
+          "call_strike": 7.5
+        },
+        "provider": "yfinance",
+        "error_kind": null,
+        "raw_risk_reversal": -0.4375,
+        "raw_risk_reversal_vp": -43.75,
+        "data_quality": "DATA_NOISE"
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 7.26,
+        "total_gex_usd": -2765.0,
+        "regime": "neutral",
+        "zero_gamma_level": 7.5,
+        "zero_gamma_distance_pct": 3.31,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 12609,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
@@ -447,11 +701,27 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 20.41,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.125,
+        "risk_reversal": -0.125,
+        "risk_reversal_vp": -12.5,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 17.5,
+          "call_strike": 22.5
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 20.41,
-        "total_gex_usd": -141.0,
+        "total_gex_usd": -101.0,
         "regime": "neutral",
         "zero_gamma_level": 40.0,
         "zero_gamma_distance_pct": 95.98,
@@ -460,7 +730,7 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 18,
+        "total_contracts_analyzed": 5775,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -478,7 +748,7 @@
       },
       "earnings_date": "2026-05-11",
       "frozen": false,
-      "thesis": "FDA approved AVLAYAH \u2014 binary RESOLVED. Triple alert. IN ZONE $19. Post-5/8 limit $17.50-18.",
+      "thesis": "FDA approved AVLAYAH. Binary RESOLVED. Flow +9.0. ABOVE zone at $20. Post-5/8 limit $17.50-18.",
       "watchlist_target": 30.0,
       "watchlist_entry_low": 16.0,
       "watchlist_entry_high": 19.0
@@ -495,19 +765,33 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 3.56,
+        "total_gex_usd": -268.0,
+        "regime": "neutral",
+        "zero_gamma_level": 4.0,
+        "zero_gamma_distance_pct": 12.36,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 12123,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
-      "earnings_date": "2026-05-06",
+      "earnings_date": "2026-08-05",
       "frozen": false,
-      "thesis": "HELD 200sh at $3.00. Catalyst 70 (FDA). Double-binary tonight (earnings+FDA). $600 risk. Mental stop $2.50.",
+      "thesis": "HELD 100sh at $3.00 (+18.7%). Double-binary (earnings+FDA) printed 5/6 AH. At $3.56 DEEP_VALUE. Assess AM outcome before deciding. If FDA approved hold; if CRL exit.",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
@@ -522,31 +806,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-06-05",
+        "spot": 10.5,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.0625,
+        "risk_reversal_vp": -6.25,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 9.5,
+          "call_strike": 11.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 10.5,
-        "total_gex_usd": -215.0,
+        "total_gex_usd": -12452.0,
         "regime": "neutral",
-        "zero_gamma_level": 10.5,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 13.0,
+        "zero_gamma_distance_pct": 23.81,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 135,
+        "total_contracts_analyzed": 367568,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-28",
       "frozen": false,
@@ -569,38 +869,27 @@
       "skew_error": null,
       "gex": {
         "spot": 46.27,
-        "total_gex_usd": -1264293.0,
+        "total_gex_usd": -113901.0,
         "regime": "neutral",
-        "zero_gamma_level": 50.0,
-        "zero_gamma_distance_pct": 8.06,
-        "buffer": "caution",
+        "zero_gamma_level": 47.5,
+        "zero_gamma_distance_pct": 2.66,
+        "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 184956,
+        "total_contracts_analyzed": 246180,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
-      "flow_extra": {
-        "premium_volume_pc": 0.1492,
-        "call_premium_usd": 21955,
-        "put_premium_usd": 3275,
-        "net_delta_volume": 73.8,
-        "call_delta_volume": 73.8,
-        "put_delta_volume": 0.0,
-        "smile_atm_iv": 0.3609,
-        "smile_skew_b": 1.2986,
-        "smile_curvature_c": 8.2451,
-        "smile_expiration_used": "2026-05-29",
-        "smile_strike_count": 6,
-        "realized_vol_20d": 0.4203,
-        "atm_iv": 0.3643,
-        "rv_iv_gap": 0.0561
-      },
+      "flow_extra": null,
       "flow_extra_errors": {
-        "depth_volume_pc": "all_strikes_filtered"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-28",
       "frozen": false,
@@ -623,26 +912,26 @@
         "expiration": "2026-05-15",
         "spot": 125.75,
         "put_25d_iv": 3.0332,
-        "call_25d_iv": 4.603,
-        "risk_reversal": 0.5,
-        "risk_reversal_vp": 50.0,
-        "read": "speculative",
-        "direction": "bullish",
+        "call_25d_iv": 0.125,
+        "risk_reversal": -0.5,
+        "risk_reversal_vp": -50.0,
+        "read": "panic",
+        "direction": "bearish",
         "magnitude": "extreme",
         "strikes_used": {
           "put_strike": 60.0,
-          "call_strike": 70.0
+          "call_strike": 134.0
         },
         "provider": "yfinance",
         "error_kind": null,
-        "raw_risk_reversal": 1.5698,
-        "raw_risk_reversal_vp": 156.98,
+        "raw_risk_reversal": -2.9082,
+        "raw_risk_reversal_vp": -290.82,
         "data_quality": "DATA_NOISE"
       },
       "skew_error": null,
       "gex": {
         "spot": 125.75,
-        "total_gex_usd": -54.0,
+        "total_gex_usd": -28410.0,
         "regime": "neutral",
         "zero_gamma_level": 70.0,
         "zero_gamma_distance_pct": 44.33,
@@ -651,18 +940,18 @@
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 3,
+        "total_contracts_analyzed": 63155,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
@@ -683,15 +972,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "no_strikes_with_oi",
+      "gex": {
+        "spot": 16.3,
+        "total_gex_usd": 46231.0,
+        "regime": "neutral",
+        "zero_gamma_level": 16.3,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 817263,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-28",
       "frozen": false,
@@ -714,16 +1017,16 @@
       "skew_error": null,
       "gex": {
         "spot": 48.49,
-        "total_gex_usd": -205.0,
+        "total_gex_usd": -9193.0,
         "regime": "neutral",
-        "zero_gamma_level": 48.49,
-        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_level": 50.0,
+        "zero_gamma_distance_pct": 3.11,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 13,
+        "total_contracts_analyzed": 12872,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -738,7 +1041,7 @@
       },
       "earnings_date": "2026-03-31",
       "frozen": false,
-      "thesis": "IN ZONE $48. Flow +7.5. BUT 12% WR (1/8) \u2014 WORST calibration. Do NOT enter. SKIP until WR improves.",
+      "thesis": "IN ZONE $48. Flow +8.0. BUT 12% WR (1/8) \u2014 WORST calibration. Do NOT enter. SKIP.",
       "watchlist_target": 75.0,
       "watchlist_entry_low": 48.0,
       "watchlist_entry_high": 52.0
@@ -757,38 +1060,27 @@
       "skew_error": null,
       "gex": {
         "spot": 174.37,
-        "total_gex_usd": 2008875.0,
+        "total_gex_usd": -14066.0,
         "regime": "neutral",
-        "zero_gamma_level": 174.37,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 120.0,
+        "zero_gamma_distance_pct": 31.18,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 19253,
+        "total_contracts_analyzed": 14987,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
-      "flow_extra": {
-        "premium_volume_pc": 1.3646,
-        "call_premium_usd": 100740,
-        "put_premium_usd": 137470,
-        "net_delta_volume": 1.9,
-        "call_delta_volume": 39.1,
-        "put_delta_volume": 37.2,
-        "smile_atm_iv": 0.6499,
-        "smile_skew_b": -0.1049,
-        "smile_curvature_c": 2.9618,
-        "smile_expiration_used": "2026-05-29",
-        "smile_strike_count": 26,
-        "realized_vol_20d": 0.7036,
-        "atm_iv": 0.6838,
-        "rv_iv_gap": 0.0197
-      },
+      "flow_extra": null,
       "flow_extra_errors": {
-        "depth_volume_pc": "all_strikes_filtered"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-06-23",
       "frozen": false,
@@ -807,17 +1099,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 19.56,
+        "put_25d_iv": 0.0625,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": 0.0,
+        "risk_reversal_vp": 0.0,
+        "read": "balanced",
+        "direction": "neutral",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 19.0,
+          "call_strike": 20.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 19.56,
+        "total_gex_usd": -15847.0,
+        "regime": "neutral",
+        "zero_gamma_level": 20.0,
+        "zero_gamma_distance_pct": 2.25,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 4812,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
@@ -840,7 +1162,7 @@
       "skew_error": null,
       "gex": {
         "spot": 319.54,
-        "total_gex_usd": -6890.0,
+        "total_gex_usd": -6282.0,
         "regime": "neutral",
         "zero_gamma_level": 200.0,
         "zero_gamma_distance_pct": 37.41,
@@ -849,7 +1171,7 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 107,
+        "total_contracts_analyzed": 4400,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -869,10 +1191,10 @@
       },
       "earnings_date": "2026-07-30",
       "frozen": false,
-      "thesis": "Sole nuclear carrier builder. $55B backlog. IN ZONE $326. Earnings 5/7 \u2014 BLACKOUT. Post-earnings limit $350. Iran tailwind.",
+      "thesis": "Sole nuclear carrier builder. $55B backlog. $50B pipeline. Earnings TODAY BMO. Post-print entry if beat: limit $320-330. Flow +7.5. Iran tailwind.",
       "watchlist_target": 435.0,
-      "watchlist_entry_low": 345.0,
-      "watchlist_entry_high": 365.0
+      "watchlist_entry_low": 310.0,
+      "watchlist_entry_high": 330.0
     },
     {
       "ticker": "LNTH",
@@ -884,21 +1206,51 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 86.15,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.25,
+        "risk_reversal": 0.0,
+        "risk_reversal_vp": 0.0,
+        "read": "balanced",
+        "direction": "neutral",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 75.0,
+          "call_strike": 100.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 86.15,
+        "total_gex_usd": -63.0,
+        "regime": "neutral",
+        "zero_gamma_level": 90.0,
+        "zero_gamma_distance_pct": 4.47,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 2212,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
-      "thesis": "TOP PICK #3: PDUFA Jun 29 (mfg-only, NOT safety). 4-path convergence. ABS_TARGET $86. Limit $80-82.",
+      "thesis": "PDUFA Jun 29 (mfg-only, NOT safety). 4-path convergence. Flow +7.5. ABS_TARGET $86. Limit $80-82.",
       "watchlist_target": 100.0,
       "watchlist_entry_low": 78.0,
       "watchlist_entry_high": 85.0
@@ -915,15 +1267,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 130.04,
+        "total_gex_usd": -3682.0,
+        "regime": "neutral",
+        "zero_gamma_level": 140.0,
+        "zero_gamma_distance_pct": 7.66,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 21629,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-27",
       "frozen": false,
@@ -942,31 +1308,50 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "empty_chain",
+      "skew": {
+        "expiration": "2026-08-21",
+        "spot": 174.57,
+        "put_25d_iv": 0.0625,
+        "call_25d_iv": 0.5601,
+        "risk_reversal": 0.4976,
+        "risk_reversal_vp": 49.76,
+        "read": "speculative",
+        "direction": "bullish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 155.0,
+          "call_strike": 285.0
+        },
+        "provider": "yfinance",
+        "error_kind": null,
+        "raw_risk_reversal": 0.4976,
+        "raw_risk_reversal_vp": 49.76,
+        "data_quality": "DATA_NOISE"
+      },
+      "skew_error": null,
       "gex": {
         "spot": 174.57,
-        "total_gex_usd": -10369.0,
+        "total_gex_usd": -48154.0,
         "regime": "neutral",
-        "zero_gamma_level": 174.57,
-        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_level": 180.0,
+        "zero_gamma_distance_pct": 3.11,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 468,
+        "total_contracts_analyzed": 27438,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-06-18",
       "frozen": false,
@@ -987,15 +1372,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 274.99,
+        "total_gex_usd": -339.0,
+        "regime": "neutral",
+        "zero_gamma_level": 290.0,
+        "zero_gamma_distance_pct": 5.46,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-11"
+        ],
+        "total_contracts_analyzed": 181401,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-30",
       "frozen": false,
@@ -1016,15 +1415,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 612.88,
+        "total_gex_usd": -3879.0,
+        "regime": "neutral",
+        "zero_gamma_level": 627.5,
+        "zero_gamma_distance_pct": 2.39,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-11"
+        ],
+        "total_contracts_analyzed": 142721,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-29",
       "frozen": false,
@@ -1045,15 +1458,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 413.96,
+        "total_gex_usd": -2834.0,
+        "regime": "neutral",
+        "zero_gamma_level": 425.0,
+        "zero_gamma_distance_pct": 2.67,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-11"
+        ],
+        "total_contracts_analyzed": 131065,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-29",
       "frozen": false,
@@ -1074,15 +1501,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 166.56,
+        "total_gex_usd": -5633.0,
+        "regime": "neutral",
+        "zero_gamma_level": 177.5,
+        "zero_gamma_distance_pct": 6.57,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 82532,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-30",
       "frozen": false,
@@ -1105,7 +1546,7 @@
       "skew_error": null,
       "gex": {
         "spot": 10.08,
-        "total_gex_usd": -133.0,
+        "total_gex_usd": 485.0,
         "regime": "neutral",
         "zero_gamma_level": 10.08,
         "zero_gamma_distance_pct": 0.0,
@@ -1114,7 +1555,7 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 45,
+        "total_contracts_analyzed": 50267,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -1127,9 +1568,9 @@
         "smile_shape": "underdetermined",
         "rv_iv_gap": "no_atm_strike"
       },
-      "earnings_date": "2026-05-06",
+      "earnings_date": "2026-08-05",
       "frozen": false,
-      "thesis": "PEFP FAILED SETUP. EXIT 50sh AT MARKET. Skew bearish/extreme. Earnings AMC tonight. VERIFY EXECUTED.",
+      "thesis": "P0 EXIT: PEFP failed setup. Skew bearish/extreme. Post-earnings. EXIT 50sh AT MARKET. EXECUTE NOW.",
       "watchlist_target": 18.0,
       "watchlist_entry_low": 8.0,
       "watchlist_entry_high": 10.0
@@ -1144,31 +1585,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-06-18",
+        "spot": 37.7,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.1875,
+        "risk_reversal_vp": -18.75,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 29.0,
+          "call_strike": 40.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 37.7,
-        "total_gex_usd": 4467.0,
+        "total_gex_usd": -33143.0,
         "regime": "neutral",
-        "zero_gamma_level": 37.7,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 40.0,
+        "zero_gamma_distance_pct": 6.1,
+        "buffer": "caution",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 953,
+        "total_contracts_analyzed": 22529,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-29",
       "frozen": false,
@@ -1191,16 +1648,16 @@
       "skew_error": null,
       "gex": {
         "spot": 151.28,
-        "total_gex_usd": -8177.0,
+        "total_gex_usd": -8338.0,
         "regime": "neutral",
-        "zero_gamma_level": 151.28,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 165.0,
+        "zero_gamma_distance_pct": 9.07,
+        "buffer": "caution",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 294,
+        "total_contracts_analyzed": 4233,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -1213,7 +1670,7 @@
         "smile_shape": "underdetermined",
         "rv_iv_gap": "no_atm_strike"
       },
-      "earnings_date": "2026-05-06",
+      "earnings_date": "2026-08-06",
       "frozen": false,
       "thesis": "BLOCKLISTED \u2014 ZONE FLOOR BROKEN ($188<$191). EXIT paper signal. Flow +9.0 unconfirmed. QG 42% WR. Earnings May 6.",
       "watchlist_target": 330.0,
@@ -1230,17 +1687,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 3.86,
+        "put_25d_iv": 0.5,
+        "call_25d_iv": 0.5,
+        "risk_reversal": 0.0,
+        "risk_reversal_vp": 0.0,
+        "read": "balanced",
+        "direction": "neutral",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 2.5,
+          "call_strike": 5.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 3.86,
+        "total_gex_usd": -200.0,
+        "regime": "neutral",
+        "zero_gamma_level": 5.0,
+        "zero_gamma_distance_pct": 29.53,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 4989,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
@@ -1263,16 +1750,16 @@
       "skew_error": null,
       "gex": {
         "spot": 27.61,
-        "total_gex_usd": -7017.0,
+        "total_gex_usd": -8826.0,
         "regime": "neutral",
-        "zero_gamma_level": 27.61,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 30.0,
+        "zero_gamma_distance_pct": 8.66,
+        "buffer": "caution",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 1042,
+        "total_contracts_analyzed": 17983,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -1290,7 +1777,7 @@
       },
       "earnings_date": "2026-07-28",
       "frozen": false,
-      "thesis": "P0 EXIT: SELL 10sh AT MARKET. Overdue 3+ DAYS. +24.1% from $22.09. Lock ~$53 profit. EXECUTE NOW.",
+      "thesis": "P0 EXIT: SELL 10sh AT MARKET. Overdue 3+ DAYS. +25% from $22.09. EXECUTE IMMEDIATELY.",
       "watchlist_target": 30.0,
       "watchlist_entry_low": 22.0,
       "watchlist_entry_high": 26.0
@@ -1309,38 +1796,27 @@
       "skew_error": null,
       "gex": {
         "spot": 192.57,
-        "total_gex_usd": -91195330.0,
+        "total_gex_usd": -39800.0,
         "regime": "neutral",
-        "zero_gamma_level": 75.0,
-        "zero_gamma_distance_pct": 61.05,
+        "zero_gamma_level": 85.0,
+        "zero_gamma_distance_pct": 55.86,
         "buffer": "safe",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 247838,
+        "total_contracts_analyzed": 144905,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
-      "flow_extra": {
-        "premium_volume_pc": 0.0109,
-        "call_premium_usd": 10526575,
-        "put_premium_usd": 115222,
-        "net_delta_volume": 3977.7,
-        "call_delta_volume": 4031.9,
-        "put_delta_volume": 54.2,
-        "smile_atm_iv": 0.5653,
-        "smile_skew_b": -0.1245,
-        "smile_curvature_c": 1.8241,
-        "smile_expiration_used": "2026-05-29",
-        "smile_strike_count": 57,
-        "realized_vol_20d": 0.7273,
-        "atm_iv": 0.5697,
-        "rv_iv_gap": 0.1576
-      },
+      "flow_extra": null,
       "flow_extra_errors": {
-        "depth_volume_pc": "all_strikes_filtered"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-29",
       "frozen": false,
@@ -1359,20 +1835,36 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "empty_chain",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 235.16,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.25,
+        "risk_reversal": 0.125,
+        "risk_reversal_vp": 12.5,
+        "read": "speculative",
+        "direction": "bullish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 220.0,
+          "call_strike": 270.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 235.16,
-        "total_gex_usd": -10307.0,
+        "total_gex_usd": -9461.0,
         "regime": "neutral",
-        "zero_gamma_level": 350.0,
-        "zero_gamma_distance_pct": 48.83,
+        "zero_gamma_level": 170.0,
+        "zero_gamma_distance_pct": 27.71,
         "buffer": "safe",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 615,
+        "total_contracts_analyzed": 10225,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -1392,7 +1884,7 @@
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
-      "thesis": "70% off peak. 83.8% GM. $652M FCF. Breeze AI 45% adoption. Earnings 5/7 \u2014 BLACKOUT. Post-5/8 limit $210.",
+      "thesis": "Earnings TODAY AMC \u2014 blackout. 83.8% GM. $652M FCF. Breeze AI. Post-earnings dip entry at $195-210.",
       "watchlist_target": 292.0,
       "watchlist_entry_low": 195.0,
       "watchlist_entry_high": 210.0
@@ -1407,17 +1899,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 60.98,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.125,
+        "risk_reversal": -0.125,
+        "risk_reversal_vp": -12.5,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 54.0,
+          "call_strike": 65.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 60.98,
+        "total_gex_usd": -42359.0,
+        "regime": "neutral",
+        "zero_gamma_level": 65.0,
+        "zero_gamma_distance_pct": 6.59,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 297906,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
@@ -1436,17 +1958,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-22",
+        "spot": 9.72,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.1875,
+        "risk_reversal_vp": -18.75,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 8.5,
+          "call_strike": 10.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 9.72,
+        "total_gex_usd": -21720.0,
+        "regime": "neutral",
+        "zero_gamma_level": 10.0,
+        "zero_gamma_distance_pct": 2.88,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 180817,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-14",
       "frozen": false,
@@ -1468,47 +2020,47 @@
       "skew": {
         "expiration": "2026-05-15",
         "spot": 261.42,
-        "put_25d_iv": 2.3463,
+        "put_25d_iv": 0.125,
         "call_25d_iv": 1.2881,
-        "risk_reversal": -0.5,
-        "risk_reversal_vp": -50.0,
-        "read": "panic",
-        "direction": "bearish",
+        "risk_reversal": 0.5,
+        "risk_reversal_vp": 50.0,
+        "read": "speculative",
+        "direction": "bullish",
         "magnitude": "extreme",
         "strikes_used": {
-          "put_strike": 370.0,
+          "put_strike": 245.0,
           "call_strike": 410.0
         },
         "provider": "yfinance",
         "error_kind": null,
-        "raw_risk_reversal": -1.0582,
-        "raw_risk_reversal_vp": -105.82,
+        "raw_risk_reversal": 1.1631,
+        "raw_risk_reversal_vp": 116.31,
         "data_quality": "DATA_NOISE"
       },
       "skew_error": null,
       "gex": {
         "spot": 261.42,
-        "total_gex_usd": -300.0,
+        "total_gex_usd": -29751.0,
         "regime": "neutral",
-        "zero_gamma_level": 261.42,
-        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_level": 270.0,
+        "zero_gamma_distance_pct": 3.28,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 9,
+        "total_contracts_analyzed": 23885,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
@@ -1531,16 +2083,16 @@
       "skew_error": null,
       "gex": {
         "spot": 241.85,
-        "total_gex_usd": 11272.0,
+        "total_gex_usd": -9560.0,
         "regime": "neutral",
-        "zero_gamma_level": 241.85,
-        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_level": 250.0,
+        "zero_gamma_distance_pct": 3.37,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 480,
+        "total_contracts_analyzed": 8199,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -1554,8 +2106,8 @@
         "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-04-20",
-      "frozen": false,
-      "thesis": "UNFREEZE. Earnings complete. Steel tariff beneficiary. Reassess entry zone.",
+      "frozen": true,
+      "thesis": "UNFROZEN. Earnings complete. Steel tariff beneficiary. Reassess entry zone.",
       "watchlist_target": 220.0,
       "watchlist_entry_low": 185.0,
       "watchlist_entry_high": 198.0
@@ -1572,15 +2124,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 287.51,
+        "total_gex_usd": -3539.0,
+        "regime": "neutral",
+        "zero_gamma_level": 295.0,
+        "zero_gamma_distance_pct": 2.61,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-11"
+        ],
+        "total_contracts_analyzed": 207022,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-30",
       "frozen": false,
@@ -1603,31 +2169,31 @@
       "skew_error": null,
       "gex": {
         "spot": 56.0,
-        "total_gex_usd": -321.0,
+        "total_gex_usd": -8470.0,
         "regime": "neutral",
-        "zero_gamma_level": 56.0,
-        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_level": 58.0,
+        "zero_gamma_distance_pct": 3.57,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 104,
+        "total_contracts_analyzed": 50980,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-29",
       "frozen": false,
-      "thesis": "TOP PICK #1: IN ZONE $56. 73% ENTRY_ZONE WR. 4-fund 13F $583M. Flow +7.0. Limit $56. Post-5/8. Stop $52.",
+      "thesis": "TOP PICK #1: IN ZONE $56. 73% ENTRY_ZONE WR. 4-fund 13F $583M. Flow +7.0. Limit $55. Stop $50.",
       "watchlist_target": 95.0,
       "watchlist_entry_low": 55.0,
       "watchlist_entry_high": 63.0
@@ -1644,19 +2210,33 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 176.74,
+        "total_gex_usd": -16530.0,
+        "regime": "neutral",
+        "zero_gamma_level": 182.5,
+        "zero_gamma_distance_pct": 3.26,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 51283,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-21",
       "frozen": false,
-      "thesis": "NEW WATCHLIST: GTF recall resolved. Raytheon missiles max production. Assessor BUY HIGH. $220B backlog. Iran tailwind.",
+      "thesis": "GTF recall resolved. Raytheon missiles max production. Assessor BUY HIGH. $271B record backlog. Iran tailwind. Post-5/8 monitor for dip.",
       "watchlist_target": null,
       "watchlist_entry_low": 165.0,
       "watchlist_entry_high": 175.0
@@ -1694,7 +2274,7 @@
       "skew_error": null,
       "gex": {
         "spot": 807.55,
-        "total_gex_usd": -58782.0,
+        "total_gex_usd": -55338.0,
         "regime": "neutral",
         "zero_gamma_level": 540.0,
         "zero_gamma_distance_pct": 33.13,
@@ -1703,7 +2283,7 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 624,
+        "total_contracts_analyzed": 2100,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -1714,7 +2294,7 @@
         "put_premium_usd": 444350,
         "net_delta_volume": 11.8,
         "call_delta_volume": 30.9,
-        "put_delta_volume": 19.0,
+        "put_delta_volume": 19.1,
         "smile_atm_iv": 0.6433,
         "smile_skew_b": -0.541,
         "smile_curvature_c": 4.4102,
@@ -1729,7 +2309,7 @@
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
-      "thesis": "PDUFA May 10 (4 DAYS). Seroneg gMG first-in-class. Phase 3 p=0.0068. No entry pre-5/8. Research entry zone Thu. Post-approval PEAD Day 5+.",
+      "thesis": "PDUFA May 10 (3 DAYS). Seroneg gMG first-in-class. Phase 3 p=0.0068. NOT IN CATALYST PIPELINE (BUG). No entry pre-binary. Research post-PDUFA strategy.",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
@@ -1744,17 +2324,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-29",
+        "spot": 207.83,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.1875,
+        "risk_reversal_vp": -18.75,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 165.0,
+          "call_strike": 220.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 207.83,
+        "total_gex_usd": -44156.0,
+        "regime": "neutral",
+        "zero_gamma_level": 212.5,
+        "zero_gamma_distance_pct": 2.25,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-11"
+        ],
+        "total_contracts_analyzed": 594520,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-20",
       "frozen": false,
@@ -1775,15 +2385,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 88.8,
+        "total_gex_usd": -3175.0,
+        "regime": "neutral",
+        "zero_gamma_level": 95.0,
+        "zero_gamma_distance_pct": 6.98,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 50557,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-04-30",
       "frozen": false,
@@ -1804,15 +2428,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 398.73,
+        "total_gex_usd": -3501.0,
+        "regime": "neutral",
+        "zero_gamma_level": 420.0,
+        "zero_gamma_distance_pct": 5.33,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-11"
+        ],
+        "total_contracts_analyzed": 450848,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-22",
       "frozen": false,
@@ -1831,21 +2469,51 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-06-05",
+        "spot": 181.19,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.125,
+        "risk_reversal": 0.0,
+        "risk_reversal_vp": 0.0,
+        "read": "balanced",
+        "direction": "neutral",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 160.0,
+          "call_strike": 205.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 181.19,
+        "total_gex_usd": 14898.0,
+        "regime": "neutral",
+        "zero_gamma_level": 181.19,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 131307,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-27",
       "frozen": false,
-      "thesis": "STRONGEST SETUP. $50B buyback. Agentforce $800M ARR. Insider STRONG (3 buys). ABOVE zone $187. Scanner 25% WR on CRM. Limit $168.",
+      "thesis": "STRONGEST SETUP. $50B buyback. Agentforce $800M ARR. Insider STRONG (3 buys). ABOVE zone $181. Scanner 25% WR on CRM. Limit $168.",
       "watchlist_target": 240.0,
       "watchlist_entry_low": 160.0,
       "watchlist_entry_high": 175.0
@@ -1860,31 +2528,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-06-12",
+        "spot": 132.04,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.125,
+        "risk_reversal": -0.125,
+        "risk_reversal_vp": -12.5,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 100.0,
+          "call_strike": 155.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 132.04,
-        "total_gex_usd": -1212.0,
+        "total_gex_usd": -12918.0,
         "regime": "neutral",
-        "zero_gamma_level": 290.0,
-        "zero_gamma_distance_pct": 119.63,
-        "buffer": "safe",
+        "zero_gamma_level": 136.0,
+        "zero_gamma_distance_pct": 3.0,
+        "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 169,
+        "total_contracts_analyzed": 52120,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-06-04",
       "frozen": false,
@@ -1907,27 +2591,27 @@
       "skew_error": null,
       "gex": {
         "spot": 189.81,
-        "total_gex_usd": -360.0,
+        "total_gex_usd": -1631.0,
         "regime": "neutral",
-        "zero_gamma_level": 189.81,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 105.0,
+        "zero_gamma_distance_pct": 44.68,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 17,
+        "total_contracts_analyzed": 27412,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-29",
       "frozen": false,
@@ -1948,15 +2632,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 124.69,
+        "total_gex_usd": 5719.0,
+        "regime": "neutral",
+        "zero_gamma_level": 124.69,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 35654,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-23",
       "frozen": false,
@@ -1979,7 +2677,7 @@
       "skew_error": null,
       "gex": {
         "spot": 324.66,
-        "total_gex_usd": -29482.0,
+        "total_gex_usd": -36182.0,
         "regime": "neutral",
         "zero_gamma_level": 220.0,
         "zero_gamma_distance_pct": 32.24,
@@ -1988,7 +2686,7 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 270,
+        "total_contracts_analyzed": 13315,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -2007,11 +2705,11 @@
         "smile_shape": "underdetermined"
       },
       "earnings_date": "2026-07-20",
-      "frozen": false,
-      "thesis": "UNFREEZE. Post-earnings. Triple alert repeat. IN ZONE $332. Limit $330.",
+      "frozen": true,
+      "thesis": "UNFROZEN post-earnings. Triple alert repeat. IN ZONE $325. Limit $325.",
       "watchlist_target": 475.0,
-      "watchlist_entry_low": 325.0,
-      "watchlist_entry_high": 350.0
+      "watchlist_entry_low": 320.0,
+      "watchlist_entry_high": 340.0
     },
     {
       "ticker": "GOOGL",
@@ -2025,15 +2723,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 398.04,
+        "total_gex_usd": -2613.0,
+        "regime": "neutral",
+        "zero_gamma_level": 407.5,
+        "zero_gamma_distance_pct": 2.38,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-11"
+        ],
+        "total_contracts_analyzed": 113524,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-23",
       "frozen": false,
@@ -2054,15 +2766,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 96.61,
+        "total_gex_usd": -99.0,
+        "regime": "neutral",
+        "zero_gamma_level": 100.0,
+        "zero_gamma_distance_pct": 3.51,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 250,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-08-04",
       "frozen": false,
@@ -2084,16 +2810,16 @@
       "skew": {
         "expiration": "2026-05-29",
         "spot": 122.63,
-        "put_25d_iv": 0.8921,
-        "call_25d_iv": 0.845,
-        "risk_reversal": -0.0471,
-        "risk_reversal_vp": -4.71,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.0625,
+        "risk_reversal_vp": -6.25,
         "read": "panic",
         "direction": "bearish",
         "magnitude": "extreme",
         "strikes_used": {
-          "put_strike": 109.0,
-          "call_strike": 145.0
+          "put_strike": 111.0,
+          "call_strike": 129.0
         },
         "provider": "yfinance",
         "error_kind": null
@@ -2101,38 +2827,27 @@
       "skew_error": null,
       "gex": {
         "spot": 122.63,
-        "total_gex_usd": 236865.0,
+        "total_gex_usd": 207.0,
         "regime": "neutral",
-        "zero_gamma_level": 120.0,
-        "zero_gamma_distance_pct": 2.14,
+        "zero_gamma_level": 122.63,
+        "zero_gamma_distance_pct": 0.0,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 24037,
+        "total_contracts_analyzed": 24303,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
-      "flow_extra": {
-        "premium_volume_pc": 0.3854,
-        "call_premium_usd": 265765,
-        "put_premium_usd": 102430,
-        "net_delta_volume": 60.5,
-        "call_delta_volume": 109.0,
-        "put_delta_volume": 48.5,
-        "smile_atm_iv": 0.7782,
-        "smile_skew_b": -0.1762,
-        "smile_curvature_c": 0.7942,
-        "smile_expiration_used": "2026-05-29",
-        "smile_strike_count": 37,
-        "realized_vol_20d": 0.6119,
-        "atm_iv": 0.7899,
-        "rv_iv_gap": -0.178
-      },
+      "flow_extra": null,
       "flow_extra_errors": {
-        "depth_volume_pc": "all_strikes_filtered"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-21",
       "frozen": false,
@@ -2155,16 +2870,16 @@
       "skew_error": null,
       "gex": {
         "spot": 42.0,
-        "total_gex_usd": 1329.0,
+        "total_gex_usd": -15845.0,
         "regime": "neutral",
-        "zero_gamma_level": 42.0,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 48.0,
+        "zero_gamma_distance_pct": 14.29,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 182,
+        "total_contracts_analyzed": 25185,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -2203,29 +2918,29 @@
       "skew_error": null,
       "gex": {
         "spot": 468.83,
-        "total_gex_usd": -10967.0,
+        "total_gex_usd": -13482.0,
         "regime": "neutral",
-        "zero_gamma_level": 820.0,
-        "zero_gamma_distance_pct": 74.9,
+        "zero_gamma_level": 195.0,
+        "zero_gamma_distance_pct": 58.41,
         "buffer": "safe",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 215,
+        "total_contracts_analyzed": 74709,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
-      "earnings_date": "2026-05-06",
+      "earnings_date": "2026-08-05",
       "frozen": false,
       "thesis": "SEC probe + $74M insider selling. AVOID.",
       "watchlist_target": 460.0,
@@ -2246,32 +2961,27 @@
       "skew_error": null,
       "gex": {
         "spot": 23.72,
-        "total_gex_usd": 9782.0,
+        "total_gex_usd": -81.0,
         "regime": "neutral",
-        "zero_gamma_level": 15.0,
-        "zero_gamma_distance_pct": 36.76,
+        "zero_gamma_level": 30.0,
+        "zero_gamma_distance_pct": 26.48,
         "buffer": "safe",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 3689,
+        "total_contracts_analyzed": 2574,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
-      "flow_extra": {
-        "premium_volume_pc": 2927.5,
-        "call_premium_usd": 0,
-        "put_premium_usd": 2928,
-        "realized_vol_20d": 0.6287,
-        "atm_iv": 0.7412,
-        "rv_iv_gap": -0.1125
-      },
+      "flow_extra": null,
       "flow_extra_errors": {
+        "premium_volume_pc": "all_strikes_filtered",
         "depth_volume_pc": "all_strikes_filtered",
         "net_delta_volume": "all_strikes_filtered",
-        "smile_shape": "underdetermined"
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-06-25",
       "frozen": false,
@@ -2294,38 +3004,27 @@
       "skew_error": null,
       "gex": {
         "spot": 86.67,
-        "total_gex_usd": -3825837.0,
+        "total_gex_usd": -1922.0,
         "regime": "neutral",
-        "zero_gamma_level": 80.0,
-        "zero_gamma_distance_pct": 7.7,
-        "buffer": "caution",
+        "zero_gamma_level": 90.0,
+        "zero_gamma_distance_pct": 3.84,
+        "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 27114,
+        "total_contracts_analyzed": 19434,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
-      "flow_extra": {
-        "premium_volume_pc": 0.1322,
-        "call_premium_usd": 15748,
-        "put_premium_usd": 2082,
-        "net_delta_volume": -2.1,
-        "call_delta_volume": 0.0,
-        "put_delta_volume": 2.1,
-        "smile_atm_iv": 0.4398,
-        "smile_skew_b": -1.9046,
-        "smile_curvature_c": -2.8741,
-        "smile_expiration_used": "2026-05-29",
-        "smile_strike_count": 21,
-        "realized_vol_20d": 0.3005,
-        "atm_iv": 0.4675,
-        "rv_iv_gap": -0.167
-      },
+      "flow_extra": null,
       "flow_extra_errors": {
-        "depth_volume_pc": "all_strikes_filtered"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-01",
       "frozen": false,
@@ -2348,7 +3047,7 @@
       "skew_error": null,
       "gex": {
         "spot": 100.79,
-        "total_gex_usd": -5975.0,
+        "total_gex_usd": -3116.0,
         "regime": "neutral",
         "zero_gamma_level": 60.0,
         "zero_gamma_distance_pct": 40.47,
@@ -2357,18 +3056,18 @@
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 208,
+        "total_contracts_analyzed": 49453,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-30",
       "frozen": false,
@@ -2391,38 +3090,32 @@
       "skew_error": null,
       "gex": {
         "spot": 90.84,
-        "total_gex_usd": -394505.0,
+        "total_gex_usd": -1926.0,
         "regime": "neutral",
-        "zero_gamma_level": 95.0,
-        "zero_gamma_distance_pct": 4.58,
-        "buffer": "danger",
+        "zero_gamma_level": 135.0,
+        "zero_gamma_distance_pct": 48.61,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 4117,
+        "total_contracts_analyzed": 3075,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 1.2164,
-        "call_premium_usd": 21030,
-        "put_premium_usd": 25580,
-        "net_delta_volume": 2.0,
-        "call_delta_volume": 8.7,
-        "put_delta_volume": 6.7,
-        "smile_atm_iv": 0.5001,
-        "smile_skew_b": -0.1313,
-        "smile_curvature_c": 1.2932,
-        "smile_expiration_used": "2026-06-18",
-        "smile_strike_count": 15,
+        "premium_volume_pc": 4435.0,
+        "call_premium_usd": 0,
+        "put_premium_usd": 4435,
         "realized_vol_20d": 0.6777,
-        "atm_iv": 0.5068,
-        "rv_iv_gap": 0.1709
+        "atm_iv": 0.5801,
+        "rv_iv_gap": 0.0976
       },
       "flow_extra_errors": {
-        "depth_volume_pc": "all_strikes_filtered"
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined"
       },
       "earnings_date": "2026-08-04",
       "frozen": false,
@@ -2445,27 +3138,27 @@
       "skew_error": null,
       "gex": {
         "spot": 56.8,
-        "total_gex_usd": -8606.0,
+        "total_gex_usd": -27284.0,
         "regime": "neutral",
-        "zero_gamma_level": 56.8,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 60.0,
+        "zero_gamma_distance_pct": 5.63,
+        "buffer": "caution",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 2748,
+        "total_contracts_analyzed": 5651,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-30",
       "frozen": false,
@@ -2488,27 +3181,27 @@
       "skew_error": null,
       "gex": {
         "spot": 156.52,
-        "total_gex_usd": 998.0,
+        "total_gex_usd": -283.0,
         "regime": "neutral",
-        "zero_gamma_level": 156.52,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 180.0,
+        "zero_gamma_distance_pct": 15.0,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 18,
+        "total_contracts_analyzed": 16178,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-24",
       "frozen": false,
@@ -2531,27 +3224,27 @@
       "skew_error": null,
       "gex": {
         "spot": 29.32,
-        "total_gex_usd": -148.0,
+        "total_gex_usd": -75131.0,
         "regime": "neutral",
-        "zero_gamma_level": 29.32,
-        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_level": 30.0,
+        "zero_gamma_distance_pct": 2.32,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 39,
+        "total_contracts_analyzed": 6255,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-06",
       "frozen": false,
@@ -2572,15 +3265,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 29.39,
+        "total_gex_usd": -15.0,
+        "regime": "neutral",
+        "zero_gamma_level": 35.0,
+        "zero_gamma_distance_pct": 19.09,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 1061,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-30",
       "frozen": false,
@@ -2599,11 +3306,27 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 214.46,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.125,
+        "risk_reversal": 0.0,
+        "risk_reversal_vp": 0.0,
+        "read": "balanced",
+        "direction": "neutral",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 200.0,
+          "call_strike": 230.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 214.46,
-        "total_gex_usd": -8054.0,
+        "total_gex_usd": -8527.0,
         "regime": "neutral",
         "zero_gamma_level": 165.0,
         "zero_gamma_distance_pct": 23.06,
@@ -2612,7 +3335,7 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 56,
+        "total_contracts_analyzed": 434,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -2651,17 +3374,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-29",
+        "spot": 3.44,
+        "put_25d_iv": 0.5,
+        "call_25d_iv": 0.25,
+        "risk_reversal": -0.25,
+        "risk_reversal_vp": -25.0,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 2.0,
+          "call_strike": 4.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 3.44,
+        "total_gex_usd": -8566.0,
+        "regime": "neutral",
+        "zero_gamma_level": 3.5,
+        "zero_gamma_distance_pct": 1.74,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 14671,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-21",
       "frozen": false,
@@ -2684,16 +3437,16 @@
       "skew_error": null,
       "gex": {
         "spot": 105.75,
-        "total_gex_usd": 1855.0,
+        "total_gex_usd": -3327.0,
         "regime": "neutral",
-        "zero_gamma_level": 105.75,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 115.0,
+        "zero_gamma_distance_pct": 8.75,
+        "buffer": "caution",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 121,
+        "total_contracts_analyzed": 24342,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -2730,27 +3483,27 @@
       "skew_error": null,
       "gex": {
         "spot": 105.02,
-        "total_gex_usd": -4200.0,
+        "total_gex_usd": -18062.0,
         "regime": "neutral",
-        "zero_gamma_level": 105.02,
-        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_level": 108.0,
+        "zero_gamma_distance_pct": 2.84,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 236,
+        "total_contracts_analyzed": 50859,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-04",
       "frozen": false,
@@ -2773,16 +3526,16 @@
       "skew_error": null,
       "gex": {
         "spot": 151.05,
-        "total_gex_usd": -2308.0,
+        "total_gex_usd": -4041.0,
         "regime": "neutral",
-        "zero_gamma_level": 180.0,
-        "zero_gamma_distance_pct": 19.17,
+        "zero_gamma_level": 85.0,
+        "zero_gamma_distance_pct": 43.73,
         "buffer": "safe",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 288,
+        "total_contracts_analyzed": 5879,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -2821,16 +3574,16 @@
       "skew_error": null,
       "gex": {
         "spot": 52.15,
-        "total_gex_usd": -117.0,
+        "total_gex_usd": 86.0,
         "regime": "neutral",
-        "zero_gamma_level": 130.0,
-        "zero_gamma_distance_pct": 149.28,
-        "buffer": "safe",
+        "zero_gamma_level": 52.15,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 307,
+        "total_contracts_analyzed": 10174,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -2864,7 +3617,7 @@
       "skew_error": null,
       "gex": {
         "spot": 17.89,
-        "total_gex_usd": -11659.0,
+        "total_gex_usd": 58170.0,
         "regime": "neutral",
         "zero_gamma_level": 17.89,
         "zero_gamma_distance_pct": 0.0,
@@ -2873,22 +3626,22 @@
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 2535,
+        "total_contracts_analyzed": 105964,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-08-04",
       "frozen": false,
-      "thesis": "$136.5M director buy. Korea e-commerce. ABOVE zone at $21.",
+      "thesis": "ENTERED 50sh at $17.60 (5/6). IN ZONE $17-18.50. Director $136.5M buy. +1.7%. HOLD. Add below $17.",
       "watchlist_target": 28.0,
       "watchlist_entry_low": 17.0,
       "watchlist_entry_high": 18.5
@@ -2907,7 +3660,7 @@
       "skew_error": null,
       "gex": {
         "spot": 69.63,
-        "total_gex_usd": -1049.0,
+        "total_gex_usd": -1014.0,
         "regime": "neutral",
         "zero_gamma_level": 55.0,
         "zero_gamma_distance_pct": 21.01,
@@ -2916,7 +3669,7 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 77,
+        "total_contracts_analyzed": 30883,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -2936,7 +3689,7 @@
         "depth_volume_pc": "all_strikes_filtered",
         "smile_shape": "underdetermined"
       },
-      "earnings_date": "2026-05-06",
+      "earnings_date": "2026-08-05",
       "frozen": false,
       "thesis": "Elliott activist. IRS contract win. Fwd PE 4.6x. Flow +9.0. ABOVE zone at $70. Limit $65.",
       "watchlist_target": 90.0,
@@ -2953,35 +3706,51 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-06-18",
+        "spot": 88.95,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.1875,
+        "risk_reversal_vp": -18.75,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 65.0,
+          "call_strike": 95.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 88.95,
-        "total_gex_usd": -1879.0,
+        "total_gex_usd": -1922.0,
         "regime": "neutral",
-        "zero_gamma_level": 88.95,
-        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_level": 90.0,
+        "zero_gamma_distance_pct": 1.18,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 37,
+        "total_contracts_analyzed": 230,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-21",
       "frozen": false,
-      "thesis": "Contrarian buy list: Buffett 91 + Contrarian 65. Hunterbrook short unresolved. IN ZONE $92. HOLD existing, no adds until 5/21 earnings. Stop $82.50.",
+      "thesis": "Contrarian buy list: Buffett 91 + Contrarian 60 + insider STRONG (6 buys/0 sells). IN ZONE $89. Limit $88, stop $82.50. Enter by 5/13 before earnings blackout 5/21. Half-size $500 (Hunterbrook short).",
       "watchlist_target": 120.0,
       "watchlist_entry_low": 85.0,
       "watchlist_entry_high": 92.0
@@ -2996,27 +3765,11 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": {
-        "expiration": "2026-05-15",
-        "spot": 9.02,
-        "put_25d_iv": 1.1719,
-        "call_25d_iv": 1.293,
-        "risk_reversal": 0.1211,
-        "risk_reversal_vp": 12.11,
-        "read": "speculative",
-        "direction": "bullish",
-        "magnitude": "extreme",
-        "strikes_used": {
-          "put_strike": 7.5,
-          "call_strike": 10.0
-        },
-        "provider": "yfinance",
-        "error_kind": null
-      },
-      "skew_error": null,
+      "skew": null,
+      "skew_error": "empty_chain",
       "gex": {
         "spot": 9.02,
-        "total_gex_usd": -47528.0,
+        "total_gex_usd": -1965.0,
         "regime": "neutral",
         "zero_gamma_level": 10.0,
         "zero_gamma_distance_pct": 10.86,
@@ -3025,20 +3778,20 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 14582,
+        "total_contracts_analyzed": 15717,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
-      "earnings_date": "2026-05-11",
+      "earnings_date": "2026-05-14",
       "frozen": false,
       "thesis": "BLOCKLISTED. FLOW REVERSED +9.0 to -7.5 overnight. Call vol -89%, put vol +16x. PDUFA in 2 days. ABSOLUTE DO NOT TOUCH.",
       "watchlist_target": 15.0,
@@ -3059,7 +3812,7 @@
       "skew_error": null,
       "gex": {
         "spot": 559.6,
-        "total_gex_usd": -27116.0,
+        "total_gex_usd": -34577.0,
         "regime": "neutral",
         "zero_gamma_level": 490.0,
         "zero_gamma_distance_pct": 12.44,
@@ -3068,7 +3821,7 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 474,
+        "total_contracts_analyzed": 10232,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -3094,7 +3847,7 @@
       },
       "earnings_date": "2026-07-21",
       "frozen": false,
-      "thesis": "Golden Dome prime contractor. Q1 +85% YoY EPS. $96B backlog. IN ZONE $559. Defense structural + Iran tailwind. Limit $555. Post-5/8.",
+      "thesis": "Golden Dome prime. Q1 +85% YoY EPS. $96B backlog. IN ZONE $560. Defense structural + Iran tailwind. 1-2sh limit $555. Post-5/8.",
       "watchlist_target": 720.0,
       "watchlist_entry_low": 540.0,
       "watchlist_entry_high": 560.0
@@ -3113,27 +3866,27 @@
       "skew_error": null,
       "gex": {
         "spot": 86.3,
-        "total_gex_usd": -973.0,
+        "total_gex_usd": -10416.0,
         "regime": "neutral",
-        "zero_gamma_level": 86.3,
-        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_level": 89.0,
+        "zero_gamma_distance_pct": 3.13,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 103,
+        "total_contracts_analyzed": 32951,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-16",
       "frozen": false,
@@ -3156,7 +3909,7 @@
       "skew_error": null,
       "gex": {
         "spot": 16.75,
-        "total_gex_usd": -40781.0,
+        "total_gex_usd": -1100.0,
         "regime": "neutral",
         "zero_gamma_level": 15.0,
         "zero_gamma_distance_pct": 10.45,
@@ -3165,18 +3918,18 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 2700,
+        "total_contracts_analyzed": 2971,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 1.0102,
-        "call_premium_usd": 980,
-        "put_premium_usd": 990,
+        "premium_volume_pc": 595.0,
+        "call_premium_usd": 0,
+        "put_premium_usd": 595,
         "realized_vol_20d": 0.5611,
-        "atm_iv": 0.6484,
-        "rv_iv_gap": -0.0874
+        "atm_iv": 0.6621,
+        "rv_iv_gap": -0.101
       },
       "flow_extra_errors": {
         "depth_volume_pc": "all_strikes_filtered",
@@ -3200,17 +3953,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-22",
+        "spot": 195.09,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.25,
+        "risk_reversal": 0.0,
+        "risk_reversal_vp": 0.0,
+        "read": "balanced",
+        "direction": "neutral",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 162.5,
+          "call_strike": 235.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 195.09,
+        "total_gex_usd": 1597.0,
+        "regime": "neutral",
+        "zero_gamma_level": 195.09,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 144543,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-13",
       "frozen": false,
@@ -3232,27 +4015,27 @@
       "skew": {
         "expiration": "2026-06-18",
         "spot": 250.17,
-        "put_25d_iv": 0.9143,
+        "put_25d_iv": 0.125,
         "call_25d_iv": 1.4077,
-        "risk_reversal": 0.4934,
-        "risk_reversal_vp": 49.34,
+        "risk_reversal": 0.5,
+        "risk_reversal_vp": 50.0,
         "read": "speculative",
         "direction": "bullish",
         "magnitude": "extreme",
         "strikes_used": {
-          "put_strike": 490.0,
+          "put_strike": 215.0,
           "call_strike": 620.0
         },
         "provider": "yfinance",
         "error_kind": null,
-        "raw_risk_reversal": 0.4934,
-        "raw_risk_reversal_vp": 49.34,
+        "raw_risk_reversal": 1.2827,
+        "raw_risk_reversal_vp": 128.27,
         "data_quality": "DATA_NOISE"
       },
       "skew_error": null,
       "gex": {
         "spot": 250.17,
-        "total_gex_usd": 384.0,
+        "total_gex_usd": 23502.0,
         "regime": "neutral",
         "zero_gamma_level": 250.17,
         "zero_gamma_distance_pct": 0.0,
@@ -3261,18 +4044,18 @@
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 7,
+        "total_contracts_analyzed": 84673,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-06-11",
       "frozen": false,
@@ -3291,33 +4074,49 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-06-12",
+        "spot": 468.07,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.0625,
+        "risk_reversal_vp": -6.25,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 400.0,
+          "call_strike": 505.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 468.07,
-        "total_gex_usd": 174337.0,
+        "total_gex_usd": 152512.0,
         "regime": "neutral",
-        "zero_gamma_level": 468.07,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 500.0,
+        "zero_gamma_distance_pct": 6.82,
+        "buffer": "caution",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 415,
+        "total_contracts_analyzed": 63750,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
-      "earnings_date": "2026-06-09",
+      "earnings_date": "2026-06-03",
       "frozen": false,
       "thesis": "3-expert convergence. Cyber thesis structural. $1.5B buyback. ABOVE zone at $418. Limit $395.",
       "watchlist_target": 480.0,
@@ -3336,15 +4135,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "no_strikes_with_oi",
+      "gex": {
+        "spot": 987.05,
+        "total_gex_usd": 6461.0,
+        "regime": "neutral",
+        "zero_gamma_level": 987.05,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 64478,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-08-05",
       "frozen": false,
@@ -3367,7 +4180,7 @@
       "skew_error": null,
       "gex": {
         "spot": 211.79,
-        "total_gex_usd": -2894.0,
+        "total_gex_usd": -3417.0,
         "regime": "neutral",
         "zero_gamma_level": 125.0,
         "zero_gamma_distance_pct": 40.98,
@@ -3376,7 +4189,7 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 62,
+        "total_contracts_analyzed": 4816,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -3396,7 +4209,7 @@
       },
       "earnings_date": "2026-06-25",
       "frozen": false,
-      "thesis": "BEST convergence: 5-path (P1+P3+P4+P5+assessor). 96% WR 27 signals. Buffett 81. IN ZONE $219. Limit $215. Post-5/8.",
+      "thesis": "TOP PICK #1 CONVERGENCE: 5-path (P1+P3+P4+P5+assessor). 96% WR 27 signals. Buffett 81. IN ZONE $212. Limit $210-215. Post-5/8. Stop $195.",
       "watchlist_target": 280.0,
       "watchlist_entry_low": 210.0,
       "watchlist_entry_high": 220.0
@@ -3413,15 +4226,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 666.59,
+        "total_gex_usd": -9370.0,
+        "regime": "neutral",
+        "zero_gamma_level": 690.0,
+        "zero_gamma_distance_pct": 3.51,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 470767,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-06-24",
       "frozen": false,
@@ -3440,31 +4267,50 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-06-05",
+        "spot": 183.68,
+        "put_25d_iv": 0.5,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.4375,
+        "risk_reversal_vp": -43.75,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 110.0,
+          "call_strike": 195.0
+        },
+        "provider": "yfinance",
+        "error_kind": null,
+        "raw_risk_reversal": -0.4375,
+        "raw_risk_reversal_vp": -43.75,
+        "data_quality": "DATA_NOISE"
+      },
+      "skew_error": null,
       "gex": {
         "spot": 183.68,
-        "total_gex_usd": -4266.0,
+        "total_gex_usd": -171306.0,
         "regime": "neutral",
-        "zero_gamma_level": 280.0,
-        "zero_gamma_distance_pct": 52.44,
-        "buffer": "safe",
+        "zero_gamma_level": 190.0,
+        "zero_gamma_distance_pct": 3.44,
+        "buffer": "danger",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 76,
+        "total_contracts_analyzed": 97384,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-06-02",
       "frozen": false,
@@ -3487,27 +4333,27 @@
       "skew_error": null,
       "gex": {
         "spot": 144.0,
-        "total_gex_usd": 1132834.0,
+        "total_gex_usd": 28806.0,
         "regime": "neutral",
-        "zero_gamma_level": 100.0,
-        "zero_gamma_distance_pct": 30.56,
-        "buffer": "safe",
+        "zero_gamma_level": 144.0,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 2695,
+        "total_contracts_analyzed": 924,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-22",
       "frozen": false,
@@ -3530,16 +4376,16 @@
       "skew_error": null,
       "gex": {
         "spot": 105.49,
-        "total_gex_usd": -3.0,
+        "total_gex_usd": -3141.0,
         "regime": "neutral",
-        "zero_gamma_level": 80.0,
-        "zero_gamma_distance_pct": 24.16,
-        "buffer": "safe",
+        "zero_gamma_level": 115.0,
+        "zero_gamma_distance_pct": 9.02,
+        "buffer": "caution",
         "expirations_used": [
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 2,
+        "total_contracts_analyzed": 13085,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -3559,7 +4405,7 @@
       },
       "earnings_date": "2026-07-21",
       "frozen": false,
-      "thesis": "Klarman accumulating. 88% WR (7/8). Flow -10.5 CONTRARIAN BUY (73% WR cal). IN ZONE $104. Limit $100. Post-5/8.",
+      "thesis": "Klarman accumulating. 88% WR (7/8). Flow -10.5 CONTRARIAN BUY (73% WR cal). IN ZONE $105. Limit $100. Post-5/8.",
       "watchlist_target": 140.0,
       "watchlist_entry_low": 95.0,
       "watchlist_entry_high": 105.0
@@ -3574,35 +4420,51 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-29",
+        "spot": 388.55,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.1875,
+        "risk_reversal_vp": -18.75,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 310.0,
+          "call_strike": 410.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 388.55,
-        "total_gex_usd": -3380.0,
+        "total_gex_usd": -8039.0,
         "regime": "neutral",
-        "zero_gamma_level": 388.55,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 240.0,
+        "zero_gamma_distance_pct": 38.23,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 24,
+        "total_contracts_analyzed": 20521,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-20",
       "frozen": false,
-      "thesis": "Quad convergence P1+P4+P5+assessor. Buffett 83. IRS catalyst. Earnings 5/20. ABOVE zone $398. Post-5/8 limit $385-395.",
+      "thesis": "Quad convergence P1+P4+P5+assessor. Buffett 83. IRS catalyst. FREEZE until post-5/20 earnings. Flow -5.0 suppressed.",
       "watchlist_target": 550.0,
       "watchlist_entry_low": 365.0,
       "watchlist_entry_high": 395.0
@@ -3617,21 +4479,51 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 45.97,
+        "put_25d_iv": 0.25,
+        "call_25d_iv": 0.25,
+        "risk_reversal": 0.0,
+        "risk_reversal_vp": 0.0,
+        "read": "balanced",
+        "direction": "neutral",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 41.0,
+          "call_strike": 52.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 45.97,
+        "total_gex_usd": 86.0,
+        "regime": "neutral",
+        "zero_gamma_level": 45.97,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 10151,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-08",
       "frozen": false,
-      "thesis": "CEO $1M buy. Goldman PT $70. Flow +8.0. ENTRY_ZONE $47. Post-5/8 limit $44-45.",
+      "thesis": "CEO $1M buy. Goldman PT $70. Flow +8.0. ENTRY_ZONE $46. Earnings TOMORROW 5/8 \u2014 blackout. Post-5/8 limit $44-45.",
       "watchlist_target": 68.0,
       "watchlist_entry_low": 42.0,
       "watchlist_entry_high": 48.0
@@ -3648,17 +4540,31 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 38.03,
+        "total_gex_usd": 15358.0,
+        "regime": "neutral",
+        "zero_gamma_level": 38.03,
+        "zero_gamma_distance_pct": 0.0,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 19941,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
-      "earnings_date": "2026-05-06",
+      "earnings_date": "2026-07-22",
       "frozen": false,
       "thesis": "Ceasefire reduces near-term energy premium BUT European gas crisis structural. 9.9x fwd PE. $22.6B FCF. XLE -4% today. Limit $36.50.",
       "watchlist_target": 48.0,
@@ -3679,27 +4585,27 @@
       "skew_error": null,
       "gex": {
         "spot": 246.33,
-        "total_gex_usd": -6057.0,
+        "total_gex_usd": -5714.0,
         "regime": "neutral",
-        "zero_gamma_level": 246.33,
-        "zero_gamma_distance_pct": 0.0,
-        "buffer": "danger",
+        "zero_gamma_level": 400.0,
+        "zero_gamma_distance_pct": 62.38,
+        "buffer": "safe",
         "expirations_used": [
           "2026-05-08",
           "2026-05-15"
         ],
-        "total_contracts_analyzed": 95,
+        "total_contracts_analyzed": 21659,
         "provider": "yfinance",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-29",
       "frozen": false,
@@ -3718,17 +4624,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-06-05",
+        "spot": 504.42,
+        "put_25d_iv": 0.0625,
+        "call_25d_iv": 0.125,
+        "risk_reversal": 0.0625,
+        "risk_reversal_vp": 6.25,
+        "read": "speculative",
+        "direction": "bullish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 475.0,
+          "call_strike": 600.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 504.42,
+        "total_gex_usd": -387.0,
+        "regime": "neutral",
+        "zero_gamma_level": 540.0,
+        "zero_gamma_distance_pct": 7.05,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "total_contracts_analyzed": 15173,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-27",
       "frozen": false,
@@ -3749,15 +4685,29 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "gex": {
+        "spot": 15.08,
+        "total_gex_usd": -15323.0,
+        "regime": "neutral",
+        "zero_gamma_level": 16.0,
+        "zero_gamma_distance_pct": 6.1,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 5410,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-07-22",
       "frozen": false,
@@ -3776,11 +4726,27 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 47.84,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.0625,
+        "risk_reversal_vp": -6.25,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 45.0,
+          "call_strike": 50.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
       "gex": {
         "spot": 47.84,
-        "total_gex_usd": -780.0,
+        "total_gex_usd": -420.0,
         "regime": "neutral",
         "zero_gamma_level": 40.0,
         "zero_gamma_distance_pct": 16.39,
@@ -3789,7 +4755,7 @@
           "2026-05-15",
           "2026-06-18"
         ],
-        "total_contracts_analyzed": 44,
+        "total_contracts_analyzed": 260,
         "provider": "yfinance",
         "error_kind": null
       },
@@ -3824,17 +4790,47 @@
         "td_confirmed": false,
         "bullish_streak": 0
       },
-      "skew": null,
-      "skew_error": "provider_no_data",
-      "gex": null,
-      "gex_error": "provider_no_data",
+      "skew": {
+        "expiration": "2026-05-15",
+        "spot": 106.97,
+        "put_25d_iv": 0.125,
+        "call_25d_iv": 0.0625,
+        "risk_reversal": -0.0625,
+        "risk_reversal_vp": -6.25,
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 100.0,
+          "call_strike": 110.0
+        },
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 106.97,
+        "total_gex_usd": -1096.0,
+        "regime": "neutral",
+        "zero_gamma_level": 110.0,
+        "zero_gamma_distance_pct": 2.83,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-15",
+          "2026-06-18"
+        ],
+        "total_contracts_analyzed": 2189,
+        "provider": "yfinance",
+        "error_kind": null
+      },
+      "gex_error": null,
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_chain",
-        "depth_volume_pc": "no_chain",
-        "net_delta_volume": "no_chain",
-        "smile_shape": "no_chain",
-        "rv_iv_gap": "no_chain"
+        "premium_volume_pc": "all_strikes_filtered",
+        "depth_volume_pc": "all_strikes_filtered",
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "no_atm_strike"
       },
       "earnings_date": "2026-05-07",
       "frozen": false,
@@ -3846,6 +4842,6 @@
   ],
   "counts": {
     "mine": 10,
-    "bullscouter": 85
+    "bullscouter": 86
   }
 }
