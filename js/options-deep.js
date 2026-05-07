@@ -11,9 +11,14 @@
 
 (() => {
   const DATA_URL = 'data/options-deep.json?_cb=' + Date.now();
+  const FLOW_URL = 'data/options-flow.json?_cb=' + Date.now();
 
   let allMine = [];
   let allBs = [];
+  // ticker → options-flow snapshot (spot, P/C, total volume, OI, 5d avg, etc.)
+  // Merged client-side rather than baked into options-deep.json so the deep
+  // page stays decoupled from options-flow's refresh cadence.
+  let flowMap = {};
   let currentFilter = 'all';
 
   // ---------- helpers ----------
@@ -147,6 +152,9 @@
   function renderCard(entry) {
     const { ticker, flow, skew, gex, earnings_date } = entry;
     const s = flow?.score;
+    const flowExt = flowMap[ticker] || null;
+    // Spot fallback chain: options-flow snapshot (freshest) → skew.spot → gex.spot.
+    const spot = flowExt?.spot_price ?? skew?.spot ?? gex?.spot ?? null;
     const isBullish = s != null && s > 2;
     const isBearish = s != null && s < -2;
     const scoreColor = isBullish ? 'text-green-400'
@@ -266,10 +274,58 @@
       ? '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 whitespace-nowrap" title="Watchlist FROZEN — do not enter">🧊 FROZEN</span>'
       : '';
 
+    // Flow stats (from options-flow.json, merged client-side)
+    const pcr = flowExt?.put_call_ratio;
+    const totalVol = flowExt?.total_volume;
+    const totalOI = flowExt?.total_oi;
+    const avg5d = flowExt?.avg_score_5d;
+    const delta5d = flowExt?.delta_5d;
+    const bullish14d = flowExt?.bullish_count_14d;
+    const tdDiv = flowExt?.td_divergence;
+
+    const fmtCompact = (n) => {
+      if (n == null) return '—';
+      const a = Math.abs(n);
+      if (a >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+      if (a >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+      return String(n);
+    };
+
+    let flowStatsHtml = '';
+    if (flowExt) {
+      const pcrCls = pcr == null ? 'text-gray-500'
+                   : pcr < 0.5 ? 'text-green-400'
+                   : pcr > 1.5 ? 'text-red-400' : 'text-gray-300';
+      const delta5dCls = delta5d == null ? 'text-gray-500'
+                       : delta5d > 1 ? 'text-green-400'
+                       : delta5d < -1 ? 'text-red-400' : 'text-gray-300';
+      const tdDivChip = (tdDiv != null && Math.abs(tdDiv) > 0.10)
+        ? `<span class="text-[10px] text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded" title="yfinance vs ThetaData P/C divergence">⚠ TD div ${(tdDiv > 0 ? '+' : '') + fmt(tdDiv * 100)}%</span>`
+        : '';
+      flowStatsHtml = `
+        <div class="mt-3 pt-3 border-t border-white/[0.06]">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Flow stats</div>
+          <div class="grid grid-cols-3 gap-x-3 gap-y-1 text-[11px]">
+            <div><span class="text-gray-500">P/C</span> <span class="font-mono ${pcrCls}">${fmt(pcr, 2)}</span></div>
+            <div><span class="text-gray-500">Vol</span> <span class="font-mono text-gray-300">${fmtCompact(totalVol)}</span></div>
+            <div><span class="text-gray-500">OI</span> <span class="font-mono text-gray-300">${fmtCompact(totalOI)}</span></div>
+            <div><span class="text-gray-500">5d avg</span> <span class="font-mono ${avg5d != null && avg5d > 2 ? 'text-green-400' : avg5d != null && avg5d < -2 ? 'text-red-400' : 'text-gray-300'}">${avg5d != null ? (avg5d > 0 ? '+' : '') + fmt(avg5d) : '—'}</span></div>
+            <div><span class="text-gray-500">5d Δ</span> <span class="font-mono ${delta5dCls}">${delta5d != null ? (delta5d > 0 ? '+' : '') + fmt(delta5d) : '—'}</span></div>
+            <div><span class="text-gray-500">14d bull</span> <span class="font-mono text-gray-300">${bullish14d != null ? bullish14d + '/14' : '—'}</span></div>
+          </div>
+          ${tdDivChip ? `<div class="mt-1.5">${tdDivChip}</div>` : ''}
+        </div>`;
+    }
+
+    const priceChip = spot != null
+      ? `<span class="text-sm font-semibold font-mono text-gray-200" title="Spot price">$${fmt(spot, 2)}</span>`
+      : '';
+
     card.innerHTML = `
       <div class="flex items-start justify-between mb-3">
         <div class="flex items-center gap-2 flex-wrap">
           <a href="ticker.html?t=${esc(ticker)}" class="text-lg font-bold font-mono hover:text-bull-accent transition-colors">${esc(ticker)}</a>
+          ${priceChip}
           ${directionChip}
           ${frozenBadge}
         </div>
@@ -297,6 +353,8 @@
         ${tdChip}
         ${daysChip}
       </div>
+
+      ${flowStatsHtml}
 
       <div class="mt-3 pt-3 border-t border-white/[0.06]">
         <div class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Skew</div>
@@ -481,9 +539,21 @@
   // ---------- init ----------
   async function init() {
     try {
-      const resp = await fetch(DATA_URL);
+      const [resp, flowResp] = await Promise.all([
+        fetch(DATA_URL),
+        fetch(FLOW_URL).catch(() => null),
+      ]);
       if (!resp.ok) throw new Error(`${resp.status} ${resp.statusText}`);
       const data = await resp.json();
+      // options-flow.json is best-effort — if missing, deep page still renders.
+      if (flowResp && flowResp.ok) {
+        try {
+          const flowData = await flowResp.json();
+          for (const t of flowData.tickers || []) {
+            if (t.ticker) flowMap[t.ticker] = t;
+          }
+        } catch { /* ignore — render without flow merge */ }
+      }
 
       const dateEl = $('#od-date'); if (dateEl) dateEl.textContent = data.date || '-';
       const providerEl = $('#od-provider'); if (providerEl) providerEl.textContent = data.provider || '-';
