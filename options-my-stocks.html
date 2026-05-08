@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
   <meta name="theme-color" content="#0a0b0d">
-  <title>Bull Scouter - Options Deep</title>
-  <meta name="description" content="Deep options analytics: 25Δ earnings skew direction, dealer gamma regime, and zero-gamma buffer across held positions and the scanner universe.">
-  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/options-deep.html">
+  <title>Bull Scouter - Options My Stocks</title>
+  <meta name="description" content="Held-position options analytics: 25Δ earnings skew direction, dealer gamma regime, and zero-gamma buffer across your tracked positions.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/options-my-stocks.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/options-deep.html">
-  <meta property="og:title" content="Bull Scouter - Options Deep">
-  <meta property="og:description" content="25Δ skew + dealer gamma + zero-gamma buffer per ticker.">
+  <meta property="og:url" content="https://qns2.github.io/bullscouter-site/options-my-stocks.html">
+  <meta property="og:title" content="Bull Scouter - Options My Stocks">
+  <meta property="og:description" content="Held-position 25Δ skew + dealer gamma + zero-gamma buffer per ticker.">
   <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,6 +75,7 @@
         <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
           <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="options.html">Flow</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="options-deep.html">Deep</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="options-my-stocks.html">My Stocks</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="deep-buy.html">Buy</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
@@ -89,6 +90,7 @@
       <div class="px-4 py-3 space-y-2 text-sm font-medium">
         <a class="block py-2 text-bull-muted" href="index.html">Home</a>
         <a class="block py-2 text-bull-muted" href="options.html">Flow</a>
+        <a class="block py-2 text-bull-muted" href="options-deep.html">Deep</a>
         <a class="block py-2 text-bull-muted" href="options-my-stocks.html">My Stocks</a>
         <a class="block py-2 text-bull-muted" href="deep-buy.html">Buy</a>
         <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
@@ -101,8 +103,8 @@
   <header class="max-w-7xl mx-auto px-4 pt-8 sm:pt-12 pb-6">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Options Deep</h1>
-        <p class="text-sm text-bull-muted mt-1">Scanner universe · 25Δ skew · dealer γ · zero-γ buffer &mdash; <span id="od-date" class="text-white font-mono">-</span></p>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Options My Stocks</h1>
+        <p class="text-sm text-bull-muted mt-1">Held positions · 25Δ skew · dealer γ · zero-γ buffer &mdash; <span id="od-date" class="text-white font-mono">-</span></p>
       </div>
       <div class="flex items-center gap-3">
         <span class="text-xs text-bull-muted">provider: <span id="od-provider" class="text-white">-</span></span>
@@ -113,7 +115,7 @@
   <!-- Stats bar -->
   <div class="max-w-7xl mx-auto px-4 mb-6">
     <div class="border-y border-bull-border py-4 flex flex-wrap gap-4 sm:gap-6 text-sm font-medium">
-      <span>Universe: <span class="text-white font-bold" id="od-stat-bs">-</span></span>
+      <span>My Stocks: <span class="text-white font-bold" id="od-stat-mine">-</span></span>
       <span>Bullish flow: <span class="text-green-400 font-bold" id="od-stat-bull">-</span></span>
       <span>Bearish flow: <span class="text-red-400 font-bold" id="od-stat-bear">-</span></span>
       <span>Short γ: <span class="text-red-400 font-bold" id="od-stat-shortg">-</span></span>
@@ -168,20 +170,20 @@
     </div>
   </div>
 
-  <!-- Bull Scouter universe section -->
+  <!-- My Stocks section -->
   <main class="max-w-7xl mx-auto px-4 pb-16">
     <section class="mb-10">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-lg font-bold flex items-center gap-2">
-          🌐 Bull Scouter Universe
-          <span class="text-xs font-normal text-bull-muted" id="od-bs-count">(0)</span>
+          📋 My Stocks
+          <span class="text-xs font-normal text-bull-muted" id="od-mine-count">(0)</span>
         </h2>
-        <button data-copy-list="bullscouter" class="od-copy-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10 transition-colors" title="Copy Bull Scouter Universe data">
+        <button data-copy-list="mine" class="od-copy-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10 transition-colors" title="Copy My Stocks data">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
           <span class="copy-label">Copy list</span>
         </button>
       </div>
-      <div id="od-bs" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+      <div id="od-mine" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
     </section>
 
     <div id="od-loading" class="text-center py-20">

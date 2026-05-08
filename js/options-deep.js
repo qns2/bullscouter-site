@@ -1,9 +1,12 @@
 /**
- * Bull Scouter — Options Deep page.
+ * Bull Scouter — Options Deep / Options My Stocks pages.
  *
- * Renders data/options-deep.json as two card-grid sections:
- *   - My Stocks (held positions, is_held=1)
+ * Renders data/options-deep.json as one or two card-grid sections:
+ *   - My Stocks (held positions)
  *   - Bull Scouter universe (scanner watchlist + BUY/WATCHLIST)
+ *
+ * Works on options-deep.html (universe only), options-my-stocks.html
+ * (My Stocks only), or any future page that includes both.
  *
  * Each card shows: flow gauge, signal, skew (direction + magnitude),
  * GEX (regime + magnitude), zero-γ buffer, bullish streak, earnings.
@@ -403,6 +406,7 @@
   function renderSection(entries, containerId, countId) {
     const c = document.getElementById(containerId);
     const countEl = document.getElementById(countId);
+    if (!c) return; // container not present on this page
     c.innerHTML = '';
     // Always drop no-data entries (e.g. BRBR with no flow/skew/GEX) — pure noise.
     const withData = entries.filter(hasAnyData);
@@ -421,9 +425,11 @@
 
   function renderStats(data) {
     const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-    // Stats reflect what the user actually sees (no-data tickers hidden).
-    const mineWithData = (data.mine || []).filter(hasAnyData);
-    const bsWithData = (data.bullscouter || []).filter(hasAnyData);
+    // Only include lists whose containers are actually on this page.
+    const hasMine = !!document.getElementById('od-mine');
+    const hasBs = !!document.getElementById('od-bs');
+    const mineWithData = hasMine ? (data.mine || []).filter(hasAnyData) : [];
+    const bsWithData = hasBs ? (data.bullscouter || []).filter(hasAnyData) : [];
     const all = [...mineWithData, ...bsWithData];
     const bull = all.filter(e => e.flow?.score != null && e.flow.score > 2).length;
     const bear = all.filter(e => e.flow?.score != null && e.flow.score < -2).length;
@@ -567,7 +573,13 @@
       renderAll();
 
       hide('od-loading');
-      if (!allMine.length && !allBs.length) show('od-empty');
+      const hasMineContainer = !!document.getElementById('od-mine');
+      const hasBsContainer = !!document.getElementById('od-bs');
+      const anyContainer = hasMineContainer || hasBsContainer;
+      const mineRenderables = hasMineContainer ? allMine.filter(hasAnyData) : [];
+      const bsRenderables = hasBsContainer ? allBs.filter(hasAnyData) : [];
+      const allEmpty = (!hasMineContainer || mineRenderables.length === 0) && (!hasBsContainer || bsRenderables.length === 0);
+      if (!anyContainer || allEmpty) show('od-empty');
 
       // Filter tabs
       document.querySelectorAll('.od-filter').forEach(btn => {
