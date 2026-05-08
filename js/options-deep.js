@@ -155,6 +155,7 @@
   function renderCard(entry) {
     const { ticker, flow, skew, gex, earnings_date } = entry;
     const ivM = entry.iv_metrics || null;
+    const volReg = entry.vol_regime || null;
     const s = flow?.score;
     const flowExt = flowMap[ticker] || null;
     // Spot fallback chain: options-flow snapshot (freshest) → skew.spot → gex.spot.
@@ -326,6 +327,26 @@
         </div>`;
     }
 
+    // Tier 3 — vol_regime block (skew compression / put-selling candidate)
+    let volRegimeHtml = '';
+    if (volReg && volReg.regime_label && volReg.regime_label !== 'neutral') {
+      const skewC = volReg.skew_compression;
+      const rvIv = volReg.rv_iv_persistence;
+      const pills = [];
+      if (volReg.regime_label === 'skew_compression' && skewC) {
+        pills.push(`<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-green-500/15 text-green-300 border border-green-500/30" title="5-day risk-reversal compressed by ${skewC.delta_5d_vp >= 0 ? '+' : ''}${skewC.delta_5d_vp.toFixed(1)}vp while flow stayed bullish (avg ${skewC.avg_flow_5d.toFixed(1)}). Hedge unwind, conviction shift bullish.">📈 SKEW COMPRESSION (Δ${skewC.delta_5d_vp >= 0 ? '+' : ''}${skewC.delta_5d_vp.toFixed(0)}vp)</span>`);
+      } else if (volReg.regime_label === 'put_selling_candidate' && rvIv) {
+        pills.push(`<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30" title="${(rvIv.fraction_negative_gap * 100).toFixed(0)}% of last ${rvIv.lookback_days_actual} sessions had IV ≥10vp above realized. Systematic put-selling candidate.">💰 PUT-SELLING CANDIDATE (${(rvIv.fraction_negative_gap * 100).toFixed(0)}% over)</span>`);
+      }
+      if (pills.length > 0) {
+        volRegimeHtml = `
+          <div class="mt-3 pt-3 border-t border-white/[0.06]">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Vol regime</div>
+            <div class="flex flex-wrap gap-2 items-center">${pills.join('')}</div>
+          </div>`;
+      }
+    }
+
     let flowStatsHtml = '';
     if (flowExt) {
       const pcrCls = pcr == null ? 'text-gray-500'
@@ -392,6 +413,8 @@
       ${flowStatsHtml}
 
       ${ivHtml}
+
+      ${volRegimeHtml}
 
       <div class="mt-3 pt-3 border-t border-white/[0.06]">
         <div class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Skew</div>
