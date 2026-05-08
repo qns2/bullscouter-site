@@ -26,6 +26,19 @@
     return Math.min(100, Math.max(0, (c / 120) * 100));
   }
 
+  // "2026-04-25" → "1d ago" / "today" / "" if unparseable.
+  function noteAge(written_at) {
+    if (!written_at) return '';
+    const d = new Date(written_at + 'T00:00:00');
+    if (Number.isNaN(d.getTime())) return '';
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const days = Math.round((today - d) / 86400000);
+    if (days <= 0) return 'today';
+    if (days === 1) return '1d ago';
+    return `${days}d ago`;
+  }
+
   function pathBadge(p) {
     const labels = {
       path1_buy: ['Path 1 BUY', 'green'],
@@ -115,6 +128,15 @@
 
       <div class="text-[11px] text-gray-400 mb-3 leading-relaxed">${esc(p.rationale_one_liner)}</div>
 
+      ${p.oracle_note ? `
+      <div class="bg-blue-500/[0.06] border-l-2 border-blue-500/40 pl-2 pr-2 py-1.5 mb-3 rounded-r">
+        <div class="flex items-center justify-between gap-2 mb-0.5">
+          <span class="text-[9px] uppercase tracking-wider text-blue-400/80">Oracle</span>
+          <span class="text-[9px] text-gray-500">${esc(noteAge(p.oracle_note.written_at))}</span>
+        </div>
+        <div class="text-[11px] text-gray-300 italic leading-relaxed">${esc(p.oracle_note.text || '')}</div>
+      </div>` : ''}
+
       <div class="text-[10px] text-gray-500 flex items-center gap-3 mb-3">
         <span>📅 ${esc(earningsStr)}</span>
         <span>position risk $${fmt(p.position_risk_usd, 2)}</span>
@@ -130,6 +152,35 @@
         <summary class="cursor-pointer text-[10px] uppercase tracking-wider text-gray-500 hover:text-white">Watchlist thesis</summary>
         <div class="mt-2 text-[11px] text-gray-400 leading-relaxed">${esc(p.watchlist_thesis)}</div>
       </details>` : ''}
+    `;
+    return card;
+  }
+
+  // Oracle watch card — composite below cutoff but Oracle wants it surfaced.
+  // Muted styling, no entry/target/stop, clear "below mechanical cutoff" label.
+  function renderWatchCard(w) {
+    const card = document.createElement('div');
+    card.className = 'rounded-lg p-3 bg-white/[0.02] border border-white/[0.05] opacity-90';
+    const paths = (w.convergence_paths || []).map(pathBadge).join(' ') || '<span class="text-[10px] text-gray-600">no paths lit</span>';
+    card.innerHTML = `
+      <div class="flex justify-between items-start mb-2">
+        <div>
+          <div class="text-base font-bold text-gray-300">${esc(w.ticker)}</div>
+          <div class="text-[9px] text-amber-400/80 uppercase tracking-wider">below mechanical cutoff · oracle-elevated</div>
+        </div>
+        <div class="text-right text-[11px] font-mono text-gray-400">
+          composite ${w.composite}<br/><span class="text-gray-500">$${fmt(w.spot_price, 2)}</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-1 mb-2">${paths}</div>
+      ${w.oracle_note ? `
+      <div class="bg-blue-500/[0.06] border-l-2 border-blue-500/40 pl-2 pr-2 py-1.5 rounded-r">
+        <div class="flex items-center justify-between gap-2 mb-0.5">
+          <span class="text-[9px] uppercase tracking-wider text-blue-400/80">Oracle</span>
+          <span class="text-[9px] text-gray-500">${esc(noteAge(w.oracle_note.written_at))}</span>
+        </div>
+        <div class="text-[11px] text-gray-300 italic leading-relaxed">${esc(w.oracle_note.text || '')}</div>
+      </div>` : ''}
     `;
     return card;
   }
@@ -151,6 +202,9 @@
       '',
       `Rationale: ${p.rationale_one_liner}`,
     ];
+    if (p.oracle_note) {
+      lines.push('', `Oracle (${noteAge(p.oracle_note.written_at)}): ${p.oracle_note.text}`);
+    }
     return navigator.clipboard.writeText(lines.join('\n'));
   }
 
@@ -167,9 +221,17 @@
     }
     const rows = (data.picks || []).map(p => {
       const ent = p.entry;
-      return `#${p.rank} ${p.ticker} comp=${p.composite} @$${fmt(p.spot_price, 2)}  entry=$${fmt(ent.low, 2)}-$${fmt(ent.high, 2)}  target=$${fmt(p.target, 2)}  stop=$${fmt(p.stop, 2)}  RR=${fmt(p.rr_ratio, 2)}:1  earn=${p.earnings_days_away ?? '—'}d  | ${p.rationale_one_liner}`;
+      const base = `#${p.rank} ${p.ticker} comp=${p.composite} @$${fmt(p.spot_price, 2)}  entry=$${fmt(ent.low, 2)}-$${fmt(ent.high, 2)}  target=$${fmt(p.target, 2)}  stop=$${fmt(p.stop, 2)}  RR=${fmt(p.rr_ratio, 2)}:1  earn=${p.earnings_days_away ?? '—'}d  | ${p.rationale_one_liner}`;
+      return p.oracle_note ? `${base}\n   Oracle (${noteAge(p.oracle_note.written_at)}): ${p.oracle_note.text}` : base;
     });
-    return navigator.clipboard.writeText([...header, ...rows].join('\n'));
+    const watchRows = (data.oracle_watch || []).length ? [
+      '', '— Oracle watch (below mechanical cutoff) —',
+      ...(data.oracle_watch || []).map(w => {
+        const note = w.oracle_note ? ` | Oracle (${noteAge(w.oracle_note.written_at)}): ${w.oracle_note.text}` : '';
+        return `🔭 ${w.ticker} comp=${w.composite} @$${fmt(w.spot_price, 2)}${note}`;
+      }),
+    ] : [];
+    return navigator.clipboard.writeText([...header, ...rows, ...watchRows].join('\n'));
   }
 
   function flashCopied(btn) {
@@ -222,6 +284,20 @@
       }
       picks.forEach(p => container.appendChild(renderCard(p)));
       hide('db-loading');
+
+      // Oracle watch sidecar (Task 2b — names below mechanical cutoff that
+      // Oracle wants surfaced via rescan + a fresh note). NOT ranked — these
+      // are below the cutoff by definition; rendered with muted treatment.
+      const watch = data.oracle_watch || [];
+      const watchSection = $('#db-oracle-watch');
+      if (watch.length && watchSection) {
+        const watchContainer = $('#db-oracle-watch-cards');
+        if (watchContainer) {
+          watchContainer.innerHTML = '';
+          watch.forEach(w => watchContainer.appendChild(renderWatchCard(w)));
+        }
+        watchSection.classList.remove('hidden');
+      }
 
       // Per-card copy delegation
       container.addEventListener('click', (e) => {

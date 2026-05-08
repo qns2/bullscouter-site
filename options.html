@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
   <meta name="theme-color" content="#0a0b0d">
-  <title>Bull Scouter - Options Flow</title>
-  <meta name="description" content="Real-time options flow analysis: P/C ratios, IV skew, unusual volume, and aggregate flow scores for institutional positioning signals.">
+  <title>Bull Scouter - Options</title>
+  <meta name="description" content="Deep options analytics: 25Δ earnings skew direction, dealer gamma regime, and zero-gamma buffer across the scanner universe.">
   <link rel="canonical" href="https://qns2.github.io/bullscouter-site/options.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://qns2.github.io/bullscouter-site/options.html">
-  <meta property="og:title" content="Bull Scouter - Options Flow">
-  <meta property="og:description" content="Real-time options flow analysis: P/C ratios, IV skew, unusual volume, and aggregate flow scores for institutional positioning signals.">
+  <meta property="og:title" content="Bull Scouter - Options">
+  <meta property="og:description" content="25Δ skew + dealer gamma + zero-gamma buffer per ticker.">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Bull Scouter - Options Flow">
-  <meta name="twitter:description" content="Real-time options flow analysis: P/C ratios, IV skew, unusual volume, and aggregate flow scores.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -28,11 +26,8 @@
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
           colors: {
             bull: {
-              dark: '#0a0b0d',
-              card: '#14161a',
-              accent: '#00ff88',
-              blue: '#3b82f6',
-              muted: '#94a3b8',
+              dark: '#0a0b0d', card: '#14161a', accent: '#00ff88',
+              blue: '#3b82f6', muted: '#94a3b8',
               border: 'rgba(255,255,255,0.1)'
             }
           }
@@ -49,13 +44,21 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 0.75rem;
     }
-    .flow-bar-bg { background: rgba(255,255,255,0.06); border-radius: 0.25rem; height: 0.5rem; position: relative; }
-    .flow-bar-fill { height: 100%; border-radius: 0.25rem; transition: width 0.4s ease-out; }
     .flow-gauge { position: relative; height: 0.5rem; background: rgba(255,255,255,0.06); border-radius: 0.25rem; overflow: visible; }
     .flow-gauge-center { position: absolute; left: 50%; top: -2px; width: 1px; height: calc(100% + 4px); background: rgba(255,255,255,0.2); }
     .flow-gauge-fill { position: absolute; height: 100%; border-radius: 0.25rem; transition: all 0.4s ease-out; }
     .flow-gauge-fill.bullish { right: 50%; }
     .flow-gauge-fill.bearish { left: 50%; }
+
+    .loading-pulse {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(0, 255, 136, 0.1);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
   </style>
 </head>
 <body class="min-h-screen font-sans">
@@ -71,11 +74,7 @@
         </a>
         <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
           <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
-          <a class="text-bull-muted hover:text-white transition-colors" href="options-deep.html">Deep</a>
-          <a class="text-bull-muted hover:text-white transition-colors" href="options-my-stocks.html">My Stocks</a>
-          <a class="text-bull-muted hover:text-white transition-colors" href="deep-buy.html">Buy</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
-          <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
         </div>
         <button id="burger-btn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="sm:hidden p-2 text-bull-muted hover:text-white transition-colors" aria-label="Menu">
@@ -86,11 +85,7 @@
     <div id="mobile-menu" class="sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md">
       <div class="px-4 py-3 space-y-2 text-sm font-medium">
         <a class="block py-2 text-bull-muted" href="index.html">Home</a>
-        <a class="block py-2 text-bull-muted" href="options-deep.html">Deep</a>
-        <a class="block py-2 text-bull-muted" href="options-my-stocks.html">My Stocks</a>
-        <a class="block py-2 text-bull-muted" href="deep-buy.html">Buy</a>
         <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
-        <a class="block py-2 text-bull-muted" href="history.html">History</a>
         <a class="block py-2 text-bull-muted" href="about.html">About</a>
       </div>
     </div>
@@ -100,25 +95,23 @@
   <header class="max-w-7xl mx-auto px-4 pt-8 sm:pt-12 pb-6">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Options Flow</h1>
-        <p class="text-sm text-bull-muted mt-1">Institutional positioning signals &mdash; <span id="of-date" class="text-white font-mono">-</span></p>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Options</h1>
+        <p class="text-sm text-bull-muted mt-1">Scanner universe · 25Δ skew · dealer γ · zero-γ buffer &mdash; <span id="od-date" class="text-white font-mono">-</span></p>
       </div>
       <div class="flex items-center gap-3">
-        <button id="btn-copy-of" class="flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10 transition-colors" title="Copy options flow data">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-          <span class="copy-label hidden sm:inline">Copy</span>
-        </button>
+        <span class="text-xs text-bull-muted">provider: <span id="od-provider" class="text-white">-</span></span>
       </div>
     </div>
   </header>
 
   <!-- Stats bar -->
-  <div class="max-w-7xl mx-auto px-4 mb-8">
+  <div class="max-w-7xl mx-auto px-4 mb-6">
     <div class="border-y border-bull-border py-4 flex flex-wrap gap-4 sm:gap-6 text-sm font-medium">
-      <span>Tickers: <span class="text-white font-bold" id="of-stat-total">-</span></span>
-      <span>Bullish: <span class="text-green-400 font-bold" id="of-stat-bullish">-</span></span>
-      <span>Bearish: <span class="text-red-400 font-bold" id="of-stat-bearish">-</span></span>
-      <span>Neutral: <span class="text-gray-400 font-bold" id="of-stat-neutral">-</span></span>
+      <span>Universe: <span class="text-white font-bold" id="od-stat-bs">-</span></span>
+      <span>Bullish flow: <span class="text-green-400 font-bold" id="od-stat-bull">-</span></span>
+      <span>Bearish flow: <span class="text-red-400 font-bold" id="od-stat-bear">-</span></span>
+      <span>Short γ: <span class="text-red-400 font-bold" id="od-stat-shortg">-</span></span>
+      <span>Extreme skew: <span class="text-amber-400 font-bold" id="od-stat-extreme">-</span></span>
     </div>
   </div>
 
@@ -126,40 +119,33 @@
   <div class="max-w-7xl mx-auto px-4 mb-8">
     <details class="glass-card p-4">
       <summary class="cursor-pointer text-sm font-bold uppercase tracking-wider text-bull-muted hover:text-white transition-colors">
-        How Options Flow Works
+        How Options Works
       </summary>
       <div class="mt-4 text-sm text-gray-400 space-y-3">
-        <p>Options flow measures <span class="text-white">institutional money positioning</span> &mdash; what the smart money is doing with real capital, not what analysts are saying.</p>
-        <p>Each ticker gets a <span class="text-white">flow score from -15 to +15</span> based on 5 signal components:</p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-3">
+        <p>The consolidated Options page combines aggregate flow context with <span class="text-white">tail pricing</span> and <span class="text-white">dealer positioning</span>.</p>
+        <div class="grid sm:grid-cols-2 gap-3 mt-3">
           <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">P/C Volume Ratio (&plusmn;3)</p>
-            <p class="text-xs">More calls than puts being traded today = bullish positioning.</p>
+            <p class="text-white font-semibold mb-1">📈 Skew direction (25Δ RR)</p>
+            <p class="text-xs">25-delta call IV minus put IV. Positive = calls bid up (bullish, upside speculation). Negative = puts bid up (bearish, hedging). ATM-band skew is measured in the same direction (call − put) — different strike basis, same sign.</p>
           </div>
           <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">P/C OI Ratio (&plusmn;3)</p>
-            <p class="text-xs">Accumulated open interest bias. Sustained call OI = longer-term bullish.</p>
+            <p class="text-white font-semibold mb-1">⚠ Skew magnitude</p>
+            <p class="text-xs">|risk reversal| in vol points. Normal ≤2vp · Moderate 2–4vp · Extreme &gt;4vp.</p>
           </div>
           <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">ATM Skew (&plusmn;3)</p>
-            <p class="text-xs">OI-weighted call IV − put IV across strikes within ±10% of spot. Positive = calls bid up (bullish). The Options Deep page measures the same direction at the 25Δ wing — different strike basis, same sign convention (call − put).</p>
+            <p class="text-white font-semibold mb-1">γ GEX regime</p>
+            <p class="text-xs">Long γ &gt;+$100M (dealers dampen moves). Short γ &lt;−$100M (dealers amplify moves; squeezes likely).</p>
           </div>
           <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">OTM Call Spike (0 to +3)</p>
-            <p class="text-xs">Unusual out-of-the-money call volume = betting on a big move up.</p>
+            <p class="text-white font-semibold mb-1">Γ₀ Zero-γ buffer</p>
+            <p class="text-xs">Distance spot → zero-gamma level. Safe &gt;10% · Caution 5–10% · Danger &lt;5% (regime can flip on small moves).</p>
           </div>
-          <div class="bg-white/[0.03] rounded-lg p-3">
-            <p class="text-white font-semibold mb-1">OTM Put Spike (0 to -3)</p>
-            <p class="text-xs">Unusual OTM put volume = hedging or betting on a drop.</p>
+          <div class="bg-white/[0.03] rounded-lg p-3 sm:col-span-2 border border-bull-accent/20">
+            <p class="text-white font-semibold mb-1">⚡ Flow extras (Phase 4 — ThetaData-native)</p>
+            <p class="text-xs"><span class="text-white">$P/C</span> = put/call premium-volume ratio (mid × volume); call-side dominance reads green. <span class="text-white">Δvol</span> = net Σ(volume × |Δ|), positive = bullish flow weighted by directional commitment. <span class="text-white">RV−IV</span> = 20d realized vol minus ATM IV in vol points; positive = options cheap, negative = expensive (e.g. pre-earnings IV spike). Click "▸ more" for smile coefficients (b = skew, c = curvature) and raw $ premium.</p>
           </div>
         </div>
-        <p class="text-xs text-gray-500 mt-2">Interpretation: <span class="text-green-400">&gt;+5 Strongly Bullish</span> | <span class="text-green-400/60">+2 to +5 Bullish</span> | <span class="text-gray-400">-2 to +2 Neutral</span> | <span class="text-red-400/60">-5 to -2 Bearish</span> | <span class="text-red-400">&lt;-5 Strongly Bearish</span>. Scanned twice daily (pre-market + post-close) across ~50 tickers from all paths.</p>
-        <div class="mt-3 pt-3 border-t border-white/[0.05] text-xs text-gray-500 space-y-1">
-          <p><span class="text-white font-semibold">Persistence indicators</span> (ThetaData-confirmed aggregate flow_score only — not sub-signals like OTM calls):</p>
-          <p>🔥 <span class="text-white">Streak</span>: consecutive trading days where aggregate flow_score ≥ +3. Resets on a sub-threshold day, or when ThetaData stops confirming for &gt;3 days (stale data).</p>
-          <p><span class="text-white">X/14</span>: confirmed bullish days (flow_score ≥ +3) in the last 14 calendar days. Independent of streak — counts non-consecutive days too.</p>
-          <p><span class="text-white">Δ5d</span>: today's flow_score minus the mean of the last 5 confirmed days. <span class="text-green-400">Green</span> = warming, <span class="text-red-400">red</span> = cooling.</p>
-        </div>
+        <p class="text-xs text-gray-500 mt-2">Skew computed only when earnings is within 45 days. All Greeks via Black-Scholes inverted from clean ThetaData bid/ask quotes (or yfinance fallback). Flow extras are <span class="text-white">in calibration</span> — Phase 5 reweighting requires 100+ logged signals or 60 trading days.</p>
       </div>
     </details>
   </div>
@@ -167,29 +153,44 @@
   <!-- Filter tabs -->
   <div class="max-w-7xl mx-auto px-4 mb-6">
     <div class="flex gap-2 text-xs font-medium">
-      <button class="of-filter active px-3 py-1.5 rounded-full bg-white/10 text-white" data-filter="all">All</button>
-      <button class="of-filter px-3 py-1.5 rounded-full bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-colors" data-filter="bullish">Bullish</button>
-      <button class="of-filter px-3 py-1.5 rounded-full bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-colors" data-filter="bearish">Bearish</button>
+      <button class="od-filter active px-3 py-1.5 rounded-full bg-white/10 text-white" data-filter="all">All</button>
+      <button class="od-filter px-3 py-1.5 rounded-full bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-colors" data-filter="bullish">Bullish flow</button>
+      <button class="od-filter px-3 py-1.5 rounded-full bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-colors" data-filter="bearish">Bearish flow</button>
+      <button class="od-filter px-3 py-1.5 rounded-full bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-colors" data-filter="extreme">Extreme skew</button>
+      <button class="od-filter px-3 py-1.5 rounded-full bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-colors" data-filter="shortgamma">Short γ</button>
+      <button class="od-filter px-3 py-1.5 rounded-full bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-colors" data-filter="danger">Γ₀ danger</button>
     </div>
   </div>
 
-  <!-- Main content -->
+  <!-- Bull Scouter universe section -->
   <main class="max-w-7xl mx-auto px-4 pb-16">
-    <div id="of-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    <section class="mb-10">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-bold flex items-center gap-2">
+          🌐 Bull Scouter Universe
+          <span class="text-xs font-normal text-bull-muted" id="od-bs-count">(0)</span>
+        </h2>
+        <button data-copy-list="bullscouter" class="od-copy-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10 transition-colors" title="Copy Bull Scouter Universe data">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span class="copy-label">Copy list</span>
+        </button>
+      </div>
+      <div id="od-bs" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
 
-    <div id="of-loading" class="text-center py-20">
+    <div id="od-loading" class="text-center py-20">
       <div class="loading-pulse mx-auto mb-3"></div>
-      <p class="text-bull-muted">Loading options flow...</p>
+      <p class="text-bull-muted">Loading options data…</p>
     </div>
 
-    <div id="of-empty" class="hidden text-center py-20">
-      <p class="text-bull-muted text-lg">No options flow data yet</p>
-      <p class="text-white/30 text-sm mt-1">The options flow monitor runs twice daily &mdash; data will appear after the next scan.</p>
+    <div id="od-empty" class="hidden text-center py-20">
+      <p class="text-bull-muted text-lg">No options data yet</p>
+      <p class="text-white/30 text-sm mt-1">The exporter runs at the end of each daily scan &mdash; data will appear after the next scan.</p>
     </div>
 
-    <div id="of-error" class="hidden text-center py-20">
+    <div id="od-error" class="hidden text-center py-20">
       <p class="text-red-400 text-lg">Failed to load data</p>
-      <p class="text-white/30 text-sm mt-1" id="of-error-msg"></p>
+      <p class="text-white/30 text-sm mt-1" id="od-error-msg"></p>
     </div>
   </main>
 
@@ -208,6 +209,6 @@
     </div>
   </footer>
 
-  <script src="js/options.js?v=3"></script>
+  <script src="js/options-deep.js?v=10"></script>
 </body>
 </html>

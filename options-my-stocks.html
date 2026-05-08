@@ -74,10 +74,6 @@
         </a>
         <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
           <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
-          <a class="text-bull-muted hover:text-white transition-colors" href="options.html">Flow</a>
-          <a class="text-bull-muted hover:text-white transition-colors" href="options-deep.html">Deep</a>
-          <a class="text-bull-muted hover:text-white transition-colors" href="options-my-stocks.html">My Stocks</a>
-          <a class="text-bull-muted hover:text-white transition-colors" href="deep-buy.html">Buy</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
           <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
         </div>
@@ -89,10 +85,6 @@
     <div id="mobile-menu" class="sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md">
       <div class="px-4 py-3 space-y-2 text-sm font-medium">
         <a class="block py-2 text-bull-muted" href="index.html">Home</a>
-        <a class="block py-2 text-bull-muted" href="options.html">Flow</a>
-        <a class="block py-2 text-bull-muted" href="options-deep.html">Deep</a>
-        <a class="block py-2 text-bull-muted" href="options-my-stocks.html">My Stocks</a>
-        <a class="block py-2 text-bull-muted" href="deep-buy.html">Buy</a>
         <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
         <a class="block py-2 text-bull-muted" href="about.html">About</a>
       </div>
@@ -127,14 +119,14 @@
   <div class="max-w-7xl mx-auto px-4 mb-8">
     <details class="glass-card p-4">
       <summary class="cursor-pointer text-sm font-bold uppercase tracking-wider text-bull-muted hover:text-white transition-colors">
-        How Options Deep Works
+        How Options Works
       </summary>
       <div class="mt-4 text-sm text-gray-400 space-y-3">
-        <p>Options Deep goes beyond aggregate P/C flow to surface <span class="text-white">tail pricing</span> and <span class="text-white">dealer positioning</span>.</p>
+        <p>This view combines aggregate flow context with <span class="text-white">tail pricing</span> and <span class="text-white">dealer positioning</span> for your tracked holdings.</p>
         <div class="grid sm:grid-cols-2 gap-3 mt-3">
           <div class="bg-white/[0.03] rounded-lg p-3">
             <p class="text-white font-semibold mb-1">📈 Skew direction (25Δ RR)</p>
-            <p class="text-xs">25-delta call IV minus put IV. Positive = calls bid up (bullish, upside speculation). Negative = puts bid up (bearish, hedging). The Options Flow page measures ATM-band skew in the same direction (call − put) — different strike basis, same sign.</p>
+            <p class="text-xs">25-delta call IV minus put IV. Positive = calls bid up (bullish, upside speculation). Negative = puts bid up (bearish, hedging). ATM-band skew is measured in the same direction (call − put) — different strike basis, same sign.</p>
           </div>
           <div class="bg-white/[0.03] rounded-lg p-3">
             <p class="text-white font-semibold mb-1">⚠ Skew magnitude</p>
@@ -188,11 +180,11 @@
 
     <div id="od-loading" class="text-center py-20">
       <div class="loading-pulse mx-auto mb-3"></div>
-      <p class="text-bull-muted">Loading options-deep data…</p>
+      <p class="text-bull-muted">Loading my-stocks options data…</p>
     </div>
 
     <div id="od-empty" class="hidden text-center py-20">
-      <p class="text-bull-muted text-lg">No options-deep data yet</p>
+      <p class="text-bull-muted text-lg">No my-stocks options data yet</p>
       <p class="text-white/30 text-sm mt-1">The exporter runs at the end of each daily scan &mdash; data will appear after the next scan.</p>
     </div>
 
