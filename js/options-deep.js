@@ -154,6 +154,7 @@
   // ---------- card renderer ----------
   function renderCard(entry) {
     const { ticker, flow, skew, gex, earnings_date } = entry;
+    const ivM = entry.iv_metrics || null;
     const s = flow?.score;
     const flowExt = flowMap[ticker] || null;
     // Spot fallback chain: options-flow snapshot (freshest) → skew.spot → gex.spot.
@@ -294,6 +295,37 @@
       return String(n);
     };
 
+    // IV rank / percentile / earnings-IV-crush flag (from server-side compute_iv_block)
+    let ivHtml = '';
+    if (ivM && (ivM.iv_rank != null || ivM.iv_percentile != null || ivM.earnings_iv_crush_flag)) {
+      const rank = ivM.iv_rank;
+      const pct = ivM.iv_percentile;
+      const crush = ivM.earnings_iv_crush_flag;
+      const days = ivM.history_days || 0;
+      const rankCls = rank == null ? 'text-gray-500'
+                    : rank >= 80 ? 'text-red-400'      // expensive options (top quintile)
+                    : rank >= 60 ? 'text-amber-400'    // top quintile-ish
+                    : rank <= 20 ? 'text-green-400'    // cheap options
+                    : 'text-gray-300';
+      const rankBadge = rank == null
+        ? `<span class="text-[10px] text-gray-500 italic" title="iv_history thin (${days}d) — needs more forward-collection">IV rank —</span>`
+        : `<span class="text-[10px] font-mono ${rankCls}" title="atm_iv_30d position in trailing-1yr range (0=year-low, 100=year-high). ${days}d of history.">IV rank ${rank.toFixed(0)}</span>`;
+      const pctBadge = pct == null ? ''
+        : `<span class="text-[10px] font-mono text-gray-400" title="% of trailing-1yr days where IV was below today's">pct ${pct.toFixed(0)}</span>`;
+      const crushBadge = crush
+        ? `<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-500/20 text-red-300 border border-red-500/30" title="iv_rank ≥ 70 AND earnings within 7d — premium-selling setup OR exit-equity-before-print">💥 IV CRUSH RISK</span>`
+        : '';
+      ivHtml = `
+        <div class="mt-3 pt-3 border-t border-white/[0.06]">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Implied vol (1yr)</div>
+          <div class="flex flex-wrap gap-2 items-center">
+            ${rankBadge}
+            ${pctBadge}
+            ${crushBadge}
+          </div>
+        </div>`;
+    }
+
     let flowStatsHtml = '';
     if (flowExt) {
       const pcrCls = pcr == null ? 'text-gray-500'
@@ -358,6 +390,8 @@
       </div>
 
       ${flowStatsHtml}
+
+      ${ivHtml}
 
       <div class="mt-3 pt-3 border-t border-white/[0.06]">
         <div class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Skew</div>
