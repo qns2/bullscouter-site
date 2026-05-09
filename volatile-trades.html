@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
   <meta name="theme-color" content="#0a0b0d">
-  <title>Bull Scouter — Volatile Trades (IBRX-pattern)</title>
-  <meta name="description" content="Small-cap range-trade candidates: sustained options flow + safe GEX + call-dominant. Direct URL only.">
+  <title>Bull Scouter - Volatile Trades</title>
+  <meta name="description" content="IBRX-pattern range-trade candidates: small-cap volume surges with sustained options flow + safe GEX + call-dominant premium. Direct URL only.">
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,81 +16,185 @@
   <script>
     tailwind.config = {
       darkMode: 'class',
-      theme: { extend: {
-        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-        colors: { bull: { dark:'#0a0b0d', card:'#14161a', accent:'#00ff88',
-                          blue:'#3b82f6', muted:'#94a3b8',
-                          border:'rgba(255,255,255,0.1)' } }
-      }}
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            bull: {
+              dark: '#0a0b0d',
+              card: '#14161a',
+              accent: '#00ff88',
+              blue: '#3b82f6',
+              muted: '#94a3b8',
+              border: 'rgba(255,255,255,0.1)'
+            }
+          }
+        }
+      }
     }
   </script>
   <style>
-    body { background-color: #0a0b0d; color:#f1f5f9; -webkit-font-smoothing:antialiased; font-family:'Inter',system-ui,sans-serif; }
-    .glass-card { background: rgba(20,22,26,0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card {
+      background: rgba(20, 22, 26, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    /* Pills */
     .pill { display:inline-block; padding:1px 8px; border-radius:9999px; font-size:10px; font-weight:600; letter-spacing:.04em; }
     .pill-screen { background:rgba(59,130,246,0.15); color:#93c5fd; }
     .pill-qualified { background:rgba(0,255,136,0.18); color:#86efac; }
-    .pill-bullish { background:rgba(0,255,136,0.15); color:#6ee7b7; }
+    .pill-held { background:rgba(168,85,247,0.20); color:#d8b4fe; font-weight:700; }
     .pill-warn { background:rgba(249,115,22,0.18); color:#fdba74; }
     .pill-danger { background:rgba(239,68,68,0.15); color:#fca5a5; }
-    /* Zone pills — distinct color per zone */
+    /* Zone pills */
     .zone-buy        { background:rgba(0,255,136,0.22); color:#6ee7b7; font-weight:700; }
     .zone-below_buy  { background:rgba(59,130,246,0.20); color:#93c5fd; }
     .zone-hold       { background:rgba(148,163,184,0.15); color:#cbd5e1; }
     .zone-trim       { background:rgba(249,115,22,0.22); color:#fdba74; font-weight:700; }
     .zone-above_target { background:rgba(244,63,94,0.20); color:#fda4af; }
     .zone-unknown    { background:rgba(255,255,255,0.05); color:#64748b; }
-    .range-bar { position: relative; height: 6px; background: rgba(255,255,255,0.06); border-radius: 9999px; margin: 6px 0 4px 0; }
-    .range-bar .buy-zone { position: absolute; height: 100%; background: rgba(0,255,136,0.30); border-radius: 9999px; }
-    .range-bar .target-mark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: #fdba74; }
-    .range-bar .spot-mark { position: absolute; top: -4px; bottom: -4px; width: 3px; background: #f1f5f9; box-shadow: 0 0 4px rgba(255,255,255,0.5); }
+    /* Range bar */
+    .range-bar { position:relative; height:6px; background:rgba(255,255,255,0.06); border-radius:9999px; margin:8px 0 4px 0; }
+    .range-bar .buy-zone { position:absolute; height:100%; background:rgba(0,255,136,0.30); border-radius:9999px; }
+    .range-bar .target-mark { position:absolute; top:-3px; bottom:-3px; width:2px; background:#fdba74; }
+    .range-bar .spot-mark { position:absolute; top:-4px; bottom:-4px; width:3px; background:#f1f5f9; box-shadow:0 0 4px rgba(255,255,255,0.5); }
     .num-pos { color:#6ee7b7; }
     .num-neg { color:#fca5a5; }
-    .grid-stat { display:grid; grid-template-columns: repeat(auto-fit, minmax(110px,1fr)); gap:.5rem; }
     .stat-row { display:flex; justify-content:space-between; padding:2px 0; border-bottom:1px dashed rgba(255,255,255,0.05); font-size:11px; }
     .stat-row:last-child { border-bottom:none; }
     .stat-label { color:#94a3b8; }
     .stat-value { font-family:'SF Mono',Menlo,Consolas,monospace; }
+    .loading-pulse {
+      width: 32px; height: 32px;
+      border: 3px solid rgba(0, 255, 136, 0.15);
+      border-top-color: #00ff88;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
-<body class="min-h-screen">
-  <div class="max-w-5xl mx-auto px-4 py-8">
-    <header class="mb-8">
-      <div class="text-3xl font-bold mb-1">⚡ Volatile Trades</div>
-      <p class="text-bull-muted text-sm">
-        IBRX-pattern range-trade candidates from Finviz screens, cross-checked
-        against ThetaData options coverage. Bill-qualified means: flow ≥+5,
-        safe GEX, no earnings ≤21d, positive net-delta-volume.
-      </p>
-      <p class="text-bull-muted text-xs mt-1" id="meta"></p>
-    </header>
-
-    <div id="loading" class="text-bull-muted text-center py-8">Loading…</div>
-    <div id="empty" class="text-bull-muted text-center py-8 hidden">
-      No data yet. Run <code>scripts/find_ibrx_pattern.py</code> on the host.
+<body class="min-h-screen font-sans">
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
+          <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="history.html">History</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
+        </div>
+        <button id="burger-btn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="sm:hidden p-2 text-bull-muted hover:text-white transition-colors" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
     </div>
-    <div id="screens" class="space-y-8"></div>
+    <div id="mobile-menu" class="sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md hidden">
+      <div class="px-4 py-3 space-y-2 text-sm font-medium">
+        <a class="block py-2 text-bull-muted" href="index.html">Home</a>
+        <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
+        <a class="block py-2 text-bull-muted" href="history.html">History</a>
+        <a class="block py-2 text-bull-muted" href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Stats Bar -->
+  <div class="border-b border-bull-border bg-bull-dark/50">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-x-3 gap-y-1 text-xs font-mono flex-wrap">
+      <span class="text-white/70" id="stat-date">-</span>
+      <span class="text-white/10">|</span>
+      <span class="text-bull-muted">Bill-qualified: <span id="stat-qualified" class="text-bull-accent font-bold">-</span></span>
+      <span class="text-white/10">|</span>
+      <span class="text-bull-muted">Buy zone: <span id="stat-buyzone" class="text-bull-accent font-bold">-</span></span>
+      <span class="text-white/10">|</span>
+      <span class="text-bull-muted" id="stat-meta">-</span>
+    </div>
   </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <h1 class="text-2xl font-bold mb-1">⚡ Volatile Trades — IBRX Pattern</h1>
+    <p class="text-xs text-bull-muted mb-4 max-w-3xl">
+      Small-cap range-trade candidates from Finviz screens + our internal universe,
+      cross-checked against ThetaData options coverage. <strong class="text-white/80">Bill-qualified</strong>
+      = flow ≥+5, safe GEX, no earnings ≤21d, positive net-delta-volume. Range bars: green
+      band = buy zone, orange tick = target, white line = current spot.
+    </p>
+
+    <div id="loading-state" class="text-center py-20">
+      <div class="loading-pulse mx-auto mb-3"></div>
+      <p class="text-bull-muted">Loading IBRX-pattern candidates…</p>
+    </div>
+
+    <div id="error-state" class="hidden text-center py-20">
+      <p class="text-red-400 text-lg">Failed to load data</p>
+      <p class="text-white/30 text-sm mt-1" id="error-msg"></p>
+    </div>
+
+    <div id="empty-state" class="hidden text-center py-20">
+      <p class="text-bull-muted text-lg">No data yet</p>
+      <p class="text-white/30 text-sm mt-1">Run <code>scripts/find_ibrx_pattern.py</code> on the host</p>
+    </div>
+
+    <div id="screens" class="space-y-8"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-bull-border py-12 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="w-6 h-6 bg-bull-muted/20 rounded flex items-center justify-center">
+          <svg class="w-4 h-4 text-bull-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <a href="regime.html" class="text-sm font-bold tracking-tight text-bull-muted hover:text-bull-muted" style="text-decoration:none">Bull Scouter</a>
+      </div>
+      <p class="text-xs text-bull-muted max-w-lg mx-auto">
+        Autonomous AI agents for stock catalyst detection. Not financial advice.<br>
+        Data refreshed 3x daily. Past performance does not guarantee future results.
+      </p>
+    </div>
+  </footer>
 
   <script>
     (async () => {
-      const $loading = document.getElementById('loading');
-      const $empty = document.getElementById('empty');
+      const $loading = document.getElementById('loading-state');
+      const $error = document.getElementById('error-state');
+      const $errorMsg = document.getElementById('error-msg');
+      const $empty = document.getElementById('empty-state');
       const $screens = document.getElementById('screens');
-      const $meta = document.getElementById('meta');
+      const $statDate = document.getElementById('stat-date');
+      const $statQualified = document.getElementById('stat-qualified');
+      const $statBuyZone = document.getElementById('stat-buyzone');
+      const $statMeta = document.getElementById('stat-meta');
+      const $version = document.getElementById('version-badge');
 
       let data;
       try {
         const r = await fetch('data/ibrx-pattern-candidates.json?v=' + Date.now());
-        if (!r.ok) throw new Error(`fetch failed: ${r.status}`);
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
         data = await r.json();
       } catch (e) {
-        $loading.textContent = `Error loading data/ibrx-pattern-candidates.json: ${e.message}`;
+        $loading.classList.add('hidden');
+        $error.classList.remove('hidden');
+        $errorMsg.textContent = e.message;
         return;
       }
+
       $loading.classList.add('hidden');
-      $meta.textContent = `Generated ${data.generated_at} · v${data.version} · ` +
-        `${data.total_bill_qualified || 0} Bill-qualified across ${Object.keys(data.screens).length} screens`;
+      $statDate.textContent = data.date || '-';
+      $statQualified.textContent = data.total_bill_qualified ?? 0;
+      $statMeta.textContent = `v${data.version} · ${data.generated_at}`;
+      if (data.version) $version.textContent = `v${data.version}`;
 
       const screens = data.screens || {};
       if (Object.keys(screens).length === 0) {
@@ -99,28 +203,32 @@
       }
 
       const fmt = (v, d=2) => (v == null ? '—' : Number(v).toFixed(d));
-      const fmtPct = (v) => (v == null ? '—' : `${v >= 0 ? '+' : ''}${Number(v).toFixed(1)}%`);
-      const sgn = (v) => v == null ? 'num-muted' : (v > 0 ? 'num-pos' : (v < 0 ? 'num-neg' : ''));
+      const sgn = (v) => v == null ? '' : (v > 0 ? 'num-pos' : (v < 0 ? 'num-neg' : ''));
       const escapeHtml = (s) => String(s||'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 
       const screenLabel = {
-        'ibrx_pattern':       'IBRX-pattern (small-cap volume surge + ATR > 0.5)',
-        'oversold_insider':   'Oversold + insider buys (RSI<30, short float >10%)',
-        'pead':               'Post-earnings drift (this week earnings, today up)',
+        'internal_universe':  'Internal Universe (already in our options coverage)',
+        'ibrx_pattern':       'Finviz: IBRX-pattern (small-cap volume surge + ATR > 0.5)',
+        'oversold_insider':   'Finviz: Oversold + insider buys (RSI<30, short float >10%)',
+        'pead':               'Finviz: Post-earnings drift (this week, today up)',
       };
+      const screenOrder = ['internal_universe','ibrx_pattern','oversold_insider','pead'];
 
-      // Zone label + emoji + plain-English action.
       const zoneInfo = {
-        'buy':          { emoji: '🟢', label: 'BUY ZONE',     hint: 'spot inside entry range' },
-        'below_buy':    { emoji: '🔵', label: 'BELOW BUY',    hint: 'spot under entry — watch for floor / scale-in' },
-        'hold':         { emoji: '🟡', label: 'HOLD',         hint: 'between entry and trim — sit' },
-        'trim':         { emoji: '🟠', label: 'TRIM ZONE',    hint: 'scale out partial' },
-        'above_target': { emoji: '🔴', label: 'ABOVE TARGET', hint: 'cycle complete or breakout' },
-        'unknown':      { emoji: '⚪', label: 'NO RANGE',     hint: '' },
+        'buy':          { emoji: '🟢', label: 'BUY ZONE' },
+        'below_buy':    { emoji: '🔵', label: 'BELOW BUY' },
+        'hold':         { emoji: '🟡', label: 'HOLD' },
+        'trim':         { emoji: '🟠', label: 'TRIM ZONE' },
+        'above_target': { emoji: '🔴', label: 'ABOVE TARGET' },
+        'unknown':      { emoji: '⚪', label: 'NO RANGE' },
       };
 
-      // Range bar: position spot + buy zone + target on a 0..max scale.
-      // Floor = max(buy_low × 0.85, 0); ceiling = max(target × 1.05, spot × 1.05).
+      // Count buy-zone candidates across all screens for stat bar
+      const buyZoneCount = Object.values(screens)
+        .flatMap(s => s.bill_qualified || [])
+        .filter(c => c.zone === 'buy').length;
+      $statBuyZone.textContent = buyZoneCount;
+
       const renderRangeBar = (c) => {
         if (!c.spot || !c.buy_low || !c.buy_high || !c.target) return '';
         const floor = Math.max(c.buy_low * 0.85, c.spot * 0.85);
@@ -137,20 +245,39 @@
         `;
       };
 
+      const fmtMcap = (mc) => {
+        if (mc == null) return '—';
+        if (mc >= 1e9) return `$${(mc/1e9).toFixed(1)}B`;
+        if (mc >= 1e6) return `$${(mc/1e6).toFixed(0)}M`;
+        return `$${mc}`;
+      };
+      const stars = (n) => '★'.repeat(Math.max(0, n)) + '☆'.repeat(Math.max(0, 6 - n));
+
       const renderCard = (c, qualified) => {
         const eDays = c.earnings_days_away;
         const eStr = eDays == null ? '—' : (eDays >= 0 ? `${eDays}d` : `${eDays}d (past)`);
         const z = zoneInfo[c.zone] || zoneInfo.unknown;
+        const strength = c.ibrx_strength ?? 0;
         const flags = [];
-        flags.push(`<span class="pill zone-${escapeHtml(c.zone || 'unknown')}" title="${z.hint}">${z.emoji} ${z.label}</span>`);
+        if (c.is_held) flags.push(`<span class="pill pill-held">📌 HELD</span>`);
+        flags.push(`<span class="pill zone-${escapeHtml(c.zone || 'unknown')}">${z.emoji} ${z.label}</span>`);
         if (qualified) flags.push(`<span class="pill pill-qualified">BILL-QUALIFIED</span>`);
         if (c.gex_buffer === 'danger') flags.push(`<span class="pill pill-danger">GEX DANGER</span>`);
         if (eDays != null && eDays >= 0 && eDays <= 21) flags.push(`<span class="pill pill-warn">EARN ${eStr}</span>`);
+        const ringClass = c.is_held ? 'ring-2 ring-purple-400/50'
+                                     : (qualified ? 'ring-1 ring-bull-accent/40' : '');
         return `
-          <div class="glass-card rounded-xl p-4 ${qualified ? 'border-bull-accent/40' : ''}">
+          <div class="glass-card rounded-xl p-4 ${ringClass}">
             <div class="flex items-baseline justify-between mb-2">
               <span class="text-xl font-bold">${escapeHtml(c.ticker)}</span>
               <span class="font-mono text-bull-muted">$${fmt(c.spot)}</span>
+            </div>
+            <div class="flex items-center justify-between text-[10px] text-bull-muted mb-2">
+              <span title="IBRX-pattern fidelity (0-6): +2 small cap, +1 mid cap, +1 streak≥2, +1 earnings>60d, +1 ndv>100, +1 rviv>0">
+                <span class="text-yellow-400 font-mono">${stars(strength)}</span>
+                <span class="ml-1">${strength}/6 IBRX</span>
+              </span>
+              <span class="font-mono">mcap ${fmtMcap(c.market_cap)}</span>
             </div>
             <div class="flex flex-wrap gap-1 mb-2">${flags.join(' ')}</div>
             ${renderRangeBar(c)}
@@ -171,34 +298,51 @@
         `;
       };
 
-      $screens.innerHTML = Object.entries(screens).map(([name, screen]) => {
-        const label = screenLabel[name] || name;
-        const cov = screen.covered || [];
-        const qualified = new Set((screen.bill_qualified || []).map(c => c.ticker));
-        const covCards = cov.length === 0
-          ? `<p class="text-bull-muted text-sm italic px-4 py-2">No covered tickers in this screen today.</p>`
-          : `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${cov.map(c => renderCard(c, qualified.has(c.ticker))).join('')}</div>`;
-        const noCov = (screen.tickers_no_coverage || []).slice(0, 30);
-        const noCovBlock = noCov.length === 0 ? '' : `
-          <details class="mt-3 text-sm">
-            <summary class="cursor-pointer text-bull-muted hover:text-white">
-              ${noCov.length} Finviz hits without options coverage (would need universe entry)
-            </summary>
-            <p class="mt-2 font-mono text-xs text-bull-muted">${noCov.map(escapeHtml).join(', ')}</p>
-          </details>
-        `;
-        return `
-          <section>
-            <h2 class="text-lg font-semibold mb-1">${escapeHtml(label)}</h2>
-            <p class="text-xs text-bull-muted mb-3">
-              ${screen.count_total} hits · ${screen.count_with_coverage} with options data ·
-              ${screen.count_bill_qualified} Bill-qualified
-            </p>
-            ${covCards}
-            ${noCovBlock}
-          </section>
-        `;
-      }).join('');
+      $screens.innerHTML = screenOrder
+        .filter(name => screens[name])
+        .map(name => {
+          const screen = screens[name];
+          const label = screenLabel[name] || name;
+          const cov = screen.covered || [];
+          const qualified = new Set((screen.bill_qualified || []).map(c => c.ticker));
+          // Sort: held first → qualified by IBRX strength → others by strength
+          const zoneRank = { buy:0, below_buy:1, hold:2, trim:3, above_target:4, unknown:5 };
+          cov.sort((a, b) => {
+            // Held positions surface to the top — exit price always visible
+            if ((a.is_held ? 1 : 0) !== (b.is_held ? 1 : 0)) {
+              return (b.is_held ? 1 : 0) - (a.is_held ? 1 : 0);
+            }
+            const aq = qualified.has(a.ticker) ? 1 : 0;
+            const bq = qualified.has(b.ticker) ? 1 : 0;
+            if (aq !== bq) return bq - aq;
+            // IBRX strength desc — pure-pattern matches surface above mid-cap vol plays
+            const sd = (b.ibrx_strength ?? 0) - (a.ibrx_strength ?? 0);
+            if (sd !== 0) return sd;
+            return (zoneRank[a.zone] ?? 9) - (zoneRank[b.zone] ?? 9);
+          });
+          const covCards = cov.length === 0
+            ? `<p class="text-bull-muted text-sm italic px-4 py-2">No covered tickers in this screen today.</p>`
+            : `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${cov.map(c => renderCard(c, qualified.has(c.ticker))).join('')}</div>`;
+          const noCov = (screen.tickers_no_coverage || []).slice(0, 30);
+          const noCovBlock = noCov.length === 0 ? '' : `
+            <details class="mt-3">
+              <summary class="cursor-pointer text-bull-muted hover:text-white text-sm">
+                ${noCov.length} Finviz hits without options coverage (would need universe entry)
+              </summary>
+              <p class="mt-2 font-mono text-xs text-bull-muted">${noCov.map(escapeHtml).join(', ')}</p>
+            </details>
+          `;
+          return `
+            <section>
+              <h2 class="text-lg font-semibold mb-1 text-white/90">${escapeHtml(label)}</h2>
+              <p class="text-xs text-bull-muted mb-3">
+                ${screen.count_total} hits · ${screen.count_with_coverage} with options data · <span class="text-bull-accent">${screen.count_bill_qualified} Bill-qualified</span>
+              </p>
+              ${covCards}
+              ${noCovBlock}
+            </section>
+          `;
+        }).join('');
     })();
   </script>
 </body>
