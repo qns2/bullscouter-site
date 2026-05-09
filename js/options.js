@@ -330,7 +330,7 @@ const OptionsFlow = (() => {
 
       <div class="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-gray-500 mt-2">
         <span>P/C <span class="text-white font-mono">${fmt(t.put_call_ratio, 2)}</span>${t.td_put_call_ratio != null ? ' <span class="text-cyan-400 text-[9px]" title="Confirmed by ThetaData EOD">\u0398</span>' : ''}</span>
-        <span title="ATM-band call IV minus put IV (positive = bullish, calls bid up). Same convention as Options Deep page.">RR (ATM, c−p) <span class="text-white font-mono">${fmt(t.risk_reversal != null ? t.risk_reversal : -t.iv_skew, 3)}</span></span>
+        <span title="ATM-band call IV minus put IV (positive = bullish, calls bid up). Distinct from Options Deep page's 25Δ skew.">RR (ATM, c−p) <span class="text-white font-mono">${fmt(t.iv_skew_atm_call_put != null ? t.iv_skew_atm_call_put : (t.risk_reversal != null ? t.risk_reversal : -t.iv_skew), 3)}</span></span>
         <span>Vol <span class="text-white font-mono">${fmtK(t.total_volume)}</span></span>
         <span>OI <span class="text-white font-mono">${fmtK(t.total_oi)}</span></span>
         ${t.fund_count ? `<span title="${esc(t.fund_names || '')} (${esc(t.fund_quarter || 'Q?')})"><span class="text-purple-400">${t.fund_count}</span> funds <span class="text-gray-600">${esc(t.fund_quarter || '')}</span></span>` : ''}
@@ -395,7 +395,11 @@ const OptionsFlow = (() => {
       if (t.bullish_count_14d != null) parts.push(`14d: ${t.bullish_count_14d}/14`);
       if (t.delta_5d != null) parts.push(`Δ5d: ${t.delta_5d > 0 ? '+' : ''}${fmt(t.delta_5d, 1)}`);
       parts.push(`P/C: ${fmt(t.put_call_ratio, 2)}`);
-      const rrAtm = t.risk_reversal != null ? t.risk_reversal : -(t.iv_skew || 0);
+      // HIGH-5 (2026-05-09): prefer iv_skew_atm_call_put (renamed primary);
+      // fall back to risk_reversal (deprecated alias) → -iv_skew (legacy).
+      const rrAtm = t.iv_skew_atm_call_put != null
+        ? t.iv_skew_atm_call_put
+        : (t.risk_reversal != null ? t.risk_reversal : -(t.iv_skew || 0));
       parts.push(`RR (ATM, call-put): ${fmt(rrAtm, 3)}`);
       parts.push(`Vol: ${fmtK(t.total_volume)}`);
       parts.push(`Price: $${fmt(t.spot_price, 2)}`);
