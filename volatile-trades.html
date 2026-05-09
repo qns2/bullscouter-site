@@ -268,6 +268,7 @@
         if (qualified) flags.push(`<span class="pill pill-qualified">BILL-QUALIFIED</span>`);
         if (c.gex_buffer === 'danger') flags.push(`<span class="pill pill-danger">GEX DANGER</span>`);
         if (eDays != null && eDays >= 0 && eDays <= 21) flags.push(`<span class="pill pill-warn">EARN ${eStr}</span>`);
+        if (c.tight_band) flags.push(`<span class="pill pill-warn" title="(target − spot)/spot < 3% — range exhausted, no trade">⚠ TIGHT BAND ${c.upside_pct != null ? c.upside_pct.toFixed(1) + '%' : ''}</span>`);
         const ringClass = c.is_held ? 'ring-2 ring-purple-400/50'
                                      : (qualified ? 'ring-1 ring-bull-accent/40' : '');
         return `
@@ -375,25 +376,25 @@
         .map(name => {
           const screen = screens[name];
           const label = screenLabel[name] || name;
-          const cov = screen.covered || [];
+          const allCov = screen.covered || [];
           const qualified = new Set((screen.bill_qualified || []).map(c => c.ticker));
-          // Sort: held first → qualified by IBRX strength → others by strength
+          // Render only candidates that fit the pattern TODAY (Bill-qualified)
+          // OR ones the user holds (so exit price is always visible on the
+          // held card — per user feedback 2026-05-09).
+          const cov = allCov.filter(c => c.is_held || qualified.has(c.ticker));
+          // Sort: held first → qualified by IBRX strength → zone
           const zoneRank = { buy:0, below_buy:1, hold:2, trim:3, above_target:4, unknown:5 };
           cov.sort((a, b) => {
-            // Held positions surface to the top — exit price always visible
             if ((a.is_held ? 1 : 0) !== (b.is_held ? 1 : 0)) {
               return (b.is_held ? 1 : 0) - (a.is_held ? 1 : 0);
             }
-            const aq = qualified.has(a.ticker) ? 1 : 0;
-            const bq = qualified.has(b.ticker) ? 1 : 0;
-            if (aq !== bq) return bq - aq;
-            // IBRX strength desc — pure-pattern matches surface above mid-cap vol plays
             const sd = (b.ibrx_strength ?? 0) - (a.ibrx_strength ?? 0);
             if (sd !== 0) return sd;
             return (zoneRank[a.zone] ?? 9) - (zoneRank[b.zone] ?? 9);
           });
+          const culledCount = allCov.length - cov.length;
           const covCards = cov.length === 0
-            ? `<p class="text-bull-muted text-sm italic px-4 py-2">No covered tickers in this screen today.</p>`
+            ? `<p class="text-bull-muted text-sm italic px-4 py-2">No qualified candidates today.${culledCount ? ` (${culledCount} screen hits failed Bill-spec — earnings near, GEX danger, tight band, etc.)` : ''}</p>`
             : `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${cov.map(c => renderCard(c, qualified.has(c.ticker))).join('')}</div>`;
           const noCov = (screen.tickers_no_coverage || []).slice(0, 30);
           const noCovBlock = noCov.length === 0 ? '' : `
