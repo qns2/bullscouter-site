@@ -290,10 +290,15 @@
               <span>Target $${fmt(c.target)}</span>
             </div>
             ${(c.range_low != null && c.range_high != null) ? `
-              <div class="text-[10px] text-bull-muted flex justify-between mb-2 font-mono opacity-70">
+              <div class="text-[10px] text-bull-muted flex justify-between mb-1 font-mono opacity-70">
                 <span>20d range:</span>
                 <span>$${fmt(c.range_low)} - $${fmt(c.range_high)}</span>
               </div>` : ''}
+            ${c.thesis_target != null ? `
+              <div class="text-[10px] flex justify-between mb-2 font-mono" style="color:#fdba74">
+                <span title="Curated longer-term thesis target. Range-trade exit (above) is clamped to 20d high.">Thesis target:</span>
+                <span>$${fmt(c.thesis_target)}</span>
+              </div>` : '<div class="mb-2"></div>'}
             <div class="space-y-0.5">
               <div class="stat-row"><span class="stat-label">Flow score</span><span class="stat-value ${sgn(c.flow_score)}">${c.flow_score >= 0 ? '+' : ''}${fmt(c.flow_score, 1)}</span></div>
               <div class="stat-row"><span class="stat-label">TD streak</span><span class="stat-value">${c.flow_streak ?? 0}</span></div>
