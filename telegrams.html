@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Bull Scouter — Telegrams</title>
+  <meta name="description" content="Per-day archive of Telegram alerts the scanner sent. Not in nav; direct-URL only.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            bull: {
+              dark: '#0a0b0d', card: '#14161a', accent: '#00ff88',
+              blue: '#3b82f6', muted: '#94a3b8',
+              border: 'rgba(255,255,255,0.1)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; font-family: 'Inter', system-ui, sans-serif; }
+    .glass-card { background: rgba(20, 22, 26, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .pill { display: inline-block; padding: 1px 8px; border-radius: 9999px; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; }
+    .priority-CRITICAL { background: rgba(239,68,68,0.15); color: #fca5a5; }
+    .priority-HIGH { background: rgba(249,115,22,0.15); color: #fdba74; }
+    .priority-NORMAL { background: rgba(148,163,184,0.12); color: #cbd5e1; }
+    .type-options_flow { background: rgba(59,130,246,0.15); color: #93c5fd; }
+    .type-buy { background: rgba(0,255,136,0.15); color: #6ee7b7; }
+    .type-dip { background: rgba(99,102,241,0.15); color: #a5b4fc; }
+    .type-insider { background: rgba(245,158,11,0.15); color: #fcd34d; }
+    .type-contrarian { background: rgba(168,85,247,0.15); color: #d8b4fe; }
+    .type-regime { background: rgba(244,63,94,0.15); color: #fda4af; }
+    .type-discovery { background: rgba(34,197,94,0.15); color: #86efac; }
+    .type-flow_flip_bearish, .type-phase_boundary, .type-gex_collapse { background: rgba(244,63,94,0.18); color: #fecdd3; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <header class="mb-8">
+      <div class="text-3xl font-bold mb-1">📱 Telegrams</div>
+      <p class="text-bull-muted text-sm">
+        Per-day archive of alerts the scanner sent over Telegram.
+        Newest first. Last 30 days.
+      </p>
+      <p class="text-bull-muted text-xs mt-1" id="meta"></p>
+    </header>
+
+    <div id="loading" class="text-bull-muted text-center py-8">Loading…</div>
+    <div id="empty" class="text-bull-muted text-center py-8 hidden">
+      No alerts in the last 30 days.
+    </div>
+    <div id="days" class="space-y-6"></div>
+  </div>
+
+  <script>
+    (async () => {
+      const $loading = document.getElementById('loading');
+      const $empty = document.getElementById('empty');
+      const $days = document.getElementById('days');
+      const $meta = document.getElementById('meta');
+
+      let data;
+      try {
+        const resp = await fetch('data/telegrams.json?v=' + Date.now());
+        if (!resp.ok) throw new Error(`fetch failed: ${resp.status}`);
+        data = await resp.json();
+      } catch (e) {
+        $loading.textContent = `Error loading data/telegrams.json: ${e.message}`;
+        return;
+      }
+
+      $loading.classList.add('hidden');
+      $meta.textContent = `Generated ${data.generated_at} · v${data.version}`;
+
+      const days = data.days || [];
+      if (days.length === 0) {
+        $empty.classList.remove('hidden');
+        return;
+      }
+
+      const escapeHtml = (s) => String(s || '')
+        .replaceAll('&', '&amp;').replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+
+      $days.innerHTML = days.map(d => {
+        const entries = d.entries.map(e => `
+          <div class="flex items-start gap-3 px-4 py-2 hover:bg-white/5 transition-colors">
+            <span class="text-bull-muted text-xs font-mono pt-1 w-16 shrink-0">${e.time}</span>
+            <span class="pill type-${escapeHtml(e.type)} pt-1 shrink-0">${escapeHtml(e.type)}</span>
+            <span class="font-mono text-sm font-semibold pt-1 shrink-0 w-16">${escapeHtml(e.ticker)}</span>
+            <span class="text-sm flex-grow">${escapeHtml(e.headline)}</span>
+            ${e.priority !== 'NORMAL' ? `<span class="pill priority-${escapeHtml(e.priority)} pt-1 shrink-0">${escapeHtml(e.priority)}</span>` : ''}
+          </div>
+        `).join('');
+        return `
+          <section class="glass-card rounded-xl overflow-hidden">
+            <header class="px-4 py-2 border-b border-bull-border flex items-baseline justify-between bg-white/5">
+              <span class="font-semibold">${d.date}</span>
+              <span class="text-bull-muted text-xs">${d.count} alert${d.count === 1 ? '' : 's'}</span>
+            </header>
+            <div class="divide-y divide-white/5">${entries}</div>
+          </section>
+        `;
+      }).join('');
+    })();
+  </script>
+</body>
+</html>
