@@ -6,18 +6,31 @@
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "rr_too_low": 19,
-    "below_cutoff": 50,
+    "rr_too_low": 18,
+    "below_cutoff": 52,
     "held": 8,
     "earnings_blackout": 3,
     "frozen": 2,
     "rescan_below_cutoff_no_note": 11
   },
-  "candidates_evaluated": 82,
+  "candidates_evaluated": 83,
   "picks_count": 0,
   "picks": [],
   "oracle_watch_count": 19,
   "oracle_watch": [
+    {
+      "ticker": "AEM",
+      "composite": 25,
+      "convergence_paths": [
+        "path1_buy"
+      ],
+      "spot_price": 193.21,
+      "oracle_note": {
+        "text": "RESCAN: Record FCF, $2B buyback activated 5/6. Buffett 88. Gold $3,200+ tailwind. Assessor STRONG BUY HIGH.",
+        "written_at": "2026-05-07"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "CHTR",
       "composite": 20,
@@ -50,9 +63,22 @@
       "convergence_paths": [
         "path5_strong_quality"
       ],
-      "spot_price": 113.49,
+      "spot_price": 116.51,
       "oracle_note": {
         "text": "BUY LIST +6.2%. Buffett 88. GLD +3% today (Iran safe-haven). AEM $2B buyback confirms sector. Trail stop at entry $108.",
+        "written_at": "2026-05-07"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ARGX",
+      "composite": 10,
+      "convergence_paths": [
+        "catalyst_near"
+      ],
+      "spot_price": 782.17,
+      "oracle_note": {
+        "text": "PDUFA May 10 (3d). NOT IN CATALYST PIPELINE (BUG). Seroneg gMG p=0.0068. No entry pre-binary. Research post-PDUFA.",
         "written_at": "2026-05-07"
       },
       "filter_reason": "below_cutoff"
@@ -66,28 +92,6 @@
       "spot_price": 99.23,
       "oracle_note": {
         "text": "RESCAN: Q1 beat confirmed 5/7. Chairman $2.9M buy. 7.7x PE. Flow -9.0 bearish. CONDITIONAL UNBLOCK: requires revenue guidance raise AND flow flip to neutral in 3d.",
-        "written_at": "2026-05-07"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "AEM",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 193.21,
-      "oracle_note": {
-        "text": "RESCAN: Record FCF, $2B buyback activated 5/6. Buffett 88. Gold $3,200+ tailwind. Assessor STRONG BUY HIGH.",
-        "written_at": "2026-05-07"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "ARGX",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 782.17,
-      "oracle_note": {
-        "text": "PDUFA May 10 (3d). NOT IN CATALYST PIPELINE (BUG). Seroneg gMG p=0.0068. No entry pre-binary. Research post-PDUFA.",
         "written_at": "2026-05-07"
       },
       "filter_reason": "below_cutoff"
@@ -175,7 +179,7 @@
       "ticker": "TARS",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 63.96,
+      "spot_price": 61.21,
       "oracle_note": {
         "text": "BUY LIST -0.4%. Day 2, too early to judge. Conf 92. XLI +2.6% tailwind. Hold.",
         "written_at": "2026-05-07"
@@ -238,6 +242,45 @@
       "filter_reason": "below_cutoff"
     }
   ],
-  "flow_led_picks_count": 0,
-  "flow_led_picks": []
+  "flow_led_picks_count": 1,
+  "flow_led_picks": [
+    {
+      "ticker": "PLTR",
+      "path": "flow_led",
+      "source": "spike",
+      "composite": 30,
+      "convergence_paths": [
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "spot_price": 137.13,
+      "entry": {
+        "low": 133.02,
+        "high": 137.82,
+        "mid": 135.42
+      },
+      "target": 164.56,
+      "stop": 126.16,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 947.94,
+      "suggested_shares": 7,
+      "position_risk_usd": 64.82,
+      "earnings_date": "2026-08-03",
+      "earnings_days_away": 86,
+      "components": {
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "rationale_one_liner": "Buffett 73 STRONG + watchlist dip alert. Earnings 86d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "rank": 1
+    }
+  ]
 }
