@@ -460,6 +460,25 @@
     return true;
   }
 
+  function rankEntry(e) {
+    // Higher rank = sorted earlier. Drives the per-section card ordering.
+    // Priority: real flow data > skew-or-gex only > nothing.
+    // Within "has flow", rank by signed flow score desc (bullish first).
+    const score = e.flow?.score;
+    if (score != null) {
+      // Bucket: bullish=2, neutral=1, bearish=0; then magnitude within bucket.
+      const bucket = score > 2 ? 2 : (score < -2 ? 0 : 1);
+      // Use score itself as tie-breaker (bullish: +12 > +5; bearish: -12 ranks
+      // ahead of -5 since users want strongest signals at the edges first).
+      return bucket * 1000 + (bucket === 0 ? -score : score);
+    }
+    // No flow score — push below all flow-bearing cards.
+    const hasSkew = e.skew?.risk_reversal != null;
+    const hasGex = e.gex?.regime != null;
+    if (hasSkew || hasGex) return -1000;  // has options-deep but no flow
+    return -2000;                          // nothing actionable
+  }
+
   function renderSection(entries, containerId, countId) {
     const c = document.getElementById(containerId);
     const countEl = document.getElementById(countId);
@@ -467,7 +486,9 @@
     c.innerHTML = '';
     // Always drop no-data entries (e.g. BRBR with no flow/skew/GEX) — pure noise.
     const withData = entries.filter(hasAnyData);
-    const filtered = withData.filter(e => matchesFilter(e, currentFilter));
+    const filtered = withData
+      .filter(e => matchesFilter(e, currentFilter))
+      .sort((a, b) => rankEntry(b) - rankEntry(a));
     filtered.forEach(e => c.appendChild(renderCard(e)));
     if (countEl) {
       const suffix = filtered.length !== withData.length ? `/${withData.length}` : '';
