@@ -113,7 +113,7 @@
   "flow_led_picks_count": 1,
   "flow_led_picks": [
     {
-      "ticker": "CRSR",
+      "ticker": "SNAP",
       "path": "flow_led",
       "source": "sustained",
       "composite": 30,
@@ -121,20 +121,20 @@
         "flow_sustained",
         "watchlist_dip"
       ],
-      "spot_price": 7.88,
+      "spot_price": 5.71,
       "entry": {
-        "low": 7.64,
-        "high": 7.92,
-        "mid": 7.78
+        "low": 5.8,
+        "high": 6.1,
+        "mid": 5.95
       },
-      "target": 9.46,
-      "stop": 7.25,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.16,
+      "target": 7.0,
+      "stop": 5.25,
+      "rr_ratio": 2.8,
+      "rr_planned": 1.5,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 995.84,
-      "suggested_shares": 128,
-      "position_risk_usd": 67.84,
+      "suggested_size_usd": 999.6,
+      "suggested_shares": 168,
+      "position_risk_usd": 117.6,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -145,12 +145,89 @@
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +9.0 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
+      "rationale_one_liner": "flow +8.6 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "PEFP T0. Earnings AMC today. Sell 30sh market + 30sh limit $6.15. Lottery 40sh only. Stop $5.40.",
+      "oracle_note": null,
+      "rank": 3
+    }
+  ],
+  "flow_extreme_picks_count": 2,
+  "flow_extreme_picks": [
+    {
+      "ticker": "CRSR",
+      "path": "flow_extreme",
+      "source": "extreme+sustained",
+      "composite": 60,
+      "convergence_paths": [
+        "flow_extreme",
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "spot_price": 7.71,
+      "entry": {
+        "low": 7.48,
+        "high": 7.75,
+        "mid": 7.62
+      },
+      "target": 9.25,
+      "stop": 7.09,
+      "rr_ratio": 2.49,
+      "rr_planned": 3.12,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 998.22,
+      "suggested_shares": 131,
+      "position_risk_usd": 69.43,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "rationale_one_liner": "flow-extreme: 22d streak, P/C 0.014 (71:1 calls) + flow +9.0 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "rank": 1
+    },
+    {
+      "ticker": "QS",
+      "path": "flow_extreme",
+      "source": "extreme",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_extreme"
+      ],
+      "spot_price": 8.1,
+      "entry": {
+        "low": 7.86,
+        "high": 8.14,
+        "mid": 8.0
+      },
+      "target": 9.72,
+      "stop": 7.45,
+      "rr_ratio": 2.49,
+      "rr_planned": 3.13,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 1000.0,
+      "suggested_shares": 125,
+      "position_risk_usd": 68.75,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        }
+      },
+      "rationale_one_liner": "flow-extreme: 23d streak, P/C 0.111 (9:1 calls). no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "rank": 2
     }
-  ],
-  "flow_extreme_picks_count": 0,
-  "flow_extreme_picks": []
+  ]
 }
