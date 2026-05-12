@@ -6,11 +6,14 @@
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 49,
-    "held": 3,
-    "rescan_below_cutoff_no_note": 18
+    "below_cutoff": 232,
+    "rr_too_low": 13,
+    "held": 8,
+    "earnings_blackout": 14,
+    "frozen": 2,
+    "rescan_below_cutoff_no_note": 25
   },
-  "candidates_evaluated": 53,
+  "candidates_evaluated": 270,
   "picks_count": 1,
   "picks": [
     {
@@ -20,20 +23,20 @@
         "path3_strong_candidate",
         "flow_sustained"
       ],
-      "spot_price": 55.35,
+      "spot_price": 56.29,
       "entry": {
-        "low": 53.69,
-        "high": 55.63,
-        "mid": 54.66
+        "low": 54.6,
+        "high": 56.57,
+        "mid": 55.59
       },
-      "target": 66.42,
-      "stop": 50.92,
+      "target": 67.55,
+      "stop": 51.79,
       "rr_ratio": 2.5,
-      "rr_planned": 3.14,
+      "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 983.88,
-      "suggested_shares": 18,
-      "position_risk_usd": 67.32,
+      "suggested_size_usd": 945.03,
+      "suggested_shares": 17,
+      "position_risk_usd": 64.6,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -47,10 +50,13 @@
       "rationale_one_liner": "flow +9.0 7d + Path 3 strong. no earnings <45d.",
       "watchlist_thesis": null,
       "rank": 1,
-      "oracle_note": null
+      "oracle_note": {
+        "text": "Deep Buy #1 (comp 40). Flow +9.0 TD-confirmed. Best active contrarian position. +5 conf +5 score.",
+        "written_at": "2026-05-12"
+      }
     }
   ],
-  "oracle_watch_count": 5,
+  "oracle_watch_count": 12,
   "oracle_watch": [
     {
       "ticker": "BMI",
@@ -58,9 +64,44 @@
       "convergence_paths": [
         "flow_sustained"
       ],
-      "spot_price": 116.67,
+      "spot_price": 115.67,
       "oracle_note": {
-        "text": "5 C-suite cluster $775K. Water infra. Flow +9.0. IN ZONE $116.67. Limit $115.",
+        "text": "5 C-suite cluster $775K. Flow +9.5 strongly bullish (best non-held flow). IN ZONE $116.67. Upgraded +8 conf (from +5) on flow confirmation.",
+        "written_at": "2026-05-12"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "CHTR",
+      "composite": 10,
+      "convergence_paths": [
+        "path3_strong_candidate"
+      ],
+      "spot_price": 148.35,
+      "oracle_note": {
+        "text": "Contrarian 71 but crashed -39% in 15d (4/27-5/12). Accelerating decline. No insider buying. Wait for stabilization (3+ days <2% range). -5 conf.",
+        "written_at": "2026-05-12"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ARGX",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 813.12,
+      "oracle_note": {
+        "text": "PDUFA May 10 passed \u2014 outcome UNKNOWN. Seroneg gMG. Verify result and update thesis.",
+        "written_at": "2026-05-12"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "BIIB",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 199.82,
+      "oracle_note": {
+        "text": "PDUFA DATE DISCREPANCY: strategic ctx May 24 vs scanner Aug 24 (RTTNews). Aug 24 likely correct. Verify. SubQ Leqembi.",
         "written_at": "2026-05-12"
       },
       "filter_reason": "below_cutoff"
@@ -69,9 +110,9 @@
       "ticker": "BSX",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 53.37,
+      "spot_price": 54.03,
       "oracle_note": {
-        "text": "TOP PICK: BELOW zone floor at $53.37. 73% ENTRY_ZONE WR cal. 4-fund 13F $583M. +10 conf +8 score. Limit $53.",
+        "text": "TOP PICK: BELOW zone floor $53.37. 73% ENTRY_ZONE WR. 4-fund 13F $583M. Flow +2.0 neutral. +10 conf +8 score. Limit $53, R/R 9.3:1.",
         "written_at": "2026-05-12"
       },
       "filter_reason": "below_cutoff"
@@ -80,31 +121,77 @@
       "ticker": "FDS",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 219.19,
+      "spot_price": 218.79,
       "oracle_note": {
-        "text": "TOP PICK: 5-path convergence (P1+P3+P4+P5+assessor). 96% WR 27 signals. Buffett 81. IN ZONE $219. Limit $215.",
+        "text": "5-path convergence (P1+P3+P4+P5+assessor). Buffett 81. IN ZONE $219. WAIT: flow -5 to -9 bearish blocks entry. Enter on flow >= -2. +10 conf +8 score.",
+        "written_at": "2026-05-12"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "HUBS",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 186.54,
+      "oracle_note": {
+        "text": "Earnings AMC today \u2014 BLACKOUT. User target $180-185. Current $191 above target. Post-earnings entry if gap to zone days 2-3.",
+        "written_at": "2026-05-12"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "NOC",
+      "composite": 0,
+      "convergence_paths": [
+        "catalyst_near"
+      ],
+      "spot_price": 551.81,
+      "oracle_note": {
+        "text": "Golden Dome prime. $96B backlog. ENTRY_ZONE $548. BUT flow bearish -4.0. Wait for flow reversal. +8 conf maintained on structural thesis.",
+        "written_at": "2026-05-12"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "RTX",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 176.72,
+      "oracle_note": {
+        "text": "Assessor BUY MED. $268B backlog. NATO 5% GDP. Flow +4.5 TD bullish. ABOVE zone. Monitor for $165-175.",
+        "written_at": "2026-05-12"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "VERA",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 36.83,
+      "oracle_note": {
+        "text": "PDUFA Jul 7. BTD + Priority Review + NEJM Phase 3. ENTRY_ZONE $36.61 today. Assessor BUY MED. 56d to binary. +5 conf.",
         "written_at": "2026-05-12"
       },
       "filter_reason": "below_cutoff"
     },
     {
       "ticker": "GEHC",
-      "composite": 0,
+      "composite": -10,
       "convergence_paths": [],
-      "spot_price": 61.7,
+      "spot_price": 62.22,
       "oracle_note": {
-        "text": "Triple C-suite buy $554K (CEO+CFO+GC). Record $21.8B backlog. IN ZONE $61.70. Assessor BUY MED FV $76. +8 conf, +5 score.",
+        "text": "Triple C-suite buy $554K (CEO+CFO+GC). Record $21.8B backlog. IN ZONE $61.70. Assessor BUY MED FV $76. +8 conf +5 score.",
         "written_at": "2026-05-12"
       },
       "filter_reason": "below_cutoff"
     },
     {
       "ticker": "SRAD",
-      "composite": 0,
+      "composite": -10,
       "convergence_paths": [],
-      "spot_price": 12.8,
+      "spot_price": 12.94,
       "oracle_note": {
-        "text": "BUY LIST -6.2%. CEO $4.5M + 6 directors coordinated buy. Approaching -10% stop ($12.28). Value 37% WR concern.",
+        "text": "BUY LIST -6.2%. CEO $4.5M + 6-director cluster buy. 3.8% from -10% stop. Value 37% WR risk. Insider only anchor.",
         "written_at": "2026-05-12"
       },
       "filter_reason": "below_cutoff"
