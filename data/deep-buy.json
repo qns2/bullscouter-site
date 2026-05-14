@@ -1,36 +1,23 @@
 {
   "date": "2026-05-14",
-  "version": "2.29.0",
+  "version": "2.30.1",
   "regime_label": null,
   "regime_score": null,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 234,
+    "below_cutoff": 237,
     "earnings_blackout": 12,
     "held": 8,
     "rr_too_low": 13,
     "frozen": 2,
-    "rescan_below_cutoff_no_note": 27
+    "rescan_below_cutoff_no_note": 33
   },
-  "candidates_evaluated": 269,
+  "candidates_evaluated": 272,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 11,
+  "oracle_watch_count": 9,
   "oracle_watch": [
-    {
-      "ticker": "BSX",
-      "composite": 25,
-      "convergence_paths": [
-        "path1_buy"
-      ],
-      "spot_price": 53.78,
-      "oracle_note": {
-        "text": "BELOW zone $54.10. 4-fund 13F $583M. Flow absent blocks entry. +10 conf +8 score. WAIT for flow \u2265+3.",
-        "written_at": "2026-05-13"
-      },
-      "filter_reason": "below_cutoff"
-    },
     {
       "ticker": "SOFI",
       "composite": 25,
@@ -39,8 +26,34 @@
       ],
       "spot_price": 15.37,
       "oracle_note": {
-        "text": "Deep Buy #1 (comp 45). Flow +12.0 9d. CEO $1.5M buy. GTC cancelled \u2014 user chose QS instead. Respect decision. -8 conf.",
-        "written_at": "2026-05-13"
+        "text": "CEO $1.5M buy. IN ZONE $15.31. P1 BUY 82/71. GTC cancelled \u2014 user chose QS. Respect decision. -8 conf.",
+        "written_at": "2026-05-14"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "SRAD",
+      "composite": 25,
+      "convergence_paths": [
+        "path1_buy"
+      ],
+      "spot_price": 12.38,
+      "oracle_note": {
+        "text": "BUY LIST -8.7% (7d). 1.3% from -10% stop ($12.28). CEO $4.5M cluster buy is only anchor. Profile mismatch (recovery vs value). -5 conf (new).",
+        "written_at": "2026-05-14"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "BSX",
+      "composite": 15,
+      "convergence_paths": [
+        "path1_buy"
+      ],
+      "spot_price": 53.78,
+      "oracle_note": {
+        "text": "BELOW zone $53.06 (<$55 floor). 4-fund 13F $583M. P1 BUY 77/78 + P4 ABS_TARGET = 2-path. Scale 1/3 at $53. WAIT for flow >=+3 for full size.",
+        "written_at": "2026-05-14"
       },
       "filter_reason": "below_cutoff"
     },
@@ -52,45 +65,21 @@
       ],
       "spot_price": 199.91,
       "oracle_note": {
-        "text": "5-path convergence #1 pick. Buffett 81. IN ZONE $216. Flow -5 to -9 blocks timing. Zero insider 55% down = yellow flag. +10 conf +8 score.",
-        "written_at": "2026-05-13"
+        "text": "5-path convergence. Buffett 78. BELOW zone at $201.87 (<$210 floor). Falling knife despite convergence. 80% WR on 20 P3 signals = best empirical record. Wait $210.",
+        "written_at": "2026-05-14"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "SRAD",
-      "composite": 15,
-      "convergence_paths": [
-        "path1_buy"
-      ],
-      "spot_price": 12.38,
-      "oracle_note": {
-        "text": "BUY LIST -7.2%. CEO $4.5M cluster buy only anchor. 2.8% from stop. Value 37% WR. Exit if $12.28 breaches.",
-        "written_at": "2026-05-13"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "CRM",
+      "ticker": "NOC",
       "composite": 10,
       "convergence_paths": [
-        "skew_bullish"
+        "catalyst_near"
       ],
-      "spot_price": 165.09,
+      "spot_price": 553.0,
       "oracle_note": {
-        "text": "STRONGEST SaaS. $50B buyback + Agentforce $800M ARR. IN ZONE $171. Earnings 5/27 T-10. +5 conf.",
-        "written_at": "2026-05-13"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "BIIB",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 199.09,
-      "oracle_note": {
-        "text": "PDUFA date discrepancy: strategic ctx May 24 vs scanner Aug 24. Aug likely correct. Verify.",
-        "written_at": "2026-05-13"
+        "text": "Golden Dome. $96B backlog. ENTRY_ZONE $551.80 (in zone). Catalyst 71 inflated by launch cross-contamination (SPCE bug). R/R 3.2:1. +8 conf.",
+        "written_at": "2026-05-14"
       },
       "filter_reason": "below_cutoff"
     },
@@ -100,8 +89,19 @@
       "convergence_paths": [],
       "spot_price": 116.5,
       "oracle_note": {
-        "text": "5 C-suite cluster $775K. Flow +9.5. IN ZONE $115. 2-path only \u2014 need 3rd path for entry under defensive stance. +8 conf +5 score.",
-        "written_at": "2026-05-13"
+        "text": "5 C-suite cluster $775K. Flow +9.5. ENTRY_ZONE $116.07. 2-path only. +8 conf +5 score.",
+        "written_at": "2026-05-14"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "CRM",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 165.09,
+      "oracle_note": {
+        "text": "STRONGEST SaaS. ENTRY_ZONE $165.84. $50B buyback + Agentforce $800M ARR. Earnings 5/27 T-13. Assessor STRONG BUY HIGH. +5 conf.",
+        "written_at": "2026-05-14"
       },
       "filter_reason": "below_cutoff"
     },
@@ -111,48 +111,24 @@
       "convergence_paths": [],
       "spot_price": 61.76,
       "oracle_note": {
-        "text": "Triple C-suite buy $554K. AT zone ceiling $62.29. 2-path only, fails strategic 3-path bar. +8 conf +5 score.",
-        "written_at": "2026-05-13"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "HALO",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 69.39,
-      "oracle_note": {
-        "text": "SCANNER BLIND SPOT: Fwd PE 7.2 royalty grower. $1B+ milestone 1yr early. D/E artifact of royalty model. Assessor STRONG BUY HIGH.",
-        "written_at": "2026-05-13"
+        "text": "Triple C-suite buy $554K. ENTRY_ZONE $61.89. 2-path only, fails 3-path bar. +8 conf +5 score.",
+        "written_at": "2026-05-14"
       },
       "filter_reason": "below_cutoff"
     },
     {
       "ticker": "HUBS",
-      "composite": 0,
+      "composite": -10,
       "convergence_paths": [],
       "spot_price": 179.63,
       "oracle_note": {
-        "text": "Earnings AMC today. CTO $1.81M at $181.37 on 5/12. BLACKOUT. Post-earnings entry if $170-175. PEG 0.3.",
-        "written_at": "2026-05-13"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "NOC",
-      "composite": 0,
-      "convergence_paths": [
-        "catalyst_near"
-      ],
-      "spot_price": 553.0,
-      "oracle_note": {
-        "text": "Golden Dome. $96B backlog. ENTRY_ZONE $558. Heatmap INFLATED by launch cross-contamination. Flow absent. +8 conf.",
-        "written_at": "2026-05-13"
+        "text": "Earnings AMC today. BLACKOUT BUG: 4 alerts fired despite earnings (earnings_date NULL in DB). CTO $1.81M buy at $181.37. Post-earnings entry if $170-175.",
+        "written_at": "2026-05-14"
       },
       "filter_reason": "below_cutoff"
     }
   ],
-  "flow_led_picks_count": 5,
+  "flow_led_picks_count": 6,
   "flow_led_picks": [
     {
       "ticker": "MSFT",
@@ -227,7 +203,10 @@
       },
       "rationale_one_liner": "flow +8.9 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": "PEFP T0. Earnings AMC today. Sell 30sh market + 30sh limit $6.15. Lottery 40sh only. Stop $5.40.",
-      "oracle_note": null,
+      "oracle_note": {
+        "text": "Earnings AMC today. User exited. Rebuy zone $5.50-5.70. Currently $5.61 in zone. BLACKOUT \u2014 no entry until post-print T+2.",
+        "written_at": "2026-05-14"
+      },
       "rank": 4
     },
     {
@@ -269,6 +248,44 @@
       "rank": 5
     },
     {
+      "ticker": "BABA",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_quality"
+      ],
+      "spot_price": 145.47,
+      "entry": {
+        "low": 141.11,
+        "high": 146.2,
+        "mid": 143.66
+      },
+      "target": 174.56,
+      "stop": 133.83,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 861.96,
+      "suggested_shares": 6,
+      "position_risk_usd": 58.98,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality": {
+          "score": 10
+        }
+      },
+      "rationale_one_liner": "flow +8.5 5d-avg (4 TD days) + Buffett 52. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "rank": 6
+    },
+    {
       "ticker": "TEAM",
       "path": "flow_led",
       "source": "sustained",
@@ -304,7 +321,7 @@
       "rationale_one_liner": "flow +8.3 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": "New CFO. First $1B cloud quarter. Rovo AI. ABOVE zone at $69. Limit $52.",
       "oracle_note": null,
-      "rank": 6
+      "rank": 7
     },
     {
       "ticker": "CRSR",
@@ -341,8 +358,11 @@
       },
       "rationale_one_liner": "flow +8.2 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
-      "oracle_note": null,
-      "rank": 7
+      "oracle_note": {
+        "text": "HELD -3%. Flow +11.0 10d TD (flow-extreme intact). Stop $6.50 (12.4% buffer). Upgraded from -10 to -5 conf \u2014 flow persistence validates thesis.",
+        "written_at": "2026-05-14"
+      },
+      "rank": 8
     }
   ],
   "flow_extreme_picks_count": 2,
