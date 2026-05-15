@@ -1,1911 +1,1031 @@
 {
   "scan_date": "2026-05-15",
-  "generated_by": "independent-assessor-v2",
-  "market_regime": "Cautious risk-on; VIX +11% on up day signals hedged rally; tech leading (XLK +19.4% 20d), financials lagging (XLF -1.7%); US-Iran/US-China overhangs unresolved",
-  "discovery_stats": {
-    "total_discovery": 66,
-    "total_scanner": 305,
-    "overlap": 36,
-    "unique_discovery": 30,
-    "unique_scanner": 269
-  },
-  "scanner_blind_spots": [
-    {
-      "ticker": "MRK",
-      "reason": "Scanner screens for trailing fundamentals and misses near-term FDA binary events; LITESPARK-022 Phase 3 already positive means June 23 PDUFA has unusually high approval probability \u2014 event-driven asymmetry invisible to fundamental screens"
-    },
-    {
-      "ticker": "FIG",
-      "reason": "Post-IPO July 2025 with insufficient trailing history for scanner scoring models; Q1 2026 fundamentals (46% growth, 139% NDR, $751M FCF, 82% margins) represent one of the highest-quality SaaS profiles in the market but scanner filtered on 'no earnings history'"
-    },
-    {
-      "ticker": "FOUR",
-      "reason": "Scanner flagged insider buys individually but didn't synthesize founder Isaacman's $15.9M personal buy at 52-week low COMBINED with the 64% Q1 EPS beat \u2014 that convergence synthesis is where the alpha lies"
-    },
-    {
-      "ticker": "MP",
-      "reason": "Scanner filters on negative FCF and negative operating margins; DoD $400M equity stake + 10-year price floor converts speculative mining to government-backstopped infrastructure \u2014 regime shift invisible to trailing fundamental screens"
-    },
-    {
-      "ticker": "CEG",
-      "reason": "Negative FCF (-$4.5B) filters CEG from quality screens; Calpine acquisition makes trailing data pre-acquisition noise; hyperscaler PPA contracts require sector-specific AI-meets-energy research unavailable to fundamental screeners"
-    },
-    {
-      "ticker": "FLUT",
-      "reason": "Ireland-domiciled complex corporate structure may miss scanner universe; 4-person cluster (CEO/COO/President/CLO) requires synthesizing Form 4 data with sector knowledge \u2014 scanner sees 'insider activity' but not 'cluster signal'"
-    }
-  ],
   "value_picks": [
     {
-      "ticker": "MRK",
-      "name": "",
-      "price": 118.0,
+      "ticker": "ACN",
+      "name": "Accenture plc",
+      "price": 165.52,
       "opus_recommendation": "BUY",
       "framework": {
-        "value": {
+        "fcf_yield": {
           "verdict": "pass",
-          "detail": "Value score: 5/5"
+          "detail": "FCF $12.16B / market cap $103.57B = 11.74% FCF yield, well above the 7% pass threshold."
         },
-        "quality": {
+        "pe_discount": {
           "verdict": "pass",
-          "detail": "Quality score: 5/5"
+          "detail": "Forward PE 11.29 vs implied PE 16.67 (median target $248.50 / forward EPS $14.91) = 32.3% discount, above 30% pass bar."
         },
-        "catalyst": {
+        "drawdown": {
           "verdict": "pass",
-          "detail": "Catalyst score: 5/5"
+          "detail": "Down 48.73% from 52w high of $322.86; exceeds 35% pass threshold."
         },
-        "risk": {
+        "balance_sheet": {
           "verdict": "pass",
-          "detail": "Risk score: 2/5 (lower is better)"
+          "detail": "Net cash position: total cash $9.41B exceeds total debt $8.35B by $1.06B. D/E 25.5, current ratio 1.336 also clear pass."
         },
-        "score": 5.4
+        "dividend": {
+          "verdict": "pass",
+          "detail": "Dividend yield 3.98% (>2%) with payout ratio 50.98% (<70%)."
+        },
+        "institutional": {
+          "verdict": "pass",
+          "detail": "Institutions hold 82.05% (>75%); recommendation mean 1.82 (<2.5)."
+        },
+        "score": 6.0
       },
-      "source": "discovery",
-      "conviction": "HIGH",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "oversold_quality",
-      "catalysts_general": [
-        "WELIREG+Keytruda combo showed 28% disease recurrence reduction in adjuvant RCC Phase 3 (LITESPARK-022); June 23 PDUFA Priority Review; Q1 Keytruda +12%, Winrevair +88%; 39 analysts, zero sells (Tier 1 Merck.com/FDA filings + Tier 3 institutional)",
-        "Discovery: Q1 2026 revenue up 5% to $16.3B with Keytruda +12% to $8B and Winrevair +88% to $525M; zero sell ratings among 39 analysts, median PT $130, and a PDUFA decision for WELIREG + Keytruda in June; analysts say market is over-discounting the 2028 Keytruda patent cliff relative to the deep pipeline."
-      ],
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "AI is dual-edged for ACN: it drives a large GenAI consulting and transformation pipeline (data, AI, cloud services), but also threatens to compress billable hours and commoditize systems integration. The 49% drawdown reflects market fear that AI disintermediates IT services labor; the offsetting GenAI bookings keep net exposure roughly balanced."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals provided in input. Short interest is modest at 3.9% but rose 17.75% month-over-month (shares short 21.5M vs 18.2M prior) \u2014 a mild build worth monitoring, not yet a crowded short."
+      },
+      "financials": {
+        "current_price": "$165.52",
+        "range_52w": "$155.82 - $322.86",
+        "forward_pe": "11.29"
+      },
       "catalysts_verified": [],
+      "catalysts_general": [
+        "Trading at a 32% discount to analyst consensus implied valuation (median target $248.50)",
+        "Forward PE of 11.29 vs trailing PE 13.79 implies expected earnings growth",
+        "Net cash balance sheet with 11.74% FCF yield supports buybacks and the 3.98% dividend",
+        "ROE of 24.8% indicates high-quality capital efficiency despite the sell-off"
+      ],
+      "downside_scenarios": [
+        {
+          "price": 155.82,
+          "pe_at_level": "10.5x",
+          "scenario": "Retest of 52-week low on continued AI-disruption fear"
+        },
+        {
+          "price": 134.0,
+          "pe_at_level": "9.0x",
+          "scenario": "Recession-driven enterprise IT spending cuts push valuation to a deep-trough multiple"
+        }
+      ],
       "ideal_entry": {
-        "price": 113.0,
-        "reasoning": "Entry zone: $108.00-$118.00 | Fair value: $137.00"
+        "price": 158.0,
+        "reasoning": "Near the $155.82 52-week low, offering a ~10.6x forward PE entry with a ~4.2% dividend yield and minimal downside to the established floor."
       },
-      "analyst_take": "June 23 PDUFA with LITESPARK-022 positive Phase 3 data; 11.9x Fwd P/E; $14B FCF; zero sell ratings",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "comparables": [
+        {
+          "ticker": "CTSH",
+          "forward_pe": "7.69",
+          "growth": "5.8% revenue growth",
+          "note": "Direct IT services peer in input \u2014 cheaper but lower-margin and smaller scale"
+        },
+        {
+          "ticker": "IBM",
+          "forward_pe": "~18 (not in input data)",
+          "growth": "low-single-digit (external estimate, not in input)",
+          "note": "Larger consulting peer; referenced for context only, figures not from input"
+        }
+      ],
+      "analyst_take": "Accenture is the highest-quality name in the group, passing all six value criteria with a net-cash balance sheet, 11.7% FCF yield and a sustainable 4% dividend. The 49% drawdown prices in real AI-disruption risk to the consulting model, but the same AI wave fuels a sizable transformation pipeline. At 11.3x forward earnings versus a 16.7x implied consensus multiple, the risk/reward favors accumulation."
     },
     {
-      "ticker": "BKNG",
-      "name": "",
-      "price": 165.0,
+      "ticker": "CTSH",
+      "name": "Cognizant Technology Solutions",
+      "price": 47.0,
       "opus_recommendation": "BUY",
       "framework": {
-        "value": {
+        "fcf_yield": {
           "verdict": "pass",
-          "detail": "Value score: 5/5"
+          "detail": "FCF $1.91B / market cap $22.39B = 8.52% FCF yield, above the 7% pass threshold."
         },
-        "quality": {
+        "pe_discount": {
           "verdict": "pass",
-          "detail": "Quality score: 5/5"
+          "detail": "Forward PE 7.69 vs implied PE 11.85 (median target $73.00 / forward EPS $6.16) = 35.1% discount, above 30% pass bar."
         },
-        "catalyst": {
+        "drawdown": {
           "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
+          "detail": "Down 46.0% from 52w high of $87.03; exceeds 35% pass threshold."
         },
-        "risk": {
+        "balance_sheet": {
           "verdict": "pass",
-          "detail": "Risk score: 2/5 (lower is better)"
+          "detail": "Net cash: total cash $1.52B exceeds total debt $1.09B by $0.42B. D/E 7.25 and current ratio 2.226 are both very strong."
         },
-        "score": 5.1
+        "dividend": {
+          "verdict": "pass",
+          "detail": "Dividend yield 2.87% (>2%) with a low payout ratio of 27.33% (<70%)."
+        },
+        "institutional": {
+          "verdict": "pass",
+          "detail": "Institutions hold 105.55% (data quirk \u2014 over 100% from securities lending/shorting; treated as >75%); recommendation mean 2.17 (<2.5)."
+        },
+        "score": 6.0
       },
-      "source": "both",
-      "conviction": "HIGH",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "capitulation_signals",
-      "catalysts_general": [
-        "Q1 2026 beat; management models Hormuz disruption through June then H2 recovery; RSI 10.22 / Williams %R -93.71 extreme oversold; 8.1% FCF yield; 35 analysts $220 consensus (Tier 1 Q1 slides + Tier 4 Benzinga)",
-        "Discovery: World's dominant OTA (Booking.com, Priceline) down 27% from 52wk high with RSI at extreme oversold 10.44, driven by Strait of Hormuz crisis causing bookings cancellations and management guiding Q2 room night growth of only 2-4% \u2014 but this is a temporary geopolitical dislocation in a post-split stock (~$155 post 25:1 April 2026 split) now trading at a multi-year valuation low of 12x EV/EBITDA with 87% gross margins, 8.1% FCF yield, and 93.6% LTM ROIC; catalyst is Middle East tension reduction or Q2 results showing impact containment; Street consensus $224 implies 44% upside."
-      ],
+      "ai_exposure": {
+        "verdict": "threat",
+        "detail": "Cognizant's revenue skews toward application development, systems integration and outsourcing \u2014 exactly the labor-arbitrage work most exposed to AI-driven automation. While it markets AI services, the structural risk that GenAI compresses headcount-based outsourcing revenue is material and is a likely driver of the 46% drawdown."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals in input. Short interest is elevated at 8.71% (6.82 days to cover) and grew 24.25% month-over-month (41.2M shares short vs 33.1M) \u2014 a meaningful bearish build, the largest relative caution flag among the larger-cap names here."
+      },
+      "financials": {
+        "current_price": "$47.00",
+        "range_52w": "$45.48 - $87.03",
+        "forward_pe": "7.69"
+      },
       "catalysts_verified": [],
+      "catalysts_general": [
+        "Forward PE of 7.69 is the cheapest in the peer group and a 35% discount to implied consensus valuation",
+        "PEG ratio of 0.75 suggests earnings growth is under-priced",
+        "Current ratio of 2.23 and near-zero net debt provide strong downside protection",
+        "Trading just 3.3% above its 52-week low \u2014 limited established support below"
+      ],
+      "downside_scenarios": [
+        {
+          "price": 45.48,
+          "pe_at_level": "7.4x",
+          "scenario": "Break to fresh 52-week low as short interest continues building"
+        },
+        {
+          "price": 40.0,
+          "pe_at_level": "6.5x",
+          "scenario": "AI-disruption thesis confirmed by a guidance cut, pushing to a structural-decline multiple"
+        }
+      ],
       "ideal_entry": {
-        "price": 152.5,
-        "reasoning": "Entry zone: $140.00-$165.00 | Fair value: $220.00"
+        "price": 45.5,
+        "reasoning": "At/near the $45.48 52-week low, locking in ~7.4x forward earnings and a ~3% dividend; given the rising short interest, scaling in near support is prudent."
       },
-      "analyst_take": "11.8x EV/EBITDA vs historical 20-25x; 87% gross margin dominant OTA; geopolitical dip with H2 recovery model",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "comparables": [
+        {
+          "ticker": "ACN",
+          "forward_pe": "11.29",
+          "growth": "8.3% revenue growth",
+          "note": "Larger, higher-margin IT services peer in input \u2014 commands a premium multiple"
+        },
+        {
+          "ticker": "EPAM",
+          "forward_pe": "6.47",
+          "growth": "7.6% revenue growth",
+          "note": "IT services peer in input \u2014 even cheaper but small-cap with heavy short interest"
+        }
+      ],
+      "analyst_take": "Cognizant passes all six value criteria and is the cheapest large-cap in the set at 7.7x forward earnings with a net-cash balance sheet and a well-covered 2.9% dividend. The catch is genuine: its outsourcing-heavy mix is the most AI-exposed of the group, and short interest is building fast. The valuation compensates for that risk, making it a BUY best executed near the 52-week low."
     },
     {
-      "ticker": "FOUR",
-      "name": "",
-      "price": 45.0,
+      "ticker": "EPAM",
+      "name": "EPAM Systems, Inc.",
+      "price": 92.64,
       "opus_recommendation": "BUY",
       "framework": {
-        "value": {
+        "fcf_yield": {
           "verdict": "pass",
-          "detail": "Value score: 5/5"
+          "detail": "FCF $0.69B / market cap $4.77B = 14.52% FCF yield, the highest in the group and well above the 7% threshold."
         },
-        "quality": {
+        "pe_discount": {
           "verdict": "pass",
-          "detail": "Quality score: 4/5"
+          "detail": "Forward PE 6.47 vs implied PE 10.07 (median target $142.00 / forward EPS $14.11) = 35.7% discount, above 30% pass bar."
         },
-        "catalyst": {
+        "drawdown": {
           "verdict": "pass",
-          "detail": "Catalyst score: 5/5"
+          "detail": "Down 58.37% from 52w high of $222.53 \u2014 the deepest drawdown in the group, far above the 35% threshold."
         },
-        "risk": {
+        "balance_sheet": {
+          "verdict": "pass",
+          "detail": "Net cash: total cash $1.04B exceeds total debt $0.29B by $0.75B. D/E 8.39 and current ratio 2.666 are both very strong."
+        },
+        "dividend": {
           "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
+          "detail": "No dividend (payout ratio 0.0, no dividend_yield field) \u2014 scored neutral per framework rules, counts as borderline (0.5)."
         },
-        "score": 4.8
+        "institutional": {
+          "verdict": "pass",
+          "detail": "Institutions hold 115.26% (data quirk from securities lending; treated as >75%); recommendation mean 1.89 (<2.5)."
+        },
+        "score": 5.5
       },
-      "source": "scanner",
-      "conviction": "HIGH",
-      "source_detail": "From scanner universe",
-      "discovery_strategy": "",
-      "catalysts_general": [
-        "Jared Isaacman bought 388,500 shares ~$15.9M on May 11-12 at 52-week low; Q1 EPS $1.60 vs $0.97 consensus (+64%); FY guidance reaffirmed 26-31% growth (Tier 1 SEC Form 4 + Tier 1 earnings)"
-      ],
+      "ai_exposure": {
+        "verdict": "threat",
+        "detail": "EPAM's core business is digital platform engineering and software development \u2014 the work most directly substitutable by AI coding assistants. AI-driven productivity gains could compress its headcount-billing model. It sells AI services too, but the disruption risk to its primary revenue line is the clearest of the group and underlies the 58% collapse."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals in input. Short interest is very high at 20.95% of float (5.72 days to cover) and rose 15.15% month-over-month (7.8M shares short vs 6.8M) \u2014 a crowded short that creates both elevated risk and squeeze potential on any positive surprise."
+      },
+      "financials": {
+        "current_price": "$92.64",
+        "range_52w": "$89.25 - $222.53",
+        "forward_pe": "6.47"
+      },
       "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 41.5,
-        "reasoning": "Entry zone: $38.00-$45.00 | Fair value: $72.00"
-      },
-      "analyst_take": "Founder bought $15.9M at 52-week low; 64% Q1 EPS beat; 6.3x Fwd P/E with 32% revenue growth",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "LNG",
-      "name": "",
-      "price": 248.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 5/5"
-        },
-        "risk": {
-          "verdict": "pass",
-          "detail": "Risk score: 2/5 (lower is better)"
-        },
-        "score": 4.8
-      },
-      "source": "both",
-      "conviction": "HIGH",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "energy_security",
       "catalysts_general": [
-        "Iran strikes took ~12.8 MT/year Qatar LNG offline; Corpus Christi Stage 3 Train 5 online Feb 2026; FY2025 EPS $24.13 vs $13.50 consensus; Citi $330, JPM $338, BofA $322 targets (Tier 1 earnings + Tier 4 Reuters)",
-        "Discovery: Iran's March 2026 missile strikes destroyed Qatar's LNG infrastructure (12.8 MT/year capacity offline with 3-5 year repair timeline), creating a structural supply gap that Cheniere is directly filling \u2014 95%+ capacity contracted long-term with BofA raising price target to $322 and 20 buy ratings."
+        "Forward PE of 6.47 and PEG of 0.46 \u2014 deeply discounted relative to 18.8% earnings growth",
+        "14.52% FCF yield is the highest in the peer group",
+        "20.95% short interest sets up squeeze potential on any earnings beat",
+        "Net cash balance sheet ($0.75B) provides resilience through a downturn"
       ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 240.0,
-        "reasoning": "Entry zone: $232.00-$248.00 | Fair value: $307.00"
-      },
-      "analyst_take": "Qatar LNG offline post-Iran strikes; 95%+ capacity contracted through 2030; new trains online; $320-338 analyst targets",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "SPGI",
-      "name": "",
-      "price": 415.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
+      "downside_scenarios": [
+        {
+          "price": 89.25,
+          "pe_at_level": "6.3x",
+          "scenario": "Break to 52-week low as short pressure persists"
         },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 5/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "pass",
-          "detail": "Risk score: 2/5 (lower is better)"
-        },
-        "score": 4.8
-      },
-      "source": "scanner",
-      "conviction": "HIGH",
-      "source_detail": "From scanner universe",
-      "discovery_strategy": "",
-      "catalysts_general": [
-        "Q1 2026 adj EPS $4.97 vs $4.82 beat; Mobility spin-off announced May 13; 23 of 25 analysts Buy/Outperform; mean target $534 (+32%); fundamentals unchanged (Tier 1 earnings + Tier 4 Morningstar)"
+        {
+          "price": 75.0,
+          "pe_at_level": "5.3x",
+          "scenario": "AI substitution fears confirmed by a revenue/margin guide-down, derating to a distressed multiple"
+        }
       ],
-      "catalysts_verified": [],
       "ideal_entry": {
-        "price": 400.0,
-        "reasoning": "Entry zone: $385.00-$415.00 | Fair value: $537.00"
+        "price": 89.0,
+        "reasoning": "Near the $89.25 52-week low; entering at support caps downside while the 6.5x forward multiple and net cash provide a wide margin of safety. Position-size for the small-cap volatility and 21% short interest."
       },
-      "analyst_take": "Near-monopoly franchise at 30% discount on one guidance miss; Mobility spin-off is a free option; 23/25 analysts Buy",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "CACI",
-      "name": "",
-      "price": 520.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
+      "comparables": [
+        {
+          "ticker": "CTSH",
+          "forward_pe": "7.69",
+          "growth": "5.8% revenue growth",
+          "note": "IT services peer in input \u2014 larger, dividend-paying, lower short interest"
         },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 5/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 4.5
-      },
-      "source": "discovery",
-      "conviction": "HIGH",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "sector_rotation",
-      "catalysts_general": [
-        "ARKA acquisition ($2.6B) adds EO/IR hyperspectral imaging + agentic AI; Q3 FY2026 revenue $2.3B +8.5%; FY2026 guidance raised to $9.5-9.6B; new awards $231M USSOCOM + $306M DLA + $250M Army EW (Tier 1 SEC 8-K + Tier 2 company IR)",
-        "Discovery: Defense-AI pure-play with 11.2% YoY revenue growth in Q1 FY26, $33.9B backlog, and just completed the $2.6B ARKA acquisition to pivot into 'Agentic AI' for national security \u2014 rides record $900B+ DoD FY2026 budget with a differentiated AI integration story."
+        {
+          "ticker": "ACN",
+          "forward_pe": "11.29",
+          "growth": "8.3% revenue growth",
+          "note": "Premium-multiple peer in input; EPAM trades at a steep discount to it"
+        }
       ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 505.0,
-        "reasoning": "Entry zone: $490.00-$520.00 | Fair value: $680.00"
-      },
-      "analyst_take": "Defense-AI pure-play; $33.9B backlog; ARKA acquisition adds agentic AI/geospatial; 40% upside to $707 analyst consensus",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "analyst_take": "EPAM scores 5.5/6, missing a full mark only on the absence of a dividend, and offers the cheapest forward multiple (6.5x), highest FCF yield (14.5%) and deepest drawdown (58%) in the group with a net-cash balance sheet. The offsetting risks are real \u2014 its engineering-services model is the most AI-disruptable here and 21% of the float is sold short. It rates a BUY for the value, but as a small-cap with squeeze-and-shock two-way risk it warrants a smaller position and entry near the 52-week low."
     },
     {
       "ticker": "WDAY",
-      "name": "",
-      "price": 125.0,
-      "opus_recommendation": "BUY",
+      "name": "Workday, Inc.",
+      "price": 123.385,
+      "opus_recommendation": "WATCHLIST",
       "framework": {
-        "value": {
+        "fcf_yield": {
           "verdict": "pass",
-          "detail": "Value score: 5/5"
+          "detail": "FCF $3.01B / market cap $30.46B = 9.89% FCF yield, above the 7% threshold."
         },
-        "quality": {
+        "pe_discount": {
           "verdict": "pass",
-          "detail": "Quality score: 4/5"
+          "detail": "Forward PE 9.80 vs implied PE 14.26 (median target $177.50 / forward EPS $12.45) = 31.3% discount, just above the 30% pass bar."
         },
-        "catalyst": {
+        "drawdown": {
           "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
+          "detail": "Down 55.08% from 52w high of $274.65; exceeds the 35% threshold."
         },
-        "risk": {
+        "balance_sheet": {
+          "verdict": "pass",
+          "detail": "Net cash: total cash $5.44B exceeds total debt $3.82B by $1.62B. D/E 48.96 (<50) and current ratio 1.322 (>1.2) also independently pass."
+        },
+        "dividend": {
           "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
+          "detail": "No dividend (payout ratio 0.0, no dividend_yield field) \u2014 scored neutral per framework rules, counts as borderline (0.5)."
         },
-        "score": 4.5
+        "institutional": {
+          "verdict": "pass",
+          "detail": "Institutions hold 103.15% (data quirk from securities lending; treated as >75%); recommendation mean 1.95 (<2.5)."
+        },
+        "score": 5.5
       },
-      "source": "scanner",
-      "conviction": "HIGH",
-      "source_detail": "From scanner universe",
-      "discovery_strategy": "",
-      "catalysts_general": [
-        "56% off high at five-year valuation low; $28.1B subscription backlog; $400M+ AI ARR; 38 analysts $177.50 consensus (+49%); Fwd P/E 9.5x historically cheapest ever (Tier 3 TIKR + Tier 4 Bloomberg)"
-      ],
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "Workday's cloud HCM and financials suite can embed AI/agentic features that deepen its enterprise moat (a tailwind), but AI-native HR and finance startups also threaten to attack its core. With high 75.7% gross margins and sticky enterprise contracts, net exposure is balanced rather than clearly disruptive."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals in input. Short interest is elevated at 14.7% and surged 58.65% month-over-month (26.1M shares short vs 16.5M) \u2014 the sharpest short build in the group, signaling growing bearish positioning ahead of an earnings or guidance event."
+      },
+      "financials": {
+        "current_price": "$123.39",
+        "range_52w": "$110.36 - $274.65",
+        "forward_pe": "9.80"
+      },
       "catalysts_verified": [],
+      "catalysts_general": [
+        "Forward PE of 9.80 vs trailing PE of 47.10 \u2014 the framework discount hinges almost entirely on a forecast EPS jump from $2.59 trailing to $12.45 forward",
+        "75.7% gross margins and 14.5% revenue growth indicate a high-quality SaaS franchise",
+        "Net cash balance sheet ($1.62B) and 9.9% FCF yield are genuine value attributes",
+        "Short interest spiked 58.65% month-over-month \u2014 a notable bearish signal"
+      ],
+      "downside_scenarios": [
+        {
+          "price": 110.36,
+          "pe_at_level": "8.9x",
+          "scenario": "Retest of 52-week low as the short build pressures the stock"
+        },
+        {
+          "price": 100.0,
+          "pe_at_level": "8.0x",
+          "scenario": "Forward EPS estimate proves optimistic and the gap to the 47x trailing multiple reasserts itself"
+        }
+      ],
       "ideal_entry": {
-        "price": 118.5,
-        "reasoning": "Entry zone: $112.00-$125.00 | Fair value: $175.00"
+        "price": 112.0,
+        "reasoning": "Near the $110.36 52-week low. Entry should wait for confirmation that the forward EPS trajectory is real \u2014 the 47x trailing PE means the value case is unproven until earnings converge toward the forecast."
       },
-      "analyst_take": "9.5x Fwd P/E for 75.7% gross margin SaaS at five-year low; May 21 earnings catalyst; 14.7% SI squeeze potential",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "comparables": [
+        {
+          "ticker": "INTU",
+          "forward_pe": "14.28",
+          "growth": "17.4% revenue growth",
+          "note": "Application-software peer in input \u2014 higher-margin, profitable on a trailing basis, dividend-paying"
+        },
+        {
+          "ticker": "SAP",
+          "forward_pe": "~25 (not in input data)",
+          "growth": "low-double-digit (external estimate, not in input)",
+          "note": "Enterprise application-suite competitor; referenced for context, figures not from input"
+        }
+      ],
+      "analyst_take": "Workday mechanically scores 5.5/6, but the pe_discount pass rests on a forward EPS of $12.45 against just $2.59 trailing \u2014 a near-5x jump that makes the 9.8x forward multiple far less reliable than the headline suggests. Combined with a 58% month-over-month surge in short interest, the value signal is not yet confirmed. The franchise quality (75.7% gross margins, net cash) is real, so it earns a WATCHLIST pending evidence that earnings actually converge toward the forecast."
     },
     {
-      "ticker": "AEM",
-      "name": "",
-      "price": 200.0,
-      "opus_recommendation": "BUY",
+      "ticker": "LDOS",
+      "name": "Leidos Holdings, Inc.",
+      "price": 125.55,
+      "opus_recommendation": "WATCHLIST",
       "framework": {
-        "value": {
+        "fcf_yield": {
           "verdict": "pass",
-          "detail": "Value score: 4/5"
+          "detail": "FCF $1.19B / market cap $15.79B = 7.57% FCF yield, just above the 7% threshold."
         },
-        "quality": {
+        "pe_discount": {
           "verdict": "pass",
-          "detail": "Quality score: 5/5"
+          "detail": "Forward PE 9.54 vs implied PE 14.74 (median target $194.00 / forward EPS $13.16) = 35.3% discount, above the 30% pass bar."
         },
-        "catalyst": {
+        "drawdown": {
           "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
+          "detail": "Down 38.99% from 52w high of $205.77; exceeds the 35% threshold."
         },
-        "risk": {
+        "balance_sheet": {
           "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
+          "detail": "Not net cash: total debt $6.94B vastly exceeds total cash $0.46B (net debt $6.49B). D/E 137.1 falls in the 50-150 borderline band; current ratio 1.397 (>0.8) keeps it out of fail."
         },
-        "score": 4.5
+        "dividend": {
+          "verdict": "borderline",
+          "detail": "Dividend yield 1.37% (>0% but not >2%) with payout ratio 15.19% (<90%) \u2014 meets borderline, not pass."
+        },
+        "institutional": {
+          "verdict": "pass",
+          "detail": "Institutions hold 80.86% (>75%); recommendation mean 2.13 (<2.5)."
+        },
+        "score": 5.0
       },
-      "source": "scanner",
-      "conviction": "HIGH",
-      "source_detail": "From scanner universe",
-      "discovery_strategy": "",
-      "catalysts_general": [
-        "Record Q1 2026: net income $1.7B (+100%+ YoY), realized gold $4,861/oz; $14B Ontario investment through 2030; renewed $2B buyback; D/E near zero (Tier 1 earnings + Tier 4 Reuters/Bloomberg)"
-      ],
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "Leidos serves government and defense customers, applying AI/ML to national-security, cyber and intelligence missions. Rising U.S. defense spend on AI-enabled systems is a structural demand tailwind, and its government-contract base is insulated from the AI labor-substitution risk pressuring the commercial IT-services names in this group."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals in input. Short interest is low at 3.0% and fell 9.04% month-over-month (3.3M shares short vs 3.6M) \u2014 the most constructive positioning backdrop in the group, with no bearish crowding."
+      },
+      "financials": {
+        "current_price": "$125.55",
+        "range_52w": "$121.53 - $205.77",
+        "forward_pe": "9.54"
+      },
       "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 190.0,
-        "reasoning": "Entry zone: $180.00-$200.00 | Fair value: $252.00"
-      },
-      "analyst_take": "Debt-free gold major at record earnings; $14B Ontario investment; $2B buyback; best-in-class for institutional gold exposure",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "LLY",
-      "name": "",
-      "price": 1020.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 5/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 5/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 4.5
-      },
-      "source": "scanner",
-      "conviction": "HIGH",
-      "source_detail": "From scanner universe",
-      "discovery_strategy": "",
       "catalysts_general": [
-        "Foundayo (oral orforglipron) FDA approved April 1 2026; Q1 revenue $19.8B +56% YoY; raised FY guidance $82-85B; retatrutide 28.7% weight loss Phase 3; additional $4.5B Indiana manufacturing (Tier 1 Lilly IR + Tier 3 Goldman Sachs)"
+        "Forward PE of 9.54 at a 35% discount to implied consensus valuation",
+        "ROE of 30.6% is the highest in the group, though partly inflated by financial leverage",
+        "Short interest declined month-over-month \u2014 no bearish crowding",
+        "Earnings growth is negative (-7.6%) and PEG of 2.46 is the worst in the group \u2014 a clear quality concern"
       ],
-      "catalysts_verified": [],
+      "downside_scenarios": [
+        {
+          "price": 121.53,
+          "pe_at_level": "9.2x",
+          "scenario": "Break to 52-week low on a defense-budget or contract-award disappointment"
+        },
+        {
+          "price": 105.0,
+          "pe_at_level": "8.0x",
+          "scenario": "Negative earnings growth persists and the leveraged balance sheet ($6.5B net debt) draws a valuation discount"
+        }
+      ],
       "ideal_entry": {
-        "price": 990.0,
-        "reasoning": "Entry zone: $960.00-$1020.00 | Fair value: $1225.00"
+        "price": 122.0,
+        "reasoning": "Just above the $121.53 52-week low. Entry near support is warranted because the high leverage (D/E 137) and negative earnings growth leave little margin for error if a contract or budget catalyst disappoints."
       },
-      "analyst_take": "Foundayo FDA approval; Q1 +56% revenue raised guidance; oral GLP-1 beat Novo head-to-head; analyst mean $1,250",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "comparables": [
+        {
+          "ticker": "ACN",
+          "forward_pe": "11.29",
+          "growth": "8.3% revenue growth",
+          "note": "IT services peer in input \u2014 net cash vs LDOS's $6.5B net debt; commercial rather than government end-markets"
+        },
+        {
+          "ticker": "BAH",
+          "forward_pe": "~16 (not in input data)",
+          "growth": "high-single-digit (external estimate, not in input)",
+          "note": "Closest government-services competitor; referenced for context, figures not from input"
+        }
+      ],
+      "analyst_take": "Leidos scores 5.0/6, with full passes on valuation and drawdown but only borderline marks on a leveraged balance sheet (D/E 137, $6.5B net debt) and a sub-2% dividend. Its defense/government end-markets give it the cleanest AI tailwind in the group and the most favorable short positioning, but negative earnings growth (-7.6%) and a 2.46 PEG flag a quality problem. The combination of leverage and shrinking earnings keeps it a WATCHLIST rather than a BUY until earnings stabilize."
     },
     {
       "ticker": "INTU",
-      "name": "",
-      "price": 395.0,
+      "name": "Intuit Inc.",
+      "price": 378.29,
       "opus_recommendation": "BUY",
       "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 5/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
+        "fcf_yield": {
           "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
+          "detail": "FCF $5.30B / market cap $105.27B = 5.04% FCF yield, in the 4-7% borderline band."
         },
-        "score": 4.5
+        "pe_discount": {
+          "verdict": "pass",
+          "detail": "Forward PE 14.28 vs implied PE 22.28 (median target $590.00 / forward EPS $26.48) = 35.9% discount, above the 30% pass bar."
+        },
+        "drawdown": {
+          "verdict": "pass",
+          "detail": "Down 53.51% from 52w high of $813.70; exceeds the 35% threshold."
+        },
+        "balance_sheet": {
+          "verdict": "pass",
+          "detail": "Not net cash (net debt $3.91B), but D/E 36.15 (<50) and current ratio 1.323 (>1.2) both satisfy the pass condition."
+        },
+        "dividend": {
+          "verdict": "borderline",
+          "detail": "Dividend yield 1.23% (>0% but not >2%) with payout ratio 29.15% (<90%) \u2014 meets borderline, not pass."
+        },
+        "institutional": {
+          "verdict": "pass",
+          "detail": "Institutions hold 91.64% (>75%); recommendation mean 1.47 \u2014 the strongest analyst conviction in the group (<2.5)."
+        },
+        "score": 5.0
       },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "deep_drawdowns",
-      "catalysts_general": [
-        "Q2 FY2026 revenue +17% to $4.7B, guidance reaffirmed; Anthropic AI partnership Feb 2026; IRS Direct File expanded 25 states but enterprise/SMB segment insulated; 32 analysts $590 consensus (Tier 1 Intuit IR + Tier 4 TIKR)",
-        "Discovery: Quality SaaS / fintech (TurboTax, QuickBooks, Credit Karma) crushed 52% from $814 52wk high to ~$388 on AI-disruption narrative overreach, while Anthropic AI partnership (Feb 2026), new AI-focused board directors, and massive ongoing buyback signal management is buying the story \u2014 Q3 FY2026 earnings May 20 (5 days out) with $12.48 EPS / $8.5B rev estimates are the imminent catalyst; bear case is AI commoditizes tax prep which is real but overstated given 80.9% gross margins, 34% FCF margins, and 5yr revenue CAGR of 19.7%; analyst consensus $553 implies 42% upside."
-      ],
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "Intuit is positioning AI as a core growth driver \u2014 embedding GenAI 'done-for-you' experiences across TurboTax, QuickBooks and Credit Karma to deepen engagement and ARPU. With 80.9% gross margins and a dominant SMB/consumer finance franchise, AI is more a monetization lever and moat-widener than a threat, though it must defend against AI-native tax/accounting entrants."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals in input. Short interest is low at 4.17% but rose 46.21% month-over-month (10.1M shares short vs 6.9M) \u2014 a notable relative build off a small base, worth monitoring but not yet a crowded short."
+      },
+      "financials": {
+        "current_price": "$378.29",
+        "range_52w": "$342.11 - $813.70",
+        "forward_pe": "14.28"
+      },
       "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 375.0,
-        "reasoning": "Entry zone: $355.00-$395.00 | Fair value: $530.00"
-      },
-      "analyst_take": "53% off high; May 20 earnings catalyst; 17% growth, 81% margins at 14x Fwd P/E; IRS Direct File risk overstated",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "CRDO",
-      "name": "",
-      "price": 190.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 5/5"
-        },
-        "risk": {
-          "verdict": "pass",
-          "detail": "Risk score: 2/5 (lower is better)"
-        },
-        "score": 4.5
-      },
-      "source": "scanner",
-      "conviction": "MEDIUM",
-      "source_detail": "From scanner universe",
-      "discovery_strategy": "",
       "catalysts_general": [
-        "201% revenue growth, 412% earnings growth, 67.8% gross margin, $172M FCF; prior Q3 earnings caused -18.55% despite strong results; June 3 next binary; 13/18 analysts Buy; Zacks Strong Buy (Tier 3 Zacks/Simply Wall St)"
+        "Forward PE of 14.28 \u2014 a 36% discount to implied consensus and the cheapest INTU has looked relative to its history of premium multiples",
+        "Highest-quality fundamentals in the group: 80.9% gross margins, 21.6% profit margins, 17.4% revenue growth, 48.5% earnings growth",
+        "Strongest analyst conviction in the set (recommendation mean 1.47, 29 of 34 buy/strong-buy)",
+        "PEG of 0.97 suggests growth is fairly-to-cheaply priced after a 53% drawdown"
       ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 182.5,
-        "reasoning": "Entry zone: $175.00-$190.00 | Fair value: $207.00"
-      },
-      "analyst_take": "67.8% gross margin; 200%+ revenue growth; near-zero leverage; June 3 earnings binary catalyst",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "NOW",
-      "name": "",
-      "price": 95.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
+      "downside_scenarios": [
+        {
+          "price": 342.11,
+          "pe_at_level": "12.9x",
+          "scenario": "Retest of 52-week low on a broad software/SaaS derating"
         },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 5/5"
-        },
-        "catalyst": {
-          "verdict": "borderline",
-          "detail": "Catalyst score: 3/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "both",
-      "conviction": "HIGH",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "ai_software_platforms",
-      "catalysts_general": [
-        "Q1 2026 revenue +22% YoY beat; Middle East subscription delay characterized as temporary by CFO; FY2026 guidance RAISED; Now Assist $600M+ ARR; Bernstein PT $236, Citi Buy initiated (Tier 1 earnings + Tier 4 CNBC)",
-        "Discovery: Now Assist ARR surpassed $600M in Q4 2025 (net-new ACV doubled YoY); Q1 2026 subscription revenues +19% YoY; positioned as the enterprise workflow 'unifying layer' that AI agents plug into \u2014 customers pay for outcomes not seats, driving durable ARPU expansion."
+        {
+          "price": 310.0,
+          "pe_at_level": "11.7x",
+          "scenario": "Growth decelerates or AI-driven tax-prep disruption fears intensify, compressing the multiple further"
+        }
       ],
-      "catalysts_verified": [],
       "ideal_entry": {
-        "price": 90.0,
-        "reasoning": "Entry zone: $85.00-$95.00 | Fair value: $150.00"
+        "price": 345.0,
+        "reasoning": "Near the $342.11 52-week low, which would lock in roughly 13x forward earnings for a franchise with 80%+ gross margins and ~17% growth \u2014 an unusually cheap entry for this quality of business."
       },
-      "analyst_take": "57% off high on transient Middle East headwind; 5.6x vs 13x historical EV/revenue; $184 analyst consensus implies 100%+ upside",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "FCN",
-      "name": "",
-      "price": 152.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
+      "comparables": [
+        {
+          "ticker": "WDAY",
+          "forward_pe": "9.80",
+          "growth": "14.5% revenue growth",
+          "note": "Application-software peer in input \u2014 optically cheaper but the forward multiple relies on a large unproven EPS jump"
         },
-        "quality": {
-          "verdict": "borderline",
-          "detail": "Quality score: 3/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 5/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "both",
-      "conviction": "HIGH",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "insider_buying",
-      "catalysts_general": [
-        "CEO Gunby $1.44M, CFO Eun Nam $289K, CSO $345K all open-market May 13-14 near 52-week low $140.84; Q1 2026 revenue $983M +9.5% YoY beat (Tier 1 SEC Form 4 + Tier 1 earnings)",
-        "Discovery: CEO bought $1.44M, CFO bought $289K, and Chief Strategy Officer bought $345K all in open-market transactions on May 13-14 \u2014 a high-conviction cluster buy as the stock traded down 19% in under a month to near 52-week lows; GF Value shows 29.7% margin of safety."
+        {
+          "ticker": "ADBE",
+          "forward_pe": "~18 (not in input data)",
+          "growth": "low-double-digit (external estimate, not in input)",
+          "note": "Comparable high-margin application-software franchise; referenced for context, figures not from input"
+        }
       ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 146.0,
-        "reasoning": "Entry zone: $140.00-$152.00 | Fair value: $182.00"
-      },
-      "analyst_take": "CEO+CFO+CSO cluster buy in same 2-day window at 52-week lows; 13x Fwd P/E; only 2 analysts = mispricing opportunity",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "ADBE",
-      "name": "",
-      "price": 250.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 5/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "borderline",
-          "detail": "Catalyst score: 3/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "both",
-      "conviction": "HIGH",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "oversold_quality",
-      "catalysts_general": [
-        "$25B buyback announced April 2026; Q1 FY26 revenue +12% to record $6.4B, 47% op margins; AI-first ARR tripled YoY; analyst consensus 13 Buy mean PT ~$320 (Tier 1 earnings + Tier 2 company PR)",
-        "Discovery: Down 46% from 52-week high on AI disruption fears, yet Q1 FY26 revenue grew 12% YoY to a record $6.4B with 47% operating margins and $2.96B operating cash flow; $25B buyback signals management conviction at a P/E of 14.4x versus 5-year median of 41.7x, with GF Value indicating 60% undervaluation."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 237.5,
-        "reasoning": "Entry zone: $225.00-$250.00 | Fair value: $310.00"
-      },
-      "analyst_take": "9x Fwd P/E; $25B buyback (24% of market cap); AI disruption priced in but not materializing in financials",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "FIG",
-      "name": "",
-      "price": 23.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "fail",
-          "detail": "Value score: 2/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 5/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 5/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "discovery",
-      "conviction": "HIGH",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "ai_software",
-      "catalysts_general": [
-        "Q1 2026 revenue +46% YoY to $333M, NDR 139% (best 2+ years), raised 2026 guide $55M; AI credit monetization exceeding expectations; stock +12% post-earnings; analyst target $38.50 (Tier 1 Figma IR + Tier 3 Futurum)",
-        "Discovery: Q1 2026: revenue +46% YoY to $333M, NDR jumped to 139% (highest in 2+ years), AI credit monetization accelerating sharply \u2014 design and prototyping is the first SaaS category to demonstrate that AI features command premium per-seat pricing rather than cannibalizing seats."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 20.5,
-        "reasoning": "Entry zone: $18.00-$23.00 | Fair value: $41.00"
-      },
-      "analyst_take": "Q1 debunked AI threat (46% growth, 139% NDR); 85% off high; 30.7% SI squeeze potential post-narrative shift",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "LMT",
-      "name": "",
-      "price": 530.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "borderline",
-          "detail": "Quality score: 3/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "pass",
-          "detail": "Risk score: 2/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "both",
-      "conviction": "HIGH",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "macro_regime_dip_buys",
-      "catalysts_general": [
-        "$186.43B record backlog; PATRIOT accelerated production $4.7B undefinitized contract; $212.74M modification May 12; guidance reaffirmed; MS $653, BNP $680, Susquehanna $700 targets (Tier 1 DoD contracts + Tier 1 earnings)",
-        "Discovery: Defense prime down 25% from 52wk high ($692 to $519.94) on Q1 2026 EPS miss ($6.44 vs $7.28 YoY) from supply chain delays \u2014 but the $186.43B backlog (highest ever) remains intact, full-year 2026 guidance was reaffirmed, PATRIOT Advanced Capability-3 logistics contract ($212.74M) just awarded, F-35 deliveries continuing, and 9 damaged US military bases in Middle East require significant rebuilding; Dividend maintained at $3.45/quarter; analyst PTs: MS $653, BNP Paribas $680, Susquehanna $700 vs current $520; the supply chain miss is temporary, demand is structural."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 517.5,
-        "reasoning": "Entry zone: $505.00-$530.00 | Fair value: $620.00"
-      },
-      "analyst_take": "Record $186B backlog; PATRIOT ramp 650\u21922,000 units/year; 24% off high; FCF $6.5-6.8B guidance",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "NOC",
-      "name": "",
-      "price": 560.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "pass",
-          "detail": "Risk score: 2/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "macro_regime_dip_buys",
-      "catalysts_general": [
-        "B-21 aerial refueling test successful; $2.5B self-funded production investment; F/A-XX Navy contract decision August 2026; Q1 EPS beat, guidance reaffirmed; MS Overweight $745; 22 analysts $726 avg (Tier 1 earnings + Tier 2 company PR)",
-        "Discovery: Defense prime down 29% from 52wk high ($774 to $548.55) despite Q1 2026 EPS beat ($6.14 vs $6.06 consensus) and full-year 2026 guidance reaffirmation ($27.40-$27.90 EPS), RSI dropped into oversold territory (below 30) on falling Middle East tensions and Trump buyback demands \u2014 but $186B+ backlog, B-21 Raider production ramp, DARPA SHEPARD XRQ-73 hybrid uncrewed aircraft entering flight testing now, and institutional buying (Virginia Retirement Systems added 40k shares May 13) signal the selloff is overdone; analyst avg PT $710.74 implies 30% upside."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 545.0,
-        "reasoning": "Entry zone: $530.00-$560.00 | Fair value: $726.00"
-      },
-      "analyst_take": "B-21 sole manufacturer; F/A-XX contract August 2026 binary; 29% off high; 32% to consensus",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "CCJ",
-      "name": "",
-      "price": 118.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "fail",
-          "detail": "Value score: 2/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 5/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 5/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "discovery",
-      "conviction": "MEDIUM",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "energy_security",
-      "catalysts_general": [
-        "Q1 2026 EPS +30% beat; Inkai has preferential sulfuric acid access vs Kazatomprom (cutting 10%); World Nuclear Assoc: 28% uranium demand rise by 2030; 9 analysts $138.60 avg (+23%) (Tier 1 Cameco earnings + Tier 4 Nasdaq)",
-        "Discovery: Uranium spot prices up 33% YoY driven by Kazakhstan production constraints (sulfuric acid shortages cutting 43% of global supply) plus Niger coup stripping EU of a key supplier, while nuclear power demand accelerates from AI data center buildout and energy security mandates \u2014 structural deficit extends through 2030s."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 111.5,
-        "reasoning": "Entry zone: $105.00-$118.00 | Fair value: $138.00"
-      },
-      "analyst_take": "Kazakhstan acid supply cuts benefit Cigar Lake; AI nuclear demand secular; EPS beat +30%; only investable pure-play",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "CRM",
-      "name": "",
-      "price": 178.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "ai_software_platforms",
-      "catalysts_general": [
-        "Agentforce ARR $800M +169% YoY, 29,000 cumulative deals; FY2027 guidance $45.8-46.2B; $25B buyback; 37 of 52 analysts Strong Buy for May 27 Q1 FY2027 (Tier 1 Salesforce IR + Tier 4 Fortune)",
-        "Discovery: Agentforce platform reached $800M ARR by end of FY2026 (169% YoY increase), closing 29,000 deals in Q4; agentic 'Digital Labor' model charges per work unit rather than per seat, expanding TAM; this is proven enterprise monetization at scale, not a roadmap item."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 166.5,
-        "reasoning": "Entry zone: $155.00-$178.00 | Fair value: $240.00"
-      },
-      "analyst_take": "Agentforce $800M ARR +169%; Fwd P/E 11.2x cheapest in decade; $25B buyback; May 27 earnings",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "LHX",
-      "name": "",
-      "price": 315.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "pass",
-          "detail": "Risk score: 2/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "discovery",
-      "conviction": "MEDIUM",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "conflict_defense",
-      "catalysts_general": [
-        "Q1 2026 revenue $5.744B vs $5.4B consensus, EPS $2.72 vs $2.58; organic growth 15% YoY; raised FY EPS $11.40-11.60; $843M SDA satellite + $1.9B international awards; 19 analysts $390 avg (Tier 1 earnings + Tier 2 company PR)",
-        "Discovery: Q1 2026 beat with raised full-year guidance; booked $843M SDA satellite tracking contract, $465M US Army night vision contract, and $1.9B in international awards (EW, comms, missile propulsion) \u2014 broadening from ground to space/electronic warfare as NATO allies ramp budgets 20% YoY."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 305.0,
-        "reasoning": "Entry zone: $295.00-$315.00 | Fair value: $390.00"
-      },
-      "analyst_take": "Best organic growth (15%) in defense; cleanest balance sheet (D/E 34.6); Q1 beat + raised guidance",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "ZBRA",
-      "name": "",
-      "price": 270.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "scanner",
-      "conviction": "MEDIUM",
-      "source_detail": "From scanner universe",
-      "discovery_strategy": "",
-      "catalysts_general": [
-        "Q1 2026 revenue $1.495B +14% YoY, adj EPS $4.75 vs $4.33; gross margin 50.4% multi-year high; FY guidance raised; stock +16.5% post-earnings; 17 analysts $330 avg (Tier 1 earnings + Tier 4 StocksToTrade)"
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 255.0,
-        "reasoning": "Entry zone: $240.00-$270.00 | Fair value: $325.00"
-      },
-      "analyst_take": "PEG 0.6; Q1 +9.7% EPS beat; raised FY guidance 10-14%; 26.8% off high; warehouse automation secular",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "ROP",
-      "name": "",
-      "price": 330.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "borderline",
-          "detail": "Catalyst score: 3/5"
-        },
-        "risk": {
-          "verdict": "pass",
-          "detail": "Risk score: 2/5 (lower is better)"
-        },
-        "score": 4.2
-      },
-      "source": "discovery",
-      "conviction": "MEDIUM",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "deep_drawdowns",
-      "catalysts_general": [
-        "Q1 2026: adj DEPS $5.16 beat $4.98; Q2 guide $5.25-5.30; FY DEPS raised $21.80-22.05; $1.5B Q1 repurchases + $3.0B new authorization; $3.8B remaining capacity; backlog +11.8% (Tier 1 Roper 10-Q/8-K + Tier 4 Quiver Quant)",
-        "Discovery: Down 40% from 52-week high ($584 \u2192 $352) as software multiples compressed systemically; Q1 2026 beat ($5.16 vs $4.98 EPS) + raised FY guidance + $1.5B buyback announced = management buying confidence at lows, with analyst consensus $492 (+40% upside) and Q2 2026 earnings (July) as next catalyst."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 315.0,
-        "reasoning": "Entry zone: $300.00-$330.00 | Fair value: $420.00"
-      },
-      "analyst_take": "$5B capital deployment capacity; Q1 beat + raised guidance; 45% off high; lowest risk pick on the list",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "RTX",
-      "name": "",
-      "price": 180.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "sector_rotation",
-      "catalysts_general": [
-        "Q1 adj EPS $1.78 vs $1.52 (+17% beat); $441.6M PATRIOT + $536M Mitsubishi + ESSM/LTAMDS contracts; FY guidance raised adj EPS $6.70-6.90; $271B backlog; 22 analysts $220 avg (Tier 1 earnings + Tier 2 RTX IR)",
-        "Discovery: Record $271B backlog and $22.1B Q1 2026 revenue (+9% YoY) with guidance of $92.5B+ for full year; institutional flows are rotating into defense as DoD AI spending ramps and geopolitical tailwinds persist through 2026."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 174.0,
-        "reasoning": "Entry zone: $168.00-$180.00 | Fair value: $205.00"
-      },
-      "analyst_take": "$271B backlog; AMRAAM/ESSM/LTAMDS cascade contracts; NATO rearmament secular; 18% off high",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "FLUT",
-      "name": "",
-      "price": 98.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "borderline",
-          "detail": "Quality score: 3/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "discovery",
-      "conviction": "MEDIUM",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "insider_cluster",
-      "catalysts_general": [
-        "CEO/COO/President/CLO all bought open-market May 8-14 at 52-week low; 35% US OSB market share; 24 analysts $155.50 avg (+66%); Citi double-downgraded to Sell $92 PT as counter-signal (Tier 1 Flutter IR + Tier 3 TIKR)",
-        "Discovery: Four senior insiders bought between May 8-14: CEO Jeremy Jackson (~$245K), COO James Bishop (~$100K), President Daniel Taylor (~$258K), and Director Carolan Lennon \u2014 a multi-title cluster rare for a US-listed foreign company; timing coincides with sports-betting regulatory progress and stock ~40% off 2024 highs."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 93.0,
-        "reasoning": "Entry zone: $88.00-$98.00 | Fair value: $137.00"
-      },
-      "analyst_take": "4-insider cluster at 52-week lows; 10x Fwd P/E for 35% OSB market leader; 70% off high",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "HOOD",
-      "name": "",
-      "price": 84.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "discovery",
-      "conviction": "MEDIUM",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "catalyst_calendar",
-      "catalysts_general": [
-        "Q1 2026 prediction markets revenue $147M +320% YoY; Bernstein Outperform $130 PT projecting $586M prediction revenue by 2026; 19/22 analysts Buy; consensus $97.50 (Tier 3 Bernstein + Tier 4 Benzinga)",
-        "Discovery: Down ~30% YTD and 47% from 52-week high; prediction markets segment grew 320% YoY in Q1 2026 to $147M \u2014 Bernstein forecasts $1T annual trading volume by 2030; 19 of 22 analysts rate Buy with avg PT $130 (~68% upside from current), making the crypto selloff look like an overreaction."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 79.0,
-        "reasoning": "Entry zone: $74.00-$84.00 | Fair value: $120.00"
-      },
-      "analyst_take": "Prediction markets +320% YoY; Kalshi anchor partner; Bernstein $130 PT; 47% off high",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "CEG",
-      "name": "",
-      "price": 285.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "discovery",
-      "conviction": "MEDIUM",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "sector_rotation",
-      "catalysts_general": [
-        "Calpine acquisition closed Jan 7 2026, creates 55GW largest US private power producer; Q1 EPS $4.49 vs $0.38 prior year; Evercore Outperform $380 PT; 5,650MW hyperscaler PPAs (Tier 2 company PR + Tier 3 Evercore)",
-        "Discovery: Down 22% YTD yet Wall Street maintains Strong Buy consensus; post-Calpine acquisition is now the largest US private power producer at 55 GW with nuclear PPAs signed directly with Microsoft and Meta \u2014 a rare clean, reliable baseload power provider in the AI power shortage era."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 272.5,
-        "reasoning": "Entry zone: $260.00-$285.00 | Fair value: $365.00"
-      },
-      "analyst_take": "Nuclear + hyperscaler PPAs (MSFT/META); 55GW irreplaceable post-Calpine; 33% off high; $11-12 EPS guidance",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "BSX",
-      "name": "",
-      "price": 55.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "borderline",
-          "detail": "Catalyst score: 3/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "capitulation_signals",
-      "catalysts_general": [
-        "AVANT GUARD trial: FARAPULSE 56% PFA effectiveness vs 30.1% anti-arrhythmic first-line AF; Q1 revenue +11.6% beat; 22 analysts STRONG BUY, avg $93.18; 8 top hedge funds hold (Tier 1 earnings + Tier 2 company PR + Tier 4 MassDevice)",
-        "Discovery: Down 51% from 52-week high ($109.50 \u2192 $53.61) following analyst downgrades + guidance trim + securities litigation; FARAPULSE PFA platform delivering 22% EP organic growth with new AVANT GUARD trial data at Heart Rhythm 2026 acting as near-term catalyst, analyst consensus $93.18 target (+65%), but litigation risk must be sized accordingly."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 52.5,
-        "reasoning": "Entry zone: $50.00-$55.00 | Fair value: $76.00"
-      },
-      "analyst_take": "AVANT GUARD confirms FARAPULSE differentiation; Fwd P/E 14.2x; 51% off high; 32 analysts STRONG BUY",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "DVN",
-      "name": "",
-      "price": 49.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 5/5"
-        },
-        "quality": {
-          "verdict": "borderline",
-          "detail": "Quality score: 3/5"
-        },
-        "catalyst": {
-          "verdict": "borderline",
-          "detail": "Catalyst score: 3/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "discovery",
-      "conviction": "MEDIUM",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "sector_rotation",
-      "catalysts_general": [
-        "Coterra merger closed May 7 2026; $8B buyback through June 2029; 33% dividend increase; $1B+ pre-tax synergies targeted 2027; Jefferies upgraded Buy $62 PT (Tier 2 company PR + Tier 3 Jefferies + Tier 4 Reuters)",
-        "Discovery: Post-Coterra merger creates a $70B enterprise-value premier shale operator with 1.6M barrels/day production; Jefferies upgraded to Buy at $62 target (May 8), $5B buyback + 31% dividend hike announced, and Simply Wall St estimates shares trading 66% below fair value with a P/E of ~13."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 46.5,
-        "reasoning": "Entry zone: $44.00-$49.00 | Fair value: $60.00"
-      },
-      "analyst_take": "Fwd P/E 8.9x; $8B buyback (15% of market cap); Coterra merger closed; LNG indirect beneficiary",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "SOFI",
-      "name": "",
-      "price": 17.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "catalyst_triggers",
-      "catalysts_general": [
-        "Q1 2026: net revenue $1.1B +43%, net income $166.7M doubled; CEO Noto bought $500K+ day of Muddy Waters report; FTSE All-World inclusion March 23; allegations 2 months old without financial confirmation (Tier 1 Q1 earnings + Tier 3 Muddy Waters)",
-        "Discovery: Fintech bank down 52% from 52wk high ($32.73 to ~$15.88) \u2014 stock fell on unchanged FY2026 guidance despite Q1 2026 revenue of $1.1B (+43% YoY) and net income doubling to $166.7M; CEO Anthony Noto personally purchased $250K of shares on May 9 (first meaningful open-market buy in months); upcoming catalysts are June 17 Annual General Meeting where management could revise guidance upward and Q2 results ~July 27; TIKR model target $27 (+70% upside); bear case is Muddy Waters short-seller fraud allegations (March 30) and platform segment revenue down 27% as large client transitioned off; 3yr revenue CAGR of 32.6% and FTSE All-World index inclusion are structural tailwinds."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 15.5,
-        "reasoning": "Entry zone: $14.00-$17.00 | Fair value: $22.00"
-      },
-      "analyst_take": "Record Q1 ($1.1B revenue, $167M net income); CEO insider buy into Muddy Waters attack; FTSE inclusion structural buyer",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "ACN",
-      "name": "",
-      "price": 175.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "borderline",
-          "detail": "Catalyst score: 3/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "disruption_victims",
-      "catalysts_general": [
-        "$2.2B advanced AI project bookings Q1 FY2026 (nearly doubling YoY), 1,300+ clients; DOGE federal cut 1-1.5% of global revenue; Larry Robbins (Glenview) new position; 26 analysts $248.50 avg (Tier 4 Phemex/Futurum)",
-        "Discovery: AVOID/MONITOR: Stock down ~28% YTD as market fears AI agents will automate the billable-hours consulting model; agentic AI structurally compresses demand for offshore IT services labor \u2014 even Accenture's own $2.2B in AI bookings creates a replacement ceiling on its headcount-driven revenue base."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 165.0,
-        "reasoning": "Entry zone: $155.00-$175.00 | Fair value: $215.00"
-      },
-      "analyst_take": "AI bookings doubling YoY ($2.2B); 7.9x EV/EBITDA; $12.2B FCF; DOGE impact quantified at 1-1.5% only",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "TEAM",
-      "name": "",
-      "price": 88.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "disruption_victims",
-      "catalysts_general": [
-        "Q3 FY2026: revenue $1.8B +32%, RPO +37%, NRR >120% 4th consecutive quarter uptick; Rovo AI users expand ARR 2x faster; AI coding customers have 5% higher MAU and expand seats 5% faster (Tier 1 Atlassian Q3 IR + Tier 4 CNBC)",
-        "Discovery: AVOID \u2014 down 57% YTD in 2026 but structural risk is not fully priced; AI coding tools (GitHub Copilot, Cursor) are reducing the number of software developers per team, directly compressing Atlassian's seat-based licensing revenue; Jira/Confluence seats shrink as AI handles project tracking and documentation."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 80.0,
-        "reasoning": "Entry zone: $72.00-$88.00 | Fair value: $110.00"
-      },
-      "analyst_take": "Q3 definitively refuted AI seat compression; 32% growth; NRR >120% accelerating; AI is expanding seats not shrinking",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "C",
-      "name": "",
-      "price": 128.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "borderline",
-          "detail": "Quality score: 3/5"
-        },
-        "catalyst": {
-          "verdict": "borderline",
-          "detail": "Catalyst score: 3/5"
-        },
-        "risk": {
-          "verdict": "pass",
-          "detail": "Risk score: 2/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "discovery",
-      "conviction": "MEDIUM",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "news_driven",
-      "catalysts_general": [
-        "May 11 Investor Day: $30B buyback, 11-13% ROTCE targets 2027-28; Q1 EPS $3.06 +56% YoY, record Services $22.6B revenue; 22 analysts $147 avg (+18%) (Tier 1 earnings + Tier 4 Yahoo Finance)",
-        "Discovery: At its May 11 Investor Day, Citi unveiled a $30B buyback and 11-13% ROTCE targets for 2027-28 after posting its best quarterly revenue in a decade ($24.6B, +14% YoY) in Q1 2026 \u2014 transformation appears complete, and the massive capital return program is a multi-year catalyst."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 123.0,
-        "reasoning": "Entry zone: $118.00-$128.00 | Fair value: $150.00"
-      },
-      "analyst_take": "$30B buyback through 2027-28; 10x Fwd P/E; Q1 EPS $3.06 +56% YoY; best revenue decade",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "BIRK",
-      "name": "",
-      "price": 36.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "borderline",
-          "detail": "Catalyst score: 3/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.9
-      },
-      "source": "scanner",
-      "conviction": "MEDIUM",
-      "source_detail": "From scanner universe",
-      "discovery_strategy": "",
-      "catalysts_general": [
-        "Q2 FY2026 revenue \u20ac618M +8% reported (+14% constant currency); full-year guidance maintained 13-15% constant currency; APAC +30%; 20 analysts median target $56 (+64%) (Tier 1 Birkenstock earnings + Tier 4 TipRanks)"
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 33.5,
-        "reasoning": "Entry zone: $31.00-$36.00 | Fair value: $49.00"
-      },
-      "analyst_take": "12x Fwd P/E for 57.8% gross margin premium brand; 13-15% constant currency growth; 41% off high",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "GEHC",
-      "name": "",
-      "price": 65.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "pass",
-          "detail": "Value score: 4/5"
-        },
-        "quality": {
-          "verdict": "borderline",
-          "detail": "Quality score: 3/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "fail",
-          "detail": "Risk score: 4/5 (lower is better)"
-        },
-        "score": 3.6
-      },
-      "source": "both",
-      "conviction": "HIGH",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "insider_cluster",
-      "catalysts_general": [
-        "CEO Arduini $250K, CFO Saccaro $200K, GC Jimenez $106K, Director Culp $4.99M all open-market Apr 30-May 1 at $59-62; $5.55M total cluster buy; stock already in-the-money (Tier 1 SEC Form 4)",
-        "Discovery: Deep cluster: CEO Peter Arduini (~$250K), CFO James Saccaro ($200K), General Counsel Frank Jimenez (~$106K), and Director Lawrence Culp ($4.99M) all bought open-market in late April/early May near $60; multiple C-suite + board conviction buying after stock dropped ~35% from 2024 peak on tariff and hospital-budget concerns."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 61.5,
-        "reasoning": "Entry zone: $58.00-$65.00 | Fair value: $81.00"
-      },
-      "analyst_take": "Lawrence Culp (former GE CEO) $5M personal buy + C-suite cluster $5.55M total; Fwd P/E 11.6x; 30% below high",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "MP",
-      "name": "",
-      "price": 63.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "fail",
-          "detail": "Value score: 2/5"
-        },
-        "quality": {
-          "verdict": "borderline",
-          "detail": "Quality score: 3/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 5/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.6
-      },
-      "source": "both",
-      "conviction": "HIGH",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "critical_minerals",
-      "catalysts_general": [
-        "DoD $400M preferred stock + $110/kg NdPr price floor 10-year commitment + $150M loan; November 2026 China RE export control expiry hard deadline; record Q1 NdPr production; Wedbush $90 target (Tier 1 DoD press release + Tier 3 Wedbush)",
-        "Discovery: China's suspension of rare earth export controls expires November 2026 (~6 months away), creating a hard-deadline catalyst for domestic US supply; MP Materials halted China shipments and is the only large-scale Western Hemisphere rare earth producer, directly benefiting from Trump's $12B Project Vault stockpile initiative."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 59.0,
-        "reasoning": "Entry zone: $55.00-$63.00 | Fair value: $80.00"
-      },
-      "analyst_take": "DoD $400M equity + 10-year price floor; November China export control deadline; only Western-scale rare earth producer",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "ALKT",
-      "name": "",
-      "price": 18.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "borderline",
-          "detail": "Quality score: 3/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.6
-      },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "13f_moves",
-      "catalysts_general": [
-        "GA accumulated $34.6M May 4-6 + 675K shares at $16.49 May 14; board waiver to reach 19.9%; Q1 ARR $493.6M +22%, adj EBITDA margin +540bps to 17.7%; $100M buyback (Tier 1 Alkami Form 4/10-Q)",
-        "Discovery: General Atlantic-affiliated funds filed an amended 13D and have been systematically buying open-market across six trading days (May 4-6 and May 12-14): $34.6M in early May plus additional 675K shares at $16.49 on May 14, raising their stake to 16.3% with a board-approved waiver to go up to 19.9% \u2014 persistent institutional conviction buying."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 16.5,
-        "reasoning": "Entry zone: $15.00-$18.00 | Fair value: $22.00"
-      },
-      "analyst_take": "General Atlantic (original PE backer) buying $44M+ persistently at current prices; 29% ARR growth; 16.3% stake seeking 19.9%",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "AMD",
-      "name": "",
-      "price": 455.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "fail",
-          "detail": "Value score: 2/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.6
-      },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "news_driven",
-      "catalysts_general": [
-        "Q1 2026 beat; up 112-123% YTD; BofA raised target $500; MI350 (CDNA4) in production with 35x perf gain; China export control $1.5B 2025 headwind; analyst range $375-579 (Tier 3 TheStreet + Tier 4 Tom's Hardware)",
-        "Discovery: Flood of analyst upgrades in May 2026 with targets raised dramatically: DA Davidson to $375 (+70%), KeyBanc to $530, Evercore ISI to $579 (street-high); driven by Intel Q1 CPU market-share signal, agentic AI demand acceleration, and expanding hyperscaler AI infrastructure spend."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 437.5,
-        "reasoning": "Entry zone: $420.00-$455.00 | Fair value: $450.00"
-      },
-      "analyst_take": "MI350 ramp H2 2026; CPU share gains from Intel; $7B FCF; near 52-week high requires patience",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "DDOG",
-      "name": "",
-      "price": 205.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "fail",
-          "detail": "Value score: 2/5"
-        },
-        "quality": {
-          "verdict": "pass",
-          "detail": "Quality score: 4/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.6
-      },
-      "source": "discovery",
-      "conviction": "MEDIUM",
-      "source_detail": "Independently discovered via web research",
-      "discovery_strategy": "ai_software",
-      "catalysts_general": [
-        "Q1 2026: $1.006B revenue +32%, beat by $45M; adj EPS $0.60 vs $0.51; FY guidance raised $4.30-4.34B; Benchmark $230, Needham/Mizuho $220-225 targets; mean $216 (Tier 1 Datadog IR + Tier 4 Investing.com)",
-        "Discovery: Q1 2026: first-ever $1B+ quarterly revenue, stock surged 31% on blockbuster earnings; AI training/inference workloads from OpenAI, Anthropic, and Mistral are all running on Datadog's observability platform \u2014 AI-native startups are the fastest-growing cohort and they over-index on cloud monitoring spend."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 195.0,
-        "reasoning": "Entry zone: $185.00-$205.00 | Fair value: $212.00"
-      },
-      "analyst_take": "First-ever $1B+ quarter; 32% growth; guidance raised; AI-native customers over-index on monitoring spend",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "PSN",
-      "name": "",
-      "price": 53.0,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "value": {
-          "verdict": "borderline",
-          "detail": "Value score: 3/5"
-        },
-        "quality": {
-          "verdict": "borderline",
-          "detail": "Quality score: 3/5"
-        },
-        "catalyst": {
-          "verdict": "pass",
-          "detail": "Catalyst score: 4/5"
-        },
-        "risk": {
-          "verdict": "borderline",
-          "detail": "Risk score: 3/5 (lower is better)"
-        },
-        "score": 3.6
-      },
-      "source": "both",
-      "conviction": "MEDIUM",
-      "source_detail": "Found by BOTH independent discovery AND scanner",
-      "discovery_strategy": "insider_buying",
-      "catalysts_general": [
-        "CEO Carey Smith bought 12,500 shares $49.94-50.73 May 8; May awards: $136M USAF + $34M DTRA nuclear + $2B Army energy resilience position; 10 analysts $71 avg (+39%) (Tier 1 SEC Form 4 + Tier 2 company PR)",
-        "Discovery: President and CEO Carey Smith bought 12,500 shares open market at ~$50 on May 8, 2026, a meaningful purchase at a defense and intelligence technology company that benefits directly from the Pentagon's accelerated spending on cyber, missile defense, and space programs."
-      ],
-      "catalysts_verified": [],
-      "ideal_entry": {
-        "price": 50.5,
-        "reasoning": "Entry zone: $48.00-$53.00 | Fair value: $68.00"
-      },
-      "analyst_take": "CEO open-market buy + multiple May contract wins convergence; 39% to analyst consensus; cyber/missile defense spending secular",
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "analyst_take": "Intuit scores 5.0/6 but is the highest-quality business in the group \u2014 80.9% gross margins, 17.4% revenue growth, 48.5% earnings growth and the strongest analyst conviction (rec mean 1.47). The only soft spots are a borderline 5% FCF yield and a sub-2% dividend; the balance sheet still passes on D/E and liquidity. A 53% drawdown has compressed a premium compounder to 14.3x forward earnings with AI as a genuine tailwind, making it a BUY, ideally accumulated near the 52-week low."
     }
   ],
-  "growth_picks": [],
-  "avoid_picks": [
+  "growth_picks": [
     {
-      "ticker": "CIEN",
-      "name": "",
-      "price": 0,
-      "opus_recommendation": "AVOID",
+      "ticker": "NEM",
+      "name": "Newmont Corporation",
+      "price": 116.33,
+      "opus_recommendation": "BUY",
       "framework": {
-        "score": 0
+        "revenue_growth": {
+          "verdict": "pass",
+          "detail": "revenue_growth 45.8% \u2014 well above the 30% pass threshold, driven by elevated gold prices."
+        },
+        "gross_margins": {
+          "verdict": "pass",
+          "detail": "gross_margins 67.4% \u2014 above the 65% pass threshold."
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "revenue_growth 45.8 + operating_margins 61.4 = 107.2 \u2014 far above 50."
+        },
+        "earnings_accel": {
+          "verdict": "pass",
+          "detail": "earnings_growth 78.6% exceeds revenue_growth 45.8% \u2014 clear operating leverage."
+        },
+        "capital_efficiency": {
+          "verdict": "pass",
+          "detail": "return_on_equity 25.8% \u2014 above the 20% pass threshold."
+        },
+        "short_dynamics": {
+          "verdict": "pass",
+          "detail": "short_interest 1.85% and short_interest_change -5.27% \u2014 declining AND below 5%."
+        },
+        "score": 6.0
       },
-      "source": "both",
-      "conviction": "HIGH",
-      "catalysts_general": [],
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "Newmont is a physical gold/copper producer. AI offers marginal mine-optimization gains but is not material to revenue; commodity prices, not technology, drive the business."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals supplied in the input. Balance sheet shows total_cash 8.78B exceeding total_debt 5.53B (net cash) and free_cashflow 9.8B, supporting buybacks/dividends and self-funded capex."
+      },
+      "financials": {
+        "current_price": "$116.33",
+        "range_52w": "$48.61 - $134.88",
+        "forward_pe": "10.26"
+      },
       "catalysts_verified": [],
-      "analyst_take": "Stock at $591 vs analyst median target $255; P/E 370x, EV/EBITDA 147x; momentum bubble \u2014 consensus is 32-57% below current price",
-      "ideal_entry": null,
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "catalysts_general": [
+        "Trades at forward_pe 10.26 vs trailing_pe 15.09 \u2014 implies EPS growth from 7.71 to forward 11.34.",
+        "Trading 19.2% below target_mean_price 144.01 and 21.1% below target_median 147.50.",
+        "Analyst distribution: 17 of 21 buy/strong_buy, recommendation_mean 1.67.",
+        "Net cash position (cash 8.78B > debt 5.53B); free_cashflow 9.8B vs market_cap 124B (~7.9% FCF yield)."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 100.0,
+          "pe_at_level": "8.8x forward EPS",
+          "scenario": "Gold price pullback compresses margins; stock retraces toward the rising sma_50 region."
+        },
+        {
+          "price": 90.0,
+          "pe_at_level": "7.9x forward EPS",
+          "scenario": "Broader risk-off rotation out of gold despite a low beta of 0.45."
+        }
+      ],
+      "ideal_entry": {
+        "price": 110.0,
+        "reasoning": "Near sma_50 of 111.88, offering a wider margin to the 144 mean target while the forward_pe stays in single-to-low-double digits."
+      },
+      "comparables": [
+        {
+          "ticker": "GOLD",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Barrick \u2014 large-cap gold peer; referenced for context only."
+        },
+        {
+          "ticker": "AEM",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Agnico Eagle \u2014 gold-miner peer; referenced for context only."
+        }
+      ],
+      "analyst_take": "Newmont is the cleanest score in this group \u2014 a perfect 6/6 on the Growth framework with a forward_pe of just 10.3. The gold-price tailwind drives 46% revenue and 79% earnings growth on a net-cash balance sheet, and the low beta makes it an unusual growth-plus-defensive combination at a 19% discount to consensus."
     },
     {
-      "ticker": "CHTR",
-      "name": "",
-      "price": 0,
-      "opus_recommendation": "AVOID",
+      "ticker": "APP",
+      "name": "Applovin Corporation",
+      "price": 492.79,
+      "opus_recommendation": "BUY",
       "framework": {
-        "score": 0
+        "revenue_growth": {
+          "verdict": "pass",
+          "detail": "revenue_growth 59.0% \u2014 well above the 30% pass threshold."
+        },
+        "gross_margins": {
+          "verdict": "pass",
+          "detail": "gross_margins 88.4% \u2014 far above the 65% pass threshold."
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "revenue_growth 59.0 + operating_margins 78.2 = 137.2 \u2014 far above 50."
+        },
+        "earnings_accel": {
+          "verdict": "pass",
+          "detail": "earnings_growth 113.1% exceeds revenue_growth 59.0% \u2014 strong operating leverage."
+        },
+        "capital_efficiency": {
+          "verdict": "pass",
+          "detail": "return_on_equity 266% \u2014 above 20%, though inflated by a thin book_value of 7.03 (price_to_book 69.4)."
+        },
+        "short_dynamics": {
+          "verdict": "pass",
+          "detail": "short_interest 3.82% and short_interest_change -18.54% \u2014 declining AND below 5%."
+        },
+        "score": 6.0
       },
-      "source": "scanner",
-      "conviction": "HIGH",
-      "catalysts_general": [],
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "AppLovin's Axon AI engine is the core of its advertising business; improvements in machine-learning ad targeting directly compound revenue and margin. AI is a structural tailwind."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals supplied in the input. An asset-light ad-tech model: free_cashflow 3.18B with low capital needs; total_debt 3.85B slightly exceeds total_cash 2.76B (modest net debt), debt_to_equity 162.9% is elevated but covered by cash generation."
+      },
+      "financials": {
+        "current_price": "$492.79",
+        "range_52w": "$320.00 - $745.61",
+        "forward_pe": "22.26"
+      },
       "catalysts_verified": [],
-      "analyst_take": "39.5% SI, D/E 459x, internet subscribers declining 455K over 12 months with acceleration; Starlink/fixed wireless structural competition; value trap with dangerous leverage",
-      "ideal_entry": null,
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "catalysts_general": [
+        "Down 33.9% from the 52-week high of 745.61 \u2014 sharp de-rating despite accelerating fundamentals.",
+        "forward_pe 22.26 vs trailing_pe 42.44 \u2014 forward EPS expected to nearly double (11.50 to 21.93).",
+        "Trading 30.8% below target_mean_price 644.47; 28 of 32 analysts at buy/strong_buy, recommendation_mean 1.45.",
+        "Short interest fell 18.5% month-over-month \u2014 bears covering into the drawdown.",
+        "peg_ratio 1.34 \u2014 reasonable given 59% revenue growth."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 420.0,
+          "pe_at_level": "19.2x forward EPS",
+          "scenario": "Growth-multiple compression continues; high beta of 2.37 amplifies any market drawdown."
+        },
+        {
+          "price": 340.0,
+          "pe_at_level": "15.5x forward EPS",
+          "scenario": "Retest of the 52-week low region on an ad-spend slowdown or regulatory scrutiny of mobile ad attribution."
+        }
+      ],
+      "ideal_entry": {
+        "price": 448.0,
+        "reasoning": "Near sma_50 of 447.90; buying at the recent base keeps the entry forward_pe near 20x against triple-digit Rule-of-40 metrics."
+      },
+      "comparables": [
+        {
+          "ticker": "TTD",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "The Trade Desk \u2014 programmatic ad-tech peer; referenced for context only."
+        },
+        {
+          "ticker": "GOOGL",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Alphabet \u2014 digital-advertising scale peer; referenced for context only."
+        }
+      ],
+      "analyst_take": "AppLovin posts a perfect 6/6 with an extraordinary 137 Rule-of-40 and 113% earnings growth, yet trades 34% off its high at a forward_pe of just 22. The main risks are a vertiginous beta of 2.37 and an extreme price_to_book of 69, but the forward valuation and shrinking short interest make the de-rating look like an opportunity rather than a warning."
     },
     {
-      "ticker": "SRAD",
-      "name": "",
-      "price": 0,
-      "opus_recommendation": "AVOID",
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "price": 133.73,
+      "opus_recommendation": "WATCHLIST",
       "framework": {
-        "score": 0
+        "revenue_growth": {
+          "verdict": "pass",
+          "detail": "revenue_growth 84.7% \u2014 far above the 30% pass threshold."
+        },
+        "gross_margins": {
+          "verdict": "pass",
+          "detail": "gross_margins 84.1% \u2014 well above the 65% pass threshold."
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "revenue_growth 84.7 + operating_margins 46.2 = 130.9 \u2014 far above 50."
+        },
+        "earnings_accel": {
+          "verdict": "pass",
+          "detail": "earnings_growth 325% vastly exceeds revenue_growth 84.7% \u2014 explosive operating leverage off a low earnings base."
+        },
+        "capital_efficiency": {
+          "verdict": "pass",
+          "detail": "return_on_equity 32.6% \u2014 above the 20% pass threshold."
+        },
+        "short_dynamics": {
+          "verdict": "borderline",
+          "detail": "short_interest 2.77% is below 10%, but short_interest_change +17.11% means SI is rising \u2014 fails the 'declining AND <5%' pass test, qualifies as borderline via the '<10%' condition."
+        },
+        "score": 5.5
       },
-      "source": "scanner",
-      "conviction": "HIGH",
-      "catalysts_general": [],
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "Palantir's AIP platform places it directly in the enterprise/government AI deployment market; AI demand is the primary growth driver and a clear tailwind."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals supplied in the input. Fortress balance sheet: total_cash 8.03B vs total_debt 0.21B (deeply net cash), current_ratio 6.9. The risk is valuation, not solvency."
+      },
+      "financials": {
+        "current_price": "$133.73",
+        "range_52w": "$118.93 - $207.52",
+        "forward_pe": "64.77"
+      },
       "catalysts_verified": [],
-      "analyst_take": "Muddy Waters AND Callisto Research simultaneous short reports alleging 30-40% of revenue from illegal gambling operators; three US regulators opened reviews; revenue quality at fundamental risk",
-      "ideal_entry": null,
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "catalysts_general": [
+        "Down 35.6% from the 52-week high of 207.52; trading below both sma_20 (140.41) and sma_50 (144.78) \u2014 negative momentum.",
+        "forward_pe 64.77 and price_to_sales 61.37 \u2014 extreme valuation even after the drawdown.",
+        "Short interest rose 17.1% month-over-month \u2014 bears building positions.",
+        "Analyst distribution is the weakest in this group: only 1 strong_buy, 10 hold, 2 sell/strong_sell, recommendation_mean 1.90.",
+        "target_low_price 70 implies analysts see ~48% downside in a bear case."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 118.93,
+          "pe_at_level": "57.6x forward EPS",
+          "scenario": "Retest of the 52-week low as multiple compression continues; still expensive even there."
+        },
+        {
+          "price": 100.0,
+          "pe_at_level": "48.4x forward EPS",
+          "scenario": "Growth-software de-rating accelerates toward the analyst target_low cluster on any guidance miss."
+        }
+      ],
+      "ideal_entry": {
+        "price": 119.0,
+        "reasoning": "Near the 52-week low of 118.93; even there the forward_pe remains ~58x, so this is a valuation-disciplined entry rather than a cheap one."
+      },
+      "comparables": [
+        {
+          "ticker": "SNOW",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Snowflake \u2014 high-multiple data/AI software peer; referenced for context only."
+        },
+        {
+          "ticker": "DDOG",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Datadog \u2014 infrastructure-software peer; referenced for context only."
+        }
+      ],
+      "analyst_take": "Palantir's operating metrics are spectacular \u2014 85% revenue growth, 131 Rule-of-40, a near-debt-free balance sheet \u2014 and it scores 5.5/6. But a forward_pe of 65 and price_to_sales of 61, paired with rising short interest and the weakest analyst slate here, mean the price already discounts years of flawless execution. WATCHLIST until the multiple compresses or growth re-accelerates to justify it."
     },
     {
-      "ticker": "APLD",
-      "name": "",
-      "price": 0,
-      "opus_recommendation": "AVOID",
+      "ticker": "LLY",
+      "name": "Eli Lilly and Company",
+      "price": 1006.7,
+      "opus_recommendation": "BUY",
       "framework": {
-        "score": 0
+        "revenue_growth": {
+          "verdict": "pass",
+          "detail": "revenue_growth 55.5% \u2014 well above the 30% pass threshold, driven by GLP-1 franchise demand."
+        },
+        "gross_margins": {
+          "verdict": "pass",
+          "detail": "gross_margins 82.8% \u2014 far above the 65% pass threshold."
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "revenue_growth 55.5 + operating_margins 49.4 = 104.9 \u2014 far above 50."
+        },
+        "earnings_accel": {
+          "verdict": "pass",
+          "detail": "earnings_growth 169.9% exceeds revenue_growth 55.5% \u2014 strong operating leverage."
+        },
+        "capital_efficiency": {
+          "verdict": "pass",
+          "detail": "return_on_equity 107% \u2014 far above 20% (elevated by debt-funded buybacks; debt_to_equity 139%)."
+        },
+        "short_dynamics": {
+          "verdict": "borderline",
+          "detail": "short_interest 0.88% is well below 10%, but short_interest_change +2.05% means SI is rising \u2014 fails the 'declining AND <5%' pass test, qualifies as borderline via '<10%'."
+        },
+        "score": 5.5
       },
-      "source": "both",
-      "conviction": "HIGH",
-      "catalysts_general": [],
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "AI can accelerate drug discovery and trial design at the margin, but Lilly's revenue is driven by GLP-1/incretin demand and manufacturing capacity, not technology. Net neutral to the thesis."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals supplied in the input. The known structural item is heavy capex on GLP-1 manufacturing expansion; the input shows total_debt 43.4B vs total_cash 5.28B and debt_to_equity 139%, consistent with debt-funded capacity buildout. free_cashflow 9.16B covers the 22% payout_ratio comfortably."
+      },
+      "financials": {
+        "current_price": "$1006.70",
+        "range_52w": "$623.78 - $1133.95",
+        "forward_pe": "22.66"
+      },
       "catalysts_verified": [],
-      "analyst_take": "Near 52-week high ($46.71 vs $47.79 high); analyst consensus $48 = $1.30 upside; negative FCF -$1.5B; debt tripled to $2.6B in one quarter; the short squeeze has already happened",
-      "ideal_entry": null,
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "catalysts_general": [
+        "forward_pe 22.66 vs trailing_pe 35.71 \u2014 forward EPS expected to rise from 28.19 to 44.44.",
+        "Only 11.2% below the 52-week high; price_change_pct_20d +8.59% shows renewed momentum above sma_20/sma_50.",
+        "Trading 20.2% below target_mean_price 1210; 24 of 31 analysts buy/strong_buy.",
+        "peg_ratio 1.35 \u2014 reasonable for 55% revenue growth from a mega-cap.",
+        "Low beta of 0.48 \u2014 defensive growth profile."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 900.0,
+          "pe_at_level": "20.3x forward EPS",
+          "scenario": "GLP-1 competitive pressure or supply normalization slows the growth narrative."
+        },
+        {
+          "price": 850.0,
+          "pe_at_level": "19.1x forward EPS",
+          "scenario": "Retreat toward target_low_price 850 on a pipeline setback or pricing/reimbursement headwinds."
+        }
+      ],
+      "ideal_entry": {
+        "price": 940.0,
+        "reasoning": "Near the sma_20 (940.55) / sma_50 (939.74) cluster; a pullback to the moving-average base keeps the entry forward_pe near 21x."
+      },
+      "comparables": [
+        {
+          "ticker": "NVO",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Novo Nordisk \u2014 the principal GLP-1/incretin competitor; referenced for context only."
+        },
+        {
+          "ticker": "MRK",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Merck \u2014 large-cap pharma peer; referenced for context only."
+        }
+      ],
+      "analyst_take": "Eli Lilly couples 55% revenue and 170% earnings growth with a 105 Rule-of-40 \u2014 extraordinary for an 898B mega-cap \u2014 and only loses a half-point because short interest ticked up from an already negligible 0.88%. At a forward_pe of 22.7, a PEG of 1.35, and 20% below consensus with a low beta, it offers durable, defensive growth. BUY."
     },
     {
-      "ticker": "PYPL",
-      "name": "",
-      "price": 0,
-      "opus_recommendation": "AVOID",
+      "ticker": "META",
+      "name": "Meta Platforms, Inc.",
+      "price": 613.71,
+      "opus_recommendation": "BUY",
       "framework": {
-        "score": 0
+        "revenue_growth": {
+          "verdict": "pass",
+          "detail": "revenue_growth 33.1% \u2014 above the 30% pass threshold."
+        },
+        "gross_margins": {
+          "verdict": "pass",
+          "detail": "gross_margins 81.9% \u2014 far above the 65% pass threshold."
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "revenue_growth 33.1 + operating_margins 40.6 = 73.7 \u2014 above 50."
+        },
+        "earnings_accel": {
+          "verdict": "pass",
+          "detail": "earnings_growth 62.4% exceeds revenue_growth 33.1% \u2014 operating leverage intact."
+        },
+        "capital_efficiency": {
+          "verdict": "pass",
+          "detail": "return_on_equity 32.9% \u2014 above the 20% pass threshold."
+        },
+        "short_dynamics": {
+          "verdict": "borderline",
+          "detail": "short_interest 1.32% is well below 10%, but short_interest_change +9.87% means SI is rising \u2014 fails the 'declining AND <5%' pass test, qualifies as borderline via '<10%'."
+        },
+        "score": 5.5
       },
-      "source": "scanner",
-      "conviction": "HIGH",
-      "catalysts_general": [],
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "AI drives Meta's ad-targeting, ranking and content-recommendation systems and underpins its generative-AI products. It is a core tailwind, though Reality Labs/AI capex is a near-term earnings drag."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals supplied in the input. Known context: heavy AI/data-center capex; the input shows free_cashflow still robust at 25.6B, total_cash 81.2B roughly matching total_debt 86.8B, and EBITDA 109.3B \u2014 capex is comfortably self-funded."
+      },
+      "financials": {
+        "current_price": "$613.71",
+        "range_52w": "$520.26 - $796.25",
+        "forward_pe": "16.91"
+      },
       "catalysts_verified": [],
-      "analyst_take": "Third CEO change in 3 years; branded checkout growing 1%; 34 analysts project only 7% upside; Apple Pay/Google Pay structural competition; no near-term catalyst",
-      "ideal_entry": null,
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "catalysts_general": [
+        "forward_pe 16.91 and peg_ratio 0.89 \u2014 the cheapest growth profile in this group relative to its growth rate.",
+        "Down 22.9% from the 52-week high of 796.25; trading just below sma_20 (634.69) and sma_50 (621.86).",
+        "Trading 25.7% below target_mean_price 826.69; 56 of 63 analysts buy/strong_buy, recommendation_mean 1.35 \u2014 strongest analyst slate here.",
+        "free_cashflow 25.6B against market_cap 1.55T (~1.6% FCF yield) plus an 81B cash hoard."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 560.0,
+          "pe_at_level": "15.5x forward EPS",
+          "scenario": "AI-capex concerns and ad-cycle softness push the stock toward prior-base support."
+        },
+        {
+          "price": 520.26,
+          "pe_at_level": "14.4x forward EPS",
+          "scenario": "Retest of the 52-week low on a broad market drawdown or a regulatory/ad-spend shock."
+        }
+      ],
+      "ideal_entry": {
+        "price": 560.0,
+        "reasoning": "Below the sma_20/sma_50 band where the forward_pe drops to ~15.5x and the PEG falls comfortably under 1 \u2014 a clear valuation cushion."
+      },
+      "comparables": [
+        {
+          "ticker": "GOOGL",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Alphabet \u2014 digital-advertising and AI scale peer; referenced for context only."
+        },
+        {
+          "ticker": "SNAP",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Snap \u2014 social-advertising peer; referenced for context only."
+        }
+      ],
+      "analyst_take": "Meta scores 5.5/6 and is the standout on valuation: a forward_pe of 16.9 and a PEG of 0.89 against 33% revenue and 62% earnings growth, 25% below consensus, with the deepest analyst support in the group (recommendation_mean 1.35). The rising AI/Reality Labs capex is the watch item, but free cash flow and an 81B cash pile fully fund it. BUY."
     },
     {
-      "ticker": "NVO",
-      "name": "",
-      "price": 0,
-      "opus_recommendation": "AVOID",
+      "ticker": "PODD",
+      "name": "Insulet Corporation",
+      "price": 153.2,
+      "opus_recommendation": "WATCHLIST",
       "framework": {
-        "score": 0
+        "revenue_growth": {
+          "verdict": "pass",
+          "detail": "revenue_growth 33.9% \u2014 above the 30% pass threshold."
+        },
+        "gross_margins": {
+          "verdict": "pass",
+          "detail": "gross_margins 71.0% \u2014 above the 65% pass threshold."
+        },
+        "rule_of_40": {
+          "verdict": "borderline",
+          "detail": "revenue_growth 33.9 + operating_margins 16.0 = 49.9 \u2014 falls in the 30-50 borderline band, just short of 50."
+        },
+        "earnings_accel": {
+          "verdict": "pass",
+          "detail": "earnings_growth 159% exceeds revenue_growth 33.9% \u2014 strong operating leverage off expanding device margins."
+        },
+        "capital_efficiency": {
+          "verdict": "pass",
+          "detail": "return_on_equity 23.0% \u2014 above the 20% pass threshold."
+        },
+        "short_dynamics": {
+          "verdict": "pass",
+          "detail": "short_interest 4.84% and short_interest_change -2.67% \u2014 declining AND below 5%."
+        },
+        "score": 5.5
       },
-      "source": "discovery",
-      "conviction": "HIGH",
-      "catalysts_general": [],
-      "catalysts_verified": [],
-      "analyst_take": "Analyst consensus target $44.55 BELOW current price $45.80; 2026 earnings contraction guided -4-12%; oral Wegovy inferior API economics; Lilly orforglipron beat it head-to-head",
-      "ideal_entry": null,
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "DUOL",
-      "name": "",
-      "price": 0,
-      "opus_recommendation": "AVOID",
-      "framework": {
-        "score": 0
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "The Omnipod 5 automated-insulin-delivery algorithm uses on-device control logic, but Insulet's business is medical-device hardware and reimbursement-driven; broad AI trends are not a material driver. Neutral."
       },
-      "source": "both",
-      "conviction": "HIGH",
-      "catalysts_general": [],
-      "catalysts_verified": [],
-      "analyst_take": "Analyst consensus $100 BELOW current $109; bookings guided from $1.45B to $1.28B; Q2 bookings +6% only; AI tutors (ChatGPT, Claude) legitimate existential threat to gamified subscription loop",
-      "ideal_entry": null,
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
-    },
-    {
-      "ticker": "MOD",
-      "name": "",
-      "price": 0,
-      "opus_recommendation": "AVOID",
-      "framework": {
-        "score": 0
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals supplied in the input. Balance sheet shows total_debt 1.01B vs total_cash 0.48B (net debt) and debt_to_equity 77.8%; free_cashflow is positive but modest at 253M \u2014 leverage is manageable but not a fortress."
       },
-      "source": "discovery",
-      "conviction": "HIGH",
-      "catalysts_general": [],
+      "financials": {
+        "current_price": "$153.20",
+        "range_52w": "$145.59 - $354.88",
+        "forward_pe": "18.71"
+      },
       "catalysts_verified": [],
-      "analyst_take": "Trading ABOVE all analyst price targets ($292 vs $240-265 range); 158x trailing P/E, 39.6x Fwd P/E; near 52-week high; negative FCF; May 26 earnings binary with downside asymmetry",
-      "ideal_entry": null,
-      "financials": {},
-      "ai_exposure": null,
-      "deal_radar": null,
-      "downside_scenarios": [],
-      "comparables": []
+      "catalysts_general": [
+        "Down 56.8% from the 52-week high of 354.88 and sitting just above the 52-week low of 145.59 \u2014 severe, ongoing drawdown.",
+        "price_change_pct_20d -23.7%, 50d -35.4%, 90d -37.8%; trading well below sma_20 (170.75) and sma_50 (198.07) \u2014 falling-knife momentum.",
+        "forward_pe 18.71 vs trailing_pe 35.25 \u2014 forward EPS expected to nearly double (4.28 to 8.06).",
+        "Trading 38.8% below target_mean_price 250.13; 21 of 25 analysts at buy/strong_buy despite the collapse.",
+        "held_pct_institutions 103.8% indicates heavy institutional ownership / possible short-related reporting effects."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 145.59,
+          "pe_at_level": "18.1x forward EPS",
+          "scenario": "Break of the 52-week low if the selling that drove a -38% 90-day move continues."
+        },
+        {
+          "price": 130.0,
+          "pe_at_level": "16.1x forward EPS",
+          "scenario": "Competitive pressure in automated insulin delivery (e.g. CGM-integrated rivals) drives a fresh leg lower."
+        }
+      ],
+      "ideal_entry": {
+        "price": 146.0,
+        "reasoning": "Near the 52-week low of 145.59 \u2014 but only after price action stabilizes; entering a stock down 38% in 90 days before a base forms risks catching a falling knife."
+      },
+      "comparables": [
+        {
+          "ticker": "DXCM",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Dexcom \u2014 continuous-glucose-monitor peer in the diabetes-device space; referenced for context only."
+        },
+        {
+          "ticker": "TNDM",
+          "forward_pe": "n/a \u2014 not in input data",
+          "growth": "n/a \u2014 not in input data",
+          "note": "Tandem Diabetes \u2014 direct insulin-pump competitor; referenced for context only."
+        }
+      ],
+      "analyst_take": "Insulet's fundamentals hold up \u2014 5.5/6, with 34% revenue growth, 159% earnings growth and a forward_pe of 18.7 after a brutal 57% drawdown. But the only framework miss is a thin Rule-of-40 (49.9, dragged by a 16% operating margin), and the chart is in freefall with no base. Strong business at a tempting valuation, but WATCHLIST until the price stabilizes rather than buying mid-collapse."
     }
   ]
 }
