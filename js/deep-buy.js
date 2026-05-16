@@ -473,11 +473,6 @@
       // Cards
       const container = $('#db-cards');
       const picks = data.picks || [];
-      if (!picks.length) {
-        hide('db-loading');
-        if (!data.strategic_context_blocks_new_entries) show('db-empty');
-        return;
-      }
       picks.forEach(p => container.appendChild(renderCard(p)));
       hide('db-loading');
 
@@ -517,6 +512,11 @@
           watch.forEach(w => watchContainer.appendChild(renderWatchCard(w)));
         }
         watchSection.classList.remove('hidden');
+      }
+
+      const hasRenderableRows = picks.length || flowLedPicks.length || flowExtremePicks.length || watch.length;
+      if (!hasRenderableRows && !data.strategic_context_blocks_new_entries) {
+        show('db-empty');
       }
 
       // Per-card copy delegation

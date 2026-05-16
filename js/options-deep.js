@@ -501,13 +501,22 @@
     renderSection(allBs, 'od-bs', 'od-bs-count');
   }
 
+  function visibleBullscouterEntries(data) {
+    const bs = data.bullscouter || [];
+    if (bs.length) return bs;
+    // The consolidated Options page only has the Bull Scouter section. When
+    // today's export has no non-held universe rows, keep the page populated
+    // with held rows instead of showing an all-zero empty state.
+    return data.mine || [];
+  }
+
   function renderStats(data) {
     const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
     // Only include lists whose containers are actually on this page.
     const hasMine = !!document.getElementById('od-mine');
     const hasBs = !!document.getElementById('od-bs');
     const mineWithData = hasMine ? (data.mine || []).filter(hasAnyData) : [];
-    const bsWithData = hasBs ? (data.bullscouter || []).filter(hasAnyData) : [];
+    const bsWithData = hasBs ? visibleBullscouterEntries(data).filter(hasAnyData) : [];
     const all = [...mineWithData, ...bsWithData];
     const bull = all.filter(e => e.flow?.score != null && e.flow.score > 2).length;
     const bear = all.filter(e => e.flow?.score != null && e.flow.score < -2).length;
@@ -595,7 +604,7 @@
   function copyList(data, which) {
     const header = `Bull Scouter Options Deep — ${data.date} (provider: ${data.provider})`;
     const mine = (data.mine || []).filter(hasAnyData);
-    const bs = (data.bullscouter || []).filter(hasAnyData);
+    const bs = visibleBullscouterEntries(data).filter(hasAnyData);
     let lines = [header, ''];
     if (which === 'mine') {
       lines.push(`== MY STOCKS (${mine.length}) ==`);
@@ -645,7 +654,7 @@
       if (vBadge && data.version) vBadge.textContent = `v${data.version}`;
 
       allMine = data.mine || [];
-      allBs = data.bullscouter || [];
+      allBs = visibleBullscouterEntries(data);
 
       renderStats(data);
       renderAll();
