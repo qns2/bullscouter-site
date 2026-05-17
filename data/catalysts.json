@@ -1,17 +1,17 @@
 {
   "scan_date": "2026-05-17",
-  "scan_time": "10:04",
+  "scan_time": "10:33",
   "version": "2.30.4",
   "format": "heatmap_v1",
   "stats": {
-    "total": 737,
+    "total": 748,
     "by_type": {
-      "fda": 105,
+      "fda": 106,
       "fda_event": 2,
       "launch": 40,
       "analyst_downgrade": 6,
       "analyst_initiation": 3,
-      "analyst_upgrade": 104,
+      "analyst_upgrade": 108,
       "cargo_mission": 1,
       "government_contract_launch": 2,
       "launch_window": 9,
@@ -56,6 +56,7 @@
       "guidance_change": 6,
       "business_contract": 1,
       "government_orders": 2,
+      "regulatory_ruling": 4,
       "regulatory_approval": 7,
       "merger": 5,
       "market_position": 2,
@@ -85,6 +86,7 @@
       "regulatory_challenge": 3,
       "government_contract_award": 3,
       "sector_tailwind": 3,
+      "insider_buy": 4,
       "clinical_trial_termination": 1,
       "ftc_merger_challenge": 2,
       "multiple_analyst_upgrades": 1,
@@ -102,7 +104,7 @@
       "defense_contractor_ranking": 1,
       "government_contracts": 1,
       "national_security_launch": 1,
-      "mission_award": 6,
+      "mission_award": 7,
       "defense_delivery": 1,
       "product_delivery_-_government_order": 1,
       "s-3/a": 2,
@@ -138,10 +140,8 @@
       "analyst_price_target": 1,
       "rideshare_launch": 1,
       "commercial_space_station_launch": 1,
-      "insider_buy": 2,
       "shelf_registration_s3_atm": 1,
       "public_offering": 1,
-      "regulatory_ruling": 1,
       "s-3_shelf_registration_filing": 1,
       "infrastructure_demand": 1,
       "common_stock_offering": 1,
@@ -150,8 +150,8 @@
     },
     "upcoming_7d": 16,
     "upcoming_30d": 61,
-    "enriched": 38,
-    "heatmap_tickers": 144
+    "enriched": 39,
+    "heatmap_tickers": 148
   },
   "heatmap": [
     {
@@ -256,12 +256,6 @@
           "event_date": "2026-08-31"
         },
         {
-          "type": "mission_award",
-          "name": "Rocket Lab said it added three new Electron launches to its iQPS multi-launch de",
-          "weight": 10,
-          "source": "perplexity"
-        },
-        {
           "type": "operational_achievement",
           "name": "Rocket Lab achieved 21 launches in 2025 with 100% mission success rate and secur",
           "weight": 5,
@@ -271,6 +265,12 @@
           "type": "analyst_upgrade",
           "name": "Daiwa Securities upgraded Rocket Lab USA (RKLB) from Neutral to Outperform with ",
           "weight": 2,
+          "source": "perplexity"
+        },
+        {
+          "type": "mission_award",
+          "name": "Rocket Lab said it added three new Electron launches to its iQPS multi-launch de",
+          "weight": 10,
           "source": "perplexity"
         },
         {
@@ -534,12 +534,6 @@
           "event_date": "2026-06-30"
         },
         {
-          "type": "test_flight",
-          "name": "Space launch calendars list Northrop Grumman's EWS OD-1 payload for the U.S. Spa",
-          "weight": 10,
-          "source": "perplexity"
-        },
-        {
           "type": "government_contract_launch",
           "name": "Northrop Grumman NET 2026 launch of EWS OD-1 weather satellite for United States",
           "weight": 5,
@@ -549,6 +543,12 @@
           "type": "cargo_resupply_mission",
           "name": "Northrop Grumman's Cygnus XL spacecraft launched on NG-24 mission to deliver car",
           "weight": 5,
+          "source": "perplexity"
+        },
+        {
+          "type": "test_flight",
+          "name": "Space launch calendars list Northrop Grumman's EWS OD-1 payload for the U.S. Spa",
+          "weight": 10,
           "source": "perplexity"
         },
         {
@@ -704,6 +704,52 @@
       "financials_available": true
     },
     {
+      "ticker": "VRDN",
+      "heatmap_score": 60,
+      "signal_count": 4,
+      "signals": [
+        {
+          "type": "trial_readout",
+          "name": "Viridian Therapeutics reported a trial readout for elebrobart (VRDN-003), a subc",
+          "weight": 15,
+          "source": "perplexity",
+          "days_until": -2,
+          "event_date": "2026-05-15"
+        },
+        {
+          "type": "fda",
+          "name": "Viridian Therapeutics has a PDUFA date for Veligrotug in thyroid eye disease.",
+          "weight": 20,
+          "source": "perplexity",
+          "days_until": 44,
+          "event_date": "2026-06-30"
+        },
+        {
+          "type": "fda",
+          "name": "Viridian Therapeutics also appears on FDA catalyst calendars with a near-term tr",
+          "weight": 20,
+          "source": "perplexity"
+        },
+        {
+          "type": "trial_readout",
+          "name": "Viridian Therapeutics has a trial readout for elegrobart (VRDN-003) in active th",
+          "weight": 15,
+          "source": "perplexity"
+        }
+      ],
+      "large_cap": false,
+      "category": "smallmid",
+      "financials": {
+        "current_price": 16.82,
+        "market_cap_fmt": "$1.7B",
+        "down_from_high_pct": 50.9,
+        "forward_pe": -6.7,
+        "revenue_growth": 95.8,
+        "gross_margin": 0.0
+      },
+      "financials_available": true
+    },
+    {
       "ticker": "BA",
       "heatmap_score": 58,
       "signal_count": 8,
@@ -784,7 +830,7 @@
         },
         {
           "type": "contract_award",
-          "name": "RTX was described as having secured Patriot missile-system contracts including a",
+          "name": "RTX was reported to have won a $946 million Patriot missile system contract in 2",
           "weight": 10,
           "source": "perplexity"
         },
@@ -1000,50 +1046,18 @@
       "financials_available": true
     },
     {
-      "ticker": "VRDN",
-      "heatmap_score": 44,
-      "signal_count": 3,
-      "signals": [
-        {
-          "type": "trial_readout",
-          "name": "Viridian Therapeutics reported a trial readout for elevobart (VRDN-003) in activ",
-          "weight": 15,
-          "source": "perplexity",
-          "days_until": -2,
-          "event_date": "2026-05-15"
-        },
-        {
-          "type": "fda",
-          "name": "Viridian Therapeutics has a PDUFA date for Veligrotug in thyroid eye disease.",
-          "weight": 20,
-          "source": "perplexity",
-          "days_until": 44,
-          "event_date": "2026-06-30"
-        },
-        {
-          "type": "trial_readout",
-          "name": "Viridian Therapeutics has a trial readout for elegrobart (VRDN-003) in active th",
-          "weight": 15,
-          "source": "perplexity"
-        }
-      ],
-      "large_cap": false,
-      "category": "smallmid",
-      "financials": {
-        "current_price": 16.82,
-        "market_cap_fmt": "$1.7B",
-        "down_from_high_pct": 50.9,
-        "forward_pe": -6.7,
-        "revenue_growth": 95.8,
-        "gross_margin": 0.0
-      },
-      "financials_available": true
-    },
-    {
       "ticker": "BCTX",
       "heatmap_score": 42,
       "signal_count": 7,
       "signals": [
+        {
+          "type": "trial_readout",
+          "name": "BriaCell Therapeutics expects top-line data for Bria-IMT in metastatic breast ca",
+          "weight": 15,
+          "source": "perplexity",
+          "days_until": 44,
+          "event_date": "2026-06-30"
+        },
         {
           "type": "topline_data_readout",
           "name": "BriaCell anticipates top-line data for Bria-IMT Phase 3 trial in metastatic brea",
@@ -1064,14 +1078,6 @@
           "type": "phase_3_topline_data",
           "name": "BriaCell anticipates top-line data for Bria-IMT in metastatic breast cancer Phas",
           "weight": 5,
-          "source": "perplexity",
-          "days_until": 44,
-          "event_date": "2026-06-30"
-        },
-        {
-          "type": "trial_readout",
-          "name": "BriaCell Therapeutics expects topline data for Bria-IMT in metastatic breast can",
-          "weight": 15,
           "source": "perplexity",
           "days_until": 44,
           "event_date": "2026-06-30"
@@ -1336,7 +1342,7 @@
         },
         {
           "type": "fda",
-          "name": "Ultragenyx Pharmaceutical has a PDUFA date of September 19, 2026 for a regulator",
+          "name": "Ultragenyx Pharmaceutical has a PDUFA date for a regulatory review disclosed on ",
           "weight": 20,
           "source": "perplexity",
           "days_until": 125,
@@ -1845,7 +1851,7 @@
       "signals": [
         {
           "type": "fda",
-          "name": "Celcuity has a PDUFA date of July 17, 2026 for gedatolisib, a NDA catalyst tied ",
+          "name": "Celcuity has a PDUFA date for gedatolisib, a Phase 3 oncology program.",
           "weight": 20,
           "source": "perplexity",
           "days_until": 61,
@@ -1937,7 +1943,7 @@
         "gross_margin": null
       },
       "recommendation": "MOMENTUM",
-      "score": 54,
+      "score": 52,
       "profile": "recovery",
       "financials_available": true
     },
@@ -2083,16 +2089,60 @@
       "financials_available": true
     },
     {
+      "ticker": "PFE",
+      "heatmap_score": 26,
+      "signal_count": 5,
+      "signals": [
+        {
+          "type": "fda",
+          "name": "Pfizer Inc. PDUFA - PADCEV (sBLA)",
+          "weight": 6,
+          "source": "rttnews",
+          "days_until": 92,
+          "event_date": "2026-08-17"
+        },
+        {
+          "type": "regulatory_ruling",
+          "name": "FTC merger-review policy and recent enforcement trends indicate continued scruti",
+          "weight": 12,
+          "source": "perplexity"
+        },
+        {
+          "type": "fda_approval_decision",
+          "name": "Anaphylm (sublingual epinephrine) anticipated FDA decision expected as early as ",
+          "weight": 5,
+          "source": "perplexity"
+        },
+        {
+          "type": "agreement_announced",
+          "name": "Pfizer reached a landmark agreement with the Trump administration in late Septem",
+          "weight": 5,
+          "source": "perplexity"
+        },
+        {
+          "type": "policy_agreement",
+          "name": "Pfizer reached a landmark agreement with the Trump administration in late Septem",
+          "weight": 5,
+          "source": "perplexity"
+        }
+      ],
+      "large_cap": true,
+      "category": "pharma",
+      "financials": {
+        "current_price": 25.33,
+        "market_cap_fmt": "$144.4B",
+        "down_from_high_pct": 11.9,
+        "forward_pe": 8.9,
+        "revenue_growth": 5.4,
+        "gross_margin": 74.8
+      },
+      "financials_available": true
+    },
+    {
       "ticker": "AVAV",
       "heatmap_score": 26,
       "signal_count": 4,
       "signals": [
-        {
-          "type": "contract_award",
-          "name": "A small-cap defense stock ranking from PortfolioPilot lists AeroVironment among ",
-          "weight": 10,
-          "source": "perplexity"
-        },
         {
           "type": "government_orders",
           "name": "AeroVironment is listed among top defense contractors with rising government ord",
@@ -2103,6 +2153,12 @@
           "type": "analyst_upgrade",
           "name": "AeroVironment (AVAV) was upgraded by Weiss Ratings from Sell (D+) to Hold (C-).",
           "weight": 2,
+          "source": "perplexity"
+        },
+        {
+          "type": "contract_award",
+          "name": "A small-cap defense stock ranking from PortfolioPilot lists AeroVironment among ",
+          "weight": 10,
           "source": "perplexity"
         },
         {
@@ -3089,12 +3145,15 @@
       "category": "smallmid",
       "financials": {
         "current_price": 24.65,
-        "market_cap_fmt": "$17.8B",
+        "market_cap_fmt": "",
         "down_from_high_pct": 15.9,
-        "forward_pe": 20.9,
-        "revenue_growth": 11.1,
-        "gross_margin": 78.7
+        "forward_pe": null,
+        "revenue_growth": null,
+        "gross_margin": null
       },
+      "recommendation": "MOMENTUM",
+      "score": 38,
+      "profile": "recovery",
       "financials_available": true
     },
     {
@@ -3299,14 +3358,46 @@
       "category": "smallmid",
       "financials": {
         "current_price": 49.04,
-        "market_cap_fmt": "",
+        "market_cap_fmt": "$19.5B",
         "down_from_high_pct": 17.6,
+        "forward_pe": -11.8,
+        "revenue_growth": 260.2,
+        "gross_margin": -69.9
+      },
+      "financials_available": true
+    },
+    {
+      "ticker": "SRAD",
+      "heatmap_score": 20,
+      "signal_count": 2,
+      "signals": [
+        {
+          "type": "earnings",
+          "name": "SRAD Earnings",
+          "weight": 8,
+          "source": "finnhub",
+          "days_until": 85,
+          "event_date": "2026-08-10"
+        },
+        {
+          "type": "insider_buy",
+          "name": "Major insider buying detected",
+          "weight": 15,
+          "source": "sec_edgar"
+        }
+      ],
+      "large_cap": false,
+      "category": "smallmid",
+      "financials": {
+        "current_price": 12.49,
+        "market_cap_fmt": "",
+        "down_from_high_pct": 61.2,
         "forward_pe": null,
         "revenue_growth": null,
         "gross_margin": null
       },
       "recommendation": "MOMENTUM",
-      "score": 40,
+      "score": 53,
       "profile": "recovery",
       "financials_available": true
     },
@@ -3317,7 +3408,7 @@
       "signals": [
         {
           "type": "fda",
-          "name": "Jazz Pharmaceuticals has a PDUFA date of August 25, 2026 for Ziihera.",
+          "name": "Jazz Pharmaceuticals has a PDUFA date for Ziihera.",
           "weight": 20,
           "source": "perplexity",
           "days_until": 100,
@@ -3381,7 +3472,7 @@
       "signals": [
         {
           "type": "contract_award",
-          "name": "Kratos reported contracts announced in March and April 2026 totaling more than o",
+          "name": "Kratos was reported to have announced contracts in March and April 2026 totaling",
           "weight": 10,
           "source": "perplexity"
         },
@@ -3698,50 +3789,6 @@
         "forward_pe": 19.0,
         "revenue_growth": 2.0,
         "gross_margin": 18.8
-      },
-      "financials_available": true
-    },
-    {
-      "ticker": "PFE",
-      "heatmap_score": 17,
-      "signal_count": 4,
-      "signals": [
-        {
-          "type": "fda",
-          "name": "Pfizer Inc. PDUFA - PADCEV (sBLA)",
-          "weight": 6,
-          "source": "rttnews",
-          "days_until": 92,
-          "event_date": "2026-08-17"
-        },
-        {
-          "type": "fda_approval_decision",
-          "name": "Anaphylm (sublingual epinephrine) anticipated FDA decision expected as early as ",
-          "weight": 5,
-          "source": "perplexity"
-        },
-        {
-          "type": "agreement_announced",
-          "name": "Pfizer reached a landmark agreement with the Trump administration in late Septem",
-          "weight": 5,
-          "source": "perplexity"
-        },
-        {
-          "type": "policy_agreement",
-          "name": "Pfizer reached a landmark agreement with the Trump administration in late Septem",
-          "weight": 5,
-          "source": "perplexity"
-        }
-      ],
-      "large_cap": true,
-      "category": "pharma",
-      "financials": {
-        "current_price": 25.33,
-        "market_cap_fmt": "$144.4B",
-        "down_from_high_pct": 11.9,
-        "forward_pe": 8.9,
-        "revenue_growth": 5.4,
-        "gross_margin": 74.8
       },
       "financials_available": true
     },
@@ -4138,7 +4185,7 @@
       "signals": [
         {
           "type": "fda",
-          "name": "Alnylam Pharmaceuticals has a PDUFA target date of September 15, 2026 for zilebe",
+          "name": "Alnylam Pharmaceuticals has a PDUFA date for zilebesiran for hypertension.",
           "weight": 20,
           "source": "perplexity",
           "days_until": 121,
@@ -5070,7 +5117,7 @@
       "signals": [
         {
           "type": "fda",
-          "name": "AbbVie has a PDUFA date of June 8, 2026 for cendakimab, a regulatory catalyst fo",
+          "name": "AbbVie and Arena Pharma have a PDUFA decision date for cendakimab in ESR1-mutate",
           "weight": 6,
           "source": "perplexity",
           "days_until": 22,
@@ -5211,6 +5258,33 @@
       "financials": {}
     },
     {
+      "ticker": "GEHC",
+      "heatmap_score": 12,
+      "signal_count": 1,
+      "signals": [
+        {
+          "type": "insider_buy",
+          "name": "Major insider buying detected",
+          "weight": 15,
+          "source": "sec_edgar"
+        }
+      ],
+      "large_cap": false,
+      "category": "smallmid",
+      "financials": {
+        "current_price": 60.76,
+        "market_cap_fmt": "",
+        "down_from_high_pct": 32.3,
+        "forward_pe": null,
+        "revenue_growth": null,
+        "gross_margin": null
+      },
+      "recommendation": "MOMENTUM",
+      "score": 43,
+      "profile": "recovery",
+      "financials_available": true
+    },
+    {
       "ticker": "GEV",
       "heatmap_score": 12,
       "signal_count": 3,
@@ -5300,33 +5374,6 @@
       "financials": {}
     },
     {
-      "ticker": "SPGI",
-      "heatmap_score": 12,
-      "signal_count": 1,
-      "signals": [
-        {
-          "type": "insider_buy",
-          "name": "Strong insider buying detected",
-          "weight": 15,
-          "source": "sec_edgar"
-        }
-      ],
-      "large_cap": false,
-      "category": "smallmid",
-      "financials": {
-        "current_price": 403.15,
-        "market_cap_fmt": "",
-        "down_from_high_pct": 30.4,
-        "forward_pe": null,
-        "revenue_growth": null,
-        "gross_margin": null
-      },
-      "recommendation": "MOMENTUM",
-      "score": 38,
-      "profile": "recovery",
-      "financials_available": true
-    },
-    {
       "ticker": "VST",
       "heatmap_score": 12,
       "signal_count": 3,
@@ -5373,6 +5420,33 @@
           "No Dilution": "fail"
         }
       },
+      "financials_available": true
+    },
+    {
+      "ticker": "ZTS",
+      "heatmap_score": 12,
+      "signal_count": 1,
+      "signals": [
+        {
+          "type": "insider_buy",
+          "name": "Strong insider buying detected",
+          "weight": 15,
+          "source": "sec_edgar"
+        }
+      ],
+      "large_cap": false,
+      "category": "smallmid",
+      "financials": {
+        "current_price": 74.22,
+        "market_cap_fmt": "",
+        "down_from_high_pct": 56.9,
+        "forward_pe": null,
+        "revenue_growth": null,
+        "gross_margin": null
+      },
+      "recommendation": "MOMENTUM",
+      "score": 34,
+      "profile": "recovery",
       "financials_available": true
     },
     {
@@ -5509,6 +5583,67 @@
       "financials_available": true
     },
     {
+      "ticker": "AVGO",
+      "heatmap_score": 10,
+      "signal_count": 1,
+      "signals": [
+        {
+          "type": "regulatory_ruling",
+          "name": "FTC and DOJ merger review remains a key factor for major semiconductor and infra",
+          "weight": 12,
+          "source": "perplexity"
+        }
+      ],
+      "large_cap": true,
+      "category": "largecap",
+      "financials": {
+        "current_price": 425.19,
+        "market_cap_fmt": "$2013.1B",
+        "down_from_high_pct": 3.9,
+        "forward_pe": 23.2,
+        "revenue_growth": 29.5,
+        "gross_margin": 76.7
+      },
+      "quality_checklist": {
+        "framework": "quality_growth",
+        "score": 2,
+        "denominator": 6,
+        "items": {
+          "Revenue Growth": "fail",
+          "Gross Margins": "pass",
+          "Net Retention": "fail",
+          "TAM Opportunity": "fail",
+          "Rule of 40": "pass",
+          "Low SBC": "partial"
+        }
+      },
+      "financials_available": true
+    },
+    {
+      "ticker": "MSFT",
+      "heatmap_score": 10,
+      "signal_count": 1,
+      "signals": [
+        {
+          "type": "regulatory_ruling",
+          "name": "FTC and DOJ merger review procedures remain relevant for large technology deals,",
+          "weight": 12,
+          "source": "perplexity"
+        }
+      ],
+      "large_cap": true,
+      "category": "largecap",
+      "financials": {
+        "current_price": 421.92,
+        "market_cap_fmt": "$3134.2B",
+        "down_from_high_pct": 24.0,
+        "forward_pe": 21.8,
+        "revenue_growth": 18.3,
+        "gross_margin": 68.3
+      },
+      "financials_available": true
+    },
+    {
       "ticker": "SNPS",
       "heatmap_score": 10,
       "signal_count": 1,
@@ -5583,12 +5718,12 @@
       "days_until": -7,
       "beneficiaries": [
         {
-          "ticker": "VRTX",
-          "reason": "Immunology and rare disease competitor with overlapping therapeutic areas"
+          "ticker": "AMGN",
+          "reason": "major biopharmaceutical company with immunology/autoimmune disease portfolio"
         },
         {
-          "ticker": "ALNY",
-          "reason": "RNA medicine platform for rare diseases; market expansion validation"
+          "ticker": "ABBV",
+          "reason": "major pharma with immunology franchise benefits from therapeutic area validation"
         }
       ]
     },
@@ -5604,12 +5739,12 @@
       "days_until": -7,
       "beneficiaries": [
         {
-          "ticker": "VRTX",
-          "reason": "Immunology and rare disease competitor with overlapping therapeutic areas"
+          "ticker": "AMGN",
+          "reason": "major biopharmaceutical company with immunology/autoimmune disease portfolio"
         },
         {
-          "ticker": "ALNY",
-          "reason": "RNA medicine platform for rare diseases; market expansion validation"
+          "ticker": "ABBV",
+          "reason": "major pharma with immunology franchise benefits from therapeutic area validation"
         }
       ]
     },
@@ -5681,11 +5816,15 @@
       "beneficiaries": [
         {
           "ticker": "XOM",
-          "reason": "Integrated energy major competitor; positive sector sentiment from upgrade"
+          "reason": "integrated oil & gas peer benefits from sector upgrade momentum"
         },
         {
           "ticker": "CVX",
-          "reason": "Integrated energy competitor; benefits from sector momentum"
+          "reason": "major oil & gas company in same sector"
+        },
+        {
+          "ticker": "COP",
+          "reason": "integrated oil & gas competitor"
         }
       ]
     },
@@ -5701,12 +5840,12 @@
       "days_until": -5,
       "beneficiaries": [
         {
-          "ticker": "LYB",
-          "reason": "Specialty chemicals competitor; same sector upgrade signal"
+          "ticker": "DOW",
+          "reason": "direct competitor in specialty chemicals market"
         },
         {
-          "ticker": "APD",
-          "reason": "Chemical products provider and peer; sector momentum benefits"
+          "ticker": "LYB",
+          "reason": "major chemicals producer with overlapping product portfolio"
         }
       ]
     },
@@ -5722,12 +5861,12 @@
       "days_until": -5,
       "beneficiaries": [
         {
-          "ticker": "ITT",
-          "reason": "Industrial conglomerate peer with similar business segments"
+          "ticker": "EMR",
+          "reason": "peer in industrial automation and process management"
         },
         {
-          "ticker": "ROK",
-          "reason": "Industrial automation competitor; sector upgrade momentum"
+          "ticker": "ETN",
+          "reason": "diversified industrial equipment company with overlapping end markets"
         }
       ]
     },
@@ -5743,16 +5882,12 @@
       "days_until": -5,
       "beneficiaries": [
         {
-          "ticker": "BA",
-          "reason": "aerospace and space division benefits from increased space activity"
+          "ticker": "NOC",
+          "reason": "Northrop Grumman manufactures the Cygnus cargo vehicle for ISS resupply"
         },
         {
           "ticker": "RTX",
-          "reason": "defense and aerospace contractor with space contracts"
-        },
-        {
-          "ticker": "MAXR",
-          "reason": "satellite and space infrastructure services"
+          "reason": "Raytheon Technologies supplies aerospace and defense systems for space missions"
         }
       ]
     },
@@ -5768,16 +5903,12 @@
       "days_until": -5,
       "beneficiaries": [
         {
-          "ticker": "TT",
-          "reason": "major HVAC/air solutions competitor in commercial sector"
+          "ticker": "RTX",
+          "reason": "Collins Aerospace (RTX) is major competitor in aerospace systems and solutions"
         },
         {
-          "ticker": "CARR",
-          "reason": "major HVAC/air solutions competitor"
-        },
-        {
-          "ticker": "LII",
-          "reason": "HVAC competitor in commercial climate control"
+          "ticker": "GE",
+          "reason": "GE Aerospace competes in aviation and aerospace systems"
         }
       ]
     },
@@ -5793,16 +5924,12 @@
       "days_until": -5,
       "beneficiaries": [
         {
-          "ticker": "EOG",
-          "reason": "oil and gas exploration company, sector peer"
-        },
-        {
           "ticker": "COP",
-          "reason": "integrated energy company, benefits from bullish energy sentiment"
+          "reason": "ConocoPhillips is major Permian Basin peer in upstream oil and gas"
         },
         {
-          "ticker": "CLR",
-          "reason": "oil and gas exploration company, sector peer"
+          "ticker": "EOG",
+          "reason": "EOG Resources competes in oil and gas exploration and production"
         }
       ]
     },
@@ -5818,16 +5945,12 @@
       "days_until": -5,
       "beneficiaries": [
         {
-          "ticker": "MAXR",
-          "reason": "satellite services benefit from geopolitical space competition"
+          "ticker": "LMT",
+          "reason": "Chinese rocket launch elevates demand for US space launch capabilities and defense"
         },
         {
-          "ticker": "ASTR",
-          "reason": "launch services provider benefits from US space initiatives"
-        },
-        {
-          "ticker": "BA",
-          "reason": "aerospace company benefits from heightened space activity"
+          "ticker": "NOC",
+          "reason": "Northrop Grumman benefits from increased US space program emphasis"
         }
       ]
     },
@@ -5840,21 +5963,7 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.9,
-      "days_until": -5,
-      "beneficiaries": [
-        {
-          "ticker": "BA",
-          "reason": "aerospace and space division benefits from space infrastructure growth"
-        },
-        {
-          "ticker": "MAXR",
-          "reason": "satellite services benefit from increased space activity"
-        },
-        {
-          "ticker": "ASTR",
-          "reason": "space launch services provider"
-        }
-      ]
+      "days_until": -5
     },
     {
       "ticker": "SPCE",
@@ -5865,21 +5974,7 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.85,
-      "days_until": -5,
-      "beneficiaries": [
-        {
-          "ticker": "BA",
-          "reason": "aerospace and space division benefits from space infrastructure growth"
-        },
-        {
-          "ticker": "MAXR",
-          "reason": "satellite services benefit from increased space activity"
-        },
-        {
-          "ticker": "ASTR",
-          "reason": "space launch services provider"
-        }
-      ]
+      "days_until": -5
     },
     {
       "ticker": "SPCE",
@@ -5890,21 +5985,7 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.7,
-      "days_until": -5,
-      "beneficiaries": [
-        {
-          "ticker": "BA",
-          "reason": "aerospace and space division benefits from space infrastructure growth"
-        },
-        {
-          "ticker": "MAXR",
-          "reason": "satellite services benefit from increased space activity"
-        },
-        {
-          "ticker": "ASTR",
-          "reason": "space launch services provider"
-        }
-      ]
+      "days_until": -5
     },
     {
       "ticker": "SPX",
@@ -5929,41 +6010,29 @@
       "days_until": -4,
       "beneficiaries": [
         {
-          "ticker": "ARCB",
-          "reason": "biotech company in immunotherapy sector"
-        },
-        {
           "ticker": "CRSP",
-          "reason": "biotech company benefits from sector sentiment"
+          "reason": "CRISPR Therapeutics competes in oncology gene therapy"
         },
         {
-          "ticker": "INCY",
-          "reason": "oncology-focused pharma company, sector peer"
+          "ticker": "VRTX",
+          "reason": "Vertex Pharmaceuticals is specialty pharma peer with immunology programs"
         }
       ]
     },
     {
       "ticker": "CORT",
       "type": "analyst_upgrade",
-      "event_name": "UBS upgraded Corcept Therapeutics from Neutral to Buy and raised its price target from $44 to $72 on May 13, 2026.",
+      "event_name": "UBS upgraded Corcept Therapeutics from Neutral to Buy and raised its price target from $44 to $72.",
       "event_date": "2026-05-13",
-      "summary": "UBS upgraded Corcept Therapeutics from Neutral to Buy and raised its price target from $44 to $72 on May 13, 2026.",
+      "summary": "UBS upgraded Corcept Therapeutics from Neutral to Buy and raised its price target from $44 to $72.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.81,
+      "confidence": 0.78,
       "days_until": -4,
       "beneficiaries": [
         {
-          "ticker": "SAGE",
-          "reason": "psychiatric and neurology pharmaceutical company, sector peer"
-        },
-        {
-          "ticker": "AXSM",
-          "reason": "psychiatric and neuro pharmaceutical company, sector peer"
-        },
-        {
-          "ticker": "ALKS",
-          "reason": "pharmaceutical company with neuroscience focus"
+          "ticker": "ACAD",
+          "reason": "Acadia Pharmaceuticals is specialty pharma peer addressing rare conditions"
         }
       ]
     },
@@ -5980,11 +6049,11 @@
       "beneficiaries": [
         {
           "ticker": "LYB",
-          "reason": "chemical industry competitor benefits from sector strength"
+          "reason": "Petrochemical peer benefits from positive chemical sector sentiment"
         },
         {
-          "ticker": "WLK",
-          "reason": "Westlake Chemical peer in chemical materials"
+          "ticker": "ECL",
+          "reason": "Water/hygiene solutions competitor with complementary end markets"
         }
       ]
     },
@@ -6000,12 +6069,12 @@
       "days_until": -4,
       "beneficiaries": [
         {
-          "ticker": "TER",
-          "reason": "Teradyne - semiconductor test equipment direct competitor"
+          "ticker": "COHU",
+          "reason": "Competitor in semiconductor test equipment, benefits from industry uptake"
         },
         {
-          "ticker": "LRCX",
-          "reason": "Lam Research - semiconductor equipment sector peer"
+          "ticker": "NVDA",
+          "reason": "Semiconductor manufacturer benefits from increased test equipment demand"
         }
       ]
     },
@@ -6018,26 +6087,40 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.86,
-      "days_until": -4
+      "days_until": -4,
+      "beneficiaries": [
+        {
+          "ticker": "CRSP",
+          "reason": "Biotech peer in therapeutic discovery and development"
+        },
+        {
+          "ticker": "REGN",
+          "reason": "Biotech company with focus on immunology and inflammatory diseases"
+        }
+      ]
     },
     {
       "ticker": "ITGR",
       "type": "analyst_upgrade",
-      "event_name": "Oppenheimer upgraded Integer Holdings from Perform to Outperform and lifted its price target to $115 on May 13, 2026.",
+      "event_name": "Oppenheimer upgraded Integer Holdings from Perform to Outperform and raised its price target to $115.",
       "event_date": "2026-05-13",
-      "summary": "Oppenheimer upgraded Integer Holdings from Perform to Outperform and lifted its price target to $115 on May 13, 2026.",
+      "summary": "Oppenheimer upgraded Integer Holdings from Perform to Outperform and raised its price target to $115.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.8,
+      "confidence": 0.75,
       "days_until": -4,
       "beneficiaries": [
         {
-          "ticker": "OMCL",
-          "reason": "Omnicell - medical device sector peer"
+          "ticker": "SYK",
+          "reason": "Medical device peer and direct market competitor"
         },
         {
-          "ticker": "PODD",
-          "reason": "Insulet - medical device company benefits from sector strength"
+          "ticker": "ISRG",
+          "reason": "Medical device innovator benefits from increased surgical device demand"
+        },
+        {
+          "ticker": "MDT",
+          "reason": "Large medical device manufacturer with similar components exposure"
         }
       ]
     },
@@ -6054,15 +6137,15 @@
       "beneficiaries": [
         {
           "ticker": "PFE",
-          "reason": "Pfizer - major pharmaceutical competitor"
+          "reason": "Pharmaceutical peer benefits from positive sector sentiment"
         },
         {
           "ticker": "MRK",
-          "reason": "Merck - major pharmaceutical competitor"
+          "reason": "Large pharma competitor with similar therapeutic portfolios"
         },
         {
-          "ticker": "ABBV",
-          "reason": "AbbVie - major pharmaceutical competitor"
+          "ticker": "LLY",
+          "reason": "Pharma peer benefiting from sector momentum"
         }
       ]
     },
@@ -6079,7 +6162,11 @@
       "beneficiaries": [
         {
           "ticker": "CF",
-          "reason": "CF Industries - fertilizer industry direct competitor"
+          "reason": "Fertilizer industry peer, direct competitor in phosphate and potash"
+        },
+        {
+          "ticker": "NTR",
+          "reason": "Global nutrient company with complementary agricultural products"
         }
       ]
     },
@@ -6095,12 +6182,12 @@
       "days_until": -4,
       "beneficiaries": [
         {
-          "ticker": "FLUR",
-          "reason": "Fluor - engineering/construction services competitor"
+          "ticker": "KMI",
+          "reason": "Infrastructure services benefiting from increased construction demand"
         },
         {
-          "ticker": "PWR",
-          "reason": "Quanta Services - utility and energy infrastructure services supplier"
+          "ticker": "TRP",
+          "reason": "Energy infrastructure company benefits from construction/maintenance services"
         }
       ]
     },
@@ -6116,16 +6203,8 @@
       "days_until": -4,
       "beneficiaries": [
         {
-          "ticker": "TRUL",
-          "reason": "Trulieve - cannabis retail operator benefits from sector sentiment"
-        },
-        {
-          "ticker": "CURA",
-          "reason": "Curaleaf - cannabis operator benefits from sector sentiment"
-        },
-        {
           "ticker": "SNDL",
-          "reason": "Sundial Growers - cannabis producer"
+          "reason": "Cannabis operator benefits from improved capital availability and investor sentiment"
         }
       ]
     },
@@ -6142,11 +6221,11 @@
       "beneficiaries": [
         {
           "ticker": "WAFD",
-          "reason": "Washington Federal - regional bank peer"
+          "reason": "Regional bank peer benefits from positive banking sector sentiment"
         },
         {
-          "ticker": "HWBK",
-          "reason": "Hawthorn Bancorp - regional bank peer benefits from sector strength"
+          "ticker": "COLB",
+          "reason": "Community bank competitor with similar regional focus"
         }
       ]
     },
@@ -6162,12 +6241,12 @@
       "days_until": -4,
       "beneficiaries": [
         {
-          "ticker": "RKLB",
-          "reason": "Rocket Lab - space launch industry peer"
+          "ticker": "RTX",
+          "reason": "Aerospace and defense contractor benefits from government space mission activity"
         },
         {
-          "ticker": "RTX",
-          "reason": "Raytheon - aerospace/defense contractor supplying NRO programs"
+          "ticker": "RKLB",
+          "reason": "Commercial space launch provider benefits from increased government space demand"
         }
       ]
     },
@@ -6184,15 +6263,11 @@
       "beneficiaries": [
         {
           "ticker": "TEL",
-          "reason": "Competitor in connectivity and sensor solutions for industrial and automotive markets"
+          "reason": "TE Connectivity - competitor in electrical connectors and sensors"
         },
         {
           "ticker": "APH",
-          "reason": "Competitor in industrial sensors and interconnect solutions"
-        },
-        {
-          "ticker": "LFUS",
-          "reason": "Competitor in circuit protection and sensor products"
+          "reason": "Amphenol - competitor in electronic connectors"
         }
       ]
     },
@@ -6209,7 +6284,7 @@
       "beneficiaries": [
         {
           "ticker": "LNG",
-          "reason": "Direct competitor in LNG export infrastructure"
+          "reason": "Cheniere Energy - competitor LNG exporter"
         }
       ]
     },
@@ -6225,12 +6300,12 @@
       "days_until": -4,
       "beneficiaries": [
         {
-          "ticker": "CTAS",
-          "reason": "Direct competitor in uniform rental and workplace services"
+          "ticker": "UNF",
+          "reason": "UniFirst - uniform and facility services competitor"
         },
         {
-          "ticker": "ECL",
-          "reason": "Competitor in facility services and workplace hygiene"
+          "ticker": "ARMK",
+          "reason": "Aramark - facility services sector peer"
         }
       ]
     },
@@ -6247,15 +6322,15 @@
       "beneficiaries": [
         {
           "ticker": "MCD",
-          "reason": "Peer in quick-service restaurant sector"
+          "reason": "McDonald's - QSR sector peer"
         },
         {
           "ticker": "YUM",
-          "reason": "Competitor in QSR with multiple restaurant brands"
+          "reason": "Yum! Brands - QSR competitor"
         },
         {
-          "ticker": "CMG",
-          "reason": "Peer in casual dining and restaurant services"
+          "ticker": "RBI",
+          "reason": "Restaurant Brands International - QSR sector peer"
         }
       ]
     },
@@ -6283,23 +6358,19 @@
       "beneficiaries": [
         {
           "ticker": "DNKN",
-          "reason": "Direct competitor in coffee and quick-service restaurant"
-        },
-        {
-          "ticker": "MCD",
-          "reason": "Competitor with significant coffee sales in QSR"
+          "reason": "Dunkin' - coffee/QSR sector competitor"
         }
       ]
     },
     {
       "ticker": "BHRB",
       "type": "analyst_upgrade",
-      "event_name": "Freedom Broker upgraded Burke & Herbert Financial from Hold to Buy on May 15, 2026.",
+      "event_name": "Freedom Capital upgraded Burke & Herbert Financial from Hold to Buy and kept the price target at $74.",
       "event_date": "2026-05-15",
-      "summary": "Freedom Broker upgraded Burke & Herbert Financial from Hold to Buy on May 15, 2026.",
+      "summary": "Freedom Capital upgraded Burke & Herbert Financial from Hold to Buy and kept the price target at $74.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.82,
+      "confidence": 0.78,
       "days_until": -2
     },
     {
@@ -6314,41 +6385,33 @@
       "days_until": -2,
       "beneficiaries": [
         {
+          "ticker": "LHX",
+          "reason": "L3Harris - defense contractor sector peer"
+        },
+        {
           "ticker": "RTX",
-          "reason": "Peer in aerospace and defense manufacturing"
-        },
-        {
-          "ticker": "NOC",
-          "reason": "Competitor in defense and aerospace systems"
-        },
-        {
-          "ticker": "GD",
-          "reason": "Peer in aerospace and defense technology"
+          "reason": "Raytheon Technologies - defense/aerospace peer"
         }
       ]
     },
     {
       "ticker": "CHRW",
       "type": "analyst_upgrade",
-      "event_name": "Citigroup upgraded C.H. Robinson Worldwide from Neutral to Buy on May 15, 2026.",
+      "event_name": "Citigroup upgraded C.H. Robinson Worldwide from Neutral to Buy and kept the price target at $199.",
       "event_date": "2026-05-15",
-      "summary": "Citigroup upgraded C.H. Robinson Worldwide from Neutral to Buy on May 15, 2026.",
+      "summary": "Citigroup upgraded C.H. Robinson Worldwide from Neutral to Buy and kept the price target at $199.",
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.82,
       "days_until": -2,
       "beneficiaries": [
         {
-          "ticker": "JBHT",
-          "reason": "Competitor in transportation and logistics services"
-        },
-        {
           "ticker": "XPO",
-          "reason": "Peer in logistics and freight transportation"
+          "reason": "XPO Logistics - freight/logistics competitor"
         },
         {
-          "ticker": "ODFL",
-          "reason": "Competitor in freight transportation"
+          "ticker": "JBHT",
+          "reason": "J.B. Hunt - trucking/logistics sector peer"
         }
       ]
     },
@@ -6364,37 +6427,33 @@
       "days_until": -2,
       "beneficiaries": [
         {
-          "ticker": "ANET",
-          "reason": "Competitor in data center and enterprise networking"
-        },
-        {
           "ticker": "JNPR",
-          "reason": "Competitor in enterprise and carrier networking"
+          "reason": "Juniper Networks - networking infrastructure competitor"
         },
         {
-          "ticker": "AVGO",
-          "reason": "Supplier of semiconductors for network infrastructure"
+          "ticker": "ANET",
+          "reason": "Arista Networks - networking switch competitor"
         }
       ]
     },
     {
       "ticker": "FE",
       "type": "analyst_upgrade",
-      "event_name": "TD Cowen upgraded FirstEnergy from Hold to Buy and adjusted its price target from $56 to $53 on May 15, 2026.",
+      "event_name": "TD Cowen upgraded FirstEnergy from Hold to Buy while adjusting the price target from $56 to $53.",
       "event_date": "2026-05-15",
-      "summary": "TD Cowen upgraded FirstEnergy from Hold to Buy and adjusted its price target from $56 to $53 on May 15, 2026.",
+      "summary": "TD Cowen upgraded FirstEnergy from Hold to Buy while adjusting the price target from $56 to $53.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.81,
+      "confidence": 0.76,
       "days_until": -2,
       "beneficiaries": [
         {
           "ticker": "DUK",
-          "reason": "Peer regulated utility benefiting from sector upgrade sentiment"
+          "reason": "direct utility peer benefits from sector sentiment improvement"
         },
         {
           "ticker": "AEP",
-          "reason": "Competitor in regulated utility space with similar business model"
+          "reason": "comparable electric utility with similar regulatory environment"
         }
       ]
     },
@@ -6410,12 +6469,8 @@
       "days_until": -2,
       "beneficiaries": [
         {
-          "ticker": "NEE",
-          "reason": "Utility and renewable energy competitor"
-        },
-        {
-          "ticker": "EXC",
-          "reason": "Utility and energy sector peer"
+          "ticker": "CEG",
+          "reason": "direct energy supplier competitor"
         }
       ]
     },
@@ -6432,24 +6487,28 @@
       "beneficiaries": [
         {
           "ticker": "VRTX",
-          "reason": "Direct competitor and market leader in cystic fibrosis treatments"
+          "reason": "dominant CF treatment provider, validates CFTR modulator market opportunity"
         }
       ]
     },
     {
       "ticker": "RCEL",
       "type": "analyst_upgrade",
-      "event_name": "Lake Street upgraded AVITA Medical from Hold to Buy and raised its price target from $3.50 to $6.00 on May 15, 2026.",
+      "event_name": "Lake Street upgraded AVITA Medical from Hold to Buy and raised its price target from $3.50 to $6.00.",
       "event_date": "2026-05-15",
-      "summary": "Lake Street upgraded AVITA Medical from Hold to Buy and raised its price target from $3.50 to $6.00 on May 15, 2026.",
+      "summary": "Lake Street upgraded AVITA Medical from Hold to Buy and raised its price target from $3.50 to $6.00.",
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.82,
       "days_until": -2,
       "beneficiaries": [
         {
-          "ticker": "FATE",
-          "reason": "Cell therapy and regenerative medicine company in same sector"
+          "ticker": "ORGA",
+          "reason": "direct wound care and regenerative medicine competitor"
+        },
+        {
+          "ticker": "SNN",
+          "reason": "competitor in regenerative medicine and orthopedics"
         }
       ]
     },
@@ -6466,15 +6525,11 @@
       "beneficiaries": [
         {
           "ticker": "RTX",
-          "reason": "Major aerospace and defense contractor supplying space industry"
+          "reason": "space and defense contractor benefits from commercial spaceflight validation"
         },
         {
           "ticker": "LMT",
-          "reason": "Leading aerospace and defense company with space segment"
-        },
-        {
-          "ticker": "NOC",
-          "reason": "Aerospace and defense sector competitor"
+          "reason": "space systems contractor with government and commercial exposure"
         }
       ]
     },
@@ -6491,32 +6546,32 @@
       "beneficiaries": [
         {
           "ticker": "RTX",
-          "reason": "Major aerospace and defense contractor supplying space industry"
+          "reason": "space and defense contractor benefits from commercial spaceflight validation"
         },
         {
           "ticker": "LMT",
-          "reason": "Leading aerospace and defense company with space segment"
-        },
-        {
-          "ticker": "NOC",
-          "reason": "Aerospace and defense sector competitor"
+          "reason": "space systems contractor with government and commercial exposure"
         }
       ]
     },
     {
       "ticker": "VRDN",
       "type": "trial_readout",
-      "event_name": "Viridian Therapeutics reported a trial readout for elevobart (VRDN-003) in active thyroid eye disease, a Phase 3 catalys",
+      "event_name": "Viridian Therapeutics reported a trial readout for elebrobart (VRDN-003), a subcutaneous anti-FcRn antibody for active t",
       "event_date": "2026-05-15",
-      "summary": "Viridian Therapeutics reported a trial readout for elevobart (VRDN-003) in active thyroid eye disease, a Phase 3 catalyst noted in the source.",
+      "summary": "Viridian Therapeutics reported a trial readout for elebrobart (VRDN-003), a subcutaneous anti-FcRn antibody for active thyroid eye disease.",
       "source": "perplexity",
       "direction": "neutral",
-      "confidence": 0.88,
+      "confidence": 0.85,
       "days_until": -2,
       "beneficiaries": [
         {
-          "ticker": "VRTX",
-          "reason": "Rare disease pharmaceutical company with ophthalmology focus"
+          "ticker": "IMCC",
+          "reason": "antibody therapeutics competitor in autoimmune space"
+        },
+        {
+          "ticker": "ALLO",
+          "reason": "immunotherapy developer with adjacent therapeutic approaches"
         }
       ]
     },
@@ -6529,7 +6584,17 @@
       "source": "seekingalpha",
       "direction": "bull",
       "confidence": null,
-      "days_until": -1
+      "days_until": -1,
+      "beneficiaries": [
+        {
+          "ticker": "NET",
+          "reason": "CDN and edge security competitor validates market demand"
+        },
+        {
+          "ticker": "FSLY",
+          "reason": "edge computing and CDN competitor"
+        }
+      ]
     },
     {
       "ticker": "BAM",
@@ -6540,7 +6605,17 @@
       "source": "seekingalpha",
       "direction": "bull",
       "confidence": null,
-      "days_until": -1
+      "days_until": -1,
+      "beneficiaries": [
+        {
+          "ticker": "BX",
+          "reason": "alternative asset manager competitor in infrastructure deals"
+        },
+        {
+          "ticker": "KKR",
+          "reason": "alternative asset manager competitor validating infrastructure opportunity"
+        }
+      ]
     },
     {
       "ticker": "EONGY",
@@ -6551,7 +6626,17 @@
       "source": "seekingalpha",
       "direction": "bull",
       "confidence": null,
-      "days_until": -1
+      "days_until": -1,
+      "beneficiaries": [
+        {
+          "ticker": "NEE",
+          "reason": "utility peer benefits from energy sector momentum"
+        },
+        {
+          "ticker": "DUK",
+          "reason": "comparable utility company in same sector"
+        }
+      ]
     },
     {
       "ticker": "LCID",
@@ -7183,12 +7268,12 @@
     {
       "ticker": "ABBV",
       "type": "fda",
-      "event_name": "AbbVie has a PDUFA date of June 8, 2026 for cendakimab, a regulatory catalyst for the ESR1-mutated ER+/HER2- advanced or",
+      "event_name": "AbbVie and Arena Pharma have a PDUFA decision date for cendakimab in ESR1-mutated ER+/HER2- advanced or metastatic breas",
       "event_date": "2026-06-08",
-      "summary": "AbbVie has a PDUFA date of June 8, 2026 for cendakimab, a regulatory catalyst for the ESR1-mutated ER+/HER2- advanced or metastatic breast cancer indication.",
+      "summary": "AbbVie and Arena Pharma have a PDUFA decision date for cendakimab in ESR1-mutated ER+/HER2- advanced or metastatic breast cancer.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.84,
+      "confidence": 0.88,
       "days_until": 22
     },
     {
@@ -7600,6 +7685,17 @@
     },
     {
       "ticker": "BCTX",
+      "type": "trial_readout",
+      "event_name": "BriaCell Therapeutics expects top-line data for Bria-IMT in metastatic breast cancer in the first half of 2026.",
+      "event_date": "2026-06-30",
+      "summary": "BriaCell Therapeutics expects top-line data for Bria-IMT in metastatic breast cancer in the first half of 2026.",
+      "source": "perplexity",
+      "direction": "neutral",
+      "confidence": 0.72,
+      "days_until": 44
+    },
+    {
+      "ticker": "BCTX",
       "type": "topline_data_readout",
       "event_name": "BriaCell anticipates top-line data for Bria-IMT Phase 3 trial in metastatic breast cancer as early as H1 2026.",
       "event_date": "2026-06-30",
@@ -7629,17 +7725,6 @@
       "source": "perplexity",
       "direction": "neutral",
       "confidence": 0.7,
-      "days_until": 44
-    },
-    {
-      "ticker": "BCTX",
-      "type": "trial_readout",
-      "event_name": "BriaCell Therapeutics expects topline data for Bria-IMT in metastatic breast cancer in the first half of 2026.",
-      "event_date": "2026-06-30",
-      "summary": "BriaCell Therapeutics expects topline data for Bria-IMT in metastatic breast cancer in the first half of 2026.",
-      "source": "perplexity",
-      "direction": "neutral",
-      "confidence": 0.68,
       "days_until": 44
     },
     {
@@ -7964,12 +8049,12 @@
     {
       "ticker": "CELC",
       "type": "fda",
-      "event_name": "Celcuity has a PDUFA date of July 17, 2026 for gedatolisib, a NDA catalyst tied to a Phase 3 program.",
+      "event_name": "Celcuity has a PDUFA date for gedatolisib, a Phase 3 oncology program.",
       "event_date": "2026-07-17",
-      "summary": "Celcuity has a PDUFA date of July 17, 2026 for gedatolisib, a NDA catalyst tied to a Phase 3 program.",
+      "summary": "Celcuity has a PDUFA date for gedatolisib, a Phase 3 oncology program.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.84,
+      "confidence": 0.87,
       "days_until": 61
     },
     {
@@ -8679,12 +8764,12 @@
     {
       "ticker": "JAZZ",
       "type": "fda",
-      "event_name": "Jazz Pharmaceuticals has a PDUFA date of August 25, 2026 for Ziihera.",
+      "event_name": "Jazz Pharmaceuticals has a PDUFA date for Ziihera.",
       "event_date": "2026-08-25",
-      "summary": "Jazz Pharmaceuticals has a PDUFA date of August 25, 2026 for Ziihera.",
+      "summary": "Jazz Pharmaceuticals has a PDUFA date for Ziihera.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.82,
+      "confidence": 0.86,
       "days_until": 100
     },
     {
@@ -8745,12 +8830,12 @@
     {
       "ticker": "ALNY",
       "type": "fda",
-      "event_name": "Alnylam Pharmaceuticals has a PDUFA target date of September 15, 2026 for zilebesiran, an RNA interference treatment for",
+      "event_name": "Alnylam Pharmaceuticals has a PDUFA date for zilebesiran for hypertension.",
       "event_date": "2026-09-15",
-      "summary": "Alnylam Pharmaceuticals has a PDUFA target date of September 15, 2026 for zilebesiran, an RNA interference treatment for hypertension.",
+      "summary": "Alnylam Pharmaceuticals has a PDUFA date for zilebesiran for hypertension.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.86,
+      "confidence": 0.87,
       "days_until": 121
     },
     {
@@ -8778,12 +8863,12 @@
     {
       "ticker": "RCKT",
       "type": "fda",
-      "event_name": "Ultragenyx Pharmaceutical has a PDUFA date of September 19, 2026 for a regulatory decision on RARE.",
+      "event_name": "Ultragenyx Pharmaceutical has a PDUFA date for a regulatory review disclosed on the FDA calendar.",
       "event_date": "2026-09-19",
-      "summary": "Ultragenyx Pharmaceutical has a PDUFA date of September 19, 2026 for a regulatory decision on RARE.",
+      "summary": "Ultragenyx Pharmaceutical has a PDUFA date for a regulatory review disclosed on the FDA calendar.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.82,
+      "confidence": 0.86,
       "days_until": 125
     },
     {
@@ -9206,17 +9291,6 @@
     },
     {
       "ticker": "AVAV",
-      "type": "contract_award",
-      "event_name": "A small-cap defense stock ranking from PortfolioPilot lists AeroVironment among leading names, but the source does not s",
-      "event_date": null,
-      "summary": "A small-cap defense stock ranking from PortfolioPilot lists AeroVironment among leading names, but the source does not specify a new contract, value, or date.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.61,
-      "days_until": null
-    },
-    {
-      "ticker": "AVAV",
       "type": "government_orders",
       "event_name": "AeroVironment is listed among top defense contractors with rising government orders and strong analyst coverage.",
       "event_date": null,
@@ -9239,6 +9313,17 @@
     },
     {
       "ticker": "AVAV",
+      "type": "contract_award",
+      "event_name": "A small-cap defense stock ranking from PortfolioPilot lists AeroVironment among leading names, but the source does not s",
+      "event_date": null,
+      "summary": "A small-cap defense stock ranking from PortfolioPilot lists AeroVironment among leading names, but the source does not specify a new contract, value, or date.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.61,
+      "days_until": null
+    },
+    {
+      "ticker": "AVAV",
       "type": "acquisition",
       "event_name": "AeroVironment acquired Empirical Systems Aerospace for $200 million, enhancing its defense capabilities.",
       "event_date": null,
@@ -9246,6 +9331,17 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.4,
+      "days_until": null
+    },
+    {
+      "ticker": "AVGO",
+      "type": "regulatory_ruling",
+      "event_name": "FTC and DOJ merger review remains a key factor for major semiconductor and infrastructure transactions, though the suppl",
+      "event_date": null,
+      "summary": "FTC and DOJ merger review remains a key factor for major semiconductor and infrastructure transactions, though the supplied sources do not specify an open Broadcom deal.",
+      "source": "perplexity",
+      "direction": "neutral",
+      "confidence": 0.7,
       "days_until": null
     },
     {
@@ -9436,6 +9532,17 @@
       "days_until": null
     },
     {
+      "ticker": "BDT",
+      "type": "analyst_upgrade",
+      "event_name": "BMO Capital Markets upgraded Bird Construction from Hold to Outperform and raised its price target from C$55.00 to C$60.",
+      "event_date": null,
+      "summary": "BMO Capital Markets upgraded Bird Construction from Hold to Outperform and raised its price target from C$55.00 to C$60.00.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.71,
+      "days_until": null
+    },
+    {
       "ticker": "BE",
       "type": "contract_award",
       "event_name": "Bloom Energy (BE) secured contracts from Oracle for up to 2.8 gigawatts of fuel cell capacity across multiple deployment",
@@ -9554,6 +9661,17 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.8,
+      "days_until": null
+    },
+    {
+      "ticker": "BWXT",
+      "type": "analyst_upgrade",
+      "event_name": "Deutsche Bank upgraded BWX Technologies from Hold to Buy and raised its price target from $205 to $255.",
+      "event_date": null,
+      "summary": "Deutsche Bank upgraded BWX Technologies from Hold to Buy and raised its price target from $205 to $255.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.73,
       "days_until": null
     },
     {
@@ -10030,6 +10148,17 @@
       "days_until": null
     },
     {
+      "ticker": "GEHC",
+      "type": "insider_buy",
+      "event_name": "Major insider buying detected",
+      "event_date": null,
+      "summary": "Major insider buying detected (+24 pts in scoring)",
+      "source": "sec_edgar",
+      "direction": "bull",
+      "confidence": null,
+      "days_until": null
+    },
+    {
       "ticker": "GEV",
       "type": "guidance_change",
       "event_name": "GE Vernova raised FY2026 revenue guidance to $44.5B\u2013$45.5B (up $500M), adjusted EBITDA margin to 12%\u201314% (up 1 point), a",
@@ -10395,12 +10524,12 @@
     {
       "ticker": "KTOS",
       "type": "contract_award",
-      "event_name": "Kratos reported contracts announced in March and April 2026 totaling more than one-third of its fiscal 2025 revenue of $",
+      "event_name": "Kratos was reported to have announced contracts in March and April 2026 totaling more than one-third of its fiscal 2025 ",
       "event_date": null,
-      "summary": "Kratos reported contracts announced in March and April 2026 totaling more than one-third of its fiscal 2025 revenue of $1.35 billion, according to MarketBeat.",
+      "summary": "Kratos was reported to have announced contracts in March and April 2026 totaling more than one-third of its fiscal 2025 revenue of $1.35 billion.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.82,
+      "confidence": 0.78,
       "days_until": null
     },
     {
@@ -10472,9 +10601,9 @@
     {
       "ticker": "LDOS",
       "type": "contract_award",
-      "event_name": "Leidos won a multi-year contract with the U.S. Transportation Security Administration in 2025, according to MarketBeat.",
+      "event_name": "Leidos was reported to have been awarded a multi-year contract with the U.S. Transportation Security Administration in 2",
       "event_date": null,
-      "summary": "Leidos won a multi-year contract with the U.S. Transportation Security Administration in 2025, according to MarketBeat.",
+      "summary": "Leidos was reported to have been awarded a multi-year contract with the U.S. Transportation Security Administration in 2025.",
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.7,
@@ -10690,6 +10819,17 @@
       "days_until": null
     },
     {
+      "ticker": "MHGVY",
+      "type": "analyst_upgrade",
+      "event_name": "Kepler Capital Markets upgraded Marine Harvest ASA to Strong-Buy.",
+      "event_date": null,
+      "summary": "Kepler Capital Markets upgraded Marine Harvest ASA to Strong-Buy.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.7,
+      "days_until": null
+    },
+    {
       "ticker": "MIST",
       "type": "fda",
       "event_name": "Milestone Pharmaceuticals has a PDUFA date for CARDAMYST.",
@@ -10720,6 +10860,17 @@
       "source": "perplexity",
       "direction": "neutral",
       "confidence": 0.9,
+      "days_until": null
+    },
+    {
+      "ticker": "MSFT",
+      "type": "regulatory_ruling",
+      "event_name": "FTC and DOJ merger review procedures remain relevant for large technology deals, but the provided sources do not identif",
+      "event_date": null,
+      "summary": "FTC and DOJ merger review procedures remain relevant for large technology deals, but the provided sources do not identify a specific Microsoft transaction pending decision.",
+      "source": "perplexity",
+      "direction": "neutral",
+      "confidence": 0.7,
       "days_until": null
     },
     {
@@ -10823,17 +10974,6 @@
     },
     {
       "ticker": "NOC",
-      "type": "test_flight",
-      "event_name": "Space launch calendars list Northrop Grumman's EWS OD-1 payload for the U.S. Space Force as a net 2026 mission on a Mino",
-      "event_date": null,
-      "summary": "Space launch calendars list Northrop Grumman's EWS OD-1 payload for the U.S. Space Force as a net 2026 mission on a Minotaur IV from Vandenberg.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.74,
-      "days_until": null
-    },
-    {
-      "ticker": "NOC",
       "type": "government_contract_launch",
       "event_name": "Northrop Grumman NET 2026 launch of EWS OD-1 weather satellite for United States Space Force on Minotaur IV rocket from ",
       "event_date": null,
@@ -10852,6 +10992,17 @@
       "source": "perplexity",
       "direction": "neutral",
       "confidence": 0.85,
+      "days_until": null
+    },
+    {
+      "ticker": "NOC",
+      "type": "test_flight",
+      "event_name": "Space launch calendars list Northrop Grumman's EWS OD-1 payload for the U.S. Space Force as a net 2026 mission on a Mino",
+      "event_date": null,
+      "summary": "Space launch calendars list Northrop Grumman's EWS OD-1 payload for the U.S. Space Force as a net 2026 mission on a Minotaur IV from Vandenberg.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.74,
       "days_until": null
     },
     {
@@ -11149,6 +11300,17 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.9,
+      "days_until": null
+    },
+    {
+      "ticker": "PFE",
+      "type": "regulatory_ruling",
+      "event_name": "FTC merger-review policy and recent enforcement trends indicate continued scrutiny of major pharma and healthcare combin",
+      "event_date": null,
+      "summary": "FTC merger-review policy and recent enforcement trends indicate continued scrutiny of major pharma and healthcare combinations, though no specific Pfizer ruling is identified in the sources.",
+      "source": "perplexity",
+      "direction": "neutral",
+      "confidence": 0.74,
       "days_until": null
     },
     {
@@ -11472,17 +11634,6 @@
     },
     {
       "ticker": "RKLB",
-      "type": "mission_award",
-      "event_name": "Rocket Lab said it added three new Electron launches to its iQPS multi-launch deal, bringing the total number of mission",
-      "event_date": null,
-      "summary": "Rocket Lab said it added three new Electron launches to its iQPS multi-launch deal, bringing the total number of missions to 15.",
-      "source": "perplexity",
-      "direction": "bull",
-      "confidence": 0.74,
-      "days_until": null
-    },
-    {
-      "ticker": "RKLB",
       "type": "operational_achievement",
       "event_name": "Rocket Lab achieved 21 launches in 2025 with 100% mission success rate and secured $515M Space Development Agency contra",
       "event_date": null,
@@ -11501,6 +11652,17 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.8,
+      "days_until": null
+    },
+    {
+      "ticker": "RKLB",
+      "type": "mission_award",
+      "event_name": "Rocket Lab said it added three new Electron launches to its iQPS multi-launch deal, bringing the total number of mission",
+      "event_date": null,
+      "summary": "Rocket Lab said it added three new Electron launches to its iQPS multi-launch deal, bringing the total number of missions to 15.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.74,
       "days_until": null
     },
     {
@@ -11550,12 +11712,12 @@
     {
       "ticker": "RTX",
       "type": "contract_award",
-      "event_name": "RTX was described as having secured Patriot missile-system contracts including a $946 million award and a potential $1.2",
+      "event_name": "RTX was reported to have won a $946 million Patriot missile system contract in 2023.",
       "event_date": null,
-      "summary": "RTX was described as having secured Patriot missile-system contracts including a $946 million award and a potential $1.2 billion fire-units contract, based on a secondary source referencing Defense Ne",
+      "summary": "RTX was reported to have won a $946 million Patriot missile system contract in 2023.",
       "source": "perplexity",
       "direction": "bull",
-      "confidence": 0.55,
+      "confidence": 0.74,
       "days_until": null
     },
     {
@@ -11622,6 +11784,17 @@
       "source": "perplexity",
       "direction": "neutral",
       "confidence": 0.7,
+      "days_until": null
+    },
+    {
+      "ticker": "RXO",
+      "type": "analyst_upgrade",
+      "event_name": "Stifel upgraded RXO from Hold to Buy and raised its price target from $18.69 to $22.00.",
+      "event_date": null,
+      "summary": "Stifel upgraded RXO from Hold to Buy and raised its price target from $18.69 to $22.00.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.72,
       "days_until": null
     },
     {
@@ -11889,17 +12062,6 @@
       "days_until": null
     },
     {
-      "ticker": "SPGI",
-      "type": "insider_buy",
-      "event_name": "Strong insider buying detected",
-      "event_date": null,
-      "summary": "Strong insider buying detected (+18 pts in scoring)",
-      "source": "sec_edgar",
-      "direction": "bull",
-      "confidence": null,
-      "days_until": null
-    },
-    {
       "ticker": "SPX",
       "type": "launch",
       "event_name": "NASA Artemis II crewed lunar mission launched successfully at 18:35 EDT on April 1, 2026, sending astronauts around the ",
@@ -11908,6 +12070,17 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.95,
+      "days_until": null
+    },
+    {
+      "ticker": "SRAD",
+      "type": "insider_buy",
+      "event_name": "Major insider buying detected",
+      "event_date": null,
+      "summary": "Major insider buying detected (+25 pts in scoring)",
+      "source": "sec_edgar",
+      "direction": "bull",
+      "confidence": null,
       "days_until": null
     },
     {
@@ -12098,6 +12271,17 @@
       "days_until": null
     },
     {
+      "ticker": "TSLA",
+      "type": "mission_award",
+      "event_name": "Vast Space's Haven-1 station remains listed for a Falcon 9 launch no earlier than May 2026, with later Haven-1 related m",
+      "event_date": null,
+      "summary": "Vast Space's Haven-1 station remains listed for a Falcon 9 launch no earlier than May 2026, with later Haven-1 related missions following on SpaceX Dragon.",
+      "source": "perplexity",
+      "direction": "neutral",
+      "confidence": 0.72,
+      "days_until": null
+    },
+    {
       "ticker": "TSM",
       "type": "corporate_investment_announcement",
       "event_name": "TSMC announced massive investment in plants in the USA as part of manufacturing reshoring.",
@@ -12227,6 +12411,17 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.7,
+      "days_until": null
+    },
+    {
+      "ticker": "VRDN",
+      "type": "fda",
+      "event_name": "Viridian Therapeutics also appears on FDA catalyst calendars with a near-term trial and regulatory backdrop around activ",
+      "event_date": null,
+      "summary": "Viridian Therapeutics also appears on FDA catalyst calendars with a near-term trial and regulatory backdrop around active thyroid eye disease.",
+      "source": "perplexity",
+      "direction": "bull",
+      "confidence": 0.74,
       "days_until": null
     },
     {
@@ -12513,6 +12708,17 @@
       "source": "perplexity",
       "direction": "bull",
       "confidence": 0.7,
+      "days_until": null
+    },
+    {
+      "ticker": "ZTS",
+      "type": "insider_buy",
+      "event_name": "Strong insider buying detected",
+      "event_date": null,
+      "summary": "Strong insider buying detected (+15 pts in scoring)",
+      "source": "sec_edgar",
+      "direction": "bull",
+      "confidence": null,
       "days_until": null
     }
   ]
