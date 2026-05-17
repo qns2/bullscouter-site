@@ -50,6 +50,7 @@ const RegimePage = (() => {
       show('rg-content');
       renderStats();
       renderCharts();
+      renderCalibration();
       renderTable();
       renderProjections();
       renderPolitical();
@@ -81,12 +82,60 @@ const RegimePage = (() => {
     setText('rg-vix', c.vix ? c.vix.toFixed(1) : '—');
     setText('rg-date', c.date || '—');
 
-    // Historical avg returns for this regime
-    const rs = (data.regime_stats || {})[c.regime] || {};
+    // Prefer calibrated projection stats over static regime stats.
+    const meta = c.projection_meta || {};
+    const rs = meta.avg_5d != null ? meta : ((data.regime_stats || {})[c.regime] || {});
     const avg5 = rs.avg_5d;
     const avg20 = rs.avg_20d;
     setText('rg-avg5', avg5 != null ? (avg5 >= 0 ? '+' : '') + avg5 + '%' : '—');
     setText('rg-avg20', avg20 != null ? (avg20 >= 0 ? '+' : '') + avg20 + '%' : '—');
+    setText('rg-tier', formatTier(meta.tier, meta.n));
+  }
+
+  function formatTier(tier, n) {
+    if (!tier) return '—';
+    const label = tier === 'exact' ? 'Exact' : tier === 'marginal' ? 'Marginal' : 'Static';
+    return n != null ? `${label} n=${n}` : label;
+  }
+
+  function renderCalibration() {
+    const c = data.current || {};
+    const meta = c.projection_meta || {};
+    const calibration = data.calibration || {};
+    const tier = meta.tier || 'static';
+    const source = meta.source_key || c.regime || '—';
+    const bucketCount = calibration.bucket_count != null ? calibration.bucket_count : '—';
+    const bucketsGe30 = calibration.buckets_ge30 != null ? calibration.buckets_ge30 : '—';
+
+    setText('rg-cal-n', meta.n != null ? meta.n : '—');
+    setText('rg-cal-buckets', `${bucketsGe30}/${bucketCount}`);
+    setText('rg-cal-source', source);
+
+    const title = document.getElementById('rg-calibration-title');
+    if (title) {
+      title.textContent = tier === 'exact'
+        ? 'Exact context bucket is driving the projection'
+        : tier === 'marginal'
+          ? 'Regime-only marginal bucket is driving the projection'
+          : 'Static regime fallback is driving the projection';
+      title.style.color = tier === 'exact' ? '#4ade80' : tier === 'marginal' ? '#f59e0b' : '#9ca3af';
+    }
+
+    const note = document.getElementById('rg-calibration-note');
+    if (note) {
+      const range = meta.p25_5d != null && meta.p75_5d != null
+        ? `5d calibrated range ${signed(meta.p25_5d)}% to ${signed(meta.p75_5d)}%.`
+        : 'No calibrated 5d range available.';
+      const coverage = calibration.avg_n != null
+        ? ` Calibration table has ${bucketCount} buckets, average n=${calibration.avg_n}.`
+        : '';
+      note.textContent = `${range}${coverage}`;
+    }
+  }
+
+  function signed(value) {
+    if (value == null) return '—';
+    return (value >= 0 ? '+' : '') + value;
   }
 
   // ── Charts ──

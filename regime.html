@@ -86,7 +86,7 @@
   </div>
 
   <!-- Stats bar -->
-  <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-6">
+  <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-6">
     <div class="glass-card p-3 text-center">
       <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">Regime</div>
       <div id="rg-regime" class="text-sm font-bold">—</div>
@@ -110,6 +110,10 @@
     <div class="glass-card p-3 text-center">
       <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">Hist. Avg 20d</div>
       <div id="rg-avg20" class="text-lg font-bold text-green-400">—</div>
+    </div>
+    <div class="glass-card p-3 text-center">
+      <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">Projection</div>
+      <div id="rg-tier" class="text-sm font-bold">—</div>
     </div>
     <div class="glass-card p-3 text-center">
       <div class="text-[10px] uppercase tracking-wider text-bull-muted mb-1">Political Heat</div>
@@ -146,6 +150,31 @@
     <div class="glass-card p-4" style="height: 220px;">
       <div class="text-xs text-bull-muted mb-2 font-medium">Composite Score (-100 to +100)</div>
       <canvas id="scoreChart"></canvas>
+    </div>
+
+    <!-- Calibration confidence -->
+    <div id="rg-calibration-card" class="glass-card p-4">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div>
+          <div class="text-xs text-bull-muted font-medium uppercase tracking-wider mb-1">Projection Calibration</div>
+          <div id="rg-calibration-title" class="text-sm font-semibold text-white">—</div>
+        </div>
+        <div class="grid grid-cols-3 gap-3 text-center">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-bull-muted">Sample</div>
+            <div id="rg-cal-n" class="text-sm font-bold">—</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-bull-muted">Buckets</div>
+            <div id="rg-cal-buckets" class="text-sm font-bold">—</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-bull-muted">Source</div>
+            <div id="rg-cal-source" class="text-sm font-bold">—</div>
+          </div>
+        </div>
+      </div>
+      <p id="rg-calibration-note" class="text-xs text-bull-muted mt-3">—</p>
     </div>
 
     <!-- Two columns: stats + projections -->
@@ -228,7 +257,7 @@
   </div>
 </footer>
 
-<script src="js/regime.js?v=1"></script>
+<script src="js/regime.js?v=2"></script>
   <script src="js/personal-nav.js?v=1" defer></script>
 </body>
 </html>
