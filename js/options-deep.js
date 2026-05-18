@@ -530,6 +530,45 @@
     setText('od-stat-extreme', extreme);
   }
 
+  function renderCompleteness(data) {
+    const el = document.getElementById('od-completeness');
+    if (!el) return;
+    const u = data.universe || {};
+    const skipped = Number(u.skipped_universe || 0);
+    const timedOut = Number(u.timed_out_universe || 0);
+    const heldSkipped = Number(u.skipped_held || 0);
+    const heldTimedOut = Number(u.timed_out_held || 0);
+    const total = Number(u.total_active || 0);
+    const processed = Number(u.processed_universe || 0);
+    const problems = [];
+
+    if (skipped > 0) problems.push(`${skipped} universe tickers skipped by export budget`);
+    if (timedOut > 0) problems.push(`${timedOut} universe tickers timed out`);
+    if (heldSkipped > 0) problems.push(`${heldSkipped} held tickers emitted as flow-only stubs after held budget`);
+    if (heldTimedOut > 0) problems.push(`${heldTimedOut} held tickers timed out and rendered as flow-only stubs`);
+
+    if (problems.length === 0) {
+      el.classList.add('hidden');
+      el.innerHTML = '';
+      return;
+    }
+
+    const coverage = total > 0
+      ? `${fmt((Number(u.exported_with_data || 0) / total) * 100, 0)}%`
+      : 'partial';
+    const endpoint = u.service_endpoint
+      ? `<span class="font-mono text-white/70">${esc(u.service_endpoint)}</span>`
+      : 'the live deep-options service';
+
+    el.classList.remove('hidden');
+    el.innerHTML = `
+      <div class="rounded-lg border border-amber-500/25 bg-amber-500/10 px-4 py-3 text-sm text-amber-100">
+        <div class="font-bold text-amber-300">Partial options export</div>
+        <div class="mt-1 text-amber-100/80">${esc(problems.join(' · '))}. Rendered coverage: ${coverage}${processed ? `, processed universe rows: ${processed}` : ''}.</div>
+        <div class="mt-1 text-xs text-amber-100/60">Missing tickers can still be queried on demand via ${endpoint}.</div>
+      </div>`;
+  }
+
   // ---------- Copy for Claude ----------
   function _formatRow(e) {
     const parts = [e.ticker];
@@ -657,6 +696,7 @@
       allBs = visibleBullscouterEntries(data);
 
       renderStats(data);
+      renderCompleteness(data);
       renderAll();
 
       hide('od-loading');
