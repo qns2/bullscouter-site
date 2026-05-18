@@ -7,15 +7,29 @@
   "strategic_context_block_reason": null,
   "filtered_summary": {
     "earnings_blackout": 2,
-    "below_cutoff": 38,
+    "below_cutoff": 35,
     "held": 10,
     "rescan_below_cutoff_no_note": 5
   },
-  "candidates_evaluated": 50,
+  "candidates_evaluated": 47,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 3,
+  "oracle_watch_count": 4,
   "oracle_watch": [
+    {
+      "ticker": "HLNE",
+      "composite": 35,
+      "convergence_paths": [
+        "path3_strong_candidate",
+        "path5_strong_quality"
+      ],
+      "spot_price": 85.16,
+      "oracle_note": {
+        "text": "4-path convergence (P3 75+P5 86+P4 EZ $85+insider 6/0). Passes defensive bar. +15 conf (max). Limit $85 11sh. Stop $77. Best entry in system.",
+        "written_at": "2026-05-18"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "BSX",
       "composite": 25,
@@ -24,7 +38,7 @@
       ],
       "spot_price": 53.55,
       "oracle_note": {
-        "text": "BELOW zone $53.55 (<$55 floor). FARAPULSE superiority. 4-fund 13F $583M. Conditional 10sh $53 if flow >=+3. value 36% WR caution. R/R 10.5:1.",
+        "text": "BELOW zone $53.55 (<$55 floor). FARAPULSE superiority. 4-fund 13F $583M. Conditional 10sh $53 if flow >=+3. value 36% WR caution.",
         "written_at": "2026-05-18"
       },
       "filter_reason": "below_cutoff"
@@ -37,7 +51,7 @@
       ],
       "spot_price": 212.58,
       "oracle_note": {
-        "text": "5-path convergence but flow -7.0 hostile. 80% WR (n=20) best P3 record. ENTRY_ZONE $212.58. DO NOT ENTER until flow >= 0. Strongest signal, worst timing.",
+        "text": "5-path convergence but flow -7.0 hostile. 80% WR (n=20). ENTRY_ZONE $212.58. DO NOT ENTER until flow >= 0. Strongest signal, worst timing.",
         "written_at": "2026-05-18"
       },
       "filter_reason": "below_cutoff"
@@ -54,7 +68,7 @@
       "filter_reason": "below_cutoff"
     }
   ],
-  "flow_led_picks_count": 15,
+  "flow_led_picks_count": 16,
   "flow_led_picks": [
     {
       "ticker": "LYFT",
@@ -174,7 +188,7 @@
         }
       },
       "rationale_one_liner": "flow +9.4 5d-avg (3 TD days) + Buffett 57 + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "5 C-suite cluster buy $775K. Water infra. Flow +9.5 bullish. ENTRY_ZONE $114.23. 2-path only \u2014 lacks 3-path convergence for defensive stance.",
+      "watchlist_thesis": "5 C-suite cluster buy $775K. Water infra. Flow +9.5 bullish. ENTRY_ZONE $114.23. 2-path only \u2014 lacks 3rd path for defensive gate.",
       "oracle_note": null,
       "rank": 5
     },
@@ -364,7 +378,7 @@
         }
       },
       "rationale_one_liner": "flow +9.1 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "Exited. Assessor AVOID: DAU negative in NA/EU. At $5.53 in rebuy zone but structural decline. DO NOT REBUY. No flow-extreme, no convergence.",
+      "watchlist_thesis": "Exited. Assessor AVOID: DAU negative NA/EU. At $5.53 in rebuy zone but structural decline. DO NOT REBUY.",
       "oracle_note": null,
       "rank": 10
     },
@@ -633,6 +647,44 @@
       "watchlist_thesis": null,
       "oracle_note": null,
       "rank": 17
+    },
+    {
+      "ticker": "LGND",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "spot_price": 218.98,
+      "entry": {
+        "low": 212.41,
+        "high": 220.07,
+        "mid": 216.24
+      },
+      "target": 262.78,
+      "stop": 201.46,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 864.96,
+      "suggested_shares": 4,
+      "position_risk_usd": 59.12,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "rationale_one_liner": "Buffett 71 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "rank": 18
     }
   ],
   "flow_extreme_picks_count": 2,
@@ -717,8 +769,11 @@
         }
       },
       "rationale_one_liner": "flow-extreme: 12d streak, P/C 0.032 (31:1 calls) + flow +8.0 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "EXITED 5/11. Earnings 5/18 (today). Rebuy $7-7.50 post-earnings only. Currently above rebuy.",
-      "oracle_note": null,
+      "watchlist_thesis": "EXITED 5/11. Earnings firing TODAY. Flow +10.5 bullish. Rebuy $7-7.50 post-earnings if thesis holds. Monitor print tonight.",
+      "oracle_note": {
+        "text": "Earnings TODAY. Exited 5/11 @ $8.95. Flow +10.5 bullish. Rebuy $7-7.50 post-earnings if thesis holds. Monitor print tonight.",
+        "written_at": "2026-05-18"
+      },
       "rank": 2
     }
   ]
