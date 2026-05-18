@@ -7,14 +7,14 @@
   "strategic_context_block_reason": null,
   "filtered_summary": {
     "earnings_blackout": 2,
-    "below_cutoff": 33,
+    "below_cutoff": 38,
     "held": 10,
-    "rescan_below_cutoff_no_note": 4
+    "rescan_below_cutoff_no_note": 5
   },
-  "candidates_evaluated": 45,
+  "candidates_evaluated": 50,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 2,
+  "oracle_watch_count": 3,
   "oracle_watch": [
     {
       "ticker": "BSX",
@@ -24,8 +24,8 @@
       ],
       "spot_price": 53.55,
       "oracle_note": {
-        "text": "BELOW zone $53.55 (<$55 floor). FARAPULSE superiority. 4-fund 13F $583M. Assessor BUY HIGH $80 FV. Scale 1/3 at $53 ONLY if flow >=+3. value 36% WR.",
-        "written_at": "2026-05-15"
+        "text": "BELOW zone $53.55 (<$55 floor). FARAPULSE superiority. 4-fund 13F $583M. Conditional 10sh $53 if flow >=+3. value 36% WR caution. R/R 10.5:1.",
+        "written_at": "2026-05-18"
       },
       "filter_reason": "below_cutoff"
     },
@@ -37,13 +37,24 @@
       ],
       "spot_price": 212.58,
       "oracle_note": {
-        "text": "5-path convergence but flow -7.0 hostile. 80% WR (n=20) best P3 record. BELOW zone $199.86. Wait for $210 stabilization + flow>=0 before entry.",
-        "written_at": "2026-05-15"
+        "text": "5-path convergence but flow -7.0 hostile. 80% WR (n=20) best P3 record. ENTRY_ZONE $212.58. DO NOT ENTER until flow >= 0. Strongest signal, worst timing.",
+        "written_at": "2026-05-18"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "PSN",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 50.38,
+      "oracle_note": {
+        "text": "CEO $625K + Director $491K cluster buy multi-year lows. $9.31B record backlog. Rescan oracle_watch.",
+        "written_at": "2026-05-18"
       },
       "filter_reason": "below_cutoff"
     }
   ],
-  "flow_led_picks_count": 14,
+  "flow_led_picks_count": 15,
   "flow_led_picks": [
     {
       "ticker": "LYFT",
@@ -163,7 +174,7 @@
         }
       },
       "rationale_one_liner": "flow +9.4 5d-avg (3 TD days) + Buffett 57 + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "5 C-suite cluster buy $775K. Water infra. Flow +9.5. ENTRY_ZONE $117.54. 2-path only.",
+      "watchlist_thesis": "5 C-suite cluster buy $775K. Water infra. Flow +9.5 bullish. ENTRY_ZONE $114.23. 2-path only \u2014 lacks 3-path convergence for defensive stance.",
       "oracle_note": null,
       "rank": 5
     },
@@ -240,10 +251,7 @@
       },
       "rationale_one_liner": "flow +11.3 5d-avg (5 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": "HELD ~50sh @ $6.76 (+20%). Flow +8.5 9d strong. PORTFOLIO SYNC NEEDED. GTC buy 100sh @ $7.25 pending.",
-      "oracle_note": {
-        "text": "HELD +20%. Flow +8.5 9d strong. PORTFOLIO SYNC NEEDED \u2014 DB shows 250sh, actual ~50sh. Rebuy GTC 100sh @ $7.25 pending.",
-        "written_at": "2026-05-15"
-      },
+      "oracle_note": null,
       "rank": 7
     },
     {
@@ -356,9 +364,47 @@
         }
       },
       "rationale_one_liner": "flow +9.1 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "Earnings AMC today. Exited. Rebuy $5.50-5.70. At $5.27 BELOW rebuy zone. Wait T+2 post-print. Alert fired in blackout (bug).",
+      "watchlist_thesis": "Exited. Assessor AVOID: DAU negative in NA/EU. At $5.53 in rebuy zone but structural decline. DO NOT REBUY. No flow-extreme, no convergence.",
       "oracle_note": null,
       "rank": 10
+    },
+    {
+      "ticker": "NTNX",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_quality"
+      ],
+      "spot_price": 44.5,
+      "entry": {
+        "low": 43.16,
+        "high": 44.72,
+        "mid": 43.94
+      },
+      "target": 53.4,
+      "stop": 40.94,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 966.68,
+      "suggested_shares": 22,
+      "position_risk_usd": 66.0,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality": {
+          "score": 10
+        }
+      },
+      "rationale_one_liner": "flow +9.0 5d-avg (4 TD days) + Buffett 47. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "rank": 11
     },
     {
       "ticker": "VNDA",
@@ -396,7 +442,7 @@
       "rationale_one_liner": "flow +8.4 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
-      "rank": 11
+      "rank": 12
     },
     {
       "ticker": "BABA",
@@ -434,7 +480,7 @@
       "rationale_one_liner": "flow +8.3 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
-      "rank": 12
+      "rank": 13
     },
     {
       "ticker": "COIN",
@@ -472,7 +518,7 @@
       "rationale_one_liner": "flow +8.2 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
-      "rank": 13
+      "rank": 14
     },
     {
       "ticker": "SMR",
@@ -510,7 +556,7 @@
       "rationale_one_liner": "flow +8.2 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
-      "rank": 14
+      "rank": 15
     },
     {
       "ticker": "WAB",
@@ -548,7 +594,7 @@
       "rationale_one_liner": "flow +8.2 5d-avg (3 TD days) + Buffett 58. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
-      "rank": 15
+      "rank": 16
     },
     {
       "ticker": "TXT",
@@ -586,7 +632,7 @@
       "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + Buffett 53. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
-      "rank": 16
+      "rank": 17
     }
   ],
   "flow_extreme_picks_count": 2,
@@ -671,7 +717,7 @@
         }
       },
       "rationale_one_liner": "flow-extreme: 12d streak, P/C 0.032 (31:1 calls) + flow +8.0 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "FULLY EXITED 5/11. Earnings ~5/18. Flow +6.0 11d bullish. Rebuy $7-7.50 post-earnings only. Currently $9.66 = above rebuy.",
+      "watchlist_thesis": "EXITED 5/11. Earnings 5/18 (today). Rebuy $7-7.50 post-earnings only. Currently above rebuy.",
       "oracle_note": null,
       "rank": 2
     }
