@@ -6,12 +6,11 @@
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "earnings_blackout": 2,
-    "below_cutoff": 30,
+    "below_cutoff": 39,
     "held": 10,
     "rescan_below_cutoff_no_note": 6
   },
-  "candidates_evaluated": 42,
+  "candidates_evaluated": 49,
   "picks_count": 0,
   "picks": [],
   "oracle_watch_count": 3,
@@ -25,7 +24,7 @@
       ],
       "spot_price": 86.75,
       "oracle_note": {
-        "text": "4-path convergence (P3 75+P5 86+P4 EZ $86.75+insider 6/0). Flow -12.0 worst in universe (82 vol thin). Earnings blackout. WAIT for blackout clear + flow >= -3.",
+        "text": "4-path (P3 75+P5 86+P4 EZ+insider 6/0). Flow -12.0 on 157 OI thin chain. Earnings blackout. WAIT for blackout clear + flow >= -3.0. Best convergence but timing wrong.",
         "written_at": "2026-05-19"
       },
       "filter_reason": "below_cutoff"
@@ -38,7 +37,7 @@
       ],
       "spot_price": 53.55,
       "oracle_note": {
-        "text": "P1 BUY 77/78 + P4 EZ $55.92. BELOW zone floor $53.55. 4-fund 13F $583M FARAPULSE. Needs flow >=+3. value profile 36% WR caution.",
+        "text": "P1 BUY 77/78 + P4 EZ $55.92. BELOW zone floor $53.55. 4-fund 13F $583M FARAPULSE. Needs flow >=+3 for 3rd path. value profile 36% WR caution.",
         "written_at": "2026-05-19"
       },
       "filter_reason": "below_cutoff"
@@ -51,7 +50,7 @@
       ],
       "spot_price": 224.35,
       "oracle_note": {
-        "text": "3-path (P3 61+P4 ABS+P5 78) not 5-path as claimed. Flow -7.0 hostile. ABS_TARGET 51% WR. Above zone $220. -2 score adj from yesterday.",
+        "text": "In contrarian list at $230.49. Flow -7.0 hostile. ABS_TARGET $224 above $220 zone. 5d window to improve flow or flag for removal.",
         "written_at": "2026-05-19"
       },
       "filter_reason": "below_cutoff"
@@ -208,7 +207,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 4
+      "rank": 5
     },
     {
       "ticker": "NXPI",
@@ -255,7 +254,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 5
+      "rank": 6
     },
     {
       "ticker": "Q",
@@ -306,7 +305,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 6
+      "rank": 7
     },
     {
       "ticker": "FLY",
@@ -859,7 +858,7 @@
         }
       },
       "rationale_one_liner": "flow +8.3 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "EXITED 5/11. Earnings 5/18 \u2014 check result. Flow +10.5 bullish. Rebuy $7-7.50 if Q1 beat. Currently $10.03 (above rebuy zone).",
+      "watchlist_thesis": "EXITED 5/11. Post-earnings at $10.03 (+11.9% from exit). Clean execution. Rebuy $7-7.50 still stands.",
       "oracle_note": null,
       "macro_filter": {
         "pass": true,
@@ -1024,9 +1023,10 @@
       "ticker": "IQ",
       "path": "flow_extreme",
       "source": "extreme",
-      "composite": 30,
+      "composite": 40,
       "convergence_paths": [
-        "flow_extreme"
+        "flow_extreme",
+        "watchlist_dip"
       ],
       "spot_price": 1.14,
       "entry": {
@@ -1047,9 +1047,12 @@
       "components": {
         "flow_extreme": {
           "score": 30
+        },
+        "watchlist_dip": {
+          "score": 10
         }
       },
-      "rationale_one_liner": "flow-extreme: 21d streak, P/C 0.002 (500:1 calls). no earnings <45d.",
+      "rationale_one_liner": "flow-extreme: 21d streak, P/C 0.002 (500:1 calls) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -1061,7 +1064,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 7
+      "rank": 4
     }
   ]
 }
