@@ -17,35 +17,15 @@
         "delta_5d": 2.9
       },
       "skew": null,
-      "skew_error": null,
+      "skew_error": "held_budget_exceeded",
       "gex": null,
-      "gex_error": "provider_no_data",
+      "gex_error": "held_budget_exceeded",
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "entry": "held_budget_exceeded"
       },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 20
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": 22.12,
-          "rr_5d_ago_vp": 1.89,
-          "delta_5d_vp": 20.23,
-          "avg_flow_5d": 9.1,
-          "compression_signal": true,
-          "history_days": 7
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "skew_compression"
-      },
+      "iv_metrics": null,
+      "vol_regime": null,
       "earnings_date": null,
       "frozen": false,
       "thesis": "EXIT TODAY per 5/18 decision. 200sh @ $4.91 (-12.8%). Stop breached, override exhausted. Confirm fill.",
@@ -67,35 +47,15 @@
         "delta_5d": 2.9
       },
       "skew": null,
-      "skew_error": null,
+      "skew_error": "held_budget_exceeded",
       "gex": null,
-      "gex_error": "provider_no_data",
+      "gex_error": "held_budget_exceeded",
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "entry": "held_budget_exceeded"
       },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 33
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": 14.08,
-          "rr_5d_ago_vp": 14.31,
-          "delta_5d_vp": -0.23,
-          "avg_flow_5d": 9.1,
-          "compression_signal": false,
-          "history_days": 8
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
+      "iv_metrics": null,
+      "vol_regime": null,
       "earnings_date": null,
       "frozen": false,
       "thesis": "HELD 100sh @ $7.81. $8C pin (24,946 OI) clears today. Post-expiry: $8 ceiling lifts, $10C next magnet. Flow-extreme 23d. HOLD. Stop $7.",
@@ -117,38 +77,90 @@
         "delta_5d": 3.7
       },
       "skew": null,
-      "skew_error": null,
+      "skew_error": "held_budget_exceeded",
       "gex": null,
-      "gex_error": "provider_no_data",
+      "gex_error": "held_budget_exceeded",
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "entry": "held_budget_exceeded"
       },
-      "iv_metrics": {
-        "iv_rank": 7.5,
-        "iv_percentile": 3.1,
-        "earnings_iv_crush_flag": false,
-        "history_days": 64
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": 11.92,
-          "rr_5d_ago_vp": 3.55,
-          "delta_5d_vp": 8.37,
-          "avg_flow_5d": 6.8,
-          "compression_signal": true,
-          "history_days": 9
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "skew_compression"
-      },
+      "iv_metrics": null,
+      "vol_regime": null,
       "earnings_date": null,
       "frozen": false,
       "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
+      "ticker": "CRSR",
+      "flow": {
+        "score": 9.0,
+        "signal": "strong_bull",
+        "scan_date": "2026-05-19",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 6.72,
+        "bullish_streak": 12,
+        "avg_score_5d": 10.6,
+        "delta_5d": -1.6
+      },
+      "skew": null,
+      "skew_error": null,
+      "gex": {
+        "spot": 6.72,
+        "total_gex_usd": -1707159.0,
+        "regime": "neutral",
+        "zero_gamma_level": 6.72,
+        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_found": false,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-06-18",
+          "2026-07-17"
+        ],
+        "total_contracts_analyzed": 1643,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 1800.0,
+        "call_premium_usd": 0,
+        "put_premium_usd": 1800,
+        "depth_volume_pc": 1.3103,
+        "call_depth_usd": 48285,
+        "put_depth_usd": 63270,
+        "net_delta_volume": -14.8,
+        "call_delta_volume": 0.0,
+        "put_delta_volume": 14.8
+      },
+      "flow_extra_errors": {
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "insufficient_history"
+      },
+      "iv_metrics": {
+        "iv_rank": null,
+        "iv_percentile": null,
+        "earnings_iv_crush_flag": false,
+        "history_days": 28
+      },
+      "vol_regime": {
+        "skew_compression": {
+          "rr_today_vp": -0.0,
+          "rr_5d_ago_vp": 18.07,
+          "delta_5d_vp": -18.07,
+          "avg_flow_5d": 10.6,
+          "compression_signal": false,
+          "history_days": 13
+        },
+        "rv_iv_persistence": null,
+        "regime_label": "neutral"
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": "HELD 100sh @ $7.65 (-10.1%). DIP at $6.88. GTC stop $6.50 (5.5% away). Flow +7.5 12d BUT thin-chain 5/18 lesson. HONOR STOP. One override used. -10 conf (deteriorating).",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
@@ -167,81 +179,18 @@
         "delta_5d": null
       },
       "skew": null,
-      "skew_error": null,
+      "skew_error": "held_budget_exceeded",
       "gex": null,
-      "gex_error": "provider_no_data",
+      "gex_error": "held_budget_exceeded",
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "entry": "held_budget_exceeded"
       },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 22
-      },
-      "vol_regime": {
-        "skew_compression": null,
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
+      "iv_metrics": null,
+      "vol_regime": null,
       "earnings_date": null,
       "frozen": false,
       "thesis": "TRIMMED 60sh 5/18 @ $4.04. 40sh lottery remaining. Post-earnings EPS beat. Cash $94.4M. Illiquid.",
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "CRSR",
-      "flow": {
-        "score": 7.5,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 6.88,
-        "bullish_streak": 12,
-        "avg_score_5d": 10.3,
-        "delta_5d": -2.8
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 28
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -7.84,
-          "rr_5d_ago_vp": 18.07,
-          "delta_5d_vp": -25.91,
-          "avg_flow_5d": 10.3,
-          "compression_signal": false,
-          "history_days": 13
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": "HELD 100sh @ $7.65 (-10.1%). DIP at $6.88. GTC stop $6.50 (5.5% away). Flow +7.5 12d BUT thin-chain 5/18 lesson. HONOR STOP. One override used. -10 conf (deteriorating).",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
@@ -260,91 +209,21 @@
         "delta_5d": -2.3
       },
       "skew": null,
-      "skew_error": null,
+      "skew_error": "held_timeout",
       "gex": null,
-      "gex_error": "provider_no_data",
+      "gex_error": "held_timeout",
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "entry": "held_timeout"
       },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 20
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -13.53,
-          "rr_5d_ago_vp": 59.59,
-          "delta_5d_vp": -73.12,
-          "avg_flow_5d": 8.3,
-          "compression_signal": false,
-          "history_days": 6
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
-      "earnings_date": null,
+      "iv_metrics": null,
+      "vol_regime": null,
+      "earnings_date": "2026-05-21",
       "frozen": false,
       "thesis": "HELD 100sh @ $7.31. Earnings Wed 5/21 (T-2). User overrode PEFP 5/16. Flow +6.0 10d. GEX neutral danger 0%. $10C magnet 41K OI. Stop $5.50. PRICE FETCH BROKEN \u2014 manual monitor req.",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
-    },
-    {
-      "ticker": "CPNG",
-      "flow": {
-        "score": 6.0,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 15.76,
-        "bullish_streak": 2,
-        "avg_score_5d": 4.0,
-        "delta_5d": 2.0
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": 59.1,
-        "iv_percentile": 70.8,
-        "earnings_iv_crush_flag": false,
-        "history_days": 65
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -2.51,
-          "rr_5d_ago_vp": -66.0,
-          "delta_5d_vp": 63.49,
-          "avg_flow_5d": 4.0,
-          "compression_signal": true,
-          "history_days": 13
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "skew_compression"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": "EXIT TODAY per 5/18 decision. 50sh @ $17.60 basis. Spot $15.70. Confirm fill.",
-      "watchlist_target": 28.0,
-      "watchlist_entry_low": 17.0,
-      "watchlist_entry_high": 18.5
     },
     {
       "ticker": "MNKD",
@@ -361,15 +240,35 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
+      "gex": {
+        "spot": 2.98,
+        "total_gex_usd": -219223.0,
+        "regime": "neutral",
+        "zero_gamma_level": 2.98,
+        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_found": false,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "total_contracts_analyzed": 1407,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.0,
+        "call_premium_usd": 800,
+        "put_premium_usd": 0,
+        "depth_volume_pc": 31.3167,
+        "call_depth_usd": 1800,
+        "put_depth_usd": 56370
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "net_delta_volume": "all_strikes_filtered",
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
         "iv_rank": null,
@@ -411,15 +310,41 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
+      "gex": {
+        "spot": 42.45,
+        "total_gex_usd": 214461316.0,
+        "regime": "long_gamma",
+        "zero_gamma_level": 38.0,
+        "zero_gamma_distance_pct": 10.47,
+        "zero_gamma_found": true,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "total_contracts_analyzed": 96070,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.8003,
+        "call_premium_usd": 50986,
+        "put_premium_usd": 40804,
+        "depth_volume_pc": 1.2825,
+        "call_depth_usd": 577817,
+        "put_depth_usd": 741079,
+        "net_delta_volume": 76.5,
+        "call_delta_volume": 191.0,
+        "put_delta_volume": 114.5,
+        "smile_atm_iv": 0.3956,
+        "smile_skew_b": -0.2169,
+        "smile_curvature_c": 2.2819,
+        "smile_expiration_used": "2026-06-12",
+        "smile_strike_count": 25
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
         "iv_rank": null,
@@ -460,35 +385,15 @@
         "delta_5d": -2.1
       },
       "skew": null,
-      "skew_error": null,
+      "skew_error": "held_budget_exceeded",
       "gex": null,
-      "gex_error": "provider_no_data",
+      "gex_error": "held_budget_exceeded",
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "entry": "held_budget_exceeded"
       },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 18
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": 25.3,
-          "rr_5d_ago_vp": 0.19,
-          "delta_5d_vp": 25.11,
-          "avg_flow_5d": 8.1,
-          "compression_signal": true,
-          "history_days": 8
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "skew_compression"
-      },
+      "iv_metrics": null,
+      "vol_regime": null,
       "earnings_date": null,
       "frozen": false,
       "thesis": "Finviz IBRX-pattern (small-cap biotech, vol surge ATR>0.5, 2026-05-09). Skew bullish extreme +5.27vp, GEX safe with 30.8% buffer to zero-\u03b3 $7. rviv -0.58 (options expensive \u2014 buy stock not calls). Earnings Aug 5 (88d). Position size 50-70 sh. Stop $7.20.",
@@ -510,244 +415,100 @@
         "delta_5d": -0.3
       },
       "skew": null,
-      "skew_error": null,
+      "skew_error": "held_budget_exceeded",
       "gex": null,
-      "gex_error": "provider_no_data",
+      "gex_error": "held_budget_exceeded",
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "entry": "held_budget_exceeded"
       },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 45
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -2.77,
-          "rr_5d_ago_vp": 0.52,
-          "delta_5d_vp": -3.29,
-          "avg_flow_5d": 6.3,
-          "compression_signal": false,
-          "history_days": 13
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
+      "iv_metrics": null,
+      "vol_regime": null,
       "earnings_date": null,
       "frozen": false,
       "thesis": "HELD 60sh @ $28.92 (-23%). Flow +6.0 5d recovering (was +7.5). ABS_TARGET $22.27. HOLD stop $19. NO ADD per defensive bias. Next earnings Aug 6.",
       "watchlist_target": 40.0,
       "watchlist_entry_low": 19.0,
       "watchlist_entry_high": 22.0
+    },
+    {
+      "ticker": "CPNG",
+      "flow": {
+        "score": 2.01,
+        "signal": "bull",
+        "scan_date": "2026-05-19",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 15.23,
+        "bullish_streak": 0,
+        "avg_score_5d": 3.2,
+        "delta_5d": -1.19
+      },
+      "skew": null,
+      "skew_error": null,
+      "gex": {
+        "spot": 15.22,
+        "total_gex_usd": 5809075.0,
+        "regime": "neutral",
+        "zero_gamma_level": 14.0,
+        "zero_gamma_distance_pct": 8.05,
+        "zero_gamma_found": true,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "total_contracts_analyzed": 3272,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 1.1944,
+        "call_premium_usd": 15094,
+        "put_premium_usd": 18028,
+        "depth_volume_pc": 2.4176,
+        "call_depth_usd": 217422,
+        "put_depth_usd": 525640,
+        "net_delta_volume": 84.8,
+        "call_delta_volume": 93.2,
+        "put_delta_volume": 8.3,
+        "smile_atm_iv": 0.4903,
+        "smile_skew_b": -0.3274,
+        "smile_curvature_c": 4.3293,
+        "smile_expiration_used": "2026-06-12",
+        "smile_strike_count": 26
+      },
+      "flow_extra_errors": {
+        "rv_iv_gap": "insufficient_history"
+      },
+      "iv_metrics": {
+        "iv_rank": 59.1,
+        "iv_percentile": 70.8,
+        "earnings_iv_crush_flag": false,
+        "history_days": 65
+      },
+      "vol_regime": {
+        "skew_compression": {
+          "rr_today_vp": 2.06,
+          "rr_5d_ago_vp": -66.0,
+          "delta_5d_vp": 68.06,
+          "avg_flow_5d": 3.2,
+          "compression_signal": true,
+          "history_days": 13
+        },
+        "rv_iv_persistence": null,
+        "regime_label": "skew_compression"
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": "EXIT TODAY per 5/18 decision. 50sh @ $17.60 basis. Spot $15.70. Confirm fill.",
+      "watchlist_target": 28.0,
+      "watchlist_entry_low": 17.0,
+      "watchlist_entry_high": 18.5
     }
   ],
   "bullscouter": [
-    {
-      "ticker": "ALKT",
-      "flow": {
-        "score": 12.0,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 16.5,
-        "bullish_streak": 2,
-        "avg_score_5d": 5.5,
-        "delta_5d": 6.5
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 4
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": 22.88,
-          "rr_5d_ago_vp": -70.98,
-          "delta_5d_vp": 93.86,
-          "avg_flow_5d": 5.5,
-          "compression_signal": true,
-          "history_days": 12
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "skew_compression"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": "FLOW CONTRADICT: bearish. P/C 6.46. MONITOR ONLY until flow > -3.",
-      "watchlist_target": 24.0,
-      "watchlist_entry_low": 15.5,
-      "watchlist_entry_high": 17.5
-    },
-    {
-      "ticker": "AKAM",
-      "flow": {
-        "score": 11.01,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 146.02,
-        "bullish_streak": 2,
-        "avg_score_5d": 3.9,
-        "delta_5d": 7.11
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 7
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": 39.56,
-          "rr_5d_ago_vp": -65.56,
-          "delta_5d_vp": 105.12,
-          "avg_flow_5d": 3.9,
-          "compression_signal": true,
-          "history_days": 8
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "skew_compression"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "ADMA",
-      "flow": {
-        "score": 9.0,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 8.37,
-        "bullish_streak": 4,
-        "avg_score_5d": 4.0,
-        "delta_5d": 5.0
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 5
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": 5.21,
-          "rr_5d_ago_vp": 10.86,
-          "delta_5d_vp": -5.65,
-          "avg_flow_5d": 4.0,
-          "compression_signal": false,
-          "history_days": 12
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": "P0 EXIT: PEFP failed setup. Skew bearish/extreme. Post-earnings. EXIT 50sh AT MARKET. EXECUTE NOW.",
-      "watchlist_target": 18.0,
-      "watchlist_entry_low": 8.0,
-      "watchlist_entry_high": 10.0
-    },
-    {
-      "ticker": "AMZN",
-      "flow": {
-        "score": 7.5,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 264.84,
-        "bullish_streak": 10,
-        "avg_score_5d": 6.4,
-        "delta_5d": 1.1
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 9
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -3.68,
-          "rr_5d_ago_vp": -0.2,
-          "delta_5d_vp": -3.48,
-          "avg_flow_5d": 6.4,
-          "compression_signal": false,
-          "history_days": 11
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
     {
       "ticker": "ACM",
       "flow": {
@@ -763,15 +524,41 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
+      "gex": {
+        "spot": 71.08,
+        "total_gex_usd": -7316678.0,
+        "regime": "neutral",
+        "zero_gamma_level": 85.0,
+        "zero_gamma_distance_pct": 19.58,
+        "zero_gamma_found": true,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-06-18",
+          "2026-07-17"
+        ],
+        "total_contracts_analyzed": 2896,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.6145,
+        "call_premium_usd": 22240,
+        "put_premium_usd": 13668,
+        "depth_volume_pc": 1.4739,
+        "call_depth_usd": 137915,
+        "put_depth_usd": 203270,
+        "net_delta_volume": 5.4,
+        "call_delta_volume": 22.5,
+        "put_delta_volume": 17.1,
+        "smile_atm_iv": 0.3908,
+        "smile_skew_b": -0.4873,
+        "smile_curvature_c": 2.3968,
+        "smile_expiration_used": "2026-06-18",
+        "smile_strike_count": 17
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
         "iv_rank": null,
@@ -792,138 +579,55 @@
       "watchlist_entry_high": null
     },
     {
-      "ticker": "AGI",
-      "flow": {
-        "score": 6.0,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 40.75,
-        "bullish_streak": 4,
-        "avg_score_5d": 5.3,
-        "delta_5d": 0.7
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 9
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -10.38,
-          "rr_5d_ago_vp": 44.95,
-          "delta_5d_vp": -55.33,
-          "avg_flow_5d": 5.3,
-          "compression_signal": false,
-          "history_days": 13
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": "STALE 34d. quality_growth 46% WR. Gold macro only. -15 conf -8 score.",
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "ANF",
-      "flow": {
-        "score": 6.0,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 71.96,
-        "bullish_streak": 3,
-        "avg_score_5d": 4.6,
-        "delta_5d": 1.4
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": {
-        "premium_volume_pc": 39.119,
-        "call_premium_usd": 630,
-        "put_premium_usd": 24645,
-        "depth_volume_pc": 1.7596,
-        "call_depth_usd": 1566790,
-        "put_depth_usd": 2756960,
-        "smile_atm_iv": 0.8693,
-        "smile_skew_b": 0.1906,
-        "smile_curvature_c": 1.1737,
-        "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 42
-      },
-      "flow_extra_errors": {
-        "net_delta_volume": "all_strikes_filtered",
-        "rv_iv_gap": "insufficient_history"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 15
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -2.44,
-          "rr_5d_ago_vp": -2.19,
-          "delta_5d_vp": -0.25,
-          "avg_flow_5d": 4.6,
-          "compression_signal": false,
-          "history_days": 5
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
       "ticker": "ACN",
       "flow": {
-        "score": 5.49,
+        "score": 5.01,
         "signal": "strong_bull",
         "scan_date": "2026-05-19",
         "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 177.3,
+        "spot_price": 179.5,
         "bullish_streak": 3,
-        "avg_score_5d": 3.79,
-        "delta_5d": 1.7
+        "avg_score_5d": 3.7,
+        "delta_5d": 1.31
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
+      "gex": {
+        "spot": 177.41,
+        "total_gex_usd": -344345814.0,
+        "regime": "short_gamma",
+        "zero_gamma_level": 140.0,
+        "zero_gamma_distance_pct": 21.08,
+        "zero_gamma_found": true,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "total_contracts_analyzed": 8896,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.9536,
+        "call_premium_usd": 112785,
+        "put_premium_usd": 107548,
+        "depth_volume_pc": 0.3782,
+        "call_depth_usd": 4406648,
+        "put_depth_usd": 1666590,
+        "net_delta_volume": 8.6,
+        "call_delta_volume": 55.2,
+        "put_delta_volume": 46.6,
+        "smile_atm_iv": 0.4564,
+        "smile_skew_b": -0.0921,
+        "smile_curvature_c": 1.5617,
+        "smile_expiration_used": "2026-06-12",
+        "smile_strike_count": 39
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
         "iv_rank": null,
@@ -933,10 +637,10 @@
       },
       "vol_regime": {
         "skew_compression": {
-          "rr_today_vp": 0.26,
+          "rr_today_vp": -3.53,
           "rr_5d_ago_vp": -66.03,
-          "delta_5d_vp": 66.29,
-          "avg_flow_5d": 3.79,
+          "delta_5d_vp": 62.5,
+          "avg_flow_5d": 3.7,
           "compression_signal": true,
           "history_days": 13
         },
@@ -951,158 +655,6 @@
       "watchlist_entry_high": 200.0
     },
     {
-      "ticker": "APO",
-      "flow": {
-        "score": 4.5,
-        "signal": "bull",
-        "scan_date": "2026-05-18",
-        "days_ago": 1,
-        "td_data_exists": true,
-        "spot_price": 135.38,
-        "bullish_streak": 3,
-        "avg_score_5d": 2.8,
-        "delta_5d": 1.7
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": {
-        "spot": 133.01,
-        "total_gex_usd": -27196840.0,
-        "regime": "neutral",
-        "zero_gamma_level": 124.0,
-        "zero_gamma_distance_pct": 6.78,
-        "zero_gamma_found": true,
-        "buffer": "caution",
-        "expirations_used": [
-          "2026-05-22",
-          "2026-05-29"
-        ],
-        "total_contracts_analyzed": 4056,
-        "provider": "thetadata",
-        "error_kind": null
-      },
-      "gex_error": null,
-      "flow_extra": {
-        "premium_volume_pc": 1.0637,
-        "call_premium_usd": 7060,
-        "put_premium_usd": 7510,
-        "depth_volume_pc": 0.3025,
-        "call_depth_usd": 1458205,
-        "put_depth_usd": 441105,
-        "net_delta_volume": -5.5,
-        "call_delta_volume": 0.0,
-        "put_delta_volume": 5.5,
-        "smile_atm_iv": 0.4211,
-        "smile_skew_b": -0.2005,
-        "smile_curvature_c": -0.0316,
-        "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 36
-      },
-      "flow_extra_errors": {
-        "rv_iv_gap": "insufficient_history"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 7
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -5.77,
-          "rr_5d_ago_vp": 10.71,
-          "delta_5d_vp": -16.48,
-          "avg_flow_5d": 2.8,
-          "compression_signal": false,
-          "history_days": 6
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "APP",
-      "flow": {
-        "score": 3.99,
-        "signal": "bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 493.5,
-        "bullish_streak": 2,
-        "avg_score_5d": 5.0,
-        "delta_5d": -1.01
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": {
-        "spot": 490.78,
-        "total_gex_usd": -1539784276.0,
-        "regime": "short_gamma",
-        "zero_gamma_level": 320.0,
-        "zero_gamma_distance_pct": 34.8,
-        "zero_gamma_found": true,
-        "buffer": "safe",
-        "expirations_used": [
-          "2026-05-22",
-          "2026-05-29"
-        ],
-        "total_contracts_analyzed": 30991,
-        "provider": "thetadata",
-        "error_kind": null
-      },
-      "gex_error": null,
-      "flow_extra": {
-        "premium_volume_pc": 0.5368,
-        "call_premium_usd": 913145,
-        "put_premium_usd": 490170,
-        "depth_volume_pc": 1.0299,
-        "call_depth_usd": 8928090,
-        "put_depth_usd": 9194770,
-        "net_delta_volume": 55.9,
-        "call_delta_volume": 90.1,
-        "put_delta_volume": 34.2,
-        "smile_atm_iv": 0.7074,
-        "smile_skew_b": 0.1324,
-        "smile_curvature_c": 0.8568,
-        "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 105
-      },
-      "flow_extra_errors": {
-        "rv_iv_gap": "insufficient_history"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 9
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -2.3,
-          "rr_5d_ago_vp": -32.42,
-          "delta_5d_vp": 30.12,
-          "avg_flow_5d": 5.0,
-          "compression_signal": true,
-          "history_days": 11
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "skew_compression"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": "SEC probe + $74M insider selling. AVOID.",
-      "watchlist_target": 460.0,
-      "watchlist_entry_low": 380.0,
-      "watchlist_entry_high": 420.0
-    },
-    {
       "ticker": "ADBE",
       "flow": {
         "score": 3.51,
@@ -1110,22 +662,65 @@
         "scan_date": "2026-05-19",
         "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 256.06,
+        "spot_price": 255.73,
         "bullish_streak": 2,
         "avg_score_5d": 3.31,
         "delta_5d": 0.2
       },
-      "skew": null,
+      "skew": {
+        "expiration": "2026-06-18",
+        "spot": 253.74,
+        "put_25d_iv": 0.5585,
+        "call_25d_iv": 0.5621,
+        "risk_reversal": 0.0037,
+        "risk_reversal_vp": 0.37,
+        "skew_basis": "25d",
+        "read": "balanced",
+        "direction": "bullish",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 232.5,
+          "call_strike": 285.0
+        },
+        "provider": "thetadata",
+        "error_kind": null
+      },
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
+      "gex": {
+        "spot": 253.62,
+        "total_gex_usd": -1322166594.0,
+        "regime": "short_gamma",
+        "zero_gamma_level": 190.0,
+        "zero_gamma_distance_pct": 25.09,
+        "zero_gamma_found": true,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "total_contracts_analyzed": 41145,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 3.2883,
+        "call_premium_usd": 489320,
+        "put_premium_usd": 1609015,
+        "depth_volume_pc": 0.6827,
+        "call_depth_usd": 7223958,
+        "put_depth_usd": 4931700,
+        "net_delta_volume": -367.0,
+        "call_delta_volume": 148.9,
+        "put_delta_volume": 515.9,
+        "smile_atm_iv": 0.5841,
+        "smile_skew_b": -0.0373,
+        "smile_curvature_c": 1.8372,
+        "smile_expiration_used": "2026-06-12",
+        "smile_strike_count": 55
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
         "iv_rank": null,
@@ -1135,9 +730,9 @@
       },
       "vol_regime": {
         "skew_compression": {
-          "rr_today_vp": -4.04,
+          "rr_today_vp": -4.63,
           "rr_5d_ago_vp": -2.3,
-          "delta_5d_vp": -1.74,
+          "delta_5d_vp": -2.33,
           "avg_flow_5d": 3.31,
           "compression_signal": false,
           "history_days": 12
@@ -1145,112 +740,12 @@
         "rv_iv_persistence": null,
         "regime_label": "neutral"
       },
-      "earnings_date": null,
+      "earnings_date": "2026-06-11",
       "frozen": false,
       "thesis": "3-expert convergence. AI ARR tripling. Ceasefire software rotation. ABOVE zone at $248. Limit $235.",
       "watchlist_target": 320.0,
       "watchlist_entry_low": 225.0,
       "watchlist_entry_high": 240.0
-    },
-    {
-      "ticker": "ALL",
-      "flow": {
-        "score": 3.51,
-        "signal": "bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 221.21,
-        "bullish_streak": 1,
-        "avg_score_5d": -0.5,
-        "delta_5d": 4.01
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 7
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -5.55,
-          "rr_5d_ago_vp": 23.04,
-          "delta_5d_vp": -28.59,
-          "avg_flow_5d": -0.5,
-          "compression_signal": false,
-          "history_days": 7
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "A",
-      "flow": {
-        "score": 3.0,
-        "signal": "bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 112.0,
-        "bullish_streak": 2,
-        "avg_score_5d": -5.4,
-        "delta_5d": 8.4
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 8
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -0.6,
-          "rr_5d_ago_vp": -24.52,
-          "delta_5d_vp": 23.92,
-          "avg_flow_5d": -5.4,
-          "compression_signal": false,
-          "history_days": 8
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
     },
     {
       "ticker": "AAPL",
@@ -1267,15 +762,41 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
+      "gex": {
+        "spot": 298.24,
+        "total_gex_usd": -35032572791.0,
+        "regime": "short_gamma",
+        "zero_gamma_level": 255.0,
+        "zero_gamma_distance_pct": 14.5,
+        "zero_gamma_found": true,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-05-20",
+          "2026-05-22"
+        ],
+        "total_contracts_analyzed": 231479,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.2925,
+        "call_premium_usd": 1862614,
+        "put_premium_usd": 544791,
+        "depth_volume_pc": 4.7087,
+        "call_depth_usd": 2313576,
+        "put_depth_usd": 10893860,
+        "net_delta_volume": 822.2,
+        "call_delta_volume": 1164.9,
+        "put_delta_volume": 342.7,
+        "smile_atm_iv": 0.2317,
+        "smile_skew_b": -0.2336,
+        "smile_curvature_c": 4.0155,
+        "smile_expiration_used": "2026-06-12",
+        "smile_strike_count": 49
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
         "iv_rank": null,
@@ -1305,27 +826,53 @@
     {
       "ticker": "ADP",
       "flow": {
-        "score": 3.0,
-        "signal": "bull",
+        "score": 1.5,
+        "signal": "neutral",
         "scan_date": "2026-05-19",
         "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 221.88,
-        "bullish_streak": 1,
-        "avg_score_5d": -2.8,
-        "delta_5d": 5.8
+        "spot_price": 223.0,
+        "bullish_streak": 0,
+        "avg_score_5d": -3.1,
+        "delta_5d": 4.6
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
+      "gex": {
+        "spot": 221.76,
+        "total_gex_usd": -522510003.0,
+        "regime": "short_gamma",
+        "zero_gamma_level": 202.5,
+        "zero_gamma_distance_pct": 8.69,
+        "zero_gamma_found": true,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "total_contracts_analyzed": 3491,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.2764,
+        "call_premium_usd": 21110,
+        "put_premium_usd": 5835,
+        "depth_volume_pc": 1.2366,
+        "call_depth_usd": 604660,
+        "put_depth_usd": 747705,
+        "net_delta_volume": 5.4,
+        "call_delta_volume": 6.9,
+        "put_delta_volume": 1.4,
+        "smile_atm_iv": 0.3071,
+        "smile_skew_b": 0.225,
+        "smile_curvature_c": 5.4654,
+        "smile_expiration_used": "2026-06-12",
+        "smile_strike_count": 32
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
         "iv_rank": null,
@@ -1335,62 +882,12 @@
       },
       "vol_regime": {
         "skew_compression": {
-          "rr_today_vp": -3.83,
+          "rr_today_vp": -6.71,
           "rr_5d_ago_vp": 2.37,
-          "delta_5d_vp": -6.2,
-          "avg_flow_5d": -2.8,
+          "delta_5d_vp": -9.08,
+          "avg_flow_5d": -3.1,
           "compression_signal": false,
           "history_days": 7
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "AEM",
-      "flow": {
-        "score": 3.0,
-        "signal": "bull",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 181.5,
-        "bullish_streak": 3,
-        "avg_score_5d": 2.1,
-        "delta_5d": 0.9
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 50
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -18.07,
-          "rr_5d_ago_vp": -47.27,
-          "delta_5d_vp": 29.2,
-          "avg_flow_5d": 2.1,
-          "compression_signal": false,
-          "history_days": 9
         },
         "rv_iv_persistence": null,
         "regime_label": "neutral"
@@ -1417,15 +914,41 @@
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
+      "gex": {
+        "spot": 88.65,
+        "total_gex_usd": -362331768.0,
+        "regime": "short_gamma",
+        "zero_gamma_level": 87.0,
+        "zero_gamma_distance_pct": 1.86,
+        "zero_gamma_found": true,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "total_contracts_analyzed": 18171,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.3247,
+        "call_premium_usd": 17010,
+        "put_premium_usd": 5522,
+        "depth_volume_pc": 15.3909,
+        "call_depth_usd": 214568,
+        "put_depth_usd": 3302395,
+        "net_delta_volume": 27.6,
+        "call_delta_volume": 27.6,
+        "put_delta_volume": 0.0,
+        "smile_atm_iv": 0.2975,
+        "smile_skew_b": -0.0814,
+        "smile_curvature_c": 4.5505,
+        "smile_expiration_used": "2026-06-12",
+        "smile_strike_count": 39
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
         "iv_rank": 38.9,
@@ -1453,155 +976,72 @@
       "watchlist_entry_high": 106.0
     },
     {
-      "ticker": "APLD",
-      "flow": {
-        "score": -0.51,
-        "signal": "neutral",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 39.41,
-        "bullish_streak": 0,
-        "avg_score_5d": 4.0,
-        "delta_5d": -4.51
-      },
-      "skew": null,
-      "skew_error": null,
-      "gex": {
-        "spot": 36.04,
-        "total_gex_usd": 111440042.0,
-        "regime": "long_gamma",
-        "zero_gamma_level": 24.0,
-        "zero_gamma_distance_pct": 33.41,
-        "zero_gamma_found": true,
-        "buffer": "safe",
-        "expirations_used": [
-          "2026-05-22",
-          "2026-05-29"
-        ],
-        "total_contracts_analyzed": 77109,
-        "provider": "thetadata",
-        "error_kind": null
-      },
-      "gex_error": null,
-      "flow_extra": {
-        "premium_volume_pc": 1.1926,
-        "call_premium_usd": 176020,
-        "put_premium_usd": 209917,
-        "depth_volume_pc": 0.9487,
-        "call_depth_usd": 9426410,
-        "put_depth_usd": 8942730,
-        "net_delta_volume": -32.4,
-        "call_delta_volume": 148.1,
-        "put_delta_volume": 180.5,
-        "smile_atm_iv": 1.0805,
-        "smile_skew_b": -0.6105,
-        "smile_curvature_c": 0.8661,
-        "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 46
-      },
-      "flow_extra_errors": {
-        "rv_iv_gap": "insufficient_history"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 7
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": -24.06,
-          "rr_5d_ago_vp": -47.38,
-          "delta_5d_vp": 23.32,
-          "avg_flow_5d": 4.0,
-          "compression_signal": true,
-          "history_days": 6
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "skew_compression"
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "ADSK",
+      "ticker": "ADI",
       "flow": {
         "score": -0.99,
         "signal": "neutral",
         "scan_date": "2026-05-19",
         "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 239.0,
+        "spot_price": 416.19,
         "bullish_streak": 0,
-        "avg_score_5d": -3.91,
-        "delta_5d": 2.92
+        "avg_score_5d": 1.4,
+        "delta_5d": -2.39
       },
-      "skew": null,
-      "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
-      },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 7
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": 19.68,
-          "rr_5d_ago_vp": 13.48,
-          "delta_5d_vp": 6.2,
-          "avg_flow_5d": -3.91,
-          "compression_signal": false,
-          "history_days": 6
+      "skew": {
+        "expiration": "2026-05-29",
+        "spot": 417.37,
+        "put_25d_iv": 0.6627,
+        "call_25d_iv": 0.6662,
+        "risk_reversal": 0.0035,
+        "risk_reversal_vp": 0.35,
+        "skew_basis": "25d",
+        "read": "balanced",
+        "direction": "bullish",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 392.5,
+          "call_strike": 452.5
         },
-        "rv_iv_persistence": null,
-        "regime_label": "neutral"
+        "provider": "thetadata",
+        "error_kind": null
       },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "ADI",
-      "flow": {
-        "score": -3.0,
-        "signal": "bear",
-        "scan_date": "2026-05-19",
-        "days_ago": 0,
-        "td_data_exists": true,
-        "spot_price": 419.5,
-        "bullish_streak": 0,
-        "avg_score_5d": 1.0,
-        "delta_5d": -4.0
-      },
-      "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
+      "gex": {
+        "spot": 417.37,
+        "total_gex_usd": 3991567.0,
+        "regime": "neutral",
+        "zero_gamma_level": 320.0,
+        "zero_gamma_distance_pct": 23.33,
+        "zero_gamma_found": true,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "total_contracts_analyzed": 19037,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 1.3433,
+        "call_premium_usd": 120570,
+        "put_premium_usd": 161960,
+        "depth_volume_pc": 0.8151,
+        "call_depth_usd": 3929200,
+        "put_depth_usd": 3202665,
+        "net_delta_volume": -9.3,
+        "call_delta_volume": 15.0,
+        "put_delta_volume": 24.3,
+        "smile_atm_iv": 0.5469,
+        "smile_skew_b": 0.2109,
+        "smile_curvature_c": 1.1705,
+        "smile_expiration_used": "2026-06-12",
+        "smile_strike_count": 70
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
         "iv_rank": null,
@@ -1611,17 +1051,17 @@
       },
       "vol_regime": {
         "skew_compression": {
-          "rr_today_vp": -11.4,
+          "rr_today_vp": -6.56,
           "rr_5d_ago_vp": -15.23,
-          "delta_5d_vp": 3.83,
-          "avg_flow_5d": 1.0,
+          "delta_5d_vp": 8.67,
+          "avg_flow_5d": 1.4,
           "compression_signal": false,
           "history_days": 7
         },
         "rv_iv_persistence": null,
         "regime_label": "neutral"
       },
-      "earnings_date": null,
+      "earnings_date": "2026-05-20",
       "frozen": false,
       "thesis": null,
       "watchlist_target": null,
@@ -1629,49 +1069,164 @@
       "watchlist_entry_high": null
     },
     {
-      "ticker": "AMD",
+      "ticker": "ADMA",
       "flow": {
-        "score": -4.5,
-        "signal": "bear",
+        "score": -0.99,
+        "signal": "neutral",
         "scan_date": "2026-05-19",
         "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 422.56,
+        "spot_price": 8.51,
         "bullish_streak": 0,
-        "avg_score_5d": -0.9,
-        "delta_5d": -3.6
+        "avg_score_5d": 2.0,
+        "delta_5d": -2.99
       },
       "skew": null,
       "skew_error": null,
-      "gex": null,
-      "gex_error": "provider_no_data",
-      "flow_extra": null,
+      "gex": {
+        "spot": 8.47,
+        "total_gex_usd": -11217899.0,
+        "regime": "neutral",
+        "zero_gamma_level": 8.0,
+        "zero_gamma_distance_pct": 5.6,
+        "zero_gamma_found": true,
+        "buffer": "caution",
+        "expirations_used": [
+          "2026-06-18",
+          "2026-07-17"
+        ],
+        "total_contracts_analyzed": 12692,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 1.2261,
+        "call_premium_usd": 1958,
+        "put_premium_usd": 2400,
+        "depth_volume_pc": 0.1797,
+        "call_depth_usd": 191880,
+        "put_depth_usd": 34480,
+        "net_delta_volume": -11.2,
+        "call_delta_volume": 7.4,
+        "put_delta_volume": 18.7
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "smile_shape": "underdetermined",
+        "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
         "iv_rank": null,
         "iv_percentile": null,
         "earnings_iv_crush_flag": false,
-        "history_days": 7
+        "history_days": 5
       },
       "vol_regime": {
         "skew_compression": {
-          "rr_today_vp": -11.46,
-          "rr_5d_ago_vp": -13.22,
-          "delta_5d_vp": 1.76,
-          "avg_flow_5d": -0.9,
+          "rr_today_vp": 2.25,
+          "rr_5d_ago_vp": 10.86,
+          "delta_5d_vp": -8.61,
+          "avg_flow_5d": 2.0,
+          "compression_signal": false,
+          "history_days": 12
+        },
+        "rv_iv_persistence": null,
+        "regime_label": "neutral"
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": "P0 EXIT: PEFP failed setup. Skew bearish/extreme. Post-earnings. EXIT 50sh AT MARKET. EXECUTE NOW.",
+      "watchlist_target": 18.0,
+      "watchlist_entry_low": 8.0,
+      "watchlist_entry_high": 10.0
+    },
+    {
+      "ticker": "A",
+      "flow": {
+        "score": -9.0,
+        "signal": "strong_bear",
+        "scan_date": "2026-05-19",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 111.94,
+        "bullish_streak": 0,
+        "avg_score_5d": -7.8,
+        "delta_5d": -1.2
+      },
+      "skew": {
+        "expiration": "2026-06-18",
+        "spot": 111.98,
+        "put_25d_iv": 0.4387,
+        "call_25d_iv": 0.3956,
+        "risk_reversal": -0.0432,
+        "risk_reversal_vp": -4.32,
+        "skew_basis": "25d",
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 105.0,
+          "call_strike": 120.0
+        },
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "skew_error": null,
+      "gex": {
+        "spot": 111.98,
+        "total_gex_usd": 52396981.0,
+        "regime": "neutral",
+        "zero_gamma_level": 111.98,
+        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_found": false,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-06-18",
+          "2026-07-17"
+        ],
+        "total_contracts_analyzed": 7382,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.5167,
+        "call_premium_usd": 244792,
+        "put_premium_usd": 126477,
+        "depth_volume_pc": 3.5249,
+        "call_depth_usd": 292388,
+        "put_depth_usd": 1030642,
+        "net_delta_volume": 119.9,
+        "call_delta_volume": 272.7,
+        "put_delta_volume": 152.7,
+        "smile_atm_iv": 0.395,
+        "smile_skew_b": -0.2026,
+        "smile_curvature_c": 2.4723,
+        "smile_expiration_used": "2026-06-18",
+        "smile_strike_count": 32
+      },
+      "flow_extra_errors": {
+        "rv_iv_gap": "insufficient_history"
+      },
+      "iv_metrics": {
+        "iv_rank": null,
+        "iv_percentile": null,
+        "earnings_iv_crush_flag": false,
+        "history_days": 8
+      },
+      "vol_regime": {
+        "skew_compression": {
+          "rr_today_vp": -1.06,
+          "rr_5d_ago_vp": -24.52,
+          "delta_5d_vp": 23.46,
+          "avg_flow_5d": -7.8,
           "compression_signal": false,
           "history_days": 8
         },
         "rv_iv_persistence": null,
         "regime_label": "neutral"
       },
-      "earnings_date": null,
+      "earnings_date": "2026-05-27",
       "frozen": false,
       "thesis": null,
       "watchlist_target": null,
@@ -1681,16 +1236,28 @@
   ],
   "counts": {
     "mine": 11,
-    "bullscouter": 21
+    "bullscouter": 9
   },
   "universe": {
-    "total_active": 372,
-    "exported_with_data": 32,
-    "processed_universe": 21,
+    "total_active": 384,
+    "exported_with_data": 20,
+    "processed_universe": 9,
     "dropped_no_data": 0,
     "dropped_tickers": [],
-    "skipped_universe": 340,
+    "skipped_universe": 364,
     "skipped_universe_tickers": [
+      "ADSK",
+      "AEM",
+      "AGI",
+      "AKAM",
+      "ALKT",
+      "ALL",
+      "AMD",
+      "AMZN",
+      "ANF",
+      "APLD",
+      "APO",
+      "APP",
       "APTV",
       "ARE",
       "ARGX",
@@ -1705,6 +1272,7 @@
       "BDX",
       "BEN",
       "BIIB",
+      "BKKT",
       "BKNG",
       "BLKB",
       "BMI",
@@ -1787,6 +1355,7 @@
       "ERIE",
       "ES",
       "ETON",
+      "EVC",
       "EXE",
       "EXPE",
       "EYE",
@@ -1804,6 +1373,7 @@
       "FLNC",
       "FLO",
       "FLY",
+      "FLYW",
       "FOUR",
       "FRO",
       "FSLR",
@@ -1820,6 +1390,7 @@
       "GPC",
       "GPK",
       "GPN",
+      "GSIT",
       "GSK",
       "HALO",
       "HAS",
@@ -1836,6 +1407,7 @@
       "IBKR",
       "IBRX",
       "IEX",
+      "IMMX",
       "IMSR",
       "INCY",
       "INFQ",
@@ -1850,6 +1422,7 @@
       "IT",
       "JD",
       "JKHY",
+      "KDK",
       "KKR",
       "KLAR",
       "KMI",
@@ -1862,6 +1435,7 @@
       "LNG",
       "LNTH",
       "LOAR",
+      "LPG",
       "LPTH",
       "LRN",
       "LULU",
@@ -1911,6 +1485,7 @@
       "ONDS",
       "ORCL",
       "OS",
+      "OSS",
       "OXY",
       "PANW",
       "PATH",
@@ -1949,10 +1524,13 @@
       "RGNX",
       "RIVN",
       "RKLB",
+      "RKT",
+      "RLAY",
       "RLMD",
       "RMBS",
       "RMD",
       "RTX",
+      "RXO",
       "RYAN",
       "RYTM",
       "SATL",
@@ -2001,6 +1579,7 @@
       "TXT",
       "TYL",
       "UBER",
+      "UEC",
       "UMAC",
       "UPST",
       "USB",
@@ -2034,10 +1613,19 @@
     ],
     "timed_out_universe": 0,
     "timed_out_universe_tickers": [],
-    "skipped_held": 0,
-    "skipped_held_tickers": [],
-    "timed_out_held": 0,
-    "timed_out_held_tickers": [],
+    "skipped_held": 6,
+    "skipped_held_tickers": [
+      "NVAX",
+      "OBIO",
+      "OPEN",
+      "PLTR",
+      "QS",
+      "TTD"
+    ],
+    "timed_out_held": 1,
+    "timed_out_held_tickers": [
+      "BULL"
+    ],
     "service_endpoint": "http://localhost:8001/deep_options/<TICKER>",
     "service_note": "Any ticker (held, watchlist, or universe-wide) can be queried live via the deep-options service \u2014 including dropped_tickers above. The service caches 60s and computes fresh on cache miss."
   }
