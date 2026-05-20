@@ -7,30 +7,15 @@
   "strategic_context_block_reason": null,
   "filtered_summary": {
     "earnings_blackout": 2,
-    "below_cutoff": 31,
+    "below_cutoff": 11,
     "held": 10,
-    "rr_too_low": 1,
-    "rescan_below_cutoff_no_note": 5
+    "rescan_below_cutoff_no_note": 3
   },
-  "candidates_evaluated": 44,
+  "candidates_evaluated": 23,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 3,
+  "oracle_watch_count": 1,
   "oracle_watch": [
-    {
-      "ticker": "HLNE",
-      "composite": 35,
-      "convergence_paths": [
-        "path3_strong_candidate",
-        "path5_strong_quality"
-      ],
-      "spot_price": 84.11,
-      "oracle_note": {
-        "text": "4-path (P3 75+P5 86+P4 EZ+insider 6/0). Flow -12.0 on 157 OI thin chain. Earnings blackout. WAIT for blackout clear + flow >= -3.0. Best convergence but timing wrong.",
-        "written_at": "2026-05-19"
-      },
-      "filter_reason": "below_cutoff"
-    },
     {
       "ticker": "BSX",
       "composite": 25,
@@ -39,21 +24,8 @@
       ],
       "spot_price": 53.55,
       "oracle_note": {
-        "text": "P1 BUY 77/78 + P4 EZ $55.92. BELOW zone floor $53.55. 4-fund 13F $583M FARAPULSE. Needs flow >=+3 for 3rd path. value profile 36% WR caution.",
-        "written_at": "2026-05-19"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "FDS",
-      "composite": 15,
-      "convergence_paths": [
-        "path5_strong_quality"
-      ],
-      "spot_price": 221.93,
-      "oracle_note": {
-        "text": "In contrarian list at $230.49. Flow -7.0 hostile. ABS_TARGET $224 above $220 zone. 5d window to improve flow or flag for removal.",
-        "written_at": "2026-05-19"
+        "text": "3-path (P1 BUY 77/78+P4 EZ+assessor SB). Below $55 floor at $53.55. 4-fund 13F $583M. value 36% WR caution. Conditional $53.",
+        "written_at": "2026-05-20"
       },
       "filter_reason": "below_cutoff"
     }
@@ -414,18 +386,18 @@
       ],
       "spot_price": 68.73,
       "entry": {
-        "low": 66.67,
-        "high": 69.07,
-        "mid": 67.87
+        "low": 64.0,
+        "high": 72.0,
+        "mid": 68.0
       },
-      "target": 82.48,
+      "target": 100.0,
       "stop": 63.23,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
+      "rr_ratio": 5.69,
+      "rr_planned": 6.71,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 950.18,
+      "suggested_size_usd": 952.0,
       "suggested_shares": 14,
-      "position_risk_usd": 64.96,
+      "position_risk_usd": 66.78,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -437,8 +409,11 @@
         }
       },
       "rationale_one_liner": "flow +9.4 5d-avg (5 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
+      "watchlist_thesis": "ENTRY_ZONE+ABS_TARGET $68.73 firing midday. ENHANZE royalty 13 partners (J&J/Roche/Pfizer). 80%+ FCF margins. -38% from high. Assessor STRONG BUY HIGH. Enter 10sh $65-68 if flow develops 5d+.",
+      "oracle_note": {
+        "text": "EZ+ABS $68.73 IN zone midday. ENHANZE royalty 13 partners, 80%+ FCF. Assessor STRONG BUY HIGH. +10 conf. Needs flow 5d+ to enter.",
+        "written_at": "2026-05-20"
+      },
       "macro_filter": {
         "pass": true,
         "result": "PASS",
@@ -625,7 +600,7 @@
         }
       },
       "rationale_one_liner": "flow +8.9 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "Exited. Assessor AVOID: DAU negative NA/EU. At $5.53 in rebuy zone but structural decline. DO NOT REBUY.",
+      "watchlist_thesis": "Exited. At $5.55 in rebuy zone ($5.50-5.70). Assessor AVOID: DAU negative. Does NOT qualify defensive stance.",
       "oracle_note": null,
       "macro_filter": {
         "pass": true,
