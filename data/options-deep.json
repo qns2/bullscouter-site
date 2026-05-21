@@ -28,7 +28,7 @@
       "vol_regime": null,
       "earnings_date": null,
       "frozen": false,
-      "thesis": "EXIT CONFIRMED 5/20. 200sh @ ~$4.25. Loss ~-$132. Clean up from portfolio.",
+      "thesis": "EXIT CONFIRMED 5/20. 200sh @ ~$4.25. Loss ~-$132. Clean up from portfolio and flow tracking.",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
@@ -148,7 +148,7 @@
       "vol_regime": null,
       "earnings_date": null,
       "frozen": false,
-      "thesis": "HELD 60sh @ $28.92 (-27.3%). Triple EZ+ABS+DIP $21.02 IN zone. Flow +9.0 6d (down from +10.5). P3 71, Assessor BUY MED. HOLD stop $19-20. Do NOT add (overweight with contrarian list). Next earnings Aug 6.",
+      "thesis": "HELD 60sh @ $28.92 (-27.3%). Triple EZ+ABS+DIP $21.02 IN zone. Flow +9.0 7d. 5-path convergence. HOLD stop $19-20. Do NOT add (overweight).",
       "watchlist_target": 40.0,
       "watchlist_entry_low": 19.0,
       "watchlist_entry_high": 22.0
@@ -169,10 +169,10 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 7.01,
-        "total_gex_usd": -2573107.0,
+        "spot": 6.73,
+        "total_gex_usd": -1910789.0,
         "regime": "neutral",
-        "zero_gamma_level": 7.01,
+        "zero_gamma_level": 6.73,
         "zero_gamma_distance_pct": 0.0,
         "zero_gamma_found": false,
         "buffer": "danger",
@@ -180,18 +180,20 @@
           "2026-06-18",
           "2026-07-17"
         ],
-        "total_contracts_analyzed": 1759,
+        "total_contracts_analyzed": 1799,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "depth_volume_pc": 70040.0,
-        "call_depth_usd": 0,
-        "put_depth_usd": 70040
+        "premium_volume_pc": 0.0,
+        "call_premium_usd": 850,
+        "put_premium_usd": 0,
+        "depth_volume_pc": 0.4028,
+        "call_depth_usd": 56525,
+        "put_depth_usd": 22770
       },
       "flow_extra_errors": {
-        "premium_volume_pc": "all_strikes_filtered",
         "net_delta_volume": "all_strikes_filtered",
         "smile_shape": "underdetermined",
         "rv_iv_gap": "insufficient_history"
@@ -216,7 +218,7 @@
       },
       "earnings_date": null,
       "frozen": false,
-      "thesis": "HELD 100sh @ $7.65 (-10.1%). GTC stop $6.50 (5.5% away). Flow +6.0 11d thin-chain. GEX danger 0%. One override used \u2014 $6.50 is FINAL. DO NOT TOUCH.",
+      "thesis": "HELD 100sh @ $7.65 (-10.1%). GTC stop $6.50 (5.5% away). Flow +7.5 12d thin-chain. GEX danger 0%. One override used \u2014 $6.50 is FINAL.",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
@@ -234,19 +236,82 @@
         "avg_score_5d": 7.2,
         "delta_5d": -1.2
       },
-      "skew": null,
-      "skew_error": "held_timeout",
-      "gex": null,
-      "gex_error": "held_timeout",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "held_timeout"
+      "skew": {
+        "expiration": "2026-05-29",
+        "spot": 7.14,
+        "put_25d_iv": 1.1161,
+        "call_25d_iv": 1.0231,
+        "risk_reversal": -0.093,
+        "risk_reversal_vp": -9.3,
+        "skew_basis": "25d",
+        "read": "panic",
+        "direction": "bearish",
+        "magnitude": "extreme",
+        "strikes_used": {
+          "put_strike": 6.5,
+          "call_strike": 8.0
+        },
+        "provider": "thetadata",
+        "error_kind": null
       },
-      "iv_metrics": null,
-      "vol_regime": null,
+      "skew_error": null,
+      "gex": {
+        "spot": 7.13,
+        "total_gex_usd": -79760880.0,
+        "regime": "neutral",
+        "zero_gamma_level": 5.5,
+        "zero_gamma_distance_pct": 22.92,
+        "zero_gamma_found": true,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "total_contracts_analyzed": 58019,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 2.4433,
+        "call_premium_usd": 1662,
+        "put_premium_usd": 4062,
+        "depth_volume_pc": 13.0127,
+        "call_depth_usd": 115714,
+        "put_depth_usd": 1505750,
+        "net_delta_volume": 12.3,
+        "call_delta_volume": 15.7,
+        "put_delta_volume": 3.3,
+        "smile_atm_iv": 0.769,
+        "smile_skew_b": -0.3289,
+        "smile_curvature_c": 4.116,
+        "smile_expiration_used": "2026-06-12",
+        "smile_strike_count": 9
+      },
+      "flow_extra_errors": {
+        "rv_iv_gap": "insufficient_history"
+      },
+      "iv_metrics": {
+        "iv_rank": null,
+        "iv_percentile": null,
+        "earnings_iv_crush_flag": false,
+        "history_days": 22
+      },
+      "vol_regime": {
+        "skew_compression": {
+          "rr_today_vp": -26.9,
+          "rr_5d_ago_vp": -3.75,
+          "delta_5d_vp": -23.15,
+          "avg_flow_5d": 7.2,
+          "compression_signal": false,
+          "history_days": 8
+        },
+        "rv_iv_persistence": null,
+        "regime_label": "neutral"
+      },
       "earnings_date": "2026-05-21",
       "frozen": false,
-      "thesis": "HELD 100sh @ $7.31 (-4.4%). Earnings TODAY. GTC stop $6.85 live (2.0% below spot). Skew bullish/extreme +9.4vp (smartest bull signal in portfolio). $10C magnet 41K OI. Binary. User decided to hold full. Monitor post-print.",
+      "thesis": "HELD 100sh @ $7.31 (-4.4%). Earnings TODAY. GTC stop $6.85 live (2% away). Flow +6.0 10d. Binary. Evaluate AH tonight.",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
@@ -267,10 +332,10 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 3.25,
-        "total_gex_usd": -1100455.0,
+        "spot": 3.21,
+        "total_gex_usd": -873837.0,
         "regime": "neutral",
-        "zero_gamma_level": 3.25,
+        "zero_gamma_level": 3.21,
         "zero_gamma_distance_pct": 0.0,
         "zero_gamma_found": false,
         "buffer": "danger",
@@ -278,15 +343,18 @@
           "2026-05-22",
           "2026-05-29"
         ],
-        "total_contracts_analyzed": 1472,
+        "total_contracts_analyzed": 1191,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
-      "flow_extra": null,
+      "flow_extra": {
+        "depth_volume_pc": 37350.0,
+        "call_depth_usd": 0,
+        "put_depth_usd": 37350
+      },
       "flow_extra_errors": {
         "premium_volume_pc": "all_strikes_filtered",
-        "depth_volume_pc": "all_strikes_filtered",
         "net_delta_volume": "all_strikes_filtered",
         "smile_shape": "underdetermined",
         "rv_iv_gap": "insufficient_history"
@@ -311,7 +379,7 @@
       },
       "earnings_date": null,
       "frozen": false,
-      "thesis": "HELD 100sh @ $3.00 (+8.3%). PDUFA 5/29 T-8. Flow dropped +5.0 to neutral. IV rank 100. GEX danger 0%. Position sizing correct ($300). HOLD. Revisit flow at T-3 (5/26) \u2014 if bearish, trim 50sh.",
+      "thesis": "HELD 100sh @ $3.00 (+8.3%). PDUFA 5/29 T-8. Flow +6.0 9d. IV rank 100. GEX danger 0%. Trim 40sh by 5/26 per plan. Revisit flow at T-3.",
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
@@ -362,37 +430,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 44.07,
-        "total_gex_usd": -922508839.0,
+        "spot": 43.9,
+        "total_gex_usd": -1140267326.0,
         "regime": "short_gamma",
         "zero_gamma_level": 39.0,
-        "zero_gamma_distance_pct": 11.51,
+        "zero_gamma_distance_pct": 11.16,
         "zero_gamma_found": true,
         "buffer": "safe",
         "expirations_used": [
           "2026-05-22",
           "2026-05-29"
         ],
-        "total_contracts_analyzed": 118390,
+        "total_contracts_analyzed": 114655,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.1336,
-        "call_premium_usd": 192186,
-        "put_premium_usd": 25673,
-        "depth_volume_pc": 0.9006,
-        "call_depth_usd": 1637392,
-        "put_depth_usd": 1474640,
-        "net_delta_volume": 449.8,
-        "call_delta_volume": 522.5,
-        "put_delta_volume": 72.7,
-        "smile_atm_iv": 0.3973,
-        "smile_skew_b": -0.0695,
-        "smile_curvature_c": 2.6452,
+        "premium_volume_pc": 0.3147,
+        "call_premium_usd": 68566,
+        "put_premium_usd": 21576,
+        "depth_volume_pc": 0.9364,
+        "call_depth_usd": 1368731,
+        "put_depth_usd": 1281680,
+        "net_delta_volume": 87.7,
+        "call_delta_volume": 132.8,
+        "put_delta_volume": 45.2,
+        "smile_atm_iv": 0.3893,
+        "smile_skew_b": -0.0028,
+        "smile_curvature_c": 3.2319,
         "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 40
+        "smile_strike_count": 36
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -438,37 +506,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 15.45,
-        "total_gex_usd": 13834388.0,
+        "spot": 15.34,
+        "total_gex_usd": 3901267.0,
         "regime": "neutral",
         "zero_gamma_level": 14.5,
-        "zero_gamma_distance_pct": 6.15,
+        "zero_gamma_distance_pct": 5.45,
         "zero_gamma_found": true,
         "buffer": "caution",
         "expirations_used": [
           "2026-05-22",
           "2026-05-29"
         ],
-        "total_contracts_analyzed": 2005,
+        "total_contracts_analyzed": 4080,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 5.161,
-        "call_premium_usd": 8386,
-        "put_premium_usd": 43280,
-        "depth_volume_pc": 10.7338,
-        "call_depth_usd": 104598,
-        "put_depth_usd": 1122732,
-        "net_delta_volume": 23.6,
-        "call_delta_volume": 48.3,
-        "put_delta_volume": 24.7,
-        "smile_atm_iv": 0.4401,
-        "smile_skew_b": -0.2282,
-        "smile_curvature_c": 4.4122,
+        "premium_volume_pc": 0.0722,
+        "call_premium_usd": 11509,
+        "put_premium_usd": 831,
+        "depth_volume_pc": 0.1122,
+        "call_depth_usd": 234628,
+        "put_depth_usd": 26315,
+        "net_delta_volume": 78.2,
+        "call_delta_volume": 78.2,
+        "put_delta_volume": 0.0,
+        "smile_atm_iv": 0.4733,
+        "smile_skew_b": -0.0615,
+        "smile_curvature_c": 4.0504,
         "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 23
+        "smile_strike_count": 6
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -493,7 +561,7 @@
       },
       "earnings_date": null,
       "frozen": false,
-      "thesis": "EXIT CONFIRMED 5/20. 50sh @ ~$16.98. Loss ~-$31. Clean up from portfolio.",
+      "thesis": "EXIT CONFIRMED 5/20. 50sh @ ~$16.98. Loss ~-$31. Clean up. ABS_TARGET alert still firing = BUG.",
       "watchlist_target": 28.0,
       "watchlist_entry_low": 17.0,
       "watchlist_entry_high": 18.5
@@ -515,15 +583,15 @@
       },
       "skew": {
         "expiration": "2026-06-26",
-        "spot": 176.5,
-        "put_25d_iv": 0.4951,
-        "call_25d_iv": 0.5566,
-        "risk_reversal": 0.0616,
-        "risk_reversal_vp": 6.16,
+        "spot": 176.25,
+        "put_25d_iv": 0.5099,
+        "call_25d_iv": 0.4863,
+        "risk_reversal": -0.0236,
+        "risk_reversal_vp": -2.36,
         "skew_basis": "25d",
-        "read": "speculative",
-        "direction": "bullish",
-        "magnitude": "extreme",
+        "read": "fear",
+        "direction": "bearish",
+        "magnitude": "moderate",
         "strikes_used": {
           "put_strike": 160.0,
           "call_strike": 200.0
@@ -533,37 +601,37 @@
       },
       "skew_error": null,
       "gex": {
-        "spot": 176.5,
-        "total_gex_usd": -274839788.0,
+        "spot": 176.43,
+        "total_gex_usd": -412425519.0,
         "regime": "short_gamma",
-        "zero_gamma_level": 157.5,
-        "zero_gamma_distance_pct": 10.76,
+        "zero_gamma_level": 144.0,
+        "zero_gamma_distance_pct": 18.38,
         "zero_gamma_found": true,
         "buffer": "safe",
         "expirations_used": [
           "2026-05-22",
           "2026-05-29"
         ],
-        "total_contracts_analyzed": 8164,
+        "total_contracts_analyzed": 8101,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.6815,
-        "call_premium_usd": 77372,
-        "put_premium_usd": 52732,
-        "depth_volume_pc": 0.0333,
-        "call_depth_usd": 2600658,
-        "put_depth_usd": 86492,
-        "net_delta_volume": -8.4,
-        "call_delta_volume": 22.9,
-        "put_delta_volume": 31.3,
-        "smile_atm_iv": 0.5004,
-        "smile_skew_b": -0.3864,
-        "smile_curvature_c": 3.8786,
+        "premium_volume_pc": 1.8719,
+        "call_premium_usd": 58262,
+        "put_premium_usd": 109060,
+        "depth_volume_pc": 1.0423,
+        "call_depth_usd": 2348488,
+        "put_depth_usd": 2447938,
+        "net_delta_volume": -26.1,
+        "call_delta_volume": 16.6,
+        "put_delta_volume": 42.8,
+        "smile_atm_iv": 0.4521,
+        "smile_skew_b": 0.135,
+        "smile_curvature_c": 1.7917,
         "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 31
+        "smile_strike_count": 41
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -609,44 +677,44 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 88.36,
-        "total_gex_usd": -248017068.0,
+        "spot": 87.57,
+        "total_gex_usd": -367602937.0,
         "regime": "short_gamma",
         "zero_gamma_level": 80.0,
-        "zero_gamma_distance_pct": 9.46,
+        "zero_gamma_distance_pct": 8.64,
         "zero_gamma_found": true,
         "buffer": "caution",
         "expirations_used": [
           "2026-05-22",
           "2026-05-29"
         ],
-        "total_contracts_analyzed": 17168,
+        "total_contracts_analyzed": 16340,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.3136,
-        "call_premium_usd": 12530,
-        "put_premium_usd": 3930,
-        "depth_volume_pc": 0.2322,
-        "call_depth_usd": 161725,
-        "put_depth_usd": 37550,
-        "net_delta_volume": 17.5,
-        "call_delta_volume": 17.5,
+        "premium_volume_pc": 2.8511,
+        "call_premium_usd": 1645,
+        "put_premium_usd": 4690,
+        "depth_volume_pc": 4.2767,
+        "call_depth_usd": 140565,
+        "put_depth_usd": 601158,
+        "net_delta_volume": 2.3,
+        "call_delta_volume": 2.3,
         "put_delta_volume": 0.0,
-        "smile_atm_iv": 0.3259,
-        "smile_skew_b": -0.7072,
-        "smile_curvature_c": 2.4239,
+        "smile_atm_iv": 0.2959,
+        "smile_skew_b": -0.0698,
+        "smile_curvature_c": 4.1164,
         "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 23
+        "smile_strike_count": 26
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
-        "iv_rank": 71.2,
-        "iv_percentile": 82.5,
+        "iv_rank": 51.4,
+        "iv_percentile": 54.0,
         "earnings_iv_crush_flag": false,
         "history_days": 63
       },
@@ -685,37 +753,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 301.43,
-        "total_gex_usd": -27609157464.0,
+        "spot": 301.81,
+        "total_gex_usd": -32184511768.0,
         "regime": "short_gamma",
-        "zero_gamma_level": 297.5,
-        "zero_gamma_distance_pct": 1.3,
-        "zero_gamma_found": true,
+        "zero_gamma_level": 301.81,
+        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_found": false,
         "buffer": "danger",
         "expirations_used": [
           "2026-05-22",
           "2026-05-26"
         ],
-        "total_contracts_analyzed": 253417,
+        "total_contracts_analyzed": 223452,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.1279,
-        "call_premium_usd": 3238959,
-        "put_premium_usd": 414215,
-        "depth_volume_pc": 0.1087,
-        "call_depth_usd": 1790374,
-        "put_depth_usd": 194623,
-        "net_delta_volume": 1670.0,
-        "call_delta_volume": 1999.3,
-        "put_delta_volume": 329.4,
-        "smile_atm_iv": 0.2588,
-        "smile_skew_b": -0.4014,
-        "smile_curvature_c": 2.2353,
+        "premium_volume_pc": 0.1631,
+        "call_premium_usd": 763520,
+        "put_premium_usd": 124498,
+        "depth_volume_pc": 0.1143,
+        "call_depth_usd": 6608983,
+        "put_depth_usd": 755380,
+        "net_delta_volume": 326.4,
+        "call_delta_volume": 428.4,
+        "put_delta_volume": 102.0,
+        "smile_atm_iv": 0.2452,
+        "smile_skew_b": -0.3885,
+        "smile_curvature_c": 2.1333,
         "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 56
+        "smile_strike_count": 55
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -760,55 +828,55 @@
       },
       "skew": {
         "expiration": "2026-06-18",
-        "spot": 249.5,
-        "put_25d_iv": 0.5272,
-        "call_25d_iv": 0.6044,
-        "risk_reversal": 0.0772,
-        "risk_reversal_vp": 7.72,
+        "spot": 245.39,
+        "put_25d_iv": 0.5819,
+        "call_25d_iv": 0.5556,
+        "risk_reversal": -0.0262,
+        "risk_reversal_vp": -2.62,
         "skew_basis": "25d",
-        "read": "speculative",
-        "direction": "bullish",
-        "magnitude": "extreme",
+        "read": "fear",
+        "direction": "bearish",
+        "magnitude": "moderate",
         "strikes_used": {
-          "put_strike": 230.0,
-          "call_strike": 285.0
+          "put_strike": 225.0,
+          "call_strike": 275.0
         },
         "provider": "thetadata",
         "error_kind": null
       },
       "skew_error": null,
       "gex": {
-        "spot": 249.5,
-        "total_gex_usd": -425634305.0,
+        "spot": 244.99,
+        "total_gex_usd": -152044774.0,
         "regime": "short_gamma",
-        "zero_gamma_level": 200.0,
-        "zero_gamma_distance_pct": 19.84,
+        "zero_gamma_level": 270.0,
+        "zero_gamma_distance_pct": 10.21,
         "zero_gamma_found": true,
         "buffer": "safe",
         "expirations_used": [
           "2026-05-22",
           "2026-05-29"
         ],
-        "total_contracts_analyzed": 42056,
+        "total_contracts_analyzed": 40794,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 3.1452,
-        "call_premium_usd": 392206,
-        "put_premium_usd": 1233548,
-        "depth_volume_pc": 0.1821,
-        "call_depth_usd": 5194734,
-        "put_depth_usd": 946020,
-        "net_delta_volume": -330.3,
-        "call_delta_volume": 132.6,
-        "put_delta_volume": 462.9,
-        "smile_atm_iv": 0.5644,
-        "smile_skew_b": 0.0676,
-        "smile_curvature_c": 4.0979,
+        "premium_volume_pc": 3.7114,
+        "call_premium_usd": 475920,
+        "put_premium_usd": 1766308,
+        "depth_volume_pc": 2.0495,
+        "call_depth_usd": 4659838,
+        "put_depth_usd": 9550392,
+        "net_delta_volume": -430.2,
+        "call_delta_volume": 136.7,
+        "put_delta_volume": 567.0,
+        "smile_atm_iv": 0.6088,
+        "smile_skew_b": -0.0387,
+        "smile_curvature_c": 0.5511,
         "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 48
+        "smile_strike_count": 51
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -854,37 +922,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 396.24,
-        "total_gex_usd": 1348651101.0,
+        "spot": 387.19,
+        "total_gex_usd": 2324681804.0,
         "regime": "long_gamma",
-        "zero_gamma_level": 350.0,
-        "zero_gamma_distance_pct": 11.67,
-        "zero_gamma_found": true,
-        "buffer": "safe",
+        "zero_gamma_level": 387.19,
+        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_found": false,
+        "buffer": "danger",
         "expirations_used": [
           "2026-05-22",
           "2026-05-29"
         ],
-        "total_contracts_analyzed": 23810,
+        "total_contracts_analyzed": 20396,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.6164,
-        "call_premium_usd": 317075,
-        "put_premium_usd": 195435,
-        "depth_volume_pc": 0.1339,
-        "call_depth_usd": 3591890,
-        "put_depth_usd": 481095,
-        "net_delta_volume": 50.3,
-        "call_delta_volume": 84.3,
-        "put_delta_volume": 34.0,
-        "smile_atm_iv": 0.4475,
-        "smile_skew_b": -0.3187,
-        "smile_curvature_c": 2.077,
+        "premium_volume_pc": 3.0388,
+        "call_premium_usd": 95140,
+        "put_premium_usd": 289115,
+        "depth_volume_pc": 5.8798,
+        "call_depth_usd": 1153350,
+        "put_depth_usd": 6781440,
+        "net_delta_volume": -16.5,
+        "call_delta_volume": 22.6,
+        "put_delta_volume": 39.1,
+        "smile_atm_iv": 0.3946,
+        "smile_skew_b": 0.292,
+        "smile_curvature_c": 3.524,
         "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 66
+        "smile_strike_count": 56
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -930,39 +998,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 220.69,
-        "total_gex_usd": -676821329.0,
+        "spot": 219.78,
+        "total_gex_usd": -597981287.0,
         "regime": "short_gamma",
-        "zero_gamma_level": 215.0,
-        "zero_gamma_distance_pct": 2.58,
+        "zero_gamma_level": 205.0,
+        "zero_gamma_distance_pct": 6.72,
         "zero_gamma_found": true,
-        "buffer": "danger",
+        "buffer": "caution",
         "expirations_used": [
           "2026-05-22",
           "2026-05-29"
         ],
-        "total_contracts_analyzed": 3960,
+        "total_contracts_analyzed": 3249,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.3435,
-        "call_premium_usd": 16682,
-        "put_premium_usd": 5730,
-        "depth_volume_pc": 2.0295,
-        "call_depth_usd": 274075,
-        "put_depth_usd": 556235,
-        "net_delta_volume": 6.2,
-        "call_delta_volume": 6.2,
-        "put_delta_volume": 0.0,
-        "smile_atm_iv": 0.2973,
-        "smile_skew_b": 0.8153,
-        "smile_curvature_c": 3.8945,
+        "premium_volume_pc": 0.6483,
+        "call_premium_usd": 9240,
+        "put_premium_usd": 5990,
+        "depth_volume_pc": 4.5465,
+        "call_depth_usd": 179355,
+        "put_depth_usd": 815430,
+        "smile_atm_iv": 0.3087,
+        "smile_skew_b": 1.0386,
+        "smile_curvature_c": 3.4225,
         "smile_expiration_used": "2026-06-12",
-        "smile_strike_count": 28
+        "smile_strike_count": 25
       },
       "flow_extra_errors": {
+        "net_delta_volume": "all_strikes_filtered",
         "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
@@ -1006,32 +1072,32 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 8.47,
-        "total_gex_usd": -10369986.0,
+        "spot": 8.54,
+        "total_gex_usd": 348290.0,
         "regime": "neutral",
-        "zero_gamma_level": 7.0,
-        "zero_gamma_distance_pct": 17.36,
+        "zero_gamma_level": 8.0,
+        "zero_gamma_distance_pct": 6.32,
         "zero_gamma_found": true,
-        "buffer": "safe",
+        "buffer": "caution",
         "expirations_used": [
           "2026-06-18",
           "2026-07-17"
         ],
-        "total_contracts_analyzed": 12621,
+        "total_contracts_analyzed": 5259,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 7.0495,
-        "call_premium_usd": 1060,
-        "put_premium_usd": 7472,
-        "depth_volume_pc": 12.126,
-        "call_depth_usd": 11130,
-        "put_depth_usd": 134962,
-        "net_delta_volume": -45.4,
+        "premium_volume_pc": 9.8919,
+        "call_premium_usd": 1110,
+        "put_premium_usd": 10980,
+        "depth_volume_pc": 0.5894,
+        "call_depth_usd": 159840,
+        "put_depth_usd": 94212,
+        "net_delta_volume": -51.0,
         "call_delta_volume": 0.0,
-        "put_delta_volume": 45.4
+        "put_delta_volume": 51.0
       },
       "flow_extra_errors": {
         "smile_shape": "underdetermined",
@@ -1078,39 +1144,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 71.05,
-        "total_gex_usd": -6016480.0,
+        "spot": 71.11,
+        "total_gex_usd": -6355425.0,
         "regime": "neutral",
-        "zero_gamma_level": 82.5,
-        "zero_gamma_distance_pct": 16.12,
+        "zero_gamma_level": 85.0,
+        "zero_gamma_distance_pct": 19.54,
         "zero_gamma_found": true,
         "buffer": "safe",
         "expirations_used": [
           "2026-06-18",
           "2026-07-17"
         ],
-        "total_contracts_analyzed": 1909,
+        "total_contracts_analyzed": 3221,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.3753,
-        "call_premium_usd": 19710,
-        "put_premium_usd": 7398,
-        "depth_volume_pc": 0.1381,
-        "call_depth_usd": 172540,
-        "put_depth_usd": 23832,
-        "net_delta_volume": 8.6,
-        "call_delta_volume": 17.3,
-        "put_delta_volume": 8.8,
-        "smile_atm_iv": 0.399,
-        "smile_skew_b": -0.7299,
-        "smile_curvature_c": 4.9983,
+        "premium_volume_pc": 3.8125,
+        "call_premium_usd": 1360,
+        "put_premium_usd": 5185,
+        "depth_volume_pc": 15.1723,
+        "call_depth_usd": 42360,
+        "put_depth_usd": 642700,
+        "smile_atm_iv": 0.2429,
+        "smile_skew_b": 1.6293,
+        "smile_curvature_c": 0.243,
         "smile_expiration_used": "2026-06-18",
-        "smile_strike_count": 11
+        "smile_strike_count": 30
       },
       "flow_extra_errors": {
+        "net_delta_volume": "all_strikes_filtered",
         "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
@@ -1146,11 +1210,11 @@
       },
       "skew": {
         "expiration": "2026-06-18",
-        "spot": 113.7,
-        "put_25d_iv": 0.4472,
-        "call_25d_iv": 0.3952,
-        "risk_reversal": -0.052,
-        "risk_reversal_vp": -5.2,
+        "spot": 113.2,
+        "put_25d_iv": 0.4563,
+        "call_25d_iv": 0.3815,
+        "risk_reversal": -0.0748,
+        "risk_reversal_vp": -7.48,
         "skew_basis": "25d",
         "read": "panic",
         "direction": "bearish",
@@ -1164,10 +1228,10 @@
       },
       "skew_error": null,
       "gex": {
-        "spot": 113.7,
-        "total_gex_usd": 17137207.0,
+        "spot": 113.2,
+        "total_gex_usd": 22994516.0,
         "regime": "neutral",
-        "zero_gamma_level": 113.7,
+        "zero_gamma_level": 113.2,
         "zero_gamma_distance_pct": 0.0,
         "zero_gamma_found": false,
         "buffer": "danger",
@@ -1175,26 +1239,26 @@
           "2026-06-18",
           "2026-07-17"
         ],
-        "total_contracts_analyzed": 7907,
+        "total_contracts_analyzed": 7904,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.1442,
-        "call_premium_usd": 99465,
-        "put_premium_usd": 14340,
-        "depth_volume_pc": 2.2541,
-        "call_depth_usd": 209728,
-        "put_depth_usd": 472755,
-        "net_delta_volume": 110.0,
-        "call_delta_volume": 120.3,
-        "put_delta_volume": 10.4,
-        "smile_atm_iv": 0.402,
-        "smile_skew_b": 0.163,
-        "smile_curvature_c": 2.7487,
+        "premium_volume_pc": 0.0586,
+        "call_premium_usd": 38030,
+        "put_premium_usd": 2230,
+        "depth_volume_pc": 7.6238,
+        "call_depth_usd": 116500,
+        "put_depth_usd": 888175,
+        "net_delta_volume": 47.1,
+        "call_delta_volume": 47.1,
+        "put_delta_volume": 0.0,
+        "smile_atm_iv": 0.3962,
+        "smile_skew_b": 0.1327,
+        "smile_curvature_c": 2.7547,
         "smile_expiration_used": "2026-06-18",
-        "smile_strike_count": 28
+        "smile_strike_count": 25
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -1230,12 +1294,12 @@
     "bullscouter": 9
   },
   "universe": {
-    "total_active": 408,
+    "total_active": 410,
     "exported_with_data": 20,
     "processed_universe": 9,
     "dropped_no_data": 0,
     "dropped_tickers": [],
-    "skipped_universe": 388,
+    "skipped_universe": 390,
     "skipped_universe_tickers": [
       "ADSK",
       "AEM",
@@ -1434,6 +1498,7 @@
       "KNSL",
       "KPTI",
       "KURA",
+      "LDOS",
       "LGND",
       "LINK",
       "LLY",
@@ -1513,6 +1578,7 @@
       "PSN",
       "PSNL",
       "PTC",
+      "PTGX",
       "PTRN",
       "PUMP",
       "PURR",
@@ -1637,10 +1703,8 @@
       "QS",
       "TTD"
     ],
-    "timed_out_held": 1,
-    "timed_out_held_tickers": [
-      "BULL"
-    ],
+    "timed_out_held": 0,
+    "timed_out_held_tickers": [],
     "service_endpoint": "http://localhost:8001/deep_options/<TICKER>",
     "service_note": "Any ticker (held, watchlist, or universe-wide) can be queried live via the deep-options service \u2014 including dropped_tickers above. The service caches 60s and computes fresh on cache miss."
   }
