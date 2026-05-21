@@ -7,15 +7,29 @@
   "strategic_context_block_reason": null,
   "filtered_summary": {
     "earnings_blackout": 1,
-    "below_cutoff": 12,
+    "below_cutoff": 16,
     "held": 10,
-    "rescan_below_cutoff_no_note": 3
+    "rescan_below_cutoff_no_note": 5
   },
-  "candidates_evaluated": 23,
+  "candidates_evaluated": 27,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 1,
+  "oracle_watch_count": 3,
   "oracle_watch": [
+    {
+      "ticker": "HLNE",
+      "composite": 35,
+      "convergence_paths": [
+        "path3_strong_candidate",
+        "path5_strong_quality"
+      ],
+      "spot_price": 85.11,
+      "oracle_note": {
+        "text": "4-path (P3 78+P5 91+P4 EZ+insider 6/0). Flow -12.0 on 157 OI = noise. Earnings blackout. Best convergence but timing wrong. WAIT.",
+        "written_at": "2026-05-20"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "BSX",
       "composite": 25,
@@ -25,6 +39,17 @@
       "spot_price": 53.55,
       "oracle_note": {
         "text": "3-path (P1 BUY 77/78+P4 EZ+assessor SB). Below $55 floor at $53.55. 4-fund 13F $583M. value 36% WR caution. Conditional $53.",
+        "written_at": "2026-05-20"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ZBRA",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 243.47,
+      "oracle_note": {
+        "text": "Assessor STRONG BUY HIGH. PEG 0.6, Fwd PE 12. Warehouse automation. P1 WATCHLIST 85/89. +8 conf. Entry $235-255.",
         "written_at": "2026-05-20"
       },
       "filter_reason": "below_cutoff"
