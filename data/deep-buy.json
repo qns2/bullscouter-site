@@ -70,10 +70,111 @@
       "filter_reason": "below_cutoff"
     }
   ],
-  "macro_blocked_count": 0,
-  "macro_blocked": [],
-  "flow_led_picks_count": 18,
+  "macro_blocked_count": 1,
+  "macro_blocked": [
+    {
+      "ticker": "SOFI",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "spot_price": 15.65,
+      "entry": {
+        "low": 14.5,
+        "high": 16.0,
+        "mid": 15.25
+      },
+      "target": 19.5,
+      "stop": 14.4,
+      "rr_ratio": 3.08,
+      "rr_planned": 5.0,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 991.25,
+      "suggested_shares": 65,
+      "position_risk_usd": 55.25,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "rationale_one_liner": "flow +9.3 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "CEO $1.5M buy. 40% rev growth. Muddy Waters unresolved. ABOVE zone.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": false,
+        "result": "BLOCK",
+        "log": "MACRO FILTER: BLOCK - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown - rate-sensitive sector + CPI/PPI rising",
+        "expires": "2026-06-04",
+        "reasons": [
+          "rate-sensitive sector + CPI/PPI rising"
+        ],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "filter_reason": "macro_blocked"
+    }
+  ],
+  "flow_led_picks_count": 15,
   "flow_led_picks": [
+    {
+      "ticker": "LYFT",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "spot_price": 13.34,
+      "entry": {
+        "low": 12.94,
+        "high": 13.41,
+        "mid": 13.18
+      },
+      "target": 16.01,
+      "stop": 12.27,
+      "rr_ratio": 2.49,
+      "rr_planned": 3.13,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 988.5,
+      "suggested_shares": 75,
+      "position_risk_usd": 68.25,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "rationale_one_liner": "flow +10.5 5d-avg (5 TD days) + Buffett 67 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-04",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 4
+    },
     {
       "ticker": "LGND",
       "path": "flow_led",
@@ -123,152 +224,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 2
-    },
-    {
-      "ticker": "LYFT",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 50,
-      "convergence_paths": [
-        "flow_sustained",
-        "buffett_strong",
-        "watchlist_dip"
-      ],
-      "spot_price": 13.35,
-      "entry": {
-        "low": 12.95,
-        "high": 13.42,
-        "mid": 13.18
-      },
-      "target": 16.02,
-      "stop": 12.28,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.13,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 988.5,
-      "suggested_shares": 75,
-      "position_risk_usd": 67.5,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "buffett_quality_strong": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "rationale_one_liner": "flow +9.3 5d-avg (4 TD days) + Buffett 67 STRONG + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-04",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 3
-    },
-    {
-      "ticker": "SEZL",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 40,
-      "convergence_paths": [
-        "flow_sustained",
-        "buffett_strong"
-      ],
-      "spot_price": 107.0,
-      "entry": {
-        "low": 103.79,
-        "high": 107.53,
-        "mid": 105.66
-      },
-      "target": 128.4,
-      "stop": 98.44,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 950.94,
-      "suggested_shares": 9,
-      "position_risk_usd": 64.98,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "buffett_quality_strong": {
-          "score": 20
-        }
-      },
-      "rationale_one_liner": "flow +9.3 5d-avg (5 TD days) + Buffett 72 STRONG. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-04",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
       "rank": 5
-    },
-    {
-      "ticker": "NXPI",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 40,
-      "convergence_paths": [
-        "flow_sustained",
-        "buffett_strong"
-      ],
-      "spot_price": 309.25,
-      "entry": {
-        "low": 299.97,
-        "high": 310.8,
-        "mid": 305.38
-      },
-      "target": 371.1,
-      "stop": 284.51,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 916.14,
-      "suggested_shares": 3,
-      "position_risk_usd": 62.61,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "buffett_quality_strong": {
-          "score": 20
-        }
-      },
-      "rationale_one_liner": "flow +8.7 5d-avg (3 TD days) + Buffett 84 STRONG. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-06-04",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 6
     },
     {
       "ticker": "JD",
@@ -280,20 +236,20 @@
         "buffett_quality",
         "watchlist_dip"
       ],
-      "spot_price": 32.45,
+      "spot_price": 31.65,
       "entry": {
-        "low": 31.48,
-        "high": 32.61,
-        "mid": 32.05
+        "low": 30.7,
+        "high": 31.81,
+        "mid": 31.25
       },
-      "target": 38.94,
-      "stop": 29.85,
+      "target": 37.98,
+      "stop": 29.12,
       "rr_ratio": 2.5,
-      "rr_planned": 3.14,
+      "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 993.55,
-      "suggested_shares": 31,
-      "position_risk_usd": 68.2,
+      "suggested_size_usd": 1000.0,
+      "suggested_shares": 32,
+      "position_risk_usd": 68.16,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -307,7 +263,7 @@
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +8.2 5d-avg (4 TD days) + Buffett 48 + watchlist dip alert. no earnings <45d.",
+      "rationale_one_liner": "flow +9.4 5d-avg (5 TD days) + Buffett 48 + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -331,20 +287,20 @@
         "buffett_quality",
         "watchlist_dip"
       ],
-      "spot_price": 147.0,
+      "spot_price": 152.98,
       "entry": {
-        "low": 142.59,
-        "high": 147.73,
-        "mid": 145.16
+        "low": 148.39,
+        "high": 153.74,
+        "mid": 151.06
       },
-      "target": 176.4,
-      "stop": 135.24,
+      "target": 183.58,
+      "stop": 140.74,
       "rr_ratio": 2.5,
       "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 870.96,
+      "suggested_size_usd": 906.36,
       "suggested_shares": 6,
-      "position_risk_usd": 59.52,
+      "position_risk_usd": 61.92,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -358,7 +314,7 @@
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +8.2 5d-avg (4 TD days) + Buffett 55 + watchlist dip alert. no earnings <45d.",
+      "rationale_one_liner": "flow +9.1 5d-avg (5 TD days) + Buffett 55 + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -373,7 +329,105 @@
       "rank": 8
     },
     {
-      "ticker": "VNDA",
+      "ticker": "NXPI",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_strong"
+      ],
+      "spot_price": 307.69,
+      "entry": {
+        "low": 298.46,
+        "high": 309.23,
+        "mid": 303.85
+      },
+      "target": 369.23,
+      "stop": 283.07,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 911.55,
+      "suggested_shares": 3,
+      "position_risk_usd": 62.34,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        }
+      },
+      "rationale_one_liner": "flow +8.6 5d-avg (3 TD days) + Buffett 84 STRONG. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector Technology, Industry unknown",
+        "expires": "2026-06-04",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 9
+    },
+    {
+      "ticker": "BMRN",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "spot_price": 52.07,
+      "entry": {
+        "low": 50.51,
+        "high": 52.33,
+        "mid": 51.42
+      },
+      "target": 62.48,
+      "stop": 47.9,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.14,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 976.98,
+      "suggested_shares": 19,
+      "position_risk_usd": 66.88,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality": {
+          "score": 10
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "rationale_one_liner": "flow +8.2 5d-avg (4 TD days) + Buffett 49 + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-04",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 10
+    },
+    {
+      "ticker": "BABA",
       "path": "flow_led",
       "source": "sustained",
       "composite": 30,
@@ -381,20 +435,20 @@
         "flow_sustained",
         "watchlist_dip"
       ],
-      "spot_price": 6.0,
+      "spot_price": 134.25,
       "entry": {
-        "low": 5.82,
-        "high": 6.03,
-        "mid": 5.93
+        "low": 130.22,
+        "high": 134.92,
+        "mid": 132.57
       },
-      "target": 7.2,
-      "stop": 5.52,
+      "target": 161.1,
+      "stop": 123.51,
       "rr_ratio": 2.5,
       "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 996.24,
-      "suggested_shares": 168,
-      "position_risk_usd": 68.88,
+      "suggested_size_usd": 927.99,
+      "suggested_shares": 7,
+      "position_risk_usd": 63.42,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -405,7 +459,7 @@
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +9.6 5d-avg (5 TD days) + watchlist dip alert. no earnings <45d.",
+      "rationale_one_liner": "flow +9.4 5d-avg (5 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -420,44 +474,41 @@
       "rank": 13
     },
     {
-      "ticker": "HALO",
+      "ticker": "DT",
       "path": "flow_led",
       "source": "sustained",
       "composite": 30,
       "convergence_paths": [
         "flow_sustained",
-        "watchlist_dip"
+        "buffett_quality"
       ],
-      "spot_price": 68.85,
+      "spot_price": 39.87,
       "entry": {
-        "low": 64.0,
-        "high": 72.0,
-        "mid": 68.0
+        "low": 38.67,
+        "high": 40.07,
+        "mid": 39.37
       },
-      "target": 100.0,
-      "stop": 63.34,
-      "rr_ratio": 5.65,
-      "rr_planned": 6.87,
+      "target": 47.84,
+      "stop": 36.68,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 952.0,
-      "suggested_shares": 14,
-      "position_risk_usd": 65.24,
+      "suggested_size_usd": 984.25,
+      "suggested_shares": 25,
+      "position_risk_usd": 67.25,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
         "flow_sustained": {
           "score": 20
         },
-        "watchlist_dip": {
+        "buffett_quality": {
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +9.4 5d-avg (5 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "ENTRY_ZONE+ABS_TARGET $68.98 IN zone. ENHANZE royalty 13 partners (J&J/Roche/Pfizer). 80%+ FCF margins. 7x fwd PE. $1B buyback. Assessor SB HIGH $90 FV. Needs flow 5d+.",
-      "oracle_note": {
-        "text": "EZ+ABS $68.98 IN zone. 7x PE royalty 30-35% growth. $1B buyback. Assessor SB HIGH $90. Alerts suppressed by unknown-earnings-date BUG. Needs flow 5d+.",
-        "written_at": "2026-05-21"
-      },
+      "rationale_one_liner": "flow +9.0 5d-avg (5 TD days) + Buffett 53. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
@@ -470,7 +521,7 @@
       "rank": 14
     },
     {
-      "ticker": "VERA",
+      "ticker": "PLUG",
       "path": "flow_led",
       "source": "sustained",
       "composite": 30,
@@ -478,20 +529,20 @@
         "flow_sustained",
         "watchlist_dip"
       ],
-      "spot_price": 33.25,
+      "spot_price": 3.27,
       "entry": {
-        "low": 32.0,
-        "high": 37.0,
-        "mid": 34.5
+        "low": 3.17,
+        "high": 3.29,
+        "mid": 3.23
       },
-      "target": 56.0,
-      "stop": 30.59,
-      "rr_ratio": 8.55,
-      "rr_planned": 5.5,
+      "target": 3.92,
+      "stop": 3.01,
+      "rr_ratio": 2.52,
+      "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 966.0,
-      "suggested_shares": 28,
-      "position_risk_usd": 109.48,
+      "suggested_size_usd": 998.07,
+      "suggested_shares": 309,
+      "position_risk_usd": 67.98,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -502,12 +553,9 @@
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +9.3 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "TOP PICK 3rd day. Triple alert (DV+EZ+DIP) $34.62 IN zone. PDUFA Jul 7 atacicept IgAN. BTD+PR+NEJM p<0.0001. Assessor SB HIGH $65 FV. Fails defensive filter (no flow-extreme). Set limit $32-33. Best new-name if stance relaxes.",
-      "oracle_note": {
-        "text": "TOP PICK day 3. Triple DV+EZ+DIP $34.62 IN zone. PDUFA Jul 7 BTD+PR p<0.0001. Assessor SB HIGH $65. Fails defensive filter. Best new-name if stance relaxes.",
-        "written_at": "2026-05-21"
-      },
+      "rationale_one_liner": "flow +9.0 5d-avg (5 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
@@ -520,7 +568,7 @@
       "rank": 15
     },
     {
-      "ticker": "DJT",
+      "ticker": "SMCI",
       "path": "flow_led",
       "source": "sustained",
       "composite": 30,
@@ -528,20 +576,20 @@
         "flow_sustained",
         "watchlist_dip"
       ],
-      "spot_price": 8.11,
+      "spot_price": 33.2,
       "entry": {
-        "low": 7.87,
-        "high": 8.15,
-        "mid": 8.01
+        "low": 32.2,
+        "high": 33.37,
+        "mid": 32.78
       },
-      "target": 9.73,
-      "stop": 7.46,
+      "target": 39.84,
+      "stop": 30.54,
       "rr_ratio": 2.5,
-      "rr_planned": 3.13,
+      "rr_planned": 3.14,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 993.24,
-      "suggested_shares": 124,
-      "position_risk_usd": 68.2,
+      "suggested_size_usd": 983.4,
+      "suggested_shares": 30,
+      "position_risk_usd": 67.2,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -552,7 +600,7 @@
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +8.4 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "rationale_one_liner": "flow +9.0 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -567,39 +615,39 @@
       "rank": 16
     },
     {
-      "ticker": "NTNX",
+      "ticker": "VNDA",
       "path": "flow_led",
       "source": "sustained",
       "composite": 30,
       "convergence_paths": [
         "flow_sustained",
-        "buffett_quality"
+        "watchlist_dip"
       ],
-      "spot_price": 44.8,
+      "spot_price": 6.27,
       "entry": {
-        "low": 43.46,
-        "high": 45.02,
-        "mid": 44.24
+        "low": 6.08,
+        "high": 6.3,
+        "mid": 6.19
       },
-      "target": 53.76,
-      "stop": 41.22,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
+      "target": 7.52,
+      "stop": 5.77,
+      "rr_ratio": 2.51,
+      "rr_planned": 3.18,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 973.28,
-      "suggested_shares": 22,
-      "position_risk_usd": 66.44,
+      "suggested_size_usd": 996.59,
+      "suggested_shares": 161,
+      "position_risk_usd": 67.62,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
         "flow_sustained": {
           "score": 20
         },
-        "buffett_quality": {
+        "watchlist_dip": {
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +8.4 5d-avg (4 TD days) + Buffett 47. no earnings <45d.",
+      "rationale_one_liner": "flow +9.0 5d-avg (5 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -614,7 +662,7 @@
       "rank": 17
     },
     {
-      "ticker": "PLUG",
+      "ticker": "HALO",
       "path": "flow_led",
       "source": "sustained",
       "composite": 30,
@@ -622,20 +670,20 @@
         "flow_sustained",
         "watchlist_dip"
       ],
-      "spot_price": 3.34,
+      "spot_price": 68.98,
       "entry": {
-        "low": 3.24,
-        "high": 3.36,
-        "mid": 3.3
+        "low": 64.0,
+        "high": 72.0,
+        "mid": 68.0
       },
-      "target": 4.01,
-      "stop": 3.07,
-      "rr_ratio": 2.47,
-      "rr_planned": 3.08,
+      "target": 100.0,
+      "stop": 63.46,
+      "rr_ratio": 5.62,
+      "rr_planned": 7.05,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 999.9,
-      "suggested_shares": 303,
-      "position_risk_usd": 69.69,
+      "suggested_size_usd": 952.0,
+      "suggested_shares": 14,
+      "position_risk_usd": 63.56,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -646,9 +694,12 @@
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +8.4 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
+      "rationale_one_liner": "flow +8.8 5d-avg (5 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "ENTRY_ZONE+ABS_TARGET $68.98 IN zone. ENHANZE royalty 13 partners (J&J/Roche/Pfizer). 80%+ FCF margins. 7x fwd PE. $1B buyback. Assessor SB HIGH $90 FV. Needs flow 5d+.",
+      "oracle_note": {
+        "text": "EZ+ABS $68.98 IN zone. 7x PE royalty 30-35% growth. $1B buyback. Assessor SB HIGH $90. Alerts suppressed by unknown-earnings-date BUG. Needs flow 5d+.",
+        "written_at": "2026-05-21"
+      },
       "macro_filter": {
         "pass": true,
         "result": "PASS",
@@ -661,7 +712,7 @@
       "rank": 18
     },
     {
-      "ticker": "VG",
+      "ticker": "SNAP",
       "path": "flow_led",
       "source": "sustained",
       "composite": 30,
@@ -669,20 +720,20 @@
         "flow_sustained",
         "watchlist_dip"
       ],
-      "spot_price": 14.77,
+      "spot_price": 5.56,
       "entry": {
-        "low": 14.33,
-        "high": 14.84,
-        "mid": 14.59
+        "low": 5.8,
+        "high": 6.1,
+        "mid": 5.95
       },
-      "target": 17.72,
-      "stop": 13.59,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
+      "target": 7.0,
+      "stop": 5.12,
+      "rr_ratio": 3.27,
+      "rr_planned": 1.27,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 992.12,
-      "suggested_shares": 68,
-      "position_risk_usd": 68.0,
+      "suggested_size_usd": 999.6,
+      "suggested_shares": 168,
+      "position_risk_usd": 139.44,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -693,8 +744,8 @@
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +8.2 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
+      "rationale_one_liner": "flow +8.7 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "Exited. At $5.62 in rebuy zone ($5.50-5.70). Assessor BUY MED: AWE June 16 AR glasses. Oracle AVOID: DAU negative + CPI 3.8%. Needs stance relaxation + flow.",
       "oracle_note": null,
       "macro_filter": {
         "pass": true,
@@ -708,7 +759,7 @@
       "rank": 19
     },
     {
-      "ticker": "COIN",
+      "ticker": "HIMS",
       "path": "flow_led",
       "source": "sustained",
       "composite": 30,
@@ -716,20 +767,20 @@
         "flow_sustained",
         "watchlist_dip"
       ],
-      "spot_price": 195.3,
+      "spot_price": 23.12,
       "entry": {
-        "low": 189.44,
-        "high": 196.28,
-        "mid": 192.86
+        "low": 22.43,
+        "high": 23.24,
+        "mid": 22.84
       },
-      "target": 234.36,
-      "stop": 179.68,
+      "target": 27.74,
+      "stop": 21.27,
       "rr_ratio": 2.5,
-      "rr_planned": 3.15,
+      "rr_planned": 3.14,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 964.3,
-      "suggested_shares": 5,
-      "position_risk_usd": 65.9,
+      "suggested_size_usd": 982.12,
+      "suggested_shares": 43,
+      "position_risk_usd": 67.51,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -740,7 +791,7 @@
           "score": 10
         }
       },
-      "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "rationale_one_liner": "flow +8.6 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -755,39 +806,39 @@
       "rank": 20
     },
     {
-      "ticker": "DT",
+      "ticker": "LMT",
       "path": "flow_led",
       "source": "sustained",
-      "composite": 30,
+      "composite": 25,
       "convergence_paths": [
         "flow_sustained",
-        "buffett_quality"
+        "catalyst_near"
       ],
-      "spot_price": 39.55,
+      "spot_price": 521.65,
       "entry": {
-        "low": 38.36,
-        "high": 39.75,
-        "mid": 39.05
+        "low": 506.0,
+        "high": 524.26,
+        "mid": 515.13
       },
-      "target": 47.46,
-      "stop": 36.39,
+      "target": 625.98,
+      "stop": 479.92,
       "rr_ratio": 2.5,
       "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 976.25,
-      "suggested_shares": 25,
-      "position_risk_usd": 66.5,
+      "suggested_size_usd": 515.13,
+      "suggested_shares": 1,
+      "position_risk_usd": 35.21,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
         "flow_sustained": {
           "score": 20
         },
-        "buffett_quality": {
-          "score": 10
+        "catalyst_near": {
+          "score": 5
         }
       },
-      "rationale_one_liner": "flow +8.1 5d-avg (4 TD days) + Buffett 53. no earnings <45d.",
+      "rationale_one_liner": "flow +8.7 5d-avg (4 TD days) + catalyst near. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -800,147 +851,6 @@
         "override_applied": false
       },
       "rank": 21
-    },
-    {
-      "ticker": "FLY",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_sustained",
-        "watchlist_dip"
-      ],
-      "spot_price": 43.18,
-      "entry": {
-        "low": 41.88,
-        "high": 43.4,
-        "mid": 42.64
-      },
-      "target": 51.82,
-      "stop": 39.73,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 980.72,
-      "suggested_shares": 23,
-      "position_risk_usd": 66.93,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-04",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 22
-    },
-    {
-      "ticker": "BABA",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_sustained",
-        "watchlist_dip"
-      ],
-      "spot_price": 134.24,
-      "entry": {
-        "low": 130.21,
-        "high": 134.91,
-        "mid": 132.56
-      },
-      "target": 161.09,
-      "stop": 123.5,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 927.92,
-      "suggested_shares": 7,
-      "position_risk_usd": 63.42,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "rationale_one_liner": "flow +8.0 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-04",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 23
-    },
-    {
-      "ticker": "LMT",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 25,
-      "convergence_paths": [
-        "flow_sustained",
-        "catalyst_near"
-      ],
-      "spot_price": 522.59,
-      "entry": {
-        "low": 506.91,
-        "high": 525.2,
-        "mid": 516.06
-      },
-      "target": 627.11,
-      "stop": 480.78,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 516.06,
-      "suggested_shares": 1,
-      "position_risk_usd": 35.28,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "catalyst_near": {
-          "score": 5
-        }
-      },
-      "rationale_one_liner": "flow +8.5 5d-avg (4 TD days) + catalyst near. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-04",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 24
     }
   ],
   "flow_extreme_picks_count": 6,
@@ -955,20 +865,20 @@
         "flow_sustained",
         "watchlist_dip"
       ],
-      "spot_price": 11.41,
+      "spot_price": 11.18,
       "entry": {
-        "low": 11.07,
-        "high": 11.47,
-        "mid": 11.27
+        "low": 10.84,
+        "high": 11.24,
+        "mid": 11.04
       },
-      "target": 13.69,
-      "stop": 10.5,
+      "target": 13.42,
+      "stop": 10.29,
       "rr_ratio": 2.51,
-      "rr_planned": 3.15,
+      "rr_planned": 3.17,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 991.76,
-      "suggested_shares": 88,
-      "position_risk_usd": 67.76,
+      "suggested_size_usd": 993.6,
+      "suggested_shares": 90,
+      "position_risk_usd": 67.5,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -982,7 +892,7 @@
           "score": 10
         }
       },
-      "rationale_one_liner": "flow-extreme: 15d streak, P/C 0.028 (36:1 calls) + flow +8.5 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "rationale_one_liner": "flow-extreme: 16d streak, P/C 0.041 (24:1 calls) + flow +8.1 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": "EXITED 5/11. Post-earnings at $10.03 (+11.9% from exit). Clean execution. Rebuy $7-7.50 still stands.",
       "oracle_note": null,
       "macro_filter": {
@@ -995,6 +905,100 @@
         "override_applied": false
       },
       "rank": 1
+    },
+    {
+      "ticker": "FCEL",
+      "path": "flow_extreme",
+      "source": "extreme+sustained",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_extreme",
+        "flow_sustained"
+      ],
+      "spot_price": 20.35,
+      "entry": {
+        "low": 19.74,
+        "high": 20.45,
+        "mid": 20.09
+      },
+      "target": 24.42,
+      "stop": 18.72,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 984.41,
+      "suggested_shares": 49,
+      "position_risk_usd": 67.13,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "flow_sustained": {
+          "score": 20
+        }
+      },
+      "rationale_one_liner": "flow-extreme: 23d streak, P/C 0.073 (14:1 calls) + flow +9.0 5d-avg (3 TD days). no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-04",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 2
+    },
+    {
+      "ticker": "DUOT",
+      "path": "flow_extreme",
+      "source": "extreme+sustained",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_extreme",
+        "flow_sustained"
+      ],
+      "spot_price": 9.01,
+      "entry": {
+        "low": 8.74,
+        "high": 9.06,
+        "mid": 8.9
+      },
+      "target": 10.81,
+      "stop": 8.29,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.13,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 996.8,
+      "suggested_shares": 112,
+      "position_risk_usd": 68.32,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "flow_sustained": {
+          "score": 20
+        }
+      },
+      "rationale_one_liner": "flow-extreme: 21d streak, P/C 0.000 (0:1 calls) + flow +8.4 5d-avg (3 TD days). no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-04",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 3
     },
     {
       "ticker": "IQ",
@@ -1041,50 +1045,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 4
-    },
-    {
-      "ticker": "DUOT",
-      "path": "flow_extreme",
-      "source": "extreme",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_extreme"
-      ],
-      "spot_price": 8.36,
-      "entry": {
-        "low": 8.11,
-        "high": 8.4,
-        "mid": 8.25
-      },
-      "target": 10.03,
-      "stop": 7.69,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 998.25,
-      "suggested_shares": 121,
-      "position_risk_usd": 67.76,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_extreme": {
-          "score": 30
-        }
-      },
-      "rationale_one_liner": "flow-extreme: 20d streak, P/C 0.119 (8:1 calls). no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-04",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 9
+      "rank": 6
     },
     {
       "ticker": "BKKT",
@@ -1094,63 +1055,20 @@
       "convergence_paths": [
         "flow_extreme"
       ],
-      "spot_price": 9.99,
+      "spot_price": 10.1,
       "entry": {
-        "low": 9.69,
-        "high": 10.04,
-        "mid": 9.86
+        "low": 9.8,
+        "high": 10.15,
+        "mid": 9.98
       },
-      "target": 11.99,
-      "stop": 9.19,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 995.86,
-      "suggested_shares": 101,
-      "position_risk_usd": 67.67,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_extreme": {
-          "score": 30
-        }
-      },
-      "rationale_one_liner": "flow-extreme: 19d streak, P/C 0.111 (9:1 calls). no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-04",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 10
-    },
-    {
-      "ticker": "PTRN",
-      "path": "flow_extreme",
-      "source": "extreme",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_extreme"
-      ],
-      "spot_price": 17.58,
-      "entry": {
-        "low": 17.05,
-        "high": 17.67,
-        "mid": 17.36
-      },
-      "target": 21.1,
-      "stop": 16.17,
+      "target": 12.12,
+      "stop": 9.29,
       "rr_ratio": 2.49,
-      "rr_planned": 3.14,
+      "rr_planned": 3.13,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 989.52,
-      "suggested_shares": 57,
-      "position_risk_usd": 67.83,
+      "suggested_size_usd": 998.0,
+      "suggested_shares": 100,
+      "position_risk_usd": 69.0,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -1158,7 +1076,7 @@
           "score": 30
         }
       },
-      "rationale_one_liner": "flow-extreme: 10d streak, P/C 0.054 (19:1 calls). no earnings <45d.",
+      "rationale_one_liner": "flow-extreme: 20d streak, P/C 0.095 (11:1 calls). no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -1180,20 +1098,20 @@
       "convergence_paths": [
         "flow_extreme"
       ],
-      "spot_price": 9.02,
+      "spot_price": 9.18,
       "entry": {
-        "low": 8.75,
-        "high": 9.07,
-        "mid": 8.91
+        "low": 8.9,
+        "high": 9.23,
+        "mid": 9.07
       },
-      "target": 10.82,
-      "stop": 8.3,
-      "rr_ratio": 2.51,
-      "rr_planned": 3.14,
+      "target": 11.02,
+      "stop": 8.45,
+      "rr_ratio": 2.52,
+      "rr_planned": 3.17,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 997.92,
-      "suggested_shares": 112,
-      "position_risk_usd": 68.32,
+      "suggested_size_usd": 997.7,
+      "suggested_shares": 110,
+      "position_risk_usd": 68.2,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -1201,7 +1119,7 @@
           "score": 30
         }
       },
-      "rationale_one_liner": "flow-extreme: 10d streak, P/C 0.048 (21:1 calls). no earnings <45d.",
+      "rationale_one_liner": "flow-extreme: 11d streak, P/C 0.055 (18:1 calls). no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
