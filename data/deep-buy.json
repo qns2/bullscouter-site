@@ -7,42 +7,17 @@
   "strategic_context_block_reason": null,
   "filtered_summary": {
     "earnings_blackout": 1,
-    "below_cutoff": 35,
-    "held": 10,
+    "below_cutoff": 48,
+    "held": 11,
+    "frozen": 1,
+    "rr_too_low": 2,
     "rescan_below_cutoff_no_note": 6
   },
-  "candidates_evaluated": 46,
+  "candidates_evaluated": 63,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 4,
+  "oracle_watch_count": 3,
   "oracle_watch": [
-    {
-      "ticker": "HLNE",
-      "composite": 35,
-      "convergence_paths": [
-        "path3_strong_candidate",
-        "path5_strong_quality"
-      ],
-      "spot_price": 85.11,
-      "oracle_note": {
-        "text": "4-path (P3 75+P5 91+P4 EZ+insider 6/0). Flow -10.5 on 164 OI = thin-chain noise. Earnings blackout. $85 AT zone floor. WAIT blackout clear. Limit $85 11sh.",
-        "written_at": "2026-05-21"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "AEM",
-      "composite": 25,
-      "convergence_paths": [
-        "path1_buy"
-      ],
-      "spot_price": 192.66,
-      "oracle_note": {
-        "text": "BUY 86/82. Hope Bay $2.4B = fresh catalyst. Gold $4537 but GLD -3% 5d. ABOVE zone at $193. Pullback to $175-180 only.",
-        "written_at": "2026-05-21"
-      },
-      "filter_reason": "below_cutoff"
-    },
     {
       "ticker": "BSX",
       "composite": 25,
@@ -51,21 +26,32 @@
       ],
       "spot_price": 53.55,
       "oracle_note": {
-        "text": "3-path (P1 BUY+P4 EZ+assessor SB+13F). Back in zone $56.67. value 36% WR caution. No flow data. Conditional on flow confirmation.",
-        "written_at": "2026-05-21"
+        "text": "3-path (P1 BUY+P4 EZ+13F $583M). In zone $57. value 36% WR caution. Flow -4.5 today=bearish. Conditional on flow reversal >+3. Stop $49.",
+        "written_at": "2026-05-22"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "FDS",
-      "composite": 15,
+      "ticker": "TRIP",
+      "composite": 20,
       "convergence_paths": [
-        "path5_strong_quality"
+        "path3_strong_candidate"
       ],
-      "spot_price": 223.68,
+      "spot_price": 9.9,
       "oracle_note": {
-        "text": "Contrarian portfolio. Flow improved -7.0\u2192+2.0 today. Buffett 78 saves it. 5d deadline (5/26): if flow hostile again, remove.",
-        "written_at": "2026-05-21"
+        "text": "Starboard Value activist (13D filed 3/23+4/3). Flow +10.5 td_pc 0.065 extreme call. Only P3 with activist+bullish flow. Score 70 51% down. Track as convergence signal.",
+        "written_at": "2026-05-22"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "WDAY",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 121.85,
+      "oracle_note": {
+        "text": "Earnings BEAT 5/21 +10.8%. Fwd PE 9.8 PEG 0.5 at 53% off highs. Contrarian thesis validated. BUT 0/68 insider sells is disqualifying. MONITOR ONLY.",
+        "written_at": "2026-05-22"
       },
       "filter_reason": "below_cutoff"
     }
@@ -122,7 +108,7 @@
       "filter_reason": "macro_blocked"
     }
   ],
-  "flow_led_picks_count": 18,
+  "flow_led_picks_count": 20,
   "flow_led_picks": [
     {
       "ticker": "LYFT",
@@ -227,6 +213,53 @@
       "rank": 4
     },
     {
+      "ticker": "PYPL",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_strong"
+      ],
+      "spot_price": 44.21,
+      "entry": {
+        "low": 38.0,
+        "high": 44.0,
+        "mid": 41.0
+      },
+      "target": 60.0,
+      "stop": 36.86,
+      "rr_ratio": 2.15,
+      "rr_planned": 4.59,
+      "above_zone_pct": 0.48,
+      "suggested_size_usd": 984.0,
+      "suggested_shares": 24,
+      "position_risk_usd": 99.36,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        }
+      },
+      "rationale_one_liner": "flow +9.3 5d-avg (4 TD days) + Buffett 68 STRONG. no earnings <45d.",
+      "watchlist_thesis": "Assessor AVOID \u2014 analyst target = current price. Losing share to Apple Pay/Stripe. Deprioritized.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-05",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 7
+    },
+    {
       "ticker": "Q",
       "path": "flow_led",
       "source": "sustained",
@@ -275,7 +308,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 7
+      "rank": 8
     },
     {
       "ticker": "JD",
@@ -326,7 +359,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 8
+      "rank": 9
     },
     {
       "ticker": "NXPI",
@@ -373,7 +406,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 9
+      "rank": 10
     },
     {
       "ticker": "BMRN",
@@ -424,7 +457,54 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 10
+      "rank": 11
+    },
+    {
+      "ticker": "SFM",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_quality"
+      ],
+      "spot_price": 90.02,
+      "entry": {
+        "low": 87.32,
+        "high": 90.47,
+        "mid": 88.89
+      },
+      "target": 108.02,
+      "stop": 82.82,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 977.79,
+      "suggested_shares": 11,
+      "position_risk_usd": 66.77,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality": {
+          "score": 10
+        }
+      },
+      "rationale_one_liner": "flow +9.6 5d-avg (5 TD days) + Buffett 53. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-05",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 13
     },
     {
       "ticker": "BABA",
@@ -471,7 +551,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 12
+      "rank": 14
     },
     {
       "ticker": "DT",
@@ -518,7 +598,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 13
+      "rank": 15
     },
     {
       "ticker": "PLUG",
@@ -565,7 +645,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 14
+      "rank": 16
     },
     {
       "ticker": "SMCI",
@@ -612,7 +692,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 15
+      "rank": 17
     },
     {
       "ticker": "VNDA",
@@ -659,7 +739,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 16
+      "rank": 18
     },
     {
       "ticker": "SNAP",
@@ -695,7 +775,7 @@
         }
       },
       "rationale_one_liner": "flow +8.7 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "Exited. At $5.62 in rebuy zone ($5.50-5.70). Assessor BUY MED: AWE June 16 AR glasses. Oracle AVOID: DAU negative + CPI 3.8%. Needs stance relaxation + flow.",
+      "watchlist_thesis": "Exited. At $5.69 in rebuy zone ($5.50-5.70). Assessor BUY MED: AWE Jun 16 AR glasses. Oracle AVOID: DAU negative+CPI 3.8%. Needs stance relaxation+flow.",
       "oracle_note": null,
       "macro_filter": {
         "pass": true,
@@ -706,7 +786,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 17
+      "rank": 19
     },
     {
       "ticker": "HALO",
@@ -742,10 +822,10 @@
         }
       },
       "rationale_one_liner": "flow +8.6 5d-avg (5 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "ENTRY_ZONE+ABS_TARGET $68.98 IN zone. ENHANZE royalty 13 partners (J&J/Roche/Pfizer). 80%+ FCF margins. 7x fwd PE. $1B buyback. Assessor SB HIGH $90 FV. Needs flow 5d+.",
+      "watchlist_thesis": "EZ+ABS $68.52 IN zone. 7x PE 42% rev growth $1B buyback. PDUFA Jun 29 mfg-only (>90% hist). Assessor SB HIGH $85 FV. Earnings-date BUG blocking alerts. Needs flow 5d+.",
       "oracle_note": {
-        "text": "EZ+ABS $68.98 IN zone. 7x PE royalty 30-35% growth. $1B buyback. Assessor SB HIGH $90. Alerts suppressed by unknown-earnings-date BUG. Needs flow 5d+.",
-        "written_at": "2026-05-21"
+        "text": "EZ+ABS $68.52 IN zone. 7x PE 42% rev growth $1B buyback. PDUFA Jun 29 mfg-only >90% hist. Assessor SB HIGH. Earnings-date BUG false-suppressing alerts.",
+        "written_at": "2026-05-22"
       },
       "macro_filter": {
         "pass": true,
@@ -756,7 +836,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 18
+      "rank": 20
     },
     {
       "ticker": "HIMS",
@@ -803,7 +883,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 19
+      "rank": 21
     },
     {
       "ticker": "NTNX",
@@ -850,7 +930,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 20
+      "rank": 22
     },
     {
       "ticker": "COIN",
@@ -897,7 +977,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 21
+      "rank": 23
     },
     {
       "ticker": "DJT",
@@ -944,7 +1024,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 22
+      "rank": 24
     },
     {
       "ticker": "LMT",
@@ -991,7 +1071,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 23
+      "rank": 25
     }
   ],
   "flow_extreme_picks_count": 5,
@@ -1225,7 +1305,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 11
+      "rank": 12
     }
   ]
 }
