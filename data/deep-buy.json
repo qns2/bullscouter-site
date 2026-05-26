@@ -7,16 +7,16 @@
   "strategic_context_block_reason": null,
   "filtered_summary": {
     "earnings_blackout": 1,
-    "below_cutoff": 47,
+    "below_cutoff": 52,
     "held": 10,
     "frozen": 1,
-    "rr_too_low": 2,
+    "rr_too_low": 3,
     "rescan_below_cutoff_no_note": 7
   },
-  "candidates_evaluated": 61,
+  "candidates_evaluated": 67,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 2,
+  "oracle_watch_count": 1,
   "oracle_watch": [
     {
       "ticker": "TRIP",
@@ -24,20 +24,9 @@
       "convergence_paths": [
         "path3_strong_candidate"
       ],
-      "spot_price": 9.9,
+      "spot_price": 10.08,
       "oracle_note": {
         "text": "Starboard 13D + flow +10.5 extreme. Only P3 with activist+bullish flow convergence. $10.08 in zone. Small spec 10sh if stance relaxes.",
-        "written_at": "2026-05-25"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "WDAY",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 121.85,
-      "oracle_note": {
-        "text": "Earnings BEAT 5/21 +10.8%. Fwd PE 9.8 PEG 0.5. But 0/68 insider sells disqualifying. MONITOR ONLY until insider changes.",
         "written_at": "2026-05-25"
       },
       "filter_reason": "below_cutoff"
@@ -146,6 +135,60 @@
       "rank": 7
     },
     {
+      "ticker": "VERA",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 35,
+      "convergence_paths": [
+        "flow_sustained",
+        "watchlist_dip",
+        "catalyst_near"
+      ],
+      "spot_price": 34.35,
+      "entry": {
+        "low": 32.0,
+        "high": 37.0,
+        "mid": 34.5
+      },
+      "target": 56.0,
+      "stop": 31.6,
+      "rr_ratio": 7.87,
+      "rr_planned": 7.41,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 966.0,
+      "suggested_shares": 28,
+      "position_risk_usd": 81.2,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        },
+        "catalyst_near": {
+          "score": 5
+        }
+      },
+      "rationale_one_liner": "flow +8.4 5d-avg (3 TD days) + watchlist dip alert + catalyst near. no earnings <45d.",
+      "watchlist_thesis": "TOP PICK day 4. Triple alert (DV+EZ+DIP) $34.35 IN zone. PDUFA Jul 7 atacicept IgAN BTD+PR+NEJM p<0.0001. Assessor SB HIGH $65 FV. Fails defensive filter (P4 only). Best new-name if stance relaxes.",
+      "oracle_note": {
+        "text": "#3 PICK. Triple DV+EZ+DIP $34.04. PDUFA Jul 7 BTD p<0.0001. Heatmap 53. Assessor SB HIGH $65. Best binary risk/reward. 30sh if stance relaxes.",
+        "written_at": "2026-05-25"
+      },
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-09",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 8
+    },
+    {
       "ticker": "PLUG",
       "path": "flow_led",
       "source": "sustained",
@@ -190,7 +233,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 8
+      "rank": 9
     },
     {
       "ticker": "DT",
@@ -237,7 +280,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 9
+      "rank": 10
     },
     {
       "ticker": "HIMS",
@@ -275,56 +318,6 @@
       "rationale_one_liner": "flow +9.0 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-09",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 10
-    },
-    {
-      "ticker": "VERA",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_sustained",
-        "watchlist_dip"
-      ],
-      "spot_price": 34.35,
-      "entry": {
-        "low": 32.0,
-        "high": 37.0,
-        "mid": 34.5
-      },
-      "target": 56.0,
-      "stop": 31.6,
-      "rr_ratio": 7.87,
-      "rr_planned": 7.41,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 966.0,
-      "suggested_shares": 28,
-      "position_risk_usd": 81.2,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "rationale_one_liner": "flow +8.4 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "TOP PICK day 4. Triple alert (DV+EZ+DIP) $34.35 IN zone. PDUFA Jul 7 atacicept IgAN BTD+PR+NEJM p<0.0001. Assessor SB HIGH $65 FV. Fails defensive filter (P4 only). Best new-name if stance relaxes.",
-      "oracle_note": {
-        "text": "#3 PICK. Triple DV+EZ+DIP $34.04. PDUFA Jul 7 BTD p<0.0001. Heatmap 53. Assessor SB HIGH $65. Best binary risk/reward. 30sh if stance relaxes.",
-        "written_at": "2026-05-25"
-      },
       "macro_filter": {
         "pass": true,
         "result": "PASS",
@@ -489,6 +482,57 @@
       "rank": 1
     },
     {
+      "ticker": "DRTS",
+      "path": "flow_extreme",
+      "source": "extreme+sustained",
+      "composite": 60,
+      "convergence_paths": [
+        "flow_extreme",
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "spot_price": 10.04,
+      "entry": {
+        "low": 9.74,
+        "high": 10.09,
+        "mid": 9.91
+      },
+      "target": 12.05,
+      "stop": 9.24,
+      "rr_ratio": 2.51,
+      "rr_planned": 3.16,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 991.0,
+      "suggested_shares": 100,
+      "position_risk_usd": 67.0,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "rationale_one_liner": "flow-extreme: 18d streak, P/C 0.068 (15:1 calls) + flow +8.7 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "EXITED 5/11. Post-earnings at $10.03 (+11.9% from exit). Clean execution. Rebuy $7-7.50 still stands.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-09",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 2
+    },
+    {
       "ticker": "IBRX",
       "path": "flow_extreme",
       "source": "extreme+sustained",
@@ -540,7 +584,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 2
+      "rank": 3
     },
     {
       "ticker": "MESO",
@@ -581,53 +625,6 @@
         "text": "Buy list Day 5 +4.7%. Recovery 56% WR (best P1). Flow +10.5. In optimal Day 3-10 window. No action needed.",
         "written_at": "2026-05-25"
       },
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-09",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 3
-    },
-    {
-      "ticker": "DRTS",
-      "path": "flow_extreme",
-      "source": "extreme+sustained",
-      "composite": 50,
-      "convergence_paths": [
-        "flow_extreme",
-        "flow_sustained"
-      ],
-      "spot_price": 10.04,
-      "entry": {
-        "low": 9.74,
-        "high": 10.09,
-        "mid": 9.91
-      },
-      "target": 12.05,
-      "stop": 9.24,
-      "rr_ratio": 2.51,
-      "rr_planned": 3.16,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 991.0,
-      "suggested_shares": 100,
-      "position_risk_usd": 67.0,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_extreme": {
-          "score": 30
-        },
-        "flow_sustained": {
-          "score": 20
-        }
-      },
-      "rationale_one_liner": "flow-extreme: 18d streak, P/C 0.068 (15:1 calls) + flow +8.7 5d-avg (3 TD days). no earnings <45d.",
-      "watchlist_thesis": "EXITED 5/11. Post-earnings at $10.03 (+11.9% from exit). Clean execution. Rebuy $7-7.50 still stands.",
-      "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
