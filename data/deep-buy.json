@@ -1,22 +1,22 @@
 {
   "date": "2026-05-28",
-  "version": "2.30.5",
+  "version": "2.31.0",
   "regime_label": null,
   "regime_score": null,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 50,
+    "below_cutoff": 55,
     "earnings_blackout": 1,
     "held": 10,
     "frozen": 1,
-    "rr_too_low": 3,
-    "rescan_below_cutoff_no_note": 4
+    "rr_too_low": 4,
+    "rescan_below_cutoff_no_note": 10
   },
-  "candidates_evaluated": 65,
+  "candidates_evaluated": 71,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 5,
+  "oracle_watch_count": 8,
   "oracle_watch": [
     {
       "ticker": "BSX",
@@ -26,8 +26,8 @@
       ],
       "spot_price": 50.46,
       "oracle_note": {
-        "text": "DEEP in zone at $52.60 (-10.1% DIP). P1 BUY+P4+13F+$2B ASR. But 0% WR on 16 signals + value 36% WR. Flow neutral. Gate: flow >=+5 for 5d.",
-        "written_at": "2026-05-27"
+        "text": "P1 BUY 88/82 + P4 DIP $50.46 BELOW zone floor. 0% WR on 16 hist signals + value 36% WR. Gate: flow >=+5 for 5d, else avoid.",
+        "written_at": "2026-05-28"
       },
       "filter_reason": "below_cutoff"
     },
@@ -39,8 +39,8 @@
       ],
       "spot_price": 62.15,
       "oracle_note": {
-        "text": "P1 BUY 100/95 but $62.88 ABOVE zone ($54-58). Value 36% WR. 88x PE. Exited 5/6. -5 conf for zone violation.",
-        "written_at": "2026-05-27"
+        "text": "P1 BUY 99/95 but $62.15 ABOVE zone ($54-58). Value 36% WR. Exited 5/6. -5 conf for zone violation. Rebuy <$55 only.",
+        "written_at": "2026-05-28"
       },
       "filter_reason": "below_cutoff"
     },
@@ -53,7 +53,20 @@
       "spot_price": 159.97,
       "oracle_note": {
         "text": "Rescan. Assessor BUY HIGH $210. 10.3x fwd PE + $1.16B FCF + 20.4% SI. P3 score 71. Needs insider check.",
-        "written_at": "2026-05-27"
+        "written_at": "2026-05-28"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "HLNE",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 90.49,
+      "oracle_note": {
+        "text": "#4 (conditional). Best 4-path convergence (P3 78+P5 83+P4 EZ+insider 6/0) but flow -11.0 TD vetoes. Actionable when flow >0.",
+        "written_at": "2026-05-28"
       },
       "filter_reason": "below_cutoff"
     },
@@ -65,8 +78,19 @@
       ],
       "spot_price": 307.73,
       "oracle_note": {
-        "text": "#5 (patience). Post-crash -19% beat-and-raise. Buffett 88. Quad P4 alert at $304. Wait 5-10d settle. GTC $295.",
-        "written_at": "2026-05-27"
+        "text": "#5 (patience). Post-crash -62% beat-and-raise. Buffett 88 SQ. Assessor SB HIGH $470. GTC $295 placed. Respect limit.",
+        "written_at": "2026-05-28"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "HALO",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 68.65,
+      "oracle_note": {
+        "text": "#3 PICK. Assessor SB HIGH $85. 7x PE 42% rev $1B buyback. PDUFA Jun 29 MISSING from heatmap (BUG). EZ $68.65 IN zone. Post-MNKD.",
+        "written_at": "2026-05-28"
       },
       "filter_reason": "below_cutoff"
     },
@@ -76,8 +100,19 @@
       "convergence_paths": [],
       "spot_price": 124.5,
       "oracle_note": {
-        "text": "Earnings BEAT 5/21 +10.8%. PEG 0.5. Assessor BUY HIGH $187.5. BUT 0/68 insider sells=disqualifying. MONITOR.",
-        "written_at": "2026-05-27"
+        "text": "Earnings BEAT 5/21 +10.8%. PEG 0.5. Assessor SB HIGH $175. 0/68 insider sells = disqualifying. Monitor, don't enter.",
+        "written_at": "2026-05-28"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ZTS",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 79.48,
+      "oracle_note": {
+        "text": "Assessor BUY HIGH. #1 animal health moat at 13x (hist 30-50x). RSI 13-15 extreme. EZ $79 fired. Needs flow + Numelar competitive check.",
+        "written_at": "2026-05-28"
       },
       "filter_reason": "below_cutoff"
     }
@@ -124,10 +159,10 @@
         }
       },
       "rationale_one_liner": "flow +8.4 5d-avg (3 TD days) + watchlist dip alert + catalyst near. no earnings <45d.",
-      "watchlist_thesis": "TOP PICK day 4. Triple alert (DV+EZ+DIP) $34.35 IN zone. PDUFA Jul 7 atacicept IgAN BTD+PR+NEJM p<0.0001. Assessor SB HIGH $65 FV. Fails defensive filter (P4 only). Best new-name if stance relaxes.",
+      "watchlist_thesis": "TOP FDA PICK. Triple P4 alert IN zone $34.27. PDUFA Jul 7 BTD+Priority+NEJM. Goldman $95. Half-size 15sh. Stop $28.",
       "oracle_note": {
-        "text": "PDUFA Jul 7 BTD. Triple P4 alert IN zone $34.34. Flow +9 but 6D STALE. Conditional on fresh flow >+5. 15sh half-size.",
-        "written_at": "2026-05-27"
+        "text": "PDUFA Jul 7 Priority Review + BTD + NEJM. Triple P4 alert IN zone $34.27. Assessor SB HIGH $85. Goldman $95. Half-size binary.",
+        "written_at": "2026-05-28"
       },
       "macro_filter": {
         "pass": true,
@@ -138,7 +173,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 8
+      "rank": 7
     },
     {
       "ticker": "BKNG",
@@ -185,7 +220,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 11
+      "rank": 10
     },
     {
       "ticker": "SRAD",
@@ -232,10 +267,10 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 12
+      "rank": 11
     }
   ],
-  "flow_extreme_picks_count": 9,
+  "flow_extreme_picks_count": 8,
   "flow_extreme_picks": [
     {
       "ticker": "DRTS",
@@ -375,8 +410,8 @@
       "rationale_one_liner": "flow-extreme: 21d streak, P/C 0.024 (42:1 calls) + flow +9.4 5d-avg (5 TD days). no earnings <45d.",
       "watchlist_thesis": "Buy list Day 1. Recovery profile (56% WR best P1). Flow +10.5 on 530 vol = thin-chain per 5/18 lesson. MONITOR do not enter. -5 conf.",
       "oracle_note": {
-        "text": "Buy list Day 7 +1.3%. Recovery 56% WR (best P1). In optimal window. Flow +8.49. No action.",
-        "written_at": "2026-05-27"
+        "text": "Buy list Day 8 +0.8%. Recovery 56% WR (best P1). In optimal window (Day 3-10). Flow +10.0. Hold.",
+        "written_at": "2026-05-28"
       },
       "macro_filter": {
         "pass": true,
@@ -437,56 +472,6 @@
       "rank": 4
     },
     {
-      "ticker": "HALO",
-      "path": "flow_extreme",
-      "source": "extreme+sustained",
-      "composite": 50,
-      "convergence_paths": [
-        "flow_extreme",
-        "flow_sustained"
-      ],
-      "spot_price": 68.62,
-      "entry": {
-        "low": 64.0,
-        "high": 72.0,
-        "mid": 68.0
-      },
-      "target": 100.0,
-      "stop": 63.13,
-      "rr_ratio": 5.72,
-      "rr_planned": 6.57,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 952.0,
-      "suggested_shares": 14,
-      "position_risk_usd": 68.18,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_extreme": {
-          "score": 30
-        },
-        "flow_sustained": {
-          "score": 20
-        }
-      },
-      "rationale_one_liner": "flow-extreme: 11d streak, P/C 0.056 (18:1 calls) + flow +9.1 5d-avg (5 TD days). no earnings <45d.",
-      "watchlist_thesis": "EZ+ABS $68.52 IN zone. 7x PE 42% rev growth $1B buyback. PDUFA Jun 29 mfg-only (>90% hist). Assessor SB HIGH $85 FV. Earnings-date BUG blocking alerts. Needs flow 5d+.",
-      "oracle_note": {
-        "text": "#3 PICK. Flow +10.5 extreme. PDUFA Jun 29 mfg >90% hist. EZ+ABS $68.72 IN zone. Post-MNKD capital. Stop $58.",
-        "written_at": "2026-05-27"
-      },
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-11",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 5
-    },
-    {
       "ticker": "SOLV",
       "path": "flow_extreme",
       "source": "extreme+sustained",
@@ -531,7 +516,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 6
+      "rank": 5
     },
     {
       "ticker": "SATL",
@@ -578,7 +563,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 7
+      "rank": 6
     },
     {
       "ticker": "KOPN",
@@ -621,7 +606,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 9
+      "rank": 8
     },
     {
       "ticker": "JOBY",
@@ -664,7 +649,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 10
+      "rank": 9
     }
   ]
 }
