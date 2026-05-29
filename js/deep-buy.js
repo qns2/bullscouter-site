@@ -51,6 +51,7 @@
       catalyst_near: ['Catalyst <14d', 'amber'],
       insider_buy: ['Insider buy', 'green'],
       activist_filing: ['Activist 13D', 'amber'],
+      watchlist_dip: ['Watchlist dip', 'amber'],
     };
     const [label, color] = labels[p] || [p, 'gray'];
     const cls = {
@@ -61,6 +62,120 @@
       gray: 'text-gray-400 bg-white/5 border-white/10',
     }[color];
     return `<span class="text-[10px] font-bold px-2 py-0.5 rounded border ${cls}">${esc(label)}</span>`;
+  }
+
+  const TIER_THEME = {
+    3: {
+      label: 'T3',
+      border: 'hover:border-emerald-400/30',
+      pill: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+      sizeCls: 'bg-emerald-500/10 text-emerald-400',
+    },
+    2: {
+      label: 'T2',
+      border: 'hover:border-blue-400/30',
+      pill: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
+      sizeCls: 'bg-blue-500/10 text-blue-400',
+    },
+    1: {
+      label: 'T1',
+      border: 'hover:border-orange-400/30',
+      pill: 'text-orange-400 bg-orange-500/10 border-orange-500/20',
+      sizeCls: 'bg-orange-500/10 text-orange-400',
+    },
+  };
+
+  const SIZE_LABELS = { full: 'Full $1500', standard: 'Std $1000', half: 'Half $500', none: '—' };
+
+  function renderTierCard(p) {
+    const tier = p.tier || 1;
+    const theme = TIER_THEME[tier] || TIER_THEME[1];
+    const compColor = compositeColor(p.composite);
+    const compWidth = compositeWidth(p.composite);
+    const ent = p.entry || {};
+    const earningsStr = p.earnings_days_away != null
+      ? `${p.earnings_date} (${p.earnings_days_away}d)`
+      : 'no earnings ≤45d';
+    const paths = (p.convergence_paths || []).map(pathBadge).join(' ');
+    const sourceLabel = (p.source || '').toUpperCase();
+    const sizeLabel = SIZE_LABELS[p.size_class] || p.size_class || '—';
+    const evidence = (p.tier_evidence || []).join(', ') || '—';
+
+    const compEntries = Object.entries(p.components || {});
+    const breakdownHtml = compEntries.map(([k, v]) => {
+      const score = v?.score != null ? v.score : v;
+      const sign = score > 0 ? '+' : '';
+      const cls = score > 0 ? 'text-green-400' : score < 0 ? 'text-red-400' : 'text-gray-400';
+      return `<div class="flex justify-between text-[11px]"><span class="text-gray-500">${esc(k)}</span><span class="${cls} font-mono">${sign}${score}</span></div>`;
+    }).join('');
+
+    const card = document.createElement('div');
+    card.className = `glass-card p-4 transition-colors ${theme.border}`;
+
+    card.innerHTML = `
+      <div class="flex items-start justify-between mb-3">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${theme.pill}">${theme.label} · ${esc(sourceLabel)}</span>
+          <a href="ticker.html?t=${esc(p.ticker)}" class="text-lg font-bold font-mono hover:text-bull-accent transition-colors">${esc(p.ticker)}</a>
+          <span class="text-xs text-gray-500 font-mono">$${fmt(p.spot_price, 2)}</span>
+        </div>
+        <div class="flex items-start gap-2 flex-shrink-0">
+          <div class="text-right">
+            <div class="text-2xl font-bold font-mono" style="color:${compColor}">${p.composite}</div>
+            <div class="text-[10px] text-gray-500 uppercase tracking-wider">composite</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="composite-bar mb-3">
+        <div class="composite-fill" style="width:${compWidth}%; background:${compColor}"></div>
+      </div>
+
+      <div class="flex flex-wrap gap-1 mb-3">${paths}</div>
+
+      <div class="grid grid-cols-3 gap-2 text-[12px] mb-3">
+        <div class="bg-white/[0.03] rounded p-2">
+          <div class="text-[10px] text-gray-500 uppercase tracking-wider">Entry zone</div>
+          <div class="text-white font-mono">$${fmt(ent.low, 2)} – $${fmt(ent.high, 2)}</div>
+        </div>
+        <div class="bg-white/[0.03] rounded p-2">
+          <div class="text-[10px] text-gray-500 uppercase tracking-wider">Target / Stop</div>
+          <div class="text-white font-mono">$${fmt(p.target, 2)} / $${fmt(p.stop, 2)}</div>
+        </div>
+        <div class="bg-white/[0.03] rounded p-2">
+          <div class="text-[10px] text-gray-500 uppercase tracking-wider">R/R</div>
+          <div class="font-mono text-green-400">${fmt(p.rr_ratio, 2)}:1</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 text-[11px] mb-3">
+        <span class="px-2 py-0.5 rounded ${theme.sizeCls} font-bold">${esc(sizeLabel)}</span>
+        <span class="text-gray-500">evidence: ${esc(evidence)}</span>
+      </div>
+
+      <div class="text-[11px] text-gray-400 mb-3 leading-relaxed">${esc(p.rationale_one_liner)}</div>
+
+      ${p.oracle_note ? `
+      <div class="bg-blue-500/[0.06] border-l-2 border-blue-500/40 pl-2 pr-2 py-1.5 mb-3 rounded-r">
+        <div class="flex items-center justify-between gap-2 mb-0.5">
+          <span class="text-[9px] uppercase tracking-wider text-blue-400/80">Oracle</span>
+          <span class="text-[9px] text-gray-500">${esc(noteAge(p.oracle_note.written_at))}</span>
+        </div>
+        <div class="text-[11px] text-gray-300 italic leading-relaxed">${esc(p.oracle_note.text || '')}</div>
+      </div>` : ''}
+
+      <div class="text-[10px] text-gray-500 flex items-center gap-3 mb-3">
+        <span>${esc(earningsStr)}</span>
+        ${p.position_risk_usd != null ? `<span>risk $${fmt(p.position_risk_usd, 2)}</span>` : ''}
+      </div>
+
+      ${compEntries.length ? `
+      <details class="border-t border-white/[0.06] pt-2">
+        <summary class="cursor-pointer text-[10px] uppercase tracking-wider text-gray-500 hover:text-white">Component breakdown</summary>
+        <div class="mt-2 space-y-1">${breakdownHtml}</div>
+      </details>` : ''}
+    `;
+    return card;
   }
 
   function renderCard(p) {
@@ -404,7 +519,18 @@
       const base = `#${p.rank} ${p.ticker} comp=${p.composite} @$${fmt(p.spot_price, 2)}  entry=$${fmt(ent.low, 2)}-$${fmt(ent.high, 2)}  target=$${fmt(p.target, 2)}  stop=$${fmt(p.stop, 2)}  RR=${fmt(p.rr_ratio, 2)}:1  earn=${p.earnings_days_away ?? '—'}d  | ${p.rationale_one_liner}`;
       return p.oracle_note ? `${base}\n   Oracle (${noteAge(p.oracle_note.written_at)}): ${p.oracle_note.text}` : base;
     });
-    const flowLedRows = (data.flow_led_picks || []).length ? [
+    const tierIcons = { 3: '🟢', 2: '🔵', 1: '🟠' };
+    const allTiers = [...(data.tier3_picks || []), ...(data.tier2_picks || []), ...(data.tier1_picks || [])];
+    const tierRows = allTiers.length ? [
+      '', '— Evidence Tiers (primary) —',
+      ...allTiers.map(p => {
+        const ent = p.entry || {};
+        const icon = tierIcons[p.tier] || '·';
+        const base = `${icon} T${p.tier} ${p.ticker} [${(p.source || '').toUpperCase()}] comp=${p.composite} size=${p.size_class || '—'} @$${fmt(p.spot_price, 2)}  entry=$${fmt(ent.low, 2)}-$${fmt(ent.high, 2)}  target=$${fmt(p.target, 2)}  stop=$${fmt(p.stop, 2)}  RR=${fmt(p.rr_ratio, 2)}:1  evidence=[${(p.tier_evidence || []).join(',')}]  | ${p.rationale_one_liner}`;
+        return p.oracle_note ? `${base}\n   Oracle (${noteAge(p.oracle_note.written_at)}): ${p.oracle_note.text}` : base;
+      }),
+    ] : [];
+    const flowLedRows = !allTiers.length && (data.flow_led_picks || []).length ? [
       '', '— Flow-led picks (separate composite) —',
       ...(data.flow_led_picks || []).map(p => {
         const ent = p.entry || {};
@@ -412,7 +538,7 @@
         return p.oracle_note ? `${base}\n   Oracle (${noteAge(p.oracle_note.written_at)}): ${p.oracle_note.text}` : base;
       }),
     ] : [];
-    const flowExtremeRows = (data.flow_extreme_picks || []).length ? [
+    const flowExtremeRows = !allTiers.length && (data.flow_extreme_picks || []).length ? [
       '', '— Flow-extreme picks (single-axis tier) —',
       ...(data.flow_extreme_picks || []).map(p => {
         const ent = p.entry || {};
@@ -427,7 +553,7 @@
         return `🔭 ${w.ticker} comp=${w.composite} @$${fmt(w.spot_price, 2)}${note}`;
       }),
     ] : [];
-    return navigator.clipboard.writeText([...header, ...rows, ...flowLedRows, ...flowExtremeRows, ...watchRows].join('\n'));
+    return navigator.clipboard.writeText([...header, ...rows, ...tierRows, ...flowLedRows, ...flowExtremeRows, ...watchRows].join('\n'));
   }
 
   function flashCopied(btn) {
@@ -470,34 +596,63 @@
         show('db-block-warn');
       }
 
-      // Cards
+      // Evidence Tiers (primary, v2.31.0+)
+      const t3 = data.tier3_picks || [];
+      const t2 = data.tier2_picks || [];
+      const t1 = data.tier1_picks || [];
+      const hasTiers = t3.length + t2.length + t1.length > 0;
+
+      if (hasTiers) {
+        if (t3.length) {
+          const c = $('#db-tier3-cards');
+          t3.forEach(p => c.appendChild(renderTierCard(p)));
+          show('db-tier3-section');
+        }
+        if (t2.length) {
+          const c = $('#db-tier2-cards');
+          t2.forEach(p => c.appendChild(renderTierCard(p)));
+          show('db-tier2-section');
+        }
+        if (t1.length) {
+          const c = $('#db-tier1-cards');
+          t1.forEach(p => c.appendChild(renderTierCard(p)));
+          show('db-tier1-section');
+        }
+        $('#db-stat-t3').textContent = t3.length;
+        $('#db-stat-t2').textContent = t2.length;
+        $('#db-stat-t1').textContent = t1.length;
+        show('db-stat-tiers');
+      }
+
+      // Mainline picks (background composite)
       const container = $('#db-cards');
       const picks = data.picks || [];
       picks.forEach(p => container.appendChild(renderCard(p)));
       hide('db-loading');
 
-      // Flow-led picks (third bucket — between mainline picks and oracle watch)
-      const flowLedPicks = data.flow_led_picks || [];
-      const flowLedSection = document.getElementById('db-flow-led-picks');
-      if (flowLedPicks.length && flowLedSection) {
-        const flowLedContainer = document.getElementById('db-flow-led-cards');
-        if (flowLedContainer) {
-          flowLedContainer.innerHTML = '';
-          flowLedPicks.forEach(p => flowLedContainer.appendChild(renderFlowLedCard(p)));
+      // Flow-led / flow-extreme (legacy view — hidden when tier data exists)
+      if (!hasTiers) {
+        const flowLedPicks = data.flow_led_picks || [];
+        const flowLedSection = document.getElementById('db-flow-led-picks');
+        if (flowLedPicks.length && flowLedSection) {
+          const flowLedContainer = document.getElementById('db-flow-led-cards');
+          if (flowLedContainer) {
+            flowLedContainer.innerHTML = '';
+            flowLedPicks.forEach(p => flowLedContainer.appendChild(renderFlowLedCard(p)));
+          }
+          flowLedSection.classList.remove('hidden');
         }
-        flowLedSection.classList.remove('hidden');
-      }
 
-      // Flow-extreme picks (fourth bucket — single-axis tier)
-      const flowExtremePicks = data.flow_extreme_picks || [];
-      const flowExtremeSection = document.getElementById('db-flow-extreme-picks');
-      if (flowExtremePicks.length && flowExtremeSection) {
-        const flowExtremeContainer = document.getElementById('db-flow-extreme-cards');
-        if (flowExtremeContainer) {
-          flowExtremeContainer.innerHTML = '';
-          flowExtremePicks.forEach(p => flowExtremeContainer.appendChild(renderFlowExtremeCard(p)));
+        const flowExtremePicks = data.flow_extreme_picks || [];
+        const flowExtremeSection = document.getElementById('db-flow-extreme-picks');
+        if (flowExtremePicks.length && flowExtremeSection) {
+          const flowExtremeContainer = document.getElementById('db-flow-extreme-cards');
+          if (flowExtremeContainer) {
+            flowExtremeContainer.innerHTML = '';
+            flowExtremePicks.forEach(p => flowExtremeContainer.appendChild(renderFlowExtremeCard(p)));
+          }
+          flowExtremeSection.classList.remove('hidden');
         }
-        flowExtremeSection.classList.remove('hidden');
       }
 
       // Oracle watch sidecar (Task 2b — names below mechanical cutoff that
@@ -514,7 +669,7 @@
         watchSection.classList.remove('hidden');
       }
 
-      const hasRenderableRows = picks.length || flowLedPicks.length || flowExtremePicks.length || watch.length;
+      const hasRenderableRows = picks.length || hasTiers || (!hasTiers && ((data.flow_led_picks || []).length || (data.flow_extreme_picks || []).length)) || watch.length;
       if (!hasRenderableRows && !data.strategic_context_blocks_new_entries) {
         show('db-empty');
       }
