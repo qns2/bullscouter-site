@@ -59,15 +59,61 @@
         "delta_5d": 3.3
       },
       "skew": null,
-      "skew_error": "held_timeout",
-      "gex": null,
-      "gex_error": "held_timeout",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "held_timeout"
+      "skew_error": null,
+      "gex": {
+        "spot": 6.32,
+        "total_gex_usd": -125424491.0,
+        "regime": "short_gamma",
+        "zero_gamma_level": 5.5,
+        "zero_gamma_distance_pct": 12.97,
+        "zero_gamma_found": true,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-06-05",
+          "2026-06-12"
+        ],
+        "total_contracts_analyzed": 70474,
+        "provider": "thetadata",
+        "error_kind": null
       },
-      "iv_metrics": null,
-      "vol_regime": null,
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 4.409,
+        "call_premium_usd": 1366,
+        "put_premium_usd": 6020,
+        "depth_volume_pc": 98.9631,
+        "call_depth_usd": 15296,
+        "put_depth_usd": 1513740,
+        "net_delta_volume": 14.0,
+        "call_delta_volume": 21.3,
+        "put_delta_volume": 7.3,
+        "smile_atm_iv": 0.689,
+        "smile_skew_b": -0.1621,
+        "smile_curvature_c": 2.0178,
+        "smile_expiration_used": "2026-06-26",
+        "smile_strike_count": 10
+      },
+      "flow_extra_errors": {
+        "rv_iv_gap": "insufficient_history"
+      },
+      "iv_metrics": {
+        "iv_rank": null,
+        "iv_percentile": null,
+        "earnings_iv_crush_flag": false,
+        "history_days": 31
+      },
+      "vol_regime": {
+        "skew_compression": {
+          "rr_today_vp": 10.88,
+          "rr_5d_ago_vp": 3.81,
+          "delta_5d_vp": 7.07,
+          "avg_flow_5d": 8.7,
+          "compression_signal": true,
+          "history_days": 12
+        },
+        "rv_iv_persistence": null,
+        "regime_label": "skew_compression"
+      },
       "dilution_risk": {
         "ticker": "BULL",
         "risk_level": "LOW",
@@ -145,10 +191,10 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 3.76,
-        "total_gex_usd": -9352362.0,
+        "spot": 3.65,
+        "total_gex_usd": -11523039.0,
         "regime": "neutral",
-        "zero_gamma_level": 3.76,
+        "zero_gamma_level": 3.65,
         "zero_gamma_distance_pct": 0.0,
         "zero_gamma_found": false,
         "buffer": "danger",
@@ -156,7 +202,7 @@
           "2026-06-05",
           "2026-06-12"
         ],
-        "total_contracts_analyzed": 15030,
+        "total_contracts_analyzed": 15484,
         "provider": "thetadata",
         "error_kind": null
       },
@@ -222,37 +268,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 10.83,
-        "total_gex_usd": -18848114.0,
+        "spot": 11.28,
+        "total_gex_usd": -29284531.0,
         "regime": "neutral",
-        "zero_gamma_level": 7.5,
-        "zero_gamma_distance_pct": 30.75,
+        "zero_gamma_level": 10.0,
+        "zero_gamma_distance_pct": 11.31,
         "zero_gamma_found": true,
         "buffer": "safe",
         "expirations_used": [
           "2026-06-18",
           "2026-07-17"
         ],
-        "total_contracts_analyzed": 55002,
+        "total_contracts_analyzed": 58558,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.0045,
-        "call_premium_usd": 1171490,
-        "put_premium_usd": 5260,
-        "depth_volume_pc": 0.3181,
-        "call_depth_usd": 91145,
-        "put_depth_usd": 28995,
-        "net_delta_volume": 3065.8,
-        "call_delta_volume": 3083.5,
-        "put_delta_volume": 17.8,
-        "smile_atm_iv": 1.3938,
-        "smile_skew_b": -0.9462,
-        "smile_curvature_c": 3.8519,
+        "premium_volume_pc": 0.9534,
+        "call_premium_usd": 179908,
+        "put_premium_usd": 171525,
+        "depth_volume_pc": 3.9716,
+        "call_depth_usd": 175135,
+        "put_depth_usd": 695565,
+        "net_delta_volume": 294.0,
+        "call_delta_volume": 699.8,
+        "put_delta_volume": 405.8,
+        "smile_atm_iv": 1.0689,
+        "smile_skew_b": 0.6636,
+        "smile_curvature_c": -1.2903,
         "smile_expiration_used": "2026-07-17",
-        "smile_strike_count": 8
+        "smile_strike_count": 10
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -339,15 +385,15 @@
     {
       "ticker": "TTD",
       "flow": {
-        "score": 7.5,
+        "score": 7.02,
         "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 21.63,
-        "bullish_streak": 10,
-        "avg_score_5d": 7.3,
-        "delta_5d": 0.2
+        "spot_price": 22.0,
+        "bullish_streak": 11,
+        "avg_score_5d": 7.21,
+        "delta_5d": -0.19
       },
       "skew": null,
       "skew_error": "held_budget_exceeded",
@@ -433,16 +479,79 @@
         "avg_score_5d": 3.2,
         "delta_5d": 1.81
       },
-      "skew": null,
-      "skew_error": "held_budget_exceeded",
-      "gex": null,
-      "gex_error": "held_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "held_budget_exceeded"
+      "skew": {
+        "expiration": "2026-07-10",
+        "spot": 45.87,
+        "put_25d_iv": 0.5444,
+        "call_25d_iv": 0.5504,
+        "risk_reversal": 0.006,
+        "risk_reversal_vp": 0.6,
+        "skew_basis": "25d",
+        "read": "balanced",
+        "direction": "bullish",
+        "magnitude": "normal",
+        "strikes_used": {
+          "put_strike": 42.0,
+          "call_strike": 52.0
+        },
+        "provider": "thetadata",
+        "error_kind": null
       },
-      "iv_metrics": null,
-      "vol_regime": null,
+      "skew_error": null,
+      "gex": {
+        "spot": 45.87,
+        "total_gex_usd": -278486535.0,
+        "regime": "short_gamma",
+        "zero_gamma_level": 47.0,
+        "zero_gamma_distance_pct": 2.46,
+        "zero_gamma_found": true,
+        "buffer": "danger",
+        "expirations_used": [
+          "2026-06-05",
+          "2026-06-12"
+        ],
+        "total_contracts_analyzed": 46969,
+        "provider": "thetadata",
+        "error_kind": null
+      },
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.1837,
+        "call_premium_usd": 169794,
+        "put_premium_usd": 31186,
+        "depth_volume_pc": 0.5473,
+        "call_depth_usd": 1768535,
+        "put_depth_usd": 967968,
+        "net_delta_volume": 277.4,
+        "call_delta_volume": 375.3,
+        "put_delta_volume": 97.9,
+        "smile_atm_iv": 0.3669,
+        "smile_skew_b": 0.0951,
+        "smile_curvature_c": 3.0106,
+        "smile_expiration_used": "2026-06-26",
+        "smile_strike_count": 33
+      },
+      "flow_extra_errors": {
+        "rv_iv_gap": "insufficient_history"
+      },
+      "iv_metrics": {
+        "iv_rank": null,
+        "iv_percentile": null,
+        "earnings_iv_crush_flag": false,
+        "history_days": 58
+      },
+      "vol_regime": {
+        "skew_compression": {
+          "rr_today_vp": -4.26,
+          "rr_5d_ago_vp": -8.41,
+          "delta_5d_vp": 4.15,
+          "avg_flow_5d": 3.2,
+          "compression_signal": false,
+          "history_days": 12
+        },
+        "rv_iv_persistence": null,
+        "regime_label": "neutral"
+      },
       "dilution_risk": {
         "ticker": "NKE",
         "risk_level": "LOW",
@@ -476,15 +585,61 @@
         "delta_5d": -1.8
       },
       "skew": null,
-      "skew_error": "held_timeout",
-      "gex": null,
-      "gex_error": "held_timeout",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "held_timeout"
+      "skew_error": null,
+      "gex": {
+        "spot": 16.63,
+        "total_gex_usd": -53507342.0,
+        "regime": "neutral",
+        "zero_gamma_level": 14.5,
+        "zero_gamma_distance_pct": 12.81,
+        "zero_gamma_found": true,
+        "buffer": "safe",
+        "expirations_used": [
+          "2026-06-05",
+          "2026-06-12"
+        ],
+        "total_contracts_analyzed": 11834,
+        "provider": "thetadata",
+        "error_kind": null
       },
-      "iv_metrics": null,
-      "vol_regime": null,
+      "gex_error": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.6315,
+        "call_premium_usd": 8190,
+        "put_premium_usd": 5172,
+        "depth_volume_pc": 36.7335,
+        "call_depth_usd": 25040,
+        "put_depth_usd": 919788,
+        "net_delta_volume": 43.3,
+        "call_delta_volume": 52.8,
+        "put_delta_volume": 9.5,
+        "smile_atm_iv": 0.5296,
+        "smile_skew_b": -0.2101,
+        "smile_curvature_c": 3.4093,
+        "smile_expiration_used": "2026-06-26",
+        "smile_strike_count": 22
+      },
+      "flow_extra_errors": {
+        "rv_iv_gap": "insufficient_history"
+      },
+      "iv_metrics": {
+        "iv_rank": 73.5,
+        "iv_percentile": 88.7,
+        "earnings_iv_crush_flag": false,
+        "history_days": 71
+      },
+      "vol_regime": {
+        "skew_compression": {
+          "rr_today_vp": 0.52,
+          "rr_5d_ago_vp": 2.53,
+          "delta_5d_vp": -2.01,
+          "avg_flow_5d": 0.3,
+          "compression_signal": false,
+          "history_days": 12
+        },
+        "rv_iv_persistence": null,
+        "regime_label": "neutral"
+      },
       "dilution_risk": {
         "ticker": "CPNG",
         "risk_level": "LOW",
@@ -1427,6 +1582,48 @@
       "watchlist_entry_high": null
     },
     {
+      "ticker": "VERA",
+      "flow": {
+        "score": 12.0,
+        "signal": "strong_bull",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 34.66,
+        "bullish_streak": 8,
+        "avg_score_5d": 9.0,
+        "delta_5d": 3.0
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "VERA",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": "#2 PICK. PDUFA Jul 7 BTD+Priority+NEJM. Flow 7d avg 7.8. GTC $33.50 x 14sh. Stop $28.",
+      "watchlist_target": 56.0,
+      "watchlist_entry_low": 32.0,
+      "watchlist_entry_high": 37.0
+    },
+    {
       "ticker": "INFQ",
       "flow": {
         "score": 11.01,
@@ -2040,90 +2237,6 @@
             "summary": "RIVN filed S-3ASR; shelf registration is active/dormant dilution risk."
           }
         ]
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "VERA",
-      "flow": {
-        "score": 10.5,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 35.5,
-        "bullish_streak": 7,
-        "avg_score_5d": 7.8,
-        "delta_5d": 2.7
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "VERA",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": "#2 PICK. PDUFA Jul 7 BTD+Priority+NEJM. Flow 7d avg 7.8. GTC $33.50 x 14sh. Stop $28.",
-      "watchlist_target": 56.0,
-      "watchlist_entry_low": 32.0,
-      "watchlist_entry_high": 37.0
-    },
-    {
-      "ticker": "UMAC",
-      "flow": {
-        "score": 10.02,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 31.35,
-        "bullish_streak": 1,
-        "avg_score_5d": 5.0,
-        "delta_5d": 5.02
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "UMAC",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
       },
       "earnings_date": null,
       "frozen": false,
@@ -4043,48 +4156,6 @@
       "watchlist_entry_high": null
     },
     {
-      "ticker": "ZVRA",
-      "flow": {
-        "score": 9.0,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 11.56,
-        "bullish_streak": 3,
-        "avg_score_5d": 7.4,
-        "delta_5d": 1.6
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "ZVRA",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
       "ticker": "ONDS",
       "flow": {
         "score": 8.49,
@@ -4841,17 +4912,17 @@
       "watchlist_entry_high": null
     },
     {
-      "ticker": "VELO",
+      "ticker": "VG",
       "flow": {
         "score": 7.5,
         "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 23.9,
-        "bullish_streak": 1,
-        "avg_score_5d": 5.7,
-        "delta_5d": 1.8
+        "spot_price": 12.65,
+        "bullish_streak": 11,
+        "avg_score_5d": 7.5,
+        "delta_5d": 0.0
       },
       "skew": null,
       "skew_error": "universe_budget_exceeded",
@@ -4864,7 +4935,7 @@
       "iv_metrics": null,
       "vol_regime": null,
       "dilution_risk": {
-        "ticker": "VELO",
+        "ticker": "VG",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -5099,6 +5170,56 @@
             "source": "sec_edgar",
             "form": "424B5",
             "summary": "RKLB filed 424B5; prospectus supplement indicates an active offering."
+          }
+        ]
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
+      "ticker": "UBER",
+      "flow": {
+        "score": 6.99,
+        "signal": "strong_bull",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 71.12,
+        "bullish_streak": 11,
+        "avg_score_5d": 5.3,
+        "delta_5d": 1.69
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "UBER",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": [
+          {
+            "type": "s-3asr_shelf_registration",
+            "date": "2026-02-13",
+            "source": "sec_edgar",
+            "form": "S-3ASR",
+            "summary": "UBER filed S-3ASR; shelf registration is active/dormant dilution risk."
           }
         ]
       },
@@ -5356,132 +5477,6 @@
       "watchlist_entry_high": 175.0
     },
     {
-      "ticker": "UEC",
-      "flow": {
-        "score": 6.51,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 13.69,
-        "bullish_streak": 8,
-        "avg_score_5d": 6.5,
-        "delta_5d": 0.01
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "UEC",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "earnings_date": "2026-06-01",
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "XYZ",
-      "flow": {
-        "score": 6.51,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 75.8,
-        "bullish_streak": 1,
-        "avg_score_5d": 1.9,
-        "delta_5d": 4.61
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "XYZ",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "ZETA",
-      "flow": {
-        "score": 6.51,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 22.94,
-        "bullish_streak": 6,
-        "avg_score_5d": 6.7,
-        "delta_5d": -0.19
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "ZETA",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
       "ticker": "ABSI",
       "flow": {
         "score": 6.0,
@@ -5497,10 +5492,10 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 6.77,
-        "total_gex_usd": -8774199.0,
+        "spot": 6.75,
+        "total_gex_usd": -8765578.0,
         "regime": "neutral",
-        "zero_gamma_level": 6.77,
+        "zero_gamma_level": 6.75,
         "zero_gamma_distance_pct": 0.0,
         "zero_gamma_found": false,
         "buffer": "danger",
@@ -5508,16 +5503,23 @@
           "2026-06-18",
           "2026-07-17"
         ],
-        "total_contracts_analyzed": 15577,
+        "total_contracts_analyzed": 13583,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
-      "flow_extra": null,
+      "flow_extra": {
+        "premium_volume_pc": 0.0,
+        "call_premium_usd": 3850,
+        "put_premium_usd": 0,
+        "depth_volume_pc": 0.0,
+        "call_depth_usd": 64075,
+        "put_depth_usd": 0,
+        "net_delta_volume": 19.6,
+        "call_delta_volume": 19.6,
+        "put_delta_volume": 0.0
+      },
       "flow_extra_errors": {
-        "premium_volume_pc": "all_strikes_filtered",
-        "depth_volume_pc": "all_strikes_filtered",
-        "net_delta_volume": "all_strikes_filtered",
         "smile_shape": "underdetermined",
         "rv_iv_gap": "insufficient_history"
       },
@@ -7179,190 +7181,6 @@
       "watchlist_entry_high": null
     },
     {
-      "ticker": "TXT",
-      "flow": {
-        "score": 6.0,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 91.5,
-        "bullish_streak": 1,
-        "avg_score_5d": 1.3,
-        "delta_5d": 4.7
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "TXT",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": [
-          {
-            "type": "s-3asr_shelf_registration",
-            "date": "2026-02-25",
-            "source": "sec_edgar",
-            "form": "S-3ASR",
-            "summary": "TXT filed S-3ASR; shelf registration is active/dormant dilution risk."
-          }
-        ]
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "UBER",
-      "flow": {
-        "score": 6.0,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 70.65,
-        "bullish_streak": 10,
-        "avg_score_5d": 4.6,
-        "delta_5d": 1.4
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "UBER",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": [
-          {
-            "type": "s-3asr_shelf_registration",
-            "date": "2026-02-13",
-            "source": "sec_edgar",
-            "form": "S-3ASR",
-            "summary": "UBER filed S-3ASR; shelf registration is active/dormant dilution risk."
-          }
-        ]
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "UPST",
-      "flow": {
-        "score": 6.0,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 33.78,
-        "bullish_streak": 1,
-        "avg_score_5d": 3.31,
-        "delta_5d": 2.69
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "UPST",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "VG",
-      "flow": {
-        "score": 6.0,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 12.07,
-        "bullish_streak": 10,
-        "avg_score_5d": 7.8,
-        "delta_5d": -1.8
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "VG",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
       "ticker": "VNDA",
       "flow": {
         "score": 6.0,
@@ -7460,6 +7278,48 @@
       "watchlist_target": 30.0,
       "watchlist_entry_low": 22.0,
       "watchlist_entry_high": 26.0
+    },
+    {
+      "ticker": "WM",
+      "flow": {
+        "score": 6.0,
+        "signal": "strong_bull",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 213.33,
+        "bullish_streak": 11,
+        "avg_score_5d": 7.0,
+        "delta_5d": -1.0
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "WM",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
     },
     {
       "ticker": "BIIB",
@@ -8039,48 +7899,6 @@
       "watchlist_entry_high": null
     },
     {
-      "ticker": "WM",
-      "flow": {
-        "score": 5.01,
-        "signal": "strong_bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 211.73,
-        "bullish_streak": 10,
-        "avg_score_5d": 7.3,
-        "delta_5d": -2.29
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "WM",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
       "ticker": "AAPL",
       "flow": {
         "score": 4.5,
@@ -8096,37 +7914,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 310.81,
-        "total_gex_usd": -3045452002.0,
+        "spot": 309.3,
+        "total_gex_usd": -3285816226.0,
         "regime": "short_gamma",
-        "zero_gamma_level": 245.0,
-        "zero_gamma_distance_pct": 21.17,
+        "zero_gamma_level": 312.5,
+        "zero_gamma_distance_pct": 1.03,
         "zero_gamma_found": true,
-        "buffer": "safe",
+        "buffer": "danger",
         "expirations_used": [
           "2026-06-01",
           "2026-06-03"
         ],
-        "total_contracts_analyzed": 23890,
+        "total_contracts_analyzed": 22247,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.1677,
-        "call_premium_usd": 6289067,
-        "put_premium_usd": 1054506,
-        "depth_volume_pc": 0.1175,
-        "call_depth_usd": 1921680,
-        "put_depth_usd": 225844,
-        "net_delta_volume": 2834.5,
-        "call_delta_volume": 3636.4,
-        "put_delta_volume": 801.9,
-        "smile_atm_iv": 0.2495,
-        "smile_skew_b": -0.4164,
-        "smile_curvature_c": 2.4842,
+        "premium_volume_pc": 1.3661,
+        "call_premium_usd": 428975,
+        "put_premium_usd": 586004,
+        "depth_volume_pc": 9.1009,
+        "call_depth_usd": 951972,
+        "put_depth_usd": 8663768,
+        "net_delta_volume": -14.9,
+        "call_delta_volume": 303.4,
+        "put_delta_volume": 318.3,
+        "smile_atm_iv": 0.2194,
+        "smile_skew_b": -0.1761,
+        "smile_curvature_c": 4.3024,
         "smile_expiration_used": "2026-06-26",
-        "smile_strike_count": 56
+        "smile_strike_count": 42
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -8183,55 +8001,55 @@
       },
       "skew": {
         "expiration": "2026-06-26",
-        "spot": 191.34,
-        "put_25d_iv": 0.638,
-        "call_25d_iv": 0.5435,
-        "risk_reversal": -0.0946,
-        "risk_reversal_vp": -9.46,
+        "spot": 193.44,
+        "put_25d_iv": 0.5927,
+        "call_25d_iv": 0.6074,
+        "risk_reversal": 0.0147,
+        "risk_reversal_vp": 1.47,
         "skew_basis": "25d",
-        "read": "panic",
-        "direction": "bearish",
-        "magnitude": "extreme",
+        "read": "balanced",
+        "direction": "bullish",
+        "magnitude": "normal",
         "strikes_used": {
-          "put_strike": 175.0,
-          "call_strike": 215.0
+          "put_strike": 180.0,
+          "call_strike": 220.0
         },
         "provider": "thetadata",
         "error_kind": null
       },
       "skew_error": null,
       "gex": {
-        "spot": 190.93,
-        "total_gex_usd": -378829386.0,
+        "spot": 194.01,
+        "total_gex_usd": -383469116.0,
         "regime": "short_gamma",
-        "zero_gamma_level": 185.0,
-        "zero_gamma_distance_pct": 3.11,
+        "zero_gamma_level": 155.0,
+        "zero_gamma_distance_pct": 20.11,
         "zero_gamma_found": true,
-        "buffer": "danger",
+        "buffer": "safe",
         "expirations_used": [
           "2026-06-05",
           "2026-06-12"
         ],
-        "total_contracts_analyzed": 7910,
+        "total_contracts_analyzed": 7501,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.6353,
-        "call_premium_usd": 161505,
-        "put_premium_usd": 102610,
-        "depth_volume_pc": 4.5939,
-        "call_depth_usd": 193665,
-        "put_depth_usd": 889680,
-        "net_delta_volume": 56.8,
-        "call_delta_volume": 83.7,
-        "put_delta_volume": 26.9,
-        "smile_atm_iv": 0.5131,
-        "smile_skew_b": 0.4065,
-        "smile_curvature_c": 4.0551,
+        "premium_volume_pc": 0.5112,
+        "call_premium_usd": 142800,
+        "put_premium_usd": 73000,
+        "depth_volume_pc": 0.3307,
+        "call_depth_usd": 5991660,
+        "put_depth_usd": 1981395,
+        "net_delta_volume": 14.8,
+        "call_delta_volume": 37.4,
+        "put_delta_volume": 22.6,
+        "smile_atm_iv": 0.6073,
+        "smile_skew_b": -0.1977,
+        "smile_curvature_c": 1.5332,
         "smile_expiration_used": "2026-06-26",
-        "smile_strike_count": 29
+        "smile_strike_count": 44
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -9429,6 +9247,154 @@
       "watchlist_entry_high": null
     },
     {
+      "ticker": "UPST",
+      "flow": {
+        "score": 4.5,
+        "signal": "bull",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 33.23,
+        "bullish_streak": 2,
+        "avg_score_5d": 4.21,
+        "delta_5d": 0.29
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "UPST",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
+      "ticker": "VELO",
+      "flow": {
+        "score": 4.5,
+        "signal": "bull",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 22.77,
+        "bullish_streak": 2,
+        "avg_score_5d": 5.5,
+        "delta_5d": -1.0
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "VELO",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
+      "ticker": "VRSK",
+      "flow": {
+        "score": 4.5,
+        "signal": "bull",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 177.96,
+        "bullish_streak": 2,
+        "avg_score_5d": -0.61,
+        "delta_5d": 5.11
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "VRSK",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": true,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": [
+          {
+            "type": "s-3asr_shelf_registration",
+            "date": "2026-03-24",
+            "source": "sec_edgar",
+            "form": "S-3ASR",
+            "summary": "VRSK filed S-3ASR; shelf registration is active/dormant dilution risk."
+          },
+          {
+            "type": "secondary_offering",
+            "date": "2026-02-25",
+            "source": "sec_edgar",
+            "form": "424B5",
+            "summary": "VRSK filed 424B5; prospectus supplement indicates an active offering."
+          },
+          {
+            "type": "secondary_offering",
+            "date": "2026-02-23",
+            "source": "sec_edgar",
+            "form": "424B5",
+            "summary": "VRSK filed 424B5; prospectus supplement indicates an active offering."
+          }
+        ]
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
       "ticker": "WAB",
       "flow": {
         "score": 4.5,
@@ -9527,61 +9493,55 @@
       },
       "skew": {
         "expiration": "2026-06-18",
-        "spot": 275.25,
-        "put_25d_iv": 0.9233,
-        "call_25d_iv": 0.528,
-        "risk_reversal": -0.3953,
-        "risk_reversal_vp": -39.53,
+        "spot": 266.89,
+        "put_25d_iv": 0.6971,
+        "call_25d_iv": 0.7792,
+        "risk_reversal": 0.0821,
+        "risk_reversal_vp": 8.21,
         "skew_basis": "25d",
-        "read": "unreliable",
-        "direction": "unknown",
-        "magnitude": "noise",
+        "read": "speculative",
+        "direction": "bullish",
+        "magnitude": "extreme",
         "strikes_used": {
           "put_strike": 245.0,
-          "call_strike": 300.0
+          "call_strike": 305.0
         },
         "provider": "thetadata",
-        "error_kind": null,
-        "raw_risk_reversal": -0.3953,
-        "raw_risk_reversal_vp": -39.53,
-        "raw_direction": "bearish",
-        "raw_magnitude": "extreme",
-        "raw_read": "panic",
-        "data_quality": "DATA_NOISE"
+        "error_kind": null
       },
       "skew_error": null,
       "gex": {
-        "spot": 275.6,
-        "total_gex_usd": -1234375270.0,
+        "spot": 266.89,
+        "total_gex_usd": -1500565470.0,
         "regime": "short_gamma",
-        "zero_gamma_level": 275.0,
-        "zero_gamma_distance_pct": 0.22,
+        "zero_gamma_level": 210.0,
+        "zero_gamma_distance_pct": 21.32,
         "zero_gamma_found": true,
-        "buffer": "danger",
+        "buffer": "safe",
         "expirations_used": [
           "2026-06-05",
           "2026-06-12"
         ],
-        "total_contracts_analyzed": 22671,
+        "total_contracts_analyzed": 37617,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.3784,
-        "call_premium_usd": 1075583,
-        "put_premium_usd": 407010,
-        "depth_volume_pc": 4.347,
-        "call_depth_usd": 617525,
-        "put_depth_usd": 2684385,
-        "net_delta_volume": 442.0,
-        "call_delta_volume": 551.4,
-        "put_delta_volume": 109.4,
-        "smile_atm_iv": 0.4643,
-        "smile_skew_b": -0.3521,
-        "smile_curvature_c": 5.6745,
+        "premium_volume_pc": 0.2107,
+        "call_premium_usd": 1016781,
+        "put_premium_usd": 214208,
+        "depth_volume_pc": 0.6001,
+        "call_depth_usd": 16678556,
+        "put_depth_usd": 10009066,
+        "net_delta_volume": 190.5,
+        "call_delta_volume": 251.1,
+        "put_delta_volume": 60.6,
+        "smile_atm_iv": 0.6446,
+        "smile_skew_b": 0.149,
+        "smile_curvature_c": 2.0284,
         "smile_expiration_used": "2026-06-26",
-        "smile_strike_count": 40
+        "smile_strike_count": 71
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -9959,70 +9919,6 @@
         "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "VRSK",
-      "flow": {
-        "score": 3.99,
-        "signal": "bull",
-        "scan_date": "2026-05-28",
-        "days_ago": 4,
-        "td_data_exists": true,
-        "spot_price": 172.82,
-        "bullish_streak": 0,
-        "avg_score_5d": -1.91,
-        "delta_5d": null
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "VRSK",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": true,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": [
-          {
-            "type": "s-3asr_shelf_registration",
-            "date": "2026-03-24",
-            "source": "sec_edgar",
-            "form": "S-3ASR",
-            "summary": "VRSK filed S-3ASR; shelf registration is active/dormant dilution risk."
-          },
-          {
-            "type": "secondary_offering",
-            "date": "2026-02-25",
-            "source": "sec_edgar",
-            "form": "424B5",
-            "summary": "VRSK filed 424B5; prospectus supplement indicates an active offering."
-          },
-          {
-            "type": "secondary_offering",
-            "date": "2026-02-23",
-            "source": "sec_edgar",
-            "form": "424B5",
-            "summary": "VRSK filed 424B5; prospectus supplement indicates an active offering."
-          }
-        ]
       },
       "earnings_date": null,
       "frozen": false,
@@ -10424,6 +10320,48 @@
       "watchlist_target": 170.0,
       "watchlist_entry_low": 100.0,
       "watchlist_entry_high": 112.0
+    },
+    {
+      "ticker": "ZVRA",
+      "flow": {
+        "score": 3.51,
+        "signal": "bull",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 11.9,
+        "bullish_streak": 4,
+        "avg_score_5d": 6.1,
+        "delta_5d": -2.59
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "ZVRA",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
     },
     {
       "ticker": "AMPH",
@@ -11472,17 +11410,17 @@
       "watchlist_entry_high": null
     },
     {
-      "ticker": "USB",
+      "ticker": "UMAC",
       "flow": {
         "score": 3.0,
         "signal": "bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 54.85,
-        "bullish_streak": 1,
-        "avg_score_5d": 0.5,
-        "delta_5d": 2.5
+        "spot_price": 30.1,
+        "bullish_streak": 2,
+        "avg_score_5d": 4.7,
+        "delta_5d": -1.7
       },
       "skew": null,
       "skew_error": "universe_budget_exceeded",
@@ -11495,7 +11433,7 @@
       "iv_metrics": null,
       "vol_regime": null,
       "dilution_risk": {
-        "ticker": "USB",
+        "ticker": "UMAC",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -11514,17 +11452,17 @@
       "watchlist_entry_high": null
     },
     {
-      "ticker": "VICI",
+      "ticker": "WMB",
       "flow": {
         "score": 3.0,
         "signal": "bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 28.34,
-        "bullish_streak": 3,
-        "avg_score_5d": 3.4,
-        "delta_5d": -0.4
+        "spot_price": 70.95,
+        "bullish_streak": 1,
+        "avg_score_5d": -2.0,
+        "delta_5d": 5.0
       },
       "skew": null,
       "skew_error": "universe_budget_exceeded",
@@ -11537,57 +11475,7 @@
       "iv_metrics": null,
       "vol_regime": null,
       "dilution_risk": {
-        "ticker": "VICI",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": true,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": [
-          {
-            "type": "effect_registration",
-            "date": "2026-03-06",
-            "source": "sec_edgar",
-            "form": "EFFECT",
-            "summary": "VICI received EFFECT notice; registration statement is effective."
-          }
-        ]
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
-    },
-    {
-      "ticker": "YOU",
-      "flow": {
-        "score": 3.0,
-        "signal": "bull",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 56.19,
-        "bullish_streak": 4,
-        "avg_score_5d": 4.7,
-        "delta_5d": -1.7
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "YOU",
+        "ticker": "WMB",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -11705,37 +11593,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 221.98,
-        "total_gex_usd": -213063912.0,
+        "spot": 229.45,
+        "total_gex_usd": -396457960.0,
         "regime": "short_gamma",
-        "zero_gamma_level": 190.0,
-        "zero_gamma_distance_pct": 14.41,
+        "zero_gamma_level": 205.0,
+        "zero_gamma_distance_pct": 10.66,
         "zero_gamma_found": true,
         "buffer": "safe",
         "expirations_used": [
           "2026-06-05",
           "2026-06-12"
         ],
-        "total_contracts_analyzed": 2539,
+        "total_contracts_analyzed": 2740,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.1034,
-        "call_premium_usd": 22765,
-        "put_premium_usd": 2355,
-        "depth_volume_pc": 1.6576,
-        "call_depth_usd": 249310,
-        "put_depth_usd": 413255,
-        "net_delta_volume": 14.8,
-        "call_delta_volume": 16.3,
-        "put_delta_volume": 1.5,
-        "smile_atm_iv": 0.3232,
-        "smile_skew_b": 0.9342,
-        "smile_curvature_c": 2.7613,
+        "premium_volume_pc": 0.0059,
+        "call_premium_usd": 47620,
+        "put_premium_usd": 280,
+        "depth_volume_pc": 0.6798,
+        "call_depth_usd": 952390,
+        "put_depth_usd": 647430,
+        "net_delta_volume": 28.7,
+        "call_delta_volume": 28.7,
+        "put_delta_volume": 0.0,
+        "smile_atm_iv": 0.3246,
+        "smile_skew_b": 0.4232,
+        "smile_curvature_c": 3.5254,
         "smile_expiration_used": "2026-06-26",
-        "smile_strike_count": 28
+        "smile_strike_count": 40
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -12090,6 +11978,48 @@
       "watchlist_entry_high": 16.0
     },
     {
+      "ticker": "ZETA",
+      "flow": {
+        "score": 2.49,
+        "signal": "bull",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 24.36,
+        "bullish_streak": 0,
+        "avg_score_5d": 5.4,
+        "delta_5d": -2.91
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "ZETA",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
       "ticker": "CMG",
       "flow": {
         "score": 2.01,
@@ -12366,6 +12296,48 @@
       "watchlist_entry_high": null
     },
     {
+      "ticker": "UEC",
+      "flow": {
+        "score": 2.01,
+        "signal": "bull",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 13.44,
+        "bullish_streak": 0,
+        "avg_score_5d": 5.71,
+        "delta_5d": -3.7
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "UEC",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": "2026-06-01",
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
       "ticker": "ABT",
       "flow": {
         "score": 1.5,
@@ -12381,44 +12353,44 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 85.63,
-        "total_gex_usd": 68506537.0,
+        "spot": 86.06,
+        "total_gex_usd": -45722603.0,
         "regime": "neutral",
-        "zero_gamma_level": 81.0,
-        "zero_gamma_distance_pct": 5.41,
+        "zero_gamma_level": 78.0,
+        "zero_gamma_distance_pct": 9.37,
         "zero_gamma_found": true,
         "buffer": "caution",
         "expirations_used": [
           "2026-06-05",
           "2026-06-12"
         ],
-        "total_contracts_analyzed": 15607,
+        "total_contracts_analyzed": 17419,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 2.402,
-        "call_premium_usd": 6120,
-        "put_premium_usd": 14700,
-        "depth_volume_pc": 1.5899,
-        "call_depth_usd": 59705,
-        "put_depth_usd": 94922,
-        "net_delta_volume": 10.2,
-        "call_delta_volume": 10.2,
-        "put_delta_volume": 0.0,
-        "smile_atm_iv": 0.3406,
-        "smile_skew_b": 0.307,
-        "smile_curvature_c": 3.0357,
+        "premium_volume_pc": 15.1591,
+        "call_premium_usd": 770,
+        "put_premium_usd": 11672,
+        "depth_volume_pc": 19.8263,
+        "call_depth_usd": 127135,
+        "put_depth_usd": 2520620,
+        "net_delta_volume": -10.7,
+        "call_delta_volume": 1.1,
+        "put_delta_volume": 11.8,
+        "smile_atm_iv": 0.326,
+        "smile_skew_b": -0.3586,
+        "smile_curvature_c": 5.0886,
         "smile_expiration_used": "2026-06-26",
-        "smile_strike_count": 18
+        "smile_strike_count": 20
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
-        "iv_rank": 78.4,
-        "iv_percentile": 87.0,
+        "iv_rank": 71.3,
+        "iv_percentile": 84.1,
         "earnings_iv_crush_flag": false,
         "history_days": 69
       },
@@ -14099,37 +14071,39 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 69.03,
-        "total_gex_usd": -6390349.0,
+        "spot": 70.3,
+        "total_gex_usd": -9948613.0,
         "regime": "neutral",
-        "zero_gamma_level": 77.5,
-        "zero_gamma_distance_pct": 12.27,
+        "zero_gamma_level": 75.0,
+        "zero_gamma_distance_pct": 6.69,
         "zero_gamma_found": true,
-        "buffer": "safe",
+        "buffer": "caution",
         "expirations_used": [
           "2026-06-18",
           "2026-07-17"
         ],
-        "total_contracts_analyzed": 2728,
+        "total_contracts_analyzed": 3518,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.4189,
-        "call_premium_usd": 1480,
-        "put_premium_usd": 620,
-        "depth_volume_pc": 1.2159,
-        "call_depth_usd": 81070,
-        "put_depth_usd": 98570,
-        "smile_atm_iv": 0.3968,
-        "smile_skew_b": -0.254,
-        "smile_curvature_c": 2.0688,
+        "premium_volume_pc": 15530.0,
+        "call_premium_usd": 0,
+        "put_premium_usd": 15530,
+        "depth_volume_pc": 10.1385,
+        "call_depth_usd": 55335,
+        "put_depth_usd": 561015,
+        "net_delta_volume": -7.4,
+        "call_delta_volume": 0.0,
+        "put_delta_volume": 7.4,
+        "smile_atm_iv": 0.4033,
+        "smile_skew_b": 0.0553,
+        "smile_curvature_c": 1.4612,
         "smile_expiration_used": "2026-07-17",
-        "smile_strike_count": 15
+        "smile_strike_count": 30
       },
       "flow_extra_errors": {
-        "net_delta_volume": "all_strikes_filtered",
         "rv_iv_gap": "insufficient_history"
       },
       "iv_metrics": {
@@ -14227,37 +14201,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 135.53,
-        "total_gex_usd": -192641813.0,
+        "spot": 133.29,
+        "total_gex_usd": -134592649.0,
         "regime": "short_gamma",
-        "zero_gamma_level": 120.0,
-        "zero_gamma_distance_pct": 11.46,
+        "zero_gamma_level": 105.0,
+        "zero_gamma_distance_pct": 21.22,
         "zero_gamma_found": true,
         "buffer": "safe",
         "expirations_used": [
           "2026-06-18",
           "2026-07-17"
         ],
-        "total_contracts_analyzed": 16464,
+        "total_contracts_analyzed": 16462,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 1.4215,
-        "call_premium_usd": 149965,
-        "put_premium_usd": 213180,
-        "depth_volume_pc": 1.0222,
-        "call_depth_usd": 299890,
-        "put_depth_usd": 306560,
-        "net_delta_volume": -32.1,
-        "call_delta_volume": 125.6,
-        "put_delta_volume": 157.7,
-        "smile_atm_iv": 0.308,
-        "smile_skew_b": -0.005,
-        "smile_curvature_c": 2.6372,
+        "premium_volume_pc": 1.57,
+        "call_premium_usd": 78980,
+        "put_premium_usd": 124000,
+        "depth_volume_pc": 0.2311,
+        "call_depth_usd": 903390,
+        "put_depth_usd": 208760,
+        "net_delta_volume": -19.6,
+        "call_delta_volume": 58.0,
+        "put_delta_volume": 77.6,
+        "smile_atm_iv": 0.3369,
+        "smile_skew_b": -0.3428,
+        "smile_curvature_c": 1.4139,
         "smile_expiration_used": "2026-07-17",
-        "smile_strike_count": 23
+        "smile_strike_count": 21
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -15140,17 +15114,17 @@
       "watchlist_entry_high": null
     },
     {
-      "ticker": "WMB",
+      "ticker": "VICI",
       "flow": {
         "score": 0.0,
         "signal": "neutral",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 72.0,
+        "spot_price": 28.03,
         "bullish_streak": 0,
-        "avg_score_5d": -3.9,
-        "delta_5d": 3.9
+        "avg_score_5d": 2.8,
+        "delta_5d": -2.8
       },
       "skew": null,
       "skew_error": "universe_budget_exceeded",
@@ -15163,16 +15137,24 @@
       "iv_metrics": null,
       "vol_regime": null,
       "dilution_risk": {
-        "ticker": "WMB",
+        "ticker": "VICI",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
         "active_offering": false,
-        "shelf_active": false,
+        "shelf_active": true,
         "shelf_plus_run": false,
         "price_run_pct_30d": null,
         "insider_selling_signal": null,
-        "latest_filings": []
+        "latest_filings": [
+          {
+            "type": "effect_registration",
+            "date": "2026-03-06",
+            "source": "sec_edgar",
+            "form": "EFFECT",
+            "summary": "VICI received EFFECT notice; registration statement is effective."
+          }
+        ]
       },
       "earnings_date": null,
       "frozen": false,
@@ -15321,6 +15303,48 @@
       "watchlist_target": 200.0,
       "watchlist_entry_low": 138.0,
       "watchlist_entry_high": 150.0
+    },
+    {
+      "ticker": "XYZ",
+      "flow": {
+        "score": -0.51,
+        "signal": "neutral",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 77.2,
+        "bullish_streak": 0,
+        "avg_score_5d": 1.4,
+        "delta_5d": -1.91
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "XYZ",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
     },
     {
       "ticker": "CRDO",
@@ -15575,6 +15599,48 @@
       "watchlist_entry_high": null
     },
     {
+      "ticker": "YOU",
+      "flow": {
+        "score": -0.99,
+        "signal": "neutral",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 56.74,
+        "bullish_streak": 0,
+        "avg_score_5d": 4.0,
+        "delta_5d": -4.99
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "YOU",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
       "ticker": "MSFT",
       "flow": {
         "score": -1.02,
@@ -15632,32 +15698,34 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 7.99,
-        "total_gex_usd": -1205233.0,
+        "spot": 7.74,
+        "total_gex_usd": -1529048.0,
         "regime": "neutral",
         "zero_gamma_level": 8.0,
-        "zero_gamma_distance_pct": 0.13,
+        "zero_gamma_distance_pct": 3.43,
         "zero_gamma_found": true,
         "buffer": "danger",
         "expirations_used": [
           "2026-06-18",
           "2026-07-17"
         ],
-        "total_contracts_analyzed": 16717,
+        "total_contracts_analyzed": 16249,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 435.0,
+        "premium_volume_pc": 1072.5,
         "call_premium_usd": 0,
-        "put_premium_usd": 435,
-        "depth_volume_pc": 8700.0,
+        "put_premium_usd": 1072,
+        "depth_volume_pc": 11880.0,
         "call_depth_usd": 0,
-        "put_depth_usd": 8700
+        "put_depth_usd": 11880,
+        "net_delta_volume": -6.6,
+        "call_delta_volume": 0.0,
+        "put_delta_volume": 6.6
       },
       "flow_extra_errors": {
-        "net_delta_volume": "all_strikes_filtered",
         "smile_shape": "underdetermined",
         "rv_iv_gap": "insufficient_history"
       },
@@ -16393,17 +16461,67 @@
       "watchlist_entry_high": null
     },
     {
+      "ticker": "TXT",
+      "flow": {
+        "score": -1.5,
+        "signal": "neutral",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 91.76,
+        "bullish_streak": 0,
+        "avg_score_5d": 1.0,
+        "delta_5d": -2.5
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "TXT",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": [
+          {
+            "type": "s-3asr_shelf_registration",
+            "date": "2026-02-25",
+            "source": "sec_edgar",
+            "form": "S-3ASR",
+            "summary": "TXT filed S-3ASR; shelf registration is active/dormant dilution risk."
+          }
+        ]
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
       "ticker": "VFC",
       "flow": {
         "score": -1.5,
         "signal": "neutral",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 17.38,
+        "spot_price": 16.9,
         "bullish_streak": 0,
-        "avg_score_5d": 3.5,
-        "delta_5d": -5.0
+        "avg_score_5d": 2.2,
+        "delta_5d": -3.7
       },
       "skew": null,
       "skew_error": "universe_budget_exceeded",
@@ -16433,48 +16551,6 @@
       "watchlist_target": null,
       "watchlist_entry_low": null,
       "watchlist_entry_high": null
-    },
-    {
-      "ticker": "ZTS",
-      "flow": {
-        "score": -1.5,
-        "signal": "neutral",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 77.77,
-        "bullish_streak": 0,
-        "avg_score_5d": 1.4,
-        "delta_5d": -2.9
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "ZTS",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": "#1 animal health moat. 53% down, P/E 10.5x. EZ fired. Suppressed by stale earnings date BUG. Stop $68.",
-      "watchlist_target": 149.0,
-      "watchlist_entry_low": 74.0,
-      "watchlist_entry_high": 82.0
     },
     {
       "ticker": "OSS",
@@ -18246,6 +18322,48 @@
       "watchlist_entry_high": null
     },
     {
+      "ticker": "ZTS",
+      "flow": {
+        "score": -4.5,
+        "signal": "bear",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 78.25,
+        "bullish_streak": 0,
+        "avg_score_5d": -0.1,
+        "delta_5d": -4.4
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "ZTS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": "#1 animal health moat. 53% down, P/E 10.5x. EZ fired. Suppressed by stale earnings date BUG. Stop $68.",
+      "watchlist_target": 149.0,
+      "watchlist_entry_low": 74.0,
+      "watchlist_entry_high": 82.0
+    },
+    {
       "ticker": "ADI",
       "flow": {
         "score": -5.01,
@@ -18261,37 +18379,37 @@
       "skew": null,
       "skew_error": null,
       "gex": {
-        "spot": 410.48,
-        "total_gex_usd": 10527579.0,
+        "spot": 405.04,
+        "total_gex_usd": 32772873.0,
         "regime": "neutral",
-        "zero_gamma_level": 350.0,
-        "zero_gamma_distance_pct": 14.73,
-        "zero_gamma_found": true,
-        "buffer": "safe",
+        "zero_gamma_level": 405.04,
+        "zero_gamma_distance_pct": 0.0,
+        "zero_gamma_found": false,
+        "buffer": "danger",
         "expirations_used": [
           "2026-06-05",
           "2026-06-12"
         ],
-        "total_contracts_analyzed": 9970,
+        "total_contracts_analyzed": 9943,
         "provider": "thetadata",
         "error_kind": null
       },
       "gex_error": null,
       "flow_extra": {
-        "premium_volume_pc": 0.3251,
-        "call_premium_usd": 139940,
-        "put_premium_usd": 45495,
-        "depth_volume_pc": 0.2223,
-        "call_depth_usd": 2131280,
-        "put_depth_usd": 473790,
-        "net_delta_volume": 11.6,
-        "call_delta_volume": 19.6,
-        "put_delta_volume": 8.1,
-        "smile_atm_iv": 0.4901,
-        "smile_skew_b": -0.2264,
-        "smile_curvature_c": 2.369,
+        "premium_volume_pc": 0.4872,
+        "call_premium_usd": 123350,
+        "put_premium_usd": 60100,
+        "depth_volume_pc": 4.018,
+        "call_depth_usd": 1074035,
+        "put_depth_usd": 4315495,
+        "net_delta_volume": 16.4,
+        "call_delta_volume": 21.7,
+        "put_delta_volume": 5.3,
+        "smile_atm_iv": 0.4703,
+        "smile_skew_b": 0.1935,
+        "smile_curvature_c": 3.2285,
         "smile_expiration_used": "2026-06-26",
-        "smile_strike_count": 70
+        "smile_strike_count": 58
       },
       "flow_extra_errors": {
         "rv_iv_gap": "insufficient_history"
@@ -18484,6 +18602,48 @@
       "vol_regime": null,
       "dilution_risk": {
         "ticker": "EXPE",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
+      "ticker": "VRTX",
+      "flow": {
+        "score": -5.49,
+        "signal": "strong_bear",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 441.19,
+        "bullish_streak": 0,
+        "avg_score_5d": -4.2,
+        "delta_5d": -1.29
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "VRTX",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -18880,17 +19040,17 @@
       "watchlist_entry_high": null
     },
     {
-      "ticker": "VRTX",
+      "ticker": "USB",
       "flow": {
         "score": -6.0,
         "signal": "strong_bear",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
         "td_data_exists": true,
-        "spot_price": 447.54,
+        "spot_price": 54.35,
         "bullish_streak": 0,
-        "avg_score_5d": -3.1,
-        "delta_5d": -2.9
+        "avg_score_5d": -0.3,
+        "delta_5d": -5.7
       },
       "skew": null,
       "skew_error": "universe_budget_exceeded",
@@ -18903,7 +19063,49 @@
       "iv_metrics": null,
       "vol_regime": null,
       "dilution_risk": {
-        "ticker": "VRTX",
+        "ticker": "USB",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "earnings_date": null,
+      "frozen": false,
+      "thesis": null,
+      "watchlist_target": null,
+      "watchlist_entry_low": null,
+      "watchlist_entry_high": null
+    },
+    {
+      "ticker": "YUM",
+      "flow": {
+        "score": -6.0,
+        "signal": "strong_bear",
+        "scan_date": "2026-06-01",
+        "days_ago": 0,
+        "td_data_exists": true,
+        "spot_price": 148.84,
+        "bullish_streak": 0,
+        "avg_score_5d": -3.3,
+        "delta_5d": -2.7
+      },
+      "skew": null,
+      "skew_error": "universe_budget_exceeded",
+      "gex": null,
+      "gex_error": "universe_budget_exceeded",
+      "flow_extra": null,
+      "flow_extra_errors": {
+        "entry": "universe_budget_exceeded"
+      },
+      "iv_metrics": null,
+      "vol_regime": null,
+      "dilution_risk": {
+        "ticker": "YUM",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -19298,48 +19500,6 @@
       "watchlist_target": 330.0,
       "watchlist_entry_low": 191.0,
       "watchlist_entry_high": 212.0
-    },
-    {
-      "ticker": "YUM",
-      "flow": {
-        "score": -7.5,
-        "signal": "strong_bear",
-        "scan_date": "2026-05-29",
-        "days_ago": 3,
-        "td_data_exists": true,
-        "spot_price": 152.0,
-        "bullish_streak": 0,
-        "avg_score_5d": -2.4,
-        "delta_5d": -5.1
-      },
-      "skew": null,
-      "skew_error": "universe_budget_exceeded",
-      "gex": null,
-      "gex_error": "universe_budget_exceeded",
-      "flow_extra": null,
-      "flow_extra_errors": {
-        "entry": "universe_budget_exceeded"
-      },
-      "iv_metrics": null,
-      "vol_regime": null,
-      "dilution_risk": {
-        "ticker": "YUM",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "earnings_date": null,
-      "frozen": false,
-      "thesis": null,
-      "watchlist_target": null,
-      "watchlist_entry_low": null,
-      "watchlist_entry_high": null
     },
     {
       "ticker": "PPL",
@@ -21307,9 +21467,8 @@
     ],
     "timed_out_universe": 0,
     "timed_out_universe_tickers": [],
-    "skipped_held": 7,
+    "skipped_held": 6,
     "skipped_held_tickers": [
-      "NKE",
       "NVAX",
       "OBIO",
       "OPEN",
@@ -21317,11 +21476,8 @@
       "QS",
       "TTD"
     ],
-    "timed_out_held": 2,
-    "timed_out_held_tickers": [
-      "BULL",
-      "CPNG"
-    ],
+    "timed_out_held": 0,
+    "timed_out_held_tickers": [],
     "service_endpoint": "http://localhost:8001/deep_options/<TICKER>",
     "service_note": "Any ticker (held, watchlist, or universe-wide) can be queried live via the deep-options service \u2014 including dropped_tickers above. The service caches 60s and computes fresh on cache miss."
   }
