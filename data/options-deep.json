@@ -130,7 +130,7 @@
       },
       "iv_metrics": {
         "iv_rank": 28.8,
-        "iv_percentile": 34.7,
+        "iv_percentile": 36.1,
         "earnings_iv_crush_flag": false,
         "history_days": 72
       },
@@ -182,7 +182,7 @@
         "iv_rank": null,
         "iv_percentile": null,
         "earnings_iv_crush_flag": false,
-        "history_days": 30
+        "history_days": 31
       },
       "vol_regime": {
         "skew_compression": {
@@ -267,35 +267,15 @@
         "delta_5d": 1.1
       },
       "skew": null,
-      "skew_error": null,
+      "skew_error": "held_budget_exceeded",
       "gex": null,
-      "gex_error": "provider_no_data",
+      "gex_error": "held_budget_exceeded",
       "flow_extra": null,
       "flow_extra_errors": {
-        "premium_volume_pc": "no_spot",
-        "depth_volume_pc": "no_spot",
-        "net_delta_volume": "no_spot",
-        "smile_shape": "no_spot",
-        "rv_iv_gap": "no_spot"
+        "entry": "held_budget_exceeded"
       },
-      "iv_metrics": {
-        "iv_rank": null,
-        "iv_percentile": null,
-        "earnings_iv_crush_flag": false,
-        "history_days": 53
-      },
-      "vol_regime": {
-        "skew_compression": {
-          "rr_today_vp": 2.86,
-          "rr_5d_ago_vp": -3.19,
-          "delta_5d_vp": 6.05,
-          "avg_flow_5d": 7.9,
-          "compression_signal": true,
-          "history_days": 12
-        },
-        "rv_iv_persistence": null,
-        "regime_label": "skew_compression"
-      },
+      "iv_metrics": null,
+      "vol_regime": null,
       "earnings_date": null,
       "frozen": false,
       "thesis": "HELD 60sh @ $28.92 (-26.9%). CEO $148M buy. Flow +8.0 10d. HOLD. Stop $19-20. Do NOT add.",
@@ -432,7 +412,7 @@
         "iv_rank": null,
         "iv_percentile": null,
         "earnings_iv_crush_flag": false,
-        "history_days": 47
+        "history_days": 48
       },
       "vol_regime": {
         "skew_compression": {
@@ -532,7 +512,7 @@
         "iv_rank": null,
         "iv_percentile": null,
         "earnings_iv_crush_flag": false,
-        "history_days": 32
+        "history_days": 33
       },
       "vol_regime": {
         "skew_compression": null,
@@ -4280,7 +4260,7 @@
       },
       "iv_metrics": null,
       "vol_regime": null,
-      "earnings_date": "2026-06-24",
+      "earnings_date": null,
       "frozen": false,
       "thesis": null,
       "watchlist_target": null,
@@ -9024,7 +9004,7 @@
       },
       "iv_metrics": {
         "iv_rank": 71.5,
-        "iv_percentile": 84.7,
+        "iv_percentile": 83.3,
         "earnings_iv_crush_flag": false,
         "history_days": 72
       },
@@ -13513,7 +13493,7 @@
       },
       "iv_metrics": null,
       "vol_regime": null,
-      "earnings_date": "2026-06-22",
+      "earnings_date": null,
       "frozen": false,
       "thesis": "Contrarian portfolio. Flow improved -7.0 to +2.0. Buffett 78. 5d deadline (5/26): if flow turns hostile again, remove.",
       "watchlist_target": 280.0,
@@ -14941,8 +14921,10 @@
     ],
     "timed_out_universe": 0,
     "timed_out_universe_tickers": [],
-    "skipped_held": 0,
-    "skipped_held_tickers": [],
+    "skipped_held": 1,
+    "skipped_held_tickers": [
+      "TTD"
+    ],
     "timed_out_held": 0,
     "timed_out_held_tickers": [],
     "service_endpoint": "http://localhost:8001/deep_options/<TICKER>",
