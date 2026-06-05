@@ -6,14 +6,14 @@
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 379,
-    "earnings_blackout": 6,
+    "below_cutoff": 380,
+    "earnings_blackout": 7,
     "rr_too_low": 32,
     "held": 11,
     "frozen": 2,
     "rescan_below_cutoff_no_note": 17
   },
-  "candidates_evaluated": 431,
+  "candidates_evaluated": 433,
   "picks_count": 1,
   "picks": [
     {
@@ -238,23 +238,25 @@
   ],
   "macro_blocked_count": 0,
   "macro_blocked": [],
-  "flow_led_picks_count": 14,
+  "flow_led_picks_count": 15,
   "flow_led_picks": [
     {
       "ticker": "NFLX",
       "path": "flow_led",
       "source": "sustained",
-      "composite": 40,
+      "composite": 50,
       "convergence_paths": [
         "flow_sustained",
-        "buffett_strong"
+        "buffett_strong",
+        "watchlist_dip"
       ],
-      "tier": 2,
+      "tier": 3,
       "tier_evidence": [
         "flow_sustained",
-        "buffett_strong"
+        "buffett_strong",
+        "watchlist_dip"
       ],
-      "size_class": "standard",
+      "size_class": "full",
       "spot_price": 83.36,
       "entry": {
         "low": 80.86,
@@ -277,6 +279,9 @@
         },
         "buffett_quality_strong": {
           "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
         }
       },
       "dilution_risk": {
@@ -292,7 +297,7 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow +8.7 5d-avg (3 TD days) + Buffett 78 STRONG. no earnings <45d.",
+      "rationale_one_liner": "flow +8.7 5d-avg (3 TD days) + Buffett 78 STRONG + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -304,7 +309,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 8
+      "rank": 7
     },
     {
       "ticker": "ONDS",
@@ -566,7 +571,7 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + Buffett 71 STRONG. no earnings <45d.",
+      "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + Buffett 74 STRONG. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -784,6 +789,71 @@
       "rank": 17
     },
     {
+      "ticker": "SNAP",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained"
+      ],
+      "size_class": "half",
+      "spot_price": 5.76,
+      "entry": {
+        "low": 5.5,
+        "high": 5.8,
+        "mid": 5.65
+      },
+      "target": 7.0,
+      "stop": 5.3,
+      "rr_ratio": 2.7,
+      "rr_planned": 3.86,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 994.4,
+      "suggested_shares": 176,
+      "position_risk_usd": 61.6,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "SNAP",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +9.0 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "Flow deteriorated +12.0 to +4.0. IN ZONE $5.86. Needs 3d flow-extreme re-qual. Monitor only.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-19",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 18
+    },
+    {
       "ticker": "DT",
       "path": "flow_led",
       "source": "sustained",
@@ -847,7 +917,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 18
+      "rank": 19
     },
     {
       "ticker": "RIVN",
@@ -920,7 +990,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 19
+      "rank": 20
     },
     {
       "ticker": "ASTS",
@@ -1000,7 +1070,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 20
+      "rank": 21
     },
     {
       "ticker": "DJT",
@@ -1065,7 +1135,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 21
+      "rank": 22
     },
     {
       "ticker": "HPE",
@@ -1131,7 +1201,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 22
+      "rank": 23
     },
     {
       "ticker": "NXPI",
@@ -1194,7 +1264,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 23
+      "rank": 24
     }
   ],
   "flow_extreme_picks_count": 9,
@@ -1695,7 +1765,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 7
+      "rank": 8
     },
     {
       "ticker": "LTRX",
@@ -1906,6 +1976,77 @@
       "rank": 1
     },
     {
+      "ticker": "NFLX",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "size_class": "full",
+      "spot_price": 83.36,
+      "entry": {
+        "low": 80.86,
+        "high": 83.78,
+        "mid": 82.32
+      },
+      "target": 100.03,
+      "stop": 76.69,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 987.84,
+      "suggested_shares": 12,
+      "position_risk_usd": 67.56,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "NFLX",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +8.7 5d-avg (3 TD days) + Buffett 78 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector Communication Services, Industry unknown",
+        "expires": "2026-06-19",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 7
+    },
+    {
       "ticker": "ONDS",
       "path": "flow_led",
       "source": "sustained",
@@ -2050,72 +2191,6 @@
   ],
   "tier2_picks": [
     {
-      "ticker": "NFLX",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 40,
-      "convergence_paths": [
-        "flow_sustained",
-        "buffett_strong"
-      ],
-      "tier": 2,
-      "tier_evidence": [
-        "flow_sustained",
-        "buffett_strong"
-      ],
-      "size_class": "standard",
-      "spot_price": 83.36,
-      "entry": {
-        "low": 80.86,
-        "high": 83.78,
-        "mid": 82.32
-      },
-      "target": 100.03,
-      "stop": 76.69,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 987.84,
-      "suggested_shares": 12,
-      "position_risk_usd": 67.56,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "buffett_quality_strong": {
-          "score": 20
-        }
-      },
-      "dilution_risk": {
-        "ticker": "NFLX",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "flow +8.7 5d-avg (3 TD days) + Buffett 78 STRONG. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector Communication Services, Industry unknown",
-        "expires": "2026-06-19",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 8
-    },
-    {
       "ticker": "DOCS",
       "path": "flow_led",
       "source": "sustained",
@@ -2233,7 +2308,7 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + Buffett 71 STRONG. no earnings <45d.",
+      "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + Buffett 74 STRONG. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -2311,7 +2386,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 18
+      "rank": 19
     },
     {
       "ticker": "HPE",
@@ -2377,7 +2452,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 22
+      "rank": 23
     }
   ],
   "tier1_picks": [
@@ -2793,7 +2868,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 7
+      "rank": 8
     },
     {
       "ticker": "LTRX",
@@ -3121,6 +3196,71 @@
       "rank": 17
     },
     {
+      "ticker": "SNAP",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained"
+      ],
+      "size_class": "half",
+      "spot_price": 5.76,
+      "entry": {
+        "low": 5.5,
+        "high": 5.8,
+        "mid": 5.65
+      },
+      "target": 7.0,
+      "stop": 5.3,
+      "rr_ratio": 2.7,
+      "rr_planned": 3.86,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 994.4,
+      "suggested_shares": 176,
+      "position_risk_usd": 61.6,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "SNAP",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +9.0 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "Flow deteriorated +12.0 to +4.0. IN ZONE $5.86. Needs 3d flow-extreme re-qual. Monitor only.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-19",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 18
+    },
+    {
       "ticker": "RIVN",
       "path": "flow_led",
       "source": "sustained",
@@ -3191,7 +3331,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 19
+      "rank": 20
     },
     {
       "ticker": "ASTS",
@@ -3271,7 +3411,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 20
+      "rank": 21
     },
     {
       "ticker": "DJT",
@@ -3336,7 +3476,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 21
+      "rank": 22
     }
   ]
 }
