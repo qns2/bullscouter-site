@@ -5,42 +5,42 @@
       "ticker": "PLTR",
       "name": "Palantir Technologies Inc.",
       "price": 136.47,
-      "opus_recommendation": "AVOID",
+      "opus_recommendation": "WATCHLIST",
       "framework": {
         "fcf_yield": {
           "verdict": "fail",
-          "detail": "FCF yield = 1,752,997,120 / 327,161,184,256 = 0.54%, far below the 4% borderline floor. A near-$330B market cap on ~$1.75B FCF leaves almost no cash return for the price paid."
+          "detail": "FCF yield = 1,752,997,120 / 327,161,184,256 = 0.54%, far below the 4% borderline floor. Massive market cap relative to current free cash flow."
         },
         "pe_discount": {
           "verdict": "pass",
-          "detail": "Forward PE 65.79 vs implied PE of 96.42 (target_median_price 200 / forward_eps 2.07428). That is a 31.8% discount to the analyst-target-implied multiple, clearing the 30% pass bar \u2014 though both multiples are extreme in absolute terms."
+          "detail": "Forward PE 65.79 vs implied PE of 96.42 (target_median 200.0 / forward_eps 2.07428) = 31.8% discount, just clearing the 30%+ pass threshold."
         },
         "drawdown": {
           "verdict": "borderline",
-          "detail": "down_from_high_pct = 34.24%, just inside the 20-35% borderline band and a hair under the 35% pass threshold. Currently sits near the 52w low (122.68)."
+          "detail": "Down 34.24% from 52w high (207.52), inside the 20-35% borderline band, just short of the 35% pass line."
         },
         "balance_sheet": {
           "verdict": "pass",
-          "detail": "Net cash positive: total_cash 8,026,413,056 vs total_debt 211,976,992 (+$7.81B, 2.39% of market cap). debt_to_equity 2.477 (<50) and current_ratio 6.907 (>1.2) both pass comfortably."
+          "detail": "Net cash positive: total_cash 8.03B minus total_debt 0.21B = 7.81B net cash. Current ratio 6.907 and D/E 2.477 are both pristine."
         },
         "dividend": {
           "verdict": "borderline",
-          "detail": "No dividend (payout_ratio 0.0, no dividend_yield reported). Per framework, no-dividend counts as neutral/borderline rather than fail."
+          "detail": "No dividend (payout_ratio 0.0); per framework, no-dividend is neutral and scores as borderline (0.5), not a fail."
         },
         "institutional": {
           "verdict": "borderline",
-          "detail": "held_pct_institutions 62.35% (>60% but below the 75% pass bar) and recommendation_mean 1.90 (<3.0). Analyst distribution: 19 buy/strong-buy, 10 hold, 2 sell of 31. Meets borderline, not pass."
+          "detail": "Institutions hold 62.35% (>60% but <75%) and recommendation_mean is 1.90 (<3.0). Meets borderline, fails pass (which needs inst>75%)."
         },
         "score": 3.5
       },
       "ai_exposure": {
         "verdict": "tailwind",
-        "detail": "Palantir's AIP (Artificial Intelligence Platform) is a primary growth driver and direct beneficiary of enterprise/government LLM adoption. Revenue growth of 84.7% and 84% gross margins are consistent with AI-platform demand; AI is structurally a tailwind, not a threat."
+        "detail": "Palantir's AIP (Artificial Intelligence Platform) is core to its commercial growth story; revenue growth of 84.7% and 84% gross margins reflect strong AI-driven enterprise demand. AI is a direct tailwind, though it is also fully priced into the 62.6x P/S multiple."
       },
       "deal_radar": {
         "options_signal": null,
         "capex_exposure": null,
-        "assessment": "No options_history or capex_signals provided in input. From the raw tape only: short_interest is light (3.31% of float, 1.58 days to cover) yet shares_short rose 33.19% MoM (53.2M \u2192 70.8M), a modest uptick in bearish positioning. Price is below both SMA20 (139.51) and SMA50 (140.68) with -9.71% over 90d, indicating a soft technical posture."
+        "assessment": "No options_history or capex_signals provided in input. From the raw data: short interest rose 33.19% month-over-month to 3.31% of float (shares_short 70.8M vs 53.2M prior), but short_ratio_days is only 1.58 \u2014 modest absolute short positioning, no squeeze setup."
       },
       "financials": {
         "current_price": "$136.47",
@@ -49,54 +49,54 @@
       },
       "catalysts_verified": [],
       "catalysts_general": [
-        "Trading 34.2% below the 52-week high and near the 52-week low of $122.68.",
-        "Forward PE (65.79) is ~31.8% below the multiple implied by the median analyst target of $200.",
-        "Revenue growing 84.7% YoY with 84% gross margins and 46.2% operating margins \u2014 rare profitability at this growth rate.",
-        "Fortress balance sheet: $8.0B cash vs $0.21B debt (net cash 2.4% of market cap), current ratio 6.9.",
-        "Median analyst target $200 implies ~47% upside; mean target $183.73 implies ~35% upside (27 analysts, rec_mean 1.90)."
+        "Trading 31.8% below implied analyst PE (forward PE 65.79 vs implied 96.42 from median target 200.0)",
+        "Revenue growing 84.7% YoY with 84% gross margins and 46.2% operating margins \u2014 rare profitable hypergrowth",
+        "Fortress balance sheet: 7.81B net cash, current ratio 6.9, near-zero debt",
+        "Median analyst target 200.0 implies ~47% upside from 136.47; 18 buy + 1 strong buy of 31 analysts",
+        "Short interest jumped 33% MoM to 3.31% of float \u2014 rising skepticism but low absolute level"
       ],
       "downside_scenarios": [
         {
           "price": 122.68,
-          "pe_at_level": "59.1x fwd",
-          "scenario": "Retest of the 52-week low; multiple compresses only modestly, valuation still rich."
+          "pe_at_level": "59.1",
+          "scenario": "Retest of 52-week low; ~10% downside on a growth-multiple compression or weak guidance."
         },
         {
-          "price": 100.0,
-          "pe_at_level": "48.2x fwd",
-          "scenario": "Growth-multiple de-rating on any revenue deceleration; ~27% downside from current."
+          "price": 103.71,
+          "pe_at_level": "50.0",
+          "scenario": "Forward PE compresses to 50x on decelerating revenue growth \u2014 roughly 24% below current."
         },
         {
           "price": 70.0,
-          "pe_at_level": "33.7x fwd",
-          "scenario": "Analyst low target ($70); a broad SaaS/AI multiple reset to ~34x forward earnings, ~49% downside."
+          "pe_at_level": "33.7",
+          "scenario": "Analyst low target (70.0) \u2014 severe multiple reset toward a ~34x forward PE in a risk-off tech selloff, ~49% downside."
         }
       ],
       "ideal_entry": {
-        "price": 100.0,
-        "reasoning": "At ~$100 the forward PE falls to ~48x \u2014 still premium but more defensible for 80%+ growth \u2014 and price would sit ~20% below the 52w low, offering a margin of safety the current 0.54% FCF yield does not. Net cash and high margins make the balance sheet sound; the issue is price, not quality."
+        "price": 110.0,
+        "reasoning": "Below the 52w low with forward PE near 53x \u2014 a level where the value framework's drawdown criterion clears the 35% pass threshold and FCF yield begins to look less punitive. Given the 0.54% FCF yield, only a meaningfully lower price compensates for the rich valuation."
       },
       "comparables": [
         {
           "ticker": "SNOW",
           "forward_pe": "~55x (not in input data)",
-          "growth": "~25-30% rev growth",
-          "note": "Comparable high-multiple infrastructure software; slower growth than PLTR but similar premium valuation. Figures external, not from input."
+          "growth": "lower than PLTR's 84.7%",
+          "note": "Comparable high-multiple infrastructure software; referenced externally, not in input."
         },
         {
-          "ticker": "CRM",
-          "forward_pe": "~22x (not in input data)",
-          "growth": "~9-10% rev growth",
-          "note": "Mature enterprise software benchmark; far cheaper multiple, illustrating how stretched PLTR's P/S of 62.6 is. Figures external."
+          "ticker": "CRWD",
+          "forward_pe": "~65x (not in input data)",
+          "growth": "slower than PLTR",
+          "note": "Similar premium AI/security software multiple; external reference, not in input."
         },
         {
-          "ticker": "MSFT",
-          "forward_pe": "~30x (not in input data)",
-          "growth": "~15% rev growth",
-          "note": "Profitable mega-cap software with AI exposure at a fraction of PLTR's sales multiple. Figures external."
+          "ticker": "DDOG",
+          "forward_pe": "~60x (not in input data)",
+          "growth": "comparable hypergrowth profile",
+          "note": "External comparable for SaaS infrastructure peers; not in input data."
         }
       ],
-      "analyst_take": "Palantir is a high-quality, fast-growing, net-cash AI-platform business \u2014 but it is not a value stock, and against a value framework it scores only 3.5/6, failing decisively on FCF yield (0.54%) with a P/S of 62.6 and P/B of 38.7. The lone 'pass' on PE-discount is relative to an already-extreme analyst-implied 96x multiple, so it flatters rather than de-risks. AVOID at $136 on valuation grounds; revisit nearer $100 where the forward multiple and drawdown begin to offer a margin of safety."
+      "analyst_take": "On a strict value framework PLTR scores 3.5/6 \u2014 it earns marks for a pristine net-cash balance sheet and a technical 31.8% discount to its implied analyst PE, but the 0.54% FCF yield and 62.6x price-to-sales make it the opposite of a value stock. The fundamentals (84.7% revenue growth, 46% operating margins, AI tailwind) are exceptional, yet they are fully priced. WATCHLIST: a high-quality compounder worth owning only on a deeper drawdown toward the low-110s or below."
     }
   ],
   "growth_picks": [
@@ -108,181 +108,181 @@
       "framework": {
         "revenue_growth": {
           "verdict": "borderline",
-          "detail": "revenue_growth 16.6% falls in the 15-30% borderline band \u2014 steady but not high-growth for a mature apparel brand."
+          "detail": "revenue_growth 16.6% falls in the 15-30% borderline band."
         },
         "gross_margins": {
           "verdict": "pass",
-          "detail": "gross_margins 69.9% clears the 65% threshold comfortably \u2014 strong pricing power and premium brand positioning."
+          "detail": "gross_margins 69.9% clears the >=65% threshold; strong luxury brand pricing power."
         },
         "rule_of_40": {
           "verdict": "fail",
-          "detail": "revenue_growth 16.6 + operating_margins 13.37 = 29.97, just under the 30 floor \u2014 narrowly fails Rule of 40."
+          "detail": "revenue_growth 16.6 + operating_margins 13.37 = 29.97, a hair under the 30 borderline cutoff, so fail."
         },
         "earnings_accel": {
           "verdict": "pass",
-          "detail": "earnings_growth 20% exceeds revenue_growth 16.6%, indicating operating leverage (margin expansion on top of growth)."
+          "detail": "earnings_growth 20.0% exceeds revenue_growth 16.6%, indicating operating leverage."
         },
         "capital_efficiency": {
           "verdict": "pass",
-          "detail": "return_on_equity 34.7% is well above the 20% bar \u2014 highly capital-efficient."
+          "detail": "return_on_equity 34.7% well above the >=20% threshold."
         },
         "short_dynamics": {
           "verdict": "fail",
-          "detail": "short_interest_pct 10.22% (>10%) with short_interest_change_pct +9.6% (rising); shares_short rose from 2.94M to 3.22M \u2014 bearish positioning building."
+          "detail": "short_interest_pct 10.22% is >10% AND short_interest_change_pct +9.6% (rising, 2.94M -> 3.22M shares short)."
         },
         "score": 3.5
       },
       "ai_exposure": {
         "verdict": "neutral",
-        "detail": "Premium apparel demand is driven by brand, design, and consumer discretionary spending, not AI. AI offers modest tailwinds in supply-chain optimization, demand forecasting, and personalized marketing, but is neither a core driver nor a threat to the business model."
+        "detail": "Apparel/luxury demand is not directly driven or threatened by AI. Modest back-office tailwind possible (personalization, demand forecasting, marketing), but core brand-equity business is largely AI-insensitive."
       },
       "deal_radar": {
         "options_signal": null,
         "capex_exposure": null,
-        "assessment": "No options_history or capex_signals provided in input. Fundamentals show net cash-positive operations (total_cash 2.06B vs total_debt 3.01B), current_ratio 2.13, and free_cashflow 656M \u2014 financially flexible, but rising short interest is the notable positioning signal."
+        "assessment": "No options_history or capex_signals provided in input. Tradeable context from the numbers: days-to-cover ~6.0 with rising 10.2% short interest creates squeeze potential if the brand beats; FCF of $656M and 24% payout ratio leave capacity for buybacks."
       },
       "financials": {
         "current_price": "$372.85",
         "range_52w": "$258.13 - $393.41",
-        "forward_pe": "18.3"
+        "forward_pe": "18.30"
       },
       "catalysts_verified": [],
       "catalysts_general": [
-        "Trading at $372.85 vs analyst target_mean_price $427 (~14.5% upside) and target_median $438.",
-        "Forward P/E 18.3 vs trailing P/E 24.7 implies expected EPS growth (forward_eps $20.37 vs trailing $15.10).",
-        "Analyst distribution skews bullish: 4 strong_buy + 12 buy vs 2 hold / 1 sell (recommendation_mean 1.63).",
-        "Strong ROE of 34.7% with a conservative 24.2% payout ratio leaves room for buybacks/dividend growth.",
-        "Trading only 5.2% below 52-week high after +13.7% over 50 days \u2014 momentum is positive but entry is near peak."
+        "Trading ~14.5% below mean analyst target of $427 (median $438); 16 of 19 ratings are buy/strong-buy, recommendation_mean 1.63.",
+        "Forward P/E 18.3 vs trailing 24.7 \u2014 forward EPS $20.37 vs trailing $15.10 implies meaningful expected earnings growth.",
+        "ROE 34.7% on 69.9% gross margins signals durable pricing power and brand strength.",
+        "Short interest rose 9.6% MoM to 10.22% with ~6 days to cover \u2014 elevated squeeze risk on any positive surprise.",
+        "Positive FCF $656M and low 24% payout ratio support continued buybacks/dividend growth; current ratio 2.13 is healthy."
       ],
       "downside_scenarios": [
         {
-          "price": 305.54,
-          "pe_at_level": "15.0x forward",
-          "scenario": "Multiple de-rates to 15x forward EPS on consumer-discretionary slowdown."
+          "price": 305.0,
+          "pe_at_level": "15.0x fwd",
+          "scenario": "Multiple compresses toward sector-average ~15x forward EPS ($20.37) on softening discretionary spend."
         },
         {
           "price": 264.8,
-          "pe_at_level": "13.0x forward",
-          "scenario": "Recessionary scenario near 52-week low ($258) as luxury spend contracts."
+          "pe_at_level": "13.0x fwd",
+          "scenario": "Consumer-cyclical drawdown retests the 52w-low zone (~$258) at ~13x forward EPS."
         }
       ],
       "ideal_entry": {
-        "price": 340.0,
-        "reasoning": "A pullback toward the 50-day SMA ($360) and below into the ~16.7x forward-PE zone would offer a better risk/reward than chasing near the 52-week high; current price already 8.7% above the 20-day SMA."
+        "price": 352.0,
+        "reasoning": "Pull back to the sma_50 (~$360) / sma_20 (~$354) confluence rather than chasing within 5% of the 52w high; improves risk/reward toward the $427 mean target."
       },
       "comparables": [
         {
           "ticker": "TPR",
-          "forward_pe": "n/a (not in input)",
-          "growth": "n/a",
-          "note": "Tapestry \u2014 closest US accessible-luxury peer; reference only, not in input data."
+          "forward_pe": "~12x (not in input)",
+          "growth": "low-double-digit (not in input)",
+          "note": "Tapestry \u2014 accessible-luxury peer; trades at a lower multiple, useful valuation benchmark."
         },
         {
           "ticker": "PVH",
-          "forward_pe": "n/a (not in input)",
-          "growth": "n/a",
-          "note": "PVH (Calvin Klein/Tommy Hilfiger) \u2014 apparel peer; reference only, not in input data."
+          "forward_pe": "~8x (not in input)",
+          "growth": "low single digit (not in input)",
+          "note": "Calvin Klein/Tommy owner; cheaper but slower-growth apparel comp."
         },
         {
           "ticker": "CPRI",
           "forward_pe": "n/a (not in input)",
-          "growth": "n/a",
-          "note": "Capri Holdings \u2014 luxury apparel peer; reference only, not in input data."
+          "growth": "negative (not in input)",
+          "note": "Capri \u2014 struggling luxury peer; highlights RL's relative execution strength."
         }
       ],
-      "analyst_take": "RL is a high-quality, cash-generative brand (69.9% gross margin, 34.7% ROE, profitable growth with operating leverage) but scores 3.5/6 on the growth lens: revenue growth is only borderline, Rule of 40 narrowly fails at 29.97, and short interest is elevated at 10.2% and rising. With the stock near its 52-week high and ~14% below consensus targets, it's a WATCHLIST \u2014 wait for a pullback toward the 50-day SMA before committing."
+      "analyst_take": "Ralph Lauren screens as a high-quality, modestly-growing luxury name: best-in-class 70% gross margin and 35% ROE with 20% earnings growth outrunning 16.6% revenue growth. It scores only 3.5/6 on the growth framework because growth is sub-30% and short interest is high and rising, and it sits within 5% of its 52w high \u2014 hence WATCHLIST pending a better entry near the 50-day."
     },
     {
       "ticker": "LHX",
       "name": "L3Harris Technologies, Inc.",
       "price": 302.1,
-      "opus_recommendation": "AVOID",
+      "opus_recommendation": "WATCHLIST",
       "framework": {
         "revenue_growth": {
           "verdict": "pass",
-          "detail": "revenue_growth field is 1.9 (=190% as a decimal), which mechanically passes >=30%. NOTE: this is almost certainly a data anomaly for a mature defense prime \u2014 treat with caution; the value drives an artificially high score on this criterion."
+          "detail": "Input revenue_growth is 1.9 (=190%), which clears >=30%. NOTE: 190% revenue growth is implausible for a defense prime and is almost certainly a data anomaly; per the rules I use the provided number without estimating a replacement, but this 'pass' should be treated with low confidence."
         },
         "gross_margins": {
           "verdict": "fail",
-          "detail": "gross_margins 30.4% is below the 50% floor \u2014 typical of a hardware/defense-contractor cost structure, not a high-margin software grower."
+          "detail": "gross_margins 30.4% is below the 50% fail threshold \u2014 typical of a hardware/defense integrator, weak under a software-style growth screen."
         },
         "rule_of_40": {
           "verdict": "pass",
-          "detail": "revenue_growth 190 + operating_margins 9.73 = 199.7, mechanically >=50. Inflated entirely by the anomalous revenue_growth figure; not a reliable read."
+          "detail": "revenue_growth*100 (190) + operating_margins*100 (9.73) = 199.7 >= 50. Driven entirely by the anomalous revenue_growth figure; low confidence."
         },
         "earnings_accel": {
           "verdict": "fail",
-          "detail": "earnings_growth is -6.1% (<0) \u2014 earnings are contracting, the opposite of the operating leverage this criterion rewards."
+          "detail": "earnings_growth is -6.1% (<0) \u2014 earnings contracting, not profitable growth."
         },
         "capital_efficiency": {
           "verdict": "insufficient_data",
-          "detail": "return_on_equity is not provided in the input for LHX, so capital efficiency cannot be assessed. (book_value $102.78 is given but no ROE.)"
+          "detail": "return_on_equity is not present in the input for LHX, so capital efficiency cannot be scored. (book_value $102.78 and debt_to_equity 34.6 are given, but ROE itself is missing.)"
         },
         "short_dynamics": {
           "verdict": "pass",
-          "detail": "short_interest_pct 1.56% (<5%) and short_interest_change_pct -0.52% (declining); shares_short essentially flat at 2.54M \u2014 no bearish positioning."
+          "detail": "short_interest_pct 1.56% (<5%) and short_interest_change_pct -0.52% (declining, 2.55M -> 2.54M) \u2014 no bearish positioning."
         },
         "score": 3.0
       },
       "ai_exposure": {
         "verdict": "tailwind",
-        "detail": "As a defense prime in space/mission systems, communications & spectrum dominance, and missile solutions, LHX benefits from AI-enabled autonomy, sensor fusion, electronic warfare, and decision-support programs. Rising DoD investment in AI/ML for missile warning, hypersonics, and ISR is a structural demand tailwind."
+        "detail": "Defense prime across Space & Mission Systems, Communications & Spectrum Dominance, and Missile Solutions. AI/autonomy is a structural tailwind \u2014 AI-enabled ISR, autonomous systems, electronic warfare, and missile/space programs benefit from rising defense AI budgets."
       },
       "deal_radar": {
         "options_signal": null,
         "capex_exposure": null,
-        "assessment": "No options_history or capex_signals provided in input. Balance sheet is more levered than RL (total_debt 7.93B vs total_cash 1.0B; enterprise_value 73.9B vs market_cap 56.3B) with a 52.7% payout ratio, leaving less flexibility. Low beta (0.746) reflects defensive characteristics."
+        "assessment": "No options_history or capex_signals provided in input. From the numbers: enterprise_value $73.9B vs market_cap $56.3B reflects $7.9B total debt (debt_to_equity 34.6) \u2014 leveraged but serviceable; low 0.75 beta and 1.66% dividend make it a defensive holding currently in a ~16% drawdown."
       },
       "financials": {
         "current_price": "$302.10",
         "range_52w": "$237.56 - $379.23",
-        "forward_pe": "22.2"
+        "forward_pe": "22.16"
       },
       "catalysts_verified": [],
       "catalysts_general": [
-        "Trading at $302.10, down 20.3% from the 52-week high ($379.23) and 16.5% over the last 90 days \u2014 meaningful pullback.",
-        "Sits ~21% below analyst target_mean_price ($381.95); target_low ($300) is essentially at the current price, capping downside-of-consensus.",
-        "Forward P/E 22.2 vs trailing 32.8 implies expected earnings recovery (forward_eps $13.63 vs trailing $9.21), but current earnings_growth is negative (-6.1%).",
-        "Analyst distribution constructive: 3 strong_buy + 13 buy vs 5 hold, 0 sell (recommendation_mean 1.62).",
-        "Defensive profile: beta 0.746 and 1.66% dividend yield, but 52.7% payout ratio limits dividend-growth runway."
+        "Down 20.3% from the 52w high and weak near-term (-11.9% 50d, -16.5% 90d) \u2014 an oversold defensive setup.",
+        "Trading ~26.4% below mean analyst target of $381.9 (median $390); even the low target ($300) sits at the current price, with 16 of 21 ratings buy/strong-buy.",
+        "Forward P/E 22.2 vs trailing 32.8 \u2014 forward EPS $13.63 vs trailing $9.21 implies analysts expect an earnings recovery despite the current -6.1% earnings_growth.",
+        "Very low, declining short interest (1.56%, 1.65 days to cover) \u2014 no bearish conviction in the float.",
+        "Growth-framework caveats: 30.4% gross margin and negative earnings growth are weak; the provided 190% revenue_growth is anomalous and likely a data error."
       ],
       "downside_scenarios": [
         {
-          "price": 245.39,
-          "pe_at_level": "18.0x forward",
-          "scenario": "Multiple compresses to 18x forward EPS on budget/program timing concerns, near the 52-week low ($237.56)."
+          "price": 245.4,
+          "pe_at_level": "18.0x fwd",
+          "scenario": "Continued de-rating retests the 52w-low area (~$238) at ~18x forward EPS ($13.63) on budget/program concerns."
         },
         {
-          "price": 272.66,
-          "pe_at_level": "20.0x forward",
-          "scenario": "Modest de-rating to 20x forward EPS as earnings contraction persists."
+          "price": 204.5,
+          "pe_at_level": "15.0x fwd",
+          "scenario": "Defense-multiple compression to ~15x forward EPS amid execution misses or earnings continuing to contract."
         }
       ],
       "ideal_entry": {
-        "price": 259.0,
-        "reasoning": "Near the 52-week-low zone and ~19x forward EPS, where the dividend yield and defense backlog provide better support; current price is still in a clear downtrend (below both the 20-day SMA $308 and 50-day SMA $325)."
+        "price": 268.0,
+        "reasoning": "Accumulate near the 52w-low support band (~$238-$270) where the analyst low target ($300) already exceeds price, rather than mid-channel; valuation skew is favorable given the 26% gap to mean target."
       },
       "comparables": [
         {
           "ticker": "NOC",
-          "forward_pe": "n/a (not in input)",
-          "growth": "n/a",
-          "note": "Northrop Grumman \u2014 direct space/missile defense peer; reference only, not in input data."
+          "forward_pe": "~18x (not in input)",
+          "growth": "mid-single-digit (not in input)",
+          "note": "Northrop Grumman \u2014 closest space/missile peer; comparable defensive multiple."
         },
         {
           "ticker": "GD",
-          "forward_pe": "n/a (not in input)",
-          "growth": "n/a",
-          "note": "General Dynamics \u2014 defense prime peer; reference only, not in input data."
+          "forward_pe": "~18x (not in input)",
+          "growth": "high-single-digit (not in input)",
+          "note": "General Dynamics \u2014 diversified prime, similar capital-efficiency profile."
         },
         {
           "ticker": "RTX",
-          "forward_pe": "n/a (not in input)",
-          "growth": "n/a",
-          "note": "RTX (Raytheon) \u2014 missiles/defense peer; reference only, not in input data."
+          "forward_pe": "~20x (not in input)",
+          "growth": "high-single-digit (not in input)",
+          "note": "RTX \u2014 large-cap defense/aero comp; LHX trades roughly in line on forward P/E."
         }
       ],
-      "analyst_take": "On the growth framework LHX nominally scores 3.0/6, but that score is hollow: two of its three passes (revenue growth and Rule of 40) rest on a clearly anomalous revenue_growth value of 1.9 (190%), while the real fundamentals show negative earnings growth (-6.1%), sub-50% gross margins, and missing ROE. It's a defensive defense prime in a downtrend with genuine AI/defense tailwinds, but as a *growth* candidate it doesn't qualify \u2014 AVOID until earnings re-accelerate and a better entry near the 52-week low appears."
+      "analyst_take": "L3Harris is a defensive aerospace/defense name in a ~20% drawdown with strong analyst support (26% to mean target) and AI/defense-budget tailwinds, but it scores poorly on a growth framework (3.0/6): 30% gross margins, negative earnings growth, missing ROE, and a non-credible 190% revenue_growth figure that I flag rather than trust. It's a value/quality-recovery setup miscast in a growth screen, so WATCHLIST near 52w-low support rather than BUY."
     }
   ]
 }
