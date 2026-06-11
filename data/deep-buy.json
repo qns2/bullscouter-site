@@ -6,14 +6,14 @@
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 235,
+    "below_cutoff": 231,
     "earnings_blackout": 3,
-    "rr_too_low": 13,
+    "rr_too_low": 15,
     "held": 11,
     "frozen": 1,
     "rescan_below_cutoff_no_note": 19
   },
-  "candidates_evaluated": 264,
+  "candidates_evaluated": 262,
   "picks_count": 1,
   "picks": [
     {
@@ -56,12 +56,12 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": null,
+        "price_run_pct_30d": -28.06,
         "insider_selling_signal": null,
         "latest_filings": []
       },
       "rationale_one_liner": "Tier 2 BUY conf 100 + Buffett quality. no earnings <45d.",
-      "watchlist_thesis": "MIDDAY UPGRADE: in zone at $293.78. Quad convergence P1+P3+P4+P5 Buffett 88. Goldman SELL risk \u2014 half size 5sh GTC $295.",
+      "watchlist_thesis": "Quad convergence P1+P3+P4+P5 Buffett 88. Goldman SELL risk \u2014 half size 5sh GTC $295. Score overflow (105 pre-cap).",
       "rank": 1,
       "macro_filter": {
         "pass": true,
@@ -78,7 +78,7 @@
       }
     }
   ],
-  "oracle_watch_count": 11,
+  "oracle_watch_count": 12,
   "oracle_watch": [
     {
       "ticker": "FOUR",
@@ -107,25 +107,38 @@
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "CEG",
-      "composite": 5,
+      "ticker": "RYAN",
+      "composite": 20,
       "convergence_paths": [
-        "gex_long_safe"
+        "path3_strong_candidate"
       ],
-      "spot_price": 242.3,
+      "spot_price": 34.67,
       "oracle_note": {
-        "text": "ENTRY_ZONE $251 near floor. TMI restart + MSFT 20yr PPA. Nuclear AI structural. Dual-expert convergence. Limit $248.",
+        "text": "Triple convergence P1+P3+P4. Founder $4.2M cluster buy Jun 9. IN zone $33.34. Need flow >= +5 to trigger.",
         "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
     },
     {
       "ticker": "ACM",
-      "composite": 0,
-      "convergence_paths": [],
+      "composite": 10,
+      "convergence_paths": [
+        "path3_strong_candidate"
+      ],
       "spot_price": 70.85,
       "oracle_note": {
         "text": "HELD buy list -1.3%. CEO+CFO buy May 14 @ $71. IN ZONE $68-74. Insider thesis intact. +5 conf.",
+        "written_at": "2026-06-11"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "CEG",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 242.3,
+      "oracle_note": {
+        "text": "ENTRY_ZONE $251 near floor. TMI restart + MSFT 20yr PPA. Nuclear AI structural. Dual-expert convergence. Limit $248.",
         "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
@@ -175,12 +188,12 @@
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "RYAN",
+      "ticker": "STRL",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 34.67,
+      "spot_price": 770.25,
       "oracle_note": {
-        "text": "Triple convergence P1+P3+P4. Founder $4.2M cluster buy Jun 9. IN zone $33.34. Need flow >= +5 to trigger.",
+        "text": "RESCAN. Assessor SB HIGH FV $930. AI datacenter+fab construction pure-play. E-Infra +173.9%. Only 6 analysts.",
         "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
@@ -212,6 +225,77 @@
   "macro_blocked": [],
   "flow_led_picks_count": 14,
   "flow_led_picks": [
+    {
+      "ticker": "B",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "size_class": "full",
+      "spot_price": 37.19,
+      "entry": {
+        "low": 36.07,
+        "high": 37.38,
+        "mid": 36.73
+      },
+      "target": 44.63,
+      "stop": 34.21,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.14,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 991.71,
+      "suggested_shares": 27,
+      "position_risk_usd": 68.04,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "B",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -3.28,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +9.1 5d-avg (4 TD days) + Buffett 93 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 4
+    },
     {
       "ticker": "MSFT",
       "path": "flow_led",
@@ -265,7 +349,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -6.02,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -281,73 +365,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 4
-    },
-    {
-      "ticker": "B",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 40,
-      "convergence_paths": [
-        "flow_sustained",
-        "buffett_strong"
-      ],
-      "tier": 2,
-      "tier_evidence": [
-        "flow_sustained",
-        "buffett_strong"
-      ],
-      "size_class": "standard",
-      "spot_price": 37.19,
-      "entry": {
-        "low": 36.07,
-        "high": 37.38,
-        "mid": 36.73
-      },
-      "target": 44.63,
-      "stop": 34.21,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.14,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 991.71,
-      "suggested_shares": 27,
-      "position_risk_usd": 68.04,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "buffett_quality_strong": {
-          "score": 20
-        }
-      },
-      "dilution_risk": {
-        "ticker": "B",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "flow +9.1 5d-avg (4 TD days) + Buffett 93 STRONG. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-15",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 7
+      "rank": 5
     },
     {
       "ticker": "LYFT",
@@ -464,7 +482,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 72.7,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -530,7 +548,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 5.14,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -857,7 +875,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 4.85,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1131,7 +1149,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -0.1,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1426,7 +1444,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 5
+      "rank": 6
     },
     {
       "ticker": "APPS",
@@ -1479,7 +1497,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": null,
+        "price_run_pct_30d": 203.26,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1495,7 +1513,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 6
+      "rank": 7
     },
     {
       "ticker": "HLIT",
@@ -1823,6 +1841,77 @@
       "rank": 3
     },
     {
+      "ticker": "B",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "size_class": "full",
+      "spot_price": 37.19,
+      "entry": {
+        "low": 36.07,
+        "high": 37.38,
+        "mid": 36.73
+      },
+      "target": 44.63,
+      "stop": 34.21,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.14,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 991.71,
+      "suggested_shares": 27,
+      "position_risk_usd": 68.04,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "B",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -3.28,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +9.1 5d-avg (4 TD days) + Buffett 93 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 4
+    },
+    {
       "ticker": "MSFT",
       "path": "flow_led",
       "source": "sustained",
@@ -1875,7 +1964,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -6.02,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1891,7 +1980,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 4
+      "rank": 5
     },
     {
       "ticker": "LYFT",
@@ -1963,72 +2052,6 @@
   ],
   "tier2_picks": [
     {
-      "ticker": "B",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 40,
-      "convergence_paths": [
-        "flow_sustained",
-        "buffett_strong"
-      ],
-      "tier": 2,
-      "tier_evidence": [
-        "flow_sustained",
-        "buffett_strong"
-      ],
-      "size_class": "standard",
-      "spot_price": 37.19,
-      "entry": {
-        "low": 36.07,
-        "high": 37.38,
-        "mid": 36.73
-      },
-      "target": 44.63,
-      "stop": 34.21,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.14,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 991.71,
-      "suggested_shares": 27,
-      "position_risk_usd": 68.04,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "buffett_quality_strong": {
-          "score": 20
-        }
-      },
-      "dilution_risk": {
-        "ticker": "B",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "flow +9.1 5d-avg (4 TD days) + Buffett 93 STRONG. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-15",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "rank": 7
-    },
-    {
       "ticker": "HPE",
       "path": "flow_led",
       "source": "sustained",
@@ -2076,7 +2099,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 72.7,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -2142,7 +2165,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 5.14,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -2555,7 +2578,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 5
+      "rank": 6
     },
     {
       "ticker": "APPS",
@@ -2608,7 +2631,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": null,
+        "price_run_pct_30d": 203.26,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -2624,7 +2647,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 6
+      "rank": 7
     },
     {
       "ticker": "HLIT",
@@ -3047,7 +3070,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 4.85,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
