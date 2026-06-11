@@ -1,86 +1,21 @@
 {
   "date": "2026-06-11",
-  "version": "2.32.0",
+  "version": "2.32.6",
   "regime_label": null,
   "regime_score": null,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 205,
+    "below_cutoff": 235,
     "earnings_blackout": 3,
-    "rr_too_low": 11,
+    "rr_too_low": 13,
     "held": 11,
-    "frozen": 2,
-    "rescan_below_cutoff_no_note": 8
+    "frozen": 1,
+    "rescan_below_cutoff_no_note": 19
   },
-  "candidates_evaluated": 234,
-  "picks_count": 2,
+  "candidates_evaluated": 264,
+  "picks_count": 1,
   "picks": [
-    {
-      "ticker": "ADSK",
-      "composite": 45,
-      "convergence_paths": [
-        "path1_buy",
-        "path5_strong_quality",
-        "gex_long_safe"
-      ],
-      "spot_price": 221.28,
-      "entry": {
-        "low": 215.0,
-        "high": 225.0,
-        "mid": 220.0
-      },
-      "target": 265.54,
-      "stop": 203.58,
-      "rr_ratio": 2.5,
-      "rr_planned": 2.77,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 880.0,
-      "suggested_shares": 4,
-      "position_risk_usd": 65.68,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "path1": {
-          "score": 25
-        },
-        "path5": {
-          "score": 15
-        },
-        "gex": {
-          "score": 5
-        }
-      },
-      "dilution_risk": {
-        "ticker": "ADSK",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "Tier 5 BUY conf 100 + Buffett quality. no earnings <45d.",
-      "watchlist_thesis": "P1 BUY 99/100 OVERFITTING RISK. Value profile 20% WR. Anti-predictive components inflate score. Post-ADBE earnings only.",
-      "rank": 1,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-06-15",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "oracle_note": {
-        "text": "P1 BUY 99/100 overfitting \u2014 value 20% WR, momentum_bonus+breakout_pattern anti-predictive inflate score. Post-earnings only.",
-        "written_at": "2026-06-10"
-      }
-    },
     {
       "ticker": "INTU",
       "composite": 40,
@@ -127,7 +62,7 @@
       },
       "rationale_one_liner": "Tier 2 BUY conf 100 + Buffett quality. no earnings <45d.",
       "watchlist_thesis": "MIDDAY UPGRADE: in zone at $293.78. Quad convergence P1+P3+P4+P5 Buffett 88. Goldman SELL risk \u2014 half size 5sh GTC $295.",
-      "rank": 2,
+      "rank": 1,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
@@ -138,39 +73,13 @@
         "override_applied": false
       },
       "oracle_note": {
-        "text": "MIDDAY: in zone $293.78. Quad convergence P1+P3+P4+P5 Buffett 88. Goldman SELL caveat \u2014 half size. +15 conf (max).",
-        "written_at": "2026-06-10"
+        "text": "Quad convergence P1+P3+P4+P5 Buffett 88. Assessor BUY MED FV $420. Half-size 5sh GTC $295. Score overflow 105.",
+        "written_at": "2026-06-11"
       }
     }
   ],
-  "oracle_watch_count": 17,
+  "oracle_watch_count": 11,
   "oracle_watch": [
-    {
-      "ticker": "ACM",
-      "composite": 20,
-      "convergence_paths": [
-        "path3_strong_candidate"
-      ],
-      "spot_price": 70.85,
-      "oracle_note": {
-        "text": "HELD buy list. CEO+CFO buy May 14 @ $71. DoD +50%. IN ZONE $68-74 at $70.85. Insider thesis intact. +5 conf.",
-        "written_at": "2026-06-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "DOCU",
-      "composite": 20,
-      "convergence_paths": [
-        "path3_strong_candidate"
-      ],
-      "spot_price": 45.13,
-      "oracle_note": {
-        "text": "P3 SC 75 + P4 ENTRY_ZONE+DIP. 2-path convergence but no flow data. Monitor only, needs flow >+5 to act.",
-        "written_at": "2026-06-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
     {
       "ticker": "FOUR",
       "composite": 20,
@@ -179,8 +88,8 @@
       ],
       "spot_price": 35.63,
       "oracle_note": {
-        "text": "CEO $23.9M buy + P3 SC 77. Fwd PE 5.9x. BELOW zone at $37.66 (zone $40-44). Wait for spot + flow. +5 conf.",
-        "written_at": "2026-06-10"
+        "text": "Strongest P3 case. CEO $23.9M at $41 ABOVE market. Fwd PE 5.9x. BELOW zone $35 vs $40-44. Wait $40 + flow >= +7.",
+        "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
     },
@@ -190,23 +99,10 @@
       "convergence_paths": [
         "path3_strong_candidate"
       ],
-      "spot_price": 10.79,
+      "spot_price": 10.33,
       "oracle_note": {
-        "text": "HELD buy list at -6.2%. Best empirical contrarian 66.7% WR (n=39). 4% above -10% stop. Hold on WR strength.",
-        "written_at": "2026-06-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "RYAN",
-      "composite": 20,
-      "convergence_paths": [
-        "path3_strong_candidate"
-      ],
-      "spot_price": 34.67,
-      "oracle_note": {
-        "text": "UPGRADED from blocklist. Assessor found founder $4.2M cluster buy Jun 9. KBW Outperform $44. Monitor, flow >+5 to enter.",
-        "written_at": "2026-06-10"
+        "text": "HELD buy list -3.7%. Best empirical contrarian 66.7% WR (n=39). Within normal drawdown. Hold on WR strength.",
+        "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
     },
@@ -218,19 +114,30 @@
       ],
       "spot_price": 242.3,
       "oracle_note": {
-        "text": "ENTRY_ZONE $250.67 near floor. FERC resolved. TMI restart 2027. Microsoft PPA. Nuclear AI structural. Limit $248-250.",
-        "written_at": "2026-06-10"
+        "text": "ENTRY_ZONE $251 near floor. TMI restart + MSFT 20yr PPA. Nuclear AI structural. Dual-expert convergence. Limit $248.",
+        "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "AEM",
+      "ticker": "ACM",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 152.48,
+      "spot_price": 70.85,
       "oracle_note": {
-        "text": "P1 BUY quality_growth but GLD -8.4% 20d. Gold correction not operational. -5 conf until gold stabilizes.",
-        "written_at": "2026-06-10"
+        "text": "HELD buy list -1.3%. CEO+CFO buy May 14 @ $71. IN ZONE $68-74. Insider thesis intact. +5 conf.",
+        "written_at": "2026-06-11"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "GEHC",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 63.76,
+      "oracle_note": {
+        "text": "Quality compounder. Buffett 85+. Healthcare rotation XLV +5.6%/5d. Defensive sector tailwind. +8 conf.",
+        "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
     },
@@ -240,8 +147,8 @@
       "convergence_paths": [],
       "spot_price": 62.47,
       "oracle_note": {
-        "text": "ENTRY_ZONE $64.50, Elliott activist, flow +9.0. Conditional: only if flow >=+7 at open. Limit $63.50. +5 conf.",
-        "written_at": "2026-06-10"
+        "text": "Best non-binary entry. Elliott activist + IRS. Fwd PE 4.6x. Flow +9.0. Triple alert ENTRY+ABS+DIP. GTC $62-64.",
+        "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
     },
@@ -249,21 +156,10 @@
       "ticker": "HALO",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 71.48,
+      "spot_price": 70.5,
       "oracle_note": {
-        "text": "#1 PICK. PDUFA Jun 28 (18d). Flow avg +8.9 sustained. ENTRY_ZONE $64-72. Not in zone today \u2014 watch for dip.",
-        "written_at": "2026-06-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "NOC",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 548.67,
-      "oracle_note": {
-        "text": "ENTRY_ZONE at zone floor $540.81. B-21 + Golden Dome structural. Heatmap 79. Assessor BUY MED $640. Non-binary.",
-        "written_at": "2026-06-10"
+        "text": "#1 watchlist pick. PDUFA Jun 28 (17d). Flow avg +8.9. Healthcare XLV +5.6%/5d rotation tailwind. GTC $66-68.",
+        "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
     },
@@ -271,10 +167,21 @@
       "ticker": "ROP",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 335.37,
+      "spot_price": 334.1,
       "oracle_note": {
-        "text": "Assessor SB HIGH $455 FV. Decade-low Fwd PE 14. Q1 +39% EPS beat. ENTRY_ZONE $333.75 today. Quality compounder.",
-        "written_at": "2026-06-10"
+        "text": "Assessor SB HIGH FV $450. Decade-low Fwd PE 14. Q1 +39% EPS beat. ENTRY_ZONE $335. Quality compounder.",
+        "written_at": "2026-06-11"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "RYAN",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 34.67,
+      "oracle_note": {
+        "text": "Triple convergence P1+P3+P4. Founder $4.2M cluster buy Jun 9. IN zone $33.34. Need flow >= +5 to trigger.",
+        "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
     },
@@ -284,8 +191,8 @@
       "convergence_paths": [],
       "spot_price": 15.77,
       "oracle_note": {
-        "text": "#1 CATALYST. PDUFA Jun 30, heatmap 72, 4-path convergence, flow +9.0 7d. ENTRY_ZONE $15.73. Exceeds 3-path gate.",
-        "written_at": "2026-06-10"
+        "text": "#1 catalyst. PDUFA Jun 30 (19d). 4-path convergence. THRIVE-2: 54% vs 24% CAS. No AdCom. 13/14 Buy. GTC $15-15.50.",
+        "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
     },
@@ -293,61 +200,17 @@
       "ticker": "VRT",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 289.52,
+      "spot_price": 280.98,
       "oracle_note": {
-        "text": "Assessor SB HIGH. $15B backlog, 2.9x book-to-bill, liquid cooling monopoly. Already up 30%. Monitor for pullback.",
-        "written_at": "2026-06-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "ZTS",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 81.29,
-      "oracle_note": {
-        "text": "#1 non-binary entry. Animal health moat. 53% down P/E 10.5x. ENTRY_ZONE $78.82. Limit $77.50. Best signal type (58% WR).",
-        "written_at": "2026-06-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "AGIO",
-      "composite": -10,
-      "convergence_paths": [],
-      "spot_price": 27.44,
-      "oracle_note": {
-        "text": "SCANNER BLIND SPOT. EHA plenary Jun 13 RISE UP sickle cell. AT ZONE FLOOR $27.44. 3-day binary catalyst. $700 max.",
-        "written_at": "2026-06-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "APPS",
-      "composite": -10,
-      "convergence_paths": [],
-      "spot_price": 9.35,
-      "oracle_note": {
-        "text": "Deep Buy T1 flow-led. One of only 2 tradeable T1 picks (with B). Verify flow freshness before action.",
-        "written_at": "2026-06-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "AUPH",
-      "composite": -10,
-      "convergence_paths": [],
-      "spot_price": 15.66,
-      "oracle_note": {
-        "text": "SCANNER BLIND SPOT. CEO $12.5M open-market buy \u2014 largest in recent history. Phase 3 kidney >50% risk reduction. P/E 7.3.",
-        "written_at": "2026-06-10"
+        "text": "RESCAN. Assessor SB HIGH FV $350. $15B backlog 2.9x B2B. AI datacenter cooling monopoly. 26% off high.",
+        "written_at": "2026-06-11"
       },
       "filter_reason": "below_cutoff"
     }
   ],
   "macro_blocked_count": 0,
   "macro_blocked": [],
-  "flow_led_picks_count": 11,
+  "flow_led_picks_count": 14,
   "flow_led_picks": [
     {
       "ticker": "MSFT",
@@ -402,7 +265,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": null,
+        "price_run_pct_30d": -6.02,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -418,7 +281,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 3
+      "rank": 4
     },
     {
       "ticker": "B",
@@ -474,10 +337,7 @@
       },
       "rationale_one_liner": "flow +9.1 5d-avg (4 TD days) + Buffett 93 STRONG. no earnings <45d.",
       "watchlist_thesis": null,
-      "oracle_note": {
-        "text": "Deep Buy T1 flow-led. Barnes Group aerospace. One of only 2 tradeable T1 picks. Verify flow freshness.",
-        "written_at": "2026-06-10"
-      },
+      "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
@@ -487,7 +347,74 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 5
+      "rank": 7
+    },
+    {
+      "ticker": "LYFT",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_strong"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_strong",
+        "path3_strong"
+      ],
+      "size_class": "full",
+      "spot_price": 13.87,
+      "entry": {
+        "low": 13.45,
+        "high": 13.94,
+        "mid": 13.7
+      },
+      "target": 16.64,
+      "stop": 12.76,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 986.4,
+      "suggested_shares": 72,
+      "position_risk_usd": 67.68,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        }
+      },
+      "dilution_risk": {
+        "ticker": "LYFT",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +8.5 5d-avg (3 TD days) + Buffett 67 STRONG. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 8
     },
     {
       "ticker": "HPE",
@@ -537,7 +464,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 74.25,
+        "price_run_pct_30d": 72.7,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -553,7 +480,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 10
+      "rank": 13
     },
     {
       "ticker": "SIRI",
@@ -603,7 +530,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 3.35,
+        "price_run_pct_30d": 5.14,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -619,7 +546,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 11
+      "rank": 14
     },
     {
       "ticker": "DT",
@@ -685,7 +612,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 12
+      "rank": 15
     },
     {
       "ticker": "CALY",
@@ -751,7 +678,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 13
+      "rank": 16
     },
     {
       "ticker": "DJT",
@@ -816,7 +743,137 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 14
+      "rank": 17
+    },
+    {
+      "ticker": "DRTS",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained"
+      ],
+      "size_class": "half",
+      "spot_price": 8.93,
+      "entry": {
+        "low": 8.66,
+        "high": 8.97,
+        "mid": 8.82
+      },
+      "target": 10.72,
+      "stop": 8.22,
+      "rr_ratio": 2.52,
+      "rr_planned": 3.19,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 996.66,
+      "suggested_shares": 113,
+      "position_risk_usd": 67.8,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "DRTS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +9.0 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "EXITED 5/11. Post-earnings at $10.03 (+11.9% from exit). Clean execution. Rebuy $7-7.50 still stands.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 18
+    },
+    {
+      "ticker": "IT",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained"
+      ],
+      "size_class": "half",
+      "spot_price": 170.13,
+      "entry": {
+        "low": 165.03,
+        "high": 170.98,
+        "mid": 168.0
+      },
+      "target": 204.16,
+      "stop": 156.52,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 840.0,
+      "suggested_shares": 5,
+      "position_risk_usd": 57.4,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "IT",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": 4.85,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +9.0 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 19
     },
     {
       "ticker": "HIMS",
@@ -881,7 +938,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 15
+      "rank": 20
     },
     {
       "ticker": "NTNX",
@@ -947,7 +1004,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 16
+      "rank": 21
     },
     {
       "ticker": "ASTS",
@@ -1027,7 +1084,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 17
+      "rank": 22
     },
     {
       "ticker": "PTC",
@@ -1074,7 +1131,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -0.25,
+        "price_run_pct_30d": -0.1,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1090,10 +1147,10 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 18
+      "rank": 23
     }
   ],
-  "flow_extreme_picks_count": 7,
+  "flow_extreme_picks_count": 9,
   "flow_extreme_picks": [
     {
       "ticker": "BETR",
@@ -1228,6 +1285,85 @@
       "rank": 2
     },
     {
+      "ticker": "SWKS",
+      "path": "flow_extreme",
+      "source": "extreme",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_extreme",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_extreme",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "size_class": "half",
+      "spot_price": 79.0,
+      "entry": {
+        "low": 76.63,
+        "high": 79.39,
+        "mid": 78.01
+      },
+      "target": 94.8,
+      "stop": 72.68,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 936.12,
+      "suggested_shares": 12,
+      "position_risk_usd": 63.96,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "buffett_quality": {
+          "score": 10
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "SWKS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": true,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": [
+          {
+            "date": "2026-05-29",
+            "type": "effect_registration",
+            "form": "EFFECT",
+            "summary": "SWKS received EFFECT notice; registration statement is effective.",
+            "source": "sec_edgar"
+          }
+        ]
+      },
+      "rationale_one_liner": "flow-extreme: 13d streak, P/C 0.110 (9:1 calls) + Buffett 47 + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "STOP $74.50 BREACHED 6/1. EXIT 25sh at market open. Loss ~$90. Non-negotiable.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 3
+    },
+    {
       "ticker": "PLUG",
       "path": "flow_extreme",
       "source": "extreme",
@@ -1290,7 +1426,76 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 4
+      "rank": 5
+    },
+    {
+      "ticker": "APPS",
+      "path": "flow_extreme",
+      "source": "extreme+sustained",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_extreme",
+        "flow_sustained"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained",
+        "flow_extreme"
+      ],
+      "size_class": "half",
+      "spot_price": 9.35,
+      "entry": {
+        "low": 9.07,
+        "high": 9.4,
+        "mid": 9.23
+      },
+      "target": 11.22,
+      "stop": 8.88,
+      "rr_ratio": 3.98,
+      "rr_planned": 5.59,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 996.84,
+      "suggested_shares": 108,
+      "position_risk_usd": 37.8,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "flow_sustained": {
+          "score": 20
+        },
+        "gex_danger": {
+          "score": -10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "APPS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow-extreme: 13d streak, P/C 0.101 (10:1 calls) + flow +10.5 5d-avg (5 TD days). no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 6
     },
     {
       "ticker": "HLIT",
@@ -1351,7 +1556,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 6
+      "rank": 9
     },
     {
       "ticker": "LTRX",
@@ -1412,7 +1617,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 7
+      "rank": 10
     },
     {
       "ticker": "TSSI",
@@ -1473,7 +1678,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 8
+      "rank": 11
     },
     {
       "ticker": "ARXS",
@@ -1534,10 +1739,89 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 9
+      "rank": 12
     }
   ],
   "tier3_picks": [
+    {
+      "ticker": "SWKS",
+      "path": "flow_extreme",
+      "source": "extreme",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_extreme",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_extreme",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "size_class": "half",
+      "spot_price": 79.0,
+      "entry": {
+        "low": 76.63,
+        "high": 79.39,
+        "mid": 78.01
+      },
+      "target": 94.8,
+      "stop": 72.68,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 936.12,
+      "suggested_shares": 12,
+      "position_risk_usd": 63.96,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "buffett_quality": {
+          "score": 10
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "SWKS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": true,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": [
+          {
+            "date": "2026-05-29",
+            "type": "effect_registration",
+            "form": "EFFECT",
+            "summary": "SWKS received EFFECT notice; registration statement is effective.",
+            "source": "sec_edgar"
+          }
+        ]
+      },
+      "rationale_one_liner": "flow-extreme: 13d streak, P/C 0.110 (9:1 calls) + Buffett 47 + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "STOP $74.50 BREACHED 6/1. EXIT 25sh at market open. Loss ~$90. Non-negotiable.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 3
+    },
     {
       "ticker": "MSFT",
       "path": "flow_led",
@@ -1591,7 +1875,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": null,
+        "price_run_pct_30d": -6.02,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1607,7 +1891,74 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 3
+      "rank": 4
+    },
+    {
+      "ticker": "LYFT",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_strong"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_strong",
+        "path3_strong"
+      ],
+      "size_class": "full",
+      "spot_price": 13.87,
+      "entry": {
+        "low": 13.45,
+        "high": 13.94,
+        "mid": 13.7
+      },
+      "target": 16.64,
+      "stop": 12.76,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 986.4,
+      "suggested_shares": 72,
+      "position_risk_usd": 67.68,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        }
+      },
+      "dilution_risk": {
+        "ticker": "LYFT",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +8.5 5d-avg (3 TD days) + Buffett 67 STRONG. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 8
     }
   ],
   "tier2_picks": [
@@ -1665,10 +2016,7 @@
       },
       "rationale_one_liner": "flow +9.1 5d-avg (4 TD days) + Buffett 93 STRONG. no earnings <45d.",
       "watchlist_thesis": null,
-      "oracle_note": {
-        "text": "Deep Buy T1 flow-led. Barnes Group aerospace. One of only 2 tradeable T1 picks. Verify flow freshness.",
-        "written_at": "2026-06-10"
-      },
+      "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
@@ -1678,7 +2026,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 5
+      "rank": 7
     },
     {
       "ticker": "HPE",
@@ -1728,7 +2076,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 74.25,
+        "price_run_pct_30d": 72.7,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1744,7 +2092,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 10
+      "rank": 13
     },
     {
       "ticker": "SIRI",
@@ -1794,7 +2142,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 3.35,
+        "price_run_pct_30d": 5.14,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1810,7 +2158,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 11
+      "rank": 14
     },
     {
       "ticker": "DT",
@@ -1876,7 +2224,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 12
+      "rank": 15
     },
     {
       "ticker": "CALY",
@@ -1942,7 +2290,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 13
+      "rank": 16
     },
     {
       "ticker": "NTNX",
@@ -2008,7 +2356,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 16
+      "rank": 21
     }
   ],
   "tier1_picks": [
@@ -2207,7 +2555,76 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 4
+      "rank": 5
+    },
+    {
+      "ticker": "APPS",
+      "path": "flow_extreme",
+      "source": "extreme+sustained",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_extreme",
+        "flow_sustained"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained",
+        "flow_extreme"
+      ],
+      "size_class": "half",
+      "spot_price": 9.35,
+      "entry": {
+        "low": 9.07,
+        "high": 9.4,
+        "mid": 9.23
+      },
+      "target": 11.22,
+      "stop": 8.88,
+      "rr_ratio": 3.98,
+      "rr_planned": 5.59,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 996.84,
+      "suggested_shares": 108,
+      "position_risk_usd": 37.8,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "flow_sustained": {
+          "score": 20
+        },
+        "gex_danger": {
+          "score": -10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "APPS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow-extreme: 13d streak, P/C 0.101 (10:1 calls) + flow +10.5 5d-avg (5 TD days). no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 6
     },
     {
       "ticker": "HLIT",
@@ -2268,7 +2685,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 6
+      "rank": 9
     },
     {
       "ticker": "LTRX",
@@ -2329,7 +2746,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 7
+      "rank": 10
     },
     {
       "ticker": "TSSI",
@@ -2390,7 +2807,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 8
+      "rank": 11
     },
     {
       "ticker": "ARXS",
@@ -2451,7 +2868,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 9
+      "rank": 12
     },
     {
       "ticker": "DJT",
@@ -2516,7 +2933,137 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 14
+      "rank": 17
+    },
+    {
+      "ticker": "DRTS",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained"
+      ],
+      "size_class": "half",
+      "spot_price": 8.93,
+      "entry": {
+        "low": 8.66,
+        "high": 8.97,
+        "mid": 8.82
+      },
+      "target": 10.72,
+      "stop": 8.22,
+      "rr_ratio": 2.52,
+      "rr_planned": 3.19,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 996.66,
+      "suggested_shares": 113,
+      "position_risk_usd": 67.8,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "DRTS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +9.0 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "EXITED 5/11. Post-earnings at $10.03 (+11.9% from exit). Clean execution. Rebuy $7-7.50 still stands.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 18
+    },
+    {
+      "ticker": "IT",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained"
+      ],
+      "size_class": "half",
+      "spot_price": 170.13,
+      "entry": {
+        "low": 165.03,
+        "high": 170.98,
+        "mid": 168.0
+      },
+      "target": 204.16,
+      "stop": 156.52,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 840.0,
+      "suggested_shares": 5,
+      "position_risk_usd": 57.4,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "IT",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": 4.85,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +9.0 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "rank": 19
     },
     {
       "ticker": "HIMS",
@@ -2581,7 +3128,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 15
+      "rank": 20
     },
     {
       "ticker": "ASTS",
@@ -2661,7 +3208,7 @@
         "override_eligible": false,
         "override_applied": false
       },
-      "rank": 17
+      "rank": 22
     }
   ]
 }
