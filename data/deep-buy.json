@@ -1,21 +1,82 @@
 {
   "date": "2026-06-16",
   "version": "2.32.7",
-  "regime_label": "neutral",
-  "regime_score": 14.1,
+  "regime_label": "risk_on",
+  "regime_score": 30.1,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 327,
+    "below_cutoff": 336,
     "earnings_blackout": 9,
     "rr_too_low": 30,
     "held": 10,
     "frozen": 2,
-    "rescan_below_cutoff_no_note": 26
+    "rescan_below_cutoff_no_note": 24
   },
-  "candidates_evaluated": 379,
-  "picks_count": 1,
+  "candidates_evaluated": 389,
+  "picks_count": 2,
   "picks": [
+    {
+      "ticker": "FOUR",
+      "composite": 45,
+      "convergence_paths": [
+        "path1_buy",
+        "path3_strong_candidate"
+      ],
+      "spot_price": 39.94,
+      "entry": {
+        "low": 33.0,
+        "high": 38.0,
+        "mid": 35.5
+      },
+      "target": 65.0,
+      "stop": 32.01,
+      "rr_ratio": 3.16,
+      "rr_planned": 8.45,
+      "above_zone_pct": 5.11,
+      "suggested_size_usd": 994.0,
+      "suggested_shares": 28,
+      "position_risk_usd": 97.72,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "path1": {
+          "score": 25
+        },
+        "path3": {
+          "score": 20
+        }
+      },
+      "dilution_risk": {
+        "ticker": "FOUR",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -9.21,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Tier 2 BUY conf 100 + Path 3 strong. no earnings <45d.",
+      "watchlist_thesis": "CEO $23.9M buy. P3 SC 77. Fwd PE 5.9. ABOVE zone at $42. Hold; don't add above zone.",
+      "rank": 1,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-30",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "oracle_note": {
+        "text": "CEO $23.9M personal buy. Fwd PE 5.9. P3 SC 77. In contrarian portfolio +1.2%. Legitimate signal.",
+        "written_at": "2026-06-16"
+      }
+    },
     {
       "ticker": "INTU",
       "composite": 40,
@@ -56,13 +117,13 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -30.46,
+        "price_run_pct_30d": -30.65,
         "insider_selling_signal": null,
         "latest_filings": []
       },
       "rationale_one_liner": "Tier 2 BUY conf 100 + Buffett quality. no earnings <45d.",
       "watchlist_thesis": "#1 ENTRY. QUAD P1+P3+P4+P5 Buffett 88. IN zone $276.73. Limit $270-275.",
-      "rank": 1,
+      "rank": 2,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
@@ -73,87 +134,88 @@
         "override_applied": false
       },
       "oracle_note": {
-        "text": "#1 entry. QUAD P1 BUY+P3 SC+P4 ENTRY_ZONE+P5 Buffett 88. IN zone $276.73. Limit $270-275. Passes 3-path gate.",
-        "written_at": "2026-06-15"
+        "text": "QUAD P1+P3+P4+P5. Buffett 88 (62% WR). ENTRY_ZONE (58% WR). IN zone $276. #1 pick all paths. Limit $275-280.",
+        "written_at": "2026-06-16"
       }
     }
   ],
   "oracle_watch_count": 11,
   "oracle_watch": [
     {
-      "ticker": "CRM",
-      "composite": 35,
+      "ticker": "HALO",
+      "composite": 25,
       "convergence_paths": [
-        "path3_strong_candidate",
-        "path5_strong_quality"
+        "path1_buy"
       ],
-      "spot_price": 164.55,
+      "spot_price": 71.28,
       "oracle_note": {
-        "text": "#2 entry. Triple P1+P3+P4. Flow +7.5 8d sustained. AT zone floor $165.89. Agentforce $1B ARR. Limit $163-165.",
-        "written_at": "2026-06-15"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "ACM",
-      "composite": 20,
-      "convergence_paths": [
-        "path3_strong_candidate"
-      ],
-      "spot_price": 69.59,
-      "oracle_note": {
-        "text": "Buy list -2.0%. CEO+CFO buy May 14 @ $71. IN zone $68-74 at $70.12. DoD +50%. HOLD.",
-        "written_at": "2026-06-15"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "FOUR",
-      "composite": 20,
-      "convergence_paths": [
-        "path3_strong_candidate"
-      ],
-      "spot_price": 39.94,
-      "oracle_note": {
-        "text": "CEO $23.9M buy. Fwd PE 5.9. Triple P1+P3+P4. ABOVE zone ($42 vs $33-38). Hold; limit $38-40 for add.",
-        "written_at": "2026-06-15"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "GPK",
-      "composite": 20,
-      "convergence_paths": [
-        "path3_strong_candidate"
-      ],
-      "spot_price": 10.97,
-      "oracle_note": {
-        "text": "Buy list -3.7%. P3 66.7% WR (n=39) best calibrated contrarian. Dual P1+P3. HOLD.",
-        "written_at": "2026-06-15"
+        "text": "PDUFA Jun 28 (12d). #1 OVERALL. 7x Fwd PE royalty. $1B buyback. Multi-path convergence. Binary half-size.",
+        "written_at": "2026-06-16"
       },
       "filter_reason": "below_cutoff"
     },
     {
       "ticker": "RYAN",
-      "composite": 20,
+      "composite": 25,
       "convergence_paths": [
-        "path3_strong_candidate"
+        "path1_buy"
       ],
       "spot_price": 34.67,
       "oracle_note": {
-        "text": "Founder $4.2M cluster buy Jun 9 @ $34.67. Triple P1+P3+P4. IN zone $35.64. Buy list +1.4%. GTC $33.50.",
-        "written_at": "2026-06-15"
+        "text": "Founder $4.2M cluster buy Jun 9. Triple P1+P3+P4. IN zone $33-36 at $35.34. Buy list +1.9%. Limit $34-35.",
+        "written_at": "2026-06-16"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "B",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 41.83,
+      "ticker": "ZTS",
+      "composite": 25,
+      "convergence_paths": [
+        "path1_buy"
+      ],
+      "spot_price": 79.95,
       "oracle_note": {
-        "text": "P1 BUY 84 BUT quality_growth 42% WR, no catalyst. Confidence 63 barely clears gate. -10 conf/score.",
-        "written_at": "2026-06-15"
+        "text": "#1 non-binary. Animal health moat. 53% down, P/E 10.5x. ENTRY_ZONE. Needs flow confirmation.",
+        "written_at": "2026-06-16"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "CRM",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 164.55,
+      "oracle_note": {
+        "text": "Triple P1+P3+P4. Flow +7.5 8d. Agentforce $1B ARR. #2 ENTRY. Alert suppressed for missing earnings date.",
+        "written_at": "2026-06-16"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "VERA",
+      "composite": 10,
+      "convergence_paths": [
+        "catalyst_near"
+      ],
+      "spot_price": 34.24,
+      "oracle_note": {
+        "text": "PDUFA Jul 7 confirmed SEC 8-K. BTD+Priority+NEJM. Assessor BUY MEDIUM FV $75. Binary entry $30-36.",
+        "written_at": "2026-06-16"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "VRDN",
+      "composite": 10,
+      "convergence_paths": [
+        "catalyst_near"
+      ],
+      "spot_price": 16.3,
+      "oracle_note": {
+        "text": "PDUFA Jun 30 (14d). QUAD P1+P4+heatmap+flow+10. #1 catalyst. Binary half-size $500 max. Limit $15-16.",
+        "written_at": "2026-06-16"
       },
       "filter_reason": "below_cutoff"
     },
@@ -163,52 +225,52 @@
       "convergence_paths": [],
       "spot_price": 88.24,
       "oracle_note": {
-        "text": "SCANNER BLIND SPOT. PDUFA Jul 17 gedatolisib HR=0.24. RTOR+BTD+Priority. IN zone $88.55. Heatmap underweights quality.",
-        "written_at": "2026-06-15"
+        "text": "BLIND SPOT. PDUFA Jul 17 gedatolisib HR=0.24. RTOR+BTD. Monitor as binary catalyst.",
+        "written_at": "2026-06-16"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "HALO",
+      "ticker": "GEHC",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 71.28,
+      "spot_price": 64.76,
       "oracle_note": {
-        "text": "#1 overall. PDUFA Jun 28 (13d). 7x Fwd PE royalty. $1B buyback. ENTRY_ZONE $69.50. 0 events in catalyst DB = P0 BUG.",
-        "written_at": "2026-06-15"
+        "text": "#5 PICK. Triple C-suite buy $554K. Buffett 84. IN zone ~$60. Quality medtech.",
+        "written_at": "2026-06-16"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "OLED",
+      "ticker": "MDT",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 92.97,
+      "spot_price": 80.38,
       "oracle_note": {
-        "text": "FLOW CONFLICT. CEO+CLO $1.4M cluster + $400M buyback vs flow -12.0 (267 contracts thin). Do NOT add until flow flips.",
-        "written_at": "2026-06-12"
+        "text": "Assessor BUY. Cardiac ablation +78% YoY. Hugo robot FDA filing imminent. Multi-analyst upgrade Jun.",
+        "written_at": "2026-06-16"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "VERA",
+      "ticker": "SNAP",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 34.24,
+      "spot_price": 5.71,
       "oracle_note": {
-        "text": "#2 catalyst. PDUFA Jul 7 confirmed SEC 8-K. BTD+Priority+NEJM p<0.0001. $82 target from ~$30. Binary \u2264\u20ac1K.",
-        "written_at": "2026-06-15"
+        "text": "IN ZONE $5.86. Flow +12 but deteriorated. AWE Spectacles event TODAY. Need 3d flow >+5 confirm first.",
+        "written_at": "2026-06-16"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "VRDN",
+      "ticker": "VRT",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 16.3,
+      "spot_price": 311.93,
       "oracle_note": {
-        "text": "#1 catalyst. PDUFA Jun 30 (15d). QUAD P1+P4+heatmap+flow+10.5 6d streak. BTD+Priority. Best binary setup in universe.",
-        "written_at": "2026-06-15"
+        "text": "BLIND SPOT. Liquid cooling monopoly. $15B backlog. 34% growth guide. ThermoKey acquisition Jun 12.",
+        "written_at": "2026-06-16"
       },
       "filter_reason": "below_cutoff"
     }
@@ -261,7 +323,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -15.75,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -334,7 +396,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 5.53,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": [
           {
@@ -359,7 +421,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 1
+      "rank": 2
     },
     {
       "ticker": "OPEN",
@@ -425,11 +487,77 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 9
+      "rank": 10
     }
   ],
-  "flow_extreme_picks_count": 7,
+  "flow_extreme_picks_count": 8,
   "flow_extreme_picks": [
+    {
+      "ticker": "PLUG",
+      "path": "flow_extreme",
+      "source": "extreme",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_extreme",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_extreme"
+      ],
+      "size_class": "half",
+      "spot_price": 4.06,
+      "entry": {
+        "low": 3.94,
+        "high": 4.08,
+        "mid": 4.01
+      },
+      "target": 4.87,
+      "stop": 3.74,
+      "rr_ratio": 2.54,
+      "rr_planned": 3.19,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 998.49,
+      "suggested_shares": 249,
+      "position_risk_usd": 67.23,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "PLUG",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow-extreme: 12d streak, P/C 0.090 (11:1 calls) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-30",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 1
+    },
     {
       "ticker": "ARXS",
       "path": "flow_extreme",
@@ -490,7 +618,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 2
+      "rank": 3
     },
     {
       "ticker": "ADTN",
@@ -552,7 +680,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 3
+      "rank": 4
     },
     {
       "ticker": "APPS",
@@ -597,7 +725,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": null,
+        "price_run_pct_30d": 165.22,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -614,7 +742,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 4
+      "rank": 5
     },
     {
       "ticker": "HLIT",
@@ -676,7 +804,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 5
+      "rank": 6
     },
     {
       "ticker": "LTRX",
@@ -738,7 +866,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 6
+      "rank": 7
     },
     {
       "ticker": "COMP",
@@ -800,7 +928,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 7
+      "rank": 8
     },
     {
       "ticker": "TSSI",
@@ -862,7 +990,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 8
+      "rank": 9
     }
   ],
   "tier3_picks": [
@@ -919,7 +1047,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 5.53,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": [
           {
@@ -944,11 +1072,77 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 1
+      "rank": 2
     }
   ],
   "tier2_picks": [],
   "tier1_picks": [
+    {
+      "ticker": "PLUG",
+      "path": "flow_extreme",
+      "source": "extreme",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_extreme",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_extreme"
+      ],
+      "size_class": "half",
+      "spot_price": 4.06,
+      "entry": {
+        "low": 3.94,
+        "high": 4.08,
+        "mid": 4.01
+      },
+      "target": 4.87,
+      "stop": 3.74,
+      "rr_ratio": 2.54,
+      "rr_planned": 3.19,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 998.49,
+      "suggested_shares": 249,
+      "position_risk_usd": 67.23,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "PLUG",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow-extreme: 12d streak, P/C 0.090 (11:1 calls) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-06-30",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 1
+    },
     {
       "ticker": "ARXS",
       "path": "flow_extreme",
@@ -1009,7 +1203,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 2
+      "rank": 3
     },
     {
       "ticker": "ADTN",
@@ -1071,7 +1265,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 3
+      "rank": 4
     },
     {
       "ticker": "APPS",
@@ -1116,7 +1310,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": null,
+        "price_run_pct_30d": 165.22,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1133,7 +1327,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 4
+      "rank": 5
     },
     {
       "ticker": "HLIT",
@@ -1195,7 +1389,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 5
+      "rank": 6
     },
     {
       "ticker": "LTRX",
@@ -1257,7 +1451,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 6
+      "rank": 7
     },
     {
       "ticker": "COMP",
@@ -1319,7 +1513,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 7
+      "rank": 8
     },
     {
       "ticker": "TSSI",
@@ -1381,7 +1575,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 8
+      "rank": 9
     },
     {
       "ticker": "OPEN",
@@ -1447,7 +1641,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 9
+      "rank": 10
     }
   ]
 }
