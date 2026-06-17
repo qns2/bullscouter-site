@@ -1,19 +1,19 @@
 {
-  "date": "2026-06-16",
+  "date": "2026-06-17",
   "version": "2.32.7",
   "regime_label": "risk_on",
   "regime_score": 30.1,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 338,
-    "earnings_blackout": 8,
+    "below_cutoff": 327,
+    "earnings_blackout": 7,
     "rr_too_low": 29,
     "held": 10,
     "frozen": 2,
     "rescan_below_cutoff_no_note": 22
   },
-  "candidates_evaluated": 389,
+  "candidates_evaluated": 377,
   "picks_count": 2,
   "picks": [
     {
@@ -67,7 +67,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -128,7 +128,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -141,20 +141,6 @@
   ],
   "oracle_watch_count": 14,
   "oracle_watch": [
-    {
-      "ticker": "CTSH",
-      "composite": 35,
-      "convergence_paths": [
-        "path3_strong_candidate",
-        "path5_strong_quality"
-      ],
-      "spot_price": 50.82,
-      "oracle_note": {
-        "text": "NEW RESCAN. Assessor BUY MED $70. Director buy at $52 Jun 10. AI-led TCV +70%. P/E 8.2x. Monitor for convergence.",
-        "written_at": "2026-06-16"
-      },
-      "filter_reason": "below_cutoff"
-    },
     {
       "ticker": "HALO",
       "composite": 25,
@@ -187,7 +173,7 @@
       "convergence_paths": [
         "path1_buy"
       ],
-      "spot_price": 34.67,
+      "spot_price": 35.34,
       "oracle_note": {
         "text": "MIDDAY #2. Triple P1+P3+P4. Founder $4.2M cluster buy Jun 9. ENTRY_ZONE $35.34. Buy list +1.9%. Limit $34-35.",
         "written_at": "2026-06-16"
@@ -208,6 +194,19 @@
       "filter_reason": "below_cutoff"
     },
     {
+      "ticker": "CTSH",
+      "composite": 20,
+      "convergence_paths": [
+        "path3_strong_candidate"
+      ],
+      "spot_price": 50.82,
+      "oracle_note": {
+        "text": "NEW RESCAN. Assessor BUY MED $70. Director buy at $52 Jun 10. AI-led TCV +70%. P/E 8.2x. Monitor for convergence.",
+        "written_at": "2026-06-16"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
       "ticker": "GPK",
       "composite": 20,
       "convergence_paths": [
@@ -216,19 +215,6 @@
       "spot_price": 10.97,
       "oracle_note": {
         "text": "BEST empirical contrarian. 66.7% WR on 39 prior P3 signals. Buy list -1.0%. Limit $10.80-11.30.",
-        "written_at": "2026-06-16"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "CRM",
-      "composite": 15,
-      "convergence_paths": [
-        "path5_strong_quality"
-      ],
-      "spot_price": 164.55,
-      "oracle_note": {
-        "text": "MIDDAY #1. Triple P1+P3+P4 convergence. ENTRY_ZONE+DIP+ABS triple alert at $165.89. Agentforce $1.2B ARR. Meets 3-path gate. Limit $165-168.",
         "written_at": "2026-06-16"
       },
       "filter_reason": "below_cutoff"
@@ -253,6 +239,17 @@
       "spot_price": 88.24,
       "oracle_note": {
         "text": "BLIND SPOT. PDUFA Jul 17 gedatolisib HR=0.24. RTOR+BTD. Assessor BUY HIGH. 29.6% SI short-squeeze optionality. Binary.",
+        "written_at": "2026-06-16"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "CRM",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 164.55,
+      "oracle_note": {
+        "text": "MIDDAY #1. Triple P1+P3+P4 convergence. ENTRY_ZONE+DIP+ABS triple alert at $165.89. Agentforce $1.2B ARR. Meets 3-path gate. Limit $165-168.",
         "written_at": "2026-06-16"
       },
       "filter_reason": "below_cutoff"
@@ -315,70 +312,7 @@
   ],
   "macro_blocked_count": 0,
   "macro_blocked": [],
-  "tier0_watch": [
-    {
-      "ticker": "PTC",
-      "path": "flow_led",
-      "source": "spike",
-      "composite": 30,
-      "convergence_paths": [
-        "buffett_strong",
-        "watchlist_dip"
-      ],
-      "tier": 0,
-      "tier_evidence": [],
-      "size_class": "none",
-      "spot_price": 114.85,
-      "entry": {
-        "low": 111.4,
-        "high": 115.42,
-        "mid": 113.41
-      },
-      "target": 137.82,
-      "stop": 105.66,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": null,
-      "suggested_shares": null,
-      "position_risk_usd": null,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "buffett_quality_strong": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "dilution_risk": {
-        "ticker": "PTC",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": -16.74,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "Buffett 79 STRONG + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-06-30",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      }
-    }
-  ],
+  "tier0_watch": [],
   "flow_led_picks_count": 1,
   "flow_led_picks": [
     {
@@ -440,7 +374,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -455,11 +389,10 @@
       "ticker": "OPEN",
       "path": "flow_extreme",
       "source": "extreme+sustained",
-      "composite": 60,
+      "composite": 50,
       "convergence_paths": [
         "flow_extreme",
-        "flow_sustained",
-        "watchlist_dip"
+        "flow_sustained"
       ],
       "tier": 1,
       "tier_evidence": [
@@ -489,9 +422,6 @@
         },
         "flow_sustained": {
           "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
         }
       },
       "dilution_risk": {
@@ -507,14 +437,14 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow-extreme: 16d streak, P/C 0.134 (7:1 calls) + flow +10.5 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
+      "rationale_one_liner": "flow-extreme: 16d streak, P/C 0.134 (7:1 calls) + flow +10.5 5d-avg (4 TD days). no earnings <45d.",
       "watchlist_thesis": "EXIT CONFIRMED 5/20. 200sh @ ~$4.25. Loss ~-$132. Clean up from portfolio and flow tracking.",
       "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -580,7 +510,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -642,7 +572,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -704,7 +634,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -766,7 +696,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -828,7 +758,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -890,7 +820,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -952,7 +882,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -1022,7 +952,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -1036,11 +966,10 @@
       "ticker": "OPEN",
       "path": "flow_extreme",
       "source": "extreme+sustained",
-      "composite": 60,
+      "composite": 50,
       "convergence_paths": [
         "flow_extreme",
-        "flow_sustained",
-        "watchlist_dip"
+        "flow_sustained"
       ],
       "tier": 1,
       "tier_evidence": [
@@ -1070,9 +999,6 @@
         },
         "flow_sustained": {
           "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
         }
       },
       "dilution_risk": {
@@ -1088,14 +1014,14 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow-extreme: 16d streak, P/C 0.134 (7:1 calls) + flow +10.5 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
+      "rationale_one_liner": "flow-extreme: 16d streak, P/C 0.134 (7:1 calls) + flow +10.5 5d-avg (4 TD days). no earnings <45d.",
       "watchlist_thesis": "EXIT CONFIRMED 5/20. 200sh @ ~$4.25. Loss ~-$132. Clean up from portfolio and flow tracking.",
       "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -1161,7 +1087,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -1223,7 +1149,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -1285,7 +1211,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -1347,7 +1273,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -1409,7 +1335,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -1471,7 +1397,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -1533,7 +1459,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-06-30",
+        "expires": "2026-07-01",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
