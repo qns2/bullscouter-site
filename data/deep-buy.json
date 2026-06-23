@@ -2,18 +2,18 @@
   "date": "2026-06-23",
   "version": "2.34.3",
   "regime_label": "neutral",
-  "regime_score": -8.0,
+  "regime_score": -2.7,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 331,
+    "below_cutoff": 335,
     "rr_too_low": 31,
     "earnings_blackout": 12,
     "held": 11,
     "frozen": 2,
     "rescan_below_cutoff_no_note": 5
   },
-  "candidates_evaluated": 389,
+  "candidates_evaluated": 393,
   "picks_count": 2,
   "picks": [
     {
@@ -79,10 +79,11 @@
     },
     {
       "ticker": "INTU",
-      "composite": 40,
+      "composite": 45,
       "convergence_paths": [
         "path1_buy",
-        "path5_strong_quality"
+        "path5_strong_quality",
+        "gex_long_safe"
       ],
       "spot_price": 257.77,
       "entry": {
@@ -106,6 +107,9 @@
         },
         "path5": {
           "score": 15
+        },
+        "gex": {
+          "score": 5
         }
       },
       "dilution_risk": {
@@ -169,14 +173,26 @@
     },
     {
       "ticker": "RKLB",
-      "composite": 15,
+      "composite": 10,
       "convergence_paths": [
-        "gex_long_safe",
         "catalyst_near"
       ],
       "spot_price": 100.29,
       "oracle_note": {
         "text": "NEW zone. Catalyst heatmap #1 (76). Neutron test flight. Assessor BUY MED. Electron cash-generating. Setting zone $14-17.",
+        "written_at": "2026-06-23"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "LMT",
+      "composite": 5,
+      "convergence_paths": [
+        "gex_long_safe"
+      ],
+      "spot_price": 493.6,
+      "oracle_note": {
+        "text": "NEW zone. Assessor SB HIGH $600 FV. JASSM restocking post-Iran. NATO 2% mandates. Catalyst heatmap 45. Setting zone $470-505.",
         "written_at": "2026-06-23"
       },
       "filter_reason": "below_cutoff"
@@ -202,23 +218,12 @@
         "written_at": "2026-06-23"
       },
       "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "LMT",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 493.6,
-      "oracle_note": {
-        "text": "NEW zone. Assessor SB HIGH $600 FV. JASSM restocking post-Iran. NATO 2% mandates. Catalyst heatmap 45. Setting zone $470-505.",
-        "written_at": "2026-06-23"
-      },
-      "filter_reason": "below_cutoff"
     }
   ],
   "macro_blocked_count": 0,
   "macro_blocked": [],
   "tier0_watch": [],
-  "flow_led_picks_count": 2,
+  "flow_led_picks_count": 3,
   "flow_led_picks": [
     {
       "ticker": "PATH",
@@ -363,6 +368,72 @@
       },
       "chase_risk": false,
       "rank": 3
+    },
+    {
+      "ticker": "MOS",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained"
+      ],
+      "size_class": "half",
+      "spot_price": 22.9,
+      "entry": {
+        "low": 22.21,
+        "high": 23.01,
+        "mid": 22.61
+      },
+      "target": 27.48,
+      "stop": 21.07,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.16,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 994.84,
+      "suggested_shares": 44,
+      "position_risk_usd": 67.76,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "MOS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +8.8 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-07",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 6
     }
   ],
   "flow_extreme_picks_count": 3,
@@ -897,6 +968,72 @@
       },
       "chase_risk": false,
       "rank": 5
+    },
+    {
+      "ticker": "MOS",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained"
+      ],
+      "size_class": "half",
+      "spot_price": 22.9,
+      "entry": {
+        "low": 22.21,
+        "high": 23.01,
+        "mid": 22.61
+      },
+      "target": 27.48,
+      "stop": 21.07,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.16,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 994.84,
+      "suggested_shares": 44,
+      "position_risk_usd": 67.76,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "MOS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +8.8 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-07",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 6
     }
   ]
 }
