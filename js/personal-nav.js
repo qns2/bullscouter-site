@@ -23,6 +23,7 @@
   if (localStorage.getItem(STORAGE_KEY) !== '1') return;
 
   const ITEMS = [
+    { href: 'daily-analysis.html', label: 'Daily Analysis' },
     { href: 'deep-buy.html', label: 'Deep Buy' },
     { href: 'volatile-trades.html', label: 'Volatile Trades (IBRX)' },
     { href: 'telegrams.html', label: 'Telegrams' },

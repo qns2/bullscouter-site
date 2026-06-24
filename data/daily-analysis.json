@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-24T11:03:14",
-  "source_generated_at": "2026-06-24T08:02:07.103780+00:00",
+  "generated_at": "2026-06-24T17:31:42",
+  "source_generated_at": "2026-06-24T14:20:02.092758+00:00",
   "mode": "daily_analysis_site_export",
   "oracle_model": "gpt-5.5",
-  "title": "Risk-on options tape offsets uneven news catalysts",
-  "summary": "Fact: The strongest direct news/options alignment in the held portfolio is in IBRX and FLY, where company-specific catalysts are paired with bullish ThetaData flow. Fact: MSFT has a bearish policy read-through from the AI sovereign-wealth-fund bill, but its options tape is firmly bullish, so the news and ThetaData diverge. Inference: The portfolio tape is broadly risk-on because 9 held names screened bullish and none screened bearish in the latest ThetaData market scan, but several of those signals lack fresh matching news. Watch items should focus on whether direct catalysts confirm the options strength, especially in FLY, IBRX, QS, TTD, BULL, and MSFT.",
+  "title": "Risk-on options tape backs selective catalysts, but TTD diverges",
+  "summary": "Fact: the bounded packet shows direct bullish catalysts for QS, FLY, IBRX, and DRTS, while TTD has a bearish weak-outlook headline plus a neutral Walmart partnership-shift item. Inference: the strongest news/options alignment is in QS and FLY, where direct catalysts are paired with high call-skewed ThetaData flow. DRTS and IBRX are more biotech-event driven, with supportive flow but elevated implied volatility and catalyst-quality caveats. The main divergence is TTD, where bearish news is contradicted by bullish options flow, making it a watch item rather than a clean signal.",
   "portfolio": {
     "as_of": "2026-06-22T12:23:48Z",
     "position_count": 15,
@@ -27,18 +27,178 @@
     ]
   },
   "my_stocks": {
-    "summary": "Fact: The strongest direct news/options alignment in the held portfolio is in IBRX and FLY, where company-specific catalysts are paired with bullish ThetaData flow. Fact: MSFT has a bearish policy read-through from the AI sovereign-wealth-fund bill, but its options tape is firmly bullish, so the news and ThetaData diverge. Inference: The portfolio tape is broadly risk-on because 9 held names screened bullish and none screened bearish in the latest ThetaData market scan, but several of those signals lack fresh matching news. Watch items should focus on whether direct catalysts confirm the options strength, especially in FLY, IBRX, QS, TTD, BULL, and MSFT.",
+    "summary": "Fact: the bounded packet shows direct bullish catalysts for QS, FLY, IBRX, and DRTS, while TTD has a bearish weak-outlook headline plus a neutral Walmart partnership-shift item. Inference: the strongest news/options alignment is in QS and FLY, where direct catalysts are paired with high call-skewed ThetaData flow. DRTS and IBRX are more biotech-event driven, with supportive flow but elevated implied volatility and catalyst-quality caveats. The main divergence is TTD, where bearish news is contradicted by bullish options flow, making it a watch item rather than a clean signal.",
     "top_opportunities": [
       {
-        "pick_id": "bdb54e3d7c4e2f36",
-        "ticker": "IBRX",
+        "pick_id": "b14c7a27b2148c31",
+        "ticker": "QS",
         "direction": "bull",
         "type": "partnership",
-        "summary": "IBRX drew attention after a report highlighted an exclusive Japan BCG deal alongside an upcoming FDA workshop on Anktiva.",
-        "confidence": 0.69,
-        "theta_adjusted_confidence": 0.79,
-        "pick_score": 85,
-        "pick_score_reason": "theta-adjusted confidence 0.79; ThetaData supports thesis; direct company catalyst",
+        "summary": "QuantumScape shares rose after a reported joint research agreement with Honda on solid-state battery technology and a multi-year development and manufacturing plan.",
+        "confidence": 0.86,
+        "theta_adjusted_confidence": 0.95,
+        "pick_score": 95,
+        "pick_score_reason": "theta-adjusted confidence 0.95; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 12.0,
+          "flow_score_v2": 9.81,
+          "td_put_call_ratio": 0.254,
+          "bullish_streak": 8,
+          "bearish_streak": 0,
+          "atm_iv_30d": 1.04,
+          "cap": 95
+        },
+        "entry_price": 7.42,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "ee54ddf2d302870b",
+        "ticker": "FLY",
+        "direction": "bull",
+        "type": "analyst_upgrade",
+        "summary": "KeyBanc upgraded Firefly Aerospace to Overweight from Sector Weight and raised its price target to $50 after the recent space-stock selloff.",
+        "confidence": 0.86,
+        "theta_adjusted_confidence": 0.95,
+        "pick_score": 93,
+        "pick_score_reason": "theta-adjusted confidence 0.95; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 7.5,
+          "flow_score_v2": 8.27,
+          "td_put_call_ratio": 0.293,
+          "bullish_streak": 7,
+          "bearish_streak": 0,
+          "atm_iv_30d": 1.0549,
+          "cap": 95
+        },
+        "entry_price": 27.21,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "7abc6e3e82d28c59",
+        "ticker": "FLY",
+        "direction": "bull",
+        "type": "contract_award",
+        "summary": "Firefly said it won a $75 million subcontract from NASA's JPL to deliver four drones for the MoonFall mission.",
+        "confidence": 0.83,
+        "theta_adjusted_confidence": 0.93,
+        "pick_score": 92,
+        "pick_score_reason": "theta-adjusted confidence 0.93; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 7.5,
+          "flow_score_v2": 8.27,
+          "td_put_call_ratio": 0.293,
+          "bullish_streak": 7,
+          "bearish_streak": 0,
+          "atm_iv_30d": 1.0549,
+          "cap": 95
+        },
+        "entry_price": 27.21,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "c6c8927490456701",
+        "ticker": "FLY",
+        "direction": "bull",
+        "type": "launch",
+        "summary": "Firefly Aerospace's Alpha rocket returned to orbit successfully, and the headline reports FLY stock rose about 5% overnight.",
+        "confidence": 0.78,
+        "theta_adjusted_confidence": 0.88,
+        "pick_score": 89,
+        "pick_score_reason": "theta-adjusted confidence 0.88; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 7.5,
+          "flow_score_v2": 8.27,
+          "td_put_call_ratio": 0.293,
+          "bullish_streak": 7,
+          "bearish_streak": 0,
+          "atm_iv_30d": 1.0549,
+          "cap": 95
+        },
+        "entry_price": 27.21,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "4aa55d28ef3ed621",
+        "ticker": "DRTS",
+        "direction": "bull",
+        "type": "trial_readout",
+        "summary": "Alpha Tau Medical announced successful treatment of the first glioblastoma patient in Israel with Alpha DaRT.",
+        "confidence": 0.79,
+        "theta_adjusted_confidence": 0.89,
+        "pick_score": 86,
+        "pick_score_reason": "theta-adjusted confidence 0.89; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 6.0,
+          "flow_score_v2": 3.48,
+          "td_put_call_ratio": 0.468,
+          "bullish_streak": 8,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.9300573730468749,
+          "cap": 95
+        },
+        "entry_price": 9.8,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "2d890fd62eb96b42",
+        "ticker": "IBRX",
+        "direction": "bull",
+        "type": "launch",
+        "summary": "Anktiva moved into a pre-surgery pancreatic cancer combination trial with a Bristol Myers drug.",
+        "confidence": 0.72,
+        "theta_adjusted_confidence": 0.82,
+        "pick_score": 84,
+        "pick_score_reason": "theta-adjusted confidence 0.82; ThetaData supports thesis; direct company catalyst; elevated IV risk",
         "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
@@ -49,7 +209,7 @@
           "td_put_call_ratio": 0.231,
           "bullish_streak": 7,
           "bearish_streak": 0,
-          "atm_iv_30d": 0.7554,
+          "atm_iv_30d": 0.8626,
           "cap": 95
         },
         "entry_price": 7.32,
@@ -62,15 +222,47 @@
         }
       },
       {
-        "pick_id": "e9c42469f396fd33",
+        "pick_id": "64bd21db6628b90f",
+        "ticker": "DRTS",
+        "direction": "bull",
+        "type": "launch",
+        "summary": "Alpha Tau reported first treatment of a recurrent glioblastoma patient outside the U.S. in Israel.",
+        "confidence": 0.73,
+        "theta_adjusted_confidence": 0.83,
+        "pick_score": 82,
+        "pick_score_reason": "theta-adjusted confidence 0.83; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 6.0,
+          "flow_score_v2": 3.48,
+          "td_put_call_ratio": 0.468,
+          "bullish_streak": 8,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.9300573730468749,
+          "cap": 95
+        },
+        "entry_price": 9.8,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "de9bd5c82782e067",
         "ticker": "IBRX",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "A separate report said IBRX's CEO outlined three reasons the bull case remains intact even after the stock fell 10% for the week.",
-        "confidence": 0.58,
-        "theta_adjusted_confidence": 0.68,
-        "pick_score": 79,
-        "pick_score_reason": "theta-adjusted confidence 0.68; ThetaData supports thesis; direct company catalyst",
+        "summary": "IBRX moved after-hours as traders speculated that Russell 1000 inclusion could bring index-fund buying.",
+        "confidence": 0.53,
+        "theta_adjusted_confidence": 0.63,
+        "pick_score": 73,
+        "pick_score_reason": "theta-adjusted confidence 0.63; ThetaData supports thesis; direct company catalyst; elevated IV risk",
         "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
@@ -81,7 +273,7 @@
           "td_put_call_ratio": 0.231,
           "bullish_streak": 7,
           "bearish_streak": 0,
-          "atm_iv_30d": 0.7554,
+          "atm_iv_30d": 0.8626,
           "cap": 95
         },
         "entry_price": 7.32,
@@ -97,15 +289,175 @@
     "top_risks": [],
     "scored_picks": [
       {
-        "pick_id": "bdb54e3d7c4e2f36",
-        "ticker": "IBRX",
+        "pick_id": "b14c7a27b2148c31",
+        "ticker": "QS",
         "direction": "bull",
         "type": "partnership",
-        "summary": "IBRX drew attention after a report highlighted an exclusive Japan BCG deal alongside an upcoming FDA workshop on Anktiva.",
-        "confidence": 0.69,
-        "theta_adjusted_confidence": 0.79,
-        "pick_score": 85,
-        "pick_score_reason": "theta-adjusted confidence 0.79; ThetaData supports thesis; direct company catalyst",
+        "summary": "QuantumScape shares rose after a reported joint research agreement with Honda on solid-state battery technology and a multi-year development and manufacturing plan.",
+        "confidence": 0.86,
+        "theta_adjusted_confidence": 0.95,
+        "pick_score": 95,
+        "pick_score_reason": "theta-adjusted confidence 0.95; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 12.0,
+          "flow_score_v2": 9.81,
+          "td_put_call_ratio": 0.254,
+          "bullish_streak": 8,
+          "bearish_streak": 0,
+          "atm_iv_30d": 1.04,
+          "cap": 95
+        },
+        "entry_price": 7.42,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "ee54ddf2d302870b",
+        "ticker": "FLY",
+        "direction": "bull",
+        "type": "analyst_upgrade",
+        "summary": "KeyBanc upgraded Firefly Aerospace to Overweight from Sector Weight and raised its price target to $50 after the recent space-stock selloff.",
+        "confidence": 0.86,
+        "theta_adjusted_confidence": 0.95,
+        "pick_score": 93,
+        "pick_score_reason": "theta-adjusted confidence 0.95; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 7.5,
+          "flow_score_v2": 8.27,
+          "td_put_call_ratio": 0.293,
+          "bullish_streak": 7,
+          "bearish_streak": 0,
+          "atm_iv_30d": 1.0549,
+          "cap": 95
+        },
+        "entry_price": 27.21,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "7abc6e3e82d28c59",
+        "ticker": "FLY",
+        "direction": "bull",
+        "type": "contract_award",
+        "summary": "Firefly said it won a $75 million subcontract from NASA's JPL to deliver four drones for the MoonFall mission.",
+        "confidence": 0.83,
+        "theta_adjusted_confidence": 0.93,
+        "pick_score": 92,
+        "pick_score_reason": "theta-adjusted confidence 0.93; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 7.5,
+          "flow_score_v2": 8.27,
+          "td_put_call_ratio": 0.293,
+          "bullish_streak": 7,
+          "bearish_streak": 0,
+          "atm_iv_30d": 1.0549,
+          "cap": 95
+        },
+        "entry_price": 27.21,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "c6c8927490456701",
+        "ticker": "FLY",
+        "direction": "bull",
+        "type": "launch",
+        "summary": "Firefly Aerospace's Alpha rocket returned to orbit successfully, and the headline reports FLY stock rose about 5% overnight.",
+        "confidence": 0.78,
+        "theta_adjusted_confidence": 0.88,
+        "pick_score": 89,
+        "pick_score_reason": "theta-adjusted confidence 0.88; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 7.5,
+          "flow_score_v2": 8.27,
+          "td_put_call_ratio": 0.293,
+          "bullish_streak": 7,
+          "bearish_streak": 0,
+          "atm_iv_30d": 1.0549,
+          "cap": 95
+        },
+        "entry_price": 27.21,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "4aa55d28ef3ed621",
+        "ticker": "DRTS",
+        "direction": "bull",
+        "type": "trial_readout",
+        "summary": "Alpha Tau Medical announced successful treatment of the first glioblastoma patient in Israel with Alpha DaRT.",
+        "confidence": 0.79,
+        "theta_adjusted_confidence": 0.89,
+        "pick_score": 86,
+        "pick_score_reason": "theta-adjusted confidence 0.89; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 6.0,
+          "flow_score_v2": 3.48,
+          "td_put_call_ratio": 0.468,
+          "bullish_streak": 8,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.9300573730468749,
+          "cap": 95
+        },
+        "entry_price": 9.8,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "2d890fd62eb96b42",
+        "ticker": "IBRX",
+        "direction": "bull",
+        "type": "launch",
+        "summary": "Anktiva moved into a pre-surgery pancreatic cancer combination trial with a Bristol Myers drug.",
+        "confidence": 0.72,
+        "theta_adjusted_confidence": 0.82,
+        "pick_score": 84,
+        "pick_score_reason": "theta-adjusted confidence 0.82; ThetaData supports thesis; direct company catalyst; elevated IV risk",
         "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
@@ -116,7 +468,7 @@
           "td_put_call_ratio": 0.231,
           "bullish_streak": 7,
           "bearish_streak": 0,
-          "atm_iv_30d": 0.7554,
+          "atm_iv_30d": 0.8626,
           "cap": 95
         },
         "entry_price": 7.32,
@@ -129,15 +481,47 @@
         }
       },
       {
-        "pick_id": "e9c42469f396fd33",
+        "pick_id": "64bd21db6628b90f",
+        "ticker": "DRTS",
+        "direction": "bull",
+        "type": "launch",
+        "summary": "Alpha Tau reported first treatment of a recurrent glioblastoma patient outside the U.S. in Israel.",
+        "confidence": 0.73,
+        "theta_adjusted_confidence": 0.83,
+        "pick_score": 82,
+        "pick_score_reason": "theta-adjusted confidence 0.83; ThetaData supports thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 6.0,
+          "flow_score_v2": 3.48,
+          "td_put_call_ratio": 0.468,
+          "bullish_streak": 8,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.9300573730468749,
+          "cap": 95
+        },
+        "entry_price": 9.8,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "de9bd5c82782e067",
         "ticker": "IBRX",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "A separate report said IBRX's CEO outlined three reasons the bull case remains intact even after the stock fell 10% for the week.",
-        "confidence": 0.58,
-        "theta_adjusted_confidence": 0.68,
-        "pick_score": 79,
-        "pick_score_reason": "theta-adjusted confidence 0.68; ThetaData supports thesis; direct company catalyst",
+        "summary": "IBRX moved after-hours as traders speculated that Russell 1000 inclusion could bring index-fund buying.",
+        "confidence": 0.53,
+        "theta_adjusted_confidence": 0.63,
+        "pick_score": 73,
+        "pick_score_reason": "theta-adjusted confidence 0.63; ThetaData supports thesis; direct company catalyst; elevated IV risk",
         "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
@@ -148,7 +532,7 @@
           "td_put_call_ratio": 0.231,
           "bullish_streak": 7,
           "bearish_streak": 0,
-          "atm_iv_30d": 0.7554,
+          "atm_iv_30d": 0.8626,
           "cap": 95
         },
         "entry_price": 7.32,
@@ -161,125 +545,189 @@
         }
       },
       {
-        "pick_id": "53080d6df29dab8d",
-        "ticker": "IGLD",
-        "direction": "neutral",
-        "type": "sector_catalyst",
-        "summary": "Oil prices moved higher as the U.S.-Iran ceasefire looked shaky and Persian Gulf oil and LNG flows were still uncertain.",
-        "confidence": 0.58,
-        "theta_adjusted_confidence": 0.58,
-        "pick_score": 22,
-        "pick_score_reason": "theta-adjusted confidence 0.58; ThetaData is stale; direct company catalyst",
-        "pick_score_features": {
-          "direction": "neutral",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "stale",
-          "flow_score": -12.0,
-          "flow_score_v2": -10.0,
-          "td_put_call_ratio": 250.0,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 58
-        },
-        "entry_price": 22.09,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "9ee1ec6f0221f59f",
-        "ticker": "IGLD",
-        "direction": "neutral",
-        "type": "sector_catalyst",
-        "summary": "Oil prices were on track for a sharp weekly decline as shipping through the Strait of Hormuz normalized and disruption concerns eased.",
-        "confidence": 0.58,
-        "theta_adjusted_confidence": 0.58,
-        "pick_score": 22,
-        "pick_score_reason": "theta-adjusted confidence 0.58; ThetaData is stale; direct company catalyst",
-        "pick_score_features": {
-          "direction": "neutral",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "stale",
-          "flow_score": -12.0,
-          "flow_score_v2": -10.0,
-          "td_put_call_ratio": 250.0,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 58
-        },
-        "entry_price": 22.09,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "871c2d1215828d21",
-        "ticker": "IGLD",
-        "direction": "neutral",
+        "pick_id": "c63ae68f42418311",
+        "ticker": "FLY",
+        "direction": "bull",
         "type": "policy_catalyst",
-        "summary": "Two-year Treasury yields surged 13 bps in post-press conference trading, the largest jump since April 9, 2025.",
-        "confidence": 0.56,
-        "theta_adjusted_confidence": 0.56,
-        "pick_score": 13,
-        "pick_score_reason": "theta-adjusted confidence 0.56; ThetaData is stale; direct company catalyst; macro/policy-only catalyst",
+        "summary": "Firefly Aerospace said the EXIM board is expected to vote on a $110 million loan to expand Texas spacecraft production.",
+        "confidence": 0.69,
+        "theta_adjusted_confidence": 0.65,
+        "pick_score": 68,
+        "pick_score_reason": "theta-adjusted confidence 0.65; ThetaData supports thesis; direct company catalyst; macro/policy-only catalyst; elevated IV risk",
         "pick_score_features": {
-          "direction": "neutral",
+          "direction": "bull",
           "directness": "direct",
           "macro_only": true,
-          "theta_alignment": "stale",
-          "flow_score": -12.0,
-          "flow_score_v2": -10.0,
-          "td_put_call_ratio": 250.0,
-          "bullish_streak": 0,
+          "theta_alignment": "supports",
+          "flow_score": 7.5,
+          "flow_score_v2": 8.27,
+          "td_put_call_ratio": 0.293,
+          "bullish_streak": 7,
           "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 58
-        },
-        "entry_price": 22.09,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "28a16bd371fc920c",
-        "ticker": "MSFT",
-        "direction": "bear",
-        "type": "policy_catalyst",
-        "summary": "Sen. Bernie Sanders introduced a bill on June 19, 2026 that would require major AI companies to contribute 50% of their stock to a government-run sovereign wealth fund.",
-        "confidence": 0.62,
-        "theta_adjusted_confidence": 0.52,
-        "pick_score": 0,
-        "pick_score_reason": "theta-adjusted confidence 0.52; ThetaData contradicts thesis; indirect read-through; macro/policy-only catalyst",
-        "pick_score_features": {
-          "direction": "bear",
-          "directness": "indirect",
-          "macro_only": true,
-          "theta_alignment": "contradicts",
-          "flow_score": 9.0,
-          "flow_score_v2": 6.75,
-          "td_put_call_ratio": 0.313,
-          "bullish_streak": 9,
-          "bearish_streak": 0,
-          "atm_iv_30d": 0.3264,
+          "atm_iv_30d": 1.0549,
           "cap": 68
         },
-        "entry_price": 373.94,
+        "entry_price": 27.21,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "65732d83be2ae9c4",
+        "ticker": "IBRX",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Novartis agreed to a cancer-drug development deal with Antares worth up to $1.9B.",
+        "confidence": 0.43,
+        "theta_adjusted_confidence": 0.49,
+        "pick_score": 59,
+        "pick_score_reason": "theta-adjusted confidence 0.49; ThetaData supports thesis; indirect read-through; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "supports",
+          "flow_score": 6.0,
+          "flow_score_v2": 6.83,
+          "td_put_call_ratio": 0.231,
+          "bullish_streak": 7,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.8626,
+          "cap": 82
+        },
+        "entry_price": 7.32,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "9060fabd37182073",
+        "ticker": "TTD",
+        "direction": "neutral",
+        "type": "partnership",
+        "summary": "Citizens reiterated its rating on Trade Desk as the article highlighted a Walmart partnership shift.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 57,
+        "pick_score_reason": "theta-adjusted confidence 0.68; ThetaData is neutral; direct company catalyst",
+        "pick_score_features": {
+          "direction": "neutral",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "neutral",
+          "flow_score": 7.5,
+          "flow_score_v2": 8.32,
+          "td_put_call_ratio": 0.244,
+          "bullish_streak": 2,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.5978,
+          "cap": 58
+        },
+        "entry_price": 17.93,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "e50ab0c28e2b9aba",
+        "ticker": "IBRX",
+        "direction": "neutral",
+        "type": "trial_readout",
+        "summary": "IBRX was highlighted ahead of COVID-cancer link data tied to Anktiva.",
+        "confidence": 0.61,
+        "theta_adjusted_confidence": 0.61,
+        "pick_score": 51,
+        "pick_score_reason": "theta-adjusted confidence 0.61; ThetaData is neutral; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "neutral",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "neutral",
+          "flow_score": 6.0,
+          "flow_score_v2": 6.83,
+          "td_put_call_ratio": 0.231,
+          "bullish_streak": 7,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.8626,
+          "cap": 58
+        },
+        "entry_price": 7.32,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "3d2368e29e176ab9",
+        "ticker": "TTD",
+        "direction": "bear",
+        "type": "guidance_change",
+        "summary": "TTD fell overnight after a weak outlook headline, with the CEO separately saying the company\u2019s best days are ahead.",
+        "confidence": 0.84,
+        "theta_adjusted_confidence": 0.66,
+        "pick_score": 8,
+        "pick_score_reason": "theta-adjusted confidence 0.66; ThetaData contradicts thesis; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bear",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "contradicts",
+          "flow_score": 7.5,
+          "flow_score_v2": 8.32,
+          "td_put_call_ratio": 0.244,
+          "bullish_streak": 2,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.5978,
+          "cap": 95
+        },
+        "entry_price": 17.93,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "1140ac727267dac0",
+        "ticker": "DRTS",
+        "direction": "bear",
+        "type": "dilution_risk",
+        "summary": "Alpha Tau Medical director filed Form 144 indicating plans to sell 17,500 shares on Nasdaq.",
+        "confidence": 0.79,
+        "theta_adjusted_confidence": 0.61,
+        "pick_score": 6,
+        "pick_score_reason": "theta-adjusted confidence 0.61; ThetaData contradicts thesis; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bear",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "contradicts",
+          "flow_score": 6.0,
+          "flow_score_v2": 3.48,
+          "td_put_call_ratio": 0.468,
+          "bullish_streak": 8,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.9300573730468749,
+          "cap": 95
+        },
+        "entry_price": 9.8,
         "outcome_tracking": {
           "status": "active",
           "cadence_trading_days": 5,
@@ -291,120 +739,71 @@
     ],
     "held_position_updates": [
       {
-        "ticker": "IBRX",
+        "ticker": "QS",
         "stance": "opportunity",
-        "news": "Fact: Reports highlighted an exclusive Japan BCG deal and an upcoming FDA workshop on Anktiva; a second report said the CEO outlined reasons the bull case remains intact after a weekly decline.",
-        "theta": "ThetaData scan date 2026-06-24 shows flow_score 6.0, flow_score_v2 6.83, put/call ratio 0.231, 7-day bullish streak, and 30-day ATM IV 0.7554.",
-        "oracle_note": "Inference: This is the cleanest company-specific alignment in the packet: bullish news, bullish options flow, and elevated IV around a biotech catalyst setup."
+        "news": "QuantumScape shares rose after a reported joint research agreement with Honda on solid-state battery technology and a multi-year development and manufacturing plan.",
+        "theta": "ThetaData confirms bullish flow: flow_score 12.0, flow_score_v2 9.81, put_call_ratio 0.254, bullish_streak 8, 30d ATM IV 1.04.",
+        "oracle_note": "News and options evidence align strongly, but high IV implies the market is already pricing a large move."
       },
       {
         "ticker": "FLY",
         "stance": "opportunity",
-        "news": "Fact: General discovery found Firefly's Alpha Rocket returned to orbit, a pending $110 million EXIM loan for Texas production, and a $75 million NASA JPL subcontract for lunar drones.",
-        "theta": "ThetaData scan date 2026-06-24 shows flow_score 7.5, flow_score_v2 8.27, put/call ratio 0.293, 7-day bullish streak, and 30-day ATM IV 1.0259.",
-        "oracle_note": "Inference: News and options flow align strongly, but the IV is very high and one catalyst is approval-dependent while the NASA revenue path is long-dated."
+        "news": "Firefly has multiple positive bounded catalysts: Alpha returned to orbit, a $75M NASA JPL MoonFall subcontract, a pending $110M EXIM loan vote, and a KeyBanc upgrade to Overweight with a $50 target.",
+        "theta": "ThetaData supports the bullish read: flow_score 7.5, flow_score_v2 8.27, put_call_ratio 0.293, bullish_streak 7, 30d ATM IV 1.0549.",
+        "oracle_note": "This is the broadest catalyst cluster in the portfolio, spanning execution, government funding, contracts, and analyst sentiment; the offset is very high IV and long-dated program timing."
       },
       {
-        "ticker": "MSFT",
-        "stance": "risk",
-        "news": "Fact: A June 19, 2026 bill proposed by Sen. Bernie Sanders would require major AI companies to contribute 50% of their stock to a government-run sovereign wealth fund; MSFT is an indirect read-through, not named in the evidence.",
-        "theta": "ThetaData scan date 2026-06-24 shows flow_score 9.0, flow_score_v2 6.75, put/call ratio 0.313, 9-day bullish streak, and 30-day ATM IV 0.3264.",
-        "oracle_note": "Inference: This is a divergence setup: the policy headline is a theoretical overhang, while options positioning is still bullish, so the immediate market read is not confirming the news risk."
-      },
-      {
-        "ticker": "IGLD",
-        "stance": "risk",
-        "news": "Fact: The packet contains mixed macro oil headlines around a shaky U.S.-Iran ceasefire, Persian Gulf flow uncertainty, and earlier normalization through the Strait of Hormuz; it also includes a rates-shock item.",
-        "theta": "ThetaData is stale: latest options scan date 2026-06-20 shows flow_score -12.0, flow_score_v2 -10.0, put/call ratio 250.0, and deadline refresh_thetadata_before_using_as_confirmation.",
-        "oracle_note": "Inference: The macro story is noisy and the options signal is stale but sharply bearish, so this should be treated as an unresolved risk signal rather than confirmation."
-      },
-      {
-        "ticker": "QS",
+        "ticker": "IBRX",
         "stance": "opportunity",
-        "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-        "theta": "ThetaData scan date 2026-06-24 shows flow_score 12.0, flow_score_v2 9.81, put/call ratio 0.254, 8-day bullish streak, and 30-day ATM IV 0.9122.",
-        "oracle_note": "Inference: Options flow is one of the strongest held-position signals, but without a matching news catalyst it is a watch item rather than a confirmed narrative."
-      },
-      {
-        "ticker": "BULL",
-        "stance": "opportunity",
-        "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-        "theta": "ThetaData scan date 2026-06-24 shows flow_score 10.5, flow_score_v2 8.42, put/call ratio 0.081, 9-day bullish streak, and 30-day ATM IV 0.6387.",
-        "oracle_note": "Inference: Strong bullish flow persists, but there is no supplied news trigger explaining it."
-      },
-      {
-        "ticker": "TTD",
-        "stance": "opportunity",
-        "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-        "theta": "ThetaData scan date 2026-06-24 shows flow_score 7.5, flow_score_v2 8.32, put/call ratio 0.244, 2-day bullish streak, and delta_5d 4.1.",
-        "oracle_note": "Inference: The options tape improved meaningfully, creating a flow-led watch setup without direct news confirmation."
-      },
-      {
-        "ticker": "COPX",
-        "stance": "opportunity",
-        "news": "Fact: No fresh COPX-specific news was provided in the bounded discovery packet.",
-        "theta": "ThetaData scan date 2026-06-24 shows flow_score 9.0, flow_score_v2 6.89, put/call ratio 0.148, and delta_5d 5.0.",
-        "oracle_note": "Inference: Bullish flow is improving, but the packet does not provide a matching metals or copper-specific catalyst."
-      },
-      {
-        "ticker": "NFLX",
-        "stance": "neutral",
-        "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-        "theta": "ThetaData scan date 2026-06-24 shows flow_score 7.5, flow_score_v2 5.67, put/call ratio 0.678, 5-day bullish streak, and delta_5d -0.4.",
-        "oracle_note": "Inference: Flow remains constructive but less emphatic than QS, BULL, TTD, FLY, or IBRX."
-      },
-      {
-        "ticker": "NVAX",
-        "stance": "neutral",
-        "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-        "theta": "ThetaData scan date 2026-06-24 shows flow_score 6.0, flow_score_v2 3.83, put/call ratio 0.23, and 30-day ATM IV 0.7795.",
-        "oracle_note": "Inference: Bullish options flow exists, but it is weaker than the main aligned biotech signal in IBRX."
+        "news": "IBRX headlines include speculative Russell 1000 inclusion buying, Anktiva entering a pre-surgery pancreatic cancer combination trial with a Bristol Myers drug, and a broad oncology-partnering read-through from Novartis-Antares.",
+        "theta": "ThetaData is supportive: flow_score 6.0, flow_score_v2 6.83, put_call_ratio 0.231, bullish_streak 7, 30d ATM IV 0.8626.",
+        "oracle_note": "Options flow aligns with the bullish clinical and index-demand narrative, but the Russell item is speculative and the clinical news is development-stage rather than outcome data."
       },
       {
         "ticker": "DRTS",
         "stance": "neutral",
-        "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-        "theta": "ThetaData scan date 2026-06-24 shows flow_score 6.0, flow_score_v2 3.48, put/call ratio 0.468, but only 69 total option contracts in the scan.",
-        "oracle_note": "Inference: The bullish read is low-conviction because the options sample is small."
+        "news": "Alpha Tau reported successful treatment of the first glioblastoma patient in Israel with Alpha DaRT, while a director filed Form 144 indicating plans to sell 17,500 shares.",
+        "theta": "ThetaData remains bullish despite the insider-sale headline: flow_score 6.0, flow_score_v2 3.48, put_call_ratio 0.468, bullish_streak 8, 30d ATM IV 0.9301.",
+        "oracle_note": "The clinical milestone is positive but early, and the insider-sale signal creates a news-flow conflict; options lean bullish but the underlying option volume is thin."
       },
       {
-        "ticker": "OBIO",
-        "stance": "neutral",
-        "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-        "theta": "ThetaData options are stale: latest options scan date 2026-06-02; IV snapshot date 2026-06-05 showed 30-day ATM IV 1.5944.",
-        "oracle_note": "Inference: The options evidence is too stale to connect to today's news cycle."
+        "ticker": "TTD",
+        "stance": "risk",
+        "news": "TTD fell overnight after a weak outlook headline; a separate item said Citizens reiterated its rating while highlighting a Walmart partnership shift.",
+        "theta": "ThetaData contradicts the bearish news: flow_score 7.5, flow_score_v2 8.32, put_call_ratio 0.244, bullish_streak 2, 30d ATM IV 0.5978.",
+        "oracle_note": "This is the clearest divergence: fundamentals/sentiment headline risk versus bullish options positioning. Watch whether flow is dip-buying or simply short-term positioning noise."
       },
       {
-        "ticker": "EXUS",
+        "ticker": "MSFT",
         "stance": "neutral",
-        "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-        "theta": "No latest options record was provided.",
-        "oracle_note": "Inference: No bounded catalyst or options confirmation is available."
+        "news": "No direct MSFT company-specific news was included in the bounded portfolio news packet.",
+        "theta": "ThetaData shows bullish held-overlap flow: flow_score 9.0, flow_score_v2 6.75, put_call_ratio 0.313, bullish_streak 9, 30d ATM IV 0.3359.",
+        "oracle_note": "Strong options support exists without a matching news catalyst in the packet, so this is a tape-only signal rather than a news-confirmed item."
       },
       {
-        "ticker": "CBUK",
+        "ticker": "COPX",
         "stance": "neutral",
-        "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-        "theta": "No latest options record was provided.",
-        "oracle_note": "Inference: No bounded catalyst or options confirmation is available."
+        "news": "No direct COPX company-specific news was included in the bounded portfolio news packet.",
+        "theta": "ThetaData shows bullish flow: flow_score 9.0, flow_score_v2 6.89, put_call_ratio 0.148, bullish_count_14d 5, 30d ATM IV 0.4944.",
+        "oracle_note": "The options tape is constructive, but without a paired copper or mining catalyst in the packet this remains a watch signal."
       },
       {
-        "ticker": "URNU",
+        "ticker": "BULL",
         "stance": "neutral",
-        "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-        "theta": "No latest options record was provided.",
-        "oracle_note": "Inference: No bounded catalyst or options confirmation is available."
+        "news": "No direct BULL company-specific news was included in the bounded portfolio news packet.",
+        "theta": "ThetaData shows very bullish flow: flow_score 10.5, flow_score_v2 8.42, put_call_ratio 0.081, bullish_streak 9, 30d ATM IV 0.6618.",
+        "oracle_note": "Options flow is strong, but the bounded evidence does not provide a news catalyst to explain or validate it."
       }
     ]
   },
   "general": {
-    "summary": "General analysis is macro-first: 0 macro headline(s), 1 macro event(s), 4 direct company event(s), 0 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.",
+    "summary": "General analysis is macro-first: 1 macro headline(s), 1 macro event(s), 35 direct company event(s), 1 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.",
     "source_artifact": "data/gpt_news_discovery/latest.json",
-    "generated_at": "2026-06-24T07:17:54.630595+00:00",
+    "generated_at": "2026-06-24T12:33:19.688962+00:00",
     "macro_climate": {
       "status": "ok",
       "price_snapshot": {
-        "title": "Market price snapshot: SPY 733.58 (-1.45% last close); WTI oil 72.29 (-1.26% last close); Gold 4105.70 (-0.59% last close)",
+        "title": "Market price snapshot: SPY 733.58 (-1.45% last close); WTI oil 70.96 (-3.07% last close); Gold 4051.10 (-1.91% last close)",
         "url": "yfinance://SPY,CL=F,GC=F",
         "published_at": "2026-06-24",
         "snippet": "Macro context only. Use this with Fed, geopolitical, oil, and gold headlines to infer sector read-throughs; do not treat ETFs or commodities as stock picks.",
@@ -412,30 +811,38 @@
       },
       "price_moves": {
         "SPY": -1.45,
-        "WTI oil": -1.26,
-        "Gold": -0.59
+        "WTI oil": -3.07,
+        "Gold": -1.91
       },
       "tone": "risk_off",
-      "headlines": [],
-      "summary": "Market price snapshot: SPY 733.58 (-1.45% last close); WTI oil 72.29 (-1.26% last close); Gold 4105.70 (-0.59% last close) Deterministic macro tone: risk_off."
+      "headlines": [
+        {
+          "title": "How do changing interest rates affect the stock market in 2026 - U.S. Bank",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVVJpa2pCR3B0TmxRZGlpSmRZaFctZ21ybGtrVUVBMFozZ0xiSGFRY0ZZdGNWaV80dnhHUTR2TTVoSnZEU190aGtMamY2MDAxT0hYYzRXcUl5OUEyOGRGYWlBbm54T3ppaEZWRWtyV01EOEJGcVRaM2xROWlCX2FxSFYxX1NXeUQwZmJLS3pqcGhCWjR5RVJrNlhmbUtRcy1EUGJLaFI4UTNkUHg4emNPUE95cTc0bnlDcklaaG5EcWhBeVU?oc=5",
+          "published_at": "2026-06-18",
+          "snippet": "How do changing interest rates affect the stock market in 2026 &nbsp;&nbsp; U.S. Bank",
+          "category_hint": "macro_market_climate"
+        }
+      ],
+      "summary": "Market price snapshot: SPY 733.58 (-1.45% last close); WTI oil 70.96 (-3.07% last close); Gold 4051.10 (-1.91% last close) 1 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: risk_off."
     },
     "market_wide_events": [
       {
-        "ticker": "FLY",
+        "ticker": "EQT",
         "direction": "bull",
         "type": "policy_catalyst",
-        "summary": "Firefly Aerospace is seeking a $110 million EXIM loan to expand Texas spacecraft production, with the EXIM board expected to vote on the financing.",
-        "confidence": 0.68,
-        "directness": "direct",
+        "summary": "EQT is linked in the evidence to a congressional stock purchase and a major pipeline decision amid pipeline reform focus.",
+        "confidence": 0.67,
+        "directness": "indirect",
         "theme_id": null,
         "theme_bucket": null,
         "parent_ticker": null,
-        "beneficiary_reason": null,
+        "beneficiary_reason": "If pipeline reform advances, EQT could benefit from a more favorable operating or permitting backdrop in its midstream-related exposure.",
         "macro_only": true,
         "evidence": [
           {
-            "title": "FLY Stock Sinks Overnight: Firefly Aerospace Eyes $110M EXIM Loan To Expand Texas Spacecraft Production",
-            "url": "https://stocktwits.com/news-articles/markets/equity/fly-110m-exim-loan-expand-texas-spacecraft-production/cZKvMy1R79Y"
+            "title": "Nancy Pelosi Stock Tracker Highlights A Congressman's EQT Buy And A Major Pipeline Decision",
+            "url": "https://finnhub.io/api/news?id=22ba28d52684243c49ccec851c96b02d80b88deba6c243c80ad6a64fc7b1f675"
           }
         ]
       }
@@ -445,8 +852,8 @@
         "ticker": "CNTA",
         "direction": "bull",
         "type": "merger",
-        "summary": "The High Court of Justice of England and Wales approved Lilly's proposed acquisition of Centessa Pharmaceuticals on 2026-06-22.",
-        "confidence": 0.93,
+        "summary": "The High Court of Justice of England and Wales approved Lilly's acquisition of Centessa on 2026-06-22.",
+        "confidence": 0.99,
         "directness": "direct",
         "theme_id": null,
         "theme_bucket": null,
@@ -461,11 +868,129 @@
         ]
       },
       {
+        "ticker": "ROP",
+        "direction": "bull",
+        "type": "fda_decision",
+        "summary": "Roche received FDA approval for its VENTANA PTEN assay as the first IHC test for identifying PTEN-deficient prostate cancer.",
+        "confidence": 0.95,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Roche (SWX:ROP) Wins Key Cancer Drug And Diagnostic FDA Milestones",
+            "url": "https://finnhub.io/api/news?id=289a9dd92eb49592b8d78c1f049c19af5e4468f550a255c16fc909fc9ae26d1b"
+          }
+        ]
+      },
+      {
+        "ticker": "KSPI",
+        "direction": "bull",
+        "type": "acquisition",
+        "summary": "Kaspi.kz received regulatory approval from T\u00fcrkiye's BDDK to acquire Rabobank A.\u015e., with closing expected in July 2026 subject to customary conditions.",
+        "confidence": 0.94,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Kaspi.kz receives regulatory approval to acquire Rabobank A.\u015e. in T\u00fcrkiye",
+            "url": "https://www.globenewswire.com/news-release/2026/06/24/3316703/0/en/Kaspi-kz-receives-regulatory-approval-to-acquire-Rabobank-A-%C5%9E-in-T%C3%BCrkiye.html"
+          }
+        ]
+      },
+      {
+        "ticker": "KRMN",
+        "direction": "bear",
+        "type": "secondary_offering",
+        "summary": "Karman Space & Defense priced an upsized $854 million secondary stock offering.",
+        "confidence": 0.93,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Karman Space & Defense (KRMN) Prices Upsized $854M Secondary Stock Offering - Yahoo Finance",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOZVl5QVpub093dFpjRjJ4RzFybndKS29JenRabThCU3EwdWIyUXBycFluTzBaemJnMXN0b1ZCV2VXMjFySGJyUjk0MVZiOXlvbmswSXpIbldSaF8tNlJRU2tQMmZySTZGRFVGR1B4LVhnMHNSTFJoTUlFSzc3WVJ5VHZlU1N5WVBRWG8xYmh5a0NUSmZJdnFXUjdnMGcyQQ?oc=5"
+          }
+        ]
+      },
+      {
+        "ticker": "CELC",
+        "direction": "bull",
+        "type": "trial_readout",
+        "summary": "Celcuity reported positive breast cancer trial data and the stock jumped after hours.",
+        "confidence": 0.93,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "CELC Stock Jumps After Hours On Positive Breast Cancer Trial Data - Stocktwits",
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPYWE3bEpjVkFoNUZZckMxZEQ1bXVRODFwal9qLWVXREFaR253c0ttdFYtMWMxbkl0MldMdDQtUmI0V0JJZWt5MGhCUEJwcWdCT3N2M21GYzIwcmNsNnliYnRmOXJCZVRvelFhdFRYUFFqYm9wYW1nZldlYTYtQzZjaWFUU21sV3I0UVNpcmx0OWkxc210QXpaRDIwSnFkQ3lBT0NBTkxzdE0zSWJxeFRwYWh3ZzBSUDBzR1EwTHNXOXRxb1pEaG56RVdNQQ?oc=5"
+          }
+        ]
+      },
+      {
+        "ticker": "KRMN",
+        "direction": "bear",
+        "type": "secondary_offering",
+        "summary": "Karman Holdings priced an upsized secondary offering of 14,000,000 common shares at $61.00 per share, totaling about $854 million in gross proceeds for selling stockholders.",
+        "confidence": 0.91,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Karman Space & Defense (KRMN) Prices Upsized $854M Secondary Stock Offering",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/karman-space-defense-krmn-prices-214153519.html"
+          },
+          {
+            "title": "What Makes Karman Holdings (KRMN) One of the Best Mid-Cap Stocks",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/makes-karman-holdings-krmn-one-155539213.html"
+          }
+        ]
+      },
+      {
+        "ticker": "ROP",
+        "direction": "bull",
+        "type": "fda_decision",
+        "summary": "Roche reported FDA acceptance of Lunsumio VELO plus Polivy for relapsed or refractory large B cell lymphoma, FDA approval of the VENTANA PTEN assay, and FDA priority review for Tecentriq plus chemotherapy in stage III dMMR/MSI-H colon cancer.",
+        "confidence": 0.9,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Roche (SWX:ROP) Wins Key Cancer Drug And Diagnostic FDA Milestones",
+            "url": "https://finance.yahoo.com/healthcare/articles/roche-swx-rop-wins-key-020820336.html"
+          }
+        ]
+      },
+      {
         "ticker": "RPC",
         "direction": "bull",
         "type": "merger",
         "summary": "Ridgepost Capital completed its acquisition of Stellus Capital Management on 2026-06-22.",
-        "confidence": 0.9,
+        "confidence": 0.88,
         "directness": "direct",
         "theme_id": null,
         "theme_bucket": null,
@@ -480,11 +1005,11 @@
         ]
       },
       {
-        "ticker": "FLY",
-        "direction": "bull",
-        "type": "contract_award",
-        "summary": "Firefly said it won a $75 million subcontract from NASA's JPL to deliver four drones to the Moon's south pole for the MoonFall mission.",
-        "confidence": 0.8,
+        "ticker": "BMY",
+        "direction": "neutral",
+        "type": "dividend",
+        "summary": "Bristol Myers Squibb declared a quarterly dividend of US$0.63 per share, payable on August 3, 2026 to shareholders of record on July 2, 2026.",
+        "confidence": 0.88,
         "directness": "direct",
         "theme_id": null,
         "theme_bucket": null,
@@ -493,17 +1018,17 @@
         "macro_only": false,
         "evidence": [
           {
-            "title": "How Firefly Aerospace (FLY) Is Turning Lunar and Defense Programs Into a Broader Growth Base",
-            "url": "https://finance.yahoo.com/markets/stocks/articles/firefly-aerospace-fly-turning-lunar-171857003.html"
+            "title": "Does Bristol Myers Squibb\u2019s 2026 Dividend and Pipeline Ambition Reframe Its Capital Priorities (BMY)?",
+            "url": "https://finnhub.io/api/news?id=7a74b1471e47027f6f9985927e5ccbd8cb7afe6c574afeee57b210ab399d8762"
           }
         ]
       },
       {
-        "ticker": "FLY",
+        "ticker": "FTV",
         "direction": "bull",
-        "type": "launch",
-        "summary": "Firefly's Alpha Rocket returned to orbit successfully, and the headline says FLY rose 5% overnight.",
-        "confidence": 0.68,
+        "type": "acquisition",
+        "summary": "Fortive's Advanced Sterilization Products announced it has acquired a majority stake in UV Smart, a European high-level disinfection technology company.",
+        "confidence": 0.87,
         "directness": "direct",
         "theme_id": null,
         "theme_bucket": null,
@@ -512,13 +1037,71 @@
         "macro_only": false,
         "evidence": [
           {
-            "title": "Firefly's Alpha Rocket Returns To Orbit Successfully, Sends FLY Stock Up 5% Overnight - Stocktwits",
-            "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNdV9TaW9fNFNiSHNacnRIb1BlZnE1N2EyVkQxM051dlZEcVRPVFBoVC12cEtMV2l1NnBDWk41X0gwXzVjUXVoTWdUUkNGTWwwcVBsbmh1Z2pYZkg1S3Y5YjNFM01waElrMGZ0RVhvT0tyM3lVVW9qQ3hMSzN5NHBXWVJSYnd0Z29Za250U1g0SFBVVHNBQ1JyYUFya1pzV2UxYksxTzBldkRJSTBNVTA1RE5Da0RYci1oX0lCSnZ6Yk8zZm9sRWtWSEVxOEtCeDBLX2RQd1ZhZG92U3VpaHdz?oc=5"
+            "title": "Advanced Sterilization Products (ASP) verwerft meerderheidsbelang in UV Smart",
+            "url": "http://www.businesswire.com/news/home/20260624548413/nl/?feedref=JjAwJuNHiystnCoBq_hl-Rc4vIAVcHHkbDcwJimU8QtrtlakeQ9hNboBqTAWIjTge3KWq9s9jif-UkBjBsFRyYAbRTSLTc1mgvhPlnaBA55M-oupQnbXnhKsYk8RmHF_kAy2gZikaX3QWV6xOvgFlA=="
+          }
+        ]
+      },
+      {
+        "ticker": "QS",
+        "direction": "bull",
+        "type": "partnership",
+        "summary": "QuantumScape rose after announcing a joint research agreement with Honda on solid-state battery technology.",
+        "confidence": 0.86,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "QuantumScape, Butterfly Network, Bloom Energy, Accenture And Freecast: Why These 5 Stocks Are On Investors' Radars Today",
+            "url": "https://www.benzinga.com/markets/equities/26/06/53295346/quantumscape-butterfly-network-bloom-energy-accenture-and-freecast-why-these-5-stocks-are-on-inv?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel"
+          }
+        ]
+      },
+      {
+        "ticker": "CELC",
+        "direction": "neutral",
+        "type": "fda_decision",
+        "summary": "The Finimize headline says Celcuity\u2019s breakout run now depends on an FDA call.",
+        "confidence": 0.84,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Celcuity\u2019s Breakout Run Now Hangs On An FDA Call - Finimize",
+            "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9JcFppNmlWSDBvYmZIaXY1TDNFVHE1U3FWOXlqUkU2Nm1HSkRfdmROMUFncVlyMUtrR09NelhXdDZFc29TaFRjSWZTZ1FRT21lTEE2dW5HN1RGWmtN?oc=5"
           }
         ]
       }
     ],
-    "read_through_candidates": [],
+    "read_through_candidates": [
+      {
+        "ticker": "EQT",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "A June 22 article said rising LNG demand and stronger natural gas fundamentals could create a tailwind for gas producers such as EQT.",
+        "confidence": 0.58,
+        "directness": "indirect",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": "CVE",
+        "beneficiary_reason": "EQT is a gas producer, so firmer LNG-linked gas demand can improve pricing and sentiment for the name.",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Will Rising LNG Demand Boost CVE's Conventional & Offshore Segments?",
+            "url": "https://finnhub.io/api/news?id=a75110b8d2fddc3a1054bcfa7e84191c3309ff3cd2c278235e8ccc5e271e7034"
+          }
+        ]
+      }
+    ],
     "theme_observations": [],
     "theta_market": {
       "status": "ok",
@@ -1038,22 +1621,39 @@
       ]
     },
     "new_tickers": [
+      "BMY",
+      "CELC",
       "CNTA",
-      "FLY",
-      "RPC"
+      "EQT",
+      "FFMH",
+      "FTV",
+      "INTC",
+      "IONS",
+      "KRMN",
+      "KSPI",
+      "PANW",
+      "PRAX",
+      "QS",
+      "ROCK",
+      "ROP",
+      "RPC",
+      "RTX",
+      "SOMC",
+      "TBCRF",
+      "VKTX"
     ],
     "portfolio_read_throughs": [
       {
-        "ticker": "MSFT",
-        "theme": "policy_catalyst",
-        "trigger": "Sen. Bernie Sanders introduced a bill on June 19, 2026 that would require major AI companies to contribute 50% of their stock to a government-run sovereign wealth fund.",
-        "theta_alignment": "ThetaData-confirmed bullish flow score 9.0",
-        "confidence": 0.62,
-        "theta_adjusted_confidence": 0.52,
+        "ticker": "IBRX",
+        "theme": "sector_catalyst",
+        "trigger": "Novartis agreed to a cancer-drug development deal with Antares worth up to $1.9B.",
+        "theta_alignment": "ThetaData-confirmed bullish flow score 6.0",
+        "confidence": 0.43,
+        "theta_adjusted_confidence": 0.49,
         "evidence": [
           {
-            "title": "Bernie Sanders Unveils Bill Targeting AI Billions, Plans To Create $7 Trillion Sovereign Wealth Fund That Sends Americans $1,000 Checks Each Year",
-            "url": "https://www.benzinga.com/markets/tech/26/06/53295666/bernie-sanders-unveils-ai-bill-to-create-7-trillion-fund-and-1000-annual-checks?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel"
+            "title": "Novartis and Antares to develop cancer drugs in a deal worth up to $1.9B",
+            "url": "https://seekingalpha.com/news/4606769-novartis-inks-cancer-drug-deal-worth-19b?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       }
@@ -1074,213 +1674,287 @@
   ],
   "held_position_updates": [
     {
-      "ticker": "IBRX",
+      "ticker": "QS",
       "stance": "opportunity",
-      "news": "Fact: Reports highlighted an exclusive Japan BCG deal and an upcoming FDA workshop on Anktiva; a second report said the CEO outlined reasons the bull case remains intact after a weekly decline.",
-      "theta": "ThetaData scan date 2026-06-24 shows flow_score 6.0, flow_score_v2 6.83, put/call ratio 0.231, 7-day bullish streak, and 30-day ATM IV 0.7554.",
-      "oracle_note": "Inference: This is the cleanest company-specific alignment in the packet: bullish news, bullish options flow, and elevated IV around a biotech catalyst setup."
+      "news": "QuantumScape shares rose after a reported joint research agreement with Honda on solid-state battery technology and a multi-year development and manufacturing plan.",
+      "theta": "ThetaData confirms bullish flow: flow_score 12.0, flow_score_v2 9.81, put_call_ratio 0.254, bullish_streak 8, 30d ATM IV 1.04.",
+      "oracle_note": "News and options evidence align strongly, but high IV implies the market is already pricing a large move."
     },
     {
       "ticker": "FLY",
       "stance": "opportunity",
-      "news": "Fact: General discovery found Firefly's Alpha Rocket returned to orbit, a pending $110 million EXIM loan for Texas production, and a $75 million NASA JPL subcontract for lunar drones.",
-      "theta": "ThetaData scan date 2026-06-24 shows flow_score 7.5, flow_score_v2 8.27, put/call ratio 0.293, 7-day bullish streak, and 30-day ATM IV 1.0259.",
-      "oracle_note": "Inference: News and options flow align strongly, but the IV is very high and one catalyst is approval-dependent while the NASA revenue path is long-dated."
+      "news": "Firefly has multiple positive bounded catalysts: Alpha returned to orbit, a $75M NASA JPL MoonFall subcontract, a pending $110M EXIM loan vote, and a KeyBanc upgrade to Overweight with a $50 target.",
+      "theta": "ThetaData supports the bullish read: flow_score 7.5, flow_score_v2 8.27, put_call_ratio 0.293, bullish_streak 7, 30d ATM IV 1.0549.",
+      "oracle_note": "This is the broadest catalyst cluster in the portfolio, spanning execution, government funding, contracts, and analyst sentiment; the offset is very high IV and long-dated program timing."
     },
     {
-      "ticker": "MSFT",
-      "stance": "risk",
-      "news": "Fact: A June 19, 2026 bill proposed by Sen. Bernie Sanders would require major AI companies to contribute 50% of their stock to a government-run sovereign wealth fund; MSFT is an indirect read-through, not named in the evidence.",
-      "theta": "ThetaData scan date 2026-06-24 shows flow_score 9.0, flow_score_v2 6.75, put/call ratio 0.313, 9-day bullish streak, and 30-day ATM IV 0.3264.",
-      "oracle_note": "Inference: This is a divergence setup: the policy headline is a theoretical overhang, while options positioning is still bullish, so the immediate market read is not confirming the news risk."
-    },
-    {
-      "ticker": "IGLD",
-      "stance": "risk",
-      "news": "Fact: The packet contains mixed macro oil headlines around a shaky U.S.-Iran ceasefire, Persian Gulf flow uncertainty, and earlier normalization through the Strait of Hormuz; it also includes a rates-shock item.",
-      "theta": "ThetaData is stale: latest options scan date 2026-06-20 shows flow_score -12.0, flow_score_v2 -10.0, put/call ratio 250.0, and deadline refresh_thetadata_before_using_as_confirmation.",
-      "oracle_note": "Inference: The macro story is noisy and the options signal is stale but sharply bearish, so this should be treated as an unresolved risk signal rather than confirmation."
-    },
-    {
-      "ticker": "QS",
+      "ticker": "IBRX",
       "stance": "opportunity",
-      "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-      "theta": "ThetaData scan date 2026-06-24 shows flow_score 12.0, flow_score_v2 9.81, put/call ratio 0.254, 8-day bullish streak, and 30-day ATM IV 0.9122.",
-      "oracle_note": "Inference: Options flow is one of the strongest held-position signals, but without a matching news catalyst it is a watch item rather than a confirmed narrative."
-    },
-    {
-      "ticker": "BULL",
-      "stance": "opportunity",
-      "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-      "theta": "ThetaData scan date 2026-06-24 shows flow_score 10.5, flow_score_v2 8.42, put/call ratio 0.081, 9-day bullish streak, and 30-day ATM IV 0.6387.",
-      "oracle_note": "Inference: Strong bullish flow persists, but there is no supplied news trigger explaining it."
-    },
-    {
-      "ticker": "TTD",
-      "stance": "opportunity",
-      "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-      "theta": "ThetaData scan date 2026-06-24 shows flow_score 7.5, flow_score_v2 8.32, put/call ratio 0.244, 2-day bullish streak, and delta_5d 4.1.",
-      "oracle_note": "Inference: The options tape improved meaningfully, creating a flow-led watch setup without direct news confirmation."
-    },
-    {
-      "ticker": "COPX",
-      "stance": "opportunity",
-      "news": "Fact: No fresh COPX-specific news was provided in the bounded discovery packet.",
-      "theta": "ThetaData scan date 2026-06-24 shows flow_score 9.0, flow_score_v2 6.89, put/call ratio 0.148, and delta_5d 5.0.",
-      "oracle_note": "Inference: Bullish flow is improving, but the packet does not provide a matching metals or copper-specific catalyst."
-    },
-    {
-      "ticker": "NFLX",
-      "stance": "neutral",
-      "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-      "theta": "ThetaData scan date 2026-06-24 shows flow_score 7.5, flow_score_v2 5.67, put/call ratio 0.678, 5-day bullish streak, and delta_5d -0.4.",
-      "oracle_note": "Inference: Flow remains constructive but less emphatic than QS, BULL, TTD, FLY, or IBRX."
-    },
-    {
-      "ticker": "NVAX",
-      "stance": "neutral",
-      "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-      "theta": "ThetaData scan date 2026-06-24 shows flow_score 6.0, flow_score_v2 3.83, put/call ratio 0.23, and 30-day ATM IV 0.7795.",
-      "oracle_note": "Inference: Bullish options flow exists, but it is weaker than the main aligned biotech signal in IBRX."
+      "news": "IBRX headlines include speculative Russell 1000 inclusion buying, Anktiva entering a pre-surgery pancreatic cancer combination trial with a Bristol Myers drug, and a broad oncology-partnering read-through from Novartis-Antares.",
+      "theta": "ThetaData is supportive: flow_score 6.0, flow_score_v2 6.83, put_call_ratio 0.231, bullish_streak 7, 30d ATM IV 0.8626.",
+      "oracle_note": "Options flow aligns with the bullish clinical and index-demand narrative, but the Russell item is speculative and the clinical news is development-stage rather than outcome data."
     },
     {
       "ticker": "DRTS",
       "stance": "neutral",
-      "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-      "theta": "ThetaData scan date 2026-06-24 shows flow_score 6.0, flow_score_v2 3.48, put/call ratio 0.468, but only 69 total option contracts in the scan.",
-      "oracle_note": "Inference: The bullish read is low-conviction because the options sample is small."
+      "news": "Alpha Tau reported successful treatment of the first glioblastoma patient in Israel with Alpha DaRT, while a director filed Form 144 indicating plans to sell 17,500 shares.",
+      "theta": "ThetaData remains bullish despite the insider-sale headline: flow_score 6.0, flow_score_v2 3.48, put_call_ratio 0.468, bullish_streak 8, 30d ATM IV 0.9301.",
+      "oracle_note": "The clinical milestone is positive but early, and the insider-sale signal creates a news-flow conflict; options lean bullish but the underlying option volume is thin."
     },
     {
-      "ticker": "OBIO",
-      "stance": "neutral",
-      "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-      "theta": "ThetaData options are stale: latest options scan date 2026-06-02; IV snapshot date 2026-06-05 showed 30-day ATM IV 1.5944.",
-      "oracle_note": "Inference: The options evidence is too stale to connect to today's news cycle."
+      "ticker": "TTD",
+      "stance": "risk",
+      "news": "TTD fell overnight after a weak outlook headline; a separate item said Citizens reiterated its rating while highlighting a Walmart partnership shift.",
+      "theta": "ThetaData contradicts the bearish news: flow_score 7.5, flow_score_v2 8.32, put_call_ratio 0.244, bullish_streak 2, 30d ATM IV 0.5978.",
+      "oracle_note": "This is the clearest divergence: fundamentals/sentiment headline risk versus bullish options positioning. Watch whether flow is dip-buying or simply short-term positioning noise."
     },
     {
-      "ticker": "EXUS",
+      "ticker": "MSFT",
       "stance": "neutral",
-      "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-      "theta": "No latest options record was provided.",
-      "oracle_note": "Inference: No bounded catalyst or options confirmation is available."
+      "news": "No direct MSFT company-specific news was included in the bounded portfolio news packet.",
+      "theta": "ThetaData shows bullish held-overlap flow: flow_score 9.0, flow_score_v2 6.75, put_call_ratio 0.313, bullish_streak 9, 30d ATM IV 0.3359.",
+      "oracle_note": "Strong options support exists without a matching news catalyst in the packet, so this is a tape-only signal rather than a news-confirmed item."
     },
     {
-      "ticker": "CBUK",
+      "ticker": "COPX",
       "stance": "neutral",
-      "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-      "theta": "No latest options record was provided.",
-      "oracle_note": "Inference: No bounded catalyst or options confirmation is available."
+      "news": "No direct COPX company-specific news was included in the bounded portfolio news packet.",
+      "theta": "ThetaData shows bullish flow: flow_score 9.0, flow_score_v2 6.89, put_call_ratio 0.148, bullish_count_14d 5, 30d ATM IV 0.4944.",
+      "oracle_note": "The options tape is constructive, but without a paired copper or mining catalyst in the packet this remains a watch signal."
     },
     {
-      "ticker": "URNU",
+      "ticker": "BULL",
       "stance": "neutral",
-      "news": "Fact: No fresh company-specific news was provided in the bounded discovery packet.",
-      "theta": "No latest options record was provided.",
-      "oracle_note": "Inference: No bounded catalyst or options confirmation is available."
+      "news": "No direct BULL company-specific news was included in the bounded portfolio news packet.",
+      "theta": "ThetaData shows very bullish flow: flow_score 10.5, flow_score_v2 8.42, put_call_ratio 0.081, bullish_streak 9, 30d ATM IV 0.6618.",
+      "oracle_note": "Options flow is strong, but the bounded evidence does not provide a news catalyst to explain or validate it."
     }
   ],
   "connecting_opportunities": [
     {
-      "theme": "space and lunar infrastructure",
-      "trigger": "FLY had multiple direct catalysts in general discovery: Alpha Rocket return to orbit, pending EXIM financing, and a NASA JPL lunar-drone subcontract.",
+      "theme": "solid-state battery validation",
+      "trigger": "QuantumScape-Honda joint research agreement and multi-year development plan",
+      "held_tickers": [
+        "QS"
+      ],
+      "beneficiaries_or_risks": [
+        "QS benefits if automaker validation improves commercialization credibility",
+        "High IV creates event-risk if partnership details disappoint"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "theme": "space infrastructure and government-backed demand",
+      "trigger": "Firefly Alpha orbital return, NASA JPL subcontract, pending EXIM loan, and KeyBanc upgrade",
       "held_tickers": [
         "FLY"
       ],
       "beneficiaries_or_risks": [
-        "FLY benefits if operational milestones and financing approval continue to validate the growth story",
-        "Risk is elevated IV and long-dated revenue realization for the NASA-related work",
-        "RDW appeared as non-held bullish flow in the general ThetaData scan, suggesting broader space-theme call interest"
+        "FLY benefits from execution proof, contract validation, and potential production financing",
+        "Risk remains around loan approval timing, long program schedules, and elevated IV"
       ],
-      "confidence": 0.82
+      "confidence": 0.9
     },
     {
-      "theme": "biotech event optionality",
-      "trigger": "IBRX news around the Japan BCG deal and upcoming FDA workshop aligns with bullish options flow and high IV.",
+      "theme": "oncology platform and partnering appetite",
+      "trigger": "IBRX Anktiva trial progress plus Novartis-Antares $1.9B oncology deal read-through",
       "held_tickers": [
-        "IBRX",
-        "NVAX",
-        "OBIO"
+        "IBRX"
       ],
       "beneficiaries_or_risks": [
-        "IBRX has the direct catalyst and strongest alignment",
-        "NVAX has bullish but weaker fresh flow without a supplied news trigger",
-        "OBIO has stale options data and should not be grouped as confirmed today"
+        "IBRX may benefit from oncology deal-comps and Bristol Myers-linked combination-trial visibility",
+        "Speculative index-inclusion headlines and absent outcome data limit conviction"
       ],
-      "confidence": 0.78
+      "confidence": 0.72
     },
     {
-      "theme": "AI policy overhang versus options demand",
-      "trigger": "The Sanders AI sovereign-wealth-fund bill is a bearish policy read-through for large AI platforms, while MSFT options flow is bullish.",
+      "theme": "early oncology procedure adoption",
+      "trigger": "Alpha Tau first glioblastoma treatment in Israel with Alpha DaRT",
       "held_tickers": [
-        "MSFT"
+        "DRTS"
       ],
       "beneficiaries_or_risks": [
-        "MSFT faces headline and policy-risk monitoring",
-        "ThetaData contradicts the bearish read with 9.0 flow_score and a 9-day bullish streak",
-        "The divergence suggests the options market is not currently treating the bill as a near-term damaging catalyst"
+        "DRTS benefits if the milestone broadens clinical adoption perception",
+        "Director Form 144 sale and early-stage evidence quality cap the signal"
       ],
-      "confidence": 0.52
+      "confidence": 0.63
     },
     {
-      "theme": "risk-on flow without news confirmation",
-      "trigger": "General ThetaData breadth was risk_on with 199 bullish, 49 bearish, and 9 held bullish names versus 0 held bearish names.",
+      "theme": "adtech sentiment reset versus call buying",
+      "trigger": "TTD weak-outlook headline conflicting with bullish ThetaData flow",
       "held_tickers": [
-        "QS",
-        "BULL",
-        "TTD",
-        "COPX",
-        "NFLX"
+        "TTD"
       ],
       "beneficiaries_or_risks": [
-        "QS and BULL show the strongest held flow scores without matching news",
-        "TTD and COPX show meaningful positive five-day flow changes",
-        "The risk is that flow-led moves reverse if no catalyst appears"
+        "TTD could rebound if options flow reflects informed dip-buying",
+        "TTD remains at risk if weak outlook details outweigh the Walmart partnership shift"
       ],
-      "confidence": 0.66
-    },
-    {
-      "theme": "energy and geopolitics crosscurrents",
-      "trigger": "Oil headlines were mixed around ceasefire uncertainty and Strait of Hormuz normalization, while IGLD options evidence is stale and sharply bearish.",
-      "held_tickers": [
-        "IGLD"
-      ],
-      "beneficiaries_or_risks": [
-        "IGLD has unresolved macro exposure but no fresh usable ThetaData confirmation",
-        "OXY appeared with bullish non-held flow while WMB appeared with bearish non-held flow, showing sector dispersion",
-        "Rates-shock evidence adds another macro variable for IGLD"
-      ],
-      "confidence": 0.45
+      "confidence": 0.58
     }
   ],
   "watch_items": [
-    "Fact watch: whether the EXIM board approves Firefly's $110 million loan request.",
-    "Fact watch: any primary-source update on IBRX's Anktiva FDA workshop timing and the exact terms of the Japan BCG deal.",
-    "Fact watch: whether the Sanders AI bill gains co-sponsors, committee movement, or remains only a headline overhang.",
-    "ThetaData watch: refresh IGLD before treating the stale bearish options signal as current.",
-    "ThetaData watch: look for fresh news confirmation behind strong QS, BULL, TTD, and COPX call flow.",
-    "Risk watch: FLY and IBRX IV levels are high, so catalyst disappointment may produce outsized moves."
+    "QS: monitor for Honda agreement details, commercialization milestones, and whether bullish flow persists after the initial partnership reaction.",
+    "FLY: monitor EXIM board decision on the $110M loan and any follow-up on Alpha rocket reliability or NASA MoonFall execution timing.",
+    "IBRX: monitor confirmation of Russell 1000 inclusion mechanics and any dated Anktiva or COVID-cancer data catalyst.",
+    "DRTS: monitor whether Alpha DaRT glioblastoma news is followed by efficacy data, enrollment updates, or additional insider-sale filings.",
+    "TTD: monitor whether bullish options flow continues after the weak-outlook headline and whether Walmart partnership-shift details become financially material.",
+    "MSFT, COPX, BULL: monitor for news catalysts that explain strong bullish options flow currently unsupported by bounded news."
   ],
   "caveats": [
-    "No browsing was used; this item only reflects the bounded packet supplied by the user.",
-    "Some news items are secondary-market headlines or snippets, not primary filings or company releases.",
-    "MSFT is an indirect AI-policy read-through and was not named in the provided policy article.",
-    "IGLD, OBIO, EXUS, CBUK, and URNU have stale or missing options evidence in the packet.",
-    "This is not a trade recommendation."
+    "No browsing was used; this is based only on the bounded evidence packet.",
+    "Several sources are headline-level market-news items rather than filings or full company releases.",
+    "ThetaData reflects options activity and implied volatility, not a trade recommendation or proof of future price direction.",
+    "Some portfolio prices and account positions are as of 2026-06-22, while options scans are mostly 2026-06-24.",
+    "DRTS options volume is small despite bullish flow, so the ThetaData signal may be less robust than higher-volume names."
   ],
   "general_news": {
-    "generated_at": "2026-06-24T07:17:54.630595+00:00",
+    "generated_at": "2026-06-24T12:33:19.688962+00:00",
     "seed_tickers": [
-      "FLY"
+      "ACM",
+      "AEM",
+      "AMGN",
+      "B",
+      "BAC",
+      "BMY",
+      "CAPR",
+      "CCJ",
+      "CDE",
+      "CEG",
+      "CELC",
+      "CORT",
+      "CPB",
+      "DDOG",
+      "DSKYF",
+      "EQT",
+      "ETN",
+      "FCN",
+      "FOUR",
+      "GEHC",
+      "GILD",
+      "GPN",
+      "HALO",
+      "IFF",
+      "INSP",
+      "INTU",
+      "IONS",
+      "IRD",
+      "KRMN",
+      "LHX",
+      "LLY",
+      "LMT",
+      "MGRX",
+      "MNKD",
+      "NOC",
+      "NOW",
+      "OLED",
+      "PANW",
+      "PAYX",
+      "PH",
+      "PLTR",
+      "PRAX",
+      "PSN",
+      "QCOM",
+      "RDDT",
+      "RKLB",
+      "ROCK",
+      "ROP",
+      "RYAN",
+      "SHOP",
+      "SNDK",
+      "SPGI",
+      "SRRK",
+      "T",
+      "VLTO",
+      "VRDN",
+      "VRT",
+      "WMB",
+      "ZTS"
     ],
-    "event_count": 5,
+    "event_count": 37,
     "theme_observation_count": 0,
     "events": [
+      {
+        "ticker": "INTC",
+        "type": "sector_catalyst",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Intel appointed former SK Hynix and SK On CEO Seok-Hee Lee to lead advanced packaging, system integration, back-end technology development, and back-end manufacturing.",
+        "evidence": [
+          {
+            "title": "Intel Hires Former SK Hynix CEO Seok-Hee Lee To Lead Advanced Packaging Push As Apple Partnership Fuels Foundry Revival",
+            "url": "https://www.benzinga.com/markets/tech/26/06/53295522/intel-hires-former-sk-hynix-ceo-seok-hee-lee-to-lead-advanced-packaging-push?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_benzinga_3",
+        "scoring_eligible": 1,
+        "note": "The article frames this as part of Intel's foundry revival, but the near-term financial impact is still execution-dependent.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "QS",
+        "type": "partnership",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.86,
+        "summary": "QuantumScape rose after announcing a joint research agreement with Honda on solid-state battery technology.",
+        "evidence": [
+          {
+            "title": "QuantumScape, Butterfly Network, Bloom Energy, Accenture And Freecast: Why These 5 Stocks Are On Investors' Radars Today",
+            "url": "https://www.benzinga.com/markets/equities/26/06/53295346/quantumscape-butterfly-network-bloom-energy-accenture-and-freecast-why-these-5-stocks-are-on-inv?utm_source=benzinga_taxonomy&utm_medium=rss_feed_free&utm_content=taxonomy_rss&utm_campaign=channel"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_benzinga_4",
+        "scoring_eligible": 1,
+        "note": "The article highlights share strength tied to the partnership, but longer-term impact depends on execution and commercialization.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "KSPI",
+        "type": "acquisition",
+        "event_date": "2026-06-24",
+        "direction": "bull",
+        "confidence": 0.94,
+        "summary": "Kaspi.kz received regulatory approval from T\u00fcrkiye's BDDK to acquire Rabobank A.\u015e., with closing expected in July 2026 subject to customary conditions.",
+        "evidence": [
+          {
+            "title": "Kaspi.kz receives regulatory approval to acquire Rabobank A.\u015e. in T\u00fcrkiye",
+            "url": "https://www.globenewswire.com/news-release/2026/06/24/3316703/0/en/Kaspi-kz-receives-regulatory-approval-to-acquire-Rabobank-A-%C5%9E-in-T%C3%BCrkiye.html"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub",
+        "scoring_eligible": 1,
+        "note": "Positive on deal progress, but the transaction is not closed yet.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "FTV",
+        "type": "acquisition",
+        "event_date": "2026-06-24",
+        "direction": "bull",
+        "confidence": 0.87,
+        "summary": "Fortive's Advanced Sterilization Products announced it has acquired a majority stake in UV Smart, a European high-level disinfection technology company.",
+        "evidence": [
+          {
+            "title": "Advanced Sterilization Products (ASP) verwerft meerderheidsbelang in UV Smart",
+            "url": "http://www.businesswire.com/news/home/20260624548413/nl/?feedref=JjAwJuNHiystnCoBq_hl-Rc4vIAVcHHkbDcwJimU8QtrtlakeQ9hNboBqTAWIjTge3KWq9s9jif-UkBjBsFRyYAbRTSLTc1mgvhPlnaBA55M-oupQnbXnhKsYk8RmHF_kAy2gZikaX3QWV6xOvgFlA=="
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub",
+        "scoring_eligible": 1,
+        "note": "The announcement is indirect through ASP, which is part of Fortive.",
+        "directness": "direct"
+      },
       {
         "ticker": "RPC",
         "type": "merger",
         "event_date": "2026-06-22",
         "direction": "bull",
-        "confidence": 0.9,
+        "confidence": 0.88,
         "summary": "Ridgepost Capital completed its acquisition of Stellus Capital Management on 2026-06-22.",
         "evidence": [
           {
@@ -1289,9 +1963,9 @@
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_finnhub",
+        "query_id": "stock_news_finnhub_2",
         "scoring_eligible": 1,
-        "note": "The deal completion may support a re-rating if investors view the acquired platform and AUM base favorably.",
+        "note": "Completion may be positive through added AUM and platform scale, but integration risk remains.",
         "directness": "direct"
       },
       {
@@ -1299,8 +1973,8 @@
         "type": "merger",
         "event_date": "2026-06-22",
         "direction": "bull",
-        "confidence": 0.93,
-        "summary": "The High Court of Justice of England and Wales approved Lilly's proposed acquisition of Centessa Pharmaceuticals on 2026-06-22.",
+        "confidence": 0.99,
+        "summary": "The High Court of Justice of England and Wales approved Lilly's acquisition of Centessa on 2026-06-22.",
         "evidence": [
           {
             "title": "Acquisition of Centessa by Lilly Approved by the High Court of Justice of England and Wales",
@@ -1308,73 +1982,285 @@
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_finnhub",
+        "query_id": "stock_news_finnhub_2",
         "scoring_eligible": 1,
-        "note": "This is a further closing step in the acquisition process; the headline indicates approval but not final settlement mechanics.",
+        "note": "This is a procedural step toward closing; the deal terms cited include $38.00 in cash per share plus a CVR.",
         "directness": "direct"
       },
       {
-        "ticker": "FLY",
-        "type": "launch",
-        "event_date": "2026-06-22",
+        "ticker": "RTX",
+        "type": "contract_award",
+        "event_date": null,
         "direction": "bull",
-        "confidence": 0.68,
-        "summary": "Firefly's Alpha Rocket returned to orbit successfully, and the headline says FLY rose 5% overnight.",
+        "confidence": 0.72,
+        "summary": "Finnair said it ordered 18 Embraer E195-E2 aircraft and signed an RTX Pratt & Whitney engine deal.",
         "evidence": [
           {
-            "title": "Firefly's Alpha Rocket Returns To Orbit Successfully, Sends FLY Stock Up 5% Overnight - Stocktwits",
-            "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNdV9TaW9fNFNiSHNacnRIb1BlZnE1N2EyVkQxM051dlZEcVRPVFBoVC12cEtMV2l1NnBDWk41X0gwXzVjUXVoTWdUUkNGTWwwcVBsbmh1Z2pYZkg1S3Y5YjNFM01waElrMGZ0RVhvT0tyM3lVVW9qQ3hMSzN5NHBXWVJSYnd0Z29Za250U1g0SFBVVHNBQ1JyYUFya1pzV2UxYksxTzBldkRJSTBNVTA1RE5Da0RYci1oX0lCSnZ6Yk8zZm9sRWtWSEVxOEtCeDBLX2RQd1ZhZG92U3VpaHdz?oc=5"
+            "title": "Finnair Orders 18 Embraer E195-E2 Aircraft With 16 Options And 12 Purchase Rights, Signs RTX Pratt & Whitney Engine Deal, Plans Up To Twelve Used A320/321ceos",
+            "url": "https://finnhub.io/api/news?id=301c8cbc55f64fc21b8ef1398e1153cb0ccab16cd2dcad72bf1df752f6e9d8a9"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company",
+        "scoring_eligible": 1,
+        "note": "Headline only; no contract value, timing, or delivery schedule is provided.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "PRAX",
+        "type": "pdufa_date",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.74,
+        "summary": "Praxis Precision Medicines has early-2027 PDUFA timing for ulixacaltamide and BTD elsunersen data catalysts in rare CNS.",
+        "evidence": [
+          {
+            "title": "Praxis 'Strong Buy': PDUFA In Early 2027 For Ulixacaltamide And BTD Elsunersen",
+            "url": "https://finnhub.io/api/news?id=f243a42149bbd8c7a68fd5c7233aef78660df8eecc7c0691847c955640cb92e1"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_2",
+        "scoring_eligible": 1,
+        "note": "The exact FDA decision date is only given as early 2027.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "IONS",
+        "type": "analyst_upgrade",
+        "event_date": "2026-06-17",
+        "direction": "bull",
+        "confidence": 0.8,
+        "summary": "Leerink Partners maintained Outperform on Ionis Pharmaceuticals and raised its price target to $122 from $114.",
+        "evidence": [
+          {
+            "title": "Leerink Partners Maintains Outperform on Ionis Pharmaceuticals, Raises Price Target to $122",
+            "url": "https://finnhub.io/api/news?id=59de4f630f29933dbf410c0dbf4f0c4587e6204e1793fbe2b427d88cc169a3b4"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_2",
+        "scoring_eligible": 1,
+        "note": "Analyst target changes are sentiment catalysts rather than operating events.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "EQT",
+        "type": "policy_catalyst",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.67,
+        "summary": "EQT is linked in the evidence to a congressional stock purchase and a major pipeline decision amid pipeline reform focus.",
+        "evidence": [
+          {
+            "title": "Nancy Pelosi Stock Tracker Highlights A Congressman's EQT Buy And A Major Pipeline Decision",
+            "url": "https://finnhub.io/api/news?id=22ba28d52684243c49ccec851c96b02d80b88deba6c243c80ad6a64fc7b1f675"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_3",
+        "scoring_eligible": 0,
+        "note": "The snippet does not specify the exact decision outcome, so the catalyst is policy-related rather than a confirmed company announcement.",
+        "directness": "indirect",
+        "beneficiary_reason": "If pipeline reform advances, EQT could benefit from a more favorable operating or permitting backdrop in its midstream-related exposure."
+      },
+      {
+        "ticker": "EQT",
+        "type": "sector_catalyst",
+        "event_date": "2026-06-22",
+        "direction": "bull",
+        "confidence": 0.58,
+        "summary": "A June 22 article said rising LNG demand and stronger natural gas fundamentals could create a tailwind for gas producers such as EQT.",
+        "evidence": [
+          {
+            "title": "Will Rising LNG Demand Boost CVE's Conventional & Offshore Segments?",
+            "url": "https://finnhub.io/api/news?id=a75110b8d2fddc3a1054bcfa7e84191c3309ff3cd2c278235e8ccc5e271e7034"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_4",
+        "scoring_eligible": 0,
+        "note": "This is an indirect readthrough from a Cenovus-focused story, not a company-specific announcement on EQT.",
+        "directness": "indirect",
+        "parent_ticker": "CVE",
+        "beneficiary_reason": "EQT is a gas producer, so firmer LNG-linked gas demand can improve pricing and sentiment for the name."
+      },
+      {
+        "ticker": "PANW",
+        "type": "sector_catalyst",
+        "event_date": "2026-06-23",
+        "direction": "bull",
+        "confidence": 0.79,
+        "summary": "An article on Palo Alto Networks says acquisition integration has surpassed profitability targets ahead of schedule and organic revenue growth has accelerated alongside AI-infused cybersecurity demand.",
+        "evidence": [
+          {
+            "title": "Will Faster Acquisition Integration and AI-Driven Platforms Change Palo Alto Networks' (PANW) Narrative?",
+            "url": "https://finnhub.io/api/news?id=59e2038aab6f47a6020b255bcf90a0641e9bd0e379d4ecbd887c46b12f0aabdc"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_5",
+        "scoring_eligible": 1,
+        "note": "This is an interpretive news item rather than a fresh company filing or earnings release.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "BMY",
+        "type": "dividend",
+        "event_date": "2026-08-03",
+        "direction": "neutral",
+        "confidence": 0.88,
+        "summary": "Bristol Myers Squibb declared a quarterly dividend of US$0.63 per share, payable on August 3, 2026 to shareholders of record on July 2, 2026.",
+        "evidence": [
+          {
+            "title": "Does Bristol Myers Squibb\u2019s 2026 Dividend and Pipeline Ambition Reframe Its Capital Priorities (BMY)?",
+            "url": "https://finnhub.io/api/news?id=7a74b1471e47027f6f9985927e5ccbd8cb7afe6c574afeee57b210ab399d8762"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_6",
+        "scoring_eligible": 1,
+        "note": "The snippet also frames this alongside pipeline expansion and patent-expiration pressure, but the concrete event is the dividend declaration.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "ROP",
+        "type": "fda_decision",
+        "event_date": "2026-06-24",
+        "direction": "bull",
+        "confidence": 0.95,
+        "summary": "Roche received FDA approval for its VENTANA PTEN assay as the first IHC test for identifying PTEN-deficient prostate cancer.",
+        "evidence": [
+          {
+            "title": "Roche (SWX:ROP) Wins Key Cancer Drug And Diagnostic FDA Milestones",
+            "url": "https://finnhub.io/api/news?id=289a9dd92eb49592b8d78c1f049c19af5e4468f550a255c16fc909fc9ae26d1b"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_7",
+        "scoring_eligible": 1,
+        "note": "Direct regulatory win for Roche's diagnostics portfolio.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "ROP",
+        "type": "fda_decision",
+        "event_date": "2026-06-24",
+        "direction": "bull",
+        "confidence": 0.82,
+        "summary": "The FDA accepted Roche's Lunsumio VELO plus Polivy filing for relapsed or refractory large B cell lymphoma based on phase III results and granted priority review for Tecentriq plus chemotherapy in stage III dMMR/MSI-H colon cancer.",
+        "evidence": [
+          {
+            "title": "Roche (SWX:ROP) Wins Key Cancer Drug And Diagnostic FDA Milestones",
+            "url": "https://finnhub.io/api/news?id=289a9dd92eb49592b8d78c1f049c19af5e4468f550a255c16fc909fc9ae26d1b"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_7",
+        "scoring_eligible": 1,
+        "note": "The item combines acceptance and priority-review milestones rather than a final approval, so the impact is earlier-stage than a full label win.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "ROP",
+        "type": "analyst_upgrade",
+        "event_date": "2026-06-18",
+        "direction": "bull",
+        "confidence": 0.83,
+        "summary": "Analyst coverage on Roper Technologies implied 36.61% upside and cited rising earnings estimates.",
+        "evidence": [
+          {
+            "title": "Wall Street Analysts Believe Roper Technologies (ROP) Could Rally 36.61%: Here's is How to Trade",
+            "url": "https://finnhub.io/api/news?id=af7cf1ab0650c98113d859f3bddac4440ae6f8951f3912233c0958cf6150ce90"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_8",
+        "scoring_eligible": 1,
+        "note": "This is sentiment-driven rather than a company-issued operational update.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "ROCK",
+        "type": "analyst_upgrade",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.63,
+        "summary": "Cantor Fitzgerald reiterated an Overweight rating on Scholar Rock stock.",
+        "evidence": [
+          {
+            "title": "Cantor Fitzgerald reiterates Overweight on Scholar Rock stock - Investing.com",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQQTRUbFFobzNvUUZQX1RkVTdyalhOSDNPNlMzQmpXUEE3Wmo3dDRPWEtKdFFkNjRhY2hsMGFWQl84MDF1c0tMWnJadEY5WE1PQklMSFJ4MEN3aUpwMjNJQU5UX2ZxTkoyVG1ld3NITkU2S3gzV29yYV9NNlN5VjRiNTI2WGNKT0c5WlhVU2FZSno3dHowQ1JhQTlOZ016bktKam1mWFFTdlFhNDZEVzlNZ2tpbEV5WXBHV1NrUU9n?oc=5"
           }
         ],
         "source": "gpt_news",
         "query_id": "stock_news_google_news",
         "scoring_eligible": 1,
-        "note": "The catalyst is operational success; the stock move is reported in the headline, not independently verified here.",
+        "note": "This is a reiteration rather than a fresh rating change, and the packet's ticker/company mapping appears inconsistent.",
         "directness": "direct"
       },
       {
-        "ticker": "FLY",
-        "type": "policy_catalyst",
-        "event_date": null,
-        "direction": "bull",
-        "confidence": 0.68,
-        "summary": "Firefly Aerospace is seeking a $110 million EXIM loan to expand Texas spacecraft production, with the EXIM board expected to vote on the financing.",
+        "ticker": "KRMN",
+        "type": "secondary_offering",
+        "event_date": "2026-06-17",
+        "direction": "bear",
+        "confidence": 0.93,
+        "summary": "Karman Space & Defense priced an upsized $854 million secondary stock offering.",
         "evidence": [
           {
-            "title": "FLY Stock Sinks Overnight: Firefly Aerospace Eyes $110M EXIM Loan To Expand Texas Spacecraft Production",
-            "url": "https://stocktwits.com/news-articles/markets/equity/fly-110m-exim-loan-expand-texas-spacecraft-production/cZKvMy1R79Y"
+            "title": "Karman Space & Defense (KRMN) Prices Upsized $854M Secondary Stock Offering - Yahoo Finance",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOZVl5QVpub093dFpjRjJ4RzFybndKS29JenRabThCU3EwdWIyUXBycFluTzBaemJnMXN0b1ZCV2VXMjFySGJyUjk0MVZiOXlvbmswSXpIbldSaF8tNlJRU2tQMmZySTZGRFVGR1B4LVhnMHNSTFJoTUlFSzc3WVJ5VHZlU1N5WVBRWG8xYmh5a0NUSmZJdnFXUjdnMGcyQQ?oc=5"
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_yfinance",
+        "query_id": "stock_news_google_news_3",
         "scoring_eligible": 1,
-        "note": "The loan was pending at publication, so the catalyst is approval-dependent.",
+        "note": "Potential dilution and supply overhang may pressure the stock near term.",
         "directness": "direct"
       },
       {
-        "ticker": "FLY",
-        "type": "contract_award",
+        "ticker": "KRMN",
+        "type": "secondary_offering",
         "event_date": null,
-        "direction": "bull",
-        "confidence": 0.8,
-        "summary": "Firefly said it won a $75 million subcontract from NASA's JPL to deliver four drones to the Moon's south pole for the MoonFall mission.",
+        "direction": "bear",
+        "confidence": 0.57,
+        "summary": "Karman Holdings completed an $854M share offering while the article also cites an expanded contract pipeline.",
         "evidence": [
           {
-            "title": "How Firefly Aerospace (FLY) Is Turning Lunar and Defense Programs Into a Broader Growth Base",
-            "url": "https://finance.yahoo.com/markets/stocks/articles/firefly-aerospace-fly-turning-lunar-171857003.html"
+            "title": "Karman Holdings (KRMN) Is Up 5.3% After Expanding Contract Pipeline And Completing $854M Share Offering - simplywall.st",
+            "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPX0g5V1NlMllwZWZyQ0xLWFp5TmNRZm9DZzliNmR0akJDdDg3ZzZ4WlpWTEdKYmpQODV4ZXlOOXdIQVpBcnJqZFVtZlFYZXkzaXZKU1BycTIxbG83djJfREZpR3JxT3duRUZyN2xvN1l4ejVJVjlBY2tzOFBYekU4Q2pqTmJ1d2VDRElreGk4YW9xMVdLbzROc1RLZDYwQzU1LUN0c1hFbWx1ano4VWlQcHdYUm5mLWRnUXByWDFkNG1oSGptYlVvbU1yblhvaXJzNlhZ0gHYAUFVX3lxTFBscDFTUE5MUEpkbFpodFlnd2M1NmtUZGstZkJEcTVjdVZKa3YzYVlveS16RWJJUDZYNGVEVkdUQmU4VEdtZk5jYmxRbjhfT3JUaTdRVEJ1VVNIMmY4NmZ3Yi1pTEhOSk9QdjFkYWZkRTZDZ0JaVThiS0FMcWhYNVJ"
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_yfinance",
-        "scoring_eligible": 1,
-        "note": "The mission is targeted for launch no earlier than 2028, so revenue realization is long-dated.",
+        "query_id": "stock_news_google_news_4",
+        "scoring_eligible": 0,
+        "note": "The offering is a dilution overhang, although the contract-pipeline update may offset some of the negative read-through.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "IONS",
+        "type": "trial_readout",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.59,
+        "summary": "Ionis Pharmaceuticals was tied to new olezarsen data that the article says could make the stock look undervalued.",
+        "evidence": [
+          {
+            "title": "Ionis Pharmaceuticals (IONS) Stock Could Be 26.6% Undervalued After New Olezarsen Data - simplywall.st",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNODBXU2dCYWxZR3UzT1lSUU5vRTYtNVp0b2h4cVY2WWRiRHJ2elM5OFp0RWNxSk5HckdTMVoxS3BzX0tkRDkxRXBKS2ZaRDJCM1pvM29paWw1dXJrWjRjdk9MeW1FN3ZvN3p5b2pjdmFwSmdfV3RkdGZ0S3VxM3hfRjNkdHZNeDJXeW5YajJ3cHRPaWVPcGtTNUdjOTZVVXdlM2RMUDlvczNkY3VzS3ExYXczTFQ4NXQ5VE1BM1BzdFZBZTViZFpIX0tmRDYyUDBUYnA0eGc0OEE5Sms2c19iVURBNVhrSmtOVmRr0gHwAUFVX3lxTFBid3VMRFJwckQ4cGNSNmh0M0VObVpaT0J1QzczZ20wWTZMc0pFdVRfSk1td1FJV05fQnBTdEhTUjNxTHBjWFFFbEtiUmFKQ3I3WHV5R2lZZXhKVzBCUlB2M0lIbC1VSzJ"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_google_news_4",
+        "scoring_eligible": 0,
+        "note": "The packet does not specify the study design or result details, so this is a valuation readthrough rather than a confirmed regulatory event.",
         "directness": "direct"
       }
     ],
     "theme_observations": [],
     "artifact": "/Users/antonis/Projects/bull-scouter/data/gpt_news_discovery/latest.json"
   },
-  "markdown": "# Risk-on options tape offsets uneven news catalysts\n\nGenerated: 2026-06-24T08:02:07.103780+00:00\nPortfolio as of: 2026-06-22T12:23:48Z\n\nFact: The strongest direct news/options alignment in the held portfolio is in IBRX and FLY, where company-specific catalysts are paired with bullish ThetaData flow. Fact: MSFT has a bearish policy read-through from the AI sovereign-wealth-fund bill, but its options tape is firmly bullish, so the news and ThetaData diverge. Inference: The portfolio tape is broadly risk-on because 9 held names screened bullish and none screened bearish in the latest ThetaData market scan, but several of those signals lack fresh matching news. Watch items should focus on whether direct catalysts confirm the options strength, especially in FLY, IBRX, QS, TTD, BULL, and MSFT.\n\n## Daily Analysis - My Stocks\n- Opportunity IBRX: pick_score=85 confidence=0.69 theta_adjusted=0.79 - IBRX drew attention after a report highlighted an exclusive Japan BCG deal alongside an upcoming FDA workshop on Anktiva.\n- Opportunity IBRX: pick_score=79 confidence=0.58 theta_adjusted=0.68 - A separate report said IBRX's CEO outlined three reasons the bull case remains intact even after the stock fell 10% for the week.\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 0 macro headline(s), 1 macro event(s), 4 direct company event(s), 0 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 733.58 (-1.45% last close); WTI oil 72.29 (-1.26% last close); Gold 4105.70 (-0.59% last close) Deterministic macro tone: risk_off.\n- Price snapshot: Market price snapshot: SPY 733.58 (-1.45% last close); WTI oil 72.29 (-1.26% last close); Gold 4105.70 (-0.59% last close)\n- Macro event FLY: bull confidence=0.68 theme=policy_catalyst - Firefly Aerospace is seeking a $110 million EXIM loan to expand Texas spacecraft production, with the EXIM board expected to vote on the financing.\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-06-24 status=ok scanned_tickers=315 min_total_volume=500\nBreadth: tone=risk_on bullish=199 bearish=49 neutral=67 weighted_p/c=0.634 avg_flow_v2=3.08 held_bullish=9 held_bearish=0\nFlow extremes, not standalone picks:\n- Bullish extreme METC: flow_v2=9.94 flow=12.0 p/c=0.013 vol=25955 held=False\n- Bullish extreme IOVA: flow_v2=9.92 flow=12.0 p/c=0.093 vol=4619 held=False\n- Bullish extreme FIG: flow_v2=9.87 flow=12.0 p/c=0.181 vol=22392 held=False\n- Bearish extreme WMB: flow_v2=-10.0 flow=-12.0 p/c=29.855 vol=49152 held=False\n- Bearish extreme NUAI: flow_v2=-7.51 flow=-3.51 p/c=2.818 vol=9469 held=False\n- Bearish extreme BSX: flow_v2=-7.0 flow=-9.0 p/c=6.677 vol=26354 held=False\nHeld-name overlap in the general tape:\n- QS: flow_v2=9.81 flow=12.0 p/c=0.254 vol=29995\n- BULL: flow_v2=8.42 flow=10.5 p/c=0.081 vol=21382\n- TTD: flow_v2=8.32 flow=7.5 p/c=0.244 vol=22201\n- FLY: flow_v2=8.27 flow=7.5 p/c=0.293 vol=6038\n- COPX: flow_v2=6.89 flow=9.0 p/c=0.148 vol=10840\n- IBRX: flow_v2=6.83 flow=6.0 p/c=0.231 vol=6070\n- MSFT: flow_v2=6.75 flow=9.0 p/c=0.313 vol=209070\n- NFLX: flow_v2=5.67 flow=7.5 p/c=0.678 vol=260480\n\n### Notable Company Events\n- Company CNTA: bull confidence=0.93 theme=merger - The High Court of Justice of England and Wales approved Lilly's proposed acquisition of Centessa Pharmaceuticals on 2026-06-22.\n- Company RPC: bull confidence=0.9 theme=merger - Ridgepost Capital completed its acquisition of Stellus Capital Management on 2026-06-22.\n- Company FLY: bull confidence=0.8 theme=contract_award - Firefly said it won a $75 million subcontract from NASA's JPL to deliver four drones to the Moon's south pole for the MoonFall mission.\n- Company FLY: bull confidence=0.68 theme=launch - Firefly's Alpha Rocket returned to orbit successfully, and the headline says FLY rose 5% overnight.\n\nPortfolio read-throughs:\n- policy_catalyst: Sen. Bernie Sanders introduced a bill on June 19, 2026 that would require major AI companies to contribute 50% of their stock to a government-run sovereign wealth fund. held=MSFT confidence=0.62 theta_adjusted=0.52\n\n## Held Position Updates\n- IBRX: opportunity - Fact: Reports highlighted an exclusive Japan BCG deal and an upcoming FDA workshop on Anktiva; a second report said the CEO outlined reasons the bull case remains intact after a weekly decline. Theta: ThetaData scan date 2026-06-24 shows flow_score 6.0, flow_score_v2 6.83, put/call ratio 0.231, 7-day bullish streak, and 30-day ATM IV 0.7554. Note: Inference: This is the cleanest company-specific alignment in the packet: bullish news, bullish options flow, and elevated IV around a biotech catalyst setup.\n- FLY: opportunity - Fact: General discovery found Firefly's Alpha Rocket returned to orbit, a pending $110 million EXIM loan for Texas production, and a $75 million NASA JPL subcontract for lunar drones. Theta: ThetaData scan date 2026-06-24 shows flow_score 7.5, flow_score_v2 8.27, put/call ratio 0.293, 7-day bullish streak, and 30-day ATM IV 1.0259. Note: Inference: News and options flow align strongly, but the IV is very high and one catalyst is approval-dependent while the NASA revenue path is long-dated.\n- MSFT: risk - Fact: A June 19, 2026 bill proposed by Sen. Bernie Sanders would require major AI companies to contribute 50% of their stock to a government-run sovereign wealth fund; MSFT is an indirect read-through, not named in the evidence. Theta: ThetaData scan date 2026-06-24 shows flow_score 9.0, flow_score_v2 6.75, put/call ratio 0.313, 9-day bullish streak, and 30-day ATM IV 0.3264. Note: Inference: This is a divergence setup: the policy headline is a theoretical overhang, while options positioning is still bullish, so the immediate market read is not confirming the news risk.\n- IGLD: risk - Fact: The packet contains mixed macro oil headlines around a shaky U.S.-Iran ceasefire, Persian Gulf flow uncertainty, and earlier normalization through the Strait of Hormuz; it also includes a rates-shock item. Theta: ThetaData is stale: latest options scan date 2026-06-20 shows flow_score -12.0, flow_score_v2 -10.0, put/call ratio 250.0, and deadline refresh_thetadata_before_using_as_confirmation. Note: Inference: The macro story is noisy and the options signal is stale but sharply bearish, so this should be treated as an unresolved risk signal rather than confirmation.\n- QS: opportunity - Fact: No fresh company-specific news was provided in the bounded discovery packet. Theta: ThetaData scan date 2026-06-24 shows flow_score 12.0, flow_score_v2 9.81, put/call ratio 0.254, 8-day bullish streak, and 30-day ATM IV 0.9122. Note: Inference: Options flow is one of the strongest held-position signals, but without a matching news catalyst it is a watch item rather than a confirmed narrative.\n- BULL: opportunity - Fact: No fresh company-specific news was provided in the bounded discovery packet. Theta: ThetaData scan date 2026-06-24 shows flow_score 10.5, flow_score_v2 8.42, put/call ratio 0.081, 9-day bullish streak, and 30-day ATM IV 0.6387. Note: Inference: Strong bullish flow persists, but there is no supplied news trigger explaining it.\n- TTD: opportunity - Fact: No fresh company-specific news was provided in the bounded discovery packet. Theta: ThetaData scan date 2026-06-24 shows flow_score 7.5, flow_score_v2 8.32, put/call ratio 0.244, 2-day bullish streak, and delta_5d 4.1. Note: Inference: The options tape improved meaningfully, creating a flow-led watch setup without direct news confirmation.\n- COPX: opportunity - Fact: No fresh COPX-specific news was provided in the bounded discovery packet. Theta: ThetaData scan date 2026-06-24 shows flow_score 9.0, flow_score_v2 6.89, put/call ratio 0.148, and delta_5d 5.0. Note: Inference: Bullish flow is improving, but the packet does not provide a matching metals or copper-specific catalyst.\n- NFLX: neutral - Fact: No fresh company-specific news was provided in the bounded discovery packet. Theta: ThetaData scan date 2026-06-24 shows flow_score 7.5, flow_score_v2 5.67, put/call ratio 0.678, 5-day bullish streak, and delta_5d -0.4. Note: Inference: Flow remains constructive but less emphatic than QS, BULL, TTD, FLY, or IBRX.\n- NVAX: neutral - Fact: No fresh company-specific news was provided in the bounded discovery packet. Theta: ThetaData scan date 2026-06-24 shows flow_score 6.0, flow_score_v2 3.83, put/call ratio 0.23, and 30-day ATM IV 0.7795. Note: Inference: Bullish options flow exists, but it is weaker than the main aligned biotech signal in IBRX.\n- DRTS: neutral - Fact: No fresh company-specific news was provided in the bounded discovery packet. Theta: ThetaData scan date 2026-06-24 shows flow_score 6.0, flow_score_v2 3.48, put/call ratio 0.468, but only 69 total option contracts in the scan. Note: Inference: The bullish read is low-conviction because the options sample is small.\n- OBIO: neutral - Fact: No fresh company-specific news was provided in the bounded discovery packet. Theta: ThetaData options are stale: latest options scan date 2026-06-02; IV snapshot date 2026-06-05 showed 30-day ATM IV 1.5944. Note: Inference: The options evidence is too stale to connect to today's news cycle.\n- EXUS: neutral - Fact: No fresh company-specific news was provided in the bounded discovery packet. Theta: No latest options record was provided. Note: Inference: No bounded catalyst or options confirmation is available.\n- CBUK: neutral - Fact: No fresh company-specific news was provided in the bounded discovery packet. Theta: No latest options record was provided. Note: Inference: No bounded catalyst or options confirmation is available.\n- URNU: neutral - Fact: No fresh company-specific news was provided in the bounded discovery packet. Theta: No latest options record was provided. Note: Inference: No bounded catalyst or options confirmation is available.\n\n## Connecting Opportunities\n- space and lunar infrastructure: FLY had multiple direct catalysts in general discovery: Alpha Rocket return to orbit, pending EXIM financing, and a NASA JPL lunar-drone subcontract. held=['FLY'] confidence=0.82\n- biotech event optionality: IBRX news around the Japan BCG deal and upcoming FDA workshop aligns with bullish options flow and high IV. held=['IBRX', 'NVAX', 'OBIO'] confidence=0.78\n- AI policy overhang versus options demand: The Sanders AI sovereign-wealth-fund bill is a bearish policy read-through for large AI platforms, while MSFT options flow is bullish. held=['MSFT'] confidence=0.52\n- risk-on flow without news confirmation: General ThetaData breadth was risk_on with 199 bullish, 49 bearish, and 9 held bullish names versus 0 held bearish names. held=['QS', 'BULL', 'TTD', 'COPX', 'NFLX'] confidence=0.66\n- energy and geopolitics crosscurrents: Oil headlines were mixed around ceasefire uncertainty and Strait of Hormuz normalization, while IGLD options evidence is stale and sharply bearish. held=['IGLD'] confidence=0.45\n\n## Watch Items\n- Fact watch: whether the EXIM board approves Firefly's $110 million loan request.\n- Fact watch: any primary-source update on IBRX's Anktiva FDA workshop timing and the exact terms of the Japan BCG deal.\n- Fact watch: whether the Sanders AI bill gains co-sponsors, committee movement, or remains only a headline overhang.\n- ThetaData watch: refresh IGLD before treating the stale bearish options signal as current.\n- ThetaData watch: look for fresh news confirmation behind strong QS, BULL, TTD, and COPX call flow.\n- Risk watch: FLY and IBRX IV levels are high, so catalyst disappointment may produce outsized moves.\n\n## Caveats\n- No browsing was used; this item only reflects the bounded packet supplied by the user.\n- Some news items are secondary-market headlines or snippets, not primary filings or company releases.\n- MSFT is an indirect AI-policy read-through and was not named in the provided policy article.\n- IGLD, OBIO, EXUS, CBUK, and URNU have stale or missing options evidence in the packet.\n- This is not a trade recommendation.\n",
+  "markdown": "# Risk-on options tape backs selective catalysts, but TTD diverges\n\nGenerated: 2026-06-24T14:20:02.092758+00:00\nPortfolio as of: 2026-06-22T12:23:48Z\n\nFact: the bounded packet shows direct bullish catalysts for QS, FLY, IBRX, and DRTS, while TTD has a bearish weak-outlook headline plus a neutral Walmart partnership-shift item. Inference: the strongest news/options alignment is in QS and FLY, where direct catalysts are paired with high call-skewed ThetaData flow. DRTS and IBRX are more biotech-event driven, with supportive flow but elevated implied volatility and catalyst-quality caveats. The main divergence is TTD, where bearish news is contradicted by bullish options flow, making it a watch item rather than a clean signal.\n\n## Daily Analysis - My Stocks\n- Opportunity QS: pick_score=95 confidence=0.86 theta_adjusted=0.95 - QuantumScape shares rose after a reported joint research agreement with Honda on solid-state battery technology and a multi-year development and manufacturing plan.\n- Opportunity FLY: pick_score=93 confidence=0.86 theta_adjusted=0.95 - KeyBanc upgraded Firefly Aerospace to Overweight from Sector Weight and raised its price target to $50 after the recent space-stock selloff.\n- Opportunity FLY: pick_score=92 confidence=0.83 theta_adjusted=0.93 - Firefly said it won a $75 million subcontract from NASA's JPL to deliver four drones for the MoonFall mission.\n- Opportunity FLY: pick_score=89 confidence=0.78 theta_adjusted=0.88 - Firefly Aerospace's Alpha rocket returned to orbit successfully, and the headline reports FLY stock rose about 5% overnight.\n- Opportunity DRTS: pick_score=86 confidence=0.79 theta_adjusted=0.89 - Alpha Tau Medical announced successful treatment of the first glioblastoma patient in Israel with Alpha DaRT.\n- Opportunity IBRX: pick_score=84 confidence=0.72 theta_adjusted=0.82 - Anktiva moved into a pre-surgery pancreatic cancer combination trial with a Bristol Myers drug.\n- Opportunity DRTS: pick_score=82 confidence=0.73 theta_adjusted=0.83 - Alpha Tau reported first treatment of a recurrent glioblastoma patient outside the U.S. in Israel.\n- Opportunity IBRX: pick_score=73 confidence=0.53 theta_adjusted=0.63 - IBRX moved after-hours as traders speculated that Russell 1000 inclusion could bring index-fund buying.\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 1 macro headline(s), 1 macro event(s), 35 direct company event(s), 1 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 733.58 (-1.45% last close); WTI oil 70.96 (-3.07% last close); Gold 4051.10 (-1.91% last close) 1 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: risk_off.\n- Price snapshot: Market price snapshot: SPY 733.58 (-1.45% last close); WTI oil 70.96 (-3.07% last close); Gold 4051.10 (-1.91% last close)\nMacro headlines:\n- How do changing interest rates affect the stock market in 2026 - U.S. Bank (2026-06-18)\n- Macro event EQT: bull confidence=0.67 theme=policy_catalyst - EQT is linked in the evidence to a congressional stock purchase and a major pipeline decision amid pipeline reform focus.\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-06-24 status=ok scanned_tickers=315 min_total_volume=500\nBreadth: tone=risk_on bullish=199 bearish=49 neutral=67 weighted_p/c=0.634 avg_flow_v2=3.08 held_bullish=9 held_bearish=0\nFlow extremes, not standalone picks:\n- Bullish extreme METC: flow_v2=9.94 flow=12.0 p/c=0.013 vol=25955 held=False\n- Bullish extreme IOVA: flow_v2=9.92 flow=12.0 p/c=0.093 vol=4619 held=False\n- Bullish extreme FIG: flow_v2=9.87 flow=12.0 p/c=0.181 vol=22392 held=False\n- Bearish extreme WMB: flow_v2=-10.0 flow=-12.0 p/c=29.855 vol=49152 held=False\n- Bearish extreme NUAI: flow_v2=-7.51 flow=-3.51 p/c=2.818 vol=9469 held=False\n- Bearish extreme BSX: flow_v2=-7.0 flow=-9.0 p/c=6.677 vol=26354 held=False\nHeld-name overlap in the general tape:\n- QS: flow_v2=9.81 flow=12.0 p/c=0.254 vol=29995\n- BULL: flow_v2=8.42 flow=10.5 p/c=0.081 vol=21382\n- TTD: flow_v2=8.32 flow=7.5 p/c=0.244 vol=22201\n- FLY: flow_v2=8.27 flow=7.5 p/c=0.293 vol=6038\n- COPX: flow_v2=6.89 flow=9.0 p/c=0.148 vol=10840\n- IBRX: flow_v2=6.83 flow=6.0 p/c=0.231 vol=6070\n- MSFT: flow_v2=6.75 flow=9.0 p/c=0.313 vol=209070\n- NFLX: flow_v2=5.67 flow=7.5 p/c=0.678 vol=260480\n\n### Notable Company Events\n- Company CNTA: bull confidence=0.99 theme=merger - The High Court of Justice of England and Wales approved Lilly's acquisition of Centessa on 2026-06-22.\n- Company ROP: bull confidence=0.95 theme=fda_decision - Roche received FDA approval for its VENTANA PTEN assay as the first IHC test for identifying PTEN-deficient prostate cancer.\n- Company KSPI: bull confidence=0.94 theme=acquisition - Kaspi.kz received regulatory approval from T\u00fcrkiye's BDDK to acquire Rabobank A.\u015e., with closing expected in July 2026 subject to customary conditions.\n- Company KRMN: bear confidence=0.93 theme=secondary_offering - Karman Space & Defense priced an upsized $854 million secondary stock offering.\n- Company CELC: bull confidence=0.93 theme=trial_readout - Celcuity reported positive breast cancer trial data and the stock jumped after hours.\n- Company KRMN: bear confidence=0.91 theme=secondary_offering - Karman Holdings priced an upsized secondary offering of 14,000,000 common shares at $61.00 per share, totaling about $854 million in gross proceeds for selling stockholders.\n\n### Read-Through Themes\nGenerated candidates require follow-up confirmation:\n- EQT: confidence=0.58 bucket=None - EQT is a gas producer, so firmer LNG-linked gas demand can improve pricing and sentiment for the name.\n\nPortfolio read-throughs:\n- sector_catalyst: Novartis agreed to a cancer-drug development deal with Antares worth up to $1.9B. held=IBRX confidence=0.43 theta_adjusted=0.49\n\n## Held Position Updates\n- QS: opportunity - QuantumScape shares rose after a reported joint research agreement with Honda on solid-state battery technology and a multi-year development and manufacturing plan. Theta: ThetaData confirms bullish flow: flow_score 12.0, flow_score_v2 9.81, put_call_ratio 0.254, bullish_streak 8, 30d ATM IV 1.04. Note: News and options evidence align strongly, but high IV implies the market is already pricing a large move.\n- FLY: opportunity - Firefly has multiple positive bounded catalysts: Alpha returned to orbit, a $75M NASA JPL MoonFall subcontract, a pending $110M EXIM loan vote, and a KeyBanc upgrade to Overweight with a $50 target. Theta: ThetaData supports the bullish read: flow_score 7.5, flow_score_v2 8.27, put_call_ratio 0.293, bullish_streak 7, 30d ATM IV 1.0549. Note: This is the broadest catalyst cluster in the portfolio, spanning execution, government funding, contracts, and analyst sentiment; the offset is very high IV and long-dated program timing.\n- IBRX: opportunity - IBRX headlines include speculative Russell 1000 inclusion buying, Anktiva entering a pre-surgery pancreatic cancer combination trial with a Bristol Myers drug, and a broad oncology-partnering read-through from Novartis-Antares. Theta: ThetaData is supportive: flow_score 6.0, flow_score_v2 6.83, put_call_ratio 0.231, bullish_streak 7, 30d ATM IV 0.8626. Note: Options flow aligns with the bullish clinical and index-demand narrative, but the Russell item is speculative and the clinical news is development-stage rather than outcome data.\n- DRTS: neutral - Alpha Tau reported successful treatment of the first glioblastoma patient in Israel with Alpha DaRT, while a director filed Form 144 indicating plans to sell 17,500 shares. Theta: ThetaData remains bullish despite the insider-sale headline: flow_score 6.0, flow_score_v2 3.48, put_call_ratio 0.468, bullish_streak 8, 30d ATM IV 0.9301. Note: The clinical milestone is positive but early, and the insider-sale signal creates a news-flow conflict; options lean bullish but the underlying option volume is thin.\n- TTD: risk - TTD fell overnight after a weak outlook headline; a separate item said Citizens reiterated its rating while highlighting a Walmart partnership shift. Theta: ThetaData contradicts the bearish news: flow_score 7.5, flow_score_v2 8.32, put_call_ratio 0.244, bullish_streak 2, 30d ATM IV 0.5978. Note: This is the clearest divergence: fundamentals/sentiment headline risk versus bullish options positioning. Watch whether flow is dip-buying or simply short-term positioning noise.\n- MSFT: neutral - No direct MSFT company-specific news was included in the bounded portfolio news packet. Theta: ThetaData shows bullish held-overlap flow: flow_score 9.0, flow_score_v2 6.75, put_call_ratio 0.313, bullish_streak 9, 30d ATM IV 0.3359. Note: Strong options support exists without a matching news catalyst in the packet, so this is a tape-only signal rather than a news-confirmed item.\n- COPX: neutral - No direct COPX company-specific news was included in the bounded portfolio news packet. Theta: ThetaData shows bullish flow: flow_score 9.0, flow_score_v2 6.89, put_call_ratio 0.148, bullish_count_14d 5, 30d ATM IV 0.4944. Note: The options tape is constructive, but without a paired copper or mining catalyst in the packet this remains a watch signal.\n- BULL: neutral - No direct BULL company-specific news was included in the bounded portfolio news packet. Theta: ThetaData shows very bullish flow: flow_score 10.5, flow_score_v2 8.42, put_call_ratio 0.081, bullish_streak 9, 30d ATM IV 0.6618. Note: Options flow is strong, but the bounded evidence does not provide a news catalyst to explain or validate it.\n\n## Connecting Opportunities\n- solid-state battery validation: QuantumScape-Honda joint research agreement and multi-year development plan held=['QS'] confidence=0.95\n- space infrastructure and government-backed demand: Firefly Alpha orbital return, NASA JPL subcontract, pending EXIM loan, and KeyBanc upgrade held=['FLY'] confidence=0.9\n- oncology platform and partnering appetite: IBRX Anktiva trial progress plus Novartis-Antares $1.9B oncology deal read-through held=['IBRX'] confidence=0.72\n- early oncology procedure adoption: Alpha Tau first glioblastoma treatment in Israel with Alpha DaRT held=['DRTS'] confidence=0.63\n- adtech sentiment reset versus call buying: TTD weak-outlook headline conflicting with bullish ThetaData flow held=['TTD'] confidence=0.58\n\n## Watch Items\n- QS: monitor for Honda agreement details, commercialization milestones, and whether bullish flow persists after the initial partnership reaction.\n- FLY: monitor EXIM board decision on the $110M loan and any follow-up on Alpha rocket reliability or NASA MoonFall execution timing.\n- IBRX: monitor confirmation of Russell 1000 inclusion mechanics and any dated Anktiva or COVID-cancer data catalyst.\n- DRTS: monitor whether Alpha DaRT glioblastoma news is followed by efficacy data, enrollment updates, or additional insider-sale filings.\n- TTD: monitor whether bullish options flow continues after the weak-outlook headline and whether Walmart partnership-shift details become financially material.\n- MSFT, COPX, BULL: monitor for news catalysts that explain strong bullish options flow currently unsupported by bounded news.\n\n## Caveats\n- No browsing was used; this is based only on the bounded evidence packet.\n- Several sources are headline-level market-news items rather than filings or full company releases.\n- ThetaData reflects options activity and implied volatility, not a trade recommendation or proof of future price direction.\n- Some portfolio prices and account positions are as of 2026-06-22, while options scans are mostly 2026-06-24.\n- DRTS options volume is small despite bullish flow, so the ThetaData signal may be less robust than higher-volume names.\n",
   "artifacts": {
     "oracle_json": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.json",
     "oracle_markdown": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.md",

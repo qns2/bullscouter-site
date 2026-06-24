@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Bull Scouter - Daily Analysis</title>
+  <meta name="description" content="Daily portfolio and market analysis combining GPT news discovery, oracle synthesis, and ThetaData options breadth.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/daily-analysis.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: { bull: { dark: '#0a0b0d', card: '#14161a', accent: '#00ff88', muted: '#94a3b8', border: 'rgba(255,255,255,0.1)' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card { background: rgba(20,22,26,0.62); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 0.75rem; }
+    .metric { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.5rem; padding: 0.75rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.25rem; border-radius: 9999px; padding: 0.125rem 0.5rem; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+    .badge-bull { background: rgba(0,255,136,0.12); color: #6ee7b7; }
+    .badge-bear { background: rgba(248,113,113,0.14); color: #fca5a5; }
+    .badge-neutral { background: rgba(148,163,184,0.14); color: #cbd5e1; }
+    .loading-pulse { width: 40px; height: 40px; border-radius: 50%; background: rgba(0,255,136,0.1); animation: pulse 1.5s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.4; } 50% { transform: scale(1.1); opacity: 1; } }
+  </style>
+</head>
+<body class="min-h-screen font-sans">
+  <nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-90">
+          <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter</span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
+          <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+          <a class="text-bull-accent" href="daily-analysis.html">Daily Analysis</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="deep-buy.html">Deep Buy</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="regime.html">Regime</a>
+        </div>
+        <button id="burger-btn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="sm:hidden p-2 text-bull-muted hover:text-white" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md">
+      <div class="px-4 py-3 space-y-2 text-sm font-medium">
+        <a class="block py-2 text-bull-muted" href="index.html">Home</a>
+        <a class="block py-2 text-bull-accent" href="daily-analysis.html">Daily Analysis</a>
+        <a class="block py-2 text-bull-muted" href="deep-buy.html">Deep Buy</a>
+        <a class="block py-2 text-bull-muted" href="regime.html">Regime</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="max-w-7xl mx-auto px-4 pt-8 sm:pt-12 pb-6">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-5">
+      <div>
+        <p class="text-xs uppercase tracking-[0.25em] text-bull-accent font-black mb-3">Daily Analysis</p>
+        <h1 id="report-title" class="text-2xl sm:text-4xl font-extrabold tracking-tight">Loading daily analysis</h1>
+        <p id="report-summary" class="text-sm sm:text-base text-bull-muted mt-3 max-w-4xl leading-relaxed"></p>
+      </div>
+      <div class="flex flex-wrap gap-2 text-xs font-mono text-bull-muted">
+        <span class="px-3 py-1 rounded bg-white/5 border border-white/10">Report <span id="report-date" class="text-white">-</span></span>
+        <span class="px-3 py-1 rounded bg-white/5 border border-white/10">Model <span id="report-model" class="text-white">-</span></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 pb-16">
+    <div id="loading" class="text-center py-20">
+      <div class="loading-pulse mx-auto mb-3"></div>
+      <p class="text-bull-muted">Loading daily-analysis.json...</p>
+    </div>
+
+    <div id="error" class="hidden text-center py-20">
+      <p class="text-red-400 text-lg">Failed to load daily analysis</p>
+      <p id="error-msg" class="text-white/40 text-sm mt-1"></p>
+    </div>
+
+    <div id="content" class="hidden space-y-8">
+      <section class="grid lg:grid-cols-4 gap-4">
+        <div class="metric">
+          <p class="text-[10px] uppercase tracking-wider text-bull-muted">Held positions</p>
+          <p id="metric-held" class="text-2xl font-black mt-1">-</p>
+        </div>
+        <div class="metric">
+          <p class="text-[10px] uppercase tracking-wider text-bull-muted">Theta breadth</p>
+          <p id="metric-theta" class="text-2xl font-black mt-1">-</p>
+        </div>
+        <div class="metric">
+          <p class="text-[10px] uppercase tracking-wider text-bull-muted">Top opportunities</p>
+          <p id="metric-picks" class="text-2xl font-black mt-1">-</p>
+        </div>
+        <div class="metric">
+          <p class="text-[10px] uppercase tracking-wider text-bull-muted">Connecting ideas</p>
+          <p id="metric-connections" class="text-2xl font-black mt-1">-</p>
+        </div>
+      </section>
+
+      <section class="grid lg:grid-cols-2 gap-6">
+        <div class="glass-card p-5">
+          <div class="flex items-center justify-between gap-3 mb-4">
+            <h2 class="text-sm uppercase tracking-wider font-bold text-bull-accent">My Stocks</h2>
+            <span id="portfolio-asof" class="text-xs text-bull-muted font-mono"></span>
+          </div>
+          <p id="my-summary" class="text-sm text-gray-300 leading-relaxed"></p>
+          <div id="top-opportunities" class="mt-5 space-y-3"></div>
+        </div>
+
+        <div class="glass-card p-5">
+          <div class="flex items-center justify-between gap-3 mb-4">
+            <h2 class="text-sm uppercase tracking-wider font-bold text-cyan-400">General Market</h2>
+            <span id="general-date" class="text-xs text-bull-muted font-mono"></span>
+          </div>
+          <div id="macro-climate" class="space-y-3"></div>
+          <div id="theta-market" class="mt-5 grid sm:grid-cols-2 gap-3"></div>
+        </div>
+      </section>
+
+      <section class="grid lg:grid-cols-2 gap-6">
+        <div class="glass-card p-5">
+          <h2 class="text-sm uppercase tracking-wider font-bold text-purple-400 mb-4">Connecting Opportunities</h2>
+          <div id="connections" class="space-y-3"></div>
+        </div>
+        <div class="glass-card p-5">
+          <h2 class="text-sm uppercase tracking-wider font-bold text-amber-400 mb-4">Watch Items</h2>
+          <div id="watch-items" class="space-y-3"></div>
+        </div>
+      </section>
+
+      <section class="glass-card p-5">
+        <div class="flex items-center justify-between gap-3 mb-4">
+          <h2 class="text-sm uppercase tracking-wider font-bold text-white">Outcome Tracking</h2>
+          <span class="text-xs text-bull-muted">5-trading-day cadence</span>
+        </div>
+        <div id="outcome-tracking" class="grid md:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+      </section>
+
+      <section class="glass-card p-5">
+        <h2 class="text-sm uppercase tracking-wider font-bold text-white mb-4">General News Events</h2>
+        <div id="general-events" class="grid md:grid-cols-2 gap-3"></div>
+      </section>
+
+      <section class="glass-card p-5">
+        <h2 class="text-sm uppercase tracking-wider font-bold text-white mb-4">Source Quality</h2>
+        <div id="source-quality" class="grid md:grid-cols-2 lg:grid-cols-4 gap-3"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-bull-border py-10 px-4 mt-8">
+    <div class="max-w-7xl mx-auto text-center text-xs text-bull-muted">
+      Not financial advice. Daily analysis uses bounded source artifacts, local scanner data, and Theta/options snapshots.
+    </div>
+  </footer>
+
+  <script>
+    const $ = id => document.getElementById(id);
+    const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    const fmtDate = value => value ? String(value).replace('T', ' ').slice(0, 19) : '-';
+    const asList = value => Array.isArray(value) ? value : [];
+    const toneClass = dir => {
+      const d = String(dir || '').toLowerCase();
+      if (d.includes('bull')) return 'badge badge-bull';
+      if (d.includes('bear')) return 'badge badge-bear';
+      return 'badge badge-neutral';
+    };
+    const pct = value => value == null ? '-' : `${Math.round(Number(value) * 100)}%`;
+
+    function empty(text) {
+      return `<p class="text-sm text-bull-muted py-3">${esc(text)}</p>`;
+    }
+
+    function opportunityCard(item) {
+      const ticker = item.ticker || '-';
+      const score = item.pick_score ?? item.confidence ?? '-';
+      const theta = item.theta_adjusted_confidence != null ? pct(item.theta_adjusted_confidence) : null;
+      const features = item.pick_score_features || {};
+      return `
+        <article class="rounded-lg border border-white/10 bg-white/[0.035] p-4">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <p class="text-lg font-black">${esc(ticker)}</p>
+              <p class="text-xs text-bull-muted">${esc(item.type || 'opportunity')}</p>
+            </div>
+            <div class="text-right">
+              <p class="text-2xl font-black text-bull-accent">${esc(score)}</p>
+              <p class="text-[10px] uppercase text-bull-muted">pick score</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-300 mt-3 leading-relaxed">${esc(item.summary || '')}</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="${toneClass(item.direction)}">${esc(item.direction || 'neutral')}</span>
+            ${theta ? `<span class="badge badge-neutral">Theta ${theta}</span>` : ''}
+            ${features.flow_score != null ? `<span class="badge badge-neutral">Flow ${esc(features.flow_score)}</span>` : ''}
+            ${features.td_put_call_ratio != null ? `<span class="badge badge-neutral">P/C ${esc(features.td_put_call_ratio)}</span>` : ''}
+          </div>
+          ${item.oracle_note ? `<p class="text-xs text-bull-muted mt-3">${esc(item.oracle_note)}</p>` : ''}
+        </article>
+      `;
+    }
+
+    function simpleItem(item) {
+      if (typeof item === 'string') return `<div class="rounded-lg border border-white/10 bg-white/[0.03] p-3 text-sm text-gray-300">${esc(item)}</div>`;
+      return `
+        <div class="rounded-lg border border-white/10 bg-white/[0.03] p-3">
+          <div class="flex items-start justify-between gap-3">
+            <p class="font-bold text-sm">${esc(item.ticker || item.title || item.theme || item.type || 'Item')}</p>
+            ${item.direction ? `<span class="${toneClass(item.direction)}">${esc(item.direction)}</span>` : ''}
+          </div>
+          <p class="text-sm text-gray-300 mt-2 leading-relaxed">${esc(item.summary || item.note || item.oracle_note || item.description || '')}</p>
+        </div>
+      `;
+    }
+
+    function macroItem(item) {
+      return `
+        <div class="rounded-lg border border-white/10 bg-white/[0.03] p-3">
+          <div class="flex items-start justify-between gap-3">
+            <p class="font-bold text-sm">${esc(item.asset || item.name || item.ticker || item.type || 'Macro')}</p>
+            ${item.direction ? `<span class="${toneClass(item.direction)}">${esc(item.direction)}</span>` : ''}
+          </div>
+          <p class="text-sm text-gray-300 mt-2">${esc(item.summary || item.note || item.reason || '')}</p>
+        </div>
+      `;
+    }
+
+    function eventCard(event) {
+      const evidence = asList(event.evidence)[0] || {};
+      return `
+        <article class="rounded-lg border border-white/10 bg-white/[0.03] p-4">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <p class="font-bold">${esc(event.ticker || '-')} <span class="text-xs text-bull-muted">${esc(event.type || '')}</span></p>
+              <p class="text-xs text-bull-muted">${esc(event.event_date || event.date || '')}</p>
+            </div>
+            <span class="${toneClass(event.direction)}">${esc(event.direction || 'neutral')}</span>
+          </div>
+          <p class="text-sm text-gray-300 mt-3 leading-relaxed">${esc(event.summary || '')}</p>
+          ${evidence.url ? `<a class="text-xs text-bull-accent hover:text-white mt-3 inline-block" href="${esc(evidence.url)}" target="_blank" rel="noopener">Source</a>` : ''}
+        </article>
+      `;
+    }
+
+    function render(data) {
+      $('report-title').textContent = data.title || 'Daily Analysis';
+      $('report-summary').textContent = data.summary || '';
+      $('report-date').textContent = fmtDate(data.source_generated_at || data.generated_at);
+      $('report-model').textContent = data.oracle_model || '-';
+      $('portfolio-asof').textContent = fmtDate(data.portfolio?.as_of);
+      $('general-date').textContent = fmtDate(data.general_news?.generated_at);
+
+      const my = data.my_stocks || {};
+      const general = data.general || {};
+      const theta = general.theta_market || {};
+      const top = asList(my.top_opportunities);
+      const connections = asList(data.connecting_opportunities);
+      const watch = asList(data.watch_items);
+      const outcomes = data.outcome_tracking || {};
+      const generalEvents = asList(data.general_news?.events);
+
+      $('metric-held').textContent = data.portfolio?.position_count ?? asList(data.portfolio?.positions).length ?? '-';
+      $('metric-theta').textContent = theta.breadth ? `${theta.breadth.bullish || 0}/${theta.breadth.bearish || 0}` : '-';
+      $('metric-picks').textContent = top.length;
+      $('metric-connections').textContent = connections.length;
+
+      $('my-summary').textContent = my.summary || 'No portfolio summary available.';
+      $('top-opportunities').innerHTML = top.length ? top.slice(0, 8).map(opportunityCard).join('') : empty('No scored portfolio opportunities in the latest report.');
+
+      const macro = asList(general.macro_climate || general.market_climate);
+      $('macro-climate').innerHTML = macro.length ? macro.slice(0, 8).map(macroItem).join('') : empty(general.summary || 'No macro climate items available.');
+      const breadth = theta.breadth || {};
+      $('theta-market').innerHTML = [
+        ['Latest scan', theta.latest_scan_date || '-'],
+        ['Bullish flow', theta.bullish_flow ?? breadth.bullish ?? '-'],
+        ['Bearish flow', theta.bearish_flow ?? breadth.bearish ?? '-'],
+        ['Scanned tickers', theta.scanned_tickers ?? '-'],
+      ].map(([label, value]) => `<div class="metric"><p class="text-[10px] uppercase tracking-wider text-bull-muted">${esc(label)}</p><p class="text-lg font-black mt-1">${esc(value)}</p></div>`).join('');
+
+      $('connections').innerHTML = connections.length ? connections.slice(0, 10).map(simpleItem).join('') : empty('No connecting opportunities in the latest report.');
+      $('watch-items').innerHTML = watch.length ? watch.slice(0, 10).map(simpleItem).join('') : empty('No watch items in the latest report.');
+
+      const outcomeItems = asList(outcomes.active_picks || outcomes.matured_picks || outcomes.items || outcomes.history);
+      $('outcome-tracking').innerHTML = outcomeItems.length ? outcomeItems.slice(0, 12).map(simpleItem).join('') : empty(outcomes.summary || 'No matured pick-score outcomes yet.');
+      $('general-events').innerHTML = generalEvents.length ? generalEvents.slice(0, 12).map(eventCard).join('') : empty('No general news events in the latest artifact.');
+
+      const sq = data.source_quality || {};
+      $('source-quality').innerHTML = Object.entries(sq).map(([key, value]) => `<div class="metric"><p class="text-[10px] uppercase tracking-wider text-bull-muted">${esc(key)}</p><p class="text-sm font-bold mt-1">${esc(value)}</p></div>`).join('');
+
+      $('loading').classList.add('hidden');
+      $('content').classList.remove('hidden');
+    }
+
+    fetch('data/daily-analysis.json?v=' + Date.now())
+      .then(resp => {
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        return resp.json();
+      })
+      .then(render)
+      .catch(err => {
+        $('loading').classList.add('hidden');
+        $('error').classList.remove('hidden');
+        $('error-msg').textContent = err.message || String(err);
+      });
+  </script>
+  <script src="js/personal-nav.js?v=2" defer></script>
+</body>
+</html>
