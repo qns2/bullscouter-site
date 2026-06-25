@@ -256,6 +256,31 @@
       `;
     }
 
+    function formatNum(value, digits = 2) {
+      if (value === null || value === undefined || value === '') return '-';
+      const n = Number(value);
+      return Number.isFinite(n) ? n.toFixed(digits).replace(/\\.00$/, '') : String(value);
+    }
+
+    function thetaFlowList(items) {
+      const rows = asList(items).slice(0, 6);
+      if (!rows.length) return '-';
+      return `
+        <div class="mt-2 space-y-1">
+          ${rows.map(row => `
+            <div class="flex items-center justify-between gap-3 text-xs">
+              <span class="font-black text-white">${esc(row.ticker || '-')} ${row.is_held ? '<span class="text-bull-accent">held</span>' : ''}</span>
+              <span class="text-bull-muted">v2 ${esc(formatNum(row.flow_score_v2))} | p/c ${esc(formatNum(row.td_put_call_ratio, 3))} | vol ${esc(formatNum(row.total_volume, 0))}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function thetaMetric(label, value) {
+      return `<div class="metric"><p class="text-[10px] uppercase tracking-wider text-bull-muted">${esc(label)}</p><div class="text-lg font-black mt-1">${value}</div></div>`;
+    }
+
     function render(data) {
       $('report-title').textContent = data.title || 'Daily Analysis';
       $('report-summary').textContent = data.summary || '';
@@ -285,11 +310,13 @@
       $('macro-climate').innerHTML = macro.length ? macro.slice(0, 8).map(macroItem).join('') : empty(general.summary || 'No macro climate items available.');
       const breadth = theta.breadth || {};
       $('theta-market').innerHTML = [
-        ['Latest scan', theta.latest_scan_date || '-'],
-        ['Bullish flow', theta.bullish_flow ?? breadth.bullish ?? '-'],
-        ['Bearish flow', theta.bearish_flow ?? breadth.bearish ?? '-'],
-        ['Scanned tickers', theta.scanned_tickers ?? '-'],
-      ].map(([label, value]) => `<div class="metric"><p class="text-[10px] uppercase tracking-wider text-bull-muted">${esc(label)}</p><p class="text-lg font-black mt-1">${esc(value)}</p></div>`).join('');
+        thetaMetric('Latest scan', esc(theta.latest_scan_date || '-')),
+        thetaMetric('Breadth', esc(`${breadth.bullish_count ?? breadth.bullish ?? 0}/${breadth.bearish_count ?? breadth.bearish ?? 0} bull/bear`)),
+        thetaMetric('Bullish flow', thetaFlowList(theta.bullish_flow)),
+        thetaMetric('Bearish flow', thetaFlowList(theta.bearish_flow)),
+        thetaMetric('Held overlap', thetaFlowList(theta.held_overlap)),
+        thetaMetric('Scanned tickers', esc(theta.scanned_tickers ?? '-')),
+      ].join('');
 
       $('connections').innerHTML = connections.length ? connections.slice(0, 10).map(simpleItem).join('') : empty('No connecting opportunities in the latest report.');
       $('watch-items').innerHTML = watch.length ? watch.slice(0, 10).map(simpleItem).join('') : empty('No watch items in the latest report.');
