@@ -1,17 +1,17 @@
 {
   "date": "2026-07-04",
-  "version": "2.40.0",
-  "regime_label": "risk_on",
-  "regime_score": 30.1,
+  "version": "2.41.0",
+  "regime_label": "neutral",
+  "regime_score": 21.4,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 362,
-    "rr_too_low": 42,
-    "held": 11,
+    "below_cutoff": 340,
+    "rr_too_low": 39,
+    "held": 10,
     "frozen": 1
   },
-  "candidates_evaluated": 417,
+  "candidates_evaluated": 391,
   "picks_count": 1,
   "picks": [
     {
@@ -248,6 +248,78 @@
       "rank": 4
     },
     {
+      "ticker": "OXY",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "size_class": "full",
+      "spot_price": 49.99,
+      "entry": {
+        "low": 48.49,
+        "high": 50.24,
+        "mid": 49.37
+      },
+      "target": 59.99,
+      "stop": 45.99,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 987.4,
+      "suggested_shares": 20,
+      "position_risk_usd": 67.6,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality": {
+          "score": 10
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "OXY",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +9.4 5d-avg (3 TD days) + Buffett 51 + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-18",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 6
+    },
+    {
       "ticker": "INCY",
       "path": "flow_led",
       "source": "sustained",
@@ -312,7 +384,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 6
+      "rank": 7
     },
     {
       "ticker": "PYPL",
@@ -379,7 +451,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 7
+      "rank": 8
     },
     {
       "ticker": "DJT",
@@ -445,7 +517,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 10
+      "rank": 11
     },
     {
       "ticker": "PLUG",
@@ -499,81 +571,6 @@
         "latest_filings": []
       },
       "rationale_one_liner": "flow +10.2 5d-avg (4 TD days) + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-18",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "chase_risk": false,
-      "rank": 11
-    },
-    {
-      "ticker": "OXY",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_sustained",
-        "buffett_quality",
-        "watchlist_dip"
-      ],
-      "tier": 3,
-      "tier_evidence": [
-        "flow_sustained",
-        "buffett_quality",
-        "watchlist_dip"
-      ],
-      "size_class": "full",
-      "spot_price": 49.99,
-      "entry": {
-        "low": 48.49,
-        "high": 50.24,
-        "mid": 49.37
-      },
-      "target": 59.99,
-      "stop": 47.49,
-      "rr_ratio": 4.0,
-      "rr_planned": 5.67,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 987.4,
-      "suggested_shares": 20,
-      "position_risk_usd": 37.6,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "buffett_quality": {
-          "score": 10
-        },
-        "watchlist_dip": {
-          "score": 10
-        },
-        "gex_danger": {
-          "score": -10
-        }
-      },
-      "dilution_risk": {
-        "ticker": "OXY",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "flow +9.4 5d-avg (3 TD days) + Buffett 51 + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -1161,7 +1158,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 8
+      "rank": 9
     },
     {
       "ticker": "AXSM",
@@ -1223,7 +1220,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 9
+      "rank": 10
     }
   ],
   "tier3_picks": [
@@ -1375,7 +1372,7 @@
       "ticker": "OXY",
       "path": "flow_led",
       "source": "sustained",
-      "composite": 30,
+      "composite": 40,
       "convergence_paths": [
         "flow_sustained",
         "buffett_quality",
@@ -1395,13 +1392,13 @@
         "mid": 49.37
       },
       "target": 59.99,
-      "stop": 47.49,
-      "rr_ratio": 4.0,
-      "rr_planned": 5.67,
+      "stop": 45.99,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
       "above_zone_pct": 0.0,
       "suggested_size_usd": 987.4,
       "suggested_shares": 20,
-      "position_risk_usd": 37.6,
+      "position_risk_usd": 67.6,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -1413,9 +1410,6 @@
         },
         "watchlist_dip": {
           "score": 10
-        },
-        "gex_danger": {
-          "score": -10
         }
       },
       "dilution_risk": {
@@ -1444,7 +1438,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 12
+      "rank": 6
     }
   ],
   "tier2_picks": [
@@ -1583,7 +1577,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 6
+      "rank": 7
     },
     {
       "ticker": "PYPL",
@@ -1650,7 +1644,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 7
+      "rank": 8
     },
     {
       "ticker": "BKNG",
@@ -2066,7 +2060,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 8
+      "rank": 9
     },
     {
       "ticker": "AXSM",
@@ -2128,7 +2122,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 9
+      "rank": 10
     },
     {
       "ticker": "DJT",
@@ -2194,7 +2188,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 10
+      "rank": 11
     },
     {
       "ticker": "PLUG",
@@ -2260,7 +2254,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 11
+      "rank": 12
     },
     {
       "ticker": "RLMD",
