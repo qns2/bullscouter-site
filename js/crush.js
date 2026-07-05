@@ -88,7 +88,7 @@
   function render(data) {
     $('#cr-date').textContent = data.date || '-';
     $('#cr-counts').textContent =
-      `${data.picks_count || 0} picks · ${data.candidates_evaluated || 0} evaluated · ${data.killed || 0} killed`;
+      `${data.shown ?? data.picks_count ?? 0} shown · ${data.total_survivors ?? data.picks_count ?? 0} survivors · ${data.candidates_evaluated || 0} evaluated · ${data.killed || 0} killed`;
     $('#version-badge') && ($('#version-badge').textContent = 'v' + (data.version || ''));
 
     if (data.strategic_context_blocks_new_entries) {
