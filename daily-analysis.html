@@ -131,6 +131,11 @@
         </div>
       </section>
 
+      <section class="glass-card p-5">
+        <h2 class="text-sm uppercase tracking-wider font-bold text-bull-accent mb-4">Held Positions</h2>
+        <div id="held-positions" class="grid md:grid-cols-2 gap-3"></div>
+      </section>
+
       <section class="grid lg:grid-cols-2 gap-6">
         <div class="glass-card p-5">
           <h2 class="text-sm uppercase tracking-wider font-bold text-purple-400 mb-4">Connecting Opportunities</h2>
@@ -183,6 +188,27 @@
 
     function empty(text) {
       return `<p class="text-sm text-bull-muted py-3">${esc(text)}</p>`;
+    }
+
+    const stanceClass = stance => {
+      const s = String(stance || '').toLowerCase();
+      if (s.includes('opportun')) return 'badge badge-bull';
+      if (s.includes('risk')) return 'badge badge-bear';
+      return 'badge badge-neutral';
+    };
+
+    function heldCard(item) {
+      return `
+        <article class="rounded-lg border border-white/10 bg-white/[0.035] p-4">
+          <div class="flex items-center justify-between gap-3">
+            <p class="text-lg font-black">${esc(item.ticker || '-')}</p>
+            <span class="${stanceClass(item.stance)}">${esc(item.stance || 'neutral')}</span>
+          </div>
+          ${item.news ? `<p class="text-sm text-gray-300 mt-3 leading-relaxed">${esc(item.news)}</p>` : ''}
+          ${item.theta ? `<p class="text-xs text-cyan-300/90 mt-2"><span class="text-bull-muted">Theta:</span> ${esc(item.theta)}</p>` : ''}
+          ${item.oracle_note ? `<p class="text-xs text-bull-muted mt-2 italic">${esc(item.oracle_note)}</p>` : ''}
+        </article>
+      `;
     }
 
     function opportunityCard(item) {
@@ -293,18 +319,21 @@
       const general = data.general || {};
       const theta = general.theta_market || {};
       const top = asList(my.top_opportunities);
+      const held = asList(data.held_position_updates).length ? asList(data.held_position_updates) : asList(my.held_position_updates);
       const connections = asList(data.connecting_opportunities);
       const watch = asList(data.watch_items);
       const outcomes = data.outcome_tracking || {};
       const generalEvents = asList(data.general_news?.events);
 
       $('metric-held').textContent = data.portfolio?.position_count ?? asList(data.portfolio?.positions).length ?? '-';
-      $('metric-theta').textContent = theta.breadth ? `${theta.breadth.bullish || 0}/${theta.breadth.bearish || 0}` : '-';
+      const brd = theta.breadth || {};
+      $('metric-theta').textContent = theta.breadth ? `${brd.bullish_count ?? brd.bullish ?? 0}/${brd.bearish_count ?? brd.bearish ?? 0}` : '-';
       $('metric-picks').textContent = top.length;
       $('metric-connections').textContent = connections.length;
 
       $('my-summary').textContent = my.summary || 'No portfolio summary available.';
       $('top-opportunities').innerHTML = top.length ? top.slice(0, 8).map(opportunityCard).join('') : empty('No scored portfolio opportunities in the latest report.');
+      $('held-positions').innerHTML = held.length ? held.map(heldCard).join('') : empty('No held-position updates in the latest report.');
 
       const macro = asList(general.macro_climate || general.market_climate);
       $('macro-climate').innerHTML = macro.length ? macro.slice(0, 8).map(macroItem).join('') : empty(general.summary || 'No macro climate items available.');
