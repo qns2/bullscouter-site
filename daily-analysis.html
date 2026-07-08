@@ -265,6 +265,50 @@
       `;
     }
 
+    // macro_climate is a dict ({price_snapshot, price_moves, tone, headlines, summary}),
+    // not a list — render its snapshot + tone + any headlines. Falls back gracefully.
+    function macroClimateHtml(general) {
+      const mc = general.macro_climate || general.market_climate;
+      if (Array.isArray(mc)) return mc.length ? mc.slice(0, 8).map(macroItem).join('') : empty(general.summary || 'No macro climate items available.');
+      if (mc && typeof mc === 'object') {
+        const snap = mc.price_snapshot || {};
+        const headlines = asList(mc.headlines);
+        const parts = [];
+        const snapText = snap.title || mc.summary;
+        if (snapText) parts.push(`
+          <div class="rounded-lg border border-white/10 bg-white/[0.03] p-3">
+            <div class="flex items-start justify-between gap-3">
+              <p class="font-bold text-sm">Market snapshot</p>
+              ${mc.tone ? `<span class="${toneClass(mc.tone)}">${esc(mc.tone)}</span>` : ''}
+            </div>
+            <p class="text-sm text-gray-300 mt-2">${esc(snapText)}</p>
+          </div>`);
+        if (headlines.length) parts.push(headlines.slice(0, 8).map(macroItem).join(''));
+        return parts.length ? parts.join('') : empty(general.summary || 'Macro snapshot only — no macro headlines today.');
+      }
+      return empty(general.summary || 'No macro climate items available.');
+    }
+
+    function outcomeCard(pick) {
+      const ot = pick.outcome_tracking || {};
+      const j = ot.latest_judgment;
+      const verdict = j && (j.verdict || j.result) ? esc(j.verdict || j.result) : (ot.status ? esc(ot.status) : 'pending');
+      const vClass = /correct|win|right/i.test(verdict) ? 'badge badge-bull' : (/wrong|miss|loss/i.test(verdict) ? 'badge badge-bear' : 'badge badge-neutral');
+      return `
+        <article class="rounded-lg border border-white/10 bg-white/[0.035] p-3">
+          <div class="flex items-center justify-between gap-3">
+            <p class="text-base font-black">${esc(pick.ticker || '-')}</p>
+            <span class="${vClass}">${verdict}</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-2">
+            <span class="badge badge-neutral">score ${esc(pick.pick_score ?? '-')}</span>
+            <span class="${toneClass(pick.direction)}">${esc(pick.direction || 'neutral')}</span>
+            ${ot.next_horizon_trading_days != null ? `<span class="badge badge-neutral">${esc(ot.next_horizon_trading_days)}d horizon</span>` : ''}
+          </div>
+        </article>
+      `;
+    }
+
     function eventCard(event) {
       const evidence = asList(event.evidence)[0] || {};
       return `
@@ -335,8 +379,7 @@
       $('top-opportunities').innerHTML = top.length ? top.slice(0, 8).map(opportunityCard).join('') : empty('No scored portfolio opportunities in the latest report.');
       $('held-positions').innerHTML = held.length ? held.map(heldCard).join('') : empty('No held-position updates in the latest report.');
 
-      const macro = asList(general.macro_climate || general.market_climate);
-      $('macro-climate').innerHTML = macro.length ? macro.slice(0, 8).map(macroItem).join('') : empty(general.summary || 'No macro climate items available.');
+      $('macro-climate').innerHTML = macroClimateHtml(general);
       const breadth = theta.breadth || {};
       $('theta-market').innerHTML = [
         thetaMetric('Latest scan', esc(theta.latest_scan_date || '-')),
@@ -350,8 +393,21 @@
       $('connections').innerHTML = connections.length ? connections.slice(0, 10).map(simpleItem).join('') : empty('No connecting opportunities in the latest report.');
       $('watch-items').innerHTML = watch.length ? watch.slice(0, 10).map(simpleItem).join('') : empty('No watch items in the latest report.');
 
-      const outcomeItems = asList(outcomes.active_picks || outcomes.matured_picks || outcomes.items || outcomes.history);
-      $('outcome-tracking').innerHTML = outcomeItems.length ? outcomeItems.slice(0, 12).map(simpleItem).join('') : empty(outcomes.summary || 'No matured pick-score outcomes yet.');
+      // Outcome tracking = the scored picks under forward-validation (top-level
+      // outcome_tracking only carries cadence/policy). Prefer explicit lists if the
+      // exporter ever adds them, else fall back to the per-pick tracked scored picks.
+      let outcomeItems = asList(outcomes.active_picks || outcomes.matured_picks || outcomes.items || outcomes.history);
+      // Dedup by ticker (a name is tracked once over its horizon; scored_picks can
+      // carry several near-identical picks per ticker) — keep the highest pick_score.
+      const byTicker = new Map();
+      for (const p of (asList(my.scored_picks).length ? asList(my.scored_picks) : top)) {
+        const t = p.ticker || '-';
+        if (!byTicker.has(t) || (p.pick_score ?? -1) > (byTicker.get(t).pick_score ?? -1)) byTicker.set(t, p);
+      }
+      const tracked = [...byTicker.values()].sort((a, b) => (b.pick_score ?? 0) - (a.pick_score ?? 0));
+      $('outcome-tracking').innerHTML = outcomeItems.length
+        ? outcomeItems.slice(0, 12).map(simpleItem).join('')
+        : (tracked.length ? tracked.slice(0, 12).map(outcomeCard).join('') : empty(outcomes.summary || 'No tracked pick-score outcomes yet.'));
       $('general-events').innerHTML = generalEvents.length ? generalEvents.slice(0, 12).map(eventCard).join('') : empty('No general news events in the latest artifact.');
 
       const sq = data.source_quality || {};
