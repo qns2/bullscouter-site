@@ -1,18 +1,19 @@
 {
-  "date": "2026-07-07",
+  "date": "2026-07-08",
   "version": "2.42.5",
   "regime_label": "risk_on",
   "regime_score": 39.1,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 374,
-    "earnings_blackout": 7,
-    "rr_too_low": 49,
+    "below_cutoff": 356,
+    "earnings_blackout": 8,
+    "rr_too_low": 54,
     "held": 11,
-    "frozen": 1
+    "frozen": 1,
+    "rescan_below_cutoff_no_note": 3
   },
-  "candidates_evaluated": 444,
+  "candidates_evaluated": 432,
   "picks_count": 2,
   "picks": [
     {
@@ -22,22 +23,22 @@
         "path1_buy",
         "path3_strong_candidate"
       ],
-      "spot_price": 76.52,
+      "spot_price": 76.29,
       "entry": {
         "low": 74.0,
         "high": 82.0,
         "mid": 78.0
       },
       "target": 149.0,
-      "stop": 70.4,
-      "rr_ratio": 11.84,
-      "rr_planned": 9.34,
+      "stop": 70.19,
+      "rr_ratio": 11.92,
+      "rr_planned": 9.09,
       "above_zone_pct": 0.0,
       "suggested_size_usd": 936.0,
       "suggested_shares": 12,
-      "position_risk_usd": 91.2,
-      "earnings_date": null,
-      "earnings_days_away": null,
+      "position_risk_usd": 93.72,
+      "earnings_date": "2026-08-06",
+      "earnings_days_away": 21,
       "components": {
         "path1": {
           "score": 25
@@ -59,14 +60,14 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "Tier 2 BUY conf 97 + Path 3 strong. no earnings <45d.",
+      "rationale_one_liner": "Tier 2 BUY conf 97 + Path 3 strong. Earnings 21d.",
       "watchlist_thesis": "#1 non-binary. P1 BUY 90/100 recovery. Animal health moat 53% down PE 10.5x. 2 guidance cuts. Half-size. Limit $76.",
       "rank": 1,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-21",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-22",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -80,20 +81,20 @@
         "path1_buy",
         "path5_strong_quality"
       ],
-      "spot_price": 213.99,
+      "spot_price": 212.38,
       "entry": {
         "low": 215.0,
         "high": 225.0,
         "mid": 220.0
       },
-      "target": 256.79,
-      "stop": 196.87,
+      "target": 254.86,
+      "stop": 195.39,
       "rr_ratio": 2.5,
-      "rr_planned": 1.59,
+      "rr_planned": 1.42,
       "above_zone_pct": 0.0,
       "suggested_size_usd": 880.0,
       "suggested_shares": 4,
-      "position_risk_usd": 92.52,
+      "position_risk_usd": 98.44,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -123,8 +124,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hold, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-07-21",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector Technology, Industry unknown",
+        "expires": "2026-07-22",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -132,51 +133,147 @@
       "oracle_note": null
     }
   ],
-  "oracle_watch_count": 3,
-  "oracle_watch": [
-    {
-      "ticker": "AVAV",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 165.95,
-      "oracle_note": {
-        "text": "Rescan: Q4 rev +133% may resolve negative FCF. Assessor 2-expert BUY MED. Investor Day Jul 8. Blocklisted for FCF \u2014 re-evaluate post-ID.",
-        "written_at": "2026-07-02"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "FCN",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 158.46,
-      "oracle_note": {
-        "text": "Rescan: CEO+CFO+CSO $2.08M cluster buy May 13 at 52w lows. Assessor BUY HIGH $190. 2-expert convergence. IN zone ~$150.",
-        "written_at": "2026-07-02"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "WEX",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 149.67,
-      "oracle_note": {
-        "text": "Rescan: 6-C-suite cluster buy (rarest insider signal). Assessor SB HIGH $187.50. Blocklisted for CTO comp but $1B buyback+activist need review.",
-        "written_at": "2026-07-02"
-      },
-      "filter_reason": "below_cutoff"
-    }
-  ],
+  "oracle_watch_count": 0,
+  "oracle_watch": [],
   "macro_blocked_count": 0,
   "macro_blocked": [],
-  "tier0_watch": [],
+  "tier0_watch": [
+    {
+      "ticker": "OLED",
+      "path": "flow_led",
+      "source": "spike",
+      "composite": 30,
+      "convergence_paths": [
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 0,
+      "tier_evidence": [],
+      "size_class": "none",
+      "spot_price": 79.77,
+      "entry": {
+        "low": 77.38,
+        "high": 80.17,
+        "mid": 78.78
+      },
+      "target": 95.72,
+      "stop": 73.39,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": null,
+      "suggested_shares": null,
+      "position_risk_usd": null,
+      "earnings_date": "2026-07-30",
+      "earnings_days_away": 16,
+      "components": {
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "OLED",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -12.07,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Buffett 65 STRONG + watchlist dip alert. Earnings 16d.",
+      "watchlist_thesis": "BUY LIST day 1. CEO+CLO $1.4M cluster buy 5/7 + $400M buyback (10% mcap). 74% GM zero debt. Rescan oracle_watch.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-22",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      }
+    }
+  ],
   "flow_led_picks_count": 0,
   "flow_led_picks": [],
-  "flow_extreme_picks_count": 2,
+  "flow_extreme_picks_count": 3,
   "flow_extreme_picks": [
     {
-      "ticker": "AXSM",
+      "ticker": "INCY",
+      "path": "flow_extreme",
+      "source": "extreme",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_extreme",
+        "buffett_strong"
+      ],
+      "tier": 2,
+      "tier_evidence": [
+        "flow_extreme",
+        "buffett_strong"
+      ],
+      "size_class": "half",
+      "spot_price": 117.33,
+      "entry": {
+        "low": 113.81,
+        "high": 117.92,
+        "mid": 115.87
+      },
+      "target": 140.8,
+      "stop": 107.94,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 926.96,
+      "suggested_shares": 8,
+      "position_risk_usd": 63.44,
+      "earnings_date": "2026-08-04",
+      "earnings_days_away": 19,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        }
+      },
+      "dilution_risk": {
+        "ticker": "INCY",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": 18.69,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow-extreme: 10d streak, P/C 0.117 (9:1 calls) + Buffett 78 STRONG. Earnings 19d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector Healthcare, Industry unknown",
+        "expires": "2026-07-22",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 1
+    },
+    {
+      "ticker": "NG",
       "path": "flow_extreme",
       "source": "extreme",
       "composite": 30,
@@ -188,20 +285,20 @@
         "flow_extreme"
       ],
       "size_class": "half",
-      "spot_price": 244.31,
+      "spot_price": 6.1,
       "entry": {
-        "low": 236.98,
-        "high": 245.53,
-        "mid": 241.25
+        "low": 5.92,
+        "high": 6.13,
+        "mid": 6.03
       },
-      "target": 293.17,
-      "stop": 224.77,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
+      "target": 7.32,
+      "stop": 5.61,
+      "rr_ratio": 2.49,
+      "rr_planned": 3.12,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 965.0,
-      "suggested_shares": 4,
-      "position_risk_usd": 65.92,
+      "suggested_size_usd": 994.95,
+      "suggested_shares": 165,
+      "position_risk_usd": 69.3,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -210,7 +307,7 @@
         }
       },
       "dilution_risk": {
-        "ticker": "AXSM",
+        "ticker": "NG",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -222,20 +319,20 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow-extreme: 11d streak, P/C 0.098 (10:1 calls). no earnings <45d.",
+      "rationale_one_liner": "flow-extreme: 14d streak, P/C 0.022 (45:1 calls). no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-21",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-22",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 1
+      "rank": 2
     },
     {
       "ticker": "APPS",
@@ -286,28 +383,93 @@
       },
       "rationale_one_liner": "flow-extreme: 10d streak, P/C 0.087 (11:1 calls). no earnings <45d.",
       "watchlist_thesis": null,
-      "oracle_note": {
-        "text": "Deep buy T1 flow_sustained+flow_extreme only. Same flow_extreme catastrophe (24% WR). No fundamental backing. -10 conf.",
-        "written_at": "2026-07-02"
-      },
+      "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-21",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-22",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 2
+      "rank": 3
     }
   ],
   "tier3_picks": [],
-  "tier2_picks": [],
+  "tier2_picks": [
+    {
+      "ticker": "INCY",
+      "path": "flow_extreme",
+      "source": "extreme",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_extreme",
+        "buffett_strong"
+      ],
+      "tier": 2,
+      "tier_evidence": [
+        "flow_extreme",
+        "buffett_strong"
+      ],
+      "size_class": "half",
+      "spot_price": 117.33,
+      "entry": {
+        "low": 113.81,
+        "high": 117.92,
+        "mid": 115.87
+      },
+      "target": 140.8,
+      "stop": 107.94,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 926.96,
+      "suggested_shares": 8,
+      "position_risk_usd": 63.44,
+      "earnings_date": "2026-08-04",
+      "earnings_days_away": 19,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        }
+      },
+      "dilution_risk": {
+        "ticker": "INCY",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": 18.69,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow-extreme: 10d streak, P/C 0.117 (9:1 calls) + Buffett 78 STRONG. Earnings 19d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector Healthcare, Industry unknown",
+        "expires": "2026-07-22",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 1
+    }
+  ],
   "tier1_picks": [
     {
-      "ticker": "AXSM",
+      "ticker": "NG",
       "path": "flow_extreme",
       "source": "extreme",
       "composite": 30,
@@ -319,20 +481,20 @@
         "flow_extreme"
       ],
       "size_class": "half",
-      "spot_price": 244.31,
+      "spot_price": 6.1,
       "entry": {
-        "low": 236.98,
-        "high": 245.53,
-        "mid": 241.25
+        "low": 5.92,
+        "high": 6.13,
+        "mid": 6.03
       },
-      "target": 293.17,
-      "stop": 224.77,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
+      "target": 7.32,
+      "stop": 5.61,
+      "rr_ratio": 2.49,
+      "rr_planned": 3.12,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 965.0,
-      "suggested_shares": 4,
-      "position_risk_usd": 65.92,
+      "suggested_size_usd": 994.95,
+      "suggested_shares": 165,
+      "position_risk_usd": 69.3,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -341,7 +503,7 @@
         }
       },
       "dilution_risk": {
-        "ticker": "AXSM",
+        "ticker": "NG",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -353,20 +515,20 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow-extreme: 11d streak, P/C 0.098 (10:1 calls). no earnings <45d.",
+      "rationale_one_liner": "flow-extreme: 14d streak, P/C 0.022 (45:1 calls). no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-21",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-22",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 1
+      "rank": 2
     },
     {
       "ticker": "APPS",
@@ -417,21 +579,18 @@
       },
       "rationale_one_liner": "flow-extreme: 10d streak, P/C 0.087 (11:1 calls). no earnings <45d.",
       "watchlist_thesis": null,
-      "oracle_note": {
-        "text": "Deep buy T1 flow_sustained+flow_extreme only. Same flow_extreme catastrophe (24% WR). No fundamental backing. -10 conf.",
-        "written_at": "2026-07-02"
-      },
+      "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-21",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-22",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 2
+      "rank": 3
     }
   ]
 }
