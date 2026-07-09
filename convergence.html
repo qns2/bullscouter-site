@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Bull Scouter - Convergence</title>
+  <meta name="description" content="Multi-expert convergence: tickers 2+ independent assessor experts flagged, with per-expert reasoning, scanner cross-ref, company health, options flow, news, and entry/target/stop. Rolling 7-session history with streaks.">
+  <link rel="canonical" href="https://qns2.github.io/bullscouter-site/convergence.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bull Scouter - Convergence">
+  <meta property="og:description" content="Multi-expert convergence results, enriched, with 7-session rolling history.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: { bull: { dark: '#0a0b0d', card: '#14161a', accent: '#00ff88', muted: '#94a3b8', border: 'rgba(255,255,255,0.1)' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0b0d; color: #f1f5f9; -webkit-font-smoothing: antialiased; }
+    .glass-card { background: rgba(20, 22, 26, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0.75rem; }
+    .loading-pulse { width: 40px; height: 40px; border-radius: 50%; background: rgba(0, 255, 136, 0.1); animation: pulse 1.5s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.4; } 50% { transform: scale(1.1); opacity: 1; } }
+  </style>
+</head>
+<body class="min-h-screen font-sans">
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 border-b border-bull-border bg-bull-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-90">
+          <div class="w-8 h-8 bg-bull-accent rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-bull-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">Bull Scouter <span class="text-[10px] font-medium text-bull-muted align-top ml-1" id="version-badge"></span></span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-8 text-sm font-medium">
+          <a class="text-bull-muted hover:text-white transition-colors" href="index.html">Home</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="darwin.html">Darwin</a>
+          <a class="text-bull-muted hover:text-white transition-colors" href="about.html">About</a>
+        </div>
+        <button id="burger-btn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="sm:hidden p-2 text-bull-muted hover:text-white" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden border-t border-bull-border bg-bull-dark/95 backdrop-blur-md">
+      <div class="px-4 py-3 space-y-2 text-sm font-medium">
+        <a class="block py-2 text-bull-muted" href="index.html">Home</a>
+        <a class="block py-2 text-bull-muted" href="darwin.html">Darwin</a>
+        <a class="block py-2 text-bull-muted" href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="max-w-7xl mx-auto px-4 pt-8 sm:pt-12 pb-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Convergence</h1>
+        <p class="text-sm text-bull-muted mt-1">Multi-expert overlap · 2+ independent assessor experts agreed · session <span id="cv-session" class="text-white font-mono">-</span></p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="btn-copy-all" class="flex items-center gap-2 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs hover:bg-white/10" title="Copy all convergence tickers for Claude">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span class="copy-label hidden sm:inline">Copy for Claude</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats bar -->
+  <div class="max-w-7xl mx-auto px-4 mb-6">
+    <div class="border-y border-bull-border py-4 flex flex-wrap gap-4 sm:gap-6 text-sm font-medium">
+      <span>Overlaps today: <span class="text-white font-bold" id="cv-stat-overlaps">-</span></span>
+      <span>Discovered: <span class="text-white font-bold" id="cv-stat-discovered">-</span></span>
+      <span>Also scanner BUY: <span class="text-emerald-400 font-bold" id="cv-stat-buy">-</span></span>
+      <span>Max streak: <span class="text-amber-400 font-bold" id="cv-stat-streak">-</span></span>
+      <span>History sessions: <span class="text-bull-muted font-bold" id="cv-stat-history">-</span></span>
+    </div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="max-w-7xl mx-auto px-4 mb-8">
+    <details class="glass-card p-4">
+      <summary class="cursor-pointer text-sm font-bold uppercase tracking-wider text-bull-muted hover:text-white">How convergence works</summary>
+      <div class="mt-4 text-sm text-gray-400 space-y-3">
+        <p>Rick (the independent assessor) runs 5 blind expert agents with <strong class="text-white/70">zero scanner knowledge</strong>. Each searches the web for opportunities in its domain. A <strong class="text-white/70">convergence</strong> is a ticker that 2+ experts independently flagged — the assessor's highest-conviction output. Each card shows why each expert flagged it, the scanner's own stance, company health, options flow, fresh news, and entry/target/stop.</p>
+        <p><strong class="text-white/70">Streak</strong> = consecutive assessor sessions a ticker has been a multi-expert overlap. A 3+ session streak is a much stronger signal than a one-off — the panel keeps independently landing on it.</p>
+        <p><strong class="text-white/70">Assessor + Scanner</strong> badge = the scanner also has the ticker as a BUY/WATCHLIST etc. Independent agreement across two systems = strongest conviction.</p>
+        <p class="text-xs text-gray-500">Data: discovery.json (assessor) · signals/opportunities (scanner) · sec_fundamentals (EDGAR health) · options_snapshots (flow) · catalyst_events + Jina fresh-news (news) · deep_buy entry/target/stop logic. Not financial advice.</p>
+      </div>
+    </details>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 pb-16">
+    <!-- Section 1: Today's Convergence -->
+    <section id="cv-today-section" class="mb-10">
+      <div class="mb-4">
+        <h2 class="text-sm uppercase tracking-wider text-bull-accent font-bold">Today's Convergence</h2>
+        <p class="text-[11px] text-white/40 mt-1">Multi-expert overlaps from the latest assessor session, enriched with scanner + health + flow + news + action.</p>
+      </div>
+      <div id="cv-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
+    <!-- Section 2: 7-Session History -->
+    <section id="cv-history-section" class="hidden mt-10">
+      <div class="border-t border-bull-border pt-6 mb-4">
+        <h2 class="text-sm uppercase tracking-wider text-bull-muted font-bold">7-Session History</h2>
+        <p class="text-[11px] text-white/40 mt-1">Rolling — prior assessor sessions' overlaps. Tickers that recur across sessions are the persistent signals.</p>
+      </div>
+      <div id="cv-history-list" class="space-y-3"></div>
+    </section>
+
+    <div id="cv-loading" class="text-center py-20">
+      <div class="loading-pulse mx-auto mb-3"></div>
+      <p class="text-bull-muted">Loading convergence…</p>
+    </div>
+
+    <div id="cv-empty" class="hidden text-center py-20">
+      <p class="text-bull-muted text-lg">No convergence today</p>
+      <p class="text-white/30 text-sm mt-1">When 2+ assessor experts independently flag the same ticker, it appears here.</p>
+    </div>
+
+    <div id="cv-error" class="hidden text-center py-20">
+      <p class="text-red-400 text-lg">Failed to load data</p>
+      <p class="text-white/30 text-sm mt-1" id="cv-error-msg"></p>
+    </div>
+  </main>
+
+  <footer class="border-t border-bull-border py-12 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="w-6 h-6 bg-bull-muted/20 rounded flex items-center justify-center">
+          <svg class="w-4 h-4 text-bull-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <span class="text-sm font-bold tracking-tight text-bull-muted">Bull Scouter</span>
+      </div>
+      <p class="text-xs text-bull-muted max-w-lg mx-auto">Autonomous AI agents for stock catalyst detection. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="js/convergence.js?v=1"></script>
+  <script src="js/personal-nav.js?v=1" defer></script>
+</body>
+</html>

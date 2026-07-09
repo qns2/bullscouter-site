@@ -24,6 +24,7 @@
 
   const ITEMS = [
     { href: 'daily-analysis.html', label: 'Daily Analysis' },
+    { href: 'convergence.html', label: 'Convergence' },
     { href: 'deep-buy.html', label: 'Deep Buy' },
     { href: 'crush.html', label: 'Deep-Crush' },
     { href: 'volatile-trades.html', label: 'Volatile Trades (IBRX)' },
