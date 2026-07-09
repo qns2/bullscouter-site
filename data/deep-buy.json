@@ -6,17 +6,31 @@
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 359,
-    "earnings_blackout": 10,
-    "rr_too_low": 44,
+    "below_cutoff": 362,
+    "earnings_blackout": 11,
+    "rr_too_low": 45,
     "held": 11,
     "frozen": 1
   },
-  "candidates_evaluated": 425,
+  "candidates_evaluated": 430,
   "picks_count": 0,
   "picks": [],
   "oracle_watch_count": 9,
   "oracle_watch": [
+    {
+      "ticker": "FIS",
+      "composite": 35,
+      "convergence_paths": [
+        "path3_strong_candidate",
+        "path5_strong_quality"
+      ],
+      "spot_price": 40.84,
+      "oracle_note": {
+        "text": "Rescan conflict: watchlist says blocklisted on old bearish flow, but options-deep flow=+6.0, skew=bullish/extreme +5.0vp.",
+        "written_at": "2026-07-09"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "BSX",
       "composite": 25,
@@ -44,20 +58,6 @@
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "FIS",
-      "composite": 25,
-      "convergence_paths": [
-        "path3_strong_candidate",
-        "path5_strong_quality"
-      ],
-      "spot_price": 40.84,
-      "oracle_note": {
-        "text": "Rescan conflict: watchlist says blocklisted on old bearish flow, but options-deep flow=+6.0, skew=bullish/extreme +5.0vp.",
-        "written_at": "2026-07-09"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
       "ticker": "AVGO",
       "composite": 15,
       "convergence_paths": [
@@ -66,6 +66,19 @@
       "spot_price": 388.69,
       "oracle_note": {
         "text": "Rescan: independent BUY + P4/P5 quality, but current $388.69 is above $360-$385 zone. No chase.",
+        "written_at": "2026-07-09"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "INTU",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 272.1,
+      "oracle_note": {
+        "text": "Rescan: P3+P4+P5 convergence, Path5 score 88, alert at $272.10 in $270-$295 zone. Resolve prior blocklist conflict first.",
         "written_at": "2026-07-09"
       },
       "filter_reason": "below_cutoff"
@@ -97,19 +110,6 @@
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "INTU",
-      "composite": 5,
-      "convergence_paths": [
-        "path5_strong_quality"
-      ],
-      "spot_price": 272.1,
-      "oracle_note": {
-        "text": "Rescan: P3+P4+P5 convergence, Path5 score 88, alert at $272.10 in $270-$295 zone. Resolve prior blocklist conflict first.",
-        "written_at": "2026-07-09"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
       "ticker": "GEHC",
       "composite": 0,
       "convergence_paths": [],
@@ -122,7 +122,7 @@
     },
     {
       "ticker": "KRMN",
-      "composite": -10,
+      "composite": 0,
       "convergence_paths": [],
       "spot_price": 49.96,
       "oracle_note": {
@@ -185,7 +185,7 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow +9.5 5d-avg (3 TD days) + watchlist dip alert. Earnings 18d.",
+      "rationale_one_liner": "flow +9.2 5d-avg (4 TD days) + watchlist dip alert. Earnings 18d.",
       "watchlist_thesis": "EXIT CONFIRMED 5/20. 200sh @ ~$4.25. Loss ~-$132. Clean up from portfolio and flow tracking.",
       "oracle_note": null,
       "macro_filter": {
@@ -202,10 +202,239 @@
       "filter_reason": "macro_blocked"
     }
   ],
-  "tier0_watch": [],
-  "flow_led_picks_count": 3,
+  "tier0_watch": [
+    {
+      "ticker": "CPRT",
+      "path": "flow_led",
+      "source": "spike",
+      "composite": 30,
+      "convergence_paths": [
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 0,
+      "tier_evidence": [],
+      "size_class": "none",
+      "spot_price": 28.59,
+      "entry": {
+        "low": 27.73,
+        "high": 28.73,
+        "mid": 28.23
+      },
+      "target": 34.31,
+      "stop": 26.3,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": null,
+      "suggested_shares": null,
+      "position_risk_usd": null,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "CPRT",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -14.02,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Buffett 72 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector Industrials, Industry unknown",
+        "expires": "2026-07-23",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      }
+    }
+  ],
+  "flow_led_picks_count": 6,
   "flow_led_picks": [
     {
+      "ticker": "BIIB",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 50,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "size_class": "full",
+      "spot_price": 200.36,
+      "entry": {
+        "low": 194.35,
+        "high": 201.36,
+        "mid": 197.86
+      },
+      "target": 240.43,
+      "stop": 184.33,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 989.3,
+      "suggested_shares": 5,
+      "position_risk_usd": 67.65,
+      "earnings_date": "2026-07-29",
+      "earnings_days_away": 14,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "BIIB",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": 0.44,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +8.4 5d-avg (3 TD days) + Buffett 67 STRONG + watchlist dip alert. Earnings 14d.",
+      "watchlist_thesis": "PDUFA DATE DISCREPANCY: strategic ctx May 24 vs scanner Aug 24. Aug likely correct. SubQ Leqembi. Verify.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-23",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 2
+    },
+    {
+      "ticker": "DOCN",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "size_class": "full",
+      "spot_price": 140.47,
+      "entry": {
+        "low": 136.26,
+        "high": 141.17,
+        "mid": 138.71
+      },
+      "target": 168.56,
+      "stop": 129.23,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 970.97,
+      "suggested_shares": 7,
+      "position_risk_usd": 66.36,
+      "earnings_date": "2026-08-04",
+      "earnings_days_away": 18,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality": {
+          "score": 10
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "DOCN",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": [
+          {
+            "date": "2026-03-26",
+            "type": "secondary_offering",
+            "form": "424B5",
+            "summary": "DOCN filed 424B5; prospectus supplement indicates an active offering.",
+            "source": "sec_edgar"
+          },
+          {
+            "date": "2026-03-24",
+            "type": "secondary_offering",
+            "form": "424B5",
+            "summary": "DOCN filed 424B5; prospectus supplement indicates an active offering.",
+            "source": "sec_edgar"
+          },
+          {
+            "date": "2026-03-24",
+            "type": "s-3asr_shelf_registration",
+            "form": "S-3ASR",
+            "summary": "DOCN filed S-3ASR; shelf registration is active/dormant dilution risk.",
+            "source": "sec_edgar"
+          }
+        ]
+      },
+      "rationale_one_liner": "flow +8.9 5d-avg (3 TD days) + Buffett 58 + watchlist dip alert. Earnings 18d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-23",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 3
+    },
+    {
       "ticker": "EOSE",
       "path": "flow_led",
       "source": "sustained",
@@ -219,20 +448,20 @@
         "flow_sustained"
       ],
       "size_class": "half",
-      "spot_price": 4.74,
+      "spot_price": 4.5,
       "entry": {
         "low": 6.5,
         "high": 7.0,
         "mid": 6.75
       },
       "target": 11.0,
-      "stop": 4.36,
-      "rr_ratio": 16.47,
-      "rr_planned": 1.78,
+      "stop": 4.14,
+      "rr_ratio": 18.06,
+      "rr_planned": 1.63,
       "above_zone_pct": 0.0,
       "suggested_size_usd": 999.0,
       "suggested_shares": 148,
-      "position_risk_usd": 353.72,
+      "position_risk_usd": 386.28,
       "earnings_date": "2026-07-29",
       "earnings_days_away": 14,
       "components": {
@@ -264,7 +493,7 @@
           }
         ]
       },
-      "rationale_one_liner": "flow +11.5 5d-avg (3 TD days) + watchlist dip alert. Earnings 14d.",
+      "rationale_one_liner": "flow +11.1 5d-avg (4 TD days) + watchlist dip alert. Earnings 14d.",
       "watchlist_thesis": "Finviz IBRX-pattern (battery storage, vol surge, 2026-05-09). WAITLIST \u2014 earnings 2026-05-13 (T-4). PEFP: do NOT enter inside Compression. Re-evaluate post-print May 14-15: PEAD entry on dump to $6.50-7.00, pass on gap-up. Skew bullish extreme but pricing the binary (IV 156%/163%).",
       "oracle_note": null,
       "macro_filter": {
@@ -277,7 +506,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 3
+      "rank": 4
     },
     {
       "ticker": "MNKD",
@@ -293,20 +522,20 @@
         "flow_sustained"
       ],
       "size_class": "half",
-      "spot_price": 4.22,
+      "spot_price": 4.25,
       "entry": {
-        "low": 4.09,
-        "high": 4.24,
-        "mid": 4.17
+        "low": 4.12,
+        "high": 4.27,
+        "mid": 4.2
       },
-      "target": 5.06,
-      "stop": 3.88,
-      "rr_ratio": 2.48,
-      "rr_planned": 3.15,
+      "target": 5.1,
+      "stop": 3.91,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.18,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 996.63,
-      "suggested_shares": 239,
-      "position_risk_usd": 69.31,
+      "suggested_size_usd": 999.6,
+      "suggested_shares": 238,
+      "position_risk_usd": 69.02,
       "earnings_date": "2026-08-05",
       "earnings_days_away": 19,
       "components": {
@@ -330,7 +559,7 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow +10.3 5d-avg (3 TD days) + watchlist dip alert. Earnings 19d.",
+      "rationale_one_liner": "flow +9.2 5d-avg (3 TD days) + watchlist dip alert. Earnings 19d.",
       "watchlist_thesis": "PDUFA 5/29 outcome UNKNOWN \u2014 VERIFY TODAY. Price +21% suggests approval. If approved: GTC 50sh @ $5.00.",
       "oracle_note": null,
       "macro_filter": {
@@ -343,7 +572,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 4
+      "rank": 5
     },
     {
       "ticker": "FOUR",
@@ -409,47 +638,123 @@
         "override_applied": false
       },
       "chase_risk": true,
-      "rank": 5
+      "rank": 6
+    },
+    {
+      "ticker": "SRAD",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_quality"
+      ],
+      "tier": 2,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_quality"
+      ],
+      "size_class": "standard",
+      "spot_price": 16.16,
+      "entry": {
+        "low": 15.68,
+        "high": 16.24,
+        "mid": 15.96
+      },
+      "target": 19.39,
+      "stop": 14.87,
+      "rr_ratio": 2.51,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 989.52,
+      "suggested_shares": 62,
+      "position_risk_usd": 67.58,
+      "earnings_date": "2026-08-04",
+      "earnings_days_away": 18,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "SRAD",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +8.2 5d-avg (3 TD days) + Buffett 45. Earnings 18d.",
+      "watchlist_thesis": "BLOCKLISTED. Muddy Waters fraud (20-40% revenue from illegal gambling). -7.6% in 8d. Assessor AVOID. Jefferies -53% PT cut. Near -10% stop ($12.28). Remove from buy list.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-23",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 7
     }
   ],
-  "flow_extreme_picks_count": 2,
+  "flow_extreme_picks_count": 1,
   "flow_extreme_picks": [
     {
-      "ticker": "NG",
+      "ticker": "PLUG",
       "path": "flow_extreme",
-      "source": "extreme",
-      "composite": 30,
+      "source": "extreme+sustained",
+      "composite": 60,
       "convergence_paths": [
-        "flow_extreme"
+        "flow_extreme",
+        "flow_sustained",
+        "watchlist_dip"
       ],
       "tier": 1,
       "tier_evidence": [
+        "flow_sustained",
         "flow_extreme"
       ],
       "size_class": "half",
-      "spot_price": 6.1,
+      "spot_price": 2.46,
       "entry": {
-        "low": 5.92,
-        "high": 6.13,
-        "mid": 6.03
+        "low": 2.39,
+        "high": 2.47,
+        "mid": 2.43
       },
-      "target": 7.32,
-      "stop": 5.61,
-      "rr_ratio": 2.49,
-      "rr_planned": 3.12,
+      "target": 2.95,
+      "stop": 2.26,
+      "rr_ratio": 2.46,
+      "rr_planned": 3.07,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 994.95,
-      "suggested_shares": 165,
-      "position_risk_usd": 69.3,
+      "suggested_size_usd": 998.73,
+      "suggested_shares": 411,
+      "position_risk_usd": 69.87,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
         "flow_extreme": {
           "score": 30
+        },
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
         }
       },
       "dilution_risk": {
-        "ticker": "NG",
+        "ticker": "PLUG",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -461,7 +766,7 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow-extreme: 15d streak, P/C 0.038 (26:1 calls). no earnings <45d.",
+      "rationale_one_liner": "flow-extreme: 13d streak, P/C 0.133 (8:1 calls) + flow +8.5 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -475,109 +780,218 @@
       },
       "chase_risk": false,
       "rank": 1
-    },
-    {
-      "ticker": "METC",
-      "path": "flow_extreme",
-      "source": "extreme",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_extreme"
-      ],
-      "tier": 1,
-      "tier_evidence": [
-        "flow_extreme"
-      ],
-      "size_class": "half",
-      "spot_price": 12.16,
-      "entry": {
-        "low": 11.8,
-        "high": 12.22,
-        "mid": 12.01
-      },
-      "target": 14.59,
-      "stop": 11.19,
-      "rr_ratio": 2.51,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 996.83,
-      "suggested_shares": 83,
-      "position_risk_usd": 68.06,
-      "earnings_date": "2026-07-30",
-      "earnings_days_away": 15,
-      "components": {
-        "flow_extreme": {
-          "score": 30
-        }
-      },
-      "dilution_risk": {
-        "ticker": "METC",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "flow-extreme: 10d streak, P/C 0.016 (62:1 calls). Earnings 15d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-23",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "chase_risk": false,
-      "rank": 2
     }
   ],
-  "tier3_picks": [],
-  "tier2_picks": [],
-  "tier1_picks": [
+  "tier3_picks": [
     {
-      "ticker": "NG",
-      "path": "flow_extreme",
-      "source": "extreme",
-      "composite": 30,
+      "ticker": "BIIB",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 50,
       "convergence_paths": [
-        "flow_extreme"
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
       ],
-      "tier": 1,
+      "tier": 3,
       "tier_evidence": [
-        "flow_extreme"
+        "flow_sustained",
+        "buffett_strong",
+        "watchlist_dip"
       ],
-      "size_class": "half",
-      "spot_price": 6.1,
+      "size_class": "full",
+      "spot_price": 200.36,
       "entry": {
-        "low": 5.92,
-        "high": 6.13,
-        "mid": 6.03
+        "low": 194.35,
+        "high": 201.36,
+        "mid": 197.86
       },
-      "target": 7.32,
-      "stop": 5.61,
-      "rr_ratio": 2.49,
-      "rr_planned": 3.12,
+      "target": 240.43,
+      "stop": 184.33,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 994.95,
-      "suggested_shares": 165,
-      "position_risk_usd": 69.3,
-      "earnings_date": null,
-      "earnings_days_away": null,
+      "suggested_size_usd": 989.3,
+      "suggested_shares": 5,
+      "position_risk_usd": 67.65,
+      "earnings_date": "2026-07-29",
+      "earnings_days_away": 14,
       "components": {
-        "flow_extreme": {
-          "score": 30
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
         }
       },
       "dilution_risk": {
-        "ticker": "NG",
+        "ticker": "BIIB",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": 0.44,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow +8.4 5d-avg (3 TD days) + Buffett 67 STRONG + watchlist dip alert. Earnings 14d.",
+      "watchlist_thesis": "PDUFA DATE DISCREPANCY: strategic ctx May 24 vs scanner Aug 24. Aug likely correct. SubQ Leqembi. Verify.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-23",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 2
+    },
+    {
+      "ticker": "DOCN",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 40,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "tier": 3,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_quality",
+        "watchlist_dip"
+      ],
+      "size_class": "full",
+      "spot_price": 140.47,
+      "entry": {
+        "low": 136.26,
+        "high": 141.17,
+        "mid": 138.71
+      },
+      "target": 168.56,
+      "stop": 129.23,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 970.97,
+      "suggested_shares": 7,
+      "position_risk_usd": 66.36,
+      "earnings_date": "2026-08-04",
+      "earnings_days_away": 18,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality": {
+          "score": 10
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "DOCN",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": [
+          {
+            "date": "2026-03-26",
+            "type": "secondary_offering",
+            "form": "424B5",
+            "summary": "DOCN filed 424B5; prospectus supplement indicates an active offering.",
+            "source": "sec_edgar"
+          },
+          {
+            "date": "2026-03-24",
+            "type": "secondary_offering",
+            "form": "424B5",
+            "summary": "DOCN filed 424B5; prospectus supplement indicates an active offering.",
+            "source": "sec_edgar"
+          },
+          {
+            "date": "2026-03-24",
+            "type": "s-3asr_shelf_registration",
+            "form": "S-3ASR",
+            "summary": "DOCN filed S-3ASR; shelf registration is active/dormant dilution risk.",
+            "source": "sec_edgar"
+          }
+        ]
+      },
+      "rationale_one_liner": "flow +8.9 5d-avg (3 TD days) + Buffett 58 + watchlist dip alert. Earnings 18d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-23",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 3
+    }
+  ],
+  "tier2_picks": [
+    {
+      "ticker": "SRAD",
+      "path": "flow_led",
+      "source": "sustained",
+      "composite": 30,
+      "convergence_paths": [
+        "flow_sustained",
+        "buffett_quality"
+      ],
+      "tier": 2,
+      "tier_evidence": [
+        "flow_sustained",
+        "buffett_quality"
+      ],
+      "size_class": "standard",
+      "spot_price": 16.16,
+      "entry": {
+        "low": 15.68,
+        "high": 16.24,
+        "mid": 15.96
+      },
+      "target": 19.39,
+      "stop": 14.87,
+      "rr_ratio": 2.51,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 989.52,
+      "suggested_shares": 62,
+      "position_risk_usd": 67.58,
+      "earnings_date": "2026-08-04",
+      "earnings_days_away": 18,
+      "components": {
+        "flow_sustained": {
+          "score": 20
+        },
+        "buffett_quality": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "SRAD",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -589,7 +1003,80 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow-extreme: 15d streak, P/C 0.038 (26:1 calls). no earnings <45d.",
+      "rationale_one_liner": "flow +8.2 5d-avg (3 TD days) + Buffett 45. Earnings 18d.",
+      "watchlist_thesis": "BLOCKLISTED. Muddy Waters fraud (20-40% revenue from illegal gambling). -7.6% in 8d. Assessor AVOID. Jefferies -53% PT cut. Near -10% stop ($12.28). Remove from buy list.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-23",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "chase_risk": false,
+      "rank": 7
+    }
+  ],
+  "tier1_picks": [
+    {
+      "ticker": "PLUG",
+      "path": "flow_extreme",
+      "source": "extreme+sustained",
+      "composite": 60,
+      "convergence_paths": [
+        "flow_extreme",
+        "flow_sustained",
+        "watchlist_dip"
+      ],
+      "tier": 1,
+      "tier_evidence": [
+        "flow_sustained",
+        "flow_extreme"
+      ],
+      "size_class": "half",
+      "spot_price": 2.46,
+      "entry": {
+        "low": 2.39,
+        "high": 2.47,
+        "mid": 2.43
+      },
+      "target": 2.95,
+      "stop": 2.26,
+      "rr_ratio": 2.46,
+      "rr_planned": 3.07,
+      "above_zone_pct": 0.0,
+      "suggested_size_usd": 998.73,
+      "suggested_shares": 411,
+      "position_risk_usd": 69.87,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "flow_extreme": {
+          "score": 30
+        },
+        "flow_sustained": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "PLUG",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "flow-extreme: 13d streak, P/C 0.133 (8:1 calls) + flow +8.5 5d-avg (3 TD days) + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
@@ -603,68 +1090,6 @@
       },
       "chase_risk": false,
       "rank": 1
-    },
-    {
-      "ticker": "METC",
-      "path": "flow_extreme",
-      "source": "extreme",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_extreme"
-      ],
-      "tier": 1,
-      "tier_evidence": [
-        "flow_extreme"
-      ],
-      "size_class": "half",
-      "spot_price": 12.16,
-      "entry": {
-        "low": 11.8,
-        "high": 12.22,
-        "mid": 12.01
-      },
-      "target": 14.59,
-      "stop": 11.19,
-      "rr_ratio": 2.51,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 996.83,
-      "suggested_shares": 83,
-      "position_risk_usd": 68.06,
-      "earnings_date": "2026-07-30",
-      "earnings_days_away": 15,
-      "components": {
-        "flow_extreme": {
-          "score": 30
-        }
-      },
-      "dilution_risk": {
-        "ticker": "METC",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "flow-extreme: 10d streak, P/C 0.016 (62:1 calls). Earnings 15d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-23",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "chase_risk": false,
-      "rank": 2
     },
     {
       "ticker": "EOSE",
@@ -680,20 +1105,20 @@
         "flow_sustained"
       ],
       "size_class": "half",
-      "spot_price": 4.74,
+      "spot_price": 4.5,
       "entry": {
         "low": 6.5,
         "high": 7.0,
         "mid": 6.75
       },
       "target": 11.0,
-      "stop": 4.36,
-      "rr_ratio": 16.47,
-      "rr_planned": 1.78,
+      "stop": 4.14,
+      "rr_ratio": 18.06,
+      "rr_planned": 1.63,
       "above_zone_pct": 0.0,
       "suggested_size_usd": 999.0,
       "suggested_shares": 148,
-      "position_risk_usd": 353.72,
+      "position_risk_usd": 386.28,
       "earnings_date": "2026-07-29",
       "earnings_days_away": 14,
       "components": {
@@ -725,7 +1150,7 @@
           }
         ]
       },
-      "rationale_one_liner": "flow +11.5 5d-avg (3 TD days) + watchlist dip alert. Earnings 14d.",
+      "rationale_one_liner": "flow +11.1 5d-avg (4 TD days) + watchlist dip alert. Earnings 14d.",
       "watchlist_thesis": "Finviz IBRX-pattern (battery storage, vol surge, 2026-05-09). WAITLIST \u2014 earnings 2026-05-13 (T-4). PEFP: do NOT enter inside Compression. Re-evaluate post-print May 14-15: PEAD entry on dump to $6.50-7.00, pass on gap-up. Skew bullish extreme but pricing the binary (IV 156%/163%).",
       "oracle_note": null,
       "macro_filter": {
@@ -738,7 +1163,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 3
+      "rank": 4
     },
     {
       "ticker": "MNKD",
@@ -754,20 +1179,20 @@
         "flow_sustained"
       ],
       "size_class": "half",
-      "spot_price": 4.22,
+      "spot_price": 4.25,
       "entry": {
-        "low": 4.09,
-        "high": 4.24,
-        "mid": 4.17
+        "low": 4.12,
+        "high": 4.27,
+        "mid": 4.2
       },
-      "target": 5.06,
-      "stop": 3.88,
-      "rr_ratio": 2.48,
-      "rr_planned": 3.15,
+      "target": 5.1,
+      "stop": 3.91,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.18,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 996.63,
-      "suggested_shares": 239,
-      "position_risk_usd": 69.31,
+      "suggested_size_usd": 999.6,
+      "suggested_shares": 238,
+      "position_risk_usd": 69.02,
       "earnings_date": "2026-08-05",
       "earnings_days_away": 19,
       "components": {
@@ -791,7 +1216,7 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow +10.3 5d-avg (3 TD days) + watchlist dip alert. Earnings 19d.",
+      "rationale_one_liner": "flow +9.2 5d-avg (3 TD days) + watchlist dip alert. Earnings 19d.",
       "watchlist_thesis": "PDUFA 5/29 outcome UNKNOWN \u2014 VERIFY TODAY. Price +21% suggests approval. If approved: GTC 50sh @ $5.00.",
       "oracle_note": null,
       "macro_filter": {
@@ -804,7 +1229,7 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 4
+      "rank": 5
     },
     {
       "ticker": "FOUR",
@@ -870,7 +1295,7 @@
         "override_applied": false
       },
       "chase_risk": true,
-      "rank": 5
+      "rank": 6
     }
   ]
 }
