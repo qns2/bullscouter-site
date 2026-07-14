@@ -1,82 +1,104 @@
 {
   "date": "2026-07-14",
   "version": "2.44.0",
-  "regime_label": "risk_on",
-  "regime_score": 26.8,
+  "regime_label": "neutral",
+  "regime_score": 9.1,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 293,
-    "earnings_blackout": 41,
+    "below_cutoff": 299,
+    "earnings_blackout": 42,
     "rr_too_low": 39,
-    "held": 10,
+    "held": 12,
     "frozen": 1
   },
-  "candidates_evaluated": 384,
+  "candidates_evaluated": 393,
   "picks_count": 0,
   "picks": [],
   "oracle_watch_count": 10,
   "oracle_watch": [
     {
-      "ticker": "CEG",
-      "composite": 25,
+      "ticker": "GPK",
+      "composite": 20,
       "convergence_paths": [
-        "path1_buy"
+        "path3_strong_candidate"
       ],
-      "spot_price": 250.74,
+      "spot_price": 10.15,
       "oracle_note": {
-        "text": "Rescan/+5: P1 BUY 89/100, P4 zone $245-$265, independent source=both BUY. Limit $245-$251; no chase above $255.",
-        "written_at": "2026-07-10"
+        "text": "Rescan: P3 rescued name; insider log STRONG with buys=3 sells=0. Verify entry band because current $10.38 is below $10.80-$11.30 note.",
+        "written_at": "2026-07-14"
       },
       "filter_reason": "below_cutoff"
     },
     {
       "ticker": "ADBE",
-      "composite": 20,
+      "composite": 15,
       "convergence_paths": [
-        "path3_strong_candidate"
+        "path5_strong_quality"
       ],
       "spot_price": 222.65,
       "oracle_note": {
-        "text": "Rescan/+5: independent source=both BUY, P4 zone $225-$240, current $222.65 near/below floor. Use small limit $220-$225; AI-native competition caps size.",
-        "written_at": "2026-07-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "FIS",
-      "composite": 20,
-      "convergence_paths": [
-        "path3_strong_candidate"
-      ],
-      "spot_price": 41.61,
-      "oracle_note": {
-        "text": "Rescan conflict: P3 score 69 and independent BUY, but P4 remains blocklisted on old bearish flow. Needs fresh options check.",
-        "written_at": "2026-07-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "CAPR",
-      "composite": 10,
-      "convergence_paths": [
-        "catalyst_near"
-      ],
-      "spot_price": 22.5,
-      "oracle_note": {
-        "text": "Rescan: heatmap score=58, P4 AdCom 2026-07-29 + PDUFA 2026-08-27. Binary watch only; do not size like normal equity.",
-        "written_at": "2026-07-10"
+        "text": "P4 ENTRY_ZONE $225-$240 at $230.61 + independent BUY + P3 survivor. +5 conf, but AI-native competition caps size.",
+        "written_at": "2026-07-14"
       },
       "filter_reason": "below_cutoff"
     },
     {
       "ticker": "AVGO",
-      "composite": 0,
-      "convergence_paths": [],
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
       "spot_price": 401.11,
       "oracle_note": {
-        "text": "Rescan: independent source=both BUY HIGH and Path5 score 80, but current alert not in zone. Prefer $360-$385 only, no chase.",
-        "written_at": "2026-07-10"
+        "text": "Rescan: P4 ENTRY_ZONE $360-$385 at $384.05 + Path5 80 + independent BUY HIGH. Fix missing earnings date before entry.",
+        "written_at": "2026-07-14"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "CRM",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 171.22,
+      "oracle_note": {
+        "text": "Rescan: P4 ENTRY_ZONE $165-$175 at $171.22 + independent BUY; Agentforce skepticism keeps this below top conviction.",
+        "written_at": "2026-07-14"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "BNTX",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 92.98,
+      "oracle_note": {
+        "text": "Rescan: P4 ENTRY_ZONE $85-$95 at $90.07 + independent BUY; cash/buyback thesis worth oracle_watch, not full-size buy.",
+        "written_at": "2026-07-14"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "GILD",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 134.84,
+      "oracle_note": {
+        "text": "P4 zone $120-$128, Path5 score=83, independent BUY, and prior flow support. +5 conf; current $131 is above ideal entry.",
+        "written_at": "2026-07-14"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "IFF",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 78.53,
+      "oracle_note": {
+        "text": "Rescan: P4 ENTRY_ZONE $72-$77 at $75.10; director $20.3M buy and divestiture thesis merit watch, needs options confirmation.",
+        "written_at": "2026-07-14"
       },
       "filter_reason": "below_cutoff"
     },
@@ -86,19 +108,8 @@
       "convergence_paths": [],
       "spot_price": 273.38,
       "oracle_note": {
-        "text": "Rescan/+5: P3+P4+Path5 score 88 + independent source=both BUY. P4 zone $270-$295; best current limit setup.",
-        "written_at": "2026-07-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "LDOS",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 106.62,
-      "oracle_note": {
-        "text": "Rescan: independent source=both BUY HIGH, defense LCCM catalyst, and P4 zone $120-$130. Watch for entry, not chase.",
-        "written_at": "2026-07-10"
+        "text": "P3 + P4 ENTRY_ZONE $270-$295 at $289.76 + Path5 score=88 + independent STRONG BUY. Best convergence; +5 conf.",
+        "written_at": "2026-07-14"
       },
       "filter_reason": "below_cutoff"
     },
@@ -108,19 +119,8 @@
       "convergence_paths": [],
       "spot_price": 289.87,
       "oracle_note": {
-        "text": "Rescan: P4 ENTRY_ZONE $289.87 in $285-$300 zone; defense structural thesis valid, but options confirmation absent.",
-        "written_at": "2026-07-10"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "NCLH",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 19.76,
-      "oracle_note": {
-        "text": "Rescan: P4 ENTRY_ZONE $19.76 in $18-$21 zone; Klarman + Elliott 13D + CEO buy thesis deserves oracle_watch.",
-        "written_at": "2026-07-10"
+        "text": "Rescan: P4 ENTRY_ZONE $285-$300 at $288.69; defense structural thesis valid, but options confirmation absent.",
+        "written_at": "2026-07-14"
       },
       "filter_reason": "below_cutoff"
     },
@@ -130,8 +130,8 @@
       "convergence_paths": [],
       "spot_price": 75.08,
       "oracle_note": {
-        "text": "Rescan/+5: P1 WATCHLIST 96/97, P3 score 72, P4 zone $74-$82 with alert at $75.08. Best non-binary scanner convergence.",
-        "written_at": "2026-07-10"
+        "text": "P3 score=72 + P4 ENTRY_ZONE $74-$82 at $75.39; recovery profile 56% WR/+4.9% avg. Best non-binary dip; +5 conf.",
+        "written_at": "2026-07-14"
       },
       "filter_reason": "below_cutoff"
     }
@@ -200,8 +200,8 @@
       "macro_filter": {
         "pass": false,
         "result": "BLOCK",
-        "log": "MACRO FILTER: BLOCK - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown - rate-sensitive sector + CPI/PPI rising",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: BLOCK - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown - rate-sensitive sector + CPI/PPI rising",
+        "expires": "2026-07-16",
         "reasons": [
           "rate-sensitive sector + CPI/PPI rising"
         ],
@@ -257,7 +257,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 0.98,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -267,8 +267,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -342,8 +342,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -408,8 +408,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -475,8 +475,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -541,8 +541,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -606,8 +606,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -676,8 +676,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -740,8 +740,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -814,8 +814,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -880,8 +880,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
@@ -946,8 +946,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-28",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-07-16",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false
