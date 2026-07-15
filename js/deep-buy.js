@@ -507,10 +507,13 @@
   }
 
   function copyAll(data) {
+    const surfaced = (data.picks_count || 0)
+      + (data.flow_led_picks || []).length
+      + (data.flow_extreme_picks || []).length;
     const header = [
       `Bull Scouter Deep Buy — ${data.date}`,
       `Regime: ${data.regime_label} (${data.regime_score})`,
-      `Picks: ${data.picks_count} of ${data.candidates_evaluated} candidates`,
+      `Picks: ${surfaced} surfaced (${data.picks_count} mainline) of ${data.candidates_evaluated} candidates`,
       '',
     ];
     if (data.strategic_context_blocks_new_entries) {
@@ -586,7 +589,12 @@
       // Stats
       const fs = data.filtered_summary || {};
       const filteredTotal = Object.values(fs).reduce((a, b) => a + b, 0);
-      $('#db-stat-picks').textContent = data.picks_count || 0;
+      // Headline "Picks" = TOTAL surfaced sized orders (mainline + flow_led + flow_extreme),
+      // not just mainline picks_count — otherwise it reads "0" while flow_led orders render (#23).
+      const surfacedTotal = (data.picks_count || 0)
+        + (data.flow_led_picks || []).length
+        + (data.flow_extreme_picks || []).length;
+      $('#db-stat-picks').textContent = surfacedTotal;
       $('#db-stat-eval').textContent = data.candidates_evaluated || 0;
       $('#db-stat-filtered').textContent = filteredTotal;
       $('#db-stat-held').textContent = fs.held || 0;
