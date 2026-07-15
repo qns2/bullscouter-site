@@ -1,35 +1,152 @@
 {
   "date": "2026-07-15",
-  "version": "2.44.0",
+  "version": "2.45.1",
   "regime_label": "neutral",
-  "regime_score": 9.1,
+  "regime_score": 15.6,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 297,
-    "earnings_blackout": 41,
-    "rr_too_low": 37,
+    "below_cutoff": 295,
+    "earnings_blackout": 40,
+    "rr_too_low": 26,
     "held": 12,
     "frozen": 1
   },
-  "candidates_evaluated": 388,
-  "picks_count": 0,
-  "picks": [],
-  "oracle_watch_count": 10,
-  "oracle_watch": [
+  "candidates_evaluated": 376,
+  "picks_count": 2,
+  "picks": [
     {
-      "ticker": "GPK",
-      "composite": 20,
+      "ticker": "BSX",
+      "composite": 40,
       "convergence_paths": [
-        "path3_strong_candidate"
+        "path1_buy",
+        "path5_strong_quality"
       ],
-      "spot_price": 10.15,
-      "oracle_note": {
-        "text": "Rescan: P3 rescued name; insider log STRONG with buys=3 sells=0. Verify entry band because current $10.38 is below $10.80-$11.30 note.",
-        "written_at": "2026-07-14"
+      "spot_price": 42.63,
+      "entry": {
+        "low": 52.0,
+        "high": 63.0,
+        "mid": 57.5
       },
-      "filter_reason": "below_cutoff"
+      "target": 95.0,
+      "stop": 39.22,
+      "rr_ratio": 15.36,
+      "rr_planned": 2.05,
+      "above_zone_pct": 0.0,
+      "below_zone_pct": 18.02,
+      "suggested_size_usd": 980.49,
+      "suggested_shares": 23,
+      "position_risk_usd": 78.43,
+      "earnings_date": "2026-07-29",
+      "earnings_days_away": 10,
+      "components": {
+        "path1": {
+          "score": 25
+        },
+        "path5": {
+          "score": 15
+        }
+      },
+      "dilution_risk": {
+        "ticker": "BSX",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -11.15,
+        "insider_selling_signal": null,
+        "latest_filings": [
+          {
+            "date": "2026-04-01",
+            "type": "effect_registration",
+            "form": "EFFECT",
+            "summary": "BSX received EFFECT notice; registration statement is effective.",
+            "source": "sec_edgar"
+          }
+        ]
+      },
+      "rationale_one_liner": "Tier 5 BUY conf 87 + Buffett quality. Earnings 10d.",
+      "watchlist_thesis": "P1 BUY 88/82 but DIP at $50.46 = BELOW zone floor. 0% WR 16 signals. Value 36% WR. Gate: flow >=+5 for 5d. Stop $47.",
+      "rank": 1,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector Healthcare, Industry unknown",
+        "expires": "2026-07-16",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "oracle_note": null
     },
+    {
+      "ticker": "INTU",
+      "composite": 40,
+      "convergence_paths": [
+        "path1_buy",
+        "path5_strong_quality"
+      ],
+      "spot_price": 282.43,
+      "entry": {
+        "low": 270.0,
+        "high": 295.0,
+        "mid": 282.5
+      },
+      "target": 370.0,
+      "stop": 259.84,
+      "rr_ratio": 3.88,
+      "rr_planned": 3.86,
+      "above_zone_pct": 0.0,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 847.29,
+      "suggested_shares": 3,
+      "position_risk_usd": 67.77,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "path1": {
+          "score": 25
+        },
+        "path5": {
+          "score": 15
+        }
+      },
+      "dilution_risk": {
+        "ticker": "INTU",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -20.16,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Tier 2 BUY conf 99 + Buffett quality. no earnings <45d.",
+      "watchlist_thesis": "QUAD P1+P3+P4+P5 Buffett 88. Strongest convergence. Post-earnings. Limit $270.",
+      "rank": 2,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector Technology, Industry unknown",
+        "expires": "2026-07-16",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false
+      },
+      "oracle_note": {
+        "text": "P3 + P4 zone $270-$295 + Path5 score=88 + prior independent overlap. Best local convergence; +5 conf.",
+        "written_at": "2026-07-15"
+      }
+    }
+  ],
+  "oracle_watch_count": 9,
+  "oracle_watch": [
     {
       "ticker": "ADBE",
       "composite": 15,
@@ -38,8 +155,8 @@
       ],
       "spot_price": 220.78,
       "oracle_note": {
-        "text": "P4 ENTRY_ZONE $225-$240 at $230.61 + independent BUY + P3 survivor. +5 conf, but AI-native competition caps size.",
-        "written_at": "2026-07-14"
+        "text": "P3 survivor + P4 zone $225-$240 + independent BUY. +5 conf at 0.65 because current price is below zone; prefer reclaim $225 before entry.",
+        "written_at": "2026-07-15"
       },
       "filter_reason": "below_cutoff"
     },
@@ -51,8 +168,8 @@
       ],
       "spot_price": 389.11,
       "oracle_note": {
-        "text": "Rescan: P4 ENTRY_ZONE $360-$385 at $384.05 + Path5 80 + independent BUY HIGH. Fix missing earnings date before entry.",
-        "written_at": "2026-07-14"
+        "text": "Rescan: P4 zone $360-$385 + Path5 score=80 + independent BUY. Entry only back in zone and after earnings-date hygiene is clean.",
+        "written_at": "2026-07-15"
       },
       "filter_reason": "below_cutoff"
     },
@@ -64,8 +181,8 @@
       ],
       "spot_price": 167.56,
       "oracle_note": {
-        "text": "Rescan: P4 ENTRY_ZONE $165-$175 at $171.22 + independent BUY; Agentforce skepticism keeps this below top conviction.",
-        "written_at": "2026-07-14"
+        "text": "Rescan: P4 zone $165-$175 and prior P3 support. Agentforce thesis plausible, but wait for fresh price/flow confirmation.",
+        "written_at": "2026-07-15"
       },
       "filter_reason": "below_cutoff"
     },
@@ -77,32 +194,41 @@
       ],
       "spot_price": 130.04,
       "oracle_note": {
-        "text": "P4 zone $120-$128, Path5 score=83, independent BUY, and prior flow support. +5 conf; current $131 is above ideal entry.",
-        "written_at": "2026-07-14"
+        "text": "P4 zone $120-$128 + Path5 score=83 quality healthcare. +5 conf at 0.75; no chase above stated zone.",
+        "written_at": "2026-07-15"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "INTU",
-      "composite": 15,
-      "convergence_paths": [
-        "path5_strong_quality"
-      ],
-      "spot_price": 282.43,
-      "oracle_note": {
-        "text": "P3 + P4 ENTRY_ZONE $270-$295 at $289.76 + Path5 score=88 + independent STRONG BUY. Best convergence; +5 conf.",
-        "written_at": "2026-07-14"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "BNTX",
+      "ticker": "CMC",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 90.4,
+      "spot_price": 66.19,
       "oracle_note": {
-        "text": "Rescan: P4 ENTRY_ZONE $85-$95 at $90.07 + independent BUY; cash/buyback thesis worth oracle_watch, not full-size buy.",
-        "written_at": "2026-07-14"
+        "text": "Rescan blind spot: CEO open-market buy about $504K on 2026-07-10 plus industrial value setup. Needs local confirmation.",
+        "written_at": "2026-07-15"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "GPK",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 10.15,
+      "oracle_note": {
+        "text": "Rescan: P3 rescued name; historical P3 note says 66.7% WR on 39 signals. Verify $10.80-$11.30 entry band before action.",
+        "written_at": "2026-07-15"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "IFF",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 74.67,
+      "oracle_note": {
+        "text": "Rescan: P4 zone $72-$77, director $20.3M buy, and divestiture thesis. Needs options confirmation before entry.",
+        "written_at": "2026-07-15"
       },
       "filter_reason": "below_cutoff"
     },
@@ -112,8 +238,8 @@
       "convergence_paths": [],
       "spot_price": 290.01,
       "oracle_note": {
-        "text": "Rescan: P4 ENTRY_ZONE $285-$300 at $288.69; defense structural thesis valid, but options confirmation absent.",
-        "written_at": "2026-07-14"
+        "text": "Rescan: P4 zone $285-$300; defense structural thesis valid, but options confirmation absent.",
+        "written_at": "2026-07-15"
       },
       "filter_reason": "below_cutoff"
     },
@@ -123,19 +249,8 @@
       "convergence_paths": [],
       "spot_price": 74.07,
       "oracle_note": {
-        "text": "P3 score=72 + P4 ENTRY_ZONE $74-$82 at $75.39; recovery profile 56% WR/+4.9% avg. Best non-binary dip; +5 conf.",
-        "written_at": "2026-07-14"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "IFF",
-      "composite": -10,
-      "convergence_paths": [],
-      "spot_price": 74.67,
-      "oracle_note": {
-        "text": "Rescan: P4 ENTRY_ZONE $72-$77 at $75.10; director $20.3M buy and divestiture thesis merit watch, needs options confirmation.",
-        "written_at": "2026-07-14"
+        "text": "P3 score=72 + P4 zone $74-$82 + independent BUY. Best non-binary dip; +5 conf.",
+        "written_at": "2026-07-15"
       },
       "filter_reason": "below_cutoff"
     }
@@ -169,9 +284,10 @@
       "rr_ratio": 2.52,
       "rr_planned": 3.17,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 998.93,
-      "suggested_shares": 191,
-      "position_risk_usd": 66.85,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 996.4,
+      "suggested_shares": 188,
+      "position_risk_usd": 78.96,
       "earnings_date": "2026-08-04",
       "earnings_days_away": 14,
       "components": {
@@ -216,23 +332,24 @@
     }
   ],
   "tier0_watch": [],
-  "flow_led_picks_count": 7,
+  "flow_led_picks_count": 5,
   "flow_led_picks": [
     {
       "ticker": "BIIB",
       "path": "flow_led",
       "source": "sustained",
-      "composite": 50,
+      "composite": 55,
       "convergence_paths": [
         "flow_sustained",
         "buffett_strong",
-        "watchlist_dip"
+        "watchlist_dip",
+        "catalyst_near"
       ],
       "tier": 3,
       "tier_evidence": [
         "flow_sustained",
         "buffett_strong",
-        "watchlist_dip"
+        "catalyst_near"
       ],
       "size_class": "full",
       "spot_price": 198.91,
@@ -246,9 +363,10 @@
       "rr_ratio": 2.5,
       "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 982.1,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 994.55,
       "suggested_shares": 5,
-      "position_risk_usd": 67.1,
+      "position_risk_usd": 79.55,
       "earnings_date": "2026-07-29",
       "earnings_days_away": 10,
       "components": {
@@ -260,6 +378,9 @@
         },
         "watchlist_dip": {
           "score": 10
+        },
+        "catalyst_near": {
+          "score": 5
         }
       },
       "dilution_risk": {
@@ -271,11 +392,11 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 0.74,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + Buffett 67 STRONG + watchlist dip alert. Earnings 10d.",
+      "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + Buffett 67 STRONG + watchlist dip alert + catalyst near. Earnings 10d.",
       "watchlist_thesis": "PDUFA DATE DISCREPANCY: strategic ctx May 24 vs scanner Aug 24. Aug likely correct. SubQ Leqembi. Verify.",
       "oracle_note": null,
       "macro_filter": {
@@ -288,13 +409,14 @@
         "override_applied": false
       },
       "chase_risk": false,
+      "stale_zone": false,
       "rank": 1
     },
     {
       "ticker": "LRN",
       "path": "flow_led",
       "source": "sustained",
-      "composite": 40,
+      "composite": 50,
       "convergence_paths": [
         "flow_sustained",
         "buffett_strong",
@@ -314,13 +436,14 @@
         "mid": 89.95
       },
       "target": 109.31,
-      "stop": 86.54,
-      "rr_ratio": 4.0,
-      "rr_planned": 5.67,
+      "stop": 83.8,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.14,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 989.45,
-      "suggested_shares": 11,
-      "position_risk_usd": 37.51,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 910.9,
+      "suggested_shares": 10,
+      "position_risk_usd": 72.9,
       "earnings_date": "2026-08-04",
       "earnings_days_away": 14,
       "components": {
@@ -332,9 +455,6 @@
         },
         "watchlist_dip": {
           "score": 10
-        },
-        "gex_danger": {
-          "score": -10
         }
       },
       "dilution_risk": {
@@ -363,54 +483,51 @@
         "override_applied": false
       },
       "chase_risk": false,
+      "stale_zone": false,
       "rank": 2
     },
     {
-      "ticker": "SRAD",
+      "ticker": "HST",
       "path": "flow_led",
       "source": "sustained",
       "composite": 40,
       "convergence_paths": [
         "flow_sustained",
-        "buffett_quality",
-        "watchlist_dip"
+        "buffett_strong"
       ],
-      "tier": 3,
+      "tier": 2,
       "tier_evidence": [
         "flow_sustained",
-        "buffett_quality",
-        "watchlist_dip"
+        "buffett_strong"
       ],
-      "size_class": "full",
-      "spot_price": 15.45,
+      "size_class": "standard",
+      "spot_price": 23.16,
       "entry": {
-        "low": 14.99,
-        "high": 15.53,
-        "mid": 15.26
+        "low": 22.47,
+        "high": 23.28,
+        "mid": 22.88
       },
-      "target": 18.54,
-      "stop": 14.21,
-      "rr_ratio": 2.49,
-      "rr_planned": 3.12,
+      "target": 27.79,
+      "stop": 21.31,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.14,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 991.9,
-      "suggested_shares": 65,
-      "position_risk_usd": 68.25,
-      "earnings_date": "2026-08-04",
-      "earnings_days_away": 14,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 995.88,
+      "suggested_shares": 43,
+      "position_risk_usd": 79.55,
+      "earnings_date": "2026-08-05",
+      "earnings_days_away": 15,
       "components": {
         "flow_sustained": {
           "score": 20
         },
-        "buffett_quality": {
-          "score": 10
-        },
-        "watchlist_dip": {
-          "score": 10
+        "buffett_quality_strong": {
+          "score": 20
         }
       },
       "dilution_risk": {
-        "ticker": "SRAD",
+        "ticker": "HST",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -422,8 +539,8 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow +9.0 5d-avg (4 TD days) + Buffett 45 + watchlist dip alert. Earnings 14d.",
-      "watchlist_thesis": "BLOCKLISTED. Muddy Waters fraud (20-40% revenue from illegal gambling). -7.6% in 8d. Assessor AVOID. Jefferies -53% PT cut. Near -10% stop ($12.28). Remove from buy list.",
+      "rationale_one_liner": "flow +8.9 5d-avg (3 TD days) + Buffett 66 STRONG. Earnings 15d.",
+      "watchlist_thesis": null,
       "oracle_note": null,
       "macro_filter": {
         "pass": true,
@@ -435,73 +552,8 @@
         "override_applied": false
       },
       "chase_risk": false,
+      "stale_zone": false,
       "rank": 3
-    },
-    {
-      "ticker": "RCKT",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_sustained",
-        "watchlist_dip"
-      ],
-      "tier": 1,
-      "tier_evidence": [
-        "flow_sustained"
-      ],
-      "size_class": "half",
-      "spot_price": 4.19,
-      "entry": {
-        "low": 4.5,
-        "high": 5.5,
-        "mid": 5.0
-      },
-      "target": 6.0,
-      "stop": 3.85,
-      "rr_ratio": 5.32,
-      "rr_planned": 0.87,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 1000.0,
-      "suggested_shares": 200,
-      "position_risk_usd": 230.0,
-      "earnings_date": "2026-08-06",
-      "earnings_days_away": 16,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "dilution_risk": {
-        "ticker": "RCKT",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "flow +9.0 5d-avg (3 TD days) + watchlist dip alert. Earnings 16d.",
-      "watchlist_thesis": "BROKEN below zone at $3.44. sec_shelf dilution. BLOCKLISTED.",
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-16",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "chase_risk": false,
-      "rank": 5
     },
     {
       "ticker": "EOSE",
@@ -528,9 +580,10 @@
       "rr_ratio": 19.0,
       "rr_planned": 1.55,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 999.0,
-      "suggested_shares": 148,
-      "position_risk_usd": 407.0,
+      "below_zone_pct": 33.08,
+      "suggested_size_usd": 996.15,
+      "suggested_shares": 229,
+      "position_risk_usd": 80.15,
       "earnings_date": "2026-07-29",
       "earnings_days_away": 10,
       "components": {
@@ -575,77 +628,8 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 6
-    },
-    {
-      "ticker": "HST",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_sustained",
-        "buffett_strong"
-      ],
-      "tier": 2,
-      "tier_evidence": [
-        "flow_sustained",
-        "buffett_strong"
-      ],
-      "size_class": "standard",
-      "spot_price": 23.16,
-      "entry": {
-        "low": 22.47,
-        "high": 23.28,
-        "mid": 22.88
-      },
-      "target": 27.79,
-      "stop": 22.0,
-      "rr_ratio": 3.99,
-      "rr_planned": 5.62,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 983.84,
-      "suggested_shares": 43,
-      "position_risk_usd": 37.84,
-      "earnings_date": "2026-08-05",
-      "earnings_days_away": 15,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "buffett_quality_strong": {
-          "score": 20
-        },
-        "gex_danger": {
-          "score": -10
-        }
-      },
-      "dilution_risk": {
-        "ticker": "HST",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": 0.13,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "flow +8.9 5d-avg (3 TD days) + Buffett 66 STRONG. Earnings 15d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-16",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "chase_risk": false,
-      "rank": 7
+      "stale_zone": true,
+      "rank": 5
     },
     {
       "ticker": "OXY",
@@ -673,9 +657,10 @@
       "rr_ratio": 2.5,
       "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 981.16,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 993.7,
       "suggested_shares": 19,
-      "position_risk_usd": 66.88,
+      "position_risk_usd": 79.42,
       "earnings_date": "2026-08-05",
       "earnings_days_away": 15,
       "components": {
@@ -695,7 +680,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -6.81,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -712,7 +697,8 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 8
+      "stale_zone": false,
+      "rank": 6
     }
   ],
   "flow_extreme_picks_count": 1,
@@ -741,9 +727,10 @@
       "rr_ratio": 2.49,
       "rr_planned": 3.12,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 994.95,
-      "suggested_shares": 165,
-      "position_risk_usd": 69.3,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 994.3,
+      "suggested_shares": 163,
+      "position_risk_usd": 79.87,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -777,6 +764,7 @@
         "override_applied": false
       },
       "chase_risk": false,
+      "stale_zone": false,
       "rank": 4
     }
   ],
@@ -785,17 +773,18 @@
       "ticker": "BIIB",
       "path": "flow_led",
       "source": "sustained",
-      "composite": 50,
+      "composite": 55,
       "convergence_paths": [
         "flow_sustained",
         "buffett_strong",
-        "watchlist_dip"
+        "watchlist_dip",
+        "catalyst_near"
       ],
       "tier": 3,
       "tier_evidence": [
         "flow_sustained",
         "buffett_strong",
-        "watchlist_dip"
+        "catalyst_near"
       ],
       "size_class": "full",
       "spot_price": 198.91,
@@ -809,9 +798,10 @@
       "rr_ratio": 2.5,
       "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 982.1,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 994.55,
       "suggested_shares": 5,
-      "position_risk_usd": 67.1,
+      "position_risk_usd": 79.55,
       "earnings_date": "2026-07-29",
       "earnings_days_away": 10,
       "components": {
@@ -823,6 +813,9 @@
         },
         "watchlist_dip": {
           "score": 10
+        },
+        "catalyst_near": {
+          "score": 5
         }
       },
       "dilution_risk": {
@@ -834,11 +827,11 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 0.74,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + Buffett 67 STRONG + watchlist dip alert. Earnings 10d.",
+      "rationale_one_liner": "flow +8.1 5d-avg (3 TD days) + Buffett 67 STRONG + watchlist dip alert + catalyst near. Earnings 10d.",
       "watchlist_thesis": "PDUFA DATE DISCREPANCY: strategic ctx May 24 vs scanner Aug 24. Aug likely correct. SubQ Leqembi. Verify.",
       "oracle_note": null,
       "macro_filter": {
@@ -851,13 +844,14 @@
         "override_applied": false
       },
       "chase_risk": false,
+      "stale_zone": false,
       "rank": 1
     },
     {
       "ticker": "LRN",
       "path": "flow_led",
       "source": "sustained",
-      "composite": 40,
+      "composite": 50,
       "convergence_paths": [
         "flow_sustained",
         "buffett_strong",
@@ -877,13 +871,14 @@
         "mid": 89.95
       },
       "target": 109.31,
-      "stop": 86.54,
-      "rr_ratio": 4.0,
-      "rr_planned": 5.67,
+      "stop": 83.8,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.14,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 989.45,
-      "suggested_shares": 11,
-      "position_risk_usd": 37.51,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 910.9,
+      "suggested_shares": 10,
+      "position_risk_usd": 72.9,
       "earnings_date": "2026-08-04",
       "earnings_days_away": 14,
       "components": {
@@ -895,9 +890,6 @@
         },
         "watchlist_dip": {
           "score": 10
-        },
-        "gex_danger": {
-          "score": -10
         }
       },
       "dilution_risk": {
@@ -926,79 +918,8 @@
         "override_applied": false
       },
       "chase_risk": false,
+      "stale_zone": false,
       "rank": 2
-    },
-    {
-      "ticker": "SRAD",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 40,
-      "convergence_paths": [
-        "flow_sustained",
-        "buffett_quality",
-        "watchlist_dip"
-      ],
-      "tier": 3,
-      "tier_evidence": [
-        "flow_sustained",
-        "buffett_quality",
-        "watchlist_dip"
-      ],
-      "size_class": "full",
-      "spot_price": 15.45,
-      "entry": {
-        "low": 14.99,
-        "high": 15.53,
-        "mid": 15.26
-      },
-      "target": 18.54,
-      "stop": 14.21,
-      "rr_ratio": 2.49,
-      "rr_planned": 3.12,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 991.9,
-      "suggested_shares": 65,
-      "position_risk_usd": 68.25,
-      "earnings_date": "2026-08-04",
-      "earnings_days_away": 14,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "buffett_quality": {
-          "score": 10
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "dilution_risk": {
-        "ticker": "SRAD",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "flow +9.0 5d-avg (4 TD days) + Buffett 45 + watchlist dip alert. Earnings 14d.",
-      "watchlist_thesis": "BLOCKLISTED. Muddy Waters fraud (20-40% revenue from illegal gambling). -7.6% in 8d. Assessor AVOID. Jefferies -53% PT cut. Near -10% stop ($12.28). Remove from buy list.",
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-16",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "chase_risk": false,
-      "rank": 3
     }
   ],
   "tier2_picks": [
@@ -1006,7 +927,7 @@
       "ticker": "HST",
       "path": "flow_led",
       "source": "sustained",
-      "composite": 30,
+      "composite": 40,
       "convergence_paths": [
         "flow_sustained",
         "buffett_strong"
@@ -1024,13 +945,14 @@
         "mid": 22.88
       },
       "target": 27.79,
-      "stop": 22.0,
-      "rr_ratio": 3.99,
-      "rr_planned": 5.62,
+      "stop": 21.31,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.14,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 983.84,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 995.88,
       "suggested_shares": 43,
-      "position_risk_usd": 37.84,
+      "position_risk_usd": 79.55,
       "earnings_date": "2026-08-05",
       "earnings_days_away": 15,
       "components": {
@@ -1039,9 +961,6 @@
         },
         "buffett_quality_strong": {
           "score": 20
-        },
-        "gex_danger": {
-          "score": -10
         }
       },
       "dilution_risk": {
@@ -1053,7 +972,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 0.13,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1070,7 +989,8 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 7
+      "stale_zone": false,
+      "rank": 3
     },
     {
       "ticker": "OXY",
@@ -1098,9 +1018,10 @@
       "rr_ratio": 2.5,
       "rr_planned": 3.15,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 981.16,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 993.7,
       "suggested_shares": 19,
-      "position_risk_usd": 66.88,
+      "position_risk_usd": 79.42,
       "earnings_date": "2026-08-05",
       "earnings_days_away": 15,
       "components": {
@@ -1120,7 +1041,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -6.81,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -1137,7 +1058,8 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 8
+      "stale_zone": false,
+      "rank": 6
     }
   ],
   "tier1_picks": [
@@ -1165,9 +1087,10 @@
       "rr_ratio": 2.49,
       "rr_planned": 3.12,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 994.95,
-      "suggested_shares": 165,
-      "position_risk_usd": 69.3,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 994.3,
+      "suggested_shares": 163,
+      "position_risk_usd": 79.87,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -1201,73 +1124,8 @@
         "override_applied": false
       },
       "chase_risk": false,
+      "stale_zone": false,
       "rank": 4
-    },
-    {
-      "ticker": "RCKT",
-      "path": "flow_led",
-      "source": "sustained",
-      "composite": 30,
-      "convergence_paths": [
-        "flow_sustained",
-        "watchlist_dip"
-      ],
-      "tier": 1,
-      "tier_evidence": [
-        "flow_sustained"
-      ],
-      "size_class": "half",
-      "spot_price": 4.19,
-      "entry": {
-        "low": 4.5,
-        "high": 5.5,
-        "mid": 5.0
-      },
-      "target": 6.0,
-      "stop": 3.85,
-      "rr_ratio": 5.32,
-      "rr_planned": 0.87,
-      "above_zone_pct": 0.0,
-      "suggested_size_usd": 1000.0,
-      "suggested_shares": 200,
-      "position_risk_usd": 230.0,
-      "earnings_date": "2026-08-06",
-      "earnings_days_away": 16,
-      "components": {
-        "flow_sustained": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "dilution_risk": {
-        "ticker": "RCKT",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "flow +9.0 5d-avg (3 TD days) + watchlist dip alert. Earnings 16d.",
-      "watchlist_thesis": "BROKEN below zone at $3.44. sec_shelf dilution. BLOCKLISTED.",
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI rising, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-07-16",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false
-      },
-      "chase_risk": false,
-      "rank": 5
     },
     {
       "ticker": "EOSE",
@@ -1294,9 +1152,10 @@
       "rr_ratio": 19.0,
       "rr_planned": 1.55,
       "above_zone_pct": 0.0,
-      "suggested_size_usd": 999.0,
-      "suggested_shares": 148,
-      "position_risk_usd": 407.0,
+      "below_zone_pct": 33.08,
+      "suggested_size_usd": 996.15,
+      "suggested_shares": 229,
+      "position_risk_usd": 80.15,
       "earnings_date": "2026-07-29",
       "earnings_days_away": 10,
       "components": {
@@ -1341,7 +1200,8 @@
         "override_applied": false
       },
       "chase_risk": false,
-      "rank": 6
+      "stale_zone": true,
+      "rank": 5
     }
   ]
 }
