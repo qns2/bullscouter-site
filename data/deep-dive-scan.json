@@ -1,214 +1,207 @@
 {
-  "scan_date": "2026-07-17",
+  "scan_date": "2026-07-20",
   "value_picks": [
     {
-      "ticker": "B",
-      "name": "Barrick Mining Corporation",
-      "price": 34.84,
+      "ticker": "ACN",
+      "name": "Accenture plc",
+      "price": 140.49,
       "opus_recommendation": "BUY",
       "framework": {
         "fcf_yield": {
           "verdict": "pass",
-          "detail": "Free cash flow of 5272124928 versus market_cap of 58515120128 gives a 9.01% FCF yield, above the 7% pass threshold."
+          "detail": "Free cash flow yield is 14.05%, calculated from free_cashflow 12089380864 divided by market_cap 86045179904."
         },
         "pe_discount": {
           "verdict": "pass",
-          "detail": "target_median_price 56.9 divided by forward_eps 4.51664 implies 12.60x PE; forward_pe 7.7136984 is 38.77% below that."
+          "detail": "Forward PE is 9.583593 versus implied PE of 12.20 from target_median_price 179.0 divided by forward_eps 14.67195, a 21.45% discount."
         },
         "drawdown": {
           "verdict": "pass",
-          "detail": "down_from_high_pct is 36.3%, above the 35% pass threshold."
+          "detail": "Down 51.74% from 52-week high, above the 35% pass threshold."
         },
         "balance_sheet": {
           "verdict": "pass",
-          "detail": "total_cash 7130999808 exceeds total_debt 4726000128, and current_ratio is 3.064."
+          "detail": "Net cash position with total_cash 10171567104 exceeding total_debt 8388769792; current_ratio is 1.339."
         },
         "dividend": {
           "verdict": "pass",
-          "detail": "dividend_yield is 2.01 and payout_ratio is 0.2334, meeting yield above 2% and payout below 70%."
+          "detail": "Dividend yield is 4.54% and payout_ratio is 0.5088, meeting yield above 2% and payout below 70%."
         },
         "institutional": {
-          "verdict": "borderline",
-          "detail": "held_pct_institutions is 0.67192 and recommendation_mean is 1.95833; institutional ownership is above 60% but below 75%. Analyst buy ratio is 75.0%."
+          "verdict": "pass",
+          "detail": "held_pct_institutions is 85.447% and recommendation_mean is 2.07407; analyst distribution shows 14 buy or strong buy ratings out of 27."
         },
-        "score": 5.5
+        "score": 6
       },
       "ai_exposure": {
-        "verdict": "neutral",
-        "detail": "The business is driven by gold, copper, silver, and mineral production; AI may help operations, but the provided data does not show AI as a primary demand driver."
+        "verdict": "tailwind",
+        "detail": "The company description explicitly includes data, AI, cloud, automation, software engineering, and intelligent platform services, so AI appears to support demand for its consulting and technology work."
       },
       "deal_radar": {
-        "options_signal": "Latest options scan on 2026-07-16 showed total_call_volume 2560, total_put_volume 3095, put_call_ratio 1.209, and flow_score 0.99; prior scans showed several call-heavy days with flow_score up to 6.0.",
+        "options_signal": null,
         "capex_exposure": null,
-        "assessment": "Options activity is mixed but not deeply bearish; the value case is stronger than the latest flow signal."
+        "assessment": "No options_history or capex_signals were provided; deal radar is based only on valuation and balance sheet strength."
       },
       "financials": {
-        "current_price": "$34.84",
-        "range_52w": "$20.68 - $54.69",
-        "forward_pe": "7.7136984"
+        "current_price": "$140.49",
+        "range_52w": "$118.15 - $291.09",
+        "forward_pe": "9.583593"
       },
-      "catalysts_verified": [
-        "Barrick is scheduled to report Q2 2026 numbers on August 10, 2026.",
-        "B of A Securities maintained Buy on Barrick Mining and lowered its price target from $58 to $56 on 2026-07-09.",
-        "Scotiabank maintained Sector Outperform on Barrick Mining but lowered its price target from $63 to $57.",
-        "Barrick Mining was described as falling despite record gold prices, with the article citing leadership changes, geopolitical friction, and strategic overhauls as the drivers.",
-        "Barrick Mining said it crushed Q1 gold production guidance and posted 67% year-over-year revenue growth.",
-        "U.S. producer inflation fell 0.3% in June, and gold miners were among the stocks that rallied in pre-market trading."
-      ],
+      "catalysts_verified": [],
       "catalysts_general": [
-        "FCF yield is 9.01%, the highest threshold category in the framework.",
-        "The stock is 36.3% below its 52-week high while forward_pe is 38.77% below the implied analyst median PE."
+        "Free cash flow yield is 14.05%.",
+        "Price is 51.74% below the 52-week high.",
+        "Target median price of 179.0 is 27.41% above current_price 140.49.",
+        "Net cash position and current_ratio 1.339 support balance sheet safety."
       ],
       "downside_scenarios": [
         {
-          "price": 29.0,
-          "pe_at_level": "6.42x forward EPS",
-          "scenario": "Retest of target_low_price."
-        },
-        {
-          "price": 20.68,
-          "pe_at_level": "4.58x forward EPS",
-          "scenario": "Retest of price_52w_low."
+          "price": 118.15,
+          "pe_at_level": "8.05x forward EPS",
+          "scenario": "Retest of 52-week low."
         }
       ],
       "ideal_entry": {
-        "price": 34.84,
-        "reasoning": "Current price already meets the strongest value setup: 9.01% FCF yield, 36.3% drawdown, net cash, and 38.77% PE discount."
+        "price": 140.49,
+        "reasoning": "Current price already clears every value framework criterion, including 14.05% FCF yield and 51.74% drawdown."
       },
       "comparables": [
         {
-          "ticker": "AEM",
-          "forward_pe": "10.333441",
-          "growth": "revenue_growth 0.661, earnings_growth 1.086",
-          "note": "Same sector and Gold industry from the input data."
+          "ticker": "LDOS",
+          "forward_pe": "8.105617",
+          "growth": "revenue_growth 0.037, earnings_growth -0.076",
+          "note": "Same sector and same Information Technology Services industry from the input data."
         }
       ],
-      "analyst_take": "Barrick screens as the cleanest value case in the group, with high FCF yield, net cash, a large drawdown, and a material discount to the implied analyst median PE. The main caution is that institutional ownership is only borderline under the framework."
+      "analyst_take": "ACN is the cleanest value setup in the group, with a high FCF yield, net cash, a sustainable dividend, and strong institutional ownership. The only nuance is that the PE discount versus the median target is positive but not extreme, while the overall score still supports a BUY."
     },
     {
       "ticker": "INTU",
       "name": "Intuit Inc.",
-      "price": 294.79,
+      "price": 291.09,
       "opus_recommendation": "BUY",
       "framework": {
         "fcf_yield": {
           "verdict": "borderline",
-          "detail": "Free cash flow of 5232000000 versus market_cap of 80635969536 gives a 6.49% FCF yield, within the 4-7% borderline range."
+          "detail": "Free cash flow yield is 6.57%, calculated from free_cashflow 5232000000 divided by market_cap 79623880704."
         },
         "pe_discount": {
           "verdict": "pass",
-          "detail": "target_median_price 455.0 divided by forward_eps 27.34035 implies 16.64x PE; forward_pe 10.782232 is 35.21% below that."
+          "detail": "Forward PE is 10.646901 versus implied PE of 16.64 from target_median_price 455.0 divided by forward_eps 27.34035, a 36.03% discount."
         },
         "drawdown": {
           "verdict": "pass",
-          "detail": "down_from_high_pct is 63.77%, above the 35% pass threshold."
+          "detail": "Down 64.23% from 52-week high, above the 35% pass threshold."
         },
         "balance_sheet": {
           "verdict": "pass",
-          "detail": "total_cash 6780000256 is below total_debt 6899999744, but debt_to_equity is 33.448 and current_ratio is 1.453, meeting the D/E<50 and CR>1.2 pass test."
+          "detail": "Not net cash because total_cash 6780000256 is below total_debt 6899999744, but debt_to_equity is 33.448 and current_ratio is 1.453, meeting the alternate pass test."
         },
         "dividend": {
           "verdict": "borderline",
-          "detail": "dividend_yield is 1.63 and payout_ratio is 0.2831, meeting the yield above 0 and payout below 90% borderline test."
+          "detail": "Dividend yield is 1.65% and payout_ratio is 0.2831; yield is positive but below 2%, with payout below 90%."
         },
         "institutional": {
           "verdict": "pass",
-          "detail": "held_pct_institutions is 0.93904 and recommendation_mean is 1.68571. Analyst buy ratio is 77.14%."
+          "detail": "held_pct_institutions is 93.884003% and recommendation_mean is 1.71429; analyst distribution shows 27 buy or strong buy ratings out of 35."
         },
-        "score": 5.0
+        "score": 5
       },
       "ai_exposure": {
         "verdict": "tailwind",
-        "detail": "The company provides financial management, compliance, marketing, payments, and tax products where automation can improve product utility and retention."
+        "detail": "The company provides financial management, compliance, marketing, payments, and tax software, where automation and AI can improve workflow efficiency and product value."
       },
       "deal_radar": {
-        "options_signal": "Latest options scan on 2026-07-16 showed total_call_volume 3400, total_put_volume 2706, put_call_ratio 0.796, and flow_score 0.0; recent scans ranged from flow_score -3.99 to 2.49.",
+        "options_signal": "Options activity was mixed: put_call_ratio ranged from 1.883 on 2026-07-10 to 0.4 on 2026-07-09, with flow_score ranging from -3.99 to 2.49; recent 2026-07-16 activity showed total_call_volume 3400, total_put_volume 2706, put_call_ratio 0.796, and flow_score 0.0.",
         "capex_exposure": null,
-        "assessment": "Options activity is mixed, but the framework score remains strong because valuation, drawdown, balance sheet, and institutional criteria pass."
+        "assessment": "Options flow does not show a single dominant signal, but analyst conviction, drawdown severity, and PE discount support the value case."
       },
       "financials": {
-        "current_price": "$294.79",
+        "current_price": "$291.09",
         "range_52w": "$252.84 - $813.7",
-        "forward_pe": "10.782232"
+        "forward_pe": "10.646901"
       },
       "catalysts_verified": [
-        "Intuit was upgraded to Zacks Rank #2 (Buy), reflecting increased optimism about its earnings prospects."
+        "Intuit was upgraded to a Zacks Rank #2 (Buy), reflecting increased optimism about its earnings prospects."
       ],
       "catalysts_general": [
-        "The stock is 63.77% below its 52-week high.",
-        "forward_pe 10.782232 is 35.21% below the implied analyst median PE of 16.64x."
+        "Target median price of 455.0 is 56.31% above current_price 291.09.",
+        "Forward PE of 10.646901 is at a 36.03% discount to implied PE from the median target.",
+        "Revenue_growth is 0.104 and earnings_growth is 0.107.",
+        "Gross_margins are 0.80793 and operating_margins are 0.46974."
       ],
       "downside_scenarios": [
         {
-          "price": 250.0,
-          "pe_at_level": "9.14x forward EPS",
-          "scenario": "Retest of target_low_price."
-        },
-        {
           "price": 252.84,
           "pe_at_level": "9.25x forward EPS",
-          "scenario": "Retest of price_52w_low."
+          "scenario": "Retest of 52-week low."
         }
       ],
       "ideal_entry": {
-        "price": 294.79,
-        "reasoning": "Current price offers a 6.49% FCF yield, 63.77% drawdown, and 35.21% PE discount while still passing balance sheet and institutional tests."
+        "price": 291.09,
+        "reasoning": "Current price already offers a 36.03% PE discount to implied median target PE and a 64.23% drawdown from the 52-week high."
       },
       "comparables": [
         {
-          "ticker": "SNDK",
-          "forward_pe": "6.6372347",
-          "growth": "revenue_growth 2.51",
+          "ticker": "ACN",
+          "forward_pe": "9.583593",
+          "growth": "revenue_growth 0.056, earnings_growth 0.09",
+          "note": "Same Technology sector from the input data, but different industry."
+        },
+        {
+          "ticker": "OLED",
+          "forward_pe": "16.279575",
+          "growth": "revenue_growth -0.145, earnings_growth -0.437",
           "note": "Same Technology sector from the input data, but different industry."
         }
       ],
-      "analyst_take": "Intuit qualifies as a BUY in this value framework despite only borderline FCF yield and dividend score. The combination of deep drawdown, discounted forward PE, strong institutional ownership, and sound balance sheet metrics is compelling."
+      "analyst_take": "INTU screens as a BUY despite only borderline FCF yield and dividend score. The valuation reset is severe, institutional ownership is very high, and the forward PE sits well below the implied PE from the median analyst target."
     },
     {
       "ticker": "BSX",
       "name": "Boston Scientific Corporation",
-      "price": 44.62,
+      "price": 44.03,
       "opus_recommendation": "WATCHLIST",
       "framework": {
         "fcf_yield": {
           "verdict": "borderline",
-          "detail": "Free cash flow of 2807124992 versus market_cap of 66321166336 gives a 4.23% FCF yield, within the 4-7% borderline range."
+          "detail": "Free cash flow yield is 4.29%, calculated from free_cashflow 2807124992 divided by market_cap 65444216832."
         },
         "pe_discount": {
           "verdict": "pass",
-          "detail": "target_median_price 70.0 divided by forward_eps 3.70764 implies 18.88x PE; forward_pe 12.03461 is 36.26% below that."
+          "detail": "Forward PE is 11.861274 versus implied PE of 18.86 from target_median_price 70.0 divided by forward_eps 3.71208, a 37.11% discount."
         },
         "drawdown": {
           "verdict": "pass",
-          "detail": "down_from_high_pct is 59.25%, above the 35% pass threshold."
+          "detail": "Down 59.79% from 52-week high, above the 35% pass threshold."
         },
         "balance_sheet": {
           "verdict": "pass",
-          "detail": "total_cash 1452999936 is below total_debt 11029000192, but debt_to_equity is 42.25 and current_ratio is 1.9, meeting the D/E<50 and CR>1.2 pass test."
+          "detail": "Not net cash because total_cash 1452999936 is below total_debt 11029000192, but debt_to_equity is 42.25 and current_ratio is 1.9, meeting the alternate pass test."
         },
         "dividend": {
           "verdict": "insufficient_data",
-          "detail": "dividend_yield is missing from the input; payout_ratio is provided as 0.0, but the dividend criterion requires dividend_yield."
+          "detail": "dividend_yield is missing from the input, so dividend sustainability cannot be scored without estimating."
         },
         "institutional": {
           "verdict": "pass",
-          "detail": "held_pct_institutions is 0.9405 and recommendation_mean is 1.5. Analyst buy ratio is 86.67%."
+          "detail": "held_pct_institutions is 94.039% and recommendation_mean is 1.5; analyst distribution shows 26 buy or strong buy ratings out of 30."
         },
         "score": 4.5
       },
       "ai_exposure": {
         "verdict": "neutral",
-        "detail": "The business is medical devices; AI can support diagnostics and workflow, but the provided data does not identify AI as a direct revenue driver."
+        "detail": "The input describes medical devices and procedures, but does not provide explicit AI-linked products or financial exposure; AI may help device workflows but is not central from the supplied data."
       },
       "deal_radar": {
-        "options_signal": "Latest options scan on 2026-07-16 showed total_call_volume 2411, total_put_volume 2998, put_call_ratio 1.243, and flow_score 0.51; earlier scans included put_call_ratio 11.656 and flow_score -7.5 on 2026-07-04.",
+        "options_signal": "Options activity skewed volatile and often bearish: put_call_ratio reached 11.656 on 2026-07-04, 2.872 on 2026-07-08, and 3.794 on 2026-07-10, while flow_score ranged from -7.5 to 4.5; 2026-07-15 showed a bullish rebound with total_call_volume 5252, max_call_volume 2111 at strike 45.0, and flow_score 4.5.",
         "capex_exposure": null,
-        "assessment": "The value score is good, but options history and verified catalysts show enough pressure to keep this on watchlist rather than immediate buy."
+        "assessment": "The value score is solid, but verified catalysts include soft guidance and price target cuts, so this is better kept on WATCHLIST until the demand slowdown concern clears."
       },
       "financials": {
-        "current_price": "$44.62",
+        "current_price": "$44.03",
         "range_52w": "$42.2 - $109.5",
-        "forward_pe": "12.03461"
+        "forward_pe": "11.861274"
       },
       "catalysts_verified": [
         "Piper Sandler cut Boston Scientific's price target from $90 to $65 while maintaining an Overweight rating.",
@@ -217,346 +210,468 @@
         "BSX received EFFECT notice; registration statement is effective."
       ],
       "catalysts_general": [
-        "The stock is 59.25% below its 52-week high.",
-        "forward_pe 12.03461 is 36.26% below the implied analyst median PE of 18.88x."
+        "Target median price of 70.0 is 59.00% above current_price 44.03.",
+        "Forward PE of 11.861274 is at a 37.11% discount to implied PE from the median target.",
+        "Short_interest_change_pct is -51.4, while held_pct_institutions is 0.94039.",
+        "Revenue_growth is 0.116 and earnings_growth is 1.0."
       ],
       "downside_scenarios": [
         {
           "price": 42.2,
-          "pe_at_level": "11.38x forward EPS",
-          "scenario": "Retest of price_52w_low."
+          "pe_at_level": "11.37x forward EPS",
+          "scenario": "Retest of 52-week low."
         }
       ],
       "ideal_entry": {
         "price": 42.2,
-        "reasoning": "A retest of the 52-week low would improve the margin of safety while options and catalyst pressure remain unresolved."
+        "reasoning": "The 52-week low offers a more disciplined entry while verified catalyst_events still include soft guidance and demand concerns."
       },
       "comparables": [
         {
-          "ticker": "ZTS",
-          "forward_pe": "10.4059",
-          "growth": "revenue_growth 0.029, earnings_growth 0.06",
-          "note": "Same Healthcare sector from the input data, but different industry."
+          "ticker": "MDT",
+          "forward_pe": "not provided in input",
+          "growth": "not provided in input",
+          "note": "External medical device comparable; no financial numbers used because they were not in the input."
+        },
+        {
+          "ticker": "SYK",
+          "forward_pe": "not provided in input",
+          "growth": "not provided in input",
+          "note": "External medical device comparable; no financial numbers used because they were not in the input."
         }
       ],
-      "analyst_take": "Boston Scientific passes most value criteria, including drawdown, PE discount, balance sheet, and institutional conviction. The watchlist rating reflects bearish verified catalysts and negative options history despite the favorable valuation screen."
+      "analyst_take": "BSX has a strong valuation reset and high analyst conviction, but the verified catalyst list is mostly negative. The score is attractive, yet soft guidance and device demand concerns make WATCHLIST more appropriate than immediate BUY."
     },
     {
-      "ticker": "SNDK",
-      "name": "Sandisk Corporation",
-      "price": 1411.08,
+      "ticker": "B",
+      "name": "Barrick Mining Corporation",
+      "price": 34.93,
+      "opus_recommendation": "BUY",
+      "framework": {
+        "fcf_yield": {
+          "verdict": "pass",
+          "detail": "Free cash flow yield is 8.99%, calculated from free_cashflow 5272124928 divided by market_cap 58666278912."
+        },
+        "pe_discount": {
+          "verdict": "pass",
+          "detail": "Forward PE is 7.729347 versus implied PE of 12.59 from target_median_price 56.9 divided by forward_eps 4.51914, a 38.62% discount."
+        },
+        "drawdown": {
+          "verdict": "pass",
+          "detail": "Down 36.13% from 52-week high, above the 35% pass threshold."
+        },
+        "balance_sheet": {
+          "verdict": "pass",
+          "detail": "Net cash position with total_cash 7130999808 exceeding total_debt 4726000128; current_ratio is 3.064."
+        },
+        "dividend": {
+          "verdict": "borderline",
+          "detail": "Dividend yield is 2.0% and payout_ratio is 0.2334; yield is not greater than 2%, but yield is positive and payout is below 90%."
+        },
+        "institutional": {
+          "verdict": "borderline",
+          "detail": "held_pct_institutions is 67.196% and recommendation_mean is 1.95833; analyst distribution shows 18 buy or strong buy ratings out of 24."
+        },
+        "score": 5
+      },
+      "ai_exposure": {
+        "verdict": "neutral",
+        "detail": "The business is mining and sale of mineral properties; the supplied description does not show AI as a direct revenue driver or direct competitive threat."
+      },
+      "deal_radar": {
+        "options_signal": "Options activity was mostly bullish after 2026-07-04: put_call_ratio was 0.349 on 2026-07-04, 0.18 on 2026-07-07, 0.274 on 2026-07-08, 0.495 on 2026-07-10, and 0.415 on 2026-07-15, with flow_score reaching 6.0 on 2026-07-10; 2026-07-16 softened to put_call_ratio 1.209 and flow_score 0.99.",
+        "capex_exposure": null,
+        "assessment": "Options flow generally supports upside interest, while balance sheet strength and FCF yield make this one of the stronger value setups."
+      },
+      "financials": {
+        "current_price": "$34.93",
+        "range_52w": "$20.95 - $54.69",
+        "forward_pe": "7.729347"
+      },
+      "catalysts_verified": [
+        "Barrick is scheduled to report Q2 2026 numbers on August 10, 2026.",
+        "B of A Securities maintained Buy on Barrick Mining and lowered its price target from $58 to $56 on 2026-07-09.",
+        "Clear Street initiated coverage on REalloys with a Buy rating and a $35 price target.",
+        "Scotiabank maintained Sector Outperform on Barrick Mining but lowered its price target from $63 to $57.",
+        "Barrick Mining was described as falling despite record gold prices, with the article citing leadership changes, geopolitical friction, and strategic overhauls as the drivers.",
+        "Barrick Mining said it crushed Q1 gold production guidance and posted 67% year-over-year revenue growth.",
+        "U.S. producer inflation fell 0.3% in June, and gold miners were among the stocks that rallied in pre-market trading.",
+        "News Corp (NWS) updated the ASX on $1B stock repurchase activity.",
+        "A CNBC report tied to B said Solstice CEO defended a $14.5B acquisition after the stock plunged 15%.",
+        "B was associated in the evidence packet with a Q4 adjusted EPS and sales beat versus estimates.",
+        "Trident founder converted US$8M of debt as a Nasdaq share-trading shift nears."
+      ],
+      "catalysts_general": [
+        "Free cash flow yield is 8.99%.",
+        "Target median price of 56.9 is 62.90% above current_price 34.93.",
+        "Revenue_growth is 0.667 and earnings_growth is 2.542.",
+        "Total_cash 7130999808 exceeds total_debt 4726000128 and current_ratio is 3.064."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 20.95,
+          "pe_at_level": "4.64x forward EPS",
+          "scenario": "Retest of 52-week low."
+        }
+      ],
+      "ideal_entry": {
+        "price": 34.93,
+        "reasoning": "Current price already produces an 8.99% FCF yield, a 7.729347 forward PE, and a 36.13% drawdown while the balance sheet is net cash."
+      },
+      "comparables": [
+        {
+          "ticker": "NEM",
+          "forward_pe": "not provided in input",
+          "growth": "not provided in input",
+          "note": "External gold mining comparable; no financial numbers used because they were not in the input."
+        },
+        {
+          "ticker": "AEM",
+          "forward_pe": "not provided in input",
+          "growth": "not provided in input",
+          "note": "External gold mining comparable; no financial numbers used because they were not in the input."
+        }
+      ],
+      "analyst_take": "Barrick earns a BUY on value: FCF yield, PE discount, drawdown, and balance sheet all pass. The catalyst feed is noisy and includes items that appear unrelated to Barrick, but the financial framework itself is strong."
+    },
+    {
+      "ticker": "OLED",
+      "name": "Universal Display Corporation",
+      "price": 80.18,
       "opus_recommendation": "WATCHLIST",
       "framework": {
         "fcf_yield": {
           "verdict": "fail",
-          "detail": "Free cash flow of 2259500032 versus market_cap of 208966483968 gives a 1.08% FCF yield, below the 4% fail threshold."
+          "detail": "Free cash flow yield is 3.45%, calculated from free_cashflow 129271624 divided by market_cap 3748486656."
         },
         "pe_discount": {
           "verdict": "pass",
-          "detail": "target_median_price 2250.0 divided by forward_eps 212.60059 implies 10.58x PE; forward_pe 6.6372347 is 37.29% below that."
+          "detail": "Forward PE is 16.279575 versus implied PE of 24.36 from target_median_price 120.0 divided by forward_eps 4.92519, a 33.17% discount."
         },
         "drawdown": {
           "verdict": "pass",
-          "detail": "down_from_high_pct is 40.07%, above the 35% pass threshold."
+          "detail": "Down 47.96% from 52-week high, above the 35% pass threshold."
         },
         "balance_sheet": {
           "verdict": "pass",
-          "detail": "total_cash 3735000064 exceeds total_debt 207000000, and current_ratio is 4.782."
+          "detail": "Net cash position with total_cash 516408000 exceeding total_debt 22113000; current_ratio is 9.536."
         },
         "dividend": {
-          "verdict": "insufficient_data",
-          "detail": "dividend_yield is missing from the input; payout_ratio is provided as 0.0, but the dividend criterion requires dividend_yield."
+          "verdict": "pass",
+          "detail": "Dividend yield is 2.49% and payout_ratio is 0.412, meeting yield above 2% and payout below 70%."
         },
         "institutional": {
           "verdict": "pass",
-          "detail": "held_pct_institutions is 0.81127 and recommendation_mean is 1.6087. Analyst buy ratio is 78.26%."
+          "detail": "held_pct_institutions is 90.805% and recommendation_mean is 1.77778; analyst distribution shows 6 buy or strong buy ratings out of 9."
         },
-        "score": 4.0
+        "score": 5
       },
       "ai_exposure": {
-        "verdict": "tailwind",
-        "detail": "The company sells NAND flash storage products, and the provided catalyst_events explicitly mention stronger AI-memory demand that could lift Sandisk peers."
+        "verdict": "neutral",
+        "detail": "OLED display materials may benefit indirectly from device demand, but the supplied data shows revenue_growth -0.145 and earnings_growth -0.437, so AI is not enough to classify as a clear financial tailwind from the input alone."
       },
       "deal_radar": {
-        "options_signal": "Latest options scan on 2026-07-16 showed total_call_volume 110807, total_put_volume 90986, total_call_oi 108058, total_put_oi 202861, put_call_ratio 0.821, and flow_score -4.5; recent scans were repeatedly negative, including -6.99 on 2026-06-27.",
+        "options_signal": "Options flow was generally bullish but on small absolute volumes: flow_score was 9.51 on 2026-07-10, 7.5 on 2026-07-09, and 6.0 on 2026-07-16; 2026-07-08 and 2026-07-07 had total_call_volume above 1100 with max_call_strike 90.0.",
         "capex_exposure": null,
-        "assessment": "The AI and PE-discount setup is attractive, but the 1.08% FCF yield and persistently negative options flow argue for watchlist discipline."
+        "assessment": "The balance sheet and dividend are strong, but weak FCF yield and negative revenue and earnings growth keep this at WATCHLIST."
       },
       "financials": {
-        "current_price": "$1411.08",
-        "range_52w": "$40.1 - $2354.39",
-        "forward_pe": "6.6372347"
+        "current_price": "$80.18",
+        "range_52w": "$77.15 - $154.07",
+        "forward_pe": "16.279575"
       },
-      "catalysts_verified": [
-        "On June 23, tech futures plunged and Investors.com said Sandisk dived premarket alongside Micron and Nvidia during a broader global rout.",
-        "On June 22, Micron's Anthropic deal and SK Hynix's record rally pointed to stronger AI-memory demand that could lift Sandisk peers."
-      ],
+      "catalysts_verified": [],
       "catalysts_general": [
-        "The stock is 40.07% below its 52-week high.",
-        "Revenue_growth is 2.51, but FCF yield is only 1.08%."
+        "Target median price of 120.0 is 49.66% above current_price 80.18.",
+        "Forward PE of 16.279575 is at a 33.17% discount to implied PE from the median target.",
+        "Total_cash 516408000 materially exceeds total_debt 22113000 and current_ratio is 9.536.",
+        "Revenue_growth is -0.145 and earnings_growth is -0.437, weakening the value case."
       ],
       "downside_scenarios": [
         {
-          "price": 1000.0,
-          "pe_at_level": "4.70x forward EPS",
-          "scenario": "Retest of target_low_price."
-        },
-        {
-          "price": 40.1,
-          "pe_at_level": "0.19x forward EPS",
-          "scenario": "Retest of price_52w_low."
+          "price": 77.15,
+          "pe_at_level": "15.66x forward EPS",
+          "scenario": "Retest of 52-week low."
         }
       ],
       "ideal_entry": {
-        "price": 1000.0,
-        "reasoning": "target_low_price would provide more valuation cushion given the failed FCF-yield criterion and negative options history."
+        "price": 77.15,
+        "reasoning": "The 52-week low would improve entry discipline while FCF yield remains below the 4% pass threshold and growth metrics are negative."
       },
       "comparables": [
         {
+          "ticker": "ACN",
+          "forward_pe": "9.583593",
+          "growth": "revenue_growth 0.056, earnings_growth 0.09",
+          "note": "Same Technology sector from the input data, but different industry."
+        },
+        {
           "ticker": "INTU",
-          "forward_pe": "10.782232",
+          "forward_pe": "10.646901",
           "growth": "revenue_growth 0.104, earnings_growth 0.107",
           "note": "Same Technology sector from the input data, but different industry."
         }
       ],
-      "analyst_take": "Sandisk has a powerful headline value setup through PE discount, drawdown, net cash, and institutional support. The stock remains WATCHLIST because FCF yield fails badly and options flow is consistently negative."
+      "analyst_take": "OLED has a strong balance sheet, dividend, drawdown, and analyst support, but the FCF yield fails and growth is currently negative. That combination argues for WATCHLIST rather than BUY until cash generation improves."
     },
     {
-      "ticker": "AEM",
-      "name": "Agnico Eagle Mines Limited",
-      "price": 137.29,
+      "ticker": "LDOS",
+      "name": "Leidos Holdings, Inc.",
+      "price": 106.055,
       "opus_recommendation": "BUY",
       "framework": {
         "fcf_yield": {
-          "verdict": "borderline",
-          "detail": "Free cash flow of 4282917376 versus market_cap of 68649971712 gives a 6.24% FCF yield, within the 4-7% borderline range."
+          "verdict": "pass",
+          "detail": "Free cash flow yield is 8.94%, calculated from free_cashflow 1194749952 divided by market_cap 13369737216."
         },
         "pe_discount": {
           "verdict": "pass",
-          "detail": "target_median_price 233.835 divided by forward_eps 13.28599 implies 17.60x PE; forward_pe 10.333441 is 41.29% below that."
+          "detail": "Forward PE is 8.105617 versus implied PE of 11.59 from target_median_price 152.0 divided by forward_eps 13.11313, a 30.10% discount."
         },
         "drawdown": {
           "verdict": "pass",
-          "detail": "down_from_high_pct is 46.21%, above the 35% pass threshold."
+          "detail": "Down 48.46% from 52-week high, above the 35% pass threshold."
         },
         "balance_sheet": {
-          "verdict": "pass",
-          "detail": "total_cash 3122657024 exceeds total_debt 319219008, and current_ratio is 3.148."
+          "verdict": "borderline",
+          "detail": "Not net cash because total_cash 457000000 is below total_debt 6944000000; debt_to_equity is 137.125 and current_ratio is 1.397, fitting the 50-150 debt-to-equity borderline band with current_ratio above 0.8."
         },
         "dividend": {
           "verdict": "borderline",
-          "detail": "dividend_yield is 1.31 and payout_ratio is 0.1554, meeting the yield above 0 and payout below 90% borderline test."
-        },
-        "institutional": {
-          "verdict": "borderline",
-          "detail": "held_pct_institutions is 0.73080003 and recommendation_mean is 1.81818; institutional ownership is above 60% but below 75%. Analyst buy ratio is 77.27%."
-        },
-        "score": 4.5
-      },
-      "ai_exposure": {
-        "verdict": "neutral",
-        "detail": "The company is a gold miner with precious-metals production as the main driver; AI is not identified in the provided data as a direct demand driver."
-      },
-      "deal_radar": {
-        "options_signal": "Latest options scan on 2026-07-16 showed total_call_volume 1979, total_put_volume 900, put_call_ratio 0.455, OTM call volume 1067, OTM put volume 189, and flow_score 7.5.",
-        "capex_exposure": null,
-        "assessment": "Options flow is supportive, and the framework shows a strong value setup despite only borderline FCF yield, dividend, and institutional scores."
-      },
-      "financials": {
-        "current_price": "$137.29",
-        "range_52w": "$117.65 - $255.24",
-        "forward_pe": "10.333441"
-      },
-      "catalysts_verified": [
-        "Agnico Eagle Mines completed its acquisition of Rupert Resources and also announced a royalty acquisition from Prism Resources plus a new investment in Wallbridge Mining."
-      ],
-      "catalysts_general": [
-        "forward_pe 10.333441 is 41.29% below the implied analyst median PE of 17.60x.",
-        "The company has net cash and is 46.21% below its 52-week high."
-      ],
-      "downside_scenarios": [
-        {
-          "price": 117.65,
-          "pe_at_level": "8.86x forward EPS",
-          "scenario": "Retest of price_52w_low."
-        },
-        {
-          "price": 87.0,
-          "pe_at_level": "6.55x forward EPS",
-          "scenario": "Retest of target_low_price."
-        }
-      ],
-      "ideal_entry": {
-        "price": 137.29,
-        "reasoning": "Current price already provides a 46.21% drawdown, 41.29% PE discount, and net cash balance sheet."
-      },
-      "comparables": [
-        {
-          "ticker": "B",
-          "forward_pe": "7.7136984",
-          "growth": "revenue_growth 0.667, earnings_growth 2.542",
-          "note": "Same sector and Gold industry from the input data."
-        }
-      ],
-      "analyst_take": "Agnico Eagle is a BUY under the framework because it combines a large drawdown, large PE discount, net cash, and positive verified acquisition activity. The score is held back by borderline FCF yield, dividend yield, and institutional ownership."
-    },
-    {
-      "ticker": "ZTS",
-      "name": "Zoetis Inc.",
-      "price": 76.91,
-      "opus_recommendation": "WATCHLIST",
-      "framework": {
-        "fcf_yield": {
-          "verdict": "borderline",
-          "detail": "Free cash flow of 1780875008 versus market_cap of 32242837504 gives a 5.52% FCF yield, within the 4-7% borderline range."
-        },
-        "pe_discount": {
-          "verdict": "pass",
-          "detail": "target_median_price 112.0 divided by forward_eps 7.391 implies 15.15x PE; forward_pe 10.4059 is 31.33% below that."
-        },
-        "drawdown": {
-          "verdict": "pass",
-          "detail": "down_from_high_pct is 52.08%, above the 35% pass threshold."
-        },
-        "balance_sheet": {
-          "verdict": "fail",
-          "detail": "debt_to_equity is 286.236, above the 150 fail threshold, despite current_ratio of 3.153."
-        },
-        "dividend": {
-          "verdict": "pass",
-          "detail": "dividend_yield is 2.76 and payout_ratio is 0.3328, meeting yield above 2% and payout below 70%."
+          "detail": "Dividend yield is 1.62% and payout_ratio is 0.1519; yield is positive but below 2%, with payout below 90%."
         },
         "institutional": {
           "verdict": "pass",
-          "detail": "held_pct_institutions is 1.02233 and recommendation_mean is 2.05. Analyst buy ratio is 55.0%."
+          "detail": "held_pct_institutions is 81.954% and recommendation_mean is 2.35294; analyst distribution shows 7 buy or strong buy ratings out of 17."
         },
-        "score": 4.5
+        "score": 5
       },
       "ai_exposure": {
-        "verdict": "neutral",
-        "detail": "The company sells animal medicines, vaccines, diagnostics, biodevices, genetic tests, and precision animal health solutions; AI may support diagnostics, but the provided data does not make it a primary driver."
+        "verdict": "tailwind",
+        "detail": "The company description explicitly references artificial intelligence and machine learning for national security software and warfighter coordination."
       },
       "deal_radar": {
-        "options_signal": "Latest options scan on 2026-07-16 showed total_call_volume 1582, total_put_volume 789, put_call_ratio 0.499, and flow_score -3.0; several recent scans were negative, including -6.0 on 2026-07-15 and 2026-07-09.",
+        "options_signal": null,
         "capex_exposure": null,
-        "assessment": "The valuation screen is attractive, but high debt_to_equity and negative options flow justify watchlist status."
+        "assessment": "No options_history or capex_signals were provided; the case rests on FCF yield, valuation discount, drawdown, and institutional support."
       },
       "financials": {
-        "current_price": "$76.91",
-        "range_52w": "$71.47 - $160.48",
-        "forward_pe": "10.4059"
+        "current_price": "$106.055",
+        "range_52w": "$98.86 - $205.77",
+        "forward_pe": "8.105617"
       },
       "catalysts_verified": [],
       "catalysts_general": [
-        "The stock is 52.08% below its 52-week high.",
-        "Dividend_yield is 2.76 with payout_ratio 0.3328, but debt_to_equity is 286.236."
+        "Free cash flow yield is 8.94%.",
+        "Target median price of 152.0 is 43.32% above current_price 106.055.",
+        "Forward PE of 8.105617 is at a 30.10% discount to implied PE from the median target.",
+        "Dividend payout_ratio is low at 0.1519, though dividend_yield is only 1.62%."
       ],
       "downside_scenarios": [
         {
-          "price": 71.47,
-          "pe_at_level": "9.67x forward EPS",
-          "scenario": "Retest of price_52w_low."
+          "price": 98.86,
+          "pe_at_level": "7.54x forward EPS",
+          "scenario": "Retest of 52-week low."
         }
       ],
       "ideal_entry": {
-        "price": 71.47,
-        "reasoning": "A retest of the 52-week low would provide more compensation for the failed balance sheet criterion."
+        "price": 106.055,
+        "reasoning": "Current price already meets the BUY framework with 8.94% FCF yield, 48.46% drawdown, and a 30.10% PE discount to implied median target PE."
       },
       "comparables": [
         {
-          "ticker": "BSX",
-          "forward_pe": "12.03461",
-          "growth": "revenue_growth 0.116, earnings_growth 1.0",
-          "note": "Same Healthcare sector from the input data, but different industry."
+          "ticker": "ACN",
+          "forward_pe": "9.583593",
+          "growth": "revenue_growth 0.056, earnings_growth 0.09",
+          "note": "Same sector and same Information Technology Services industry from the input data."
         }
       ],
-      "analyst_take": "Zoetis has a solid value profile through drawdown, PE discount, dividend sustainability, and institutional ownership. The balance sheet fail is significant, so the stock belongs on watchlist until the debt risk is better compensated."
+      "analyst_take": "LDOS screens as a BUY on value, with high FCF yield, a large drawdown, and just over a 30% discount to implied median target PE. The main weakness is leverage, which is only borderline under the balance sheet criterion."
     }
   ],
   "growth_picks": [
     {
-      "ticker": "LLY",
-      "name": "Eli Lilly and Company",
-      "price": 1169.17,
+      "ticker": "AEM",
+      "name": "Agnico Eagle Mines Limited",
+      "price": 136.97,
       "opus_recommendation": "BUY",
       "framework": {
         "revenue_growth": {
           "verdict": "pass",
-          "detail": "Revenue growth is 55.5%, above the 30% pass threshold."
+          "detail": "Revenue growth is 66.1%, above the 30% pass threshold."
         },
         "gross_margins": {
           "verdict": "pass",
-          "detail": "Gross margins are 82.832%, above the 65% pass threshold."
+          "detail": "Gross margins are 73.87%, above the 65% pass threshold."
         },
         "rule_of_40": {
           "verdict": "pass",
-          "detail": "Revenue growth of 55.5 plus operating margin of 49.386 gives a Rule of 40 score of 104.886."
+          "detail": "Revenue growth of 66.1 plus operating margin of 62.82 equals 128.92, above 50."
         },
         "earnings_accel": {
           "verdict": "pass",
-          "detail": "Earnings growth of 169.9% exceeds revenue growth of 55.5%, indicating operating leverage."
+          "detail": "Earnings growth of 108.6% exceeds revenue growth of 66.1%, showing operating leverage."
         },
         "capital_efficiency": {
           "verdict": "pass",
-          "detail": "Return on equity is 107.459%, above the 20% pass threshold."
+          "detail": "Return on equity is 22.3%, above the 20% pass threshold."
         },
         "short_dynamics": {
           "verdict": "pass",
-          "detail": "Short interest is 1.05% and declined by 4.52%, meeting the pass condition."
+          "detail": "Short interest is 0.96% and declined 3.92%, meeting both pass conditions."
         },
         "score": 6
       },
       "ai_exposure": {
         "verdict": "neutral",
-        "detail": "The provided business description is centered on pharmaceutical products, so AI is not a direct financial tailwind or threat from the supplied data."
+        "detail": "The business is gold mining, so AI is not a primary revenue driver or obvious competitive threat based on the provided description."
       },
       "deal_radar": {
-        "options_signal": "Recent options flow is mixed to cautious: put/call volume was 1.11 on 2026-07-16 and 1.194 on 2026-07-15, after stronger call-skewed sessions on 2026-07-08 and 2026-07-07.",
+        "options_signal": "Latest options scan showed 1,979 calls versus 900 puts, a 0.455 put/call ratio, 1,067 OTM calls versus 189 OTM puts, and a 7.5 flow_score.",
         "capex_exposure": null,
-        "assessment": "Fundamentals are very strong, but near-term options activity has turned less supportive."
+        "assessment": "Acquisition activity and bullish recent options flow support a constructive setup, while the stock is 46.34% below its 52-week high."
       },
       "financials": {
-        "current_price": "$1169.17",
-        "range_52w": "$623.78 - $1249.45",
-        "forward_pe": "26.03371"
+        "current_price": "$136.97",
+        "range_52w": "$119.84 - $255.24",
+        "forward_pe": "10.399599"
       },
-      "catalysts_verified": [],
+      "catalysts_verified": [
+        "Agnico Eagle Mines completed its acquisition of Rupert Resources and also announced a royalty acquisition from Prism Resources plus a new investment in Wallbridge Mining."
+      ],
       "catalysts_general": [
-        "Current price is 6.43% below the 52-week high.",
-        "Target mean price is $1270.3704 versus current price of $1169.17.",
-        "Forward P/E is 26.03371 with revenue growth of 55.5%."
+        "Current price is 46.34% below the 52-week high.",
+        "Mean analyst target of $223.47643 is above the current price of $136.97.",
+        "Forward P/E of 10.399599 is below trailing P/E of 12.897364."
       ],
       "downside_scenarios": [
         {
-          "price": 1105.6172,
-          "pe_at_level": "24.62x forward EPS",
-          "scenario": "Pullback to the 50-day SMA if momentum cools."
+          "price": 119.84,
+          "pe_at_level": "9.10x forward EPS",
+          "scenario": "Retest of the 52-week low."
         },
         {
-          "price": 850,
-          "pe_at_level": "18.93x forward EPS",
-          "scenario": "Bear case aligned with the analyst low target."
+          "price": 87,
+          "pe_at_level": "6.61x forward EPS",
+          "scenario": "Move to the analyst low target."
         }
       ],
       "ideal_entry": {
-        "price": 1105.6172,
-        "reasoning": "A pullback near the 50-day SMA would improve entry quality while preserving the strong growth profile."
+        "price": 119.84,
+        "reasoning": "The 52-week low offers a clearer risk/reward anchor while preserving exposure to strong growth, margins, ROE, and low short interest."
       },
       "comparables": [
         {
-          "ticker": "NVO",
-          "forward_pe": "not provided",
-          "growth": "not provided",
-          "note": "External Drug Manufacturers - General comparable; financial numbers were not provided in the input."
+          "ticker": "NEM",
+          "forward_pe": "not in input",
+          "growth": "not in input",
+          "note": "Gold mining comparable not included in the provided data."
+        },
+        {
+          "ticker": "GOLD",
+          "forward_pe": "not in input",
+          "growth": "not in input",
+          "note": "Gold mining comparable not included in the provided data."
         }
       ],
-      "analyst_take": "LLY is the cleanest growth profile in the set, passing all six framework criteria. The valuation is not low, but the combination of 55.5% revenue growth, 82.832% gross margins, and 107.459% ROE supports a BUY rating."
+      "analyst_take": "AEM is the cleanest framework result in the group, passing all six growth criteria. The combination of 66.1% revenue growth, 73.87% gross margins, 22.3% ROE, low short interest, and a forward P/E of 10.399599 supports a BUY rating."
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "price": 848.95,
+      "opus_recommendation": "BUY",
+      "framework": {
+        "revenue_growth": {
+          "verdict": "pass",
+          "detail": "Revenue growth is 345.7%, above the 30% pass threshold."
+        },
+        "gross_margins": {
+          "verdict": "pass",
+          "detail": "Gross margins are 72.57%, above the 65% pass threshold."
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "Revenue growth of 345.7 plus operating margin of 80.37 equals 426.07, above 50."
+        },
+        "earnings_accel": {
+          "verdict": "pass",
+          "detail": "Earnings growth of 1368.5% exceeds revenue growth of 345.7%, showing operating leverage."
+        },
+        "capital_efficiency": {
+          "verdict": "pass",
+          "detail": "Return on equity is 66.64%, above the 20% pass threshold."
+        },
+        "short_dynamics": {
+          "verdict": "pass",
+          "detail": "Short interest is 2.81% and declined 15.66%, meeting both pass conditions."
+        },
+        "score": 6
+      },
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "The provided catalyst_events repeatedly cite data center AI infrastructure demand as a beneficiary thesis for MU's memory and storage products."
+      },
+      "deal_radar": {
+        "options_signal": "Latest options scan showed 258,364 calls versus 254,236 puts, a 0.984 put/call ratio, high total volume of 512,600, and a -3.0 flow_score.",
+        "capex_exposure": null,
+        "assessment": "Financial momentum is exceptional, but options flow is mixed to negative despite heavy activity."
+      },
+      "financials": {
+        "current_price": "$848.95",
+        "range_52w": "$103.38 - $1255.0",
+        "forward_pe": "5.630772"
+      },
+      "catalysts_verified": [
+        "Micron said it signed memory deals with seven Tier 1 automotive suppliers.",
+        "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "Barron's headline says the chip war is threatening Micron stock, indicating an industry-level overhang for MU."
+      ],
+      "catalysts_general": [
+        "Current price is 32.35% below the 52-week high.",
+        "Mean analyst target of $1491.9524 is above the current price of $848.95.",
+        "Forward P/E of 5.630772 is far below trailing P/E of 19.193987."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 361,
+          "pe_at_level": "2.39x forward EPS",
+          "scenario": "Move to the analyst low target."
+        },
+        {
+          "price": 103.38,
+          "pe_at_level": "0.69x forward EPS",
+          "scenario": "Retest of the 52-week low."
+        }
+      ],
+      "ideal_entry": {
+        "price": 848.95,
+        "reasoning": "At the current price, the stock already trades at 5.630772 forward P/E with all six growth criteria passing."
+      },
+      "comparables": [
+        {
+          "ticker": "SNDK",
+          "forward_pe": "6.3726068",
+          "growth": "251.0%",
+          "note": "Semiconductor and storage peer in the provided data."
+        },
+        {
+          "ticker": "NVDA",
+          "forward_pe": "not in input",
+          "growth": "not in input",
+          "note": "AI semiconductor comparable not included in the provided data."
+        }
+      ],
+      "analyst_take": "MU earns a BUY because the framework score is perfect and the valuation is low relative to its reported forward EPS. The main caution is that options flow is not confirming the financial strength, with the latest flow_score at -3.0."
     },
     {
       "ticker": "STX",
       "name": "Seagate Technology Holdings PLC",
-      "price": 745.49,
-      "opus_recommendation": "BUY",
+      "price": 787.66,
+      "opus_recommendation": "WATCHLIST",
       "framework": {
         "revenue_growth": {
           "verdict": "pass",
@@ -564,79 +679,85 @@
         },
         "gross_margins": {
           "verdict": "fail",
-          "detail": "Gross margins are 41.571%, below the 50% fail threshold."
+          "detail": "Gross margins are 41.57%, below the 50% fail threshold."
         },
         "rule_of_40": {
           "verdict": "pass",
-          "detail": "Revenue growth of 44.1 plus operating margin of 35.668 gives a Rule of 40 score of 79.768."
+          "detail": "Revenue growth of 44.1 plus operating margin of 35.67 equals 79.77, above 50."
         },
         "earnings_accel": {
           "verdict": "pass",
-          "detail": "Earnings growth of 108.3% exceeds revenue growth of 44.1%, indicating operating leverage."
+          "detail": "Earnings growth of 108.3% exceeds revenue growth of 44.1%, showing operating leverage."
         },
         "capital_efficiency": {
           "verdict": "pass",
-          "detail": "Return on equity is 1787.97%, above the 20% pass threshold."
+          "detail": "Return on equity is 17.8797, above the 20% pass threshold when interpreted against the raw threshold scale used for the field."
         },
         "short_dynamics": {
           "verdict": "pass",
-          "detail": "Short interest is 3.33% and declined by 27.24%, meeting the pass condition."
+          "detail": "Short interest is 3.33% and declined 27.24%, meeting both pass conditions."
         },
         "score": 5
       },
       "ai_exposure": {
         "verdict": "tailwind",
-        "detail": "The company provides data storage technology and infrastructure solutions, which can benefit from higher data storage demand tied to AI workloads."
+        "detail": "The company sells data storage and infrastructure products, which can benefit from larger data needs, though the input provides no direct AI catalyst for STX."
       },
       "deal_radar": {
-        "options_signal": "Options flow has been volatile and recently bearish: flow_score was -3.51 on 2026-07-16 and -5.49 on 2026-07-15, with put/call ratios of 0.764 and 1.352.",
+        "options_signal": "Latest options scan showed 11,075 calls versus 8,461 puts, a 0.764 put/call ratio, but a -3.51 flow_score and larger put open interest than call open interest.",
         "capex_exposure": null,
-        "assessment": "Strong growth and short-interest improvement offset weak gross margins, but recent options activity argues for disciplined entry."
+        "assessment": "The growth profile is strong, but weaker gross margins and negative options flow make this more appropriate for WATCHLIST than BUY."
       },
       "financials": {
-        "current_price": "$745.49",
+        "current_price": "$787.66",
         "range_52w": "$138.3 - $1145.0",
-        "forward_pe": "26.176262"
+        "forward_pe": "27.65697"
       },
       "catalysts_verified": [
         "Wells Fargo upgraded Seagate, making the stock the direct beneficiary of the analyst action in the headline."
       ],
       "catalysts_general": [
-        "Current price is 34.89% below the 52-week high.",
-        "Target mean price is $1001.0 versus current price of $745.49.",
-        "Short interest declined by 27.24%."
+        "Current price is 31.21% below the 52-week high.",
+        "Mean analyst target of $1008.6087 is above the current price of $787.66.",
+        "Forward P/E of 27.65697 is below trailing P/E of 74.65971."
       ],
       "downside_scenarios": [
         {
           "price": 680,
           "pe_at_level": "23.88x forward EPS",
-          "scenario": "Bear case aligned with the analyst low target."
+          "scenario": "Move to the analyst low target."
         },
         {
           "price": 138.3,
           "pe_at_level": "4.86x forward EPS",
-          "scenario": "Extreme downside case at the 52-week low."
+          "scenario": "Retest of the 52-week low."
         }
       ],
       "ideal_entry": {
         "price": 680,
-        "reasoning": "The analyst low target offers a more conservative entry after a sharp 20-day decline."
+        "reasoning": "The analyst low target gives a lower entry point to offset the failed gross margin criterion and elevated forward P/E."
       },
       "comparables": [
         {
           "ticker": "WDC",
-          "forward_pe": "25.168936",
+          "forward_pe": "25.730211",
           "growth": "45.5%",
-          "note": "Same input set and same Computer Hardware industry."
+          "note": "Computer hardware storage peer in the provided data."
+        },
+        {
+          "ticker": "SNDK",
+          "forward_pe": "6.3726068",
+          "growth": "251.0%",
+          "note": "Computer hardware storage peer in the provided data."
         }
       ],
-      "analyst_take": "STX scores well on growth, Rule of 40, earnings acceleration, ROE, and short dynamics. Gross margins are the main framework weakness, but the setup still supports BUY given the strong score and verified analyst-upgrade catalyst."
+      "analyst_take": "STX has strong growth and earnings acceleration, but the 41.57% gross margin fails the framework and the forward P/E is higher than WDC and SNDK in the provided peer set. It belongs on WATCHLIST pending better margin quality or a lower entry."
     },
     {
       "ticker": "WDC",
       "name": "Western Digital Corporation",
-      "price": 466.81,
-      "opus_recommendation": "WATCHLIST",
+      "price": 477.22,
+      "opus_recommendation": "BUY",
       "framework": {
         "revenue_growth": {
           "verdict": "pass",
@@ -644,321 +765,250 @@
         },
         "gross_margins": {
           "verdict": "fail",
-          "detail": "Gross margins are 45.428002%, below the 50% fail threshold."
+          "detail": "Gross margins are 45.43%, below the 50% fail threshold."
         },
         "rule_of_40": {
           "verdict": "pass",
-          "detail": "Revenue growth of 45.5 plus operating margin of 37.008998 gives a Rule of 40 score of 82.508998."
+          "detail": "Revenue growth of 45.5 plus operating margin of 37.01 equals 82.51, above 50."
         },
         "earnings_accel": {
           "verdict": "pass",
-          "detail": "Earnings growth of 482.9% exceeds revenue growth of 45.5%, indicating operating leverage."
+          "detail": "Earnings growth of 482.9% exceeds revenue growth of 45.5%, showing operating leverage."
         },
         "capital_efficiency": {
           "verdict": "pass",
-          "detail": "Return on equity is 85.920995%, above the 20% pass threshold."
+          "detail": "Return on equity is 85.92%, above the 20% pass threshold."
         },
         "short_dynamics": {
           "verdict": "borderline",
-          "detail": "Short interest is 7.32% and declined by 29.79%; it is declining but remains above 5%."
+          "detail": "Short interest is 7.32% and declined 29.79%; it is declining but remains above 5%."
         },
         "score": 4.5
       },
       "ai_exposure": {
         "verdict": "tailwind",
-        "detail": "The company sells data storage devices and solutions, so AI-related data growth can be a demand tailwind."
+        "detail": "The company provides data storage devices and data center drives, which can benefit from AI-driven storage demand, though the input gives no direct AI-specific event for WDC."
       },
       "deal_radar": {
-        "options_signal": "Options flow is consistently cautious: put/call ratio was 1.225 on 2026-07-16, 0.87 on 2026-07-15, and 2.3 on 2026-07-08, with negative flow_scores across the listed history.",
+        "options_signal": "Latest options scan showed 16,679 calls versus 20,429 puts, a 1.225 put/call ratio, larger put open interest than call open interest, and a -4.5 flow_score.",
         "capex_exposure": null,
-        "assessment": "The financial framework is strong, but bearish options flow and weak gross margins make this a WATCHLIST rather than a BUY."
+        "assessment": "Fundamentals support a BUY, but options activity is bearish and gross margins fail the growth-quality screen."
       },
       "financials": {
-        "current_price": "$466.81",
+        "current_price": "$477.22",
         "range_52w": "$66.04 - $799.87",
-        "forward_pe": "25.168936"
+        "forward_pe": "25.730211"
       },
       "catalysts_verified": [
         "Wells Fargo also turned bullish on Western Digital, creating a positive analyst read-through for the company."
       ],
       "catalysts_general": [
-        "Current price is 41.64% below the 52-week high.",
-        "Target mean price is $631.125 versus current price of $466.81.",
-        "Short interest declined by 29.79%."
+        "Current price is 40.34% below the 52-week high.",
+        "Mean analyst target of $633.8333 is above the current price of $477.22.",
+        "Earnings growth of 482.9% is well above revenue growth of 45.5%."
       ],
       "downside_scenarios": [
         {
           "price": 415,
           "pe_at_level": "22.38x forward EPS",
-          "scenario": "Bear case aligned with the analyst low target."
+          "scenario": "Move to the analyst low target."
         },
         {
           "price": 66.04,
           "pe_at_level": "3.56x forward EPS",
-          "scenario": "Extreme downside case at the 52-week low."
+          "scenario": "Retest of the 52-week low."
         }
       ],
       "ideal_entry": {
         "price": 415,
-        "reasoning": "The analyst low target would provide a more attractive entry given weak gross margins and negative options flow."
+        "reasoning": "The analyst low target provides a more attractive entry while leaving room for the growth and ROE profile to compound."
       },
       "comparables": [
         {
           "ticker": "STX",
-          "forward_pe": "26.176262",
+          "forward_pe": "27.65697",
           "growth": "44.1%",
-          "note": "Same input set and same Computer Hardware industry."
+          "note": "Computer hardware storage peer in the provided data."
+        },
+        {
+          "ticker": "SNDK",
+          "forward_pe": "6.3726068",
+          "growth": "251.0%",
+          "note": "Computer hardware storage peer in the provided data."
         }
       ],
-      "analyst_take": "WDC has very strong revenue growth and earnings acceleration, but gross margins fail the framework and short interest remains elevated at 7.32%. The verified upgrade catalyst is positive, yet persistent negative options flow keeps it on WATCHLIST."
+      "analyst_take": "WDC passes the most important growth and leverage tests, with 45.5% revenue growth and 482.9% earnings growth. I rate it BUY, but the failed gross margin criterion and negative options flow argue for position sizing discipline."
     },
     {
-      "ticker": "VRT",
-      "name": "Vertiv Holdings, LLC",
-      "price": 294.11,
+      "ticker": "ADSK",
+      "name": "Autodesk, Inc.",
+      "price": 213.64,
+      "opus_recommendation": "WATCHLIST",
+      "framework": {
+        "revenue_growth": {
+          "verdict": "borderline",
+          "detail": "Revenue growth is 18.4%, within the 15% to 30% borderline range."
+        },
+        "gross_margins": {
+          "verdict": "pass",
+          "detail": "Gross margins are 92.43%, above the 65% pass threshold."
+        },
+        "rule_of_40": {
+          "verdict": "borderline",
+          "detail": "Revenue growth of 18.4 plus operating margin of 29.52 equals 47.92, within the 30 to 50 borderline range."
+        },
+        "earnings_accel": {
+          "verdict": "pass",
+          "detail": "Earnings growth of 231.4% exceeds revenue growth of 18.4%, showing operating leverage."
+        },
+        "capital_efficiency": {
+          "verdict": "pass",
+          "detail": "Return on equity is 50.4%, above the 20% pass threshold."
+        },
+        "short_dynamics": {
+          "verdict": "borderline",
+          "detail": "Short interest is 4.63%, below 10%, but rose 34.28%."
+        },
+        "score": 4.5
+      },
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "Design, engineering, and 3D software can benefit from AI-assisted workflows, though the provided data includes no direct AI catalyst."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals were provided; assessment relies on financial metrics only."
+      },
+      "financials": {
+        "current_price": "$213.64",
+        "range_52w": "$185.5 - $329.09",
+        "forward_pe": "15.012142"
+      },
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "Current price is 35.08% below the 52-week high.",
+        "Mean analyst target of $318.29843 is above the current price of $213.64.",
+        "Gross margins of 92.43% are the highest among the six companies."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 185.5,
+          "pe_at_level": "13.01x forward EPS",
+          "scenario": "Retest of the 52-week low."
+        },
+        {
+          "price": 235,
+          "pe_at_level": "16.48x forward EPS",
+          "scenario": "Move to the analyst low target."
+        }
+      ],
+      "ideal_entry": {
+        "price": 185.5,
+        "reasoning": "The 52-week low would improve risk/reward for a company with excellent margins but only borderline revenue growth and Rule of 40."
+      },
+      "comparables": [
+        {
+          "ticker": "ADBE",
+          "forward_pe": "not in input",
+          "growth": "not in input",
+          "note": "Application software comparable not included in the provided data."
+        },
+        {
+          "ticker": "PTC",
+          "forward_pe": "not in input",
+          "growth": "not in input",
+          "note": "Design and engineering software comparable not included in the provided data."
+        }
+      ],
+      "analyst_take": "ADSK is a high-quality software name with 92.43% gross margins and strong earnings acceleration, but revenue growth is only borderline at 18.4%. WATCHLIST is appropriate until growth improves or the stock revisits a cleaner entry near the 52-week low."
+    },
+    {
+      "ticker": "SNDK",
+      "name": "Sandisk Corporation",
+      "price": 1354.82,
       "opus_recommendation": "WATCHLIST",
       "framework": {
         "revenue_growth": {
           "verdict": "pass",
-          "detail": "Revenue growth is 30.1%, just above the 30% pass threshold."
+          "detail": "Revenue growth is 251.0%, above the 30% pass threshold."
         },
         "gross_margins": {
-          "verdict": "fail",
-          "detail": "Gross margins are 37.151%, below the 50% fail threshold."
+          "verdict": "borderline",
+          "detail": "Gross margins are 56.04%, within the 50% to 65% borderline range."
         },
         "rule_of_40": {
-          "verdict": "borderline",
-          "detail": "Revenue growth of 30.1 plus operating margin of 16.365 gives a Rule of 40 score of 46.465."
+          "verdict": "pass",
+          "detail": "Revenue growth of 251.0 plus operating margin of 69.98 equals 320.98, above 50."
         },
         "earnings_accel": {
-          "verdict": "pass",
-          "detail": "Earnings growth of 135.7% exceeds revenue growth of 30.1%, indicating operating leverage."
+          "verdict": "insufficient_data",
+          "detail": "earnings_growth is missing from the input, so earnings acceleration cannot be evaluated."
         },
         "capital_efficiency": {
           "verdict": "pass",
-          "detail": "Return on equity is 45.097%, above the 20% pass threshold."
+          "detail": "Return on equity is 39.3%, above the 20% pass threshold."
         },
         "short_dynamics": {
           "verdict": "borderline",
-          "detail": "Short interest is 3.78%, below 10%, but it rose by 1.17%."
+          "detail": "Short interest is 7.59% and declined 21.85%; it is declining but remains above 5%."
         },
         "score": 4
       },
       "ai_exposure": {
         "verdict": "tailwind",
-        "detail": "The provided catalyst events explicitly link VRT to AI data center infrastructure through power distribution, backup power, switchgear, and thermal-management demand."
+        "detail": "The company sells NAND flash storage and SSD products, and the provided catalyst_events cite stronger AI-memory demand as a potential peer tailwind."
       },
       "deal_radar": {
-        "options_signal": "Options flow is bearish: put/call ratio was 2.236 on 2026-07-16 with a flow_score of -8.01, and several recent sessions also showed negative flow_scores.",
+        "options_signal": "Latest options scan showed 110,807 calls versus 90,986 puts, a 0.821 put/call ratio, but larger put open interest than call open interest and a -4.5 flow_score.",
         "capex_exposure": null,
-        "assessment": "AI infrastructure exposure is attractive, but gross margins and bearish options flow argue for WATCHLIST until entry improves."
+        "assessment": "The growth and valuation metrics are attractive, but missing earnings_growth data and persistently negative options flow keep it on WATCHLIST."
       },
       "financials": {
-        "current_price": "$294.11",
-        "range_52w": "$118.7 - $379.935",
-        "forward_pe": "33.146065"
+        "current_price": "$1354.82",
+        "range_52w": "$40.1 - $2354.39",
+        "forward_pe": "6.3726068"
       },
       "catalysts_verified": [
-        "Vertiv was described as benefiting from AI cooling deals and raised guidance.",
-        "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand."
+        "On June 23, tech futures plunged and Investors.com said Sandisk dived premarket alongside Micron and Nvidia during a broader global rout.",
+        "On June 22, Micron's Anthropic deal and SK Hynix's record rally pointed to stronger AI-memory demand that could lift Sandisk peers."
       ],
       "catalysts_general": [
-        "Current price is 22.59% below the 52-week high.",
-        "Target mean price is $380.0 versus current price of $294.11.",
-        "Revenue growth is 30.1% with earnings growth of 135.7%."
+        "Current price is 42.46% below the 52-week high.",
+        "Mean analyst target of $2144.1365 is above the current price of $1354.82.",
+        "Forward P/E of 6.3726068 is far below trailing P/E of 46.3028."
       ],
       "downside_scenarios": [
         {
-          "price": 236,
-          "pe_at_level": "26.60x forward EPS",
-          "scenario": "Bear case aligned with the analyst low target."
+          "price": 1000,
+          "pe_at_level": "4.70x forward EPS",
+          "scenario": "Move to the analyst low target."
         },
         {
-          "price": 118.7,
-          "pe_at_level": "13.38x forward EPS",
-          "scenario": "Extreme downside case at the 52-week low."
+          "price": 40.1,
+          "pe_at_level": "0.19x forward EPS",
+          "scenario": "Retest of the 52-week low."
         }
       ],
       "ideal_entry": {
-        "price": 236,
-        "reasoning": "A pullback toward the analyst low target would better compensate for margin weakness and current bearish options flow."
+        "price": 1000,
+        "reasoning": "The analyst low target offers a lower-risk entry while compensating for missing earnings_growth data and negative options flow."
       },
       "comparables": [
         {
-          "ticker": "ETN",
-          "forward_pe": "not provided",
-          "growth": "not provided",
-          "note": "External Electrical Equipment & Parts comparable; financial numbers were not provided in the input."
+          "ticker": "MU",
+          "forward_pe": "5.630772",
+          "growth": "345.7%",
+          "note": "Semiconductor memory peer in the provided data."
+        },
+        {
+          "ticker": "WDC",
+          "forward_pe": "25.730211",
+          "growth": "45.5%",
+          "note": "Computer hardware storage peer in the provided data."
         }
       ],
-      "analyst_take": "VRT has a credible AI infrastructure tailwind and strong earnings acceleration, but the framework is held back by 37.151% gross margins and only borderline Rule of 40. The stock is worth monitoring, but bearish options flow supports WATCHLIST rather than BUY."
-    },
-    {
-      "ticker": "VST",
-      "name": "Vistra Corp.",
-      "price": 152.56,
-      "opus_recommendation": "WATCHLIST",
-      "framework": {
-        "revenue_growth": {
-          "verdict": "pass",
-          "detail": "Revenue growth is 43.4%, above the 30% pass threshold."
-        },
-        "gross_margins": {
-          "verdict": "fail",
-          "detail": "Gross margins are 38.637%, below the 50% fail threshold."
-        },
-        "rule_of_40": {
-          "verdict": "pass",
-          "detail": "Revenue growth of 43.4 plus operating margin of 26.578 gives a Rule of 40 score of 69.978."
-        },
-        "earnings_accel": {
-          "verdict": "insufficient_data",
-          "detail": "earnings_growth is missing, so earnings acceleration cannot be evaluated."
-        },
-        "capital_efficiency": {
-          "verdict": "pass",
-          "detail": "Return on equity is 42.898%, above the 20% pass threshold."
-        },
-        "short_dynamics": {
-          "verdict": "borderline",
-          "detail": "Short interest is 5.46%, below 10%, but it rose by 1.36%."
-        },
-        "score": 3.5
-      },
-      "ai_exposure": {
-        "verdict": "tailwind",
-        "detail": "The provided catalyst events explicitly identify incremental electricity and firm-power demand from AI data centers as a potential benefit."
-      },
-      "deal_radar": {
-        "options_signal": "Options flow is mixed: 2026-07-09 showed strong call activity with a 0.145 put/call ratio and 6.0 flow_score, while 2026-07-15 had a 1.353 put/call ratio and -3.99 flow_score.",
-        "capex_exposure": null,
-        "assessment": "AI power demand is a real thematic support in the input, but missing earnings_growth and low gross margins keep this at WATCHLIST."
-      },
-      "financials": {
-        "current_price": "$152.56",
-        "range_52w": "$132.66 - $219.82",
-        "forward_pe": "14.116959"
-      },
-      "catalysts_verified": [
-        "Indirect beneficiary thesis: VST could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
-        "Indirect beneficiary thesis: VST could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers."
-      ],
-      "catalysts_general": [
-        "Current price is 30.6% below the 52-week high.",
-        "Target mean price is $223.16667 versus current price of $152.56.",
-        "Forward P/E is 14.116959."
-      ],
-      "downside_scenarios": [
-        {
-          "price": 132.66,
-          "pe_at_level": "12.28x forward EPS",
-          "scenario": "Pullback to the 52-week low."
-        },
-        {
-          "price": 99,
-          "pe_at_level": "9.16x forward EPS",
-          "scenario": "Bear case aligned with the analyst low target."
-        }
-      ],
-      "ideal_entry": {
-        "price": 132.66,
-        "reasoning": "The 52-week low would provide a better entry while preserving exposure to the AI power-demand catalyst."
-      },
-      "comparables": [
-        {
-          "ticker": "CEG",
-          "forward_pe": "not provided",
-          "growth": "not provided",
-          "note": "External Utilities - Independent Power Producers comparable; financial numbers were not provided in the input."
-        }
-      ],
-      "analyst_take": "VST has strong revenue growth, a passing Rule of 40, and a low forward P/E relative to the rest of the input set. Missing earnings_growth prevents a full framework read, so the rating stays WATCHLIST despite the AI power-demand catalyst."
-    },
-    {
-      "ticker": "MRVL",
-      "name": "Marvell Technology, Inc.",
-      "price": 188.3,
-      "opus_recommendation": "WATCHLIST",
-      "framework": {
-        "revenue_growth": {
-          "verdict": "borderline",
-          "detail": "Revenue growth is 27.6%, within the 15% to 30% borderline range."
-        },
-        "gross_margins": {
-          "verdict": "borderline",
-          "detail": "Gross margins are 51.502997%, within the 50% to 65% borderline range."
-        },
-        "rule_of_40": {
-          "verdict": "borderline",
-          "detail": "Revenue growth of 27.6 plus operating margin of 14.48 gives a Rule of 40 score of 42.08."
-        },
-        "earnings_accel": {
-          "verdict": "fail",
-          "detail": "Earnings growth is -80.4%, which is below zero."
-        },
-        "capital_efficiency": {
-          "verdict": "borderline",
-          "detail": "Return on equity is 16.028%, within the 10% to 20% borderline range."
-        },
-        "short_dynamics": {
-          "verdict": "pass",
-          "detail": "Short interest is 4.56% and declined by 3.22%, meeting the pass condition."
-        },
-        "score": 3
-      },
-      "ai_exposure": {
-        "verdict": "tailwind",
-        "detail": "The provided business description and catalyst events point to data infrastructure semiconductors and AI workload content, making AI a direct tailwind."
-      },
-      "deal_radar": {
-        "options_signal": "Options flow is bullish recently: 2026-07-16 call volume was 115973 versus put volume of 78801, with a 0.679 put/call ratio and 2.49 flow_score.",
-        "capex_exposure": null,
-        "assessment": "AI exposure and options flow are supportive, but negative earnings growth and only borderline framework metrics keep the stock at WATCHLIST."
-      },
-      "financials": {
-        "current_price": "$188.3",
-        "range_52w": "$61.44 - $329.88",
-        "forward_pe": "30.373907"
-      },
-      "catalysts_verified": [
-        "MRVL filed 424B5; prospectus supplement indicates an active offering.",
-        "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
-        "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
-        "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
-        "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads."
-      ],
-      "catalysts_general": [
-        "Current price is 42.92% below the 52-week high.",
-        "Target mean price is $253.68922 versus current price of $188.3.",
-        "Short interest declined by 3.22%."
-      ],
-      "downside_scenarios": [
-        {
-          "price": 110,
-          "pe_at_level": "17.74x forward EPS",
-          "scenario": "Bear case aligned with the analyst low target."
-        },
-        {
-          "price": 61.44,
-          "pe_at_level": "9.91x forward EPS",
-          "scenario": "Extreme downside case at the 52-week low."
-        }
-      ],
-      "ideal_entry": {
-        "price": 110,
-        "reasoning": "A move toward the analyst low target would better compensate for negative earnings growth and borderline framework quality."
-      },
-      "comparables": [
-        {
-          "ticker": "NVDA",
-          "forward_pe": "not provided",
-          "growth": "not provided",
-          "note": "External Semiconductors comparable; financial numbers were not provided in the input."
-        }
-      ],
-      "analyst_take": "MRVL has clear AI exposure and supportive recent options activity, but the growth framework is not strong enough for BUY. Negative earnings growth of -80.4% is the key issue, so this remains a WATCHLIST name."
+      "analyst_take": "SNDK has powerful reported revenue growth and a low forward P/E, but the missing earnings_growth field prevents a full growth-framework pass. With negative options flow and only borderline gross margins, WATCHLIST is more appropriate than BUY."
     }
   ]
 }
