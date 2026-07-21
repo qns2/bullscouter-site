@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-20T17:35:32",
-  "source_generated_at": "2026-07-20T14:20:02.278574+00:00",
+  "generated_at": "2026-07-21T17:36:27",
+  "source_generated_at": "2026-07-21T14:20:03.000373+00:00",
   "mode": "daily_analysis_site_export",
   "oracle_model": "gpt-5.5",
-  "title": "Stale option flow leans bullish, but news dispersion is wide",
-  "summary": "Today\u2019s bounded evidence is dominated by company-specific catalysts in TTD, FLY, IBRX, B, and IBM, with several bullish headlines offset by stale ThetaData and high implied volatility. FLY and IBRX show the clearest alignment between positive news themes and prior bullish options flow, but both carry elevated IV and the flow snapshot is from 2026-07-16. TTD is the main divergence: retail-media and leadership updates are positive, while weak-outlook and software-budget headlines are bearish despite earlier bullish call-skew. IBM adds a negative enterprise-software spending read-through that may matter more for TTD than for IBM alone.",
+  "title": "Mixed portfolio tape: TTD risk, FLY/IBRX event optionality",
+  "summary": "Bounded evidence points to a mixed portfolio day: TTD carries the clearest risk stack, with weak-outlook and macro de-rating headlines aligning with bearish options flow. FLY and IBRX show bullish operational headlines and call-heavy flow, but both carry very high implied volatility and unconfirmed ThetaData alignment. B has a bullish re-rating headline and bullish flow, but several mapped news items look noisy or conflicting. The broader options evidence shows call-heavy reads in several held names without matching fresh news, so those are watch items rather than confirmed catalysts.",
   "portfolio": {
-    "as_of": "2026-07-20T12:24:08Z",
+    "as_of": "2026-07-21T12:24:38Z",
     "position_count": 17,
     "tickers": [
       "ACM",
@@ -29,32 +29,32 @@
     ]
   },
   "my_stocks": {
-    "summary": "Today\u2019s bounded evidence is dominated by company-specific catalysts in TTD, FLY, IBRX, B, and IBM, with several bullish headlines offset by stale ThetaData and high implied volatility. FLY and IBRX show the clearest alignment between positive news themes and prior bullish options flow, but both carry elevated IV and the flow snapshot is from 2026-07-16. TTD is the main divergence: retail-media and leadership updates are positive, while weak-outlook and software-budget headlines are bearish despite earlier bullish call-skew. IBM adds a negative enterprise-software spending read-through that may matter more for TTD than for IBM alone.",
+    "summary": "Bounded evidence points to a mixed portfolio day: TTD carries the clearest risk stack, with weak-outlook and macro de-rating headlines aligning with bearish options flow. FLY and IBRX show bullish operational headlines and call-heavy flow, but both carry very high implied volatility and unconfirmed ThetaData alignment. B has a bullish re-rating headline and bullish flow, but several mapped news items look noisy or conflicting. The broader options evidence shows call-heavy reads in several held names without matching fresh news, so those are watch items rather than confirmed catalysts.",
     "top_opportunities": [
       {
-        "pick_id": "27b23dc746a6d7a8",
+        "pick_id": "8a0c46df9b84a34c",
         "ticker": "FLY",
         "direction": "bull",
-        "type": "launch",
-        "summary": "Firefly said its Alpha Rocket returned to orbit successfully, a headline that coincided with a 5% overnight move in FLY stock.",
+        "type": "contract_award",
+        "summary": "Firefly Aerospace received a string of fresh NASA awards, which the article describes as a positive operational catalyst.",
         "confidence": 0.83,
         "theta_adjusted_confidence": 0.83,
-        "pick_score": 62,
-        "pick_score_reason": "theta-adjusted confidence 0.83; ThetaData is stale; direct company catalyst; elevated IV risk",
+        "pick_score": 57,
+        "pick_score_reason": "theta-adjusted confidence 0.83; ThetaData is unconfirmed; direct company catalyst; elevated IV risk",
         "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
           "macro_only": false,
-          "theta_alignment": "stale",
-          "flow_score": 6.51,
-          "flow_score_v2": 7.27,
-          "td_put_call_ratio": 0.305,
+          "theta_alignment": "unconfirmed",
+          "flow_score": 9.0,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
           "bullish_streak": 0,
           "bearish_streak": 0,
-          "atm_iv_30d": 1.1737,
+          "atm_iv_30d": 1.192,
           "cap": 70
         },
-        "entry_price": 20.94,
+        "entry_price": 19.67,
         "outcome_tracking": {
           "status": "active",
           "cadence_trading_days": 5,
@@ -65,32 +65,66 @@
         "event_count": 3
       }
     ],
-    "top_risks": [],
+    "top_risks": [
+      {
+        "pick_id": "5d3947cef54dd5a7",
+        "ticker": "TTD",
+        "direction": "bear",
+        "type": "guidance_change",
+        "summary": "TTD traded lower after a headline describing a weak outlook on July 18, 2026.",
+        "confidence": 0.84,
+        "theta_adjusted_confidence": 0.84,
+        "pick_score": 52,
+        "pick_score_reason": "theta-adjusted confidence 0.84; ThetaData is unconfirmed; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bear",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "unconfirmed",
+          "flow_score": -3.99,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.8424,
+          "cap": 70
+        },
+        "entry_price": 18.64,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        },
+        "event_count": 4
+      }
+    ],
     "scored_picks": [
       {
-        "pick_id": "27b23dc746a6d7a8",
+        "pick_id": "8a0c46df9b84a34c",
         "ticker": "FLY",
         "direction": "bull",
-        "type": "launch",
-        "summary": "Firefly said its Alpha Rocket returned to orbit successfully, a headline that coincided with a 5% overnight move in FLY stock.",
+        "type": "contract_award",
+        "summary": "Firefly Aerospace received a string of fresh NASA awards, which the article describes as a positive operational catalyst.",
         "confidence": 0.83,
         "theta_adjusted_confidence": 0.83,
-        "pick_score": 62,
-        "pick_score_reason": "theta-adjusted confidence 0.83; ThetaData is stale; direct company catalyst; elevated IV risk",
+        "pick_score": 57,
+        "pick_score_reason": "theta-adjusted confidence 0.83; ThetaData is unconfirmed; direct company catalyst; elevated IV risk",
         "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
           "macro_only": false,
-          "theta_alignment": "stale",
-          "flow_score": 6.51,
-          "flow_score_v2": 7.27,
-          "td_put_call_ratio": 0.305,
+          "theta_alignment": "unconfirmed",
+          "flow_score": 9.0,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
           "bullish_streak": 0,
           "bearish_streak": 0,
-          "atm_iv_30d": 1.1737,
+          "atm_iv_30d": 1.192,
           "cap": 70
         },
-        "entry_price": 20.94,
+        "entry_price": 19.67,
         "outcome_tracking": {
           "status": "active",
           "cadence_trading_days": 5,
@@ -101,29 +135,29 @@
         "event_count": 3
       },
       {
-        "pick_id": "53a66b93bec3dff4",
+        "pick_id": "594d8a2012a4fad1",
         "ticker": "B",
         "direction": "bull",
-        "type": "buyback",
-        "summary": "News Corp reported daily ASX filings showing $372.3M in repurchases under its $1B 2025 buyback program.",
-        "confidence": 0.94,
-        "theta_adjusted_confidence": 0.94,
+        "type": "analyst_upgrade",
+        "summary": "A July 20 article on Barrick Mining (B) says the stock was rated Buy amid strong Q1 free cash flow and a buyback plus new dividend.",
+        "confidence": 0.79,
+        "theta_adjusted_confidence": 0.79,
         "pick_score": 54,
-        "pick_score_reason": "theta-adjusted confidence 0.94; ThetaData is stale; direct company catalyst",
+        "pick_score_reason": "theta-adjusted confidence 0.79; ThetaData is unconfirmed; direct company catalyst",
         "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
           "macro_only": false,
-          "theta_alignment": "stale",
-          "flow_score": 0.99,
-          "flow_score_v2": -0.93,
-          "td_put_call_ratio": 1.209,
+          "theta_alignment": "unconfirmed",
+          "flow_score": 6.0,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
           "bullish_streak": 0,
           "bearish_streak": 0,
-          "atm_iv_30d": 0.493,
+          "atm_iv_30d": 0.4975,
           "cap": 70
         },
-        "entry_price": 35.91,
+        "entry_price": 34.89,
         "outcome_tracking": {
           "status": "active",
           "cadence_trading_days": 5,
@@ -131,32 +165,32 @@
           "latest_judgment": null,
           "history": []
         },
-        "event_count": 2
+        "event_count": 3
       },
       {
-        "pick_id": "59d74c78919b6746",
+        "pick_id": "5d3947cef54dd5a7",
         "ticker": "TTD",
-        "direction": "bull",
-        "type": "partnership",
-        "summary": "The Trade Desk integrated Seven-Eleven Japan retail purchase data into its platform for advertisers in Japan and added Kristi Argyilan and Penry Price to senior leadership and board roles.",
-        "confidence": 0.74,
-        "theta_adjusted_confidence": 0.74,
+        "direction": "bear",
+        "type": "guidance_change",
+        "summary": "TTD traded lower after a headline describing a weak outlook on July 18, 2026.",
+        "confidence": 0.84,
+        "theta_adjusted_confidence": 0.84,
         "pick_score": 52,
-        "pick_score_reason": "theta-adjusted confidence 0.74; ThetaData is stale; direct company catalyst; elevated IV risk",
+        "pick_score_reason": "theta-adjusted confidence 0.84; ThetaData is unconfirmed; direct company catalyst; elevated IV risk",
         "pick_score_features": {
-          "direction": "bull",
+          "direction": "bear",
           "directness": "direct",
           "macro_only": false,
-          "theta_alignment": "stale",
-          "flow_score": 3.0,
-          "flow_score_v2": 5.13,
-          "td_put_call_ratio": 0.394,
+          "theta_alignment": "unconfirmed",
+          "flow_score": -3.99,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
           "bullish_streak": 0,
           "bearish_streak": 0,
-          "atm_iv_30d": 0.8259,
+          "atm_iv_30d": 0.8424,
           "cap": 70
         },
-        "entry_price": 19.37,
+        "entry_price": 18.64,
         "outcome_tracking": {
           "status": "active",
           "cadence_trading_days": 5,
@@ -164,32 +198,32 @@
           "latest_judgment": null,
           "history": []
         },
-        "event_count": 5
+        "event_count": 4
       },
       {
-        "pick_id": "8d727bf6ad5621ca",
+        "pick_id": "900ff2cde23bdce8",
         "ticker": "IBRX",
         "direction": "bull",
-        "type": "trial_readout",
-        "summary": "A Stocktwits headline on July 18, 2026 said ImmunityBio founder highlighted a new Anktiva-NK cell therapy study for IBRX.",
-        "confidence": 0.56,
-        "theta_adjusted_confidence": 0.56,
-        "pick_score": 51,
-        "pick_score_reason": "theta-adjusted confidence 0.56; ThetaData is stale; direct company catalyst; elevated IV risk",
+        "type": "launch",
+        "summary": "ImmunityBio said it is 'all systems go' for its Dunkirk Anktiva manufacturing push.",
+        "confidence": 0.69,
+        "theta_adjusted_confidence": 0.69,
+        "pick_score": 50,
+        "pick_score_reason": "theta-adjusted confidence 0.69; ThetaData is unconfirmed; direct company catalyst; elevated IV risk",
         "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
           "macro_only": false,
-          "theta_alignment": "stale",
-          "flow_score": 9.51,
-          "flow_score_v2": 8.82,
-          "td_put_call_ratio": 0.261,
+          "theta_alignment": "unconfirmed",
+          "flow_score": 12.0,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
           "bullish_streak": 0,
           "bearish_streak": 0,
           "atm_iv_30d": 0.9953234863281248,
           "cap": 70
         },
-        "entry_price": 7.73,
+        "entry_price": 7.5,
         "outcome_tracking": {
           "status": "active",
           "cadence_trading_days": 5,
@@ -198,96 +232,112 @@
           "history": []
         },
         "event_count": 3
-      },
-      {
-        "pick_id": "4af4db2b2486f991",
-        "ticker": "IBM",
-        "direction": "bear",
-        "type": "guidance_change",
-        "summary": "IBM issued a second-quarter earnings warning that the article links to weakness in enterprise software spending.",
-        "confidence": 0.67,
-        "theta_adjusted_confidence": 0.67,
-        "pick_score": 39,
-        "pick_score_reason": "theta-adjusted confidence 0.67; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "bear",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        },
-        "event_count": 1
       }
     ],
     "held_position_updates": [
       {
         "ticker": "TTD",
         "stance": "risk",
-        "news": "Fact: The Trade Desk had positive partnership and leadership headlines, including Seven-Eleven Japan retail purchase data integration and Ron Lamprecht joining as Chief Business Development Officer, but separate headlines cited weak outlook concerns, analyst downside risk, and IBM-related software budget pressure.",
-        "theta": "ThetaData from 2026-07-16 showed bullish flow_score_v2 5.13, put-call ratio 0.394, 6 bullish days in 14, and 30-day ATM IV 0.8259, but the evidence marks the options context stale.",
-        "oracle_note": "Inference: TTD has the sharpest news/options divergence; old bullish flow is not enough to confirm the newer bearish guidance and sector-budget risk, especially with elevated IV."
+        "news": "Fact: TTD had bearish headlines tied to weak outlook, oil-shock/rate-pressure tech selling, and an IBM software-budget read-through; it also had a bullish retail-data and leadership update from Seven-Eleven Japan integration.",
+        "theta": "Theta/options: 2026-07-21 flow_score -3.99, put_call_ratio 1.911, spot 18.64, 30d ATM IV 0.8424; ThetaData confirmation marked unconfirmed.",
+        "oracle_note": "Inference: TTD is the strongest news/options alignment on the risk side because bearish headlines match put-heavy flow, while the retail-data partnership has not overridden sentiment."
       },
       {
         "ticker": "FLY",
         "stance": "opportunity",
-        "news": "Fact: Firefly Aerospace headlines cited a successful Alpha Rocket return to orbit, fresh NASA awards, and a Mars aeroshell-related deep-space hardware story, while one article said shares still slid nearly 7% amid short interest and technical weakness.",
-        "theta": "ThetaData from 2026-07-16 showed bullish flow_score_v2 7.27, put-call ratio 0.305, 4 bullish days in 14, and very high 30-day ATM IV 1.1737; the context is stale.",
-        "oracle_note": "Inference: FLY has strong theme alignment between space-execution news and prior bullish options flow, but price weakness and very high IV mean the signal is event-sensitive rather than clean."
+        "news": "Fact: FLY had bullish NASA-award and Alpha rocket return-to-orbit headlines, while a SpaceX Starship abort created an indirect negative sector read-through and the stock reportedly weakened despite awards.",
+        "theta": "Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.343, spot 19.67, 30d ATM IV 1.192; ThetaData confirmation marked unconfirmed.",
+        "oracle_note": "Inference: Operational news and call-heavy flow align positively, but very high IV and contradictory sector tape make this an event-volatility watch rather than a clean signal."
       },
       {
         "ticker": "IBRX",
-        "stance": "opportunity",
-        "news": "Fact: IBRX headlines referenced a new Anktiva-NK cell therapy study, global Anktiva expansion, US regulatory heat, and buyout speculation tied to broader oncology competition.",
-        "theta": "ThetaData from 2026-07-16 showed very bullish flow_score_v2 8.82, put-call ratio 0.261, 6 bullish days in 14, and 30-day ATM IV near 0.9953 from 2026-07-14; options context is stale.",
-        "oracle_note": "Inference: IBRX has strong speculative alignment across oncology news and call-heavy flow, but the facts are mostly headline-level and include regulatory risk, so confidence should stay capped."
+        "stance": "neutral",
+        "news": "Fact: IBRX had bullish headlines around Anktiva manufacturing expansion and global expansion, alongside commentary highlighting valuation, dilution, and cash-burn risks.",
+        "theta": "Theta/options: 2026-07-21 flow_score 12.0, put_call_ratio 0.378, spot 7.50; IV snapshot is older, 2026-07-14, with 30d ATM IV 0.9953; ThetaData confirmation marked unconfirmed.",
+        "oracle_note": "Inference: Options flow leans strongly bullish against a mixed fundamental narrative, so the divergence is between upside manufacturing/regulatory expectations and financing-risk concerns."
       },
       {
         "ticker": "B",
-        "stance": "neutral",
-        "news": "Fact: One article rated Barrick Mining Buy based on Q1 free cash flow, buybacks, and dividend support; another buyback item in the packet references News Corp ASX filings, creating possible issuer/ticker ambiguity.",
-        "theta": "ThetaData from 2026-07-16 was mixed: flow_score 0.99, flow_score_v2 -0.93, put-call ratio 1.209, and 30-day ATM IV 0.493; context is stale.",
-        "oracle_note": "Inference: The fundamental capital-return angle is constructive, but options evidence does not confirm it and one news item may be mis-mapped."
+        "stance": "opportunity",
+        "news": "Fact: A July 20 write-up framed Barrick Mining as Buy on strong Q1 free cash flow, buyback, and dividend; separate mapped headlines about Magnolia Oil & Gas and a Northfield/Columbia merger appear potentially noisy for ticker B.",
+        "theta": "Theta/options: 2026-07-21 flow_score 6.0, put_call_ratio 0.299, spot 34.89, 30d ATM IV 0.4975; ThetaData confirmation marked unconfirmed.",
+        "oracle_note": "Inference: The cleanest read is a moderate bullish alignment between the Barrick re-rating article and call-heavy flow, but noisy ticker mapping lowers conviction."
       },
       {
         "ticker": "IBM",
+        "stance": "neutral",
+        "news": "Fact: IBM was referenced indirectly through a second-quarter earnings warning that may signal customers cutting software budgets to fund hardware purchases.",
+        "theta": "Theta/options: no latest options snapshot in local theta packet.",
+        "oracle_note": "Inference: IBM matters mainly as a read-through into TTD and enterprise software sentiment, not as a confirmed options-backed IBM signal."
+      },
+      {
+        "ticker": "NFLX",
+        "stance": "neutral",
+        "news": "Fact: No fresh bounded news event was provided for NFLX in the packet.",
+        "theta": "Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.472, spot 67.60, 30d ATM IV 0.3721.",
+        "oracle_note": "Inference: Bullish options tone exists without a matching news catalyst, so it remains a flow-only watch."
+      },
+      {
+        "ticker": "MSFT",
+        "stance": "neutral",
+        "news": "Fact: No fresh bounded news event was provided for MSFT in the packet.",
+        "theta": "Theta/options: 2026-07-21 flow_score 8.01, put_call_ratio 0.341, spot 402.29, 30d ATM IV 0.4908.",
+        "oracle_note": "Inference: Call-heavy flow contrasts with the IBM-linked software-budget concern, creating a sector divergence to monitor."
+      },
+      {
+        "ticker": "COPX",
+        "stance": "neutral",
+        "news": "Fact: No fresh bounded news event was provided for COPX in the packet.",
+        "theta": "Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.363, spot 73.86, 30d ATM IV 0.4733.",
+        "oracle_note": "Inference: Bullish options tone is present, but there is no bounded copper-sector news catalyst in this packet."
+      },
+      {
+        "ticker": "QS",
+        "stance": "neutral",
+        "news": "Fact: No fresh bounded news event was provided for QS in the packet.",
+        "theta": "Theta/options: 2026-07-21 flow_score 9.51, put_call_ratio 0.589, spot 5.89, 30d ATM IV 1.0467.",
+        "oracle_note": "Inference: Strong call-heavy flow with high IV is notable, but absent news support keeps this as a watch item."
+      },
+      {
+        "ticker": "DRTS",
+        "stance": "neutral",
+        "news": "Fact: No fresh bounded news event was provided for DRTS in the packet.",
+        "theta": "Theta/options: 2026-07-21 flow_score 6.0, put_call_ratio 0.017, spot 13.47; IV snapshot 2026-07-15 shows 30d ATM IV 0.9402.",
+        "oracle_note": "Inference: Extreme call skew and stale/high IV deserve monitoring, but no current news catalyst was supplied."
+      },
+      {
+        "ticker": "VIVO",
+        "stance": "neutral",
+        "news": "Fact: No fresh bounded news event was provided for VIVO in the packet.",
+        "theta": "Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.022, spot 3.79; IV snapshot 2026-07-14 shows 30d ATM IV 1.6689.",
+        "oracle_note": "Inference: Very call-heavy flow plus very high stale IV suggests speculative attention, not a confirmed catalyst."
+      },
+      {
+        "ticker": "IGLD",
         "stance": "risk",
-        "news": "Fact: IBM was linked to a second-quarter earnings warning and weakness in enterprise software spending; the packet did not include quantitative guidance details.",
-        "theta": "No usable IBM ThetaData/options snapshot was provided.",
-        "oracle_note": "Inference: IBM is a direct portfolio risk item and also a negative read-through for software/ad-tech demand, especially TTD."
+        "news": "Fact: No fresh bounded news event was provided for IGLD in the packet.",
+        "theta": "Theta/options: 2026-07-21 flow_score -9.0, put_call_ratio 29.647, spot 20.59; IV not provided.",
+        "oracle_note": "Inference: This is the clearest options-only downside watch in the held list, but it lacks a news catalyst in the bounded evidence."
       }
     ]
   },
   "general": {
-    "summary": "General analysis is macro-first: 3 macro headline(s), 1 macro event(s), 24 direct company event(s), 3 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.",
+    "summary": "General analysis is macro-first: 3 macro headline(s), 1 macro event(s), 23 direct company event(s), 1 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.",
     "source_artifact": "data/gpt_news_discovery/latest.json",
-    "generated_at": "2026-07-20T13:30:03.805702+00:00",
+    "generated_at": "2026-07-21T13:40:00.663920+00:00",
     "macro_climate": {
       "status": "ok",
       "price_snapshot": {
-        "title": "Market price snapshot: SPY 747.03 (+0.50% last close); WTI oil 81.62 (-1.05% last close); Gold 4014.10 (+0.03% last close)",
+        "title": "Market price snapshot: SPY 745.28 (+0.43% last close); WTI oil 84.62 (+1.67% last close); Gold 4056.20 (+1.14% last close)",
         "url": "yfinance://SPY,CL=F,GC=F",
-        "published_at": "2026-07-20",
+        "published_at": "2026-07-21",
         "snippet": "Macro context only. Use this with Fed, geopolitical, oil, and gold headlines to infer sector read-throughs; do not treat ETFs or commodities as stock picks.",
         "category_hint": "macro_market_climate"
       },
       "price_moves": {
-        "SPY": 0.5,
-        "WTI oil": -1.05,
-        "Gold": 0.03
+        "SPY": 0.43,
+        "WTI oil": 1.67,
+        "Gold": 1.14
       },
       "tone": "mixed",
       "headlines": [
@@ -313,15 +363,15 @@
           "category_hint": "macro_market_climate"
         }
       ],
-      "summary": "Market price snapshot: SPY 747.03 (+0.50% last close); WTI oil 81.62 (-1.05% last close); Gold 4014.10 (+0.03% last close) 3 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed."
+      "summary": "Market price snapshot: SPY 745.28 (+0.43% last close); WTI oil 84.62 (+1.67% last close); Gold 4056.20 (+1.14% last close) 3 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed."
     },
     "market_wide_events": [
       {
         "ticker": "FLUT",
         "direction": "bear",
         "type": "policy_catalyst",
-        "summary": "UK gambling bosses, including Flutter Entertainment via the Betting and Gaming Council, are weighing legal action against proposed Gambling Commission affordability checks for online customers spending over \u00a31,000 within 24 hours.",
-        "confidence": 0.79,
+        "summary": "UK gambling regulators are considering affordability checks for online customers spending over \u00a31,000 within 24 hours, which could increase compliance pressure on Flutter Entertainment.",
+        "confidence": 0.82,
         "directness": "direct",
         "theme_id": null,
         "theme_bucket": null,
@@ -338,87 +388,11 @@
     ],
     "notable_company_events": [
       {
-        "ticker": "PSNL",
-        "direction": "bull",
-        "type": "acquisition",
-        "summary": "Personalis entered into a definitive agreement to be acquired by Tempus AI.",
-        "confidence": 0.97,
-        "directness": "direct",
-        "theme_id": null,
-        "theme_bucket": null,
-        "parent_ticker": "TEM",
-        "beneficiary_reason": null,
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Tempus to Acquire Personalis, More Tightly Integrating Molecular Residual Disease (MRD) into Its AI-Enabled Precision Oncology Platform",
-            "url": "http://www.businesswire.com/news/home/20260720359246/en/Tempus-to-Acquire-Personalis-More-Tightly-Integrating-Molecular-Residual-Disease-MRD-into-Its-AI-Enabled-Precision-Oncology-Platform/?feedref=JjAwJuNHiystnCoBq_hl-Rc4vIAVcHHkbDcwJimU8QtrtlakeQ9hNboBqTAWIjTge3KWq9s9jif-UkBjBsFRyYAbRTSLTc1mgvhPlnaBA55M-oupQnbXnhKsYk8RmHF_kAy2gZikaX3QWV6xOvgFlA=="
-          }
-        ]
-      },
-      {
-        "ticker": "CNDCF",
-        "direction": "neutral",
-        "type": "dividend",
-        "summary": "Canadian Banc declared a CAD 0.2055 dividend.",
-        "confidence": 0.96,
-        "directness": "direct",
-        "theme_id": null,
-        "theme_bucket": null,
-        "parent_ticker": null,
-        "beneficiary_reason": null,
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Canadian Banc declares CAD 0.2055 dividend",
-            "url": "https://seekingalpha.com/news/4615321-canadian-banc-declares-cad-0_2055-dividend?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
-          }
-        ]
-      },
-      {
-        "ticker": "CLSPF",
-        "direction": "neutral",
-        "type": "dividend",
-        "summary": "Canadian Life Companies Split declared a CAD 0.10 dividend.",
-        "confidence": 0.95,
-        "directness": "direct",
-        "theme_id": null,
-        "theme_bucket": null,
-        "parent_ticker": null,
-        "beneficiary_reason": null,
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Canadian Life Companies Split declares CAD 0.10 dividend",
-            "url": "https://seekingalpha.com/news/4615317-canadian-life-companies-split-declares-cad-0_10-dividend?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
-          }
-        ]
-      },
-      {
-        "ticker": "PSNL",
-        "direction": "bull",
-        "type": "acquisition",
-        "summary": "Personalis is being acquired by Tempus AI in a $1.5 billion transaction.",
-        "confidence": 0.93,
-        "directness": "direct",
-        "theme_id": null,
-        "theme_bucket": null,
-        "parent_ticker": "TEM",
-        "beneficiary_reason": null,
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Tempus AI to acquire Personalis in $1.5B deal; expands MRD cancer testing",
-            "url": "https://seekingalpha.com/news/4615298-tempus-ai-to-acquire-personalis-in-15b-deal-expands-mrd-cancer-testing?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
-          }
-        ]
-      },
-      {
         "ticker": "EQT",
-        "direction": "bull",
+        "direction": "neutral",
         "type": "dividend",
-        "summary": "EQT declared a quarterly cash dividend on July 15, 2026.",
-        "confidence": 0.9,
+        "summary": "EQT declared a quarterly cash dividend in a PR Newswire release published on 2026-07-15.",
+        "confidence": 0.96,
         "directness": "direct",
         "theme_id": null,
         "theme_bucket": null,
@@ -433,11 +407,125 @@
         ]
       },
       {
+        "ticker": "DRTS",
+        "direction": "bull",
+        "type": "trial_readout",
+        "summary": "Alpha Tau rose after reporting Alpha DaRT head-and-neck cancer data.",
+        "confidence": 0.9,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Alpha Tau rises on Alpha DaRT head and neck cancer data",
+            "url": "https://seekingalpha.com/news/4615918-alpha-tau-rises-alpha-dart-head-and-neck-cancer-data?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "FLUT",
+        "direction": "bear",
+        "type": "analyst_downgrade",
+        "summary": "Wells Fargo maintained Equal-Weight on Flutter Entertainment and cut its price target from $168 to $137.",
+        "confidence": 0.84,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Wells Fargo Maintains Equal-Weight on Flutter Entertainment, Lowers Price Target to $137",
+            "url": "https://finnhub.io/api/news?id=c99475a523cf9400c7f7c78cde598ab9f4b39cb507ebab03f4d105f89f3d4f33"
+          }
+        ]
+      },
+      {
+        "ticker": "MU",
+        "direction": "bull",
+        "type": "guidance_change",
+        "summary": "Micron was cited as saying memory chip supply will remain tight beyond 2027, supporting a higher-stock read-through.",
+        "confidence": 0.84,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Why Micron Stock Is Rising After SK Hynix Warning - Barron's",
+            "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWjZrWnVvWFlLdkpfUEhfd0hkZU54c3puNGM1UkZQZ0s5LVltdElHajYxZVRvN19QU2ZUaFRXazRLT3M0ZkhkSFRSV19JSWRyWHBVb0NQeE1nb0ZzWkxkLTd4cnlWZzZibGhPSzlFeHBHa1NiN3o5TGJrX1BuaHJzalNn?oc=5"
+          }
+        ]
+      },
+      {
+        "ticker": "SARO",
+        "direction": "bull",
+        "type": "partnership",
+        "summary": "StandardAero signed a LEAP engine services agreement with aircraft lessor Avolon.",
+        "confidence": 0.82,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "StandardAero signs LEAP engine services agreement with aircraft lessor Avolon",
+            "url": "https://seekingalpha.com/news/4615923-standardaero-signs-leap-engine-services-agreement-with-aircraft-lessor-avolon?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "CTSH",
+        "direction": "bull",
+        "type": "partnership",
+        "summary": "Cognizant announced on July 2, 2026 that it joined the OpenAI Daybreak Cyber Partner Program and is using GPT-5.5 with Trusted Access for Cyber in its Frontier AI Cyber Defense services.",
+        "confidence": 0.82,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Cognizant (CTSH) Taps OpenAI to Power Frontier AI Cyber Defense",
+            "url": "https://finance.yahoo.com/technology/ai/articles/cognizant-ctsh-taps-openai-power-183421924.html"
+          }
+        ]
+      },
+      {
+        "ticker": "MU",
+        "direction": "bull",
+        "type": "analyst_upgrade",
+        "summary": "UBS raised Micron's stock price target on a strong free cash flow outlook.",
+        "confidence": 0.81,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "UBS raises Micron stock price target on strong free cash flow outlook - Investing.com",
+            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSzRnakk0ck5zVElaaVp3VTJMTmlrNTZRNC1OZHhqR0tCWVZyb0RKb0RrUV9GdFFaV3pPVEpQRFltU3hfaFNaeEFfSjA1LWNKMWpmbTJuUXBxR0NVYjRJaXFXbjlWWmQzeW56UnV6YUhTWFpDcFRxMDFJTEl4UlZoRHREMkd1R1lPQUxkX29HRXh4dDNuRFJCWl83YWZlVm9UTlJFQ2lMUmxZSll2Yk5nV3BNeGEyZDMwZEdzc1o1b0I5VzlWQkhGcw?oc=5"
+          }
+        ]
+      },
+      {
         "ticker": "EQT",
         "direction": "neutral",
-        "type": "earnings",
-        "summary": "EQT is scheduled to announce earnings results after market close on 2026-07-21.",
-        "confidence": 0.88,
+        "type": "earnings_beat",
+        "summary": "EQT is scheduled to report earnings after market close on 2026-07-22.",
+        "confidence": 0.79,
         "directness": "direct",
         "theme_id": null,
         "theme_bucket": null,
@@ -452,30 +540,30 @@
         ]
       },
       {
-        "ticker": "GCTK",
-        "direction": "bear",
-        "type": "dilution_risk",
-        "summary": "Glucotrack also announced approximately $5.7 million of convertible note financing tied to the combined company.",
-        "confidence": 0.87,
+        "ticker": "TLX",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Telix's headline says a phase 3 catalyst was cleared and revenue is nearing US$1bn, pointing to a positive clinical and commercial inflection for TLX.",
+        "confidence": 0.79,
         "directness": "direct",
         "theme_id": null,
         "theme_bucket": null,
-        "parent_ticker": "GCTK",
+        "parent_ticker": null,
         "beneficiary_reason": null,
         "macro_only": false,
         "evidence": [
           {
-            "title": "E.F. Hutton & Co. Serves as Exclusive Financial Advisor on Strategic Business Combination Between Glucotrack and L\u014dkahi Therapeutics and Exclusive Placement Agent for Approximately $5.7 Million Conver",
-            "url": "https://www.globenewswire.com/news-release/2026/07/17/3329243/0/en/E-F-Hutton-Co-Serves-as-Exclusive-Financial-Advisor-on-Strategic-Business-Combination-Between-Glucotrack-and-L%C5%8Dkahi-Therapeutics-and-Exclusive-Placement-Agent-for-Approximately-5-7.html"
+            "title": "Telix Pharmaceuticals (ASX:TLX) Revenue Nears US$1bn as Phase 3 Catalyst Gets Cleared - Stocks Down Under",
+            "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE81Y1FBb1R6eEhNeENPakNtYWFsNG1hdVVYRE1wMklhMEhQcGNwVVBHRzhwR081OTJqWmx6ZzVaZjBkUmVJQUlQV0NMSjdOeUpzX1VJaC1XRXR0Q0lYRVVuYjJn?oc=5"
           }
         ]
       },
       {
         "ticker": "EQT",
         "direction": "neutral",
-        "type": "earnings",
-        "summary": "EQT is scheduled to report Q2 earnings after market close on 2026-07-21.",
-        "confidence": 0.87,
+        "type": "earnings_beat",
+        "summary": "EQT is scheduled to announce earnings after market hours, according to the article preview.",
+        "confidence": 0.79,
         "directness": "direct",
         "theme_id": null,
         "theme_bucket": null,
@@ -486,7 +574,22 @@
           {
             "title": "EQT Earnings: What To Look For From EQT",
             "url": "https://finance.yahoo.com/markets/stocks/articles/eqt-earnings-look-eqt-103133888.html"
-          },
+          }
+        ]
+      },
+      {
+        "ticker": "EQT",
+        "direction": "neutral",
+        "type": "earnings_beat",
+        "summary": "EQT is scheduled to report Q2 results on 2026-07-21, with lower natural gas prices and a negative Earnings ESP cited as headwinds.",
+        "confidence": 0.79,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
           {
             "title": "EQT Gears Up to Report Q2 Earnings: What's in Store for the Stock?",
             "url": "https://finance.yahoo.com/markets/stocks/articles/eqt-gears-report-q2-earnings-154500164.html"
@@ -494,49 +597,11 @@
         ]
       },
       {
-        "ticker": "GCTK",
-        "direction": "neutral",
-        "type": "merger",
-        "summary": "Glucotrack disclosed a strategic business combination with L\u014dkahi Therapeutics.",
-        "confidence": 0.84,
-        "directness": "direct",
-        "theme_id": null,
-        "theme_bucket": null,
-        "parent_ticker": null,
-        "beneficiary_reason": null,
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "E.F. Hutton & Co. Serves as Exclusive Financial Advisor on Strategic Business Combination Between Glucotrack and L\u014dkahi Therapeutics and Exclusive Placement Agent for Approximately $5.7 Million Conver",
-            "url": "https://www.globenewswire.com/news-release/2026/07/17/3329243/0/en/E-F-Hutton-Co-Serves-as-Exclusive-Financial-Advisor-on-Strategic-Business-Combination-Between-Glucotrack-and-L%C5%8Dkahi-Therapeutics-and-Exclusive-Placement-Agent-for-Approximately-5-7.html"
-          }
-        ]
-      },
-      {
-        "ticker": "TEM",
-        "direction": "bull",
-        "type": "acquisition",
-        "summary": "Tempus AI agreed to acquire Personalis in a $1.5 billion deal that expands its MRD cancer testing business.",
-        "confidence": 0.82,
-        "directness": "direct",
-        "theme_id": null,
-        "theme_bucket": null,
-        "parent_ticker": null,
-        "beneficiary_reason": null,
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Tempus AI to acquire Personalis in $1.5B deal; expands MRD cancer testing",
-            "url": "https://seekingalpha.com/news/4615298-tempus-ai-to-acquire-personalis-in-15b-deal-expands-mrd-cancer-testing?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
-          }
-        ]
-      },
-      {
         "ticker": "EQT",
         "direction": "bear",
         "type": "earnings",
-        "summary": "EQT is scheduled to report Q2 results on 2026-07-21, with lower natural gas prices and a negative Earnings ESP cited as headwinds.",
-        "confidence": 0.8,
+        "summary": "EQT is set to report Q2 results on July 21, with lower natural gas prices and a negative Earnings ESP cited as potential pressure on the stock.",
+        "confidence": 0.78,
         "directness": "direct",
         "theme_id": null,
         "theme_bucket": null,
@@ -549,25 +614,6 @@
             "url": "https://finnhub.io/api/news?id=cd8cd590ed684a39f8e7b664af4c96c4f563f334c3b493100d33a8c9668145d5"
           }
         ]
-      },
-      {
-        "ticker": "TEM",
-        "direction": "bull",
-        "type": "acquisition",
-        "summary": "Tempus AI agreed to acquire Personalis to expand its molecular residual disease capabilities within its precision oncology platform.",
-        "confidence": 0.78,
-        "directness": "direct",
-        "theme_id": null,
-        "theme_bucket": null,
-        "parent_ticker": "PSNL",
-        "beneficiary_reason": null,
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Tempus to Acquire Personalis, More Tightly Integrating Molecular Residual Disease (MRD) into Its AI-Enabled Precision Oncology Platform",
-            "url": "http://www.businesswire.com/news/home/20260720359246/en/Tempus-to-Acquire-Personalis-More-Tightly-Integrating-Molecular-Residual-Disease-MRD-into-Its-AI-Enabled-Precision-Oncology-Platform/?feedref=JjAwJuNHiystnCoBq_hl-Rc4vIAVcHHkbDcwJimU8QtrtlakeQ9hNboBqTAWIjTge3KWq9s9jif-UkBjBsFRyYAbRTSLTc1mgvhPlnaBA55M-oupQnbXnhKsYk8RmHF_kAy2gZikaX3QWV6xOvgFlA=="
-          }
-        ]
       }
     ],
     "read_through_candidates": [
@@ -575,56 +621,18 @@
         "ticker": "FLUT",
         "direction": "bear",
         "type": "sector_catalyst",
-        "summary": "FLUT fell after reports that Kalshi and Polymarket were in fundraising talks at a $20 billion valuation.",
+        "summary": "Prediction markets captured 27% of U.S. sports-betting volume during the World Cup, creating a negative competitive readthrough for FLUT.",
         "confidence": 0.66,
         "directness": "indirect",
         "theme_id": null,
         "theme_bucket": null,
         "parent_ticker": null,
-        "beneficiary_reason": "Rising competition from prediction markets could pressure sportsbook and online betting names like FLUT.",
+        "beneficiary_reason": "FLUT operates in online sports betting, so share gains by prediction markets could pressure handle and margins.",
         "macro_only": false,
         "evidence": [
           {
-            "title": "DKNG, FLUT Stocks Drop After Reported Fundraising Talks At Kalshi, Polymarket At $20B Valuation - Stocktwits",
-            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQN1lMOHpnT28tLTlpckdZR2ZHT3dvWHloaDFjRGMzSUU3ZWtNXzhVRUx0Wk9zaVljYk1PemRRNFJORm9welNVa0EyMlVHQXduc2Y0ZUxsSDlLZEEwSDg5V2t5SS05SEliMk1jZlB0LTVkLUNPWUlFQ0ZpUjhfcmtYWWpLckNxbkJxUHJaS3BqZjc2cUxWckoyQXlmMjRPZGdtbHdSV2g3Z00tYnljUW14Q1htellzbDA2VktBazJqLVowcFJ4QWlSLUtQbDBHV0VsOGllZFBDRGFSUEp2ZmJlb2ZqZTlLVGR5TGJ1dkNn?oc=5"
-          }
-        ]
-      },
-      {
-        "ticker": "DKNG",
-        "direction": "bear",
-        "type": "sector_catalyst",
-        "summary": "DKNG moved lower after reports of fundraising talks at Kalshi and Polymarket at a $20 billion valuation.",
-        "confidence": 0.65,
-        "directness": "indirect",
-        "theme_id": null,
-        "theme_bucket": null,
-        "parent_ticker": null,
-        "beneficiary_reason": "If prediction markets gain funding and scale, traditional sportsbook operators like DKNG could face increased competitive pressure.",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "DKNG, FLUT Stocks Drop After Reported Fundraising Talks At Kalshi, Polymarket At $20B Valuation - Stocktwits",
-            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQN1lMOHpnT28tLTlpckdZR2ZHT3dvWHloaDFjRGMzSUU3ZWtNXzhVRUx0Wk9zaVljYk1PemRRNFJORm9welNVa0EyMlVHQXduc2Y0ZUxsSDlLZEEwSDg5V2t5SS05SEliMk1jZlB0LTVkLUNPWUlFQ0ZpUjhfcmtYWWpLckNxbkJxUHJaS3BqZjc2cUxWckoyQXlmMjRPZGdtbHdSV2g3Z00tYnljUW14Q1htellzbDA2VktBazJqLVowcFJ4QWlSLUtQbDBHV0VsOGllZFBDRGFSUEp2ZmJlb2ZqZTlLVGR5TGJ1dkNn?oc=5"
-          }
-        ]
-      },
-      {
-        "ticker": "EVEX",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "The article says Embraer made eVTOL certification progress at Farnborough, which is a positive read-through for related eVTOL exposure.",
-        "confidence": 0.58,
-        "directness": "indirect",
-        "theme_id": null,
-        "theme_bucket": null,
-        "parent_ticker": "EMBJ",
-        "beneficiary_reason": "EVEX is the named eVTOL-related ticker in the evidence packet, and progress on Embraer's eVTOL certification is a favorable read-through for the broader related business.",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Embraer announces military training deal, eVTOL certification progress at Farnborough",
-            "url": "https://seekingalpha.com/news/4615314-embraer-announces-military-training-deal-evtol-certification-progress-at-farnborough?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+            "title": "Prediction Markets Grab 27% of US Sports Bets During World Cup as France Pulls the Plug on Polymarket",
+            "url": "https://finnhub.io/api/news?id=f0987f8215ab50a7347d87c102144144c46ea50fc0e56ee34278a3d450d1693c"
           }
         ]
       }
@@ -632,64 +640,57 @@
     "theme_observations": [],
     "theta_market": {
       "status": "ok",
-      "latest_scan_date": "2026-07-20",
+      "latest_scan_date": "2026-07-21",
       "min_total_volume": 500,
-      "scanned_tickers": 1,
+      "scanned_tickers": 0,
       "breadth": {
-        "bullish_count": 1,
+        "bullish_count": 0,
         "bearish_count": 0,
         "neutral_count": 0,
         "held_bullish_count": 0,
         "held_bearish_count": 0,
-        "weighted_put_call_ratio": 1.784,
-        "avg_flow_score_v2": 3.0,
-        "tone": "risk_off"
+        "weighted_put_call_ratio": null,
+        "avg_flow_score_v2": null,
+        "tone": "mixed"
       },
-      "bullish_flow": [
-        {
-          "ticker": "CELH",
-          "scan_date": "2026-07-20",
-          "flow_score": 3.0,
-          "flow_score_v2": null,
-          "td_put_call_ratio": 1.093,
-          "td_put_call_oi_ratio": 0.433,
-          "total_call_volume": 4262,
-          "total_put_volume": 7605,
-          "total_volume": 11867,
-          "total_call_oi": 26008,
-          "total_put_oi": 20564,
-          "spot_price": 28.99,
-          "is_held": false
-        }
-      ],
+      "bullish_flow": [],
       "bearish_flow": [],
       "held_overlap": []
     },
     "new_tickers": [
       "ADSK",
       "APP",
-      "CLSPF",
-      "CNDCF",
-      "DKNG",
-      "EMBJ",
+      "CTSH",
+      "DRTS",
       "EQT",
-      "EVEX",
       "FLUT",
-      "GCTK",
       "INTU",
       "MU",
-      "PSNL",
-      "TEM",
+      "SARO",
       "TLX"
     ],
     "portfolio_read_throughs": [
       {
+        "ticker": "FLY",
+        "theme": "sector_catalyst",
+        "trigger": "SpaceX aborted a Starship test flight, and the linked article reported a lower move in FLY.",
+        "theta_alignment": "unconfirmed bullish flow score 9.0",
+        "confidence": 0.67,
+        "theta_adjusted_confidence": 0.67,
+        "evidence": [
+          {
+            "title": "SpaceX aborts Starship test flight, sending stock lower - CNBC",
+            "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQeWx2MnlaQXRQQ2Q5TlgyeHlKaDRqV05FbkxYNm5tMTJIVnJ0WDFZUXJhUERvZUpEU3hRcENkcHM0cm03TjRCQkI3NDg2ZEhfZHZrY2pRZzlDVjVLSTYyZktjb19JTDlzdGVld1pIVjlLLTNKT2tJZUdTZWtxTDcxaNIBhgFBVV95cUxPRzNlUWZkQW5jN2xmX256RHFQcmFFLTlaaHR6Z2E2VGZHWF9ETDY4OW9hRzNCOEYxU0hqX0hXMFkzMXFGM0dabDVQcWZYWHE4NmVOVHItTGFzVE1ja3VRR2VwcUV0X09QWHJKRXVzMkpSbzdxX0pTYThhU2k4RjdMRUFjaWVXdw?oc=5"
+          }
+        ]
+      },
+      {
         "ticker": "TTD",
         "theme": "sector_catalyst",
-        "trigger": "The Trade Desk was cited as falling after IBM's earnings warning, which the article frames as a sign that enterprise customers may be cutting software budgets to fund hardware purchases.",
-        "theta_alignment": "ThetaData-confirmed bullish flow score 3.0",
-        "confidence": 0.55,
-        "theta_adjusted_confidence": 0.55,
+        "trigger": "TTD shares fell after IBM issued a second-quarter earnings warning that the article says may signal customers are cutting software budgets to fund hardware purchases.",
+        "theta_alignment": "unconfirmed bearish flow score -3.99",
+        "confidence": 0.54,
+        "theta_adjusted_confidence": 0.54,
         "evidence": [
           {
             "title": "Why The Trade Desk (TTD) Shares Are Sliding Today",
@@ -700,176 +701,16 @@
     ],
     "scored_picks": [
       {
-        "pick_id": "62c43d566cad2cb4",
-        "ticker": "PSNL",
+        "pick_id": "59f9bc4b5f6074e8",
+        "ticker": "ADSK",
         "direction": "bull",
-        "type": "acquisition",
-        "summary": "Personalis entered into a definitive agreement to be acquired by Tempus AI.",
-        "confidence": 0.97,
-        "theta_adjusted_confidence": 0.95,
-        "pick_score": 54,
-        "pick_score_reason": "theta-adjusted confidence 0.95; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "aee394a0500a0721",
-        "ticker": "TEM",
-        "direction": "bull",
-        "type": "acquisition",
-        "summary": "Tempus AI agreed to acquire Personalis to expand its molecular residual disease capabilities within its precision oncology platform.",
-        "confidence": 0.78,
-        "theta_adjusted_confidence": 0.78,
-        "pick_score": 45,
-        "pick_score_reason": "theta-adjusted confidence 0.78; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "9285a1aa15e64918",
-        "ticker": "GCTK",
-        "direction": "neutral",
-        "type": "merger",
-        "summary": "Glucotrack disclosed a strategic business combination with L\u014dkahi Therapeutics.",
-        "confidence": 0.84,
-        "theta_adjusted_confidence": 0.84,
-        "pick_score": 48,
-        "pick_score_reason": "theta-adjusted confidence 0.84; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "neutral",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 58
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "c07e6247e146017a",
-        "ticker": "GCTK",
-        "direction": "bear",
-        "type": "dilution_risk",
-        "summary": "Glucotrack also announced approximately $5.7 million of convertible note financing tied to the combined company.",
-        "confidence": 0.87,
-        "theta_adjusted_confidence": 0.87,
-        "pick_score": 50,
-        "pick_score_reason": "theta-adjusted confidence 0.87; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "bear",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "4bf5f398e7fff828",
-        "ticker": "GCTK",
-        "direction": "neutral",
-        "type": "dilution_risk",
-        "summary": "Glucotrack and L\u014dkahi Therapeutics completed bridge financing with E.F. Hutton to support the combined company\u2019s growth plans and future capital markets activity.",
+        "type": "analyst_upgrade",
+        "summary": "Autodesk was upgraded to Strong Buy in a July 18 article that highlighted 16% revenue growth, an AI-driven moat, and a MaintainX deal.",
         "confidence": 0.71,
         "theta_adjusted_confidence": 0.71,
         "pick_score": 41,
         "pick_score_reason": "theta-adjusted confidence 0.71; no usable ThetaData confirmation; direct company catalyst",
         "pick_score_features": {
-          "direction": "neutral",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 58
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "64ea1ebf07f3058c",
-        "ticker": "ADSK",
-        "direction": "bull",
-        "type": "analyst_upgrade",
-        "summary": "Autodesk was described as having been upgraded to Strong Buy in a July 18 article that also cited revenue growth, an AI-driven moat, and a MaintainX deal.",
-        "confidence": 0.74,
-        "theta_adjusted_confidence": 0.74,
-        "pick_score": 43,
-        "pick_score_reason": "theta-adjusted confidence 0.74; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
           "macro_only": false,
@@ -892,144 +733,48 @@
         }
       },
       {
-        "pick_id": "fbfdfd2dd587a472",
-        "ticker": "APP",
-        "direction": "bull",
-        "type": "analyst_upgrade",
-        "summary": "An analyst note on 2026-07-19 rated AppLovin Strong Buy, citing undervalued fundamentals, premium margins, a solid balance sheet, and digital ad growth upside.",
-        "confidence": 0.74,
-        "theta_adjusted_confidence": 0.74,
-        "pick_score": 43,
-        "pick_score_reason": "theta-adjusted confidence 0.74; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "c3c6672853bd7b62",
-        "ticker": "EQT",
-        "direction": "neutral",
-        "type": "earnings",
-        "summary": "EQT is scheduled to announce earnings results after market close on 2026-07-21.",
-        "confidence": 0.88,
-        "theta_adjusted_confidence": 0.88,
-        "pick_score": 50,
-        "pick_score_reason": "theta-adjusted confidence 0.88; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "neutral",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 58
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "8a8b9a7b4592476d",
-        "ticker": "EQT",
+        "pick_id": "fd10b094b7040484",
+        "ticker": "INTU",
         "direction": "bear",
-        "type": "earnings",
-        "summary": "EQT is scheduled to report Q2 results on 2026-07-21, with lower natural gas prices and a negative Earnings ESP cited as headwinds.",
-        "confidence": 0.8,
-        "theta_adjusted_confidence": 0.8,
-        "pick_score": 46,
-        "pick_score_reason": "theta-adjusted confidence 0.80; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "bear",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "2fed9d27bf1e4bb3",
-        "ticker": "FLUT",
-        "direction": "bull",
-        "type": "analyst_upgrade",
-        "summary": "Wedbush reiterated Outperform on Flutter Entertainment and maintained a $138 price target.",
-        "confidence": 0.66,
-        "theta_adjusted_confidence": 0.66,
-        "pick_score": 38,
-        "pick_score_reason": "theta-adjusted confidence 0.66; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "e1e2f5c9bfeea686",
-        "ticker": "MU",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "A July 20, 2026 article says Micron expects memory-chip supply to remain tight beyond 2027, framing the outlook as supportive for MU shares.",
+        "type": "analyst_downgrade",
+        "summary": "Intuit fell on July 21, 2026 after Morgan Stanley began cautious coverage on the software group.",
         "confidence": 0.69,
         "theta_adjusted_confidence": 0.69,
         "pick_score": 40,
         "pick_score_reason": "theta-adjusted confidence 0.69; no usable ThetaData confirmation; direct company catalyst",
         "pick_score_features": {
+          "direction": "bear",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "ce85c0e4dea39144",
+        "ticker": "APP",
+        "direction": "bull",
+        "type": "analyst_upgrade",
+        "summary": "A report on July 19, 2026 described AppLovin as a Strong Buy and argued it remains an undervalued growth story with premium margins and digital ad upside.",
+        "confidence": 0.74,
+        "theta_adjusted_confidence": 0.74,
+        "pick_score": 43,
+        "pick_score_reason": "theta-adjusted confidence 0.74; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
           "macro_only": false,
@@ -1052,17 +797,17 @@
         }
       },
       {
-        "pick_id": "1021c5998f57eb41",
-        "ticker": "INTU",
-        "direction": "bear",
-        "type": "analyst_downgrade",
-        "summary": "MarketBeat reported that Susquehanna issued a pessimistic forecast for Intuit (NASDAQ:INTU).",
-        "confidence": 0.7,
-        "theta_adjusted_confidence": 0.7,
-        "pick_score": 40,
-        "pick_score_reason": "theta-adjusted confidence 0.70; no usable ThetaData confirmation; direct company catalyst",
+        "pick_id": "2d4a5bf1f16efae7",
+        "ticker": "MU",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Micron stock was rising ahead of Big Tech earnings as memory demand remained a market focus.",
+        "confidence": 0.67,
+        "theta_adjusted_confidence": 0.67,
+        "pick_score": 39,
+        "pick_score_reason": "theta-adjusted confidence 0.67; no usable ThetaData confirmation; direct company catalyst",
         "pick_score_features": {
-          "direction": "bear",
+          "direction": "bull",
           "directness": "direct",
           "macro_only": false,
           "theta_alignment": "no_data",
@@ -1084,111 +829,15 @@
         }
       },
       {
-        "pick_id": "c4e832055a83730f",
-        "ticker": "APP",
-        "direction": "bear",
-        "type": "analyst_downgrade",
-        "summary": "AppLovin shares fell after an analyst note focused on the company's e-commerce ads rollout.",
-        "confidence": 0.58,
-        "theta_adjusted_confidence": 0.58,
-        "pick_score": 34,
-        "pick_score_reason": "theta-adjusted confidence 0.58; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "bear",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "8585957d16ea6633",
-        "ticker": "APP",
-        "direction": "neutral",
-        "type": "earnings_beat",
-        "summary": "AppLovin reported strong Q4 earnings, but the stock still slumped in after-hours trading.",
-        "confidence": 0.77,
-        "theta_adjusted_confidence": 0.77,
-        "pick_score": 44,
-        "pick_score_reason": "theta-adjusted confidence 0.77; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "neutral",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 58
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "00c0348d87ee97f4",
-        "ticker": "TLX",
-        "direction": "neutral",
-        "type": "trial_readout",
-        "summary": "Telix is testing a targeted therapy earlier in metastatic prostate cancer, according to the headline.",
-        "confidence": 0.58,
-        "theta_adjusted_confidence": 0.58,
-        "pick_score": 34,
-        "pick_score_reason": "theta-adjusted confidence 0.58; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "neutral",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 58
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "4b90620ef72fa718",
-        "ticker": "TLX",
+        "pick_id": "b15630e39f9e5329",
+        "ticker": "MU",
         "direction": "bear",
         "type": "guidance_change",
-        "summary": "A Telix Pharmaceuticals headline said Japan remains beyond guidance, indicating an ongoing shortfall versus expectations.",
-        "confidence": 0.62,
-        "theta_adjusted_confidence": 0.62,
-        "pick_score": 36,
-        "pick_score_reason": "theta-adjusted confidence 0.62; no usable ThetaData confirmation; direct company catalyst",
+        "summary": "The snippet warns that big customers may try to sidestep soaring memory costs, which could pressure Micron's pricing or demand.",
+        "confidence": 0.71,
+        "theta_adjusted_confidence": 0.71,
+        "pick_score": 41,
+        "pick_score_reason": "theta-adjusted confidence 0.71; no usable ThetaData confirmation; direct company catalyst",
         "pick_score_features": {
           "direction": "bear",
           "directness": "direct",
@@ -1212,17 +861,49 @@
         }
       },
       {
-        "pick_id": "6cba362627f414b8",
+        "pick_id": "aacaca7253d854ba",
         "ticker": "EQT",
-        "direction": "bull",
-        "type": "dividend",
-        "summary": "EQT declared a quarterly cash dividend on July 15, 2026.",
-        "confidence": 0.9,
-        "theta_adjusted_confidence": 0.9,
-        "pick_score": 52,
-        "pick_score_reason": "theta-adjusted confidence 0.90; no usable ThetaData confirmation; direct company catalyst",
+        "direction": "neutral",
+        "type": "earnings_beat",
+        "summary": "EQT is scheduled to report earnings after market close on 2026-07-22.",
+        "confidence": 0.79,
+        "theta_adjusted_confidence": 0.79,
+        "pick_score": 45,
+        "pick_score_reason": "theta-adjusted confidence 0.79; no usable ThetaData confirmation; direct company catalyst",
         "pick_score_features": {
-          "direction": "bull",
+          "direction": "neutral",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 58
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "140f0c9215de1c93",
+        "ticker": "EQT",
+        "direction": "bear",
+        "type": "earnings",
+        "summary": "EQT is set to report Q2 results on July 21, with lower natural gas prices and a negative Earnings ESP cited as potential pressure on the stock.",
+        "confidence": 0.78,
+        "theta_adjusted_confidence": 0.78,
+        "pick_score": 45,
+        "pick_score_reason": "theta-adjusted confidence 0.78; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bear",
           "directness": "direct",
           "macro_only": false,
           "theta_alignment": "no_data",
@@ -1244,11 +925,11 @@
         }
       },
       {
-        "pick_id": "5a678edfc2d421bd",
+        "pick_id": "f9ac2247d15656d0",
         "ticker": "FLUT",
         "direction": "bear",
         "type": "sector_catalyst",
-        "summary": "FLUT fell after reports that Kalshi and Polymarket were in fundraising talks at a $20 billion valuation.",
+        "summary": "Prediction markets captured 27% of U.S. sports-betting volume during the World Cup, creating a negative competitive readthrough for FLUT.",
         "confidence": 0.66,
         "theta_adjusted_confidence": 0.66,
         "pick_score": 32,
@@ -1276,18 +957,18 @@
         }
       },
       {
-        "pick_id": "d71f980fbd5f1f01",
-        "ticker": "DKNG",
+        "pick_id": "0e7f7943ac8c3688",
+        "ticker": "FLUT",
         "direction": "bear",
-        "type": "sector_catalyst",
-        "summary": "DKNG moved lower after reports of fundraising talks at Kalshi and Polymarket at a $20 billion valuation.",
-        "confidence": 0.65,
-        "theta_adjusted_confidence": 0.65,
-        "pick_score": 32,
-        "pick_score_reason": "theta-adjusted confidence 0.65; no usable ThetaData confirmation; indirect read-through",
+        "type": "analyst_downgrade",
+        "summary": "Wells Fargo maintained Equal-Weight on Flutter Entertainment and cut its price target from $168 to $137.",
+        "confidence": 0.84,
+        "theta_adjusted_confidence": 0.84,
+        "pick_score": 48,
+        "pick_score_reason": "theta-adjusted confidence 0.84; no usable ThetaData confirmation; direct company catalyst",
         "pick_score_features": {
           "direction": "bear",
-          "directness": "indirect",
+          "directness": "direct",
           "macro_only": false,
           "theta_alignment": "no_data",
           "flow_score": null,
@@ -1308,11 +989,203 @@
         }
       },
       {
-        "pick_id": "7a40b53b624a75f5",
-        "ticker": "CNDCF",
+        "pick_id": "91aa449807224351",
+        "ticker": "INTU",
+        "direction": "bear",
+        "type": "analyst_downgrade",
+        "summary": "Susquehanna issued a pessimistic forecast for Intuit's stock price.",
+        "confidence": 0.71,
+        "theta_adjusted_confidence": 0.71,
+        "pick_score": 41,
+        "pick_score_reason": "theta-adjusted confidence 0.71; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bear",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "eb4d1b204429d70e",
+        "ticker": "TLX",
+        "direction": "bull",
+        "type": "launch",
+        "summary": "Telix started a Phase 3 targeted radiation study for kidney cancer.",
+        "confidence": 0.76,
+        "theta_adjusted_confidence": 0.76,
+        "pick_score": 44,
+        "pick_score_reason": "theta-adjusted confidence 0.76; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "516f59313f5c482a",
+        "ticker": "TLX",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Telix's headline says a phase 3 catalyst was cleared and revenue is nearing US$1bn, pointing to a positive clinical and commercial inflection for TLX.",
+        "confidence": 0.79,
+        "theta_adjusted_confidence": 0.79,
+        "pick_score": 45,
+        "pick_score_reason": "theta-adjusted confidence 0.79; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "d173608fe235a63d",
+        "ticker": "TLX",
+        "direction": "bear",
+        "type": "guidance_change",
+        "summary": "Telix Pharmaceuticals is described as having Japan remain beyond guidance.",
+        "confidence": 0.58,
+        "theta_adjusted_confidence": 0.58,
+        "pick_score": 34,
+        "pick_score_reason": "theta-adjusted confidence 0.58; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bear",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "615858e3b3b95fe0",
+        "ticker": "MU",
+        "direction": "bull",
+        "type": "guidance_change",
+        "summary": "Micron was cited as saying memory chip supply will remain tight beyond 2027, supporting a higher-stock read-through.",
+        "confidence": 0.84,
+        "theta_adjusted_confidence": 0.84,
+        "pick_score": 48,
+        "pick_score_reason": "theta-adjusted confidence 0.84; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "28bfc867d695f47d",
+        "ticker": "MU",
+        "direction": "bull",
+        "type": "analyst_upgrade",
+        "summary": "UBS raised Micron's stock price target on a strong free cash flow outlook.",
+        "confidence": 0.81,
+        "theta_adjusted_confidence": 0.81,
+        "pick_score": 47,
+        "pick_score_reason": "theta-adjusted confidence 0.81; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "32b86b0629a2fbc6",
+        "ticker": "EQT",
         "direction": "neutral",
         "type": "dividend",
-        "summary": "Canadian Banc declared a CAD 0.2055 dividend.",
+        "summary": "EQT declared a quarterly cash dividend in a PR Newswire release published on 2026-07-15.",
         "confidence": 0.96,
         "theta_adjusted_confidence": 0.95,
         "pick_score": 54,
@@ -1340,11 +1213,75 @@
         }
       },
       {
-        "pick_id": "99f583eb72745b85",
-        "ticker": "TEM",
-        "direction": "bull",
+        "pick_id": "a3dc74f941c526e5",
+        "ticker": "EQT",
+        "direction": "neutral",
         "type": "acquisition",
-        "summary": "Tempus AI agreed to acquire Personalis in a $1.5 billion deal that expands its MRD cancer testing business.",
+        "summary": "Jefferies' downgrade of Intertek was tied in the headline to an EQT bid.",
+        "confidence": 0.62,
+        "theta_adjusted_confidence": 0.62,
+        "pick_score": 36,
+        "pick_score_reason": "theta-adjusted confidence 0.62; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "neutral",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 58
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "9e4648c7a6d289b1",
+        "ticker": "DRTS",
+        "direction": "bull",
+        "type": "trial_readout",
+        "summary": "Alpha Tau rose after reporting Alpha DaRT head-and-neck cancer data.",
+        "confidence": 0.9,
+        "theta_adjusted_confidence": 0.9,
+        "pick_score": 52,
+        "pick_score_reason": "theta-adjusted confidence 0.90; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "c7d09f7b094413db",
+        "ticker": "SARO",
+        "direction": "bull",
+        "type": "partnership",
+        "summary": "StandardAero signed a LEAP engine services agreement with aircraft lessor Avolon.",
         "confidence": 0.82,
         "theta_adjusted_confidence": 0.82,
         "pick_score": 47,
@@ -1372,15 +1309,15 @@
         }
       },
       {
-        "pick_id": "546b3a593fa8d011",
-        "ticker": "PSNL",
+        "pick_id": "ceb501a700e05b44",
+        "ticker": "INTU",
         "direction": "bull",
-        "type": "acquisition",
-        "summary": "Personalis is being acquired by Tempus AI in a $1.5 billion transaction.",
-        "confidence": 0.93,
-        "theta_adjusted_confidence": 0.93,
-        "pick_score": 53,
-        "pick_score_reason": "theta-adjusted confidence 0.93; no usable ThetaData confirmation; direct company catalyst",
+        "type": "launch",
+        "summary": "Intuit said it will revamp its DIY tax business with simpler products, more competitive pricing, and expanded financial services to attract cost-conscious filers.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 39,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; direct company catalyst",
         "pick_score_features": {
           "direction": "bull",
           "directness": "direct",
@@ -1404,111 +1341,15 @@
         }
       },
       {
-        "pick_id": "3a5c5828b2c97d4a",
-        "ticker": "CLSPF",
-        "direction": "neutral",
-        "type": "dividend",
-        "summary": "Canadian Life Companies Split declared a CAD 0.10 dividend.",
-        "confidence": 0.95,
-        "theta_adjusted_confidence": 0.95,
-        "pick_score": 54,
-        "pick_score_reason": "theta-adjusted confidence 0.95; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "neutral",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 58
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "fc4a16c0be3ca1a3",
-        "ticker": "EMBJ",
-        "direction": "bull",
-        "type": "contract_award",
-        "summary": "Embraer announced a military training deal at Farnborough.",
-        "confidence": 0.74,
-        "theta_adjusted_confidence": 0.74,
-        "pick_score": 43,
-        "pick_score_reason": "theta-adjusted confidence 0.74; no usable ThetaData confirmation; direct company catalyst",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "direct",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "cda6b510ea5787d2",
-        "ticker": "EVEX",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "The article says Embraer made eVTOL certification progress at Farnborough, which is a positive read-through for related eVTOL exposure.",
-        "confidence": 0.58,
-        "theta_adjusted_confidence": 0.58,
-        "pick_score": 28,
-        "pick_score_reason": "theta-adjusted confidence 0.58; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "105a3717d9d392c4",
+        "pick_id": "678825be6fd44a49",
         "ticker": "EQT",
         "direction": "neutral",
-        "type": "earnings",
-        "summary": "EQT is scheduled to report Q2 earnings after market close on 2026-07-21.",
-        "confidence": 0.87,
-        "theta_adjusted_confidence": 0.87,
-        "pick_score": 50,
-        "pick_score_reason": "theta-adjusted confidence 0.87; no usable ThetaData confirmation; direct company catalyst",
+        "type": "earnings_beat",
+        "summary": "EQT is scheduled to announce earnings after market hours, according to the article preview.",
+        "confidence": 0.79,
+        "theta_adjusted_confidence": 0.79,
+        "pick_score": 45,
+        "pick_score_reason": "theta-adjusted confidence 0.79; no usable ThetaData confirmation; direct company catalyst",
         "pick_score_features": {
           "direction": "neutral",
           "directness": "direct",
@@ -1532,15 +1373,47 @@
         }
       },
       {
-        "pick_id": "890e9872bcae67ff",
+        "pick_id": "776bd6da591a973b",
+        "ticker": "EQT",
+        "direction": "neutral",
+        "type": "earnings_beat",
+        "summary": "EQT is scheduled to report Q2 results on 2026-07-21, with lower natural gas prices and a negative Earnings ESP cited as headwinds.",
+        "confidence": 0.79,
+        "theta_adjusted_confidence": 0.79,
+        "pick_score": 45,
+        "pick_score_reason": "theta-adjusted confidence 0.79; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "neutral",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 58
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "43b6a303c10df22b",
         "ticker": "EQT",
         "direction": "bear",
         "type": "analyst_downgrade",
-        "summary": "UBS lowered its price target on EQT Corporation to $73 from $74 while keeping a Buy rating.",
-        "confidence": 0.74,
-        "theta_adjusted_confidence": 0.74,
-        "pick_score": 43,
-        "pick_score_reason": "theta-adjusted confidence 0.74; no usable ThetaData confirmation; direct company catalyst",
+        "summary": "UBS lowered its price target on EQT to $73 from $74 and kept a Buy rating on the shares.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 39,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; direct company catalyst",
         "pick_score_features": {
           "direction": "bear",
           "directness": "direct",
@@ -1564,12 +1437,12 @@
         }
       },
       {
-        "pick_id": "43a90145b08e91a6",
+        "pick_id": "e3a163e397b4a18e",
         "ticker": "FLUT",
         "direction": "bear",
         "type": "policy_catalyst",
-        "summary": "UK gambling bosses, including Flutter Entertainment via the Betting and Gaming Council, are weighing legal action against proposed Gambling Commission affordability checks for online customers spending over \u00a31,000 within 24 hours.",
-        "confidence": 0.79,
+        "summary": "UK gambling regulators are considering affordability checks for online customers spending over \u00a31,000 within 24 hours, which could increase compliance pressure on Flutter Entertainment.",
+        "confidence": 0.82,
         "theta_adjusted_confidence": 0.65,
         "pick_score": 30,
         "pick_score_reason": "theta-adjusted confidence 0.65; no usable ThetaData confirmation; direct company catalyst; macro/policy-only catalyst",
@@ -1594,43 +1467,67 @@
           "latest_judgment": null,
           "history": []
         }
+      },
+      {
+        "pick_id": "9e135125094d8757",
+        "ticker": "CTSH",
+        "direction": "bull",
+        "type": "partnership",
+        "summary": "Cognizant announced on July 2, 2026 that it joined the OpenAI Daybreak Cyber Partner Program and is using GPT-5.5 with Trusted Access for Cyber in its Frontier AI Cyber Defense services.",
+        "confidence": 0.82,
+        "theta_adjusted_confidence": 0.82,
+        "pick_score": 47,
+        "pick_score_reason": "theta-adjusted confidence 0.82; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
       }
     ],
-    "llm_summary": "Today's discovery is dominated by single-name corporate catalysts rather than broad macro signals, with the clearest positive read coming from Tempus AI's agreement to acquire Personalis. AI/software and memory also show selective upside via analyst support for Autodesk/AppLovin and a tight-supply memory narrative for Micron, but options/ThetaData confirmation was not available across the scored picks. Main risks cluster around financing dilution, earnings-event uncertainty, analyst skepticism, and competitive pressure in online betting.",
+    "llm_summary": "Today's discovery is stock-specific rather than broad-market driven: software and AI-adjacent names show mixed analyst sentiment, while biotech/radiopharma and memory remain the cleaner bullish pockets. The strongest positive reads cluster around TLX clinical/commercial catalysts and MU memory tightness, but MU also carries customer pushback risk. The clearest risk stack is in FLUT and INTU, where direct analyst caution is reinforced by competitive or coverage-related pressure.",
     "top_opportunities": [
       {
-        "ticker": "PSNL",
-        "why": "Highest-confidence direct catalyst: Personalis entered into a definitive agreement to be acquired by Tempus AI."
-      },
-      {
-        "ticker": "TEM",
-        "why": "Strategic acquisition expands Tempus AI's molecular residual disease capabilities within its precision oncology platform."
-      },
-      {
-        "ticker": "ADSK",
-        "why": "Analyst upgrade narrative cited revenue growth, AI-driven moat, and a MaintainX deal."
+        "ticker": "TLX",
+        "why": "Phase 3 kidney-cancer radiation study launch and headlines citing revenue near US$1 billion create a positive clinical and commercial inflection read, though one Japan-guidance headline is a caveat."
       },
       {
         "ticker": "MU",
-        "why": "Memory-chip supply tightness beyond 2027 was framed as supportive for Micron shares."
+        "why": "Multiple bullish memory-demand signals, including tight supply beyond 2027 and a UBS price-target raise on free cash flow, support the opportunity case despite conflicting pricing-risk commentary."
+      },
+      {
+        "ticker": "APP",
+        "why": "Direct bullish coverage described AppLovin as an undervalued growth story with premium margins and digital advertising upside."
       }
     ],
     "top_risks": [
       {
-        "ticker": "GCTK",
-        "why": "Strategic combination is paired with approximately $5.7 million of convertible note financing, creating dilution risk."
-      },
-      {
-        "ticker": "EQT",
-        "why": "Q2 earnings are due after market close on 2026-07-21, with lower natural gas prices and negative Earnings ESP cited as headwinds."
+        "ticker": "FLUT",
+        "why": "Wells Fargo cut its price target to $137 while prediction markets reportedly captured 27% of U.S. World Cup sports-betting volume, creating both direct and competitive pressure."
       },
       {
         "ticker": "INTU",
-        "why": "MarketBeat reported a pessimistic Susquehanna forecast for Intuit."
+        "why": "Morgan Stanley cautious coverage and a separate Susquehanna pessimistic forecast outweighed the positive TurboTax product-revamp read."
       },
       {
-        "ticker": "DKNG",
-        "why": "Reports of Kalshi and Polymarket fundraising at a $20 billion valuation point to potential competitive pressure on sportsbooks."
+        "ticker": "EQT",
+        "why": "Near-term earnings risk is elevated, with lower natural gas prices and a negative Earnings ESP cited ahead of Q2 results despite neutral dividend/news items."
       }
     ],
     "general_stale": false,
@@ -1652,121 +1549,182 @@
     {
       "ticker": "TTD",
       "stance": "risk",
-      "news": "Fact: The Trade Desk had positive partnership and leadership headlines, including Seven-Eleven Japan retail purchase data integration and Ron Lamprecht joining as Chief Business Development Officer, but separate headlines cited weak outlook concerns, analyst downside risk, and IBM-related software budget pressure.",
-      "theta": "ThetaData from 2026-07-16 showed bullish flow_score_v2 5.13, put-call ratio 0.394, 6 bullish days in 14, and 30-day ATM IV 0.8259, but the evidence marks the options context stale.",
-      "oracle_note": "Inference: TTD has the sharpest news/options divergence; old bullish flow is not enough to confirm the newer bearish guidance and sector-budget risk, especially with elevated IV."
+      "news": "Fact: TTD had bearish headlines tied to weak outlook, oil-shock/rate-pressure tech selling, and an IBM software-budget read-through; it also had a bullish retail-data and leadership update from Seven-Eleven Japan integration.",
+      "theta": "Theta/options: 2026-07-21 flow_score -3.99, put_call_ratio 1.911, spot 18.64, 30d ATM IV 0.8424; ThetaData confirmation marked unconfirmed.",
+      "oracle_note": "Inference: TTD is the strongest news/options alignment on the risk side because bearish headlines match put-heavy flow, while the retail-data partnership has not overridden sentiment."
     },
     {
       "ticker": "FLY",
       "stance": "opportunity",
-      "news": "Fact: Firefly Aerospace headlines cited a successful Alpha Rocket return to orbit, fresh NASA awards, and a Mars aeroshell-related deep-space hardware story, while one article said shares still slid nearly 7% amid short interest and technical weakness.",
-      "theta": "ThetaData from 2026-07-16 showed bullish flow_score_v2 7.27, put-call ratio 0.305, 4 bullish days in 14, and very high 30-day ATM IV 1.1737; the context is stale.",
-      "oracle_note": "Inference: FLY has strong theme alignment between space-execution news and prior bullish options flow, but price weakness and very high IV mean the signal is event-sensitive rather than clean."
+      "news": "Fact: FLY had bullish NASA-award and Alpha rocket return-to-orbit headlines, while a SpaceX Starship abort created an indirect negative sector read-through and the stock reportedly weakened despite awards.",
+      "theta": "Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.343, spot 19.67, 30d ATM IV 1.192; ThetaData confirmation marked unconfirmed.",
+      "oracle_note": "Inference: Operational news and call-heavy flow align positively, but very high IV and contradictory sector tape make this an event-volatility watch rather than a clean signal."
     },
     {
       "ticker": "IBRX",
-      "stance": "opportunity",
-      "news": "Fact: IBRX headlines referenced a new Anktiva-NK cell therapy study, global Anktiva expansion, US regulatory heat, and buyout speculation tied to broader oncology competition.",
-      "theta": "ThetaData from 2026-07-16 showed very bullish flow_score_v2 8.82, put-call ratio 0.261, 6 bullish days in 14, and 30-day ATM IV near 0.9953 from 2026-07-14; options context is stale.",
-      "oracle_note": "Inference: IBRX has strong speculative alignment across oncology news and call-heavy flow, but the facts are mostly headline-level and include regulatory risk, so confidence should stay capped."
+      "stance": "neutral",
+      "news": "Fact: IBRX had bullish headlines around Anktiva manufacturing expansion and global expansion, alongside commentary highlighting valuation, dilution, and cash-burn risks.",
+      "theta": "Theta/options: 2026-07-21 flow_score 12.0, put_call_ratio 0.378, spot 7.50; IV snapshot is older, 2026-07-14, with 30d ATM IV 0.9953; ThetaData confirmation marked unconfirmed.",
+      "oracle_note": "Inference: Options flow leans strongly bullish against a mixed fundamental narrative, so the divergence is between upside manufacturing/regulatory expectations and financing-risk concerns."
     },
     {
       "ticker": "B",
-      "stance": "neutral",
-      "news": "Fact: One article rated Barrick Mining Buy based on Q1 free cash flow, buybacks, and dividend support; another buyback item in the packet references News Corp ASX filings, creating possible issuer/ticker ambiguity.",
-      "theta": "ThetaData from 2026-07-16 was mixed: flow_score 0.99, flow_score_v2 -0.93, put-call ratio 1.209, and 30-day ATM IV 0.493; context is stale.",
-      "oracle_note": "Inference: The fundamental capital-return angle is constructive, but options evidence does not confirm it and one news item may be mis-mapped."
+      "stance": "opportunity",
+      "news": "Fact: A July 20 write-up framed Barrick Mining as Buy on strong Q1 free cash flow, buyback, and dividend; separate mapped headlines about Magnolia Oil & Gas and a Northfield/Columbia merger appear potentially noisy for ticker B.",
+      "theta": "Theta/options: 2026-07-21 flow_score 6.0, put_call_ratio 0.299, spot 34.89, 30d ATM IV 0.4975; ThetaData confirmation marked unconfirmed.",
+      "oracle_note": "Inference: The cleanest read is a moderate bullish alignment between the Barrick re-rating article and call-heavy flow, but noisy ticker mapping lowers conviction."
     },
     {
       "ticker": "IBM",
+      "stance": "neutral",
+      "news": "Fact: IBM was referenced indirectly through a second-quarter earnings warning that may signal customers cutting software budgets to fund hardware purchases.",
+      "theta": "Theta/options: no latest options snapshot in local theta packet.",
+      "oracle_note": "Inference: IBM matters mainly as a read-through into TTD and enterprise software sentiment, not as a confirmed options-backed IBM signal."
+    },
+    {
+      "ticker": "NFLX",
+      "stance": "neutral",
+      "news": "Fact: No fresh bounded news event was provided for NFLX in the packet.",
+      "theta": "Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.472, spot 67.60, 30d ATM IV 0.3721.",
+      "oracle_note": "Inference: Bullish options tone exists without a matching news catalyst, so it remains a flow-only watch."
+    },
+    {
+      "ticker": "MSFT",
+      "stance": "neutral",
+      "news": "Fact: No fresh bounded news event was provided for MSFT in the packet.",
+      "theta": "Theta/options: 2026-07-21 flow_score 8.01, put_call_ratio 0.341, spot 402.29, 30d ATM IV 0.4908.",
+      "oracle_note": "Inference: Call-heavy flow contrasts with the IBM-linked software-budget concern, creating a sector divergence to monitor."
+    },
+    {
+      "ticker": "COPX",
+      "stance": "neutral",
+      "news": "Fact: No fresh bounded news event was provided for COPX in the packet.",
+      "theta": "Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.363, spot 73.86, 30d ATM IV 0.4733.",
+      "oracle_note": "Inference: Bullish options tone is present, but there is no bounded copper-sector news catalyst in this packet."
+    },
+    {
+      "ticker": "QS",
+      "stance": "neutral",
+      "news": "Fact: No fresh bounded news event was provided for QS in the packet.",
+      "theta": "Theta/options: 2026-07-21 flow_score 9.51, put_call_ratio 0.589, spot 5.89, 30d ATM IV 1.0467.",
+      "oracle_note": "Inference: Strong call-heavy flow with high IV is notable, but absent news support keeps this as a watch item."
+    },
+    {
+      "ticker": "DRTS",
+      "stance": "neutral",
+      "news": "Fact: No fresh bounded news event was provided for DRTS in the packet.",
+      "theta": "Theta/options: 2026-07-21 flow_score 6.0, put_call_ratio 0.017, spot 13.47; IV snapshot 2026-07-15 shows 30d ATM IV 0.9402.",
+      "oracle_note": "Inference: Extreme call skew and stale/high IV deserve monitoring, but no current news catalyst was supplied."
+    },
+    {
+      "ticker": "VIVO",
+      "stance": "neutral",
+      "news": "Fact: No fresh bounded news event was provided for VIVO in the packet.",
+      "theta": "Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.022, spot 3.79; IV snapshot 2026-07-14 shows 30d ATM IV 1.6689.",
+      "oracle_note": "Inference: Very call-heavy flow plus very high stale IV suggests speculative attention, not a confirmed catalyst."
+    },
+    {
+      "ticker": "IGLD",
       "stance": "risk",
-      "news": "Fact: IBM was linked to a second-quarter earnings warning and weakness in enterprise software spending; the packet did not include quantitative guidance details.",
-      "theta": "No usable IBM ThetaData/options snapshot was provided.",
-      "oracle_note": "Inference: IBM is a direct portfolio risk item and also a negative read-through for software/ad-tech demand, especially TTD."
+      "news": "Fact: No fresh bounded news event was provided for IGLD in the packet.",
+      "theta": "Theta/options: 2026-07-21 flow_score -9.0, put_call_ratio 29.647, spot 20.59; IV not provided.",
+      "oracle_note": "Inference: This is the clearest options-only downside watch in the held list, but it lacks a news catalyst in the bounded evidence."
     }
   ],
   "connecting_opportunities": [
     {
-      "theme": "space execution and government contracts",
-      "trigger": "Firefly headlines combined successful Alpha Rocket return-to-orbit, NASA awards, and deep-space hardware ambitions.",
+      "theme": "ad-tech and enterprise software budget pressure",
+      "trigger": "TTD weak-outlook headlines plus IBM software-budget warning read-through",
       "held_tickers": [
-        "FLY"
-      ],
-      "beneficiaries_or_risks": [
-        "FLY may benefit if operational milestones convert into durable backlog recognition",
-        "Risk: short interest, weak trading reaction, and 117% 30-day IV can overwhelm positive headlines"
-      ],
-      "confidence": 0.66
-    },
-    {
-      "theme": "oncology platform consolidation and bladder-cancer optionality",
-      "trigger": "Tempus-Personalis precision oncology M&A appeared in general news while IBRX headlines referenced Anktiva study activity, expansion, regulatory heat, and buyout speculation.",
-      "held_tickers": [
-        "IBRX"
-      ],
-      "beneficiaries_or_risks": [
-        "IBRX could benefit from renewed oncology platform scarcity narratives",
-        "Risk: evidence is headline-level and regulatory concerns remain unresolved"
-      ],
-      "confidence": 0.58
-    },
-    {
-      "theme": "software budget pressure versus AI/hardware spend",
-      "trigger": "IBM warning was framed as enterprise customers cutting software budgets to fund hardware purchases, with TTD cited as falling on the read-through.",
-      "held_tickers": [
-        "IBM",
         "TTD",
+        "IBM",
         "MSFT",
         "TEAM"
       ],
       "beneficiaries_or_risks": [
-        "Risk to IBM and TTD from weaker enterprise and advertiser software spending",
-        "Possible divergence watch for MSFT and TEAM because their prior options flow was bullish but no fresh confirming news was provided"
+        "Risk to TTD where bearish news aligns with put-heavy flow",
+        "Possible software sentiment overhang for IBM, MSFT, and TEAM despite MSFT and TEAM call-heavy options reads",
+        "TTD retail-data partnership is an offsetting company-specific positive"
+      ],
+      "confidence": 0.72
+    },
+    {
+      "theme": "commercial space execution and contract flow",
+      "trigger": "FLY NASA awards and Alpha return-to-orbit headlines versus SpaceX Starship abort sector read-through",
+      "held_tickers": [
+        "FLY"
+      ],
+      "beneficiaries_or_risks": [
+        "FLY benefits if contract awards and launch execution dominate sentiment",
+        "FLY risks remain high if sector launch setbacks drive risk-off behavior",
+        "Options flow is bullish but IV is very elevated"
+      ],
+      "confidence": 0.68
+    },
+    {
+      "theme": "biotech manufacturing scale versus financing risk",
+      "trigger": "IBRX Anktiva manufacturing/global expansion headlines alongside dilution and cash-burn commentary",
+      "held_tickers": [
+        "IBRX"
+      ],
+      "beneficiaries_or_risks": [
+        "IBRX benefits if manufacturing expansion validates commercialization path",
+        "IBRX risks remain valuation, dilution, and cash burn",
+        "Bullish options flow diverges from bearish financing-risk commentary"
+      ],
+      "confidence": 0.66
+    },
+    {
+      "theme": "materials and hard-asset call demand",
+      "trigger": "B bullish re-rating article and COPX bullish options flow, with no fresh COPX news catalyst",
+      "held_tickers": [
+        "B",
+        "COPX"
+      ],
+      "beneficiaries_or_risks": [
+        "B has moderate alignment between bullish news and call-heavy flow",
+        "COPX has bullish flow without bounded news confirmation",
+        "B news mapping includes noisy non-Barrick items"
       ],
       "confidence": 0.55
     },
     {
-      "theme": "retail media data monetization",
-      "trigger": "TTD integrated Seven-Eleven Japan retail purchase data and added senior leadership while separate headlines questioned outlook and downside risk.",
+      "theme": "speculative high-IV call clusters without news confirmation",
+      "trigger": "Call-heavy Theta/options reads in QS, DRTS, VIVO, TEAM, and NFLX without matching fresh bounded news",
       "held_tickers": [
-        "TTD"
+        "QS",
+        "DRTS",
+        "VIVO",
+        "TEAM",
+        "NFLX"
       ],
       "beneficiaries_or_risks": [
-        "TTD may benefit if commerce data improves advertiser measurement",
-        "Risk: bearish outlook headlines conflict with the partnership narrative and stale bullish options flow"
+        "Potential opportunity if follow-on news appears",
+        "Risk of volatility decay or unsupported flow reversal",
+        "Several IV snapshots are high or stale"
       ],
-      "confidence": 0.52
-    },
-    {
-      "theme": "capital return versus options skepticism",
-      "trigger": "B had bullish capital-return/re-rating commentary while options flow_score_v2 was negative and put-call ratio was above 1.",
-      "held_tickers": [
-        "B"
-      ],
-      "beneficiaries_or_risks": [
-        "B could benefit if free cash flow, dividend, and buyback support drive re-rating",
-        "Risk: options tape does not currently validate the bullish article and one buyback headline may be mapped to the wrong issuer"
-      ],
-      "confidence": 0.43
+      "confidence": 0.46
     }
   ],
   "watch_items": [
-    "Refresh held-ticker ThetaData before treating any options flow as confirmation; most held snapshots are from 2026-07-16 or earlier.",
-    "For TTD, watch for the actual weak-outlook details and whether current options flow flips bearish or remains call-skewed.",
-    "For FLY, monitor whether NASA/launch headlines translate into backlog, revenue timing, or follow-on awards, and whether short interest continues to pressure shares.",
-    "For IBRX, monitor primary-source study details, Anktiva regulatory updates, and whether oncology M&A chatter becomes formal strategic interest.",
-    "For B, verify whether the News Corp buyback item is incorrectly mapped to ticker B before using it in portfolio scoring.",
-    "For IBM, watch the actual Q2 warning details and software-spending commentary for read-through into TEAM, MSFT, and TTD."
+    "TTD: next ThetaData confirmation after 2026-07-21 to see whether bearish flow persists or reverses after weak-outlook headlines.",
+    "FLY: whether NASA award and Alpha launch headlines overcome the negative SpaceX sector read-through and very high 30d ATM IV of 1.192.",
+    "IBRX: any formal filing or company update on Anktiva manufacturing, cash runway, or dilution risk.",
+    "B: verify ticker mapping for Magnolia Oil & Gas and Northfield/Columbia merger headlines before treating them as Barrick-relevant.",
+    "IGLD: investigate put-heavy options read with put_call_ratio 29.647 if new news appears.",
+    "QS, DRTS, VIVO: monitor whether high-IV bullish flow gains a real catalyst or fades.",
+    "General theta market: breadth scanner reported scanned_tickers 0, so portfolio-level options breadth is incomplete."
   ],
   "caveats": [
-    "No browsing was performed; this oracle item uses only the bounded evidence supplied.",
-    "ThetaData/options evidence for held tickers is stale and explicitly marked not usable for positive confidence adjustment.",
-    "Several news items are headline or article-snippet level and lack primary filings, exact financial terms, or guidance numbers.",
-    "General ThetaData market breadth scanned only one ticker and had no held overlap, so it is not representative of broad market positioning.",
-    "This is not a trade recommendation."
+    "No browsing was performed; this uses only the bounded discovery and local ThetaData/options packet.",
+    "Many ThetaData alignments are explicitly marked unconfirmed, and flow_score_v2 plus ThetaData put/call fields are null.",
+    "Some IV snapshots are stale, especially IBRX and VIVO from 2026-07-14 and DRTS from 2026-07-15.",
+    "Several news items are headline-level or market-commentary evidence rather than company filings.",
+    "B contains probable ticker-mapping noise, including headlines that may not relate to Barrick Mining.",
+    "This oracle item is informational and does not recommend trades."
   ],
   "general_news": {
-    "generated_at": "2026-07-20T13:30:03.805702+00:00",
+    "generated_at": "2026-07-21T13:40:00.663920+00:00",
     "seed_tickers": [
       "ADSK",
       "APP",
@@ -1776,119 +1734,21 @@
       "FLUT",
       "INTU",
       "MNKD",
+      "MRVL",
       "MU",
-      "ONDS",
       "T",
       "TLX"
     ],
-    "event_count": 28,
+    "event_count": 25,
     "theme_observation_count": 0,
     "events": [
-      {
-        "ticker": "PSNL",
-        "type": "acquisition",
-        "event_date": "2026-07-20",
-        "direction": "bull",
-        "confidence": 0.97,
-        "summary": "Personalis entered into a definitive agreement to be acquired by Tempus AI.",
-        "evidence": [
-          {
-            "title": "Tempus to Acquire Personalis, More Tightly Integrating Molecular Residual Disease (MRD) into Its AI-Enabled Precision Oncology Platform",
-            "url": "http://www.businesswire.com/news/home/20260720359246/en/Tempus-to-Acquire-Personalis-More-Tightly-Integrating-Molecular-Residual-Disease-MRD-into-Its-AI-Enabled-Precision-Oncology-Platform/?feedref=JjAwJuNHiystnCoBq_hl-Rc4vIAVcHHkbDcwJimU8QtrtlakeQ9hNboBqTAWIjTge3KWq9s9jif-UkBjBsFRyYAbRTSLTc1mgvhPlnaBA55M-oupQnbXnhKsYk8RmHF_kAy2gZikaX3QWV6xOvgFlA=="
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "stock_news_finnhub",
-        "scoring_eligible": 1,
-        "note": "Target-side M&A announcement; deal terms were not included in the evidence packet.",
-        "directness": "direct",
-        "parent_ticker": "TEM"
-      },
-      {
-        "ticker": "TEM",
-        "type": "acquisition",
-        "event_date": "2026-07-20",
-        "direction": "bull",
-        "confidence": 0.78,
-        "summary": "Tempus AI agreed to acquire Personalis to expand its molecular residual disease capabilities within its precision oncology platform.",
-        "evidence": [
-          {
-            "title": "Tempus to Acquire Personalis, More Tightly Integrating Molecular Residual Disease (MRD) into Its AI-Enabled Precision Oncology Platform",
-            "url": "http://www.businesswire.com/news/home/20260720359246/en/Tempus-to-Acquire-Personalis-More-Tightly-Integrating-Molecular-Residual-Disease-MRD-into-Its-AI-Enabled-Precision-Oncology-Platform/?feedref=JjAwJuNHiystnCoBq_hl-Rc4vIAVcHHkbDcwJimU8QtrtlakeQ9hNboBqTAWIjTge3KWq9s9jif-UkBjBsFRyYAbRTSLTc1mgvhPlnaBA55M-oupQnbXnhKsYk8RmHF_kAy2gZikaX3QWV6xOvgFlA=="
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "stock_news_finnhub",
-        "scoring_eligible": 1,
-        "note": "Strategic benefit is explicit, but the market impact on the acquirer is less certain than on the target.",
-        "directness": "direct",
-        "parent_ticker": "PSNL"
-      },
-      {
-        "ticker": "GCTK",
-        "type": "merger",
-        "event_date": "2026-07-17",
-        "direction": "neutral",
-        "confidence": 0.84,
-        "summary": "Glucotrack disclosed a strategic business combination with L\u014dkahi Therapeutics.",
-        "evidence": [
-          {
-            "title": "E.F. Hutton & Co. Serves as Exclusive Financial Advisor on Strategic Business Combination Between Glucotrack and L\u014dkahi Therapeutics and Exclusive Placement Agent for Approximately $5.7 Million Conver",
-            "url": "https://www.globenewswire.com/news-release/2026/07/17/3329243/0/en/E-F-Hutton-Co-Serves-as-Exclusive-Financial-Advisor-on-Strategic-Business-Combination-Between-Glucotrack-and-L%C5%8Dkahi-Therapeutics-and-Exclusive-Placement-Agent-for-Approximately-5-7.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "stock_news_finnhub",
-        "scoring_eligible": 1,
-        "note": "The evidence does not include transaction terms, so the immediate value impact is uncertain.",
-        "directness": "direct"
-      },
-      {
-        "ticker": "GCTK",
-        "type": "dilution_risk",
-        "event_date": "2026-07-17",
-        "direction": "bear",
-        "confidence": 0.87,
-        "summary": "Glucotrack also announced approximately $5.7 million of convertible note financing tied to the combined company.",
-        "evidence": [
-          {
-            "title": "E.F. Hutton & Co. Serves as Exclusive Financial Advisor on Strategic Business Combination Between Glucotrack and L\u014dkahi Therapeutics and Exclusive Placement Agent for Approximately $5.7 Million Conver",
-            "url": "https://www.globenewswire.com/news-release/2026/07/17/3329243/0/en/E-F-Hutton-Co-Serves-as-Exclusive-Financial-Advisor-on-Strategic-Business-Combination-Between-Glucotrack-and-L%C5%8Dkahi-Therapeutics-and-Exclusive-Placement-Agent-for-Approximately-5-7.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "stock_news_finnhub",
-        "scoring_eligible": 1,
-        "note": "Convertible financing can be dilutive depending on conversion terms, which were not provided in the packet.",
-        "directness": "direct",
-        "parent_ticker": "GCTK"
-      },
-      {
-        "ticker": "GCTK",
-        "type": "dilution_risk",
-        "event_date": "2026-07-17",
-        "direction": "neutral",
-        "confidence": 0.71,
-        "summary": "Glucotrack and L\u014dkahi Therapeutics completed bridge financing with E.F. Hutton to support the combined company\u2019s growth plans and future capital markets activity.",
-        "evidence": [
-          {
-            "title": "Glucotrack, Inc. and L\u014dkahi Therapeutics\u2122 Announce Strategic Financing Support from E.F. Hutton & Co. in Connection with Their Recently Completed Business Combination and Future Capital Markets Initia",
-            "url": "https://www.globenewswire.com/news-release/2026/07/17/3329059/0/en/Glucotrack-Inc-and-L%C5%8Dkahi-Therapeutics-Announce-Strategic-Financing-Support-from-E-F-Hutton-Co-in-Connection-with-Their-Recently-Completed-Business-Combination-and-Future-Capital-M.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "stock_news_finnhub_2",
-        "scoring_eligible": 1,
-        "note": "The snippet does not disclose terms, so the financing impact is directional rather than fully quantifiable.",
-        "directness": "direct"
-      },
       {
         "ticker": "ADSK",
         "type": "analyst_upgrade",
         "event_date": "2026-07-18",
         "direction": "bull",
-        "confidence": 0.74,
-        "summary": "Autodesk was described as having been upgraded to Strong Buy in a July 18 article that also cited revenue growth, an AI-driven moat, and a MaintainX deal.",
+        "confidence": 0.71,
+        "summary": "Autodesk was upgraded to Strong Buy in a July 18 article that highlighted 16% revenue growth, an AI-driven moat, and a MaintainX deal.",
         "evidence": [
           {
             "title": "Autodesk: This AI-Era Software Bargain Is Too Cheap To Ignore",
@@ -1898,7 +1758,26 @@
         "source": "gpt_news",
         "query_id": "stock_news_finnhub_company",
         "scoring_eligible": 1,
-        "note": "The evidence is an article headline/snippet, not the underlying analyst note, so treat as a media-backed bullish call rather than a confirmed formal rating change.",
+        "note": "This is an analyst/research call rather than a company filing, so the stock reaction may be more sentiment-driven than event-driven.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "INTU",
+        "type": "analyst_downgrade",
+        "event_date": "2026-07-21",
+        "direction": "bear",
+        "confidence": 0.69,
+        "summary": "Intuit fell on July 21, 2026 after Morgan Stanley began cautious coverage on the software group.",
+        "evidence": [
+          {
+            "title": "Adobe, Salesforce and Intuit fall as Morgan Stanley begins cautious coverage",
+            "url": "https://finnhub.io/api/news?id=657d3687679314bd571cf53aa8645e92445dc41538e2ecfa527fddb8704cd246"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_2",
+        "scoring_eligible": 1,
+        "note": "The snippet explicitly names bearish views on Adobe and Workday; Intuit is supported by the headline's stock reaction rather than a named rating in the snippet.",
         "directness": "direct"
       },
       {
@@ -1907,7 +1786,7 @@
         "event_date": "2026-07-19",
         "direction": "bull",
         "confidence": 0.74,
-        "summary": "An analyst note on 2026-07-19 rated AppLovin Strong Buy, citing undervalued fundamentals, premium margins, a solid balance sheet, and digital ad growth upside.",
+        "summary": "A report on July 19, 2026 described AppLovin as a Strong Buy and argued it remains an undervalued growth story with premium margins and digital ad upside.",
         "evidence": [
           {
             "title": "AppLovin: Outstanding Fundamentals, Still An Undervalued Growth Story",
@@ -1917,16 +1796,54 @@
         "source": "gpt_news",
         "query_id": "stock_news_finnhub_company_4",
         "scoring_eligible": 1,
-        "note": "This is a sentiment catalyst rather than a company-issued event.",
+        "note": "This is a bullish research-note style signal rather than a corporate filing or operational announcement.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "MU",
+        "type": "sector_catalyst",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.67,
+        "summary": "Micron stock was rising ahead of Big Tech earnings as memory demand remained a market focus.",
+        "evidence": [
+          {
+            "title": "Why Micron Stock Is Jumping Ahead of Google Earnings",
+            "url": "https://finnhub.io/api/news?id=f89b6bce2e4b9e34e6c21047e698e9a66cea0294620eb3f4496b48acc28b3aa9"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_6",
+        "scoring_eligible": 1,
+        "note": "The article is about market positioning rather than a company action, so the signal is indirect and loosely framed.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "MU",
+        "type": "guidance_change",
+        "event_date": null,
+        "direction": "bear",
+        "confidence": 0.71,
+        "summary": "The snippet warns that big customers may try to sidestep soaring memory costs, which could pressure Micron's pricing or demand.",
+        "evidence": [
+          {
+            "title": "Why Micron Stock Is Jumping Ahead of Google Earnings",
+            "url": "https://finnhub.io/api/news?id=f89b6bce2e4b9e34e6c21047e698e9a66cea0294620eb3f4496b48acc28b3aa9"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_6",
+        "scoring_eligible": 1,
+        "note": "No formal guidance cut is stated, so this is a risk readthrough rather than an announced earnings revision.",
         "directness": "direct"
       },
       {
         "ticker": "EQT",
-        "type": "earnings",
-        "event_date": "2026-07-21",
+        "type": "earnings_beat",
+        "event_date": "2026-07-22",
         "direction": "neutral",
-        "confidence": 0.88,
-        "summary": "EQT is scheduled to announce earnings results after market close on 2026-07-21.",
+        "confidence": 0.79,
+        "summary": "EQT is scheduled to report earnings after market close on 2026-07-22.",
         "evidence": [
           {
             "title": "EQT Earnings: What To Look For From EQT",
@@ -1934,9 +1851,9 @@
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_finnhub_company_5",
+        "query_id": "stock_news_finnhub_company_7",
         "scoring_eligible": 1,
-        "note": "This is a scheduled earnings event; no result or guidance is provided in the evidence.",
+        "note": "This is a timing catalyst only; the snippet does not include results or guidance.",
         "directness": "direct"
       },
       {
@@ -1944,8 +1861,8 @@
         "type": "earnings",
         "event_date": "2026-07-21",
         "direction": "bear",
-        "confidence": 0.8,
-        "summary": "EQT is scheduled to report Q2 results on 2026-07-21, with lower natural gas prices and a negative Earnings ESP cited as headwinds.",
+        "confidence": 0.78,
+        "summary": "EQT is set to report Q2 results on July 21, with lower natural gas prices and a negative Earnings ESP cited as potential pressure on the stock.",
         "evidence": [
           {
             "title": "EQT Gears Up to Report Q2 Earnings: What's in Store for the Stock?",
@@ -1953,56 +1870,57 @@
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_finnhub_company_6",
+        "query_id": "stock_news_finnhub_company_8",
         "scoring_eligible": 1,
-        "note": "Preview article only; no actual earnings result is included in the packet.",
+        "note": "This is a pre-earnings preview, not actual reported results.",
         "directness": "direct"
       },
       {
         "ticker": "FLUT",
-        "type": "analyst_upgrade",
-        "event_date": "2026-07-17",
-        "direction": "bull",
+        "type": "sector_catalyst",
+        "event_date": null,
+        "direction": "bear",
         "confidence": 0.66,
-        "summary": "Wedbush reiterated Outperform on Flutter Entertainment and maintained a $138 price target.",
+        "summary": "Prediction markets captured 27% of U.S. sports-betting volume during the World Cup, creating a negative competitive readthrough for FLUT.",
         "evidence": [
           {
-            "title": "Wedbush Reiterates Outperform on Flutter Entertainment, Maintains $138 Price Target",
-            "url": "https://finnhub.io/api/news?id=3341b3470ff8c544d4f76fdc95e3006c7471d5b1a3bfa4d0ee93774983b87532"
+            "title": "Prediction Markets Grab 27% of US Sports Bets During World Cup as France Pulls the Plug on Polymarket",
+            "url": "https://finnhub.io/api/news?id=f0987f8215ab50a7347d87c102144144c46ea50fc0e56ee34278a3d450d1693c"
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_finnhub_company_7",
-        "scoring_eligible": 1,
-        "note": "This is a positive analyst reiteration, not a new fundamental company announcement.",
-        "directness": "direct"
+        "query_id": "stock_news_finnhub_company_8",
+        "scoring_eligible": 0,
+        "note": "Indirect sector pressure rather than a company-specific action.",
+        "directness": "indirect",
+        "beneficiary_reason": "FLUT operates in online sports betting, so share gains by prediction markets could pressure handle and margins."
       },
       {
-        "ticker": "MU",
-        "type": "sector_catalyst",
+        "ticker": "FLUT",
+        "type": "analyst_downgrade",
         "event_date": "2026-07-20",
-        "direction": "bull",
-        "confidence": 0.69,
-        "summary": "A July 20, 2026 article says Micron expects memory-chip supply to remain tight beyond 2027, framing the outlook as supportive for MU shares.",
+        "direction": "bear",
+        "confidence": 0.84,
+        "summary": "Wells Fargo maintained Equal-Weight on Flutter Entertainment and cut its price target from $168 to $137.",
         "evidence": [
           {
-            "title": "Micron Says Memory Chip Supply Will Remain Tight Beyond 2027. That's Investors' Cue to Load Up on Shares Now.",
-            "url": "https://finnhub.io/api/news?id=f6b65474b1ab921781ad54a01f4daff64391f44a6f4454959b89d525289378b2"
+            "title": "Wells Fargo Maintains Equal-Weight on Flutter Entertainment, Lowers Price Target to $137",
+            "url": "https://finnhub.io/api/news?id=c99475a523cf9400c7f7c78cde598ab9f4b39cb507ebab03f4d105f89f3d4f33"
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_finnhub_company_10",
+        "query_id": "stock_news_finnhub_company_9",
         "scoring_eligible": 1,
-        "note": "This is article-driven characterization of supply conditions, not a formal filing or earnings release.",
+        "note": "The rating was held steady, so this is more of a valuation reset than a full downgrade.",
         "directness": "direct"
       },
       {
         "ticker": "INTU",
         "type": "analyst_downgrade",
-        "event_date": "2026-07-20",
+        "event_date": null,
         "direction": "bear",
-        "confidence": 0.7,
-        "summary": "MarketBeat reported that Susquehanna issued a pessimistic forecast for Intuit (NASDAQ:INTU).",
+        "confidence": 0.71,
+        "summary": "Susquehanna issued a pessimistic forecast for Intuit's stock price.",
         "evidence": [
           {
             "title": "Susquehanna Issues Pessimistic Forecast for Intuit (NASDAQ:INTU) Stock Price - MarketBeat",
@@ -2010,75 +1928,56 @@
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_google_news_3",
+        "query_id": "stock_news_google_news_4",
         "scoring_eligible": 1,
-        "note": "This is an analyst sentiment event, not a company operational update.",
-        "directness": "direct"
-      },
-      {
-        "ticker": "APP",
-        "type": "analyst_downgrade",
-        "event_date": "2026-07-13",
-        "direction": "bear",
-        "confidence": 0.58,
-        "summary": "AppLovin shares fell after an analyst note focused on the company's e-commerce ads rollout.",
-        "evidence": [
-          {
-            "title": "AppLovin Stock Slides After Analyst Note On E-Commerce Ads Rollout - Investor's Business Daily",
-            "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQOGpDWkJBSEluZnJ0cm5wT0ViVDlhMU1YRUtjcWRGTjBuRUJyRFNzVW53M2Yza1ZPRGRQbWZIR3RDYnpsNU0xM0wzRTY3UFhoVzUyTjlEdFBqNzd5TFp6VWFRbmZLZk9QNUZmQ0J1d2dlWml4SU9YRlJvakVVdHFlakVn?oc=5"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "stock_news_google_news_7",
-        "scoring_eligible": 0,
-        "note": "The headline does not specify the exact analyst action, so this is a low-confidence sentiment read.",
-        "directness": "direct"
-      },
-      {
-        "ticker": "APP",
-        "type": "earnings_beat",
-        "event_date": "2026-07-17",
-        "direction": "neutral",
-        "confidence": 0.77,
-        "summary": "AppLovin reported strong Q4 earnings, but the stock still slumped in after-hours trading.",
-        "evidence": [
-          {
-            "title": "APP Stock Slumps After-Hours Despite Strong Q4 Earnings \u2014 Why Does Retail See This As A Buying Opportunity? - Stocktwits",
-            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQYlNTQUZYUnVKZWM4NllkWGE1ekt2NkpMMk90WlRqTF9ZM05USDZ1VXY1TVBqS2tDWFFWenZLMllSckZ2UC1Bdk02WDh4UHdXNVY2RVNxaWkwN1hSWS1pUVVfanBRc2RVMy1yS3daZUVIQ0E3UXBDQkZRNExJc09tYkNOaVZHdVNGU1NMVlZldUdPWld5eElJc0h2ZTFVcFNxZkJROTktMkdnOGhnNFl0d1hCb1ZsbUw5ZkNjOGJFQkJtZw?oc=5"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "stock_news_google_news_7",
-        "scoring_eligible": 1,
-        "note": "The headline gives no figures, so the beat is only characterized as strong by the source and the price reaction was mixed.",
+        "note": "The headline does not specify a rating change or target level, so this is treated as a sentiment-negative analyst call rather than a formal downgrade.",
         "directness": "direct"
       },
       {
         "ticker": "TLX",
-        "type": "trial_readout",
+        "type": "launch",
         "event_date": null,
-        "direction": "neutral",
-        "confidence": 0.58,
-        "summary": "Telix is testing a targeted therapy earlier in metastatic prostate cancer, according to the headline.",
+        "direction": "bull",
+        "confidence": 0.76,
+        "summary": "Telix started a Phase 3 targeted radiation study for kidney cancer.",
         "evidence": [
           {
-            "title": "Telix Tests Targeted Therapy Earlier in Metastatic Prostate Cancer - Stock Titan",
-            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdEdZeW13RHBtRnpfbkRyRzc0LThwZ1NRWm5QRm5tRzNieXBzTUFkRlNvLTE4MUR4dDRGVkdwQnRqY2JlaUNmdnJPdHpuRDR4MWFSY1pEV0ZHa3VVMXlnQzhKZ2ozRFB3VDdBdU9BWlAwVHVwdzNMSjVVeXF3dlFHZmZhWTlZdWkyMW14d0FnOVJYMXZmbW12RHdfZXJ0ejBvZk1kZlY3b25Fa0xYZ01SbTk4RmJMeXowMkhLYw?oc=5"
+            "title": "Telix Starts Phase 3 Targeted Radiation Study for Kidney Cancer - Stock Titan",
+            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSjE3NjlWN2RFeGlsVmxiaVpNTkoxR1Bqc0lJMWp6YS1lcWxPa3JiQ1E2N0xrbE1GNW8ySnlJY2xyZDR3dXZtZHlBbTNiY0dUVjFicGswRWh5UjItaVRVUXJDZmVES2EwcVNaeldIcThjazNyT2RrNmFSSTVDdzRNNDRkZThxZ1E2R0g3YWotUE1CU1pRd2JuRGVIOWM0SlZJcFhKUVlmM0Qxc1pRS1B6bDlQVDRtRk9mU3hlOA?oc=5"
           }
         ],
         "source": "gpt_news",
         "query_id": "stock_news_google_news_8",
-        "scoring_eligible": 0,
-        "note": "The headline does not specify whether the study was positive, negative, or commercially material.",
+        "scoring_eligible": 1,
+        "note": "Early-stage clinical catalyst; ultimate commercial impact depends on later trial results.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "TLX",
+        "type": "sector_catalyst",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.79,
+        "summary": "Telix's headline says a phase 3 catalyst was cleared and revenue is nearing US$1bn, pointing to a positive clinical and commercial inflection for TLX.",
+        "evidence": [
+          {
+            "title": "Telix Pharmaceuticals (ASX:TLX) Revenue Nears US$1bn as Phase 3 Catalyst Gets Cleared - Stocks Down Under",
+            "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE81Y1FBb1R6eEhNeENPakNtYWFsNG1hdVVYRE1wMklhMEhQcGNwVVBHRzhwR081OTJqWmx6ZzVaZjBkUmVJQUlQV0NMSjdOeUpzX1VJaC1XRXR0Q0lYRVVuYjJn?oc=5"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_google_news_9",
+        "scoring_eligible": 1,
+        "note": "Headline-level evidence only; no underlying trial data or exact catalyst timing is provided.",
         "directness": "direct"
       },
       {
         "ticker": "TLX",
         "type": "guidance_change",
-        "event_date": "2026-07-20",
+        "event_date": null,
         "direction": "bear",
-        "confidence": 0.62,
-        "summary": "A Telix Pharmaceuticals headline said Japan remains beyond guidance, indicating an ongoing shortfall versus expectations.",
+        "confidence": 0.58,
+        "summary": "Telix Pharmaceuticals is described as having Japan remain beyond guidance.",
         "evidence": [
           {
             "title": "Telix Pharmaceuticals trails ASX 200 by 8.3 points; Japan remains beyond guidance - TechStock\u00b2",
@@ -2086,18 +1985,56 @@
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_google_news_9",
+        "query_id": "stock_news_google_news_10",
+        "scoring_eligible": 0,
+        "note": "The evidence is indirect and does not state a formal guidance revision, so this is best treated as a guidance-risk readthrough rather than a confirmed update.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "MU",
+        "type": "guidance_change",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.84,
+        "summary": "Micron was cited as saying memory chip supply will remain tight beyond 2027, supporting a higher-stock read-through.",
+        "evidence": [
+          {
+            "title": "Why Micron Stock Is Rising After SK Hynix Warning - Barron's",
+            "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWjZrWnVvWFlLdkpfUEhfd0hkZU54c3puNGM1UkZQZ0s5LVltdElHajYxZVRvN19QU2ZUaFRXazRLT3M0ZkhkSFRSV19JSWRyWHBVb0NQeE1nb0ZzWkxkLTd4cnlWZzZibGhPSzlFeHBHa1NiN3o5TGJrX1BuaHJzalNn?oc=5"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_google_news_11",
         "scoring_eligible": 1,
-        "note": "The evidence is brief and does not quantify the revision or explain whether this is temporary or structural.",
+        "note": "The catalyst is based on media coverage of Micron's supply outlook rather than a directly quoted filing in the packet.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "MU",
+        "type": "analyst_upgrade",
+        "event_date": "2026-07-20",
+        "direction": "bull",
+        "confidence": 0.81,
+        "summary": "UBS raised Micron's stock price target on a strong free cash flow outlook.",
+        "evidence": [
+          {
+            "title": "UBS raises Micron stock price target on strong free cash flow outlook - Investing.com",
+            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSzRnakk0ck5zVElaaVp3VTJMTmlrNTZRNC1OZHhqR0tCWVZyb0RKb0RrUV9GdFFaV3pPVEpQRFltU3hfaFNaeEFfSjA1LWNKMWpmbTJuUXBxR0NVYjRJaXFXbjlWWmQzeW56UnV6YUhTWFpDcFRxMDFJTEl4UlZoRHREMkd1R1lPQUxkX29HRXh4dDNuRFJCWl83YWZlVm9UTlJFQ2lMUmxZSll2Yk5nV3BNeGEyZDMwZEdzc1o1b0I5VzlWQkhGcw?oc=5"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_google_news_12",
+        "scoring_eligible": 1,
+        "note": "Analyst target increase is supportive, though the snippet does not include the exact new target.",
         "directness": "direct"
       },
       {
         "ticker": "EQT",
         "type": "dividend",
         "event_date": "2026-07-15",
-        "direction": "bull",
-        "confidence": 0.9,
-        "summary": "EQT declared a quarterly cash dividend on July 15, 2026.",
+        "direction": "neutral",
+        "confidence": 0.96,
+        "summary": "EQT declared a quarterly cash dividend in a PR Newswire release published on 2026-07-15.",
         "evidence": [
           {
             "title": "EQT Declares Quarterly Cash Dividend - PR Newswire",
@@ -2105,75 +2042,92 @@
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_google_news_12",
+        "query_id": "stock_news_google_news_13",
         "scoring_eligible": 1,
-        "note": "The packet does not include the dividend amount or ex-dividend details.",
+        "note": "No ex-dividend or payment date is included in the evidence.",
         "directness": "direct"
       },
       {
-        "ticker": "FLUT",
-        "type": "sector_catalyst",
-        "event_date": null,
-        "direction": "bear",
-        "confidence": 0.66,
-        "summary": "FLUT fell after reports that Kalshi and Polymarket were in fundraising talks at a $20 billion valuation.",
-        "evidence": [
-          {
-            "title": "DKNG, FLUT Stocks Drop After Reported Fundraising Talks At Kalshi, Polymarket At $20B Valuation - Stocktwits",
-            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQN1lMOHpnT28tLTlpckdZR2ZHT3dvWHloaDFjRGMzSUU3ZWtNXzhVRUx0Wk9zaVljYk1PemRRNFJORm9welNVa0EyMlVHQXduc2Y0ZUxsSDlLZEEwSDg5V2t5SS05SEliMk1jZlB0LTVkLUNPWUlFQ0ZpUjhfcmtYWWpLckNxbkJxUHJaS3BqZjc2cUxWckoyQXlmMjRPZGdtbHdSV2g3Z00tYnljUW14Q1htellzbDA2VktBazJqLVowcFJ4QWlSLUtQbDBHV0VsOGllZFBDRGFSUEp2ZmJlb2ZqZTlLVGR5TGJ1dkNn?oc=5"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "stock_news_google_news_14",
-        "scoring_eligible": 0,
-        "note": "This is a sector readthrough rather than a company-specific announcement.",
-        "directness": "indirect",
-        "beneficiary_reason": "Rising competition from prediction markets could pressure sportsbook and online betting names like FLUT."
-      },
-      {
-        "ticker": "DKNG",
-        "type": "sector_catalyst",
-        "event_date": null,
-        "direction": "bear",
-        "confidence": 0.65,
-        "summary": "DKNG moved lower after reports of fundraising talks at Kalshi and Polymarket at a $20 billion valuation.",
-        "evidence": [
-          {
-            "title": "DKNG, FLUT Stocks Drop After Reported Fundraising Talks At Kalshi, Polymarket At $20B Valuation - Stocktwits",
-            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQN1lMOHpnT28tLTlpckdZR2ZHT3dvWHloaDFjRGMzSUU3ZWtNXzhVRUx0Wk9zaVljYk1PemRRNFJORm9welNVa0EyMlVHQXduc2Y0ZUxsSDlLZEEwSDg5V2t5SS05SEliMk1jZlB0LTVkLUNPWUlFQ0ZpUjhfcmtYWWpLckNxbkJxUHJaS3BqZjc2cUxWckoyQXlmMjRPZGdtbHdSV2g3Z00tYnljUW14Q1htellzbDA2VktBazJqLVowcFJ4QWlSLUtQbDBHV0VsOGllZFBDRGFSUEp2ZmJlb2ZqZTlLVGR5TGJ1dkNn?oc=5"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "stock_news_google_news_14",
-        "scoring_eligible": 0,
-        "note": "The evidence points to competitive pressure on gambling stocks, not a direct DKNG announcement.",
-        "directness": "indirect",
-        "beneficiary_reason": "If prediction markets gain funding and scale, traditional sportsbook operators like DKNG could face increased competitive pressure."
-      },
-      {
-        "ticker": "CNDCF",
-        "type": "dividend",
-        "event_date": "2026-07-20",
+        "ticker": "EQT",
+        "type": "acquisition",
+        "event_date": "2026-07-21",
         "direction": "neutral",
-        "confidence": 0.96,
-        "summary": "Canadian Banc declared a CAD 0.2055 dividend.",
+        "confidence": 0.62,
+        "summary": "Jefferies' downgrade of Intertek was tied in the headline to an EQT bid.",
         "evidence": [
           {
-            "title": "Canadian Banc declares CAD 0.2055 dividend",
-            "url": "https://seekingalpha.com/news/4615321-canadian-banc-declares-cad-0_2055-dividend?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+            "title": "Jefferies downgrades Intertek stock rating to hold on EQT bid - Investing.com",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQY2RIa1BZY3FvX1hMSEJlNEVETlZSZVpyZHNCdFdNWmYtXzF4VDdLR25zdy0zcXVBMFVpZjlGdEZuUTRGN21DeDhHdFlqOUsxTklnTFk2VVM3RVFTWjdVa3V6T0ZqN0M5SVdjbEY0eHpza3FBM3l3TXdvSHFULUhGNlFWblYyU3BqaEt3U1I4bC1TSW9feGYyeWR2MXZCTVdmaWE0NnlyRFhNcS1vQXVfcEpYWWV2MVB1ZWIta3B3?oc=5"
           }
         ],
         "source": "gpt_news",
-        "query_id": "stock_news_seeking_alpha",
+        "query_id": "stock_news_google_news_14",
         "scoring_eligible": 1,
-        "note": "Snippet does not include the record or payment date.",
+        "note": "The evidence suggests an EQT-related bid, but the article headline is about Intertek, so the catalyst is somewhat indirect and ambiguous.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "DRTS",
+        "type": "trial_readout",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.9,
+        "summary": "Alpha Tau rose after reporting Alpha DaRT head-and-neck cancer data.",
+        "evidence": [
+          {
+            "title": "Alpha Tau rises on Alpha DaRT head and neck cancer data",
+            "url": "https://seekingalpha.com/news/4615918-alpha-tau-rises-alpha-dart-head-and-neck-cancer-data?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_seeking_alpha_2",
+        "scoring_eligible": 1,
+        "note": "Clinical readout catalyst; the snippet does not include the efficacy metrics or the exact event date.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "SARO",
+        "type": "partnership",
+        "event_date": "2026-07-21",
+        "direction": "bull",
+        "confidence": 0.82,
+        "summary": "StandardAero signed a LEAP engine services agreement with aircraft lessor Avolon.",
+        "evidence": [
+          {
+            "title": "StandardAero signs LEAP engine services agreement with aircraft lessor Avolon",
+            "url": "https://seekingalpha.com/news/4615923-standardaero-signs-leap-engine-services-agreement-with-aircraft-lessor-avolon?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_seeking_alpha_3",
+        "scoring_eligible": 1,
+        "note": "Headline implies contract revenue/support, but the article text is not provided here.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "INTU",
+        "type": "launch",
+        "event_date": "2026-07-20",
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Intuit said it will revamp its DIY tax business with simpler products, more competitive pricing, and expanded financial services to attract cost-conscious filers.",
+        "evidence": [
+          {
+            "title": "Intuit's TurboTax Live Is Thriving: Can It Offset DIY Choppiness?",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/intuits-turbotax-live-thriving-offset-142900251.html"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_yfinance",
+        "scoring_eligible": 1,
+        "note": "The article frame is mixed because TurboTax Live is thriving while DIY demand is choppy.",
         "directness": "direct"
       }
     ],
     "theme_observations": [],
     "artifact": "/Users/antonis/Projects/bull-scouter/data/gpt_news_discovery/latest.json"
   },
-  "markdown": "# Stale option flow leans bullish, but news dispersion is wide\n\nGenerated: 2026-07-20T14:20:02.278574+00:00\nPortfolio as of: 2026-07-20T12:24:08Z\n\nToday\u2019s bounded evidence is dominated by company-specific catalysts in TTD, FLY, IBRX, B, and IBM, with several bullish headlines offset by stale ThetaData and high implied volatility. FLY and IBRX show the clearest alignment between positive news themes and prior bullish options flow, but both carry elevated IV and the flow snapshot is from 2026-07-16. TTD is the main divergence: retail-media and leadership updates are positive, while weak-outlook and software-budget headlines are bearish despite earlier bullish call-skew. IBM adds a negative enterprise-software spending read-through that may matter more for TTD than for IBM alone.\n\n## Daily Analysis - My Stocks\n- Opportunity FLY: pick_score=62 confidence=0.83 theta_adjusted=0.83 - Firefly said its Alpha Rocket returned to orbit successfully, a headline that coincided with a 5% overnight move in FLY stock.\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 3 macro headline(s), 1 macro event(s), 24 direct company event(s), 3 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 747.03 (+0.50% last close); WTI oil 81.62 (-1.05% last close); Gold 4014.10 (+0.03% last close) 3 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed.\n- Price snapshot: Market price snapshot: SPY 747.03 (+0.50% last close); WTI oil 81.62 (-1.05% last close); Gold 4014.10 (+0.03% last close)\nMacro headlines:\n- US Inflation Data Impacts Fed Rate Hike Outlook Amidst Geopoliti - GuruFocus (2026-07-15)\n- S&P 500 ETF gains on cooler-than-expected June CPI report, semiconductor stocks rebound - eciks.org (2026-07-14)\n- Gold prices face turbulence as oil, Fed risks increase - Bangkok Post (2026-07-16)\n- Macro event FLUT: bear confidence=0.79 theme=policy_catalyst - UK gambling bosses, including Flutter Entertainment via the Betting and Gaming Council, are weighing legal action against proposed Gambling Commission affordability checks for online customers spending over \u00a31,000 within 24 hours.\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-07-20 status=ok scanned_tickers=1 min_total_volume=500\nBreadth: tone=risk_off bullish=1 bearish=0 neutral=0 weighted_p/c=1.784 avg_flow_v2=3.0 held_bullish=0 held_bearish=0\nFlow extremes, not standalone picks:\n- Bullish extreme CELH: flow_v2=None flow=3.0 p/c=1.093 vol=11867 held=False\n\n### Notable Company Events\n- Company PSNL: bull confidence=0.97 theme=acquisition - Personalis entered into a definitive agreement to be acquired by Tempus AI.\n- Company CNDCF: neutral confidence=0.96 theme=dividend - Canadian Banc declared a CAD 0.2055 dividend.\n- Company CLSPF: neutral confidence=0.95 theme=dividend - Canadian Life Companies Split declared a CAD 0.10 dividend.\n- Company PSNL: bull confidence=0.93 theme=acquisition - Personalis is being acquired by Tempus AI in a $1.5 billion transaction.\n- Company EQT: bull confidence=0.9 theme=dividend - EQT declared a quarterly cash dividend on July 15, 2026.\n- Company EQT: neutral confidence=0.88 theme=earnings - EQT is scheduled to announce earnings results after market close on 2026-07-21.\n\n### Read-Through Themes\nGenerated candidates require follow-up confirmation:\n- FLUT: confidence=0.66 bucket=None - Rising competition from prediction markets could pressure sportsbook and online betting names like FLUT.\n- DKNG: confidence=0.65 bucket=None - If prediction markets gain funding and scale, traditional sportsbook operators like DKNG could face increased competitive pressure.\n- EVEX: confidence=0.58 bucket=None - EVEX is the named eVTOL-related ticker in the evidence packet, and progress on Embraer's eVTOL certification is a favorable read-through for the broader related business.\n\nPortfolio read-throughs:\n- sector_catalyst: The Trade Desk was cited as falling after IBM's earnings warning, which the article frames as a sign that enterprise customers may be cutting software budgets to fund hardware purchases. held=TTD confidence=0.55 theta_adjusted=0.55\n\n## Held Position Updates\n- TTD: risk - Fact: The Trade Desk had positive partnership and leadership headlines, including Seven-Eleven Japan retail purchase data integration and Ron Lamprecht joining as Chief Business Development Officer, but separate headlines cited weak outlook concerns, analyst downside risk, and IBM-related software budget pressure. Theta: ThetaData from 2026-07-16 showed bullish flow_score_v2 5.13, put-call ratio 0.394, 6 bullish days in 14, and 30-day ATM IV 0.8259, but the evidence marks the options context stale. Note: Inference: TTD has the sharpest news/options divergence; old bullish flow is not enough to confirm the newer bearish guidance and sector-budget risk, especially with elevated IV.\n- FLY: opportunity - Fact: Firefly Aerospace headlines cited a successful Alpha Rocket return to orbit, fresh NASA awards, and a Mars aeroshell-related deep-space hardware story, while one article said shares still slid nearly 7% amid short interest and technical weakness. Theta: ThetaData from 2026-07-16 showed bullish flow_score_v2 7.27, put-call ratio 0.305, 4 bullish days in 14, and very high 30-day ATM IV 1.1737; the context is stale. Note: Inference: FLY has strong theme alignment between space-execution news and prior bullish options flow, but price weakness and very high IV mean the signal is event-sensitive rather than clean.\n- IBRX: opportunity - Fact: IBRX headlines referenced a new Anktiva-NK cell therapy study, global Anktiva expansion, US regulatory heat, and buyout speculation tied to broader oncology competition. Theta: ThetaData from 2026-07-16 showed very bullish flow_score_v2 8.82, put-call ratio 0.261, 6 bullish days in 14, and 30-day ATM IV near 0.9953 from 2026-07-14; options context is stale. Note: Inference: IBRX has strong speculative alignment across oncology news and call-heavy flow, but the facts are mostly headline-level and include regulatory risk, so confidence should stay capped.\n- B: neutral - Fact: One article rated Barrick Mining Buy based on Q1 free cash flow, buybacks, and dividend support; another buyback item in the packet references News Corp ASX filings, creating possible issuer/ticker ambiguity. Theta: ThetaData from 2026-07-16 was mixed: flow_score 0.99, flow_score_v2 -0.93, put-call ratio 1.209, and 30-day ATM IV 0.493; context is stale. Note: Inference: The fundamental capital-return angle is constructive, but options evidence does not confirm it and one news item may be mis-mapped.\n- IBM: risk - Fact: IBM was linked to a second-quarter earnings warning and weakness in enterprise software spending; the packet did not include quantitative guidance details. Theta: No usable IBM ThetaData/options snapshot was provided. Note: Inference: IBM is a direct portfolio risk item and also a negative read-through for software/ad-tech demand, especially TTD.\n\n## Connecting Opportunities\n- space execution and government contracts: Firefly headlines combined successful Alpha Rocket return-to-orbit, NASA awards, and deep-space hardware ambitions. held=['FLY'] confidence=0.66\n- oncology platform consolidation and bladder-cancer optionality: Tempus-Personalis precision oncology M&A appeared in general news while IBRX headlines referenced Anktiva study activity, expansion, regulatory heat, and buyout speculation. held=['IBRX'] confidence=0.58\n- software budget pressure versus AI/hardware spend: IBM warning was framed as enterprise customers cutting software budgets to fund hardware purchases, with TTD cited as falling on the read-through. held=['IBM', 'TTD', 'MSFT', 'TEAM'] confidence=0.55\n- retail media data monetization: TTD integrated Seven-Eleven Japan retail purchase data and added senior leadership while separate headlines questioned outlook and downside risk. held=['TTD'] confidence=0.52\n- capital return versus options skepticism: B had bullish capital-return/re-rating commentary while options flow_score_v2 was negative and put-call ratio was above 1. held=['B'] confidence=0.43\n\n## Watch Items\n- Refresh held-ticker ThetaData before treating any options flow as confirmation; most held snapshots are from 2026-07-16 or earlier.\n- For TTD, watch for the actual weak-outlook details and whether current options flow flips bearish or remains call-skewed.\n- For FLY, monitor whether NASA/launch headlines translate into backlog, revenue timing, or follow-on awards, and whether short interest continues to pressure shares.\n- For IBRX, monitor primary-source study details, Anktiva regulatory updates, and whether oncology M&A chatter becomes formal strategic interest.\n- For B, verify whether the News Corp buyback item is incorrectly mapped to ticker B before using it in portfolio scoring.\n- For IBM, watch the actual Q2 warning details and software-spending commentary for read-through into TEAM, MSFT, and TTD.\n\n## Caveats\n- No browsing was performed; this oracle item uses only the bounded evidence supplied.\n- ThetaData/options evidence for held tickers is stale and explicitly marked not usable for positive confidence adjustment.\n- Several news items are headline or article-snippet level and lack primary filings, exact financial terms, or guidance numbers.\n- General ThetaData market breadth scanned only one ticker and had no held overlap, so it is not representative of broad market positioning.\n- This is not a trade recommendation.\n",
+  "markdown": "# Mixed portfolio tape: TTD risk, FLY/IBRX event optionality\n\nGenerated: 2026-07-21T14:20:03.000373+00:00\nPortfolio as of: 2026-07-21T12:24:38Z\n\nBounded evidence points to a mixed portfolio day: TTD carries the clearest risk stack, with weak-outlook and macro de-rating headlines aligning with bearish options flow. FLY and IBRX show bullish operational headlines and call-heavy flow, but both carry very high implied volatility and unconfirmed ThetaData alignment. B has a bullish re-rating headline and bullish flow, but several mapped news items look noisy or conflicting. The broader options evidence shows call-heavy reads in several held names without matching fresh news, so those are watch items rather than confirmed catalysts.\n\n## Daily Analysis - My Stocks\n- Opportunity FLY: pick_score=57 confidence=0.83 theta_adjusted=0.83 - Firefly Aerospace received a string of fresh NASA awards, which the article describes as a positive operational catalyst.\n- Risk TTD: pick_score=52 confidence=0.84 theta_adjusted=0.84 - TTD traded lower after a headline describing a weak outlook on July 18, 2026.\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 3 macro headline(s), 1 macro event(s), 23 direct company event(s), 1 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 745.28 (+0.43% last close); WTI oil 84.62 (+1.67% last close); Gold 4056.20 (+1.14% last close) 3 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed.\n- Price snapshot: Market price snapshot: SPY 745.28 (+0.43% last close); WTI oil 84.62 (+1.67% last close); Gold 4056.20 (+1.14% last close)\nMacro headlines:\n- US Inflation Data Impacts Fed Rate Hike Outlook Amidst Geopoliti - GuruFocus (2026-07-15)\n- S&P 500 ETF gains on cooler-than-expected June CPI report, semiconductor stocks rebound - eciks.org (2026-07-14)\n- Gold prices face turbulence as oil, Fed risks increase - Bangkok Post (2026-07-16)\n- Macro event FLUT: bear confidence=0.82 theme=policy_catalyst - UK gambling regulators are considering affordability checks for online customers spending over \u00a31,000 within 24 hours, which could increase compliance pressure on Flutter Entertainment.\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-07-21 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n### Notable Company Events\n- Company EQT: neutral confidence=0.96 theme=dividend - EQT declared a quarterly cash dividend in a PR Newswire release published on 2026-07-15.\n- Company DRTS: bull confidence=0.9 theme=trial_readout - Alpha Tau rose after reporting Alpha DaRT head-and-neck cancer data.\n- Company FLUT: bear confidence=0.84 theme=analyst_downgrade - Wells Fargo maintained Equal-Weight on Flutter Entertainment and cut its price target from $168 to $137.\n- Company MU: bull confidence=0.84 theme=guidance_change - Micron was cited as saying memory chip supply will remain tight beyond 2027, supporting a higher-stock read-through.\n- Company SARO: bull confidence=0.82 theme=partnership - StandardAero signed a LEAP engine services agreement with aircraft lessor Avolon.\n- Company CTSH: bull confidence=0.82 theme=partnership - Cognizant announced on July 2, 2026 that it joined the OpenAI Daybreak Cyber Partner Program and is using GPT-5.5 with Trusted Access for Cyber in its Frontier AI Cyber Defense services.\n\n### Read-Through Themes\nGenerated candidates require follow-up confirmation:\n- FLUT: confidence=0.66 bucket=None - FLUT operates in online sports betting, so share gains by prediction markets could pressure handle and margins.\n\nPortfolio read-throughs:\n- sector_catalyst: SpaceX aborted a Starship test flight, and the linked article reported a lower move in FLY. held=FLY confidence=0.67 theta_adjusted=0.67\n- sector_catalyst: TTD shares fell after IBM issued a second-quarter earnings warning that the article says may signal customers are cutting software budgets to fund hardware purchases. held=TTD confidence=0.54 theta_adjusted=0.54\n\n## Held Position Updates\n- TTD: risk - Fact: TTD had bearish headlines tied to weak outlook, oil-shock/rate-pressure tech selling, and an IBM software-budget read-through; it also had a bullish retail-data and leadership update from Seven-Eleven Japan integration. Theta: Theta/options: 2026-07-21 flow_score -3.99, put_call_ratio 1.911, spot 18.64, 30d ATM IV 0.8424; ThetaData confirmation marked unconfirmed. Note: Inference: TTD is the strongest news/options alignment on the risk side because bearish headlines match put-heavy flow, while the retail-data partnership has not overridden sentiment.\n- FLY: opportunity - Fact: FLY had bullish NASA-award and Alpha rocket return-to-orbit headlines, while a SpaceX Starship abort created an indirect negative sector read-through and the stock reportedly weakened despite awards. Theta: Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.343, spot 19.67, 30d ATM IV 1.192; ThetaData confirmation marked unconfirmed. Note: Inference: Operational news and call-heavy flow align positively, but very high IV and contradictory sector tape make this an event-volatility watch rather than a clean signal.\n- IBRX: neutral - Fact: IBRX had bullish headlines around Anktiva manufacturing expansion and global expansion, alongside commentary highlighting valuation, dilution, and cash-burn risks. Theta: Theta/options: 2026-07-21 flow_score 12.0, put_call_ratio 0.378, spot 7.50; IV snapshot is older, 2026-07-14, with 30d ATM IV 0.9953; ThetaData confirmation marked unconfirmed. Note: Inference: Options flow leans strongly bullish against a mixed fundamental narrative, so the divergence is between upside manufacturing/regulatory expectations and financing-risk concerns.\n- B: opportunity - Fact: A July 20 write-up framed Barrick Mining as Buy on strong Q1 free cash flow, buyback, and dividend; separate mapped headlines about Magnolia Oil & Gas and a Northfield/Columbia merger appear potentially noisy for ticker B. Theta: Theta/options: 2026-07-21 flow_score 6.0, put_call_ratio 0.299, spot 34.89, 30d ATM IV 0.4975; ThetaData confirmation marked unconfirmed. Note: Inference: The cleanest read is a moderate bullish alignment between the Barrick re-rating article and call-heavy flow, but noisy ticker mapping lowers conviction.\n- IBM: neutral - Fact: IBM was referenced indirectly through a second-quarter earnings warning that may signal customers cutting software budgets to fund hardware purchases. Theta: Theta/options: no latest options snapshot in local theta packet. Note: Inference: IBM matters mainly as a read-through into TTD and enterprise software sentiment, not as a confirmed options-backed IBM signal.\n- NFLX: neutral - Fact: No fresh bounded news event was provided for NFLX in the packet. Theta: Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.472, spot 67.60, 30d ATM IV 0.3721. Note: Inference: Bullish options tone exists without a matching news catalyst, so it remains a flow-only watch.\n- MSFT: neutral - Fact: No fresh bounded news event was provided for MSFT in the packet. Theta: Theta/options: 2026-07-21 flow_score 8.01, put_call_ratio 0.341, spot 402.29, 30d ATM IV 0.4908. Note: Inference: Call-heavy flow contrasts with the IBM-linked software-budget concern, creating a sector divergence to monitor.\n- COPX: neutral - Fact: No fresh bounded news event was provided for COPX in the packet. Theta: Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.363, spot 73.86, 30d ATM IV 0.4733. Note: Inference: Bullish options tone is present, but there is no bounded copper-sector news catalyst in this packet.\n- QS: neutral - Fact: No fresh bounded news event was provided for QS in the packet. Theta: Theta/options: 2026-07-21 flow_score 9.51, put_call_ratio 0.589, spot 5.89, 30d ATM IV 1.0467. Note: Inference: Strong call-heavy flow with high IV is notable, but absent news support keeps this as a watch item.\n- DRTS: neutral - Fact: No fresh bounded news event was provided for DRTS in the packet. Theta: Theta/options: 2026-07-21 flow_score 6.0, put_call_ratio 0.017, spot 13.47; IV snapshot 2026-07-15 shows 30d ATM IV 0.9402. Note: Inference: Extreme call skew and stale/high IV deserve monitoring, but no current news catalyst was supplied.\n- VIVO: neutral - Fact: No fresh bounded news event was provided for VIVO in the packet. Theta: Theta/options: 2026-07-21 flow_score 9.0, put_call_ratio 0.022, spot 3.79; IV snapshot 2026-07-14 shows 30d ATM IV 1.6689. Note: Inference: Very call-heavy flow plus very high stale IV suggests speculative attention, not a confirmed catalyst.\n- IGLD: risk - Fact: No fresh bounded news event was provided for IGLD in the packet. Theta: Theta/options: 2026-07-21 flow_score -9.0, put_call_ratio 29.647, spot 20.59; IV not provided. Note: Inference: This is the clearest options-only downside watch in the held list, but it lacks a news catalyst in the bounded evidence.\n\n## Connecting Opportunities\n- ad-tech and enterprise software budget pressure: TTD weak-outlook headlines plus IBM software-budget warning read-through held=['TTD', 'IBM', 'MSFT', 'TEAM'] confidence=0.72\n- commercial space execution and contract flow: FLY NASA awards and Alpha return-to-orbit headlines versus SpaceX Starship abort sector read-through held=['FLY'] confidence=0.68\n- biotech manufacturing scale versus financing risk: IBRX Anktiva manufacturing/global expansion headlines alongside dilution and cash-burn commentary held=['IBRX'] confidence=0.66\n- materials and hard-asset call demand: B bullish re-rating article and COPX bullish options flow, with no fresh COPX news catalyst held=['B', 'COPX'] confidence=0.55\n- speculative high-IV call clusters without news confirmation: Call-heavy Theta/options reads in QS, DRTS, VIVO, TEAM, and NFLX without matching fresh bounded news held=['QS', 'DRTS', 'VIVO', 'TEAM', 'NFLX'] confidence=0.46\n\n## Watch Items\n- TTD: next ThetaData confirmation after 2026-07-21 to see whether bearish flow persists or reverses after weak-outlook headlines.\n- FLY: whether NASA award and Alpha launch headlines overcome the negative SpaceX sector read-through and very high 30d ATM IV of 1.192.\n- IBRX: any formal filing or company update on Anktiva manufacturing, cash runway, or dilution risk.\n- B: verify ticker mapping for Magnolia Oil & Gas and Northfield/Columbia merger headlines before treating them as Barrick-relevant.\n- IGLD: investigate put-heavy options read with put_call_ratio 29.647 if new news appears.\n- QS, DRTS, VIVO: monitor whether high-IV bullish flow gains a real catalyst or fades.\n- General theta market: breadth scanner reported scanned_tickers 0, so portfolio-level options breadth is incomplete.\n\n## Caveats\n- No browsing was performed; this uses only the bounded discovery and local ThetaData/options packet.\n- Many ThetaData alignments are explicitly marked unconfirmed, and flow_score_v2 plus ThetaData put/call fields are null.\n- Some IV snapshots are stale, especially IBRX and VIVO from 2026-07-14 and DRTS from 2026-07-15.\n- Several news items are headline-level or market-commentary evidence rather than company filings.\n- B contains probable ticker-mapping noise, including headlines that may not relate to Barrick Mining.\n- This oracle item is informational and does not recommend trades.\n",
   "artifacts": {
     "oracle_json": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.json",
     "oracle_markdown": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.md",
