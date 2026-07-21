@@ -74,20 +74,57 @@
         "abstained": false
       },
       "oracle_note": {
-        "text": "P1 BUY 92/conf100 + P4 zone $270-$295 + Buffett 88. +5 confidence; starter limit <=$291, no chase above $295.",
+        "text": "P1 BUY 94/conf100 + P4 zone $270-$295 + Path5 88 + P3 DB candidate. +5 confidence; starter limit only, no chase >$295.",
         "written_at": "2026-07-21"
       }
     }
   ],
-  "oracle_watch_count": 1,
+  "oracle_watch_count": 4,
   "oracle_watch": [
+    {
+      "ticker": "ZTS",
+      "composite": 20,
+      "convergence_paths": [
+        "path3_strong_candidate"
+      ],
+      "spot_price": 76.2,
+      "oracle_note": {
+        "text": "Rescan/watch: P4 zone $74-$82 and current $76.20 alert; animal health value reset. Half-size only, no positive modifier without flow.",
+        "written_at": "2026-07-21"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ACN",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 144.73,
+      "oracle_note": {
+        "text": "Rescan: independent source=both BUY + Path5 82, but Path1 is STALE 153d and price anchors conflict ($223 context vs ~$142 alert).",
+        "written_at": "2026-07-21"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "CAPR",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 19.5,
+      "oracle_note": {
+        "text": "Rescan: independent cites AdCom 2026-07-29/PDUFA 2026-08-22, while catalyst_events show stale July rows. Fix calendar first.",
+        "written_at": "2026-07-21"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "MP",
       "composite": 0,
       "convergence_paths": [],
       "spot_price": 45.7,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: independent source=both BUY, policy-backed rare-earth thesis; negative FCF/sector oversupply keep this small and limit-only.",
+        "text": "Rescan/oracle_watch: independent source=both BUY, policy-backed rare-earth thesis; current $45.70 is below P4 zone and FCF risk high.",
         "written_at": "2026-07-21"
       },
       "filter_reason": "below_cutoff"
@@ -153,8 +190,11 @@
         "latest_filings": []
       },
       "rationale_one_liner": "flow-extreme: 10d streak, P/C 0.000 (0:1 calls) + watchlist dip alert. Earnings 14d.",
-      "watchlist_thesis": "FDA approved AVLAYAH. Binary RESOLVED. Flow +9.0. ABOVE zone at $20. Post-5/8 limit $17.50-18.",
-      "oracle_note": null,
+      "watchlist_thesis": "Deep Buy T1 flow_extreme, but P4 says FDA approved AVLAYAH; binary resolved and spot is above $16-$19 zone. Post-launch pullback only.",
+      "oracle_note": {
+        "text": "deep_buy rank #1 composite 40 (flow_extreme); my -6 modifier reflects P4 FDA approved AVLAYAH, binary resolved, spot above zone.",
+        "written_at": "2026-07-21"
+      },
       "macro_filter": {
         "pass": true,
         "result": "PASS",
@@ -226,8 +266,11 @@
         "latest_filings": []
       },
       "rationale_one_liner": "flow-extreme: 10d streak, P/C 0.000 (0:1 calls) + watchlist dip alert. Earnings 14d.",
-      "watchlist_thesis": "FDA approved AVLAYAH. Binary RESOLVED. Flow +9.0. ABOVE zone at $20. Post-5/8 limit $17.50-18.",
-      "oracle_note": null,
+      "watchlist_thesis": "Deep Buy T1 flow_extreme, but P4 says FDA approved AVLAYAH; binary resolved and spot is above $16-$19 zone. Post-launch pullback only.",
+      "oracle_note": {
+        "text": "deep_buy rank #1 composite 40 (flow_extreme); my -6 modifier reflects P4 FDA approved AVLAYAH, binary resolved, spot above zone.",
+        "written_at": "2026-07-21"
+      },
       "macro_filter": {
         "pass": true,
         "result": "PASS",
