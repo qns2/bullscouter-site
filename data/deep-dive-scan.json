@@ -2,91 +2,96 @@
   "scan_date": "2026-07-21",
   "value_picks": [
     {
-      "ticker": "ACN",
-      "name": "Accenture plc",
-      "price": 144.73,
+      "ticker": "B",
+      "name": "Barrick Mining Corporation",
+      "price": 34.89,
       "opus_recommendation": "BUY",
       "framework": {
         "fcf_yield": {
           "verdict": "pass",
-          "detail": "Free cash flow yield is 13.65% from free_cashflow 12089380864 and market_cap 88566374400, above the 7% pass threshold."
+          "detail": "free_cashflow 5272124928 / market_cap 58599096320 = 8.9969%, above the 7% pass threshold."
         },
         "pe_discount": {
-          "verdict": "borderline",
-          "detail": "Forward PE is 9.864401 versus implied PE of 12.20 from target_median_price 179.0 and forward_eps 14.67195, a 19.15% discount."
+          "verdict": "pass",
+          "detail": "target_median_price 56.9 / forward_eps 4.52172 = implied PE 12.5837; forward_pe 7.71609 is 38.68% below implied PE."
         },
         "drawdown": {
           "verdict": "pass",
-          "detail": "down_from_high_pct is 50.28%, above the 35% pass threshold."
+          "detail": "down_from_high_pct is 36.2, above the 35% pass threshold."
         },
         "balance_sheet": {
           "verdict": "pass",
-          "detail": "Net cash is positive: total_cash 10171567104 exceeds total_debt 8388769792; current_ratio is 1.339 and debt_to_equity is 25.035."
+          "detail": "total_cash 7130999808 exceeds total_debt 4726000128, and current_ratio is 3.064."
         },
         "dividend": {
           "verdict": "pass",
-          "detail": "dividend_yield is 4.54 and payout_ratio is 0.5088, satisfying yield above 2% and payout below 70%."
+          "detail": "dividend_yield is 2.01 and payout_ratio is 0.2334, meeting yield >2% and payout <70%."
         },
         "institutional": {
-          "verdict": "pass",
-          "detail": "held_pct_institutions is 0.85447 and recommendation_mean is 2.07407; analyst buy ratio is 14 of 27."
+          "verdict": "borderline",
+          "detail": "held_pct_institutions is 0.67210996 and recommendation_mean is 1.91667; analyst_distribution shows 18 strong_buy plus buy out of 24 total."
         },
         "score": 5.5
       },
       "ai_exposure": {
-        "verdict": "tailwind",
-        "detail": "The company_description explicitly includes data, AI, cloud, automation, software engineering, and technology services, making AI a direct demand driver."
+        "verdict": "neutral",
+        "detail": "The company description centers on gold, copper, silver, and energy materials; AI is not a direct driver in the provided data."
       },
       "deal_radar": {
-        "options_signal": "Recent options activity is mixed: on 2026-07-21 total_call_volume was 6554, total_put_volume was 6916, put_call_ratio was 1.055, and flow_score was 0.99 after stronger positive flow_score readings of 6.0 on 2026-07-16 and 5.01 on 2026-07-15.",
+        "options_signal": "options_history uses expiry ALL; one record shows total_call_volume 7398, total_put_volume 2211, put_call_ratio 0.299, max_call_strike 36.0, and flow_score 6.0.",
         "capex_exposure": null,
-        "assessment": "Value setup is strong, but verified catalysts are bearish and options flow is no longer clearly one-sided."
+        "assessment": "Options flow contains bullish call-heavy records, while no capex_signals were provided."
       },
       "financials": {
-        "current_price": "$144.73",
-        "range_52w": "$118.15 - $291.09",
-        "forward_pe": "9.864401"
+        "current_price": "$34.89",
+        "range_52w": "$20.95 - $54.69",
+        "forward_pe": "7.71609"
       },
       "catalysts_verified": [
-        "Barron's reported that Accenture was downgraded by an analyst on 2026-06-22.",
-        "Accenture shares fell 7.6% on June 23, 2026 as the stock extended its post-earnings selloff, which had erased nearly a quarter of the company's value in under a week."
+        "Barrick is scheduled to report Q2 2026 numbers on August 10, 2026.",
+        "B of A Securities maintained Buy on Barrick Mining and lowered its price target from $58 to $56 on 2026-07-09.",
+        "Scotiabank maintained Sector Outperform on Barrick Mining but lowered its price target from $63 to $57.",
+        "Barrick Mining was described as falling despite record gold prices, with the article citing leadership changes, geopolitical friction, and strategic overhauls as the drivers.",
+        "Barrick Mining said it crushed Q1 gold production guidance and posted 67% year-over-year revenue growth.",
+        "Barrick Mining was rated Buy in a July 20 article citing strong Q1 free cash flow, buybacks, and a new dividend.",
+        "U.S. producer inflation fell 0.3% in June, and gold miners were among the stocks that rallied in pre-market trading."
       ],
       "catalysts_general": [
-        "Free cash flow yield is 13.65%.",
-        "The stock is 50.28% below its 52-week high.",
-        "Forward PE trades at a 19.15% discount to the implied PE from the median target price."
+        "FCF yield is 8.9969%, the strongest value signal in this set.",
+        "forward_pe 7.71609 is materially below implied PE 12.5837 from target_median_price and forward_eps.",
+        "revenue_growth is 0.667 and earnings_growth is 2.542, while down_from_high_pct is 36.2."
       ],
       "downside_scenarios": [
         {
-          "price": 130.0,
-          "pe_at_level": "8.86x forward_eps",
-          "scenario": "Retest of target_low_price."
+          "price": 29,
+          "pe_at_level": "6.41x using forward_eps 4.52172",
+          "scenario": "Shares fall to target_low_price 29.0."
         },
         {
-          "price": 118.15,
-          "pe_at_level": "8.05x forward_eps",
-          "scenario": "Retest of price_52w_low."
+          "price": 20.95,
+          "pe_at_level": "4.63x using forward_eps 4.52172",
+          "scenario": "Shares retest price_52w_low 20.95."
         }
       ],
       "ideal_entry": {
-        "price": 144.73,
-        "reasoning": "Current price is supported by a 5.5 framework score, 13.65% FCF yield, net cash, and dividend support."
+        "price": 34.89,
+        "reasoning": "current_price 34.89 already combines a 36.2 down_from_high_pct, 8.9969% FCF yield, and forward_pe 7.71609."
       },
       "comparables": [
         {
-          "ticker": "INTU",
-          "forward_pe": "10.757606",
-          "growth": "revenue_growth 0.104, earnings_growth 0.107",
-          "note": "Input same-sector Technology comparable, different industry."
+          "ticker": "NEM",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External gold-industry comparable; numbers are not in the provided dataset."
         },
         {
-          "ticker": "CTSH",
-          "forward_pe": "not_provided",
-          "growth": "not_provided",
-          "note": "External Information Technology Services comparable; no financial numbers used."
+          "ticker": "AEM",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External gold-industry comparable; numbers are not in the provided dataset."
         }
       ],
-      "analyst_take": "ACN is the cleanest value case in the group: high FCF yield, deep drawdown, net cash, dividend coverage, and strong institutional ownership. The main caution is that verified catalysts are bearish, so the BUY depends on accepting near-term sentiment risk."
+      "analyst_take": "The analyst_distribution shows 7 strong_buy, 11 buy, 4 hold, 1 sell, and 1 strong_sell out of 24 total, with recommendation_mean 1.91667. The valuation, FCF yield, drawdown, balance sheet, and dividend all support BUY, with institutional ownership the only borderline criterion."
     },
     {
       "ticker": "INTU",
@@ -96,84 +101,84 @@
       "framework": {
         "fcf_yield": {
           "verdict": "borderline",
-          "detail": "Free cash flow yield is 6.51% from free_cashflow 5232000000 and market_cap 80370638848, within the 4-7% borderline range."
+          "detail": "free_cashflow 5232000000 / market_cap 80370638848 = 6.5098%, within the 4-7% borderline range."
         },
         "pe_discount": {
           "verdict": "pass",
-          "detail": "Forward PE is 10.757606 versus implied PE of 16.66 from target_median_price 455.0 and forward_eps 27.31277, a 35.42% discount."
+          "detail": "target_median_price 455.0 / forward_eps 27.33035 = implied PE 16.6482; forward_pe 10.750686 is 35.42% below implied PE."
         },
         "drawdown": {
           "verdict": "pass",
-          "detail": "down_from_high_pct is 63.89%, above the 35% pass threshold."
+          "detail": "down_from_high_pct is 63.89, above the 35% pass threshold."
         },
         "balance_sheet": {
           "verdict": "pass",
-          "detail": "Net cash is slightly negative, but debt_to_equity is 33.448 and current_ratio is 1.453, satisfying D/E below 50 and CR above 1.2."
+          "detail": "total_cash 6780000256 is below total_debt 6899999744, but debt_to_equity 33.448 and current_ratio 1.453 meet the pass threshold."
         },
         "dividend": {
           "verdict": "borderline",
-          "detail": "dividend_yield is 1.65 and payout_ratio is 0.2831, below the pass yield threshold but within the borderline dividend range."
+          "detail": "dividend_yield is 1.63 and payout_ratio is 0.2831, meeting yield >0 and payout <90% but not yield >2%."
         },
         "institutional": {
           "verdict": "pass",
-          "detail": "held_pct_institutions is 0.93884003 and recommendation_mean is 1.71429; analyst buy ratio is 27 of 35."
+          "detail": "held_pct_institutions is 0.93818 and recommendation_mean is 1.71429; analyst_distribution shows 27 strong_buy plus buy out of 35 total."
         },
-        "score": 5.0
+        "score": 5
       },
       "ai_exposure": {
         "verdict": "tailwind",
-        "detail": "Financial management, compliance, payments, tax, and small-business software are areas where automation can improve product value and retention."
+        "detail": "The company description includes financial management, compliance, payments, marketing products, and QuickBooks services, which are software workflows where AI can improve automation and productivity."
       },
       "deal_radar": {
-        "options_signal": "Recent flow is moderately bullish: on 2026-07-21 total_call_volume was 7656, total_put_volume was 3838, put_call_ratio was 0.501, and flow_score was 1.5; 2026-07-15 also showed flow_score 2.49.",
+        "options_signal": "options_history uses expiry ALL; one record shows total_call_volume 7656, total_put_volume 3838, put_call_ratio 0.501, max_call_strike 270.0, and flow_score 1.5.",
         "capex_exposure": null,
-        "assessment": "Strong analyst and institutional support offsets only borderline FCF yield and dividend yield."
+        "assessment": "Options flow is mixed but call volume exceeds put volume in the cited expiry ALL record; no capex_signals were provided."
       },
       "financials": {
         "current_price": "$293.82",
         "range_52w": "$252.84 - $813.7",
-        "forward_pe": "10.757606"
+        "forward_pe": "10.750686"
       },
       "catalysts_verified": [
         "Intuit was upgraded to a Zacks Rank #2 (Buy), reflecting increased optimism about its earnings prospects.",
         "MarketBeat reported that Susquehanna issued a pessimistic forecast for Intuit (NASDAQ:INTU)."
       ],
       "catalysts_general": [
-        "The stock is 63.89% below its 52-week high.",
-        "Forward PE trades at a 35.42% discount to the implied PE from the median target price.",
-        "Institutional ownership is 0.93884003."
+        "down_from_high_pct is 63.89, the deepest drawdown among the software names provided.",
+        "forward_pe 10.750686 is 35.42% below implied PE 16.6482.",
+        "gross_margins are 0.80793 and operating_margins are 0.46974."
       ],
       "downside_scenarios": [
         {
-          "price": 252.84,
-          "pe_at_level": "9.26x forward_eps",
-          "scenario": "Retest of price_52w_low."
+          "price": 250,
+          "pe_at_level": "9.15x using forward_eps 27.33035",
+          "scenario": "Shares fall to target_low_price 250.0."
         },
         {
-          "price": 250.0,
-          "pe_at_level": "9.15x forward_eps",
-          "scenario": "Retest of target_low_price."
+          "price": 252.84,
+          "pe_at_level": "9.25x using forward_eps 27.33035",
+          "scenario": "Shares retest price_52w_low 252.84."
         }
       ],
       "ideal_entry": {
         "price": 293.82,
-        "reasoning": "Current price already reflects a 63.89% drawdown and 35.42% forward PE discount to implied analyst PE."
+        "reasoning": "current_price 293.82 is paired with a 63.89 down_from_high_pct and forward_pe 10.750686."
       },
       "comparables": [
         {
-          "ticker": "ACN",
-          "forward_pe": "9.864401",
-          "growth": "revenue_growth 0.056, earnings_growth 0.09",
-          "note": "Input same-sector Technology comparable, different industry."
+          "ticker": "ADBE",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External software-application comparable; numbers are not in the provided dataset."
         },
         {
-          "ticker": "ADBE",
-          "forward_pe": "not_provided",
-          "growth": "not_provided",
-          "note": "External software comparable; no financial numbers used."
+          "ticker": "CRM",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External software-application comparable; numbers are not in the provided dataset."
         }
       ],
-      "analyst_take": "INTU screens as a BUY because the valuation discount, drawdown, balance sheet, and institutional support are all strong. The weaker points are only borderline FCF yield and dividend yield, not structural balance-sheet stress."
+      "analyst_take": "The analyst_distribution shows 6 strong_buy, 21 buy, 6 hold, 1 sell, and 1 strong_sell out of 35 total, with recommendation_mean 1.71429. The FCF yield is only borderline, but the drawdown, PE discount, balance sheet, and institutional conviction support BUY."
     },
     {
       "ticker": "BSX",
@@ -183,38 +188,38 @@
       "framework": {
         "fcf_yield": {
           "verdict": "borderline",
-          "detail": "Free cash flow yield is 4.31% from free_cashflow 2807124992 and market_cap 65057767424, within the 4-7% borderline range."
+          "detail": "free_cashflow 2807124992 / market_cap 65057767424 = 4.3148%, within the 4-7% borderline range."
         },
         "pe_discount": {
           "verdict": "pass",
-          "detail": "Forward PE is 11.789741 versus implied PE of 18.85 from target_median_price 70.0 and forward_eps 3.71255, a 37.47% discount."
+          "detail": "target_median_price 70.0 / forward_eps 3.71255 = implied PE 18.8550; forward_pe 11.789741 is 37.47% below implied PE."
         },
         "drawdown": {
           "verdict": "pass",
-          "detail": "down_from_high_pct is 60.03%, above the 35% pass threshold."
+          "detail": "down_from_high_pct is 60.03, above the 35% pass threshold."
         },
         "balance_sheet": {
           "verdict": "pass",
-          "detail": "Net cash is negative, but debt_to_equity is 42.25 and current_ratio is 1.9, satisfying D/E below 50 and CR above 1.2."
+          "detail": "total_cash 1452999936 is below total_debt 11029000192, but debt_to_equity 42.25 and current_ratio 1.9 meet the pass threshold."
         },
         "dividend": {
-          "verdict": "insufficient_data",
-          "detail": "dividend_yield is missing from the input data, so dividend sustainability cannot be scored."
+          "verdict": "borderline",
+          "detail": "dividend_yield is missing and payout_ratio is 0.0; no dividend is treated as neutral and counted as borderline."
         },
         "institutional": {
           "verdict": "pass",
-          "detail": "held_pct_institutions is 0.94039 and recommendation_mean is 1.5; analyst buy ratio is 26 of 30."
+          "detail": "held_pct_institutions is 0.93911004 and recommendation_mean is 1.5; analyst_distribution shows 26 strong_buy plus buy out of 30 total."
         },
-        "score": 4.5
+        "score": 5
       },
       "ai_exposure": {
         "verdict": "neutral",
-        "detail": "The company_description focuses on medical devices and does not identify AI as a direct business driver."
+        "detail": "The company description focuses on medical devices across MedSurg and Cardiovascular; the provided data does not show a direct AI revenue driver."
       },
       "deal_radar": {
-        "options_signal": "Options flow is mixed but recently improved: on 2026-07-21 total_call_volume was 5418, total_put_volume was 5008, put_call_ratio was 0.924, and flow_score was 2.49, after bearish flow_score readings of -6.0 on 2026-07-08 and 2026-07-07 and -7.5 on 2026-07-04.",
+        "options_signal": "options_history uses expiry ALL; one record shows total_call_volume 5418, total_put_volume 5008, put_call_ratio 0.924, max_call_strike 45.0, and flow_score 2.49.",
         "capex_exposure": null,
-        "assessment": "Valuation and analyst support are attractive, but bearish verified catalysts and missing dividend data keep it on WATCHLIST."
+        "assessment": "Options flow is not strongly directional in the cited expiry ALL record, and catalyst_events include several negative items; no capex_signals were provided."
       },
       "financials": {
         "current_price": "$43.77",
@@ -228,134 +233,36 @@
         "BSX received EFFECT notice; registration statement is effective."
       ],
       "catalysts_general": [
-        "The stock is 60.03% below its 52-week high.",
-        "Forward PE trades at a 37.47% discount to the implied PE from the median target price.",
-        "Institutional ownership is 0.94039 and recommendation_mean is 1.5."
+        "down_from_high_pct is 60.03 and current_price 43.77 is close to price_52w_low 42.2.",
+        "forward_pe 11.789741 is 37.47% below implied PE 18.8550.",
+        "free_cashflow yield is 4.3148%, which is only borderline under the value framework."
       ],
       "downside_scenarios": [
         {
           "price": 42.2,
-          "pe_at_level": "11.37x forward_eps",
-          "scenario": "Retest of price_52w_low."
+          "pe_at_level": "11.37x using forward_eps 3.71255",
+          "scenario": "Shares retest price_52w_low 42.2."
         }
       ],
       "ideal_entry": {
         "price": 42.2,
-        "reasoning": "The 52-week low offers a cleaner entry while verified catalysts remain bearish."
+        "reasoning": "price_52w_low 42.2 offers a cleaner entry because catalyst_events include soft guidance and target cuts."
       },
       "comparables": [
         {
           "ticker": "MDT",
-          "forward_pe": "not_provided",
-          "growth": "not_provided",
-          "note": "External Medical Devices comparable; no financial numbers used."
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External medical-device comparable; numbers are not in the provided dataset."
         },
         {
-          "ticker": "ISRG",
-          "forward_pe": "not_provided",
-          "growth": "not_provided",
-          "note": "External Medical Devices comparable; no financial numbers used."
+          "ticker": "EW",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External medical-device comparable; numbers are not in the provided dataset."
         }
       ],
-      "analyst_take": "BSX has a strong valuation discount and excellent institutional support, but the setup is not clean enough for BUY under a value framework. The bearish catalyst packet and missing dividend data make WATCHLIST the more disciplined call."
-    },
-    {
-      "ticker": "B",
-      "name": "Barrick Mining Corporation",
-      "price": 34.89,
-      "opus_recommendation": "BUY",
-      "framework": {
-        "fcf_yield": {
-          "verdict": "pass",
-          "detail": "Free cash flow yield is 9.00% from free_cashflow 5272124928 and market_cap 58599096320, above the 7% pass threshold."
-        },
-        "pe_discount": {
-          "verdict": "pass",
-          "detail": "Forward PE is 7.71609 versus implied PE of 12.58 from target_median_price 56.9 and forward_eps 4.52172, a 38.68% discount."
-        },
-        "drawdown": {
-          "verdict": "pass",
-          "detail": "down_from_high_pct is 36.2%, above the 35% pass threshold."
-        },
-        "balance_sheet": {
-          "verdict": "pass",
-          "detail": "Net cash is positive: total_cash 7130999808 exceeds total_debt 4726000128; current_ratio is 3.064 and debt_to_equity is 12.852."
-        },
-        "dividend": {
-          "verdict": "borderline",
-          "detail": "dividend_yield is 2.0 and payout_ratio is 0.2334; yield is not above the strict >2% pass threshold but payout is below 90%."
-        },
-        "institutional": {
-          "verdict": "borderline",
-          "detail": "held_pct_institutions is 0.67196 and recommendation_mean is 1.91667; analyst buy ratio is 18 of 24."
-        },
-        "score": 5.0
-      },
-      "ai_exposure": {
-        "verdict": "neutral",
-        "detail": "The company_description focuses on gold, copper, silver, and mineral production, with no direct AI demand link in the input."
-      },
-      "deal_radar": {
-        "options_signal": "Options flow is strongly bullish: on 2026-07-21 total_call_volume was 7398, total_put_volume was 2211, put_call_ratio was 0.299, otm_call_volume was 4415, and flow_score was 6.0.",
-        "capex_exposure": null,
-        "assessment": "The combination of FCF yield, net cash, valuation discount, buyback catalyst, and bullish options flow supports BUY despite commodity and catalyst noise."
-      },
-      "financials": {
-        "current_price": "$34.89",
-        "range_52w": "$20.95 - $54.69",
-        "forward_pe": "7.71609"
-      },
-      "catalysts_verified": [
-        "News Corp reported daily ASX filings showing $372.3M in repurchases under its $1B 2025 buyback program.",
-        "Barrick is scheduled to report Q2 2026 numbers on August 10, 2026.",
-        "B of A Securities maintained Buy on Barrick Mining and lowered its price target from $58 to $56 on 2026-07-09.",
-        "Clear Street initiated coverage on REalloys with a Buy rating and a $35 price target.",
-        "Scotiabank maintained Sector Outperform on Barrick Mining but lowered its price target from $63 to $57.",
-        "Barrick Mining was described as falling despite record gold prices, with the article citing leadership changes, geopolitical friction, and strategic overhauls as the drivers.",
-        "Barrick Mining said it crushed Q1 gold production guidance and posted 67% year-over-year revenue growth.",
-        "Barrick Mining was rated Buy in a July 20 article citing strong Q1 free cash flow, buybacks, and a new dividend.",
-        "U.S. producer inflation fell 0.3% in June, and gold miners were among the stocks that rallied in pre-market trading.",
-        "News Corp (NWS) updated the ASX on $1B stock repurchase activity.",
-        "A CNBC report tied to B said Solstice CEO defended a $14.5B acquisition after the stock plunged 15%.",
-        "B was associated in the evidence packet with a Q4 adjusted EPS and sales beat versus estimates.",
-        "Trident founder converted US$8M of debt as a Nasdaq share-trading shift nears."
-      ],
-      "catalysts_general": [
-        "Free cash flow yield is 9.00%.",
-        "Forward PE trades at a 38.68% discount to the implied PE from the median target price.",
-        "total_cash exceeds total_debt and current_ratio is 3.064."
-      ],
-      "downside_scenarios": [
-        {
-          "price": 29.0,
-          "pe_at_level": "6.41x forward_eps",
-          "scenario": "Retest of target_low_price."
-        },
-        {
-          "price": 20.95,
-          "pe_at_level": "4.63x forward_eps",
-          "scenario": "Retest of price_52w_low."
-        }
-      ],
-      "ideal_entry": {
-        "price": 34.89,
-        "reasoning": "Current price is supported by a 9.00% FCF yield, net cash, and bullish options flow."
-      },
-      "comparables": [
-        {
-          "ticker": "NEM",
-          "forward_pe": "8.322688",
-          "growth": "revenue_growth 0.458, earnings_growth 0.786",
-          "note": "Input same-sector and same-industry Gold comparable."
-        },
-        {
-          "ticker": "AEM",
-          "forward_pe": "not_provided",
-          "growth": "not_provided",
-          "note": "External Gold comparable; no financial numbers used."
-        }
-      ],
-      "analyst_take": "Barrick is a BUY on the provided data because the value metrics are broad-based: FCF yield, PE discount, drawdown, and balance sheet all pass. Institutional conviction is only borderline, but the buyback and options flow improve the setup."
+      "analyst_take": "The analyst_distribution shows 7 strong_buy, 19 buy, and 4 hold out of 30 total, with recommendation_mean 1.5. The score is strong, but negative catalyst_events around price-target cuts, soft 2026 guidance, and device demand make this WATCHLIST rather than BUY."
     },
     {
       "ticker": "OLED",
@@ -365,160 +272,242 @@
       "framework": {
         "fcf_yield": {
           "verdict": "fail",
-          "detail": "Free cash flow yield is 3.39% from free_cashflow 129271624 and market_cap 3812067840, below the 4% fail threshold."
+          "detail": "free_cashflow 129271624 / market_cap 3812067840 = 3.3911%, below the 4% fail threshold."
         },
         "pe_discount": {
           "verdict": "pass",
-          "detail": "Forward PE is 16.555706 versus implied PE of 24.36 from target_median_price 120.0 and forward_eps 4.92519, a 32.05% discount."
+          "detail": "target_median_price 120.0 / forward_eps 4.92519 = implied PE 24.3645; forward_pe 16.555706 is 32.05% below implied PE."
         },
         "drawdown": {
           "verdict": "pass",
-          "detail": "down_from_high_pct is 47.08%, above the 35% pass threshold."
+          "detail": "down_from_high_pct is 46.84, above the 35% pass threshold."
         },
         "balance_sheet": {
           "verdict": "pass",
-          "detail": "Net cash is positive: total_cash 516408000 exceeds total_debt 22113000; current_ratio is 9.536 and debt_to_equity is 1.298."
+          "detail": "total_cash 516408000 exceeds total_debt 22113000, and current_ratio is 9.536."
         },
         "dividend": {
           "verdict": "pass",
-          "detail": "dividend_yield is 2.49 and payout_ratio is 0.412, satisfying yield above 2% and payout below 70%."
+          "detail": "dividend_yield is 2.45 and payout_ratio is 0.412, meeting yield >2% and payout <70%."
         },
         "institutional": {
           "verdict": "pass",
-          "detail": "held_pct_institutions is 0.90805 and recommendation_mean is 1.77778; analyst buy ratio is 6 of 9."
+          "detail": "held_pct_institutions is 0.90812 and recommendation_mean is 1.77778; analyst_distribution shows 6 strong_buy plus buy out of 9 total."
         },
-        "score": 5.0
+        "score": 5
       },
       "ai_exposure": {
         "verdict": "neutral",
-        "detail": "The company_description focuses on OLED materials and display technology; the input does not show direct AI exposure."
+        "detail": "The company description centers on OLED technologies and materials; the provided data does not show a direct AI revenue driver."
       },
       "deal_radar": {
-        "options_signal": "Options flow turned bearish on 2026-07-21: total_call_volume was 129, total_put_volume was 660, put_call_ratio was 5.116, otm_put_volume was 633, and flow_score was -3.0 after several earlier positive flow_score readings.",
+        "options_signal": "options_history uses expiry ALL; one record shows total_call_volume 129, total_put_volume 660, put_call_ratio 5.116, max_call_strike 100.0, and flow_score -3.0.",
         "capex_exposure": null,
-        "assessment": "The valuation screen is attractive, but failed FCF yield, negative revenue_growth, negative earnings_growth, and fresh bearish options flow keep it on WATCHLIST."
+        "assessment": "The cited expiry ALL options record is put-heavy, while balance sheet and dividend data are strong; no capex_signals were provided."
       },
       "financials": {
         "current_price": "$81.54",
-        "range_52w": "$77.15 - $154.07",
+        "range_52w": "$77.15 - $153.38",
         "forward_pe": "16.555706"
       },
       "catalysts_verified": [],
       "catalysts_general": [
-        "Forward PE trades at a 32.05% discount to the implied PE from the median target price.",
-        "The stock is 47.08% below its 52-week high.",
-        "revenue_growth is -0.145 and earnings_growth is -0.437."
+        "revenue_growth is -0.145 and earnings_growth is -0.437, weakening the value case despite the valuation discount.",
+        "free_cashflow yield is 3.3911%, below the 4% threshold.",
+        "total_cash 516408000 is far above total_debt 22113000, and current_ratio is 9.536."
       ],
       "downside_scenarios": [
         {
           "price": 77.15,
-          "pe_at_level": "15.66x forward_eps",
-          "scenario": "Retest of price_52w_low."
+          "pe_at_level": "15.66x using forward_eps 4.92519",
+          "scenario": "Shares retest price_52w_low 77.15."
         }
       ],
       "ideal_entry": {
         "price": 77.15,
-        "reasoning": "The 52-week low is the cleaner entry because FCF yield fails and recent options flow is bearish."
+        "reasoning": "price_52w_low 77.15 is preferable because FCF yield fails the framework and revenue_growth is -0.145."
       },
       "comparables": [
         {
-          "ticker": "ACN",
-          "forward_pe": "9.864401",
-          "growth": "revenue_growth 0.056, earnings_growth 0.09",
-          "note": "Input same-sector Technology comparable, different industry."
+          "ticker": "GLW",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External electronic-components comparable; numbers are not in the provided dataset."
         },
         {
-          "ticker": "INTU",
-          "forward_pe": "10.757606",
-          "growth": "revenue_growth 0.104, earnings_growth 0.107",
-          "note": "Input same-sector Technology comparable, different industry."
+          "ticker": "COHR",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External electronic-components comparable; numbers are not in the provided dataset."
         }
       ],
-      "analyst_take": "OLED has several value positives, including net cash, a covered dividend, a large drawdown, and a PE discount. I would not call it BUY because FCF yield fails and both revenue_growth and earnings_growth are negative in the provided data."
+      "analyst_take": "The analyst_distribution shows 1 strong_buy, 5 buy, and 3 hold out of 9 total, with recommendation_mean 1.77778. The balance sheet, dividend, drawdown, and PE discount are attractive, but failed FCF yield and negative revenue_growth keep it on WATCHLIST."
     },
     {
-      "ticker": "NEM",
-      "name": "Newmont Corporation",
-      "price": 89.2,
+      "ticker": "SNPS",
+      "name": "Synopsys, Inc.",
+      "price": 378.46,
       "opus_recommendation": "BUY",
       "framework": {
         "fcf_yield": {
-          "verdict": "pass",
-          "detail": "Free cash flow yield is 10.30% from free_cashflow 9804874752 and market_cap 95225700352, above the 7% pass threshold."
+          "verdict": "borderline",
+          "detail": "free_cashflow 3538958592 / market_cap 72467267584 = 4.8835%, within the 4-7% borderline range."
         },
         "pe_discount": {
           "verdict": "pass",
-          "detail": "Forward PE is 8.322688 versus implied PE of 12.32 from target_median_price 132.0 and forward_eps 10.71769, a 32.42% discount."
+          "detail": "target_median_price 575.0 / forward_eps 17.27135 = implied PE 33.2921; forward_pe 21.912588 is 34.18% below implied PE."
         },
         "drawdown": {
-          "verdict": "borderline",
-          "detail": "down_from_high_pct is 33.87%, within the 20-35% borderline range."
+          "verdict": "pass",
+          "detail": "down_from_high_pct is 41.93, above the 35% pass threshold."
         },
         "balance_sheet": {
           "verdict": "pass",
-          "detail": "Net cash is positive: total_cash 8778999808 exceeds total_debt 5532000256; current_ratio is 2.443 and debt_to_equity is 15.762."
+          "detail": "total_cash 2484438016 is below total_debt 10841960448, but debt_to_equity 35.574 and current_ratio 1.434 meet the pass threshold."
         },
         "dividend": {
           "verdict": "borderline",
-          "detail": "dividend_yield is 1.16 and payout_ratio is 0.131, below the pass yield threshold but within the borderline dividend range."
+          "detail": "dividend_yield is missing and payout_ratio is 0.0; no dividend is treated as neutral and counted as borderline."
         },
         "institutional": {
           "verdict": "pass",
-          "detail": "held_pct_institutions is 0.81068003 and recommendation_mean is 1.54545; analyst buy ratio is 19 of 22."
+          "detail": "held_pct_institutions is 0.92464995 and recommendation_mean is 1.70833; analyst_distribution shows 18 strong_buy plus buy out of 24 total."
         },
-        "score": 5.0
+        "score": 5
       },
       "ai_exposure": {
-        "verdict": "neutral",
-        "detail": "The company_description focuses on gold and other metal production; AI is not a direct business driver in the input."
+        "verdict": "tailwind",
+        "detail": "The company description focuses on design IP, verification, prototyping, and semiconductor design automation, which are directly tied to advanced chip design demand."
       },
       "deal_radar": {
         "options_signal": null,
         "capex_exposure": null,
-        "assessment": "No options_history or capex_signals were provided; assessment rests on the framework score and gold-industry financials."
+        "assessment": "No options_history or capex_signals were provided, so deal_radar is neutral and based only on the framework data."
       },
       "financials": {
-        "current_price": "$89.2",
-        "range_52w": "$58.97 - $134.88",
-        "forward_pe": "8.322688"
+        "current_price": "$378.46",
+        "range_52w": "$366.0 - $651.73",
+        "forward_pe": "21.912588"
       },
       "catalysts_verified": [],
       "catalysts_general": [
-        "Free cash flow yield is 10.30%.",
-        "Forward PE trades at a 32.42% discount to the implied PE from the median target price.",
-        "total_cash exceeds total_debt and current_ratio is 2.443."
+        "forward_pe 21.912588 is 34.18% below implied PE 33.2921.",
+        "revenue_growth is 0.419, but earnings_growth is -0.96.",
+        "down_from_high_pct is 41.93 and held_pct_institutions is 0.92464995."
       ],
       "downside_scenarios": [
         {
-          "price": 67.0,
-          "pe_at_level": "6.25x forward_eps",
-          "scenario": "Retest of target_low_price."
-        },
-        {
-          "price": 58.97,
-          "pe_at_level": "5.50x forward_eps",
-          "scenario": "Retest of price_52w_low."
+          "price": 366,
+          "pe_at_level": "21.19x using forward_eps 17.27135",
+          "scenario": "Shares retest price_52w_low 366.0."
         }
       ],
       "ideal_entry": {
-        "price": 89.2,
-        "reasoning": "Current price is supported by 10.30% FCF yield, net cash, and strong institutional conviction."
+        "price": 378.46,
+        "reasoning": "current_price 378.46 is close to price_52w_low 366.0 while the framework score is 5."
       },
       "comparables": [
         {
-          "ticker": "B",
-          "forward_pe": "7.71609",
-          "growth": "revenue_growth 0.667, earnings_growth 2.542",
-          "note": "Input same-sector and same-industry Gold comparable."
+          "ticker": "CDNS",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External software-infrastructure and EDA comparable; numbers are not in the provided dataset."
         },
         {
-          "ticker": "AEM",
-          "forward_pe": "not_provided",
-          "growth": "not_provided",
-          "note": "External Gold comparable; no financial numbers used."
+          "ticker": "ANSS",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External engineering-software comparable; numbers are not in the provided dataset."
         }
       ],
-      "analyst_take": "NEM is a BUY on the provided numbers: FCF yield is high, the balance sheet is net cash, and analyst/institutional support is strong. The only framework weaknesses are a borderline drawdown and a dividend yield below the pass threshold."
+      "analyst_take": "The analyst_distribution shows 4 strong_buy, 14 buy, 5 hold, and 1 strong_sell out of 24 total, with recommendation_mean 1.70833. Despite borderline FCF yield and no dividend, the PE discount, drawdown, institutional conviction, and AI-linked business exposure support BUY."
+    },
+    {
+      "ticker": "SNDK",
+      "name": "Sandisk Corporation",
+      "price": 1390.95,
+      "opus_recommendation": "WATCHLIST",
+      "framework": {
+        "fcf_yield": {
+          "verdict": "fail",
+          "detail": "free_cashflow 2259500032 / market_cap 205985447936 = 1.0969%, below the 4% fail threshold."
+        },
+        "pe_discount": {
+          "verdict": "pass",
+          "detail": "target_median_price 2250.0 / forward_eps 212.60059 = implied PE 10.5832; forward_pe 6.54255 is 38.18% below implied PE."
+        },
+        "drawdown": {
+          "verdict": "pass",
+          "detail": "down_from_high_pct is 40.92, above the 35% pass threshold."
+        },
+        "balance_sheet": {
+          "verdict": "pass",
+          "detail": "total_cash 3735000064 exceeds total_debt 207000000, and current_ratio is 4.782."
+        },
+        "dividend": {
+          "verdict": "borderline",
+          "detail": "dividend_yield is missing and payout_ratio is 0.0; no dividend is treated as neutral and counted as borderline."
+        },
+        "institutional": {
+          "verdict": "pass",
+          "detail": "held_pct_institutions is 0.81184 and recommendation_mean is 1.6087; analyst_distribution shows 18 strong_buy plus buy out of 23 total."
+        },
+        "score": 4.5
+      },
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "The company description focuses on NAND flash storage devices, and catalyst_events include stronger AI-memory demand that could lift Sandisk peers."
+      },
+      "deal_radar": {
+        "options_signal": "options_history uses expiry ALL; one record shows total_call_volume 63270, total_put_volume 96213, put_call_ratio 1.521, max_call_strike 1700.0, and flow_score -6.99.",
+        "capex_exposure": null,
+        "assessment": "The cited expiry ALL options record is put-heavy despite strong analyst and balance-sheet criteria; no capex_signals were provided."
+      },
+      "financials": {
+        "current_price": "$1390.95",
+        "range_52w": "$40.1 - $2354.39",
+        "forward_pe": "6.54255"
+      },
+      "catalysts_verified": [
+        "On June 23, tech futures plunged and Investors.com said Sandisk dived premarket alongside Micron and Nvidia during a broader global rout.",
+        "On June 22, Micron's Anthropic deal and SK Hynix's record rally pointed to stronger AI-memory demand that could lift Sandisk peers."
+      ],
+      "catalysts_general": [
+        "revenue_growth is 2.51 and forward_pe is 6.54255.",
+        "free_cashflow yield is only 1.0969% despite market_cap 205985447936.",
+        "price_change_pct_20d is -38.83 while price_change_pct_90d is 52.35, indicating high volatility in the provided data."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 1000,
+          "pe_at_level": "4.70x using forward_eps 212.60059",
+          "scenario": "Shares fall to target_low_price 1000.0."
+        },
+        {
+          "price": 40.1,
+          "pe_at_level": "0.19x using forward_eps 212.60059",
+          "scenario": "Shares retest price_52w_low 40.1."
+        }
+      ],
+      "ideal_entry": {
+        "price": 1000,
+        "reasoning": "target_low_price 1000.0 is a better risk anchor because FCF yield fails and options_history shows a put-heavy expiry ALL record."
+      },
+      "comparables": [
+        {
+          "ticker": "MU",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External memory and storage comparable; numbers are not in the provided dataset."
+        },
+        {
+          "ticker": "WDC",
+          "forward_pe": "not provided in input data",
+          "growth": "not provided in input data",
+          "note": "External storage-hardware comparable; numbers are not in the provided dataset."
+        }
+      ],
+      "analyst_take": "The analyst_distribution shows 3 strong_buy, 15 buy, 4 hold, and 1 strong_sell out of 23 total, with recommendation_mean 1.6087. The valuation discount and AI-memory catalyst are attractive, but the failed FCF yield, extreme volatility, and put-heavy options record make this WATCHLIST."
     }
   ],
   "growth_picks": [
@@ -530,76 +519,82 @@
       "framework": {
         "revenue_growth": {
           "verdict": "pass",
-          "detail": "revenue_growth is 66.1%, above the 30% pass threshold."
+          "detail": "Revenue growth is 66.1%, above the 30% pass threshold."
         },
         "gross_margins": {
           "verdict": "pass",
-          "detail": "gross_margins are 73.87%, above the 65% pass threshold."
+          "detail": "Gross margin is 73.870003%, above the 65% pass threshold."
         },
         "rule_of_40": {
           "verdict": "pass",
-          "detail": "revenue_growth 66.1 plus operating_margins 62.82 equals 128.92, above the 50 pass threshold."
+          "detail": "Revenue growth plus operating margin equals 128.921996, above the 50 pass threshold."
         },
         "earnings_accel": {
           "verdict": "pass",
-          "detail": "earnings_growth is 108.6%, above revenue_growth of 66.1%, showing operating leverage."
+          "detail": "Earnings growth of 108.6% exceeds revenue growth of 66.1%, showing operating leverage."
         },
         "capital_efficiency": {
           "verdict": "pass",
-          "detail": "return_on_equity is 22.3%, above the 20% pass threshold."
+          "detail": "Return on equity is 22.298001%, above the 20% pass threshold."
         },
         "short_dynamics": {
           "verdict": "pass",
-          "detail": "short_interest_pct is 0.96% and short_interest_change_pct is -3.92%, so short interest is below 5% and declining."
+          "detail": "Short interest is 0.96% and short interest change is -3.92%, meeting the declining and below 5% pass test."
         },
         "score": 6
       },
       "ai_exposure": {
         "verdict": "neutral",
-        "detail": "The business description is gold and precious metals mining; no AI-specific operating exposure or catalyst_event is provided."
+        "detail": "The company is a gold miner, so AI is not a direct demand driver or business-model threat based on the provided description and financial data."
       },
       "deal_radar": {
-        "options_signal": "Latest options_history on 2026-07-21 shows 2508 call volume versus 1553 put volume, put_call_ratio 0.619, OTM call volume 1680 versus OTM put volume 443, and flow_score 4.5. This is bullish relative to the 2026-07-10 flow_score of -6.99.",
+        "options_signal": "Options history shows expiry ALL records with put/call ratios ranging from 0.455 to 2.342, flow_score ranging from -6.99 to 7.5, and the latest provided record showing total_call_volume 2508, total_put_volume 1553, put_call_ratio 0.619, max_call_strike 155.0, and flow_score 4.5.",
         "capex_exposure": null,
-        "assessment": "Options activity is constructive, and no capex_signals were provided."
+        "assessment": "Options flow is mixed across the provided records, but the latest ALL-expiry record is call-skewed by volume. The financial framework is strong across all six criteria."
       },
       "financials": {
         "current_price": "$136.34",
-        "range_52w": "$119.84 - $255.24",
-        "forward_pe": "10.351766"
+        "range_52w": "$122.32 - $255.24",
+        "forward_pe": "10.537641"
       },
       "catalysts_verified": [],
       "catalysts_general": [
-        "The company passes all 6 growth framework criteria.",
-        "Current price 136.34 is 46.58% below the 52-week high of 255.24.",
-        "target_mean_price is 223.47643 versus current_price of 136.34."
+        "Current price of $136.34 is 46.58% below the 52-week high of $255.24.",
+        "Mean target price is $223.47643 versus current price of $136.34.",
+        "Forward P/E is 10.537641 with revenue growth of 66.1% and earnings growth of 108.6%.",
+        "Total cash of 3122657024 exceeds total debt of 319219008."
       ],
       "downside_scenarios": [
         {
-          "price": 119.84,
-          "pe_at_level": "9.10x forward_eps 13.1707",
-          "scenario": "Retest of the 52-week low despite strong margins and revenue growth."
+          "price": 122.32,
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 10.537641.",
+          "scenario": "Retest of the provided 52-week low."
+        },
+        {
+          "price": 87,
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 10.537641.",
+          "scenario": "Move to the provided analyst low target."
         }
       ],
       "ideal_entry": {
-        "price": 136.34,
-        "reasoning": "Current price is well below the 52-week high and the framework score is 6.0 with forward_pe 10.351766."
+        "price": 122.32,
+        "reasoning": "The provided 52-week low offers a defined entry level below the current price while the framework score remains 6."
       },
       "comparables": [
         {
           "ticker": "NEM",
           "forward_pe": "not provided in input",
           "growth": "not provided in input",
-          "note": "Gold mining comparable not included in the input data."
+          "note": "Gold industry comparable not included in the input data."
         },
         {
           "ticker": "GOLD",
           "forward_pe": "not provided in input",
           "growth": "not provided in input",
-          "note": "Gold mining comparable not included in the input data."
+          "note": "Gold industry comparable not included in the input data."
         }
       ],
-      "analyst_take": "AEM scores cleanly across the growth framework, with strong revenue growth, high margins, high ROE, and declining short interest. The combination of forward_pe 10.351766 and current price 46.58% below the 52-week high supports a BUY rating within this dataset."
+      "analyst_take": "AEM is the cleanest framework result in the set, with all six criteria passing. The valuation data also looks supportive because the current price is far below the mean target price while forward P/E is 10.537641."
     },
     {
       "ticker": "MU",
@@ -609,38 +604,38 @@
       "framework": {
         "revenue_growth": {
           "verdict": "pass",
-          "detail": "revenue_growth is 345.7%, above the 30% pass threshold."
+          "detail": "Revenue growth is 345.7%, above the 30% pass threshold."
         },
         "gross_margins": {
           "verdict": "pass",
-          "detail": "gross_margins are 72.57%, above the 65% pass threshold."
+          "detail": "Gross margin is 72.569%, above the 65% pass threshold."
         },
         "rule_of_40": {
           "verdict": "pass",
-          "detail": "revenue_growth 345.7 plus operating_margins 80.37 equals 426.07, above the 50 pass threshold."
+          "detail": "Revenue growth plus operating margin equals 426.070003, above the 50 pass threshold."
         },
         "earnings_accel": {
           "verdict": "pass",
-          "detail": "earnings_growth is 1368.5%, above revenue_growth of 345.7%, showing operating leverage."
+          "detail": "Earnings growth of 1368.5% exceeds revenue growth of 345.7%, showing operating leverage."
         },
         "capital_efficiency": {
           "verdict": "pass",
-          "detail": "return_on_equity is 66.64%, above the 20% pass threshold."
+          "detail": "Return on equity is 66.638%, above the 20% pass threshold."
         },
         "short_dynamics": {
           "verdict": "pass",
-          "detail": "short_interest_pct is 2.81% and short_interest_change_pct is -15.66%, so short interest is below 5% and declining."
+          "detail": "Short interest is 2.81% and short interest change is -15.66%, meeting the declining and below 5% pass test."
         },
         "score": 6
       },
       "ai_exposure": {
         "verdict": "tailwind",
-        "detail": "The catalyst_events explicitly cite data center AI infrastructure as a beneficiary thesis, and the business description includes memory and storage products."
+        "detail": "The provided catalyst_events explicitly link MU to data center AI infrastructure, and the company sells memory and storage products."
       },
       "deal_radar": {
-        "options_signal": "Latest options_history on 2026-07-21 shows 188947 call volume versus 271328 put volume, put_call_ratio 1.436, OTM call volume 137739 versus OTM put volume 199658, and flow_score -5.49. Put open interest of 664045 exceeds call open interest of 341905.",
+        "options_signal": "Options history shows expiry ALL records with put/call ratios ranging from 0.903 to 1.436, flow_score ranging from -5.49 to 0.0, and the latest provided record showing total_call_volume 188947, total_put_volume 271328, put_call_ratio 1.436, max_call_strike 1000.0, and flow_score -5.49.",
         "capex_exposure": null,
-        "assessment": "The growth framework is extremely strong, but recent options activity is bearish and should be monitored."
+        "assessment": "The financial framework is excellent, but the provided options records are put-heavy in the latest ALL-expiry record and consistently show negative flow_score values except one 0.0 record."
       },
       "financials": {
         "current_price": "$865.46",
@@ -654,118 +649,130 @@
         "2026-07-08 sector_catalyst: Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
         "2026-07-06 sector_catalyst: Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
         "2026-06-22 sector_catalyst: Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
-        "null sector_catalyst: Barron's headline says the chip war is threatening Micron stock, indicating an industry-level overhang for MU."
+        "sector_catalyst: Barron's headline says the chip war is threatening Micron stock, indicating an industry-level overhang for MU."
       ],
       "catalysts_general": [
-        "The company passes all 6 growth framework criteria.",
-        "revenue_growth is 345.7% and earnings_growth is 1368.5%.",
-        "target_mean_price is 1491.9524 versus current_price of 865.46."
+        "Forward P/E is 5.7348666 despite revenue growth of 345.7% and earnings growth of 1368.5%.",
+        "Mean target price is $1491.9524 versus current price of $865.46.",
+        "Total cash of 26022000640 exceeds total debt of 6376000000.",
+        "Current price is 31.04% below the 52-week high of $1255.0."
       ],
       "downside_scenarios": [
         {
+          "price": 361,
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 5.7348666.",
+          "scenario": "Move to the provided analyst low target."
+        },
+        {
           "price": 103.38,
-          "pe_at_level": "0.69x forward_eps 150.91197",
-          "scenario": "Retest of the 52-week low if the bearish options signal and sector overhang dominate."
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 5.7348666.",
+          "scenario": "Retest of the provided 52-week low."
         }
       ],
       "ideal_entry": {
-        "price": 865.46,
-        "reasoning": "Current price is below sma_20 1009.992 and sma_50 937.6662 while the framework score is 6.0."
+        "price": 361,
+        "reasoning": "The provided analyst low target is a defined downside level; the current setup already scores 6, but options flow is negative in the latest record."
       },
       "comparables": [
         {
-          "ticker": "WDC",
-          "forward_pe": "not provided in input",
-          "growth": "not provided in input",
-          "note": "Memory and storage comparable not included in the input data."
+          "ticker": "TER",
+          "forward_pe": "32.454803",
+          "growth": "87.0%",
+          "note": "Same Technology sector and adjacent semiconductor equipment industry from the input data."
         },
         {
-          "ticker": "STX",
+          "ticker": "NVDA",
           "forward_pe": "not provided in input",
           "growth": "not provided in input",
-          "note": "Storage comparable not included in the input data."
+          "note": "Semiconductor comparable not included in the input data."
         }
       ],
-      "analyst_take": "MU is the strongest pure growth setup in the group by the provided numbers, with exceptional revenue growth, earnings acceleration, ROE, and Rule of 40. The main caution is the recent put-heavy options tape, but the financial profile and verified AI-related catalysts support a BUY rating."
+      "analyst_take": "MU passes every framework criterion and has the strongest growth profile in the data. The main caveat is negative recent options flow in the provided ALL-expiry records, but the financial score and AI-linked catalyst set support a BUY."
     },
     {
-      "ticker": "CPAY",
-      "name": "Corpay, Inc.",
-      "price": 369.28,
+      "ticker": "FTNT",
+      "name": "Fortinet, Inc.",
+      "price": 160.36,
       "opus_recommendation": "WATCHLIST",
       "framework": {
         "revenue_growth": {
           "verdict": "borderline",
-          "detail": "revenue_growth is 25.4%, within the 15% to 30% borderline range."
+          "detail": "Revenue growth is 20.1%, within the 15% to 30% borderline range."
         },
         "gross_margins": {
           "verdict": "pass",
-          "detail": "gross_margins are 79.71%, above the 65% pass threshold."
+          "detail": "Gross margin is 80.304%, above the 65% pass threshold."
         },
         "rule_of_40": {
           "verdict": "pass",
-          "detail": "revenue_growth 25.4 plus operating_margins 41.4 equals 66.8, above the 50 pass threshold."
+          "detail": "Revenue growth plus operating margin equals 51.382, above the 50 pass threshold."
         },
         "earnings_accel": {
           "verdict": "pass",
-          "detail": "earnings_growth is 49.1%, above revenue_growth of 25.4%, showing operating leverage."
+          "detail": "Earnings growth of 28.6% exceeds revenue growth of 20.1%, showing operating leverage."
         },
         "capital_efficiency": {
           "verdict": "pass",
-          "detail": "return_on_equity is 32.12%, above the 20% pass threshold."
+          "detail": "Return on equity is 132.392%, above the 20% pass threshold."
         },
         "short_dynamics": {
           "verdict": "pass",
-          "detail": "short_interest_pct is 4.0% and short_interest_change_pct is -17.99%, so short interest is below 5% and declining."
+          "detail": "Short interest is 2.49% and short interest change is -10.73%, meeting the declining and below 5% pass test."
         },
         "score": 5.5
       },
       "ai_exposure": {
-        "verdict": "neutral",
-        "detail": "The business description is payments and expense management; no AI-specific catalyst_event or AI-linked financial field is provided."
+        "verdict": "tailwind",
+        "detail": "The company description includes FortiAI and cybersecurity products, so AI can support security-product demand and product capability."
       },
       "deal_radar": {
         "options_signal": null,
         "capex_exposure": null,
-        "assessment": "No options_history or capex_signals were provided."
+        "assessment": "No options_history or capex_signals were provided. The growth score is solid, but current price is close to the 52-week high while mean target price is below current price."
       },
       "financials": {
-        "current_price": "$369.28",
-        "range_52w": "$252.84 - $374.09",
-        "forward_pe": "12.070621"
+        "current_price": "$160.36",
+        "range_52w": "$70.12 - $170.35",
+        "forward_pe": "46.762547"
       },
       "catalysts_verified": [],
       "catalysts_general": [
-        "Rule of 40 is 66.8 despite revenue_growth being borderline at 25.4%.",
-        "Current price 369.28 is only 1.29% below the 52-week high of 374.09.",
-        "target_mean_price is 395.14285 versus current_price of 369.28."
+        "Gross margin is 80.304% and operating margin is 31.282%.",
+        "Current price of $160.36 is only 5.86% below the 52-week high of $170.35.",
+        "Mean target price is $119.91892 versus current price of $160.36.",
+        "Forward P/E is 46.762547 with revenue growth of 20.1%."
       ],
       "downside_scenarios": [
         {
-          "price": 252.84,
-          "pe_at_level": "8.26x forward_eps 30.59329",
-          "scenario": "Retest of the 52-week low if growth decelerates from the borderline revenue_growth level."
+          "price": 119.91892,
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 46.762547.",
+          "scenario": "Move to the provided mean target price."
+        },
+        {
+          "price": 70.12,
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 46.762547.",
+          "scenario": "Retest of the provided 52-week low."
         }
       ],
       "ideal_entry": {
-        "price": 348.638,
-        "reasoning": "sma_50 is 348.638, below current_price 369.28, offering a better entry for a stock only 1.29% below its 52-week high."
+        "price": 119.91892,
+        "reasoning": "The provided mean target price is below current price and would offer a more disciplined entry for a stock with forward P/E of 46.762547."
       },
       "comparables": [
         {
-          "ticker": "WEX",
-          "forward_pe": "not provided in input",
-          "growth": "not provided in input",
-          "note": "Payments and fleet-services comparable not included in the input data."
+          "ticker": "MSFT",
+          "forward_pe": "20.759272",
+          "growth": "18.3%",
+          "note": "Same Technology sector and Software - Infrastructure industry from the input data."
         },
         {
-          "ticker": "FIS",
+          "ticker": "CRWD",
           "forward_pe": "not provided in input",
           "growth": "not provided in input",
-          "note": "Payments infrastructure comparable not included in the input data."
+          "note": "Cybersecurity comparable not included in the input data."
         }
       ],
-      "analyst_take": "CPAY has strong margin quality, ROE, and earnings acceleration, but revenue growth is only borderline under this framework. Because the stock is close to its 52-week high and the target_mean_price is not far above current_price, WATCHLIST is more appropriate than BUY."
+      "analyst_take": "FTNT has excellent margins, ROE, and short-interest dynamics, but revenue growth is only borderline under the framework. With the current price above the mean target price and near the 52-week high, this is a WATCHLIST rather than a fresh BUY."
     },
     {
       "ticker": "V",
@@ -775,234 +782,260 @@
       "framework": {
         "revenue_growth": {
           "verdict": "borderline",
-          "detail": "revenue_growth is 17.1%, within the 15% to 30% borderline range."
+          "detail": "Revenue growth is 17.1%, within the 15% to 30% borderline range."
         },
         "gross_margins": {
           "verdict": "pass",
-          "detail": "gross_margins are 97.78%, above the 65% pass threshold."
+          "detail": "Gross margin is 97.778%, above the 65% pass threshold."
         },
         "rule_of_40": {
           "verdict": "pass",
-          "detail": "revenue_growth 17.1 plus operating_margins 67.35 equals 84.45, above the 50 pass threshold."
+          "detail": "Revenue growth plus operating margin equals 84.446, above the 50 pass threshold."
         },
         "earnings_accel": {
           "verdict": "pass",
-          "detail": "earnings_growth is 35.5%, above revenue_growth of 17.1%, showing operating leverage."
+          "detail": "Earnings growth of 35.5% exceeds revenue growth of 17.1%, showing operating leverage."
         },
         "capital_efficiency": {
           "verdict": "pass",
-          "detail": "return_on_equity is 60.35%, above the 20% pass threshold."
+          "detail": "Return on equity is 60.349%, above the 20% pass threshold."
         },
         "short_dynamics": {
           "verdict": "pass",
-          "detail": "short_interest_pct is 1.25% and short_interest_change_pct is -3.18%, so short interest is below 5% and declining."
+          "detail": "Short interest is 1.25% and short interest change is -3.18%, meeting the declining and below 5% pass test."
         },
         "score": 5.5
       },
       "ai_exposure": {
-        "verdict": "tailwind",
-        "detail": "The company operates a payment transaction network, and AI can be a tailwind for authorization, risk scoring, and payment intelligence, though no AI-specific catalyst_event is provided."
+        "verdict": "neutral",
+        "detail": "The provided description is payment-network focused; AI is not shown as a direct growth driver or threat in the input data."
       },
       "deal_radar": {
         "options_signal": null,
         "capex_exposure": null,
-        "assessment": "No options_history or capex_signals were provided."
+        "assessment": "No options_history or capex_signals were provided. The framework is high quality, but revenue growth is borderline and the stock is very close to its 52-week high."
       },
       "financials": {
         "current_price": "$360.57",
         "range_52w": "$293.89 - $365.14",
-        "forward_pe": "24.251787"
+        "forward_pe": "24.253778"
       },
       "catalysts_verified": [],
       "catalysts_general": [
-        "gross_margins are 97.78% and operating_margins are 67.35%.",
-        "Current price 360.57 is only 1.25% below the 52-week high of 365.14.",
-        "target_mean_price is 401.47394 versus current_price of 360.57."
+        "Gross margin is 97.778% and operating margin is 67.346%.",
+        "Current price of $360.57 is 1.25% below the 52-week high of $365.14.",
+        "Mean target price is $401.47394 versus current price of $360.57.",
+        "Short interest is 1.25% and short interest change is -3.18%."
       ],
       "downside_scenarios": [
         {
+          "price": 330,
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 24.253778.",
+          "scenario": "Move to the provided analyst low target."
+        },
+        {
           "price": 293.89,
-          "pe_at_level": "19.77x forward_eps 14.86777",
-          "scenario": "Retest of the 52-week low if the market compresses the valuation despite high margins."
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 24.253778.",
+          "scenario": "Retest of the provided 52-week low."
         }
       ],
       "ideal_entry": {
-        "price": 333.9378,
-        "reasoning": "sma_50 is 333.9378, below current_price 360.57, giving a better entry for a stock near its 52-week high."
+        "price": 330,
+        "reasoning": "The provided analyst low target gives a more attractive entry below the current price while preserving exposure to a high-margin compounder."
       },
       "comparables": [
         {
           "ticker": "MA",
           "forward_pe": "not provided in input",
           "growth": "not provided in input",
-          "note": "Credit services comparable not included in the input data."
+          "note": "Credit Services comparable not included in the input data."
         },
         {
           "ticker": "AXP",
           "forward_pe": "not provided in input",
           "growth": "not provided in input",
-          "note": "Credit services comparable not included in the input data."
+          "note": "Financial Services comparable not included in the input data."
         }
       ],
-      "analyst_take": "Visa is an exceptional quality compounder by the provided margin, ROE, and earnings acceleration data. The issue is entry: revenue_growth is borderline and the stock is only 1.25% below its 52-week high, so WATCHLIST is the more disciplined rating."
+      "analyst_take": "Visa is a high-quality growth compounder by margins, Rule of 40, earnings acceleration, ROE, and short-interest metrics. The stock earns WATCHLIST because revenue growth is borderline and the current price is only 1.25% below the 52-week high."
     },
     {
-      "ticker": "EQT",
-      "name": "EQT Corporation",
-      "price": 49.05,
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "price": 402.29,
       "opus_recommendation": "BUY",
       "framework": {
         "revenue_growth": {
-          "verdict": "pass",
-          "detail": "revenue_growth is 49.9%, above the 30% pass threshold."
+          "verdict": "borderline",
+          "detail": "Revenue growth is 18.3%, within the 15% to 30% borderline range."
         },
         "gross_margins": {
           "verdict": "pass",
-          "detail": "gross_margins are 80.97%, above the 65% pass threshold."
+          "detail": "Gross margin is 68.309%, above the 65% pass threshold."
         },
         "rule_of_40": {
           "verdict": "pass",
-          "detail": "revenue_growth 49.9 plus operating_margins 57.37 equals 107.27, above the 50 pass threshold."
+          "detail": "Revenue growth plus operating margin equals 64.626, above the 50 pass threshold."
         },
         "earnings_accel": {
           "verdict": "pass",
-          "detail": "earnings_growth is 490.0%, above revenue_growth of 49.9%, showing operating leverage."
-        },
-        "capital_efficiency": {
-          "verdict": "borderline",
-          "detail": "return_on_equity is 13.4%, within the 10% to 20% borderline range."
-        },
-        "short_dynamics": {
-          "verdict": "pass",
-          "detail": "short_interest_pct is 3.89% and short_interest_change_pct is -0.65%, so short interest is below 5% and declining."
-        },
-        "score": 5.5
-      },
-      "ai_exposure": {
-        "verdict": "tailwind",
-        "detail": "The company sells natural gas to utilities and industrial customers; AI-related power demand could be a tailwind, although no AI-specific catalyst_event is provided."
-      },
-      "deal_radar": {
-        "options_signal": null,
-        "capex_exposure": null,
-        "assessment": "No options_history or capex_signals were provided."
-      },
-      "financials": {
-        "current_price": "$49.05",
-        "range_52w": "$47.94 - $68.24",
-        "forward_pe": "11.843993"
-      },
-      "catalysts_verified": [],
-      "catalysts_general": [
-        "revenue_growth is 49.9% and earnings_growth is 490.0%.",
-        "Current price 49.05 is 28.12% below the 52-week high of 68.24.",
-        "target_mean_price is 67.32 versus current_price of 49.05."
-      ],
-      "downside_scenarios": [
-        {
-          "price": 47.94,
-          "pe_at_level": "11.58x forward_eps 4.14134",
-          "scenario": "Retest of the 52-week low if energy sentiment weakens or ROE remains only borderline."
-        }
-      ],
-      "ideal_entry": {
-        "price": 47.94,
-        "reasoning": "price_52w_low is 47.94, close to current_price 49.05, and would improve entry discipline."
-      },
-      "comparables": [
-        {
-          "ticker": "AR",
-          "forward_pe": "not provided in input",
-          "growth": "not provided in input",
-          "note": "Oil and gas E&P comparable not included in the input data."
-        },
-        {
-          "ticker": "RRC",
-          "forward_pe": "not provided in input",
-          "growth": "not provided in input",
-          "note": "Oil and gas E&P comparable not included in the input data."
-        }
-      ],
-      "analyst_take": "EQT has strong revenue growth, very high earnings growth, high margins, and low declining short interest. ROE is only borderline, but the current price is near the 52-week low while target_mean_price is materially higher, supporting a BUY rating."
-    },
-    {
-      "ticker": "AUPH",
-      "name": "Aurinia Pharmaceuticals Inc",
-      "price": 15.25,
-      "opus_recommendation": "WATCHLIST",
-      "framework": {
-        "revenue_growth": {
-          "verdict": "borderline",
-          "detail": "revenue_growth is 24.4%, within the 15% to 30% borderline range."
-        },
-        "gross_margins": {
-          "verdict": "pass",
-          "detail": "gross_margins are 78.27%, above the 65% pass threshold."
-        },
-        "rule_of_40": {
-          "verdict": "pass",
-          "detail": "revenue_growth 24.4 plus operating_margins 53.31 equals 77.71, above the 50 pass threshold."
-        },
-        "earnings_accel": {
-          "verdict": "pass",
-          "detail": "earnings_growth is 56.3%, above revenue_growth of 24.4%, showing operating leverage."
+          "detail": "Earnings growth of 23.4% exceeds revenue growth of 18.3%, showing operating leverage."
         },
         "capital_efficiency": {
           "verdict": "pass",
-          "detail": "return_on_equity is 64.98%, above the 20% pass threshold."
+          "detail": "Return on equity is 34.014%, above the 20% pass threshold."
         },
         "short_dynamics": {
           "verdict": "borderline",
-          "detail": "short_interest_pct is 8.26% and short_interest_change_pct is 8.72%; short interest is rising, but remains below 10%."
+          "detail": "Short interest is 1.2%, below 10%, but short interest change is 0.41%, so only the below-10% borderline condition is met."
         },
         "score": 5
       },
       "ai_exposure": {
-        "verdict": "neutral",
-        "detail": "The company description is focused on autoimmune disease therapies; no AI-specific catalyst_event or direct AI-linked business line is provided."
+        "verdict": "tailwind",
+        "detail": "The company description includes copilot, cloud services, Power BI, Teams, and security products, making AI a likely product and cloud-demand tailwind based on the input."
       },
       "deal_radar": {
-        "options_signal": "Latest options_history on 2026-07-21 shows 212 call volume versus 301 put volume, put_call_ratio 1.42, call open interest 2076 versus put open interest 504, and flow_score 3.51. Earlier flow_score reached 12.0 on 2026-07-09 and call volume reached 1687 on 2026-07-07.",
+        "options_signal": null,
         "capex_exposure": null,
-        "assessment": "Options data is mixed: recent put volume is higher, but call open interest remains larger and prior flow scores were bullish."
+        "assessment": "No options_history or capex_signals were provided. The framework score is strong, and the stock trades 27.57% below its 52-week high."
       },
       "financials": {
-        "current_price": "$15.25",
-        "range_52w": "$8.55 - $19.25",
-        "forward_pe": "13.780079"
+        "current_price": "$402.29",
+        "range_52w": "$349.2 - $555.45",
+        "forward_pe": "20.759272"
       },
       "catalysts_verified": [],
       "catalysts_general": [
-        "Rule of 40 is 77.71 despite revenue_growth being borderline at 24.4%.",
-        "short_interest_pct is 8.26% and short_interest_change_pct is 8.72%.",
-        "target_mean_price is 17.0 versus current_price of 15.25."
+        "Current price of $402.29 is 27.57% below the 52-week high of $555.45.",
+        "Mean target price is $557.79144 versus current price of $402.29.",
+        "Forward P/E is 20.759272 with revenue growth of 18.3% and earnings growth of 23.4%.",
+        "Free cash flow is 37011251200."
       ],
       "downside_scenarios": [
         {
-          "price": 8.55,
-          "pe_at_level": "7.73x forward_eps 1.10667",
-          "scenario": "Retest of the 52-week low if rising short interest continues and revenue growth remains borderline."
+          "price": 400,
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 20.759272.",
+          "scenario": "Move to the provided analyst low target."
+        },
+        {
+          "price": 349.2,
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 20.759272.",
+          "scenario": "Retest of the provided 52-week low."
         }
       ],
       "ideal_entry": {
-        "price": 15,
-        "reasoning": "target_low_price is 15.0, slightly below current_price 15.25, and rising short interest warrants a more selective entry."
+        "price": 400,
+        "reasoning": "The provided analyst low target is close to the current price and still leaves the stock materially below the 52-week high."
       },
       "comparables": [
         {
-          "ticker": "ARGX",
-          "forward_pe": "not provided in input",
-          "growth": "not provided in input",
-          "note": "Biotechnology comparable not included in the input data."
+          "ticker": "FTNT",
+          "forward_pe": "46.762547",
+          "growth": "20.1%",
+          "note": "Same Technology sector and Software - Infrastructure industry from the input data."
         },
         {
-          "ticker": "ITCI",
+          "ticker": "ORCL",
           "forward_pe": "not provided in input",
           "growth": "not provided in input",
-          "note": "Biotechnology comparable not included in the input data."
+          "note": "Software - Infrastructure comparable not included in the input data."
         }
       ],
-      "analyst_take": "AUPH has impressive margins, ROE, and earnings acceleration, but revenue growth is only borderline and short interest is rising. With target_mean_price 17.0 close to current_price 15.25 and no verified catalyst_events, WATCHLIST is the right rating."
+      "analyst_take": "MSFT is not the fastest grower in the set, but it combines strong margins, Rule of 40 performance, ROE, and earnings growth ahead of revenue growth. The valuation and target-price setup support BUY despite only borderline revenue growth and short-interest dynamics."
+    },
+    {
+      "ticker": "TER",
+      "name": "Teradyne, Inc.",
+      "price": 333.76,
+      "opus_recommendation": "BUY",
+      "framework": {
+        "revenue_growth": {
+          "verdict": "pass",
+          "detail": "Revenue growth is 87.0%, above the 30% pass threshold."
+        },
+        "gross_margins": {
+          "verdict": "borderline",
+          "detail": "Gross margin is 58.702%, within the 50% to 65% borderline range."
+        },
+        "rule_of_40": {
+          "verdict": "pass",
+          "detail": "Revenue growth plus operating margin equals 124.614, above the 50 pass threshold."
+        },
+        "earnings_accel": {
+          "verdict": "pass",
+          "detail": "Earnings growth of 314.8% exceeds revenue growth of 87.0%, showing operating leverage."
+        },
+        "capital_efficiency": {
+          "verdict": "pass",
+          "detail": "Return on equity is 28.75%, above the 20% pass threshold."
+        },
+        "short_dynamics": {
+          "verdict": "borderline",
+          "detail": "Short interest is 6.74%, below 10%, but short interest change is 32.55%, so only the below-10% borderline condition is met."
+        },
+        "score": 5
+      },
+      "ai_exposure": {
+        "verdict": "tailwind",
+        "detail": "The company provides semiconductor test systems for devices including cloud and communications end markets, so AI-related semiconductor demand can be a tailwind based on the provided business description."
+      },
+      "deal_radar": {
+        "options_signal": null,
+        "capex_exposure": null,
+        "assessment": "No options_history or capex_signals were provided. The main caution is rising short interest of 32.55%, but the growth and earnings acceleration metrics are strong."
+      },
+      "financials": {
+        "current_price": "$333.76",
+        "range_52w": "$89.18 - $487.91",
+        "forward_pe": "32.454803"
+      },
+      "catalysts_verified": [],
+      "catalysts_general": [
+        "Revenue growth is 87.0% and earnings growth is 314.8%.",
+        "Current price of $333.76 is 31.59% below the 52-week high of $487.91.",
+        "Mean target price is $426.35294 versus current price of $333.76.",
+        "Total debt is 82398000 and total cash is 245596992."
+      ],
+      "downside_scenarios": [
+        {
+          "price": 270,
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 32.454803.",
+          "scenario": "Move to the provided analyst low target."
+        },
+        {
+          "price": 89.18,
+          "pe_at_level": "PE at this level is not provided; current forward_pe is 32.454803.",
+          "scenario": "Retest of the provided 52-week low."
+        }
+      ],
+      "ideal_entry": {
+        "price": 270,
+        "reasoning": "The provided analyst low target would compensate better for the borderline gross margin and rising short interest."
+      },
+      "comparables": [
+        {
+          "ticker": "MU",
+          "forward_pe": "5.7348666",
+          "growth": "345.7%",
+          "note": "Same Technology sector and adjacent semiconductor industry from the input data."
+        },
+        {
+          "ticker": "AMAT",
+          "forward_pe": "not provided in input",
+          "growth": "not provided in input",
+          "note": "Semiconductor Equipment & Materials comparable not included in the input data."
+        }
+      ],
+      "analyst_take": "TER has strong revenue growth, earnings acceleration, Rule of 40 performance, and ROE, which outweigh a borderline gross margin. Rising short interest is a real watch item, but the financial score supports BUY with disciplined entry."
     }
-  ]
+  ],
+  "status": "verified",
+  "verification": {
+    "status": "verified",
+    "hard_error_count": 0,
+    "soft_warning_count": 20,
+    "hard_errors": [],
+    "reason": null
+  }
 }
