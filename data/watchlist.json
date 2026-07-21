@@ -1,10 +1,10 @@
 {
   "scan_date": "2026-07-21",
-  "scan_time": "10:02",
+  "scan_time": "16:04",
   "version": "2.46.6",
   "stats": {
     "stocks_monitored": 347,
-    "recent_alerts": 1082,
+    "recent_alerts": 1095,
     "tickers_alerted": 202
   },
   "stocks": [
@@ -152,7 +152,7 @@
       "ticker": "AEM",
       "name": null,
       "profile": "quality_growth",
-      "thesis": "P1 BUY 82/conf70 with flow_score=+7.5, but P4 zone metadata is missing/contradictory. Rescan for current zone before treating as actionable.",
+      "thesis": "P1 BUY 82/conf70 with merger catalyst, but P4 has no entry zone and current Options Flow top 20 does not confirm AEM. Rescan zone before action.",
       "abs_target": null,
       "entry_low": null,
       "entry_high": null,
@@ -2528,7 +2528,7 @@
       "ticker": "LDOS",
       "name": null,
       "profile": null,
-      "thesis": "Scanner blind spot. Assessor BUY HIGH $183 FV. $2.7B hypersonic contract. $48.4B backlog +31% YoY. Fwd PE 9.4. Needs onboarding.",
+      "thesis": "Independent source=both BUY HIGH and P4 blind spot; rescan into oracle_watch, limit-only in $120-$130 zone.",
       "abs_target": null,
       "entry_low": 120.0,
       "entry_high": 130.0,
@@ -4858,6 +4858,110 @@
     }
   ],
   "alerts": [
+    {
+      "ticker": "SYM",
+      "alert_type": "DIP",
+      "price": 40.83000183105469,
+      "high_5d": 45.099998474121094,
+      "priority": "NORMAL",
+      "created_at": "2026-07-21T15:48:44.791109"
+    },
+    {
+      "ticker": "PYPL",
+      "alert_type": "ABS_TARGET",
+      "price": 56.81999969482422,
+      "high_5d": 57.66999816894531,
+      "priority": "NORMAL",
+      "created_at": "2026-07-21T15:48:44.787041"
+    },
+    {
+      "ticker": "MP",
+      "alert_type": "ABS_TARGET",
+      "price": 45.70000076293945,
+      "high_5d": 51.4900016784668,
+      "priority": "NORMAL",
+      "created_at": "2026-07-21T15:48:44.784793"
+    },
+    {
+      "ticker": "MP",
+      "alert_type": "DIP",
+      "price": 45.70000076293945,
+      "high_5d": 51.4900016784668,
+      "priority": "CRITICAL",
+      "created_at": "2026-07-21T15:48:44.783558"
+    },
+    {
+      "ticker": "LUNR",
+      "alert_type": "DIP",
+      "price": 13.829999923706055,
+      "high_5d": 15.850000381469727,
+      "priority": "CRITICAL",
+      "created_at": "2026-07-21T15:48:44.782299"
+    },
+    {
+      "ticker": "LRN",
+      "alert_type": "DIP",
+      "price": 85.63999938964844,
+      "high_5d": 92.31999969482422,
+      "priority": "NORMAL",
+      "created_at": "2026-07-21T15:48:44.780185"
+    },
+    {
+      "ticker": "HALO",
+      "alert_type": "ABS_TARGET",
+      "price": 77.08999633789062,
+      "high_5d": 79.55999755859375,
+      "priority": "NORMAL",
+      "created_at": "2026-07-21T15:48:44.777369"
+    },
+    {
+      "ticker": "DVN",
+      "alert_type": "ENTRY_ZONE",
+      "price": 43.779998779296875,
+      "high_5d": 44.310001373291016,
+      "priority": "CRITICAL",
+      "created_at": "2026-07-21T15:48:44.774660"
+    },
+    {
+      "ticker": "DVN",
+      "alert_type": "ABS_TARGET",
+      "price": 43.779998779296875,
+      "high_5d": 44.310001373291016,
+      "priority": "NORMAL",
+      "created_at": "2026-07-21T15:48:44.772880"
+    },
+    {
+      "ticker": "CRWV",
+      "alert_type": "DIP",
+      "price": 73.05999755859375,
+      "high_5d": 85.91000366210938,
+      "priority": "CRITICAL",
+      "created_at": "2026-07-21T15:48:44.769855"
+    },
+    {
+      "ticker": "CRDO",
+      "alert_type": "DEEP_VALUE",
+      "price": 212.07000732421875,
+      "high_5d": 252.5050048828125,
+      "priority": "CRITICAL",
+      "created_at": "2026-07-21T15:48:44.768426"
+    },
+    {
+      "ticker": "CRDO",
+      "alert_type": "DIP",
+      "price": 212.07000732421875,
+      "high_5d": 252.5050048828125,
+      "priority": "CRITICAL",
+      "created_at": "2026-07-21T15:48:44.766900"
+    },
+    {
+      "ticker": "AMD",
+      "alert_type": "DIP",
+      "price": 503.57000732421875,
+      "high_5d": 574.2000122070312,
+      "priority": "CRITICAL",
+      "created_at": "2026-07-21T15:48:44.759419"
+    },
     {
       "ticker": "ZTS",
       "alert_type": "ENTRY_ZONE",
@@ -13516,6 +13620,16 @@
     }
   ],
   "alerts_by_ticker": {
+    "SYM": 3,
+    "PYPL": 5,
+    "MP": 11,
+    "LUNR": 11,
+    "LRN": 4,
+    "HALO": 9,
+    "DVN": 12,
+    "CRWV": 8,
+    "CRDO": 12,
+    "AMD": 5,
     "ZTS": 12,
     "YUM": 4,
     "WDC": 9,
@@ -13610,7 +13724,6 @@
     "ABT": 9,
     "WD": 2,
     "RDNT": 3,
-    "LRN": 3,
     "VRDN": 8,
     "B": 3,
     "COIN": 2,
@@ -13620,26 +13733,17 @@
     "LYFT": 1,
     "CPB": 1,
     "ALNY": 1,
-    "SYM": 2,
     "KLAR": 3,
     "AGI": 6,
     "TSM": 2,
     "TEN": 2,
-    "PYPL": 4,
     "OBIO": 5,
     "NMM": 2,
-    "MP": 9,
-    "LUNR": 10,
     "IREN": 13,
     "IBKR": 2,
-    "HALO": 8,
     "FLUT": 3,
-    "DVN": 10,
-    "CRWV": 7,
-    "CRDO": 10,
     "COPX": 2,
     "BULL": 2,
-    "AMD": 4,
     "ACM": 5,
     "IQ": 1,
     "TSLA": 1,
