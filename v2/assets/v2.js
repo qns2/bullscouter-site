@@ -358,15 +358,39 @@ function renderReadiness(data) {
   setUpdated(data.generated_at);
   document.querySelector("[data-as-of]").textContent = dateText(data.as_of);
   const stageCounts = data.stage_counts || {};
+  const shortlist = data.shortlist || [
+    ...(data.items || []),
+    ...(data.research_queue || []),
+  ].sort((a, b) => (a.research_rank || 999) - (b.research_rank || 999));
+  document.querySelector("[data-shortlist-count]").textContent = shortlist.length;
   document.querySelector("[data-readiness-stats]").innerHTML = [
+    ["Shortlisted", shortlist.length],
     ["Review ready", stageCounts.review_ready],
     ["Approved", stageCounts.approved_opportunity],
-    ["Research queue", stageCounts.research_queue],
+    ["Needs research", stageCounts.research_queue],
   ].map(([label, value]) => `<div class="card"><div class="metric">${escapeHtml(value ?? 0)}</div><span class="muted">${escapeHtml(label)}</span></div>`).join("");
 
   const items = (data.items || []).filter((item) => item.stage === "review_ready");
   const approved = data.approved_opportunities || [];
   const research = data.research_queue || [];
+  const missingLabels = (item) => (item.missing_analysis_gate_explanations || [])
+    .map((gate) => gate.label);
+  const evidencePacketText = (item) => {
+    const packet = item.analysis_packet || {};
+    const source = packet.source || {};
+    const company = packet.company_health || {};
+    const price = packet.market_price || {};
+    return [
+      `Source ${plainLabel(source.status || "missing")}`,
+      `company ${plainLabel(company.status || "missing")} (${company.coverage_count ?? 0}/6)`,
+      `framework ${plainLabel(packet.framework?.status || item.framework_status || "missing")}`,
+      `price ${plainLabel(price.status || "missing")}${price.as_of ? ` as of ${price.as_of}` : ""}`,
+      `materiality ${plainLabel(item.materiality?.status || "unclassified")}`,
+      `ThetaData ${plainLabel(item.theta?.status || "unavailable")}`,
+      `counter-case ${plainLabel(packet.counter_case?.status || (item.counter_case ? "complete" : "missing"))}`,
+      `invalidation ${plainLabel(packet.invalidation?.status || (item.invalidation ? "complete" : "missing"))}`,
+    ].join(" · ");
+  };
   const readinessCopy = (item) => markdownRecord(
     `#${item.stage_rank || item.rank} ${item.ticker} — ${item.title || "Review-ready candidate"}`,
     [
@@ -385,7 +409,37 @@ function renderReadiness(data) {
       ["Invalidation", item.invalidation],
       ["Next action", item.next_action],
       ["Blockers", blockerText(item.blocker_explanations)],
+      ["Automatic evidence packet", evidencePacketText(item)],
     ],
+  );
+  const shortlistCopy = (item) => markdownRecord(
+    `#${item.research_rank || item.rank} ${item.ticker} — ${item.title || "Shortlisted discovery"}`,
+    [
+      ["Shortlist status", item.stage === "research_queue" ? "needs research" : item.stage],
+      ["Lane", item.lane],
+      ["Direction", item.direction],
+      ["Research priority", item.research_priority_score],
+      ["Investment readiness", item.investment_readiness_score ?? "not scored until the automatic packet is complete"],
+      ["Automatic evidence packet", evidencePacketText(item)],
+      ["Research required", missingLabels(item).join(" | ")],
+      ["Recommendation", item.recommendation],
+      ["Next action", item.next_action],
+    ],
+  );
+  document.querySelector("[data-shortlist]").innerHTML = shortlist.length
+    ? shortlist.map((item) => `<tr>
+        <td>${escapeHtml(item.research_rank || item.rank)}</td>
+        <td class="ticker">${escapeHtml(item.ticker)}</td>
+        <td>${pill(item.lane)}</td>
+        <td>${pill(item.stage === "research_queue" ? "needs research" : item.stage)}</td>
+        <td class="score">${fmt(item.research_priority_score)}</td>
+        <td class="break">${escapeHtml(item.stage === "research_queue" ? missingLabels(item).join(" · ") || "Evidence incomplete" : "Automatic packet complete")}</td>
+        <td class="break">${escapeHtml(item.next_action || "—")}</td>
+        <td>${copyButton(shortlistCopy(item), `Copy ${item.ticker}`)}</td>
+      </tr>`).join("")
+    : `<tr><td colspan="8">No discoveries were selected for this run.</td></tr>`;
+  setListCopy(
+    "shortlist", "Full discovery shortlist", shortlist, shortlistCopy, data.generated_at,
   );
   document.querySelector("[data-readiness]").innerHTML = items.length
     ? items.map((item) => `<tr>
@@ -426,6 +480,7 @@ function renderReadiness(data) {
       ["Direction", item.direction],
       ["Research priority", item.research_priority_score],
       ["Investment readiness", "not scored until the analysis packet is complete"],
+      ["Automatic evidence packet", evidencePacketText(item)],
       ["Missing analysis", (item.missing_analysis_gate_explanations || [])
         .map((gate) => `${gate.label}: ${gate.detail}`).join(" | ")],
       ["Next action", item.next_action],
