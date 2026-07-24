@@ -391,11 +391,14 @@ function renderReadiness(data) {
     const packet = item.analysis_packet || {};
     const source = packet.source || {};
     const company = packet.company_health || {};
+    const assessment = packet.company_assessment || {};
     const price = packet.market_price || {};
     const research = packet.prepublication_research || {};
     return [
       `Source ${plainLabel(source.status || "missing")}`,
       `company ${plainLabel(company.status || "missing")} (${company.coverage_count ?? 0}/6)`,
+      `company assessment ${plainLabel(assessment.status || "incomplete")}`,
+      `payoff review ${plainLabel(assessment.payoff_review?.status || "missing")}`,
       `framework ${plainLabel(packet.framework?.status || item.framework_status || "missing")}`,
       `price ${plainLabel(price.status || "missing")}${price.as_of ? ` as of ${price.as_of}` : ""}`,
       `materiality ${plainLabel(item.materiality?.status || "unclassified")}`,
@@ -427,6 +430,13 @@ function renderReadiness(data) {
       ["Next action", item.next_action],
       ["Blockers", blockerText(item.blocker_explanations)],
       ["Automatic evidence packet", evidencePacketText(item)],
+      ["Company metrics", (item.analysis_packet?.company_assessment?.metrics || [])
+        .map((value) => `${value.label} ${value.display} (${plainLabel(value.status)})`)
+        .join(" | ")],
+      ["Governed catalysts", (item.analysis_packet?.company_assessment?.catalysts || [])
+        .map((value) => `${value.title} [${plainLabel(value.direction)}]`)
+        .join(" | ")],
+      ["Payoff review", item.analysis_packet?.company_assessment?.payoff_review?.status],
       ["Researched primary sources", sourceLinks(item)],
     ],
   );
@@ -439,6 +449,10 @@ function renderReadiness(data) {
       ["Research priority", item.research_priority_score],
       ["Investment readiness", item.investment_readiness_score ?? "not scored until the automatic packet is complete"],
       ["Automatic evidence packet", evidencePacketText(item)],
+      ["Company metrics", (item.analysis_packet?.company_assessment?.metrics || [])
+        .map((value) => `${value.label} ${value.display} (${plainLabel(value.status)})`)
+        .join(" | ")],
+      ["Payoff review", item.analysis_packet?.company_assessment?.payoff_review?.status],
       ["Researched primary sources", sourceLinks(item)],
       ["Research required", missingLabels(item).join(" | ")],
       ["Recommendation", item.recommendation],
@@ -572,7 +586,8 @@ function renderInvestments(data) {
   setUpdated(data.generated_at);
   document.querySelector("[data-investment-stats]").innerHTML = [
     ["Decision universe", data.candidate_count],
-    ["Graded", data.graded_count],
+    ["Stage 2 pending", data.stage2_pending_count],
+    ["Decision ready", data.decision_ready_count ?? data.graded_count],
     ["Execution", "Off"],
   ].map(([label, value]) => `<div class="card"><div class="metric">${escapeHtml(value ?? 0)}</div><span class="muted">${escapeHtml(label)}</span></div>`).join("");
 
@@ -640,9 +655,9 @@ function renderInvestments(data) {
         ${(item.warnings || []).length ? `<p class="meta break">Warnings: ${escapeHtml(item.warnings.join(" · "))}</p>` : ""}
       </article>`;
     }).join("")
-    : empty("No candidates have reached investment grading.");
+    : empty("No complete Stage 2 packet has reached the Stage 3 decision boundary.");
   setListCopy(
-    "investments", "Graded investment candidates",
+    "investments", "Stage 3 decision-ready candidates",
     items, investmentCopy, data.generated_at,
   );
 }
