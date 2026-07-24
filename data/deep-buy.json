@@ -1,18 +1,18 @@
 {
-  "date": "2026-07-23",
+  "date": "2026-07-24",
   "version": "2.46.6",
   "regime_label": "neutral",
   "regime_score": -10.3,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 194,
-    "earnings_blackout": 100,
-    "rr_too_low": 13,
+    "below_cutoff": 193,
+    "earnings_blackout": 113,
     "held": 7,
+    "rr_too_low": 12,
     "frozen": 1
   },
-  "candidates_evaluated": 316,
+  "candidates_evaluated": 327,
   "picks_count": 1,
   "picks": [
     {
@@ -22,23 +22,23 @@
         "path1_buy",
         "path5_strong_quality"
       ],
-      "spot_price": 289.92,
+      "spot_price": 281.53,
       "entry": {
         "low": 270.0,
         "high": 295.0,
         "mid": 282.5
       },
       "target": 370.0,
-      "stop": 266.73,
-      "rr_ratio": 3.45,
-      "rr_planned": 5.55,
+      "stop": 259.01,
+      "rr_ratio": 3.93,
+      "rr_planned": 3.72,
       "above_zone_pct": 0.0,
       "below_zone_pct": 0.0,
-      "suggested_size_usd": 869.76,
+      "suggested_size_usd": 844.59,
       "suggested_shares": 3,
-      "position_risk_usd": 69.57,
+      "position_risk_usd": 67.56,
       "earnings_date": "2026-08-20",
-      "earnings_days_away": 20,
+      "earnings_days_away": 19,
       "components": {
         "path1": {
           "score": 25
@@ -60,14 +60,14 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "Tier 2 BUY conf 100 + Buffett quality. Earnings 20d.",
+      "rationale_one_liner": "Tier 2 BUY conf 100 + Buffett quality. Earnings 19d.",
       "watchlist_thesis": "Deep Buy #1 and P1/P4/P5 convergence. Starter only inside $270-$295; no chase above zone.",
       "rank": 1,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed hike, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-08-06",
+        "expires": "2026-08-07",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false,
@@ -79,24 +79,13 @@
       }
     }
   ],
-  "oracle_watch_count": 2,
+  "oracle_watch_count": 1,
   "oracle_watch": [
-    {
-      "ticker": "BNTX",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 92.33,
-      "oracle_note": {
-        "text": "Rescan only: P4 zone $85-$95 and cash/buyback thesis, but flow.score=0.0 neutral and earnings date needs verification.",
-        "written_at": "2026-07-23"
-      },
-      "filter_reason": "below_cutoff"
-    },
     {
       "ticker": "CAPR",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 19.79,
+      "spot_price": 19.83,
       "oracle_note": {
         "text": "Rescan calendar: independent/P4 cite AdCom 2026-07-29, but current catalyst JSON shows only earnings heat=10.",
         "written_at": "2026-07-23"
@@ -106,7 +95,72 @@
   ],
   "macro_blocked_count": 0,
   "macro_blocked": [],
-  "tier0_watch": [],
+  "tier0_watch": [
+    {
+      "ticker": "ACN",
+      "path": "flow_led",
+      "source": "spike",
+      "composite": 30,
+      "convergence_paths": [
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 0,
+      "tier_evidence": [],
+      "size_class": "none",
+      "spot_price": 138.74,
+      "entry": {
+        "low": 185.0,
+        "high": 200.0,
+        "mid": 192.5
+      },
+      "target": 205.0,
+      "stop": 127.64,
+      "rr_ratio": 5.97,
+      "rr_planned": 0.19,
+      "above_zone_pct": 0.0,
+      "below_zone_pct": 25.01,
+      "suggested_size_usd": null,
+      "suggested_shares": null,
+      "position_risk_usd": null,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "ACN",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Buffett 82 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "Independent source=both BUY and Path5 82, but Path1 context is STALE 153d and price anchors conflict. Reconcile before entry.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed hike, IWM 5d unknown, Sector Technology, Industry unknown",
+        "expires": "2026-08-07",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false,
+        "abstained": false
+      }
+    }
+  ],
   "flow_led_picks_count": 0,
   "flow_led_picks": [],
   "flow_extreme_picks_count": 0,
