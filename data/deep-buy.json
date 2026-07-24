@@ -6,9 +6,9 @@
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 199,
-    "earnings_blackout": 114,
-    "rr_too_low": 12,
+    "below_cutoff": 291,
+    "rr_too_low": 17,
+    "earnings_blackout": 17,
     "frozen": 1
   },
   "candidates_evaluated": 327,
@@ -36,8 +36,8 @@
       "suggested_size_usd": 844.59,
       "suggested_shares": 3,
       "position_risk_usd": 67.56,
-      "earnings_date": "2026-08-20",
-      "earnings_days_away": 19,
+      "earnings_date": null,
+      "earnings_days_away": null,
       "components": {
         "path1": {
           "score": 25
@@ -59,7 +59,7 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "Tier 2 BUY conf 100 + Buffett quality. Earnings 19d.",
+      "rationale_one_liner": "Tier 2 BUY conf 100 + Buffett quality. no earnings <45d.",
       "watchlist_thesis": "Deep Buy #1 + P1 BUY + Path5 quality. Starter only inside $270-$295; no chase above zone.",
       "rank": 1,
       "macro_filter": {
@@ -78,8 +78,76 @@
       }
     }
   ],
-  "oracle_watch_count": 1,
+  "oracle_watch_count": 7,
   "oracle_watch": [
+    {
+      "ticker": "BIIB",
+      "composite": 10,
+      "convergence_paths": [
+        "catalyst_near"
+      ],
+      "spot_price": 200.62,
+      "oracle_note": {
+        "text": "Rescan catalyst: heatmap Score=52 with earnings/fda/fda, but P4 flags PDUFA date discrepancy versus strategic context.",
+        "written_at": "2026-07-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "BNTX",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 92.06,
+      "oracle_note": {
+        "text": "Rescan/watch: P4 ENTRY_ZONE $85-$95, alert Price=$92.06, independent BUY cites cash/buyback support.",
+        "written_at": "2026-07-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "GEHC",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 61.99,
+      "oracle_note": {
+        "text": "Rescan/watch: P4 ENTRY_ZONE $57-$63, alert Price=$61.99, but earnings=2026-07-29 limits size.",
+        "written_at": "2026-07-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "IFF",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 73.77,
+      "oracle_note": {
+        "text": "Rescan/watch: P4 ENTRY_ZONE $72-$77, alert Price=$73.77, thesis cites Director $20.3M buy and CVC divestiture.",
+        "written_at": "2026-07-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "LHX",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 299.67,
+      "oracle_note": {
+        "text": "Rescan/watch: P4 ENTRY_ZONE $285-$300, alert Price=$299.67; defense thesis valid but earnings=2026-07-29.",
+        "written_at": "2026-07-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "NCLH",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 18.71,
+      "oracle_note": {
+        "text": "Rescan/watch: P4 ENTRY_ZONE $18-$21, alert Price=$18.71, activist/CEO-buy thesis; earnings=2026-07-30 caps size.",
+        "written_at": "2026-07-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "NOW",
       "composite": 0,
@@ -94,72 +162,7 @@
   ],
   "macro_blocked_count": 0,
   "macro_blocked": [],
-  "tier0_watch": [
-    {
-      "ticker": "ACN",
-      "path": "flow_led",
-      "source": "spike",
-      "composite": 30,
-      "convergence_paths": [
-        "buffett_strong",
-        "watchlist_dip"
-      ],
-      "tier": 0,
-      "tier_evidence": [],
-      "size_class": "none",
-      "spot_price": 138.74,
-      "entry": {
-        "low": 185.0,
-        "high": 200.0,
-        "mid": 192.5
-      },
-      "target": 205.0,
-      "stop": 127.64,
-      "rr_ratio": 5.97,
-      "rr_planned": 0.19,
-      "above_zone_pct": 0.0,
-      "below_zone_pct": 25.01,
-      "suggested_size_usd": null,
-      "suggested_shares": null,
-      "position_risk_usd": null,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "buffett_quality_strong": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "dilution_risk": {
-        "ticker": "ACN",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "Buffett 82 STRONG + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "Independent source=both BUY and Path5 82, but Path1 context is STALE 153d and price anchors conflict. Reconcile before entry.",
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed hike, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-08-07",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false,
-        "abstained": false
-      }
-    }
-  ],
+  "tier0_watch": [],
   "flow_led_picks_count": 0,
   "flow_led_picks": [],
   "flow_extreme_picks_count": 0,
