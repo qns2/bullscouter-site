@@ -35,6 +35,13 @@ const pill = (value) => {
 
 const empty = (message) => `<div class="empty">${escapeHtml(message)}</div>`;
 
+const blockerList = (items) => {
+  if (!items?.length) return "";
+  return `<ul class="blockers">${items.map((item) => `<li>
+    <strong>${escapeHtml(item.label)}</strong>${escapeHtml(item.detail)}
+  </li>`).join("")}</ul>`;
+};
+
 async function loadJson(name) {
   const response = await fetch(`${DATA_ROOT}/${name}`, { cache: "no-store" });
   if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
@@ -85,7 +92,7 @@ function renderDiscoveries(data) {
     ? candidates.map((item) => `<article class="row-card">
         <div><strong class="ticker">${escapeHtml(item.ticker || "—")}</strong><br>${pill(item.direction)}</div>
         <div><h3>${escapeHtml(item.title)}</h3><p class="muted">${escapeHtml(item.why_now || item.counter_case || "")}</p>
-        ${(item.promotion_blockers || []).length ? `<p class="meta break">Blocked: ${escapeHtml(item.promotion_blockers.join(", "))}</p>` : ""}</div>
+        ${blockerList(item.promotion_blocker_explanations)}</div>
         <div>${pill(item.promotion_eligible ? "promotion eligible" : item.status)}</div>
       </article>`).join("")
     : empty("No current thesis candidates.");
@@ -164,7 +171,7 @@ function renderInvestments(data) {
         <div>${pill(`Grade ${item.grade || "—"}`)} ${pill(item.proposal?.recommendation || item.decision?.authoritative_decision || "unproposed")}</div></div>
         <p class="muted">${escapeHtml(item.proposal?.rationale || "No public proposal rationale.")}</p>
         <p>${pill(item.lane)} ${pill(item.proposal?.risk_tier || "unrated")} ${pill(item.company_health?.health_status || "health missing")}</p>
-        ${(item.blockers || []).length ? `<p class="meta break">Blockers: ${escapeHtml(item.blockers.join(", "))}</p>` : ""}
+        ${blockerList(item.blocker_explanations)}
         ${(item.warnings || []).length ? `<p class="meta break">Warnings: ${escapeHtml(item.warnings.join(" · "))}</p>` : ""}
       </article>`).join("")
     : empty("No candidates have reached investment grading.");
