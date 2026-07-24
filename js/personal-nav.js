@@ -23,6 +23,7 @@
   if (localStorage.getItem(STORAGE_KEY) !== '1') return;
 
   const ITEMS = [
+    { href: '/v2/', label: 'BullScouter2' },
     { href: 'daily-analysis.html', label: 'Daily Analysis' },
     { href: 'convergence.html', label: 'Convergence' },
     { href: 'deep-buy.html', label: 'Deep Buy' },
