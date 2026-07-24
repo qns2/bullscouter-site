@@ -1,8 +1,9 @@
 {
-  "as_of": "2026-07-24T06:14:34.530902+00:00",
-  "deduplicated_count": 204,
+  "approved_opportunities": [],
+  "as_of": "2026-07-24T06:59:05.762906+00:00",
+  "deduplicated_count": 227,
   "execution_enabled": false,
-  "generated_at": "2026-07-24T06:16:13.634748+00:00",
+  "generated_at": "2026-07-24T07:01:38.581359+00:00",
   "items": [
     {
       "blocker_explanations": [
@@ -10,6 +11,11 @@
           "code": "framework_proposal_pending",
           "detail": "A proposed company framework is waiting for human review.",
           "label": "Framework review pending"
+        },
+        {
+          "code": "company_health_unhealthy",
+          "detail": "The sourced company-health assessment is currently unhealthy.",
+          "label": "Company health failed"
         },
         {
           "code": "catalyst_not_reviewed",
@@ -34,29 +40,93 @@
       ],
       "blockers": [
         "framework_proposal_pending",
+        "company_health_unhealthy",
         "catalyst_not_reviewed",
         "qualification_enrichment_pending",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "proposal_pending",
-      "health_status": "acceptable",
+      "health_status": "unhealthy",
+      "invalidation": "Reject if TEM fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": 69.167,
       "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
+      "materiality": {
+        "quantified_commitment": true,
+        "signals": [],
+        "status": "quantified",
+        "summary": "The catalyst discloses a quantitative commercial commitment."
+      },
+      "missing_analysis_gate_explanations": [],
+      "missing_analysis_gates": [],
+      "monitoring_label": "catalyst validation",
+      "next_action": "Human review: review / catalyst validation; governed admission remains required.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": true
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": true
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": true
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
       "rank": 1,
-      "score": 83.732,
+      "recommendation": "review",
+      "research_priority_score": 68.079,
+      "research_rank": 9,
+      "score": 69.167,
       "score_components": {
-        "age_days": 0.41,
-        "company_evidence": 22.5,
+        "age_days": 3.29,
+        "company_evidence": 12.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 31.232,
-        "total": 83.732
+        "source_evidence": 25.579,
+        "total": 68.079
       },
+      "stage": "review_ready",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_74f98221510aeb5ff1ef41b9",
+        "capital_source_health_id": "capital_issuance_health_ad6ac981d4ef5ad8451711e9",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -64,18 +134,197 @@
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "acceptable",
+        "issuer_fundamentals": "unhealthy",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 1906,
+        "price_event_id": 2792,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
-      "ticker": "CTSH",
-      "title": "CTSH · news event:partnership"
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 46.01,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "TEM",
+      "title": "TEM · acquisition · 2026-07-20"
     },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "company_health_borderline",
+          "detail": "This governance requirement is not yet satisfied.",
+          "label": "Company health borderline"
+        },
+        {
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "company_health_borderline",
+        "catalyst_not_reviewed",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
+      "framework_status": "proposal_pending",
+      "health_status": "borderline",
+      "invalidation": "Reject if CRWD fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": 68.333,
+      "lane": "catalyst",
+      "materiality": {
+        "quantified_commitment": false,
+        "signals": [
+          "strategic partnership"
+        ],
+        "status": "exploratory",
+        "summary": "The catalyst is strategic or exploratory and lacks quantified economics."
+      },
+      "missing_analysis_gate_explanations": [],
+      "missing_analysis_gates": [],
+      "monitoring_label": "catalyst validation",
+      "next_action": "Human review: watch only / catalyst validation; governed admission remains required.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": true
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": true
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": true
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 2,
+      "recommendation": "watch_only",
+      "research_priority_score": 61.392,
+      "research_rank": 17,
+      "score": 68.333,
+      "score_components": {
+        "age_days": 7.29,
+        "company_evidence": 15.0,
+        "governance_readiness": 5.0,
+        "recency": 18.0,
+        "source_evidence": 23.392,
+        "total": 61.392
+      },
+      "stage": "review_ready",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_d3da16704a032e0be413f92a",
+        "catalyst": "discovery_only",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "borderline",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-23",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2744,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 183.42,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "CRWD",
+      "title": "CRWD · partnership · 2026-07-16"
+    }
+  ],
+  "lane_counts": {
+    "catalyst": 6,
+    "contrarian": 8,
+    "thesis": 6
+  },
+  "policy_version": "phase1g-readiness-v2",
+  "research_queue": [
     {
       "blocker_explanations": [
         {
@@ -99,21 +348,97 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": null,
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "preregistered",
       "health_status": "acceptable",
+      "invalidation": null,
+      "investment_readiness_score": null,
       "lane": "contrarian",
-      "next_action": "Resolve the remaining qualification blockers.",
-      "rank": 2,
-      "score": 82.5,
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "counter_case",
+          "detail": "State a credible explanation for why the opportunity thesis may be wrong.",
+          "label": "Counter-case missing"
+        },
+        {
+          "code": "invalidation",
+          "detail": "Define the sourced observation or outcome that would invalidate the thesis.",
+          "label": "Invalidation condition missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "counter_case",
+        "invalidation"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: counter case, invalidation.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": false,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": false,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 1,
+      "recommendation": "review",
+      "research_priority_score": 82.5,
+      "research_rank": 1,
+      "score": null,
       "score_components": {
-        "age_days": 1.26,
+        "age_days": 1.29,
         "company_evidence": 22.5,
         "governance_readiness": 15.0,
         "recency": 25.0,
         "source_evidence": 20.0,
         "total": 82.5
       },
+      "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_095f304c76ae1df88988bf4b",
@@ -126,6 +451,7 @@
         "investment_proposal_id": "investment_proposal_7ca4e15067b07d8e4ad22836",
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
@@ -133,164 +459,21 @@
         "qualification": "watch_only",
         "recommendation": "Watch"
       },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 15.65,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
       "ticker": "CAI",
       "title": "CAI · contrarian dislocation"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
-        },
-        {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "qualification_enrichment_pending",
-          "detail": "Qualification is waiting for missing company or source evidence.",
-          "label": "More evidence required"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_pending",
-        "catalyst_not_reviewed",
-        "qualification_enrichment_pending",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_pending",
-      "health_status": "acceptable",
-      "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
-      "rank": 3,
-      "score": 81.752,
-      "score_components": {
-        "age_days": 0.41,
-        "company_evidence": 22.5,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 29.252,
-        "total": 81.752
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_0893d3dfee15905de947cd6d",
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "proposal_pending",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "acceptable",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 1948,
-        "qualification": "enrichment_pending",
-        "recommendation": "none"
-      },
-      "ticker": "INTU",
-      "title": "INTU · news event:analyst upgrade"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
-        },
-        {
-          "code": "market_price_missing",
-          "detail": "No current adjusted market price is available for the candidate.",
-          "label": "Current price missing"
-        },
-        {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "capital_issuance_source_missing",
-          "detail": "The SEC capital-issuance source has not produced a current result.",
-          "label": "Capital-issuance check missing"
-        },
-        {
-          "code": "qualification_enrichment_pending",
-          "detail": "Qualification is waiting for missing company or source evidence.",
-          "label": "More evidence required"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_pending",
-        "market_price_missing",
-        "catalyst_not_reviewed",
-        "capital_issuance_source_missing",
-        "qualification_enrichment_pending",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_pending",
-      "health_status": "acceptable",
-      "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
-      "rank": 4,
-      "score": 78.249,
-      "score_components": {
-        "age_days": 0.41,
-        "company_evidence": 22.5,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 25.749,
-        "total": 78.249
-      },
-      "statuses": {
-        "capital_issuance": "missing",
-        "capital_source_health_id": null,
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "proposal_pending",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "acceptable",
-        "market_price": "missing",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": null,
-        "qualification": "enrichment_pending",
-        "recommendation": "none"
-      },
-      "ticker": "TLX",
-      "title": "TLX · news event:analyst upgrade"
     },
     {
       "blocker_explanations": [
@@ -309,21 +492,97 @@
         "qualification_watch_only",
         "reviewed_payoff_missing"
       ],
+      "counter_case": null,
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "preregistered",
       "health_status": "acceptable",
+      "invalidation": null,
+      "investment_readiness_score": null,
       "lane": "contrarian",
-      "next_action": "Resolve the remaining qualification blockers.",
-      "rank": 5,
-      "score": 78.0,
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "counter_case",
+          "detail": "State a credible explanation for why the opportunity thesis may be wrong.",
+          "label": "Counter-case missing"
+        },
+        {
+          "code": "invalidation",
+          "detail": "Define the sourced observation or outcome that would invalidate the thesis.",
+          "label": "Invalidation condition missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "counter_case",
+        "invalidation"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: counter case, invalidation.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": false,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": false,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 2,
+      "recommendation": "review",
+      "research_priority_score": 78.0,
+      "research_rank": 2,
+      "score": null,
       "score_components": {
-        "age_days": 7.26,
+        "age_days": 7.29,
         "company_evidence": 25.0,
         "governance_readiness": 15.0,
         "recency": 18.0,
         "source_evidence": 20.0,
         "total": 78.0
       },
+      "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_410ab1c16ccb11834409df6b",
@@ -336,12 +595,26 @@
         "investment_proposal_id": "investment_proposal_c74e0701c56602b8871984cd",
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": "opportunity_watchlist_a873abeb8f45aff96b2456a0",
         "payoff": "missing",
         "payoff_assumption_id": null,
         "price_event_id": 2738,
         "qualification": "watch_only",
         "recommendation": "Watch"
+      },
+      "theta": {
+        "as_of": "2026-07-20",
+        "confidence": "high",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": 0.433,
+        "put_call_volume_ratio": 1.093,
+        "reason": "ThetaData-confirmed options fields are current.",
+        "spot_price": 28.99,
+        "status": "available",
+        "total_open_interest": 603775,
+        "total_volume": 27786
       },
       "ticker": "CELH",
       "title": "CELH · contrarian dislocation"
@@ -354,150 +627,6 @@
           "label": "Framework review pending"
         },
         {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "qualification_enrichment_pending",
-          "detail": "Qualification is waiting for missing company or source evidence.",
-          "label": "More evidence required"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_pending",
-        "catalyst_not_reviewed",
-        "qualification_enrichment_pending",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_pending",
-      "health_status": "acceptable",
-      "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
-      "rank": 6,
-      "score": 76.174,
-      "score_components": {
-        "age_days": 0.41,
-        "company_evidence": 20.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 26.174,
-        "total": 76.174
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_78345a7b9383f99a348e6aff",
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "proposal_pending",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "acceptable",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2750,
-        "qualification": "enrichment_pending",
-        "recommendation": "none"
-      },
-      "ticker": "EQT",
-      "title": "EQT · news event:earnings beat"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "direction_unresolved",
-          "detail": "The evidence does not establish a sufficiently clear bull or bear direction.",
-          "label": "Direction unresolved"
-        },
-        {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
-        },
-        {
-          "code": "qualification_rejected",
-          "detail": "The opportunity has been rejected from the actionable funnel.",
-          "label": "Qualification rejected"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "direction_unresolved",
-        "framework_proposal_pending",
-        "qualification_rejected",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "unknown",
-      "framework_status": "proposal_pending",
-      "health_status": "acceptable",
-      "lane": "thesis",
-      "next_action": "Review the proposed company framework.",
-      "rank": 7,
-      "score": 72.606,
-      "score_components": {
-        "age_days": 4.96,
-        "company_evidence": 22.5,
-        "governance_readiness": 0.0,
-        "recency": 25.0,
-        "source_evidence": 25.106,
-        "total": 72.606
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_872e34eb5d21ba3bb71ce245",
-        "catalyst": "not_required",
-        "catalyst_observation_id": null,
-        "framework": "proposal_pending",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "acceptable",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2732,
-        "qualification": "rejected",
-        "recommendation": "none"
-      },
-      "ticker": "CEG",
-      "title": "CEG · sector rotation"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
-        },
-        {
           "code": "qualification_enrichment_pending",
           "detail": "Qualification is waiting for missing company or source evidence.",
           "label": "More evidence required"
@@ -519,21 +648,97 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": null,
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "proposal_pending",
       "health_status": "acceptable",
+      "invalidation": null,
+      "investment_readiness_score": null,
       "lane": "contrarian",
-      "next_action": "Review the proposed company framework.",
-      "rank": 8,
-      "score": 72.5,
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "counter_case",
+          "detail": "State a credible explanation for why the opportunity thesis may be wrong.",
+          "label": "Counter-case missing"
+        },
+        {
+          "code": "invalidation",
+          "detail": "Define the sourced observation or outcome that would invalidate the thesis.",
+          "label": "Invalidation condition missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "counter_case",
+        "invalidation"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: counter case, invalidation.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": false,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": false,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 3,
+      "recommendation": "review",
+      "research_priority_score": 72.5,
+      "research_rank": 3,
+      "score": null,
       "score_components": {
-        "age_days": 1.26,
+        "age_days": 1.29,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 20.0,
         "total": 72.5
       },
+      "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_b12015831a75d237885c9953",
@@ -546,12 +751,26 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
         "price_event_id": 2805,
         "qualification": "enrichment_pending",
         "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 67.65,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
       },
       "ticker": "ACM",
       "title": "ACM · contrarian dislocation"
@@ -585,21 +804,97 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": null,
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "proposal_pending",
       "health_status": "acceptable",
+      "invalidation": null,
+      "investment_readiness_score": null,
       "lane": "contrarian",
-      "next_action": "Review the proposed company framework.",
-      "rank": 9,
-      "score": 72.5,
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "counter_case",
+          "detail": "State a credible explanation for why the opportunity thesis may be wrong.",
+          "label": "Counter-case missing"
+        },
+        {
+          "code": "invalidation",
+          "detail": "Define the sourced observation or outcome that would invalidate the thesis.",
+          "label": "Invalidation condition missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "counter_case",
+        "invalidation"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: counter case, invalidation.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": false,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": false,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 4,
+      "recommendation": "review",
+      "research_priority_score": 72.5,
+      "research_rank": 4,
+      "score": null,
       "score_components": {
-        "age_days": 1.26,
+        "age_days": 1.29,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 20.0,
         "total": 72.5
       },
+      "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_1aa1fb9e86fc0ce3b1a7c083",
@@ -612,12 +907,26 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
         "price_event_id": 2708,
         "qualification": "enrichment_pending",
         "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 27.44,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
       },
       "ticker": "BL",
       "title": "BL · contrarian dislocation"
@@ -651,21 +960,97 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": null,
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "proposal_pending",
       "health_status": "acceptable",
+      "invalidation": null,
+      "investment_readiness_score": null,
       "lane": "contrarian",
-      "next_action": "Review the proposed company framework.",
-      "rank": 10,
-      "score": 72.5,
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "counter_case",
+          "detail": "State a credible explanation for why the opportunity thesis may be wrong.",
+          "label": "Counter-case missing"
+        },
+        {
+          "code": "invalidation",
+          "detail": "Define the sourced observation or outcome that would invalidate the thesis.",
+          "label": "Invalidation condition missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "counter_case",
+        "invalidation"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: counter case, invalidation.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": false,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": false,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 5,
+      "recommendation": "review",
+      "research_priority_score": 72.5,
+      "research_rank": 5,
+      "score": null,
       "score_components": {
-        "age_days": 1.26,
+        "age_days": 1.29,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 20.0,
         "total": 72.5
       },
+      "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_29b5742374d4defcd382e7f7",
@@ -678,12 +1063,19 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
         "price_event_id": 2714,
         "qualification": "enrichment_pending",
         "recommendation": "none"
+      },
+      "theta": {
+        "confidence": "low",
+        "provider": "ThetaData",
+        "reason": "No options snapshot exists for this ticker.",
+        "status": "unavailable"
       },
       "ticker": "BLKB",
       "title": "BLKB · contrarian dislocation"
@@ -696,9 +1088,19 @@
           "label": "Framework review pending"
         },
         {
-          "code": "qualification_rejected",
-          "detail": "The opportunity has been rejected from the actionable funnel.",
-          "label": "Qualification rejected"
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
+        },
+        {
+          "code": "capital_issuance_source_missing",
+          "detail": "The SEC capital-issuance source has not produced a current result.",
+          "label": "Capital-issuance check missing"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
         },
         {
           "code": "watchlist_admission_required",
@@ -713,95 +1115,110 @@
       ],
       "blockers": [
         "framework_proposal_pending",
-        "qualification_rejected",
+        "catalyst_not_reviewed",
+        "capital_issuance_source_missing",
+        "qualification_enrichment_pending",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "proposal_pending",
       "health_status": "acceptable",
-      "lane": "thesis",
-      "next_action": "Review the proposed company framework.",
-      "rank": 11,
-      "score": 72.246,
-      "score_components": {
-        "age_days": 3.91,
-        "company_evidence": 22.5,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 19.746,
-        "total": 72.246
+      "invalidation": "Reject if TLX fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": null,
+      "lane": "catalyst",
+      "materiality": {
+        "quantified_commitment": false,
+        "signals": [
+          "potential to"
+        ],
+        "status": "exploratory",
+        "summary": "The catalyst is strategic or exploratory and lacks quantified economics."
       },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_1d7fb6c9663703ef7c1bcce7",
-        "catalyst": "not_required",
-        "catalyst_observation_id": null,
-        "framework": "proposal_pending",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "acceptable",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2768,
-        "qualification": "rejected",
-        "recommendation": "none"
-      },
-      "ticker": "KLAC",
-      "title": "KLAC · news event:sector catalyst"
-    },
-    {
-      "blocker_explanations": [
+      "missing_analysis_gate_explanations": [
         {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
+          "code": "primary_source",
+          "detail": "Add issuer, counterparty, exchange, regulator, or filing evidence for the event.",
+          "label": "Primary catalyst source required"
         },
         {
-          "code": "qualification_rejected",
-          "detail": "The opportunity has been rejected from the actionable funnel.",
-          "label": "Qualification rejected"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
+          "code": "source_quality",
+          "detail": "Resolve the active source, direction, horizon, or market-context evidence issue.",
+          "label": "Source quality review incomplete"
         }
       ],
-      "blockers": [
-        "framework_proposal_pending",
-        "qualification_rejected",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
+      "missing_analysis_gates": [
+        "primary_source",
+        "source_quality"
       ],
-      "direction": "bull",
-      "framework_status": "proposal_pending",
-      "health_status": "acceptable",
-      "lane": "thesis",
-      "next_action": "Review the proposed company framework.",
-      "rank": 12,
-      "score": 71.327,
+      "monitoring_label": "pre-earnings validation",
+      "next_action": "Complete: primary source, source quality.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": true
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": true
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": false,
+          "required": true
+        },
+        "source_quality": {
+          "passed": false,
+          "required": true
+        }
+      },
+      "rank": 6,
+      "recommendation": "watch_only",
+      "research_priority_score": 71.108,
+      "research_rank": 6,
+      "score": null,
       "score_components": {
-        "age_days": 3.91,
+        "age_days": 1.29,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 18.827,
-        "total": 71.327
+        "source_evidence": 18.608,
+        "total": 71.108
       },
+      "stage": "research_queue",
       "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_802af3f9f4cf6b085391b2a3",
-        "catalyst": "not_required",
+        "capital_issuance": "missing",
+        "capital_source_health_id": null,
+        "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
         "investment_candidate_id": null,
@@ -810,15 +1227,22 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 2684,
-        "qualification": "rejected",
+        "price_event_id": 2961,
+        "qualification": "enrichment_pending",
         "recommendation": "none"
       },
-      "ticker": "AMAT",
-      "title": "AMAT · news event:sector catalyst"
+      "theta": {
+        "confidence": "low",
+        "provider": "ThetaData",
+        "reason": "No options snapshot exists for this ticker.",
+        "status": "unavailable"
+      },
+      "ticker": "TLX",
+      "title": "TLX · analyst opinion · 2026-07-22"
     },
     {
       "blocker_explanations": [
@@ -849,21 +1273,97 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": null,
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "proposal_pending",
       "health_status": "acceptable",
+      "invalidation": null,
+      "investment_readiness_score": null,
       "lane": "contrarian",
-      "next_action": "Review the proposed company framework.",
-      "rank": 13,
-      "score": 70.0,
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "counter_case",
+          "detail": "State a credible explanation for why the opportunity thesis may be wrong.",
+          "label": "Counter-case missing"
+        },
+        {
+          "code": "invalidation",
+          "detail": "Define the sourced observation or outcome that would invalidate the thesis.",
+          "label": "Invalidation condition missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "counter_case",
+        "invalidation"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: counter case, invalidation.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": false,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": false,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 7,
+      "recommendation": "review",
+      "research_priority_score": 70.0,
+      "research_rank": 7,
+      "score": null,
       "score_components": {
-        "age_days": 1.26,
+        "age_days": 1.29,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 20.0,
         "total": 70.0
       },
+      "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_b6b83f352c4a1f0b7b63ad18",
@@ -876,12 +1376,26 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
         "price_event_id": 2678,
         "qualification": "enrichment_pending",
         "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 138.74,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
       },
       "ticker": "ACN",
       "title": "ACN · contrarian dislocation"
@@ -915,21 +1429,97 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": null,
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "proposal_pending",
       "health_status": "acceptable",
+      "invalidation": null,
+      "investment_readiness_score": null,
       "lane": "contrarian",
-      "next_action": "Review the proposed company framework.",
-      "rank": 14,
-      "score": 70.0,
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "counter_case",
+          "detail": "State a credible explanation for why the opportunity thesis may be wrong.",
+          "label": "Counter-case missing"
+        },
+        {
+          "code": "invalidation",
+          "detail": "Define the sourced observation or outcome that would invalidate the thesis.",
+          "label": "Invalidation condition missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "counter_case",
+        "invalidation"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: counter case, invalidation.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": false,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": false,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 8,
+      "recommendation": "review",
+      "research_priority_score": 70.0,
+      "research_rank": 8,
+      "score": null,
       "score_components": {
-        "age_days": 1.26,
+        "age_days": 1.29,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 20.0,
         "total": 70.0
       },
+      "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_2c782808d72bd0daa450b61a",
@@ -942,12 +1532,26 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
         "price_event_id": 2720,
         "qualification": "enrichment_pending",
         "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 12.9,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
       },
       "ticker": "BRBR",
       "title": "BRBR · contrarian dislocation"
@@ -960,228 +1564,6 @@
           "label": "Framework review pending"
         },
         {
-          "code": "qualification_rejected",
-          "detail": "The opportunity has been rejected from the actionable funnel.",
-          "label": "Qualification rejected"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_pending",
-        "qualification_rejected",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_pending",
-      "health_status": "acceptable",
-      "lane": "thesis",
-      "next_action": "Review the proposed company framework.",
-      "rank": 15,
-      "score": 69.746,
-      "score_components": {
-        "age_days": 3.91,
-        "company_evidence": 20.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 19.746,
-        "total": 69.746
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_0dce91e0a328897b6f66e9f5",
-        "catalyst": "not_required",
-        "catalyst_observation_id": null,
-        "framework": "proposal_pending",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "acceptable",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2774,
-        "qualification": "rejected",
-        "recommendation": "none"
-      },
-      "ticker": "LRCX",
-      "title": "LRCX · news event:sector catalyst"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
-        },
-        {
-          "code": "company_health_borderline",
-          "detail": "This governance requirement is not yet satisfied.",
-          "label": "Company health borderline"
-        },
-        {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "qualification_watch_only",
-          "detail": "The setup may be monitored but does not qualify for promotion.",
-          "label": "Watch-only qualification"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_pending",
-        "company_health_borderline",
-        "catalyst_not_reviewed",
-        "qualification_watch_only",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_pending",
-      "health_status": "borderline",
-      "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
-      "rank": 16,
-      "score": 69.033,
-      "score_components": {
-        "age_days": 3.91,
-        "company_evidence": 15.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 24.033,
-        "total": 69.033
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_d3da16704a032e0be413f92a",
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "proposal_pending",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "borderline",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2744,
-        "qualification": "watch_only",
-        "recommendation": "none"
-      },
-      "ticker": "CRWD",
-      "title": "CRWD · news event:partnership"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
-        },
-        {
-          "code": "company_health_unhealthy",
-          "detail": "The sourced company-health assessment is currently unhealthy.",
-          "label": "Company health failed"
-        },
-        {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "qualification_enrichment_pending",
-          "detail": "Qualification is waiting for missing company or source evidence.",
-          "label": "More evidence required"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_pending",
-        "company_health_unhealthy",
-        "catalyst_not_reviewed",
-        "qualification_enrichment_pending",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_pending",
-      "health_status": "unhealthy",
-      "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
-      "rank": 17,
-      "score": 67.666,
-      "score_components": {
-        "age_days": 0.41,
-        "company_evidence": 10.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 27.666,
-        "total": 67.666
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_273aa40b66dc78beb57bb474",
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "proposal_pending",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "unhealthy",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2696,
-        "qualification": "enrichment_pending",
-        "recommendation": "none"
-      },
-      "ticker": "AVAV",
-      "title": "AVAV · news event:contract award"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
-        },
-        {
           "code": "company_health_borderline",
           "detail": "This governance requirement is not yet satisfied.",
           "label": "Company health borderline"
@@ -1209,21 +1591,97 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": null,
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "proposal_pending",
       "health_status": "borderline",
+      "invalidation": null,
+      "investment_readiness_score": null,
       "lane": "contrarian",
-      "next_action": "Review the proposed company framework.",
-      "rank": 18,
-      "score": 67.5,
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "counter_case",
+          "detail": "State a credible explanation for why the opportunity thesis may be wrong.",
+          "label": "Counter-case missing"
+        },
+        {
+          "code": "invalidation",
+          "detail": "Define the sourced observation or outcome that would invalidate the thesis.",
+          "label": "Invalidation condition missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "counter_case",
+        "invalidation"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: counter case, invalidation.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": false,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": false,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 9,
+      "recommendation": "review",
+      "research_priority_score": 67.5,
+      "research_rank": 10,
+      "score": null,
       "score_components": {
-        "age_days": 1.26,
+        "age_days": 1.29,
         "company_evidence": 17.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 20.0,
         "total": 67.5
       },
+      "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_6d9c57af9f9897d929ae2981",
@@ -1236,12 +1694,26 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "borderline",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
         "price_event_id": 2690,
         "qualification": "enrichment_pending",
         "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 6.57,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
       },
       "ticker": "ASAN",
       "title": "ASAN · contrarian dislocation"
@@ -1254,14 +1726,14 @@
           "label": "Framework review pending"
         },
         {
-          "code": "company_health_unhealthy",
-          "detail": "The sourced company-health assessment is currently unhealthy.",
-          "label": "Company health failed"
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
         },
         {
-          "code": "qualification_rejected",
-          "detail": "The opportunity has been rejected from the actionable funnel.",
-          "label": "Qualification rejected"
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
         },
         {
           "code": "watchlist_admission_required",
@@ -1276,47 +1748,1053 @@
       ],
       "blockers": [
         "framework_proposal_pending",
-        "company_health_unhealthy",
-        "qualification_rejected",
+        "catalyst_not_reviewed",
+        "qualification_enrichment_pending",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "proposal_pending",
-      "health_status": "unhealthy",
-      "lane": "thesis",
-      "next_action": "Review the proposed company framework.",
-      "rank": 19,
-      "score": 58.935,
+      "health_status": "acceptable",
+      "invalidation": "Reject if CTSH fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": null,
+      "lane": "catalyst",
+      "materiality": {
+        "quantified_commitment": false,
+        "signals": [
+          "strategic partnership"
+        ],
+        "status": "exploratory",
+        "summary": "The catalyst is strategic or exploratory and lacks quantified economics."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "primary_source",
+          "detail": "Add issuer, counterparty, exchange, regulator, or filing evidence for the event.",
+          "label": "Primary catalyst source required"
+        },
+        {
+          "code": "source_quality",
+          "detail": "Resolve the active source, direction, horizon, or market-context evidence issue.",
+          "label": "Source quality review incomplete"
+        }
+      ],
+      "missing_analysis_gates": [
+        "primary_source",
+        "source_quality"
+      ],
+      "monitoring_label": "pre-earnings validation",
+      "next_action": "Complete: primary source, source quality.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": true
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": true
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": false,
+          "required": true
+        },
+        "source_quality": {
+          "passed": false,
+          "required": true
+        }
+      },
+      "rank": 10,
+      "recommendation": "watch_only",
+      "research_priority_score": 65.64,
+      "research_rank": 11,
+      "score": null,
       "score_components": {
-        "age_days": 3.91,
-        "company_evidence": 12.5,
+        "age_days": 0.29,
+        "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 16.435,
-        "total": 58.935
+        "source_evidence": 13.14,
+        "total": 65.64
       },
+      "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_76b4193a00b0c42151b4cb6c",
-        "catalyst": "not_required",
+        "capital_source_health_id": "capital_issuance_health_74f98221510aeb5ff1ef41b9",
+        "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
-        "investment_candidate_id": "investment_candidate_9ad0540ae3bc2728e6b24b98",
+        "investment_candidate_id": null,
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "unhealthy",
+        "issuer_fundamentals": "acceptable",
         "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 2812,
-        "qualification": "rejected",
+        "price_event_id": 2913,
+        "qualification": "enrichment_pending",
         "recommendation": "none"
       },
-      "ticker": "IBRX",
-      "title": "IBRX · news event:sector catalyst"
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 43.01,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "CTSH",
+      "title": "CTSH · partnership · 2026-07-23"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
+      "invalidation": "Reject if KLAC fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": null,
+      "lane": "thesis",
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "source_quality",
+          "detail": "Resolve the active source, direction, horizon, or market-context evidence issue.",
+          "label": "Source quality review incomplete"
+        }
+      ],
+      "missing_analysis_gates": [
+        "source_quality"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: source quality.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": false,
+          "required": true
+        }
+      },
+      "rank": 11,
+      "recommendation": "review",
+      "research_priority_score": 65.246,
+      "research_rank": 12,
+      "score": null,
+      "score_components": {
+        "age_days": 13.29,
+        "company_evidence": 22.5,
+        "governance_readiness": 5.0,
+        "recency": 18.0,
+        "source_evidence": 19.746,
+        "total": 65.246
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_1d7fb6c9663703ef7c1bcce7",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-23",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2768,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "theta": {
+        "confidence": "low",
+        "provider": "ThetaData",
+        "reason": "No options snapshot exists for this ticker.",
+        "status": "unavailable"
+      },
+      "ticker": "KLAC",
+      "title": "KLAC · analyst opinion · 2026-07-10"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "catalyst_not_reviewed",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
+      "invalidation": "Reject if EQT fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": null,
+      "lane": "catalyst",
+      "materiality": {
+        "quantified_commitment": false,
+        "signals": [],
+        "status": "unclassified",
+        "summary": "The available evidence does not establish commercial materiality."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "primary_source",
+          "detail": "Add issuer, counterparty, exchange, regulator, or filing evidence for the event.",
+          "label": "Primary catalyst source required"
+        },
+        {
+          "code": "source_quality",
+          "detail": "Resolve the active source, direction, horizon, or market-context evidence issue.",
+          "label": "Source quality review incomplete"
+        },
+        {
+          "code": "materiality_classified",
+          "detail": "Determine whether the event is quantified, operational, or exploratory.",
+          "label": "Catalyst materiality unclassified"
+        }
+      ],
+      "missing_analysis_gates": [
+        "primary_source",
+        "source_quality",
+        "materiality_classified"
+      ],
+      "monitoring_label": "pre-earnings validation",
+      "next_action": "Complete: primary source, source quality, materiality classified.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": true
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": false,
+          "required": true
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": false,
+          "required": true
+        },
+        "source_quality": {
+          "passed": false,
+          "required": true
+        }
+      },
+      "rank": 12,
+      "recommendation": "review",
+      "research_priority_score": 65.225,
+      "research_rank": 13,
+      "score": null,
+      "score_components": {
+        "age_days": 0.29,
+        "company_evidence": 20.0,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 15.225,
+        "total": 65.225
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_78345a7b9383f99a348e6aff",
+        "catalyst": "discovery_only",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-23",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2750,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 53.39,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "EQT",
+      "title": "EQT · earnings · 2026-07-23"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "catalyst_not_reviewed",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
+      "invalidation": "Reject if INTU fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": null,
+      "lane": "catalyst",
+      "materiality": {
+        "quantified_commitment": false,
+        "signals": [
+          "launched"
+        ],
+        "status": "operational",
+        "summary": "The catalyst describes an identifiable operational deployment or contract."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "primary_source",
+          "detail": "Add issuer, counterparty, exchange, regulator, or filing evidence for the event.",
+          "label": "Primary catalyst source required"
+        },
+        {
+          "code": "source_quality",
+          "detail": "Resolve the active source, direction, horizon, or market-context evidence issue.",
+          "label": "Source quality review incomplete"
+        }
+      ],
+      "missing_analysis_gates": [
+        "primary_source",
+        "source_quality"
+      ],
+      "monitoring_label": "catalyst validation",
+      "next_action": "Complete: primary source, source quality.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": true
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": true
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": false,
+          "required": true
+        },
+        "source_quality": {
+          "passed": false,
+          "required": true
+        }
+      },
+      "rank": 13,
+      "recommendation": "review",
+      "research_priority_score": 64.566,
+      "research_rank": 14,
+      "score": null,
+      "score_components": {
+        "age_days": 0.29,
+        "company_evidence": 22.5,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 12.066,
+        "total": 64.566
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_0893d3dfee15905de947cd6d",
+        "catalyst": "discovery_only",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-23",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2937,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 281.53,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "INTU",
+      "title": "INTU · launch · 2026-07-23"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
+      "invalidation": "Reject if AMAT fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": null,
+      "lane": "thesis",
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "source_quality",
+          "detail": "Resolve the active source, direction, horizon, or market-context evidence issue.",
+          "label": "Source quality review incomplete"
+        }
+      ],
+      "missing_analysis_gates": [
+        "source_quality"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: source quality.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": false,
+          "required": true
+        }
+      },
+      "rank": 14,
+      "recommendation": "review",
+      "research_priority_score": 64.312,
+      "research_rank": 15,
+      "score": null,
+      "score_components": {
+        "age_days": 13.29,
+        "company_evidence": 22.5,
+        "governance_readiness": 5.0,
+        "recency": 18.0,
+        "source_evidence": 18.812,
+        "total": 64.312
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_802af3f9f4cf6b085391b2a3",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-23",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2684,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "theta": {
+        "confidence": "low",
+        "provider": "ThetaData",
+        "reason": "No options snapshot exists for this ticker.",
+        "status": "unavailable"
+      },
+      "ticker": "AMAT",
+      "title": "AMAT · analyst opinion · 2026-07-10"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
+      "invalidation": "Reject if LRCX fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": null,
+      "lane": "thesis",
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "source_quality",
+          "detail": "Resolve the active source, direction, horizon, or market-context evidence issue.",
+          "label": "Source quality review incomplete"
+        }
+      ],
+      "missing_analysis_gates": [
+        "source_quality"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: source quality.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": false,
+          "required": true
+        }
+      },
+      "rank": 15,
+      "recommendation": "review",
+      "research_priority_score": 62.221,
+      "research_rank": 16,
+      "score": null,
+      "score_components": {
+        "age_days": 13.29,
+        "company_evidence": 20.0,
+        "governance_readiness": 5.0,
+        "recency": 18.0,
+        "source_evidence": 19.221,
+        "total": 62.221
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_0dce91e0a328897b6f66e9f5",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-23",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2774,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "theta": {
+        "confidence": "low",
+        "provider": "ThetaData",
+        "reason": "No options snapshot exists for this ticker.",
+        "status": "unavailable"
+      },
+      "ticker": "LRCX",
+      "title": "LRCX · analyst opinion · 2026-07-10"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
+      "invalidation": "Reject if CEG fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": null,
+      "lane": "thesis",
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "source_quality",
+          "detail": "Resolve the active source, direction, horizon, or market-context evidence issue.",
+          "label": "Source quality review incomplete"
+        }
+      ],
+      "missing_analysis_gates": [
+        "source_quality"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: source quality.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": false,
+          "required": true
+        }
+      },
+      "rank": 16,
+      "recommendation": "review",
+      "research_priority_score": 60.04,
+      "research_rank": 18,
+      "score": null,
+      "score_components": {
+        "age_days": 20.29,
+        "company_evidence": 22.5,
+        "governance_readiness": 5.0,
+        "recency": 18.0,
+        "source_evidence": 14.54,
+        "total": 60.04
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_872e34eb5d21ba3bb71ce245",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-23",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2732,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 275.6,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "CEG",
+      "title": "CEG · sector catalyst · 2026-07-03"
     },
     {
       "blocker_explanations": [
@@ -1329,11 +2807,6 @@
           "code": "company_health_unhealthy",
           "detail": "The sourced company-health assessment is currently unhealthy.",
           "label": "Company health failed"
-        },
-        {
-          "code": "market_price_missing",
-          "detail": "No current adjusted market price is available for the candidate.",
-          "label": "Current price missing"
         },
         {
           "code": "capital_issuance_source_missing",
@@ -1359,27 +2832,96 @@
       "blockers": [
         "framework_proposal_pending",
         "company_health_unhealthy",
-        "market_price_missing",
         "capital_issuance_source_missing",
         "qualification_enrichment_pending",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
       "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
       "framework_status": "proposal_pending",
       "health_status": "unhealthy",
+      "invalidation": "Reject if EVEX fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": null,
       "lane": "thesis",
-      "next_action": "Review the proposed company framework.",
-      "rank": 20,
-      "score": 53.533,
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "source_quality",
+          "detail": "Resolve the active source, direction, horizon, or market-context evidence issue.",
+          "label": "Source quality review incomplete"
+        }
+      ],
+      "missing_analysis_gates": [
+        "source_quality"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: source quality.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": false,
+          "required": true
+        }
+      },
+      "rank": 17,
+      "recommendation": "review",
+      "research_priority_score": 53.533,
+      "research_rank": 19,
+      "score": null,
       "score_components": {
-        "age_days": 3.69,
+        "age_days": 3.29,
         "company_evidence": 10.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 13.533,
         "total": 53.533
       },
+      "stage": "research_queue",
       "statuses": {
         "capital_issuance": "missing",
         "capital_source_health_id": null,
@@ -1391,52 +2933,196 @@
         "investment_grade_id": null,
         "investment_proposal_id": null,
         "issuer_fundamentals": "unhealthy",
-        "market_price": "missing",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-23",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": null,
+        "price_event_id": 2925,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
+      "theta": {
+        "confidence": "low",
+        "provider": "ThetaData",
+        "reason": "No options snapshot exists for this ticker.",
+        "status": "unavailable"
+      },
       "ticker": "EVEX",
-      "title": "EVEX · news event:sector catalyst"
+      "title": "EVEX · sector catalyst · 2026-07-20"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "company_health_unhealthy",
+          "detail": "The sourced company-health assessment is currently unhealthy.",
+          "label": "Company health failed"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "company_health_unhealthy",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "direction": "bull",
+      "entry_condition": "No entry until the governed review confirms catalyst materiality, payoff, and invalidation.",
+      "framework_status": "proposal_pending",
+      "health_status": "unhealthy",
+      "invalidation": "Reject if AVAV fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "investment_readiness_score": null,
+      "lane": "thesis",
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "source_quality",
+          "detail": "Resolve the active source, direction, horizon, or market-context evidence issue.",
+          "label": "Source quality review incomplete"
+        }
+      ],
+      "missing_analysis_gates": [
+        "source_quality"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: source quality.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "source_quality": {
+          "passed": false,
+          "required": true
+        }
+      },
+      "rank": 18,
+      "recommendation": "review",
+      "research_priority_score": 51.927,
+      "research_rank": 20,
+      "score": null,
+      "score_components": {
+        "age_days": 0.29,
+        "company_evidence": 10.0,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 11.927,
+        "total": 51.927
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_273aa40b66dc78beb57bb474",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "unhealthy",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-23",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2696,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 158.73,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "AVAV",
+      "title": "AVAV · sector catalyst · 2026-07-23"
     }
   ],
-  "lane_counts": {
-    "catalyst": 6,
-    "contrarian": 8,
-    "thesis": 6
-  },
-  "policy_version": "phase1g-readiness-v1",
   "schema_version": "bullscouter2-public-site.v1",
   "selected_count": 20,
-  "transitions": {
-    "entered": [],
-    "left": [],
-    "previous_as_of": "2026-07-24T06:09:27.500773+00:00",
-    "retained": [
-      "ACM",
-      "ACN",
-      "AMAT",
-      "ASAN",
-      "AVAV",
-      "BL",
-      "BLKB",
-      "BRBR",
-      "CAI",
-      "CEG",
-      "CELH",
-      "CRWD",
-      "CTSH",
-      "EQT",
-      "EVEX",
-      "IBRX",
-      "INTU",
-      "KLAC",
-      "LRCX",
-      "TLX"
-    ]
+  "stage_counts": {
+    "approved_opportunity": 0,
+    "research_queue": 18,
+    "review_ready": 2
   },
-  "universe_count": 1384
+  "transitions": {
+    "entered": [
+      "CRWD",
+      "TEM"
+    ],
+    "left": [],
+    "previous_as_of": "2026-07-24T06:57:07.533274+00:00",
+    "retained": []
+  },
+  "universe_count": 1575
 }

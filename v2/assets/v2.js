@@ -357,39 +357,94 @@ function renderDiscoveries(data) {
 function renderReadiness(data) {
   setUpdated(data.generated_at);
   document.querySelector("[data-as-of]").textContent = dateText(data.as_of);
+  const stageCounts = data.stage_counts || {};
   document.querySelector("[data-readiness-stats]").innerHTML = [
-    ["Universe", data.universe_count],
-    ["Deduplicated", data.deduplicated_count],
-    ["Selected", data.selected_count],
+    ["Review ready", stageCounts.review_ready],
+    ["Approved", stageCounts.approved_opportunity],
+    ["Research queue", stageCounts.research_queue],
   ].map(([label, value]) => `<div class="card"><div class="metric">${escapeHtml(value ?? 0)}</div><span class="muted">${escapeHtml(label)}</span></div>`).join("");
 
-  const items = data.items || [];
+  const items = (data.items || []).filter((item) => item.stage === "review_ready");
+  const approved = data.approved_opportunities || [];
+  const research = data.research_queue || [];
   const readinessCopy = (item) => markdownRecord(
-    `#${item.rank} ${item.ticker} — ${item.title || "Readiness candidate"}`,
+    `#${item.stage_rank || item.rank} ${item.ticker} — ${item.title || "Review-ready candidate"}`,
     [
+      ["Stage", item.stage],
       ["Lane", item.lane],
       ["Direction", item.direction],
-      ["Readiness score", item.score],
+      ["Investment readiness", item.investment_readiness_score],
+      ["Research priority", item.research_priority_score],
+      ["Recommendation", item.recommendation],
+      ["Monitoring label", item.monitoring_label],
+      ["Materiality", item.materiality?.status],
+      ["ThetaData", item.theta?.status],
       ["Framework", item.framework_status],
       ["Company health", item.health_status],
+      ["Entry condition", item.entry_condition],
+      ["Invalidation", item.invalidation],
       ["Next action", item.next_action],
       ["Blockers", blockerText(item.blocker_explanations)],
     ],
   );
   document.querySelector("[data-readiness]").innerHTML = items.length
     ? items.map((item) => `<tr>
-        <td>${escapeHtml(item.rank)}</td>
+        <td>${escapeHtml(item.stage_rank || item.rank)}</td>
         <td class="ticker">${escapeHtml(item.ticker)}</td>
         <td>${pill(item.lane)}</td>
-        <td class="score">${fmt(item.score)}</td>
-        <td>${pill(item.framework_status)}</td>
-        <td>${pill(item.health_status)}</td>
+        <td class="score">${fmt(item.investment_readiness_score)}</td>
+        <td>${pill(item.materiality?.status || "unclassified")}</td>
+        <td>${pill(item.theta?.status || "unavailable")}</td>
+        <td class="break">${escapeHtml(item.recommendation || "—")}<br><span class="meta">${escapeHtml(item.monitoring_label || "")}</span></td>
+        <td>${copyButton(readinessCopy(item), `Copy ${item.ticker}`)}</td>
+      </tr>`).join("")
+    : `<tr><td colspan="8">No opportunities have completed review admission.</td></tr>`;
+  setListCopy(
+    "readiness", "Review-ready shortlist", items, readinessCopy, data.generated_at,
+  );
+
+  document.querySelector("[data-approved]").innerHTML = approved.length
+    ? approved.map((item) => `<tr>
+        <td>${escapeHtml(item.stage_rank || item.rank)}</td>
+        <td class="ticker">${escapeHtml(item.ticker)}</td>
+        <td>${pill(item.lane)}</td>
+        <td class="score">${fmt(item.investment_readiness_score)}</td>
+        <td>${pill(item.recommendation || "approved")}</td>
         <td class="break">${escapeHtml(item.next_action || "—")}</td>
         <td>${copyButton(readinessCopy(item), `Copy ${item.ticker}`)}</td>
       </tr>`).join("")
-    : `<tr><td colspan="8">No shortlist has been generated.</td></tr>`;
+    : `<tr><td colspan="7">No governed opportunities are currently approved.</td></tr>`;
   setListCopy(
-    "readiness", "Current readiness queue", items, readinessCopy, data.generated_at,
+    "approved", "Approved opportunities", approved, readinessCopy, data.generated_at,
+  );
+
+  const researchCopy = (item) => markdownRecord(
+    `#${item.research_rank || item.rank} ${item.ticker} — ${item.title || "Research candidate"}`,
+    [
+      ["Stage", item.stage],
+      ["Lane", item.lane],
+      ["Direction", item.direction],
+      ["Research priority", item.research_priority_score],
+      ["Investment readiness", "not scored until the analysis packet is complete"],
+      ["Missing analysis", (item.missing_analysis_gate_explanations || [])
+        .map((gate) => `${gate.label}: ${gate.detail}`).join(" | ")],
+      ["Next action", item.next_action],
+      ["Blockers", blockerText(item.blocker_explanations)],
+    ],
+  );
+  document.querySelector("[data-research-queue]").innerHTML = research.length
+    ? research.map((item) => `<tr>
+        <td>${escapeHtml(item.research_rank || item.rank)}</td>
+        <td class="ticker">${escapeHtml(item.ticker)}</td>
+        <td>${pill(item.lane)}</td>
+        <td class="score">${fmt(item.research_priority_score)}</td>
+        <td class="break">${escapeHtml((item.missing_analysis_gate_explanations || []).map((gate) => gate.label).join(" · ") || "—")}</td>
+        <td class="break">${escapeHtml(item.next_action || "—")}</td>
+        <td>${copyButton(researchCopy(item), `Copy ${item.ticker}`)}</td>
+      </tr>`).join("")
+    : `<tr><td colspan="7">No incomplete opportunities are waiting for research.</td></tr>`;
+  setListCopy(
+    "research", "Research queue", research, researchCopy, data.generated_at,
   );
 
   const transitions = data.transitions || {};
