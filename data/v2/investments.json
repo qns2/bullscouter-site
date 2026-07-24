@@ -1,24 +1,161 @@
 {
   "candidate_count": 22,
   "execution_enabled": false,
-  "generated_at": "2026-07-24T07:54:46.681637+00:00",
+  "generated_at": "2026-07-24T15:23:27.634504+00:00",
   "graded_count": 2,
   "items": [
     {
-      "blocker_explanations": [],
-      "blockers": [],
+      "assessment": {
+        "catalysts": [
+          {
+            "direction": "neutral",
+            "effective_at": "2026-07-16T00:00:00+00:00",
+            "event_kind": "upcoming_earnings",
+            "provider": "company_ir",
+            "summary": "Caris announced that it will report second-quarter 2026 results on August 5, 2026 after the market close; the event is a dated validation milestone, not bullish evidence by itself.",
+            "title": "CAI scheduled Q2 2026 results for August 5",
+            "url": "https://investor.carislifesciences.com/news-releases/news-release-details/caris-life-sciences-report-second-quarter-2026-financial-results"
+          },
+          {
+            "direction": "supports",
+            "effective_at": "2026-05-15T00:00:00+00:00",
+            "event_kind": "insider_purchase",
+            "provider": "sec_edgar",
+            "summary": "SEC Form 4 reports director Jon Halbert indirectly purchased 68,000 CAI shares on May 15, 2026 at a weighted-average price of $14.56.",
+            "title": "CAI director purchased 68,000 shares",
+            "url": "https://www.sec.gov/Archives/edgar/data/2019410/000118939426000005/xslF345X03/wk-form4_1783940766.xml"
+          }
+        ],
+        "criteria": [
+          {
+            "criterion": "balance_sheet",
+            "rationale": "Pass requires liabilities/assets at most 75% or current ratio at least 1.2; the looser 90%/1.0 boundary is partial.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002019410.json",
+            "status": "pass"
+          },
+          {
+            "criterion": "cash_generation",
+            "rationale": "Pass requires positive annual operating cash flow less reported capital expenditure.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002019410.json",
+            "status": "pass"
+          },
+          {
+            "criterion": "demand_durability",
+            "rationale": "Pass requires positive annual revenue growth; a decline no worse than 5% is partial.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002019410.json",
+            "status": "pass"
+          },
+          {
+            "criterion": "dilution_capital_allocation",
+            "rationale": "Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002019410.json",
+            "status": "fail"
+          },
+          {
+            "criterion": "margins_efficiency",
+            "rationale": "No current source-attributed observation is available.",
+            "source_ref": null,
+            "status": "missing"
+          },
+          {
+            "criterion": "profitability",
+            "rationale": "Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002019410.json#health-rule-1.2",
+            "status": "fail"
+          }
+        ],
+        "health_counts": {
+          "coverage_count": 5,
+          "fail_count": 2,
+          "missing_count": 1,
+          "partial_count": 0,
+          "pass_count": 3
+        },
+        "health_status": "unhealthy",
+        "metrics": [
+          {
+            "criterion": "demand_durability",
+            "display": "97.0%",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Annual revenue growth",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002019410.json",
+            "status": "pass"
+          },
+          {
+            "criterion": "profitability",
+            "display": "-68.1m",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Annual net income",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002019410.json#health-rule-1.2",
+            "status": "fail"
+          },
+          {
+            "criterion": "profitability",
+            "display": "-75.8%",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Annual net-income change",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002019410.json#health-rule-1.2",
+            "status": "fail"
+          },
+          {
+            "criterion": "cash_generation",
+            "display": "66.9m",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Annual free cash flow",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002019410.json",
+            "status": "pass"
+          },
+          {
+            "criterion": "dilution_capital_allocation",
+            "display": "371.0%",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Diluted-share change",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002019410.json",
+            "status": "fail"
+          }
+        ],
+        "payoff_review": {
+          "instruction": "An authenticated human analyst must record CAI's entry, upside, invalidation, horizon, source, and rationale before promotion.",
+          "owner": "human_analyst",
+          "required_fields": [
+            "upside_price",
+            "invalidation_price",
+            "entry_condition",
+            "invalidation_condition",
+            "horizon_days",
+            "source_ref",
+            "rationale"
+          ],
+          "status": "needs_human",
+          "workflow": "authenticated_stage3_payoff_review"
+        },
+        "scope": "Company-specific annual SEC screen plus approved catalyst evidence; this is not a substitute for reviewed payoff analysis.",
+        "status": "needs_human"
+      },
+      "blocker_explanations": [
+        {
+          "code": "Annual health screen is unhealthy: 3 pass, 2 fail (dilution capital allocation, profitability), 1 missing.",
+          "detail": "This governance requirement is not yet satisfied.",
+          "label": "3 pass, 2 fail (dilution capital allocation, profitability), 1 missing."
+        }
+      ],
+      "blockers": [
+        "Annual health screen is unhealthy: 3 pass, 2 fail (dilution capital allocation, profitability), 1 missing."
+      ],
       "capital_issuance": {
         "status": "strong",
         "summary": "Fresh SEC coverage shows no active recent capital-issuance constraint."
       },
       "company_health": {
-        "as_of": "2026-07-24T07:53:34.677492+00:00",
-        "blockers": [],
+        "as_of": "2026-07-24T15:21:30+00:00",
+        "blockers": [
+          "company_health_unhealthy"
+        ],
         "coverage_count": 5,
         "fail_count": 2,
         "framework": "growth",
         "framework_status": "preregistered",
-        "health_status": "acceptable",
+        "health_status": "unhealthy",
         "missing_count": 1,
         "partial_count": 0,
         "pass_count": 3
@@ -29,8 +166,8 @@
           "summary": "Fresh SEC coverage shows no active recent capital-issuance constraint."
         },
         "company_health": {
-          "status": "acceptable",
-          "summary": "Six-point company health is acceptable."
+          "status": "blocked",
+          "summary": "Annual health screen is unhealthy: 3 pass, 2 fail (dilution capital allocation, profitability), 1 missing."
         },
         "investability": {
           "status": "acceptable",
@@ -38,7 +175,7 @@
         },
         "payoff_risk": {
           "status": "weak",
-          "summary": "Reviewed upside and invalidation assumptions are missing."
+          "summary": "CAI has no reviewed entry, upside, or invalidation assumption; human payoff review is required."
         },
         "source_coverage": {
           "status": "strong",
@@ -46,34 +183,195 @@
         }
       },
       "decision": null,
-      "evaluated_at": "2026-07-23T20:20:02.660212+00:00",
+      "evaluated_at": "2026-07-24T15:22:53.663428+00:00",
       "execution_enabled": false,
-      "grade": "C",
+      "grade": "D",
       "lane": "contrarian",
       "lane_gates": {
         "contrarian": {
           "status": "weak",
-          "summary": "Dislocation exists but catalyst support or stabilization is incomplete."
+          "summary": "CAI has verified support (CAI director purchased 68,000 shares), but price stabilization is not confirmed: 5-session relative return is -5.8pp and no-new-20-session-low is no."
         }
       },
       "proposal": {
-        "entry_condition": "Define and review an entry condition.",
+        "entry_condition": "Not reviewed — CAI requires a human entry condition.",
         "horizon_days": 90,
-        "invalidation_condition": "Define and review an invalidation condition.",
-        "proposed_at": "2026-07-23T20:20:02.660212+00:00",
-        "rationale": "Grade C: 0 blocker(s), 2 incomplete gate(s); contrarian overlay.",
-        "recommendation": "Watch",
+        "invalidation_condition": "Not reviewed — CAI requires a human invalidation condition.",
+        "proposed_at": "2026-07-24T15:22:53.663428+00:00",
+        "rationale": "CAI is Grade D / Reject. Annual health screen is unhealthy: 3 pass, 2 fail (dilution capital allocation, profitability), 1 missing. CAI has verified support (CAI director purchased 68,000 shares), but price stabilization is not confirmed: 5-session relative return is -5.8pp and no-new-20-session-low is no. CAI has no reviewed entry, upside, or invalidation assumption; human payoff review is required.",
+        "recommendation": "Reject",
         "risk_tier": "speculative"
       },
       "reward_risk_ratio": null,
       "ticker": "CAI",
       "title": "CAI · contrarian dislocation",
       "warnings": [
-        "Reviewed upside and invalidation assumptions are missing.",
-        "Dislocation exists but catalyst support or stabilization is incomplete."
+        "CAI has no reviewed entry, upside, or invalidation assumption; human payoff review is required.",
+        "CAI has verified support (CAI director purchased 68,000 shares), but price stabilization is not confirmed: 5-session relative return is -5.8pp and no-new-20-session-low is no."
       ]
     },
     {
+      "assessment": {
+        "catalysts": [
+          {
+            "direction": "neutral",
+            "effective_at": "2026-06-04T00:00:00+00:00",
+            "event_kind": "regulatory_investigation",
+            "provider": "texas_attorney_general",
+            "summary": "The Texas Attorney General announced an investigation into Celsius Holdings over representations and marketing practices involving energy drinks marketed to teens and children; treat the unresolved proceeding as a CELH invalidation risk, not proof of wrongdoing.",
+            "title": "Texas AG opened an investigation into Celsius marketing practices",
+            "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-announces-investigation-celsius-energy-drink-company-protect-texas"
+          },
+          {
+            "direction": "supports",
+            "effective_at": "2026-05-22T00:00:00+00:00",
+            "event_kind": "insider_purchase",
+            "provider": "sec_edgar",
+            "summary": "SEC Form 4 reports Chairman and CEO John Fieldly purchased 8,475 CELH shares on May 22, 2026 at $29.36.",
+            "title": "CELH Chairman and CEO purchased 8,475 shares",
+            "url": "https://www.sec.gov/Archives/edgar/data/1341766/000162828026038119/xslF345X03/wk-form4_1779827390.xml"
+          },
+          {
+            "direction": "supports",
+            "effective_at": "2026-05-21T00:00:00+00:00",
+            "event_kind": "insider_purchase",
+            "provider": "sec_edgar",
+            "summary": "SEC Form 4 reports President and COO Eric Hanson purchased 7,500 CELH shares on May 21, 2026 at $29.04.",
+            "title": "CELH President and COO purchased 7,500 shares",
+            "url": "https://www.sec.gov/Archives/edgar/data/2062541/000162828026038126/xslF345X03/wk-form4_1779827477.xml"
+          },
+          {
+            "direction": "neutral",
+            "effective_at": "2026-02-26T00:00:00+00:00",
+            "event_kind": "annual_results_context",
+            "provider": "celsius_investor_relations",
+            "summary": "Celsius reported FY2025 basic EPS of $0.25 versus $0.46 and net income attributable to common stockholders of $63.8m versus $107.5m; annual gross margin was 50.4% versus 50.2%, while Q4 margin fell to 47.4% from 50.2%. Alani Nu retail sales rose 101%, core CELSIUS brand revenue rose 7.5% for the year, and Q4 core-brand revenue fell about 8% during the Pepsi distribution transition.",
+            "title": "CELH FY2025 growth was acquisition-heavy while attributable earnings declined",
+            "url": "https://ir.celsiusholdingsinc.com/news/news-details/2026/Celsius-Holdings-Reports-Full-Year-2025-and-Fourth-Quarter-Financial-Results/default.aspx"
+          }
+        ],
+        "criteria": [
+          {
+            "criterion": "balance_sheet",
+            "rationale": "Pass requires liabilities/assets at most 75% or current ratio at least 1.2; the looser 90%/1.0 boundary is partial.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json",
+            "status": "pass"
+          },
+          {
+            "criterion": "cash_generation",
+            "rationale": "Pass requires positive annual operating cash flow less reported capital expenditure.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json",
+            "status": "pass"
+          },
+          {
+            "criterion": "demand_durability",
+            "rationale": "Pass requires positive annual revenue growth; a decline no worse than 5% is partial.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json",
+            "status": "pass"
+          },
+          {
+            "criterion": "dilution_capital_allocation",
+            "rationale": "Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json",
+            "status": "fail"
+          },
+          {
+            "criterion": "margins_efficiency",
+            "rationale": "Growth framework passes at 50% gross margin and is partial from 30%.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json#health-rule-1.2",
+            "status": "pass"
+          },
+          {
+            "criterion": "profitability",
+            "rationale": "Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json#health-rule-1.2",
+            "status": "partial"
+          }
+        ],
+        "health_counts": {
+          "coverage_count": 6,
+          "fail_count": 1,
+          "missing_count": 0,
+          "partial_count": 1,
+          "pass_count": 4
+        },
+        "health_status": "borderline",
+        "metrics": [
+          {
+            "criterion": "demand_durability",
+            "display": "85.5%",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Annual revenue growth",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json",
+            "status": "pass"
+          },
+          {
+            "criterion": "margins_efficiency",
+            "display": "50.4%",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Annual gross margin",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json#health-rule-1.2",
+            "status": "pass"
+          },
+          {
+            "criterion": "margins_efficiency",
+            "display": "20.9 bps",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Annual gross-margin change",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json#health-rule-1.2",
+            "status": "pass"
+          },
+          {
+            "criterion": "profitability",
+            "display": "108.0m",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Annual net income",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json#health-rule-1.2",
+            "status": "partial"
+          },
+          {
+            "criterion": "profitability",
+            "display": "-25.6%",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Annual net-income change",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json#health-rule-1.2",
+            "status": "partial"
+          },
+          {
+            "criterion": "cash_generation",
+            "display": "323.4m",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Annual free cash flow",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json",
+            "status": "pass"
+          },
+          {
+            "criterion": "dilution_capital_allocation",
+            "display": "7.4%",
+            "effective_at": "2025-12-31T00:00:00+00:00",
+            "label": "Diluted-share change",
+            "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341766.json",
+            "status": "fail"
+          }
+        ],
+        "payoff_review": {
+          "instruction": "An authenticated human analyst must record CELH's entry, upside, invalidation, horizon, source, and rationale before promotion.",
+          "owner": "human_analyst",
+          "required_fields": [
+            "upside_price",
+            "invalidation_price",
+            "entry_condition",
+            "invalidation_condition",
+            "horizon_days",
+            "source_ref",
+            "rationale"
+          ],
+          "status": "needs_human",
+          "workflow": "authenticated_stage3_payoff_review"
+        },
+        "scope": "Company-specific annual SEC screen plus approved catalyst evidence; this is not a substitute for reviewed payoff analysis.",
+        "status": "needs_human"
+      },
       "blocker_explanations": [],
       "blockers": [],
       "capital_issuance": {
@@ -81,16 +379,16 @@
         "summary": "Fresh SEC coverage shows no active recent capital-issuance constraint."
       },
       "company_health": {
-        "as_of": "2026-07-24T07:53:34.677492+00:00",
+        "as_of": "2026-07-24T15:21:30+00:00",
         "blockers": [],
         "coverage_count": 6,
         "fail_count": 1,
         "framework": "growth",
         "framework_status": "preregistered",
-        "health_status": "acceptable",
+        "health_status": "borderline",
         "missing_count": 0,
-        "partial_count": 0,
-        "pass_count": 5
+        "partial_count": 1,
+        "pass_count": 4
       },
       "core_gates": {
         "capital_issuance": {
@@ -98,8 +396,8 @@
           "summary": "Fresh SEC coverage shows no active recent capital-issuance constraint."
         },
         "company_health": {
-          "status": "acceptable",
-          "summary": "Six-point company health is acceptable."
+          "status": "weak",
+          "summary": "Annual health screen is borderline: 4 pass, 1 partial, 1 fail, 0 missing (dilution capital allocation)."
         },
         "investability": {
           "status": "acceptable",
@@ -107,7 +405,7 @@
         },
         "payoff_risk": {
           "status": "weak",
-          "summary": "Reviewed upside and invalidation assumptions are missing."
+          "summary": "CELH has no reviewed entry, upside, or invalidation assumption; human payoff review is required."
         },
         "source_coverage": {
           "status": "strong",
@@ -115,22 +413,22 @@
         }
       },
       "decision": null,
-      "evaluated_at": "2026-07-23T20:20:02.660212+00:00",
+      "evaluated_at": "2026-07-24T15:22:53.663428+00:00",
       "execution_enabled": false,
       "grade": "C",
       "lane": "contrarian",
       "lane_gates": {
         "contrarian": {
           "status": "weak",
-          "summary": "Dislocation exists but catalyst support or stabilization is incomplete."
+          "summary": "CELH has verified support (CELH Chairman and CEO purchased 8,475 shares; CELH President and COO purchased 7,500 shares), but price stabilization is not confirmed: 5-session relative return is -5.5pp and no-new-20-session-low is no."
         }
       },
       "proposal": {
-        "entry_condition": "Define and review an entry condition.",
+        "entry_condition": "Not reviewed — CELH requires a human entry condition.",
         "horizon_days": 90,
-        "invalidation_condition": "Define and review an invalidation condition.",
-        "proposed_at": "2026-07-23T20:20:02.660212+00:00",
-        "rationale": "Grade C: 0 blocker(s), 2 incomplete gate(s); contrarian overlay.",
+        "invalidation_condition": "Not reviewed — CELH requires a human invalidation condition.",
+        "proposed_at": "2026-07-24T15:22:53.663428+00:00",
+        "rationale": "CELH is Grade C / Watch. Annual health screen is borderline: 4 pass, 1 partial, 1 fail, 0 missing (dilution capital allocation). CELH has verified support (CELH Chairman and CEO purchased 8,475 shares; CELH President and COO purchased 7,500 shares), but price stabilization is not confirmed: 5-session relative return is -5.5pp and no-new-20-session-low is no. CELH has no reviewed entry, upside, or invalidation assumption; human payoff review is required.",
         "recommendation": "Watch",
         "risk_tier": "speculative"
       },
@@ -138,8 +436,9 @@
       "ticker": "CELH",
       "title": "CELH · contrarian dislocation",
       "warnings": [
-        "Reviewed upside and invalidation assumptions are missing.",
-        "Dislocation exists but catalyst support or stabilization is incomplete."
+        "Annual health screen is borderline: 4 pass, 1 partial, 1 fail, 0 missing (dilution capital allocation).",
+        "CELH has no reviewed entry, upside, or invalidation assumption; human payoff review is required.",
+        "CELH has verified support (CELH Chairman and CEO purchased 8,475 shares; CELH President and COO purchased 7,500 shares), but price stabilization is not confirmed: 5-session relative return is -5.5pp and no-new-20-session-low is no."
       ]
     }
   ],

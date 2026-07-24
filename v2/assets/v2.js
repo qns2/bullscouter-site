@@ -46,6 +46,15 @@ const empty = (message) => `<div class="empty">${escapeHtml(message)}</div>`;
 
 const plainLabel = (value) => String(value ?? "—").replaceAll("_", " ");
 
+const safeHref = (value) => {
+  try {
+    const url = new URL(String(value || ""));
+    return url.protocol === "https:" ? escapeHtml(url.href) : null;
+  } catch {
+    return null;
+  }
+};
+
 const markdownRecord = (title, fields) => [
   `## ${title}`,
   ...fields
@@ -576,22 +585,61 @@ function renderInvestments(data) {
       ["Lane", item.lane],
       ["Risk tier", item.proposal?.risk_tier],
       ["Company health", item.company_health?.health_status || "missing"],
+      ["Health counts", item.assessment?.health_counts
+        ? `${item.assessment.health_counts.pass_count || 0} pass / ${item.assessment.health_counts.partial_count || 0} partial / ${item.assessment.health_counts.fail_count || 0} fail / ${item.assessment.health_counts.missing_count || 0} missing`
+        : null],
+      ["Company metrics", (item.assessment?.metrics || [])
+        .map((value) => `${value.label} ${value.display} (${plainLabel(value.status)})`)
+        .join(" | ")],
+      ["Reviewed catalysts", (item.assessment?.catalysts || [])
+        .map((value) => `${value.title} [${plainLabel(value.direction)}]`)
+        .join(" | ")],
       ["Rationale", item.proposal?.rationale],
       ["Entry condition", item.proposal?.entry_condition],
       ["Invalidation", item.proposal?.invalidation_condition],
+      ["Payoff review", item.assessment?.payoff_review?.status],
+      ["Payoff owner", item.assessment?.payoff_review?.owner],
+      ["Payoff instruction", item.assessment?.payoff_review?.instruction],
       ["Blockers", blockerText(item.blocker_explanations)],
       ["Warnings", (item.warnings || []).join(" | ")],
     ],
   );
   document.querySelector("[data-investments]").innerHTML = items.length
-    ? items.map((item) => `<article class="card">
+    ? items.map((item) => {
+      const assessment = item.assessment || {};
+      const health = assessment.health_counts || {};
+      const metrics = assessment.metrics || [];
+      const catalysts = assessment.catalysts || [];
+      const payoff = assessment.payoff_review || {};
+      const weakCriteria = (assessment.criteria || []).filter(
+        (value) => ["fail", "partial", "missing"].includes(value.status),
+      );
+      return `<article class="card">
         <div class="section-head"><div><span class="ticker">${escapeHtml(item.ticker)}</span><h2>${escapeHtml(item.title)}</h2></div>
         <div class="copy-actions">${pill(`Grade ${item.grade || "—"}`)} ${pill(item.proposal?.recommendation || item.decision?.authoritative_decision || "unproposed")} ${copyButton(investmentCopy(item), `Copy ${item.ticker}`)}</div></div>
         <p class="muted">${escapeHtml(item.proposal?.rationale || "No public proposal rationale.")}</p>
         <p>${pill(item.lane)} ${pill(item.proposal?.risk_tier || "unrated")} ${pill(item.company_health?.health_status || "health missing")}</p>
+        <div class="assessment-block">
+          <h3>Company-specific evidence</h3>
+          <p class="meta">Annual SEC screen · ${escapeHtml(health.pass_count || 0)} pass / ${escapeHtml(health.partial_count || 0)} partial / ${escapeHtml(health.fail_count || 0)} fail / ${escapeHtml(health.missing_count || 0)} missing</p>
+          ${metrics.length ? `<ul>${metrics.map((value) => `<li><strong>${escapeHtml(value.label)}</strong> · ${escapeHtml(value.display)} · ${pill(value.status)}</li>`).join("")}</ul>` : '<p class="muted">No public company metrics are available.</p>'}
+          ${weakCriteria.length ? `<p class="meta break">Weak or incomplete criteria: ${escapeHtml(weakCriteria.map((value) => `${plainLabel(value.criterion)} (${plainLabel(value.status)})`).join(" · "))}</p>` : ""}
+          <h3>Approved catalyst evidence</h3>
+          ${catalysts.length ? `<ul>${catalysts.map((value) => {
+            const href = safeHref(value.url);
+            const title = escapeHtml(value.title || "Reviewed event");
+            return `<li>${href ? `<a href="${href}" target="_blank" rel="noopener">${title}</a>` : `<strong>${title}</strong>`} · ${pill(value.direction)}<br><span class="meta">${escapeHtml(value.summary || "")}</span></li>`;
+          }).join("")}</ul>` : '<p class="muted">No approved catalyst observations.</p>'}
+        </div>
+        <div class="notice ${payoff.status === "needs_human" ? "warn" : ""}">
+          <strong>Payoff review · ${escapeHtml(plainLabel(payoff.status || "missing"))}</strong>
+          <p>${escapeHtml(payoff.instruction || "No payoff workflow is recorded.")}</p>
+          ${payoff.owner ? `<span class="meta">Owner: ${escapeHtml(plainLabel(payoff.owner))}</span>` : ""}
+        </div>
         ${blockerList(item.blocker_explanations)}
         ${(item.warnings || []).length ? `<p class="meta break">Warnings: ${escapeHtml(item.warnings.join(" · "))}</p>` : ""}
-      </article>`).join("")
+      </article>`;
+    }).join("")
     : empty("No candidates have reached investment grading.");
   setListCopy(
     "investments", "Graded investment candidates",
