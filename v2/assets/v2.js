@@ -358,6 +358,7 @@ function renderReadiness(data) {
   setUpdated(data.generated_at);
   document.querySelector("[data-as-of]").textContent = dateText(data.as_of);
   const stageCounts = data.stage_counts || {};
+  const researchRun = data.prepublication_research || {};
   const shortlist = data.shortlist || [
     ...(data.items || []),
     ...(data.research_queue || []),
@@ -368,6 +369,8 @@ function renderReadiness(data) {
     ["Review ready", stageCounts.review_ready],
     ["Approved", stageCounts.approved_opportunity],
     ["Needs research", stageCounts.research_queue],
+    ["Research completed", researchRun.completed_task_count],
+    ["Research unresolved", researchRun.unresolved_task_count],
   ].map(([label, value]) => `<div class="card"><div class="metric">${escapeHtml(value ?? 0)}</div><span class="muted">${escapeHtml(label)}</span></div>`).join("");
 
   const items = (data.items || []).filter((item) => item.stage === "review_ready");
@@ -380,6 +383,7 @@ function renderReadiness(data) {
     const source = packet.source || {};
     const company = packet.company_health || {};
     const price = packet.market_price || {};
+    const research = packet.prepublication_research || {};
     return [
       `Source ${plainLabel(source.status || "missing")}`,
       `company ${plainLabel(company.status || "missing")} (${company.coverage_count ?? 0}/6)`,
@@ -389,8 +393,12 @@ function renderReadiness(data) {
       `ThetaData ${plainLabel(item.theta?.status || "unavailable")}`,
       `counter-case ${plainLabel(packet.counter_case?.status || (item.counter_case ? "complete" : "missing"))}`,
       `invalidation ${plainLabel(packet.invalidation?.status || (item.invalidation ? "complete" : "missing"))}`,
+      `pre-publication research ${plainLabel(research.status || "not run")}`,
     ].join(" · ");
   };
+  const sourceLinks = (item) => (
+    item.analysis_packet?.source?.researched_primary_sources || []
+  ).map((source) => `${source.title || source.publisher || "Primary source"}: ${source.url}`).join(" | ");
   const readinessCopy = (item) => markdownRecord(
     `#${item.stage_rank || item.rank} ${item.ticker} — ${item.title || "Review-ready candidate"}`,
     [
@@ -410,6 +418,7 @@ function renderReadiness(data) {
       ["Next action", item.next_action],
       ["Blockers", blockerText(item.blocker_explanations)],
       ["Automatic evidence packet", evidencePacketText(item)],
+      ["Researched primary sources", sourceLinks(item)],
     ],
   );
   const shortlistCopy = (item) => markdownRecord(
@@ -421,6 +430,7 @@ function renderReadiness(data) {
       ["Research priority", item.research_priority_score],
       ["Investment readiness", item.investment_readiness_score ?? "not scored until the automatic packet is complete"],
       ["Automatic evidence packet", evidencePacketText(item)],
+      ["Researched primary sources", sourceLinks(item)],
       ["Research required", missingLabels(item).join(" | ")],
       ["Recommendation", item.recommendation],
       ["Next action", item.next_action],
@@ -440,6 +450,33 @@ function renderReadiness(data) {
     : `<tr><td colspan="8">No discoveries were selected for this run.</td></tr>`;
   setListCopy(
     "shortlist", "Full discovery shortlist", shortlist, shortlistCopy, data.generated_at,
+  );
+
+  const researchTasks = shortlist.flatMap((item) => (
+    item.analysis_packet?.prepublication_research?.tasks || []
+  ).map((task) => ({ ...task, ticker: item.ticker })));
+  const researchTaskCopy = (task) => markdownRecord(
+    `${task.ticker} — ${plainLabel(task.gate)}`,
+    [
+      ["Owner", task.owner],
+      ["Status", task.status],
+      ["Instruction", task.instruction],
+      ["Required evidence", task.evidence_required],
+    ],
+  );
+  document.querySelector("[data-research-tasks]").innerHTML = researchTasks.length
+    ? researchTasks.map((task) => `<tr>
+        <td class="ticker">${escapeHtml(task.ticker)}</td>
+        <td>${escapeHtml(plainLabel(task.gate))}</td>
+        <td>${pill(task.owner)}</td>
+        <td>${pill(task.status)}</td>
+        <td class="break">${escapeHtml(task.evidence_required || "—")}</td>
+        <td class="break">${escapeHtml(task.instruction || "—")}</td>
+      </tr>`).join("")
+    : `<tr><td colspan="6">No pre-publication research tasks were required.</td></tr>`;
+  setListCopy(
+    "research-tasks", "Pre-publication research tasks",
+    researchTasks, researchTaskCopy, data.generated_at,
   );
   document.querySelector("[data-readiness]").innerHTML = items.length
     ? items.map((item) => `<tr>
