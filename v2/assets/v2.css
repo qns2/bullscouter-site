@@ -217,6 +217,7 @@ h3 {
 
 .section {
   margin-top: 2rem;
+  scroll-margin-top: 9rem;
 }
 
 .section-head {
@@ -326,6 +327,99 @@ tbody tr:last-child td { border-bottom: 0; }
   font-size: .82rem;
 }
 
+.section-nav {
+  position: sticky;
+  top: 69px;
+  z-index: 8;
+  display: flex;
+  gap: .45rem;
+  margin: 1rem 0 1.25rem;
+  padding: .6rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(8, 11, 16, .94);
+  backdrop-filter: blur(16px);
+}
+
+.section-nav a {
+  flex: 0 0 auto;
+  padding: .45rem .68rem;
+  border-radius: 9px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  background: rgba(255, 255, 255, .07);
+  color: var(--text);
+}
+
+.filter-panel {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.5fr) repeat(4, minmax(130px, 1fr)) auto;
+  gap: .8rem;
+  align-items: end;
+  padding: 1rem;
+}
+
+.filter-field {
+  display: grid;
+  gap: .32rem;
+}
+
+.filter-field label {
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 760;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.filter-field input,
+.filter-field select,
+.filter-reset {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .045);
+  color: var(--text);
+  font: inherit;
+}
+
+.filter-field input,
+.filter-field select {
+  width: 100%;
+  padding: .58rem .68rem;
+}
+
+.filter-field input::placeholder { color: #6f7d8b; }
+
+.filter-field input:focus,
+.filter-field select:focus,
+.filter-reset:focus-visible {
+  border-color: var(--green);
+  outline: 2px solid rgba(55, 228, 155, .16);
+  outline-offset: 1px;
+}
+
+.filter-reset {
+  padding: .55rem .82rem;
+  cursor: pointer;
+}
+
+.filter-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: .65rem .2rem 0;
+}
+
+[hidden] { display: none !important; }
+
 .empty,
 .error {
   padding: 1.2rem;
@@ -347,6 +441,7 @@ tbody tr:last-child td { border-bottom: 0; }
   .hero,
   .grid,
   .grid.two { grid-template-columns: 1fr; }
+  .filter-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .nav { align-items: flex-start; padding: .8rem 0; }
   .nav-links { flex-wrap: wrap; justify-content: flex-end; }
   .row-card { grid-template-columns: 1fr; gap: .4rem; }
@@ -357,4 +452,7 @@ tbody tr:last-child td { border-bottom: 0; }
   .nav-links { margin-top: .75rem; justify-content: flex-start; }
   .nav-links a { padding: .45rem .55rem; }
   .page { padding-top: 2.25rem; }
+  .section-nav { top: 123px; }
+  .filter-panel { grid-template-columns: 1fr; }
+  .filter-meta { display: block; }
 }

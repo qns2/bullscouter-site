@@ -17,7 +17,14 @@ const dateText = (value) => {
   const date = new Date(value);
   return Number.isNaN(date.getTime())
     ? String(value).slice(0, 10)
-    : date.toLocaleString([], { dateStyle: "medium", timeStyle: "short" });
+    : date.toLocaleString([], {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZoneName: "short",
+      });
 };
 
 const pill = (value) => {
@@ -51,6 +58,7 @@ async function loadJson(name) {
 function setUpdated(value) {
   document.querySelectorAll("[data-updated]").forEach((node) => {
     node.textContent = dateText(value);
+    if (node.tagName === "TIME" && value) node.dateTime = value;
   });
 }
 
@@ -88,36 +96,131 @@ function renderDiscoveries(data) {
   </div>`).join("");
 
   const candidates = data.candidates || [];
-  document.querySelector("[data-candidates]").innerHTML = candidates.length
-    ? candidates.map((item) => `<article class="row-card">
-        <div><strong class="ticker">${escapeHtml(item.ticker || "—")}</strong><br>${pill(item.direction)}</div>
-        <div><h3>${escapeHtml(item.title)}</h3><p class="muted">${escapeHtml(item.why_now || item.counter_case || "")}</p>
-        ${blockerList(item.promotion_blocker_explanations)}</div>
-        <div>${pill(item.promotion_eligible ? "promotion eligible" : item.status)}</div>
-      </article>`).join("")
-    : empty("No current thesis candidates.");
-
   const opportunities = data.opportunities || [];
-  document.querySelector("[data-opportunities]").innerHTML = opportunities.length
-    ? opportunities.map((item) => `<tr>
-        <td class="ticker">${escapeHtml(item.ticker)}</td>
-        <td>${escapeHtml(item.archetype || "—")}</td>
-        <td>${pill(item.direction)}</td>
-        <td>${pill(item.qualification?.state || item.state)}</td>
-        <td>${pill(item.health?.health_status || "missing")}</td>
-      </tr>`).join("")
-    : `<tr><td colspan="5">No opportunities.</td></tr>`;
-
   const discoveries = data.discoveries || [];
-  document.querySelector("[data-discoveries]").innerHTML = discoveries.length
-    ? discoveries.slice(0, 30).map((item) => `<tr>
-        <td>${dateText(item.observed_at)}</td>
-        <td class="ticker">${escapeHtml(item.ticker || "—")}</td>
-        <td>${escapeHtml(item.title || item.summary || "Untitled discovery")}</td>
-        <td>${pill(item.direction)}</td>
-        <td>${pill(item.status)}</td>
-      </tr>`).join("")
-    : `<tr><td colspan="5">No discoveries.</td></tr>`;
+  const controls = {
+    search: document.querySelector("[data-filter-search]"),
+    type: document.querySelector("[data-filter-type]"),
+    direction: document.querySelector("[data-filter-direction]"),
+    outcome: document.querySelector("[data-filter-outcome]"),
+    category: document.querySelector("[data-filter-category]"),
+  };
+
+  const normalized = (value) => String(value || "").trim().toLowerCase();
+  const optionLabel = (value) => String(value || "").replaceAll("_", " ");
+  const addOptions = (select, values) => {
+    [...new Set(values.filter(Boolean))].sort().forEach((value) => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = optionLabel(value);
+      select.append(option);
+    });
+  };
+  addOptions(controls.direction, [
+    ...candidates.map((item) => item.direction),
+    ...opportunities.map((item) => item.direction),
+    ...discoveries.map((item) => item.direction),
+  ]);
+  addOptions(controls.outcome, [
+    ...candidates.map((item) => item.promotion_eligible ? "promotion_eligible" : item.status),
+    ...opportunities.map((item) => item.qualification?.state || item.state),
+    ...discoveries.map((item) => item.status),
+  ]);
+  addOptions(controls.category, [
+    ...candidates.map((item) => item.strategy),
+    ...opportunities.map((item) => item.archetype),
+    ...discoveries.map((item) => item.strategy),
+  ]);
+
+  const matches = (record) => {
+    const query = normalized(controls.search.value);
+    const haystack = normalized([
+      record.ticker,
+      record.title,
+      record.summary,
+      record.why_now,
+      record.counter_case,
+    ].filter(Boolean).join(" "));
+    return (!query || haystack.includes(query))
+      && (!controls.direction.value || record.direction === controls.direction.value)
+      && (!controls.outcome.value || record.outcome === controls.outcome.value)
+      && (!controls.category.value || record.category === controls.category.value);
+  };
+
+  const render = () => {
+    const candidateMatches = candidates.filter((item) => matches({
+      ...item,
+      outcome: item.promotion_eligible ? "promotion_eligible" : item.status,
+      category: item.strategy,
+    }));
+    const opportunityMatches = opportunities.filter((item) => matches({
+      ...item,
+      outcome: item.qualification?.state || item.state,
+      category: item.archetype,
+    }));
+    const discoveryMatches = discoveries.filter((item) => matches({
+      ...item,
+      outcome: item.status,
+      category: item.strategy,
+    }));
+
+    document.querySelector("[data-candidates]").innerHTML = candidateMatches.length
+      ? candidateMatches.map((item) => `<article class="row-card">
+          <div><strong class="ticker">${escapeHtml(item.ticker || "—")}</strong><br>${pill(item.direction)}</div>
+          <div><h3>${escapeHtml(item.title)}</h3><p class="muted">${escapeHtml(item.why_now || item.counter_case || "")}</p>
+          ${blockerList(item.promotion_blocker_explanations)}</div>
+          <div>${pill(item.promotion_eligible ? "promotion eligible" : item.status)}</div>
+        </article>`).join("")
+      : empty("No research candidates match these filters.");
+
+    document.querySelector("[data-opportunities]").innerHTML = opportunityMatches.length
+      ? opportunityMatches.map((item) => `<tr>
+          <td class="ticker">${escapeHtml(item.ticker)}</td>
+          <td>${escapeHtml(optionLabel(item.archetype || "—"))}</td>
+          <td>${pill(item.direction)}</td>
+          <td>${pill(item.qualification?.state || item.state)}</td>
+          <td>${pill(item.health?.health_status || "missing")}</td>
+        </tr>`).join("")
+      : `<tr><td colspan="5">No opportunities match these filters.</td></tr>`;
+
+    document.querySelector("[data-discoveries]").innerHTML = discoveryMatches.length
+      ? discoveryMatches.map((item) => `<tr>
+          <td>${dateText(item.observed_at)}</td>
+          <td class="ticker">${escapeHtml(item.ticker || "—")}</td>
+          <td>${escapeHtml(item.title || item.summary || "Untitled discovery")}</td>
+          <td>${pill(item.direction)}</td>
+          <td>${pill(item.status)}</td>
+        </tr>`).join("")
+      : `<tr><td colspan="5">No discoveries match these filters.</td></tr>`;
+
+    const counts = {
+      candidates: candidateMatches.length,
+      opportunities: opportunityMatches.length,
+      discoveries: discoveryMatches.length,
+    };
+    Object.entries(counts).forEach(([key, value]) => {
+      const node = document.querySelector(`[data-result-count="${key}"]`);
+      if (node) node.textContent = `${value} shown`;
+    });
+    document.querySelectorAll("[data-discovery-section]").forEach((section) => {
+      const selected = controls.type.value;
+      section.hidden = Boolean(selected && section.dataset.discoverySection !== selected);
+    });
+    const total = controls.type.value
+      ? counts[controls.type.value]
+      : counts.candidates + counts.opportunities + counts.discoveries;
+    document.querySelector("[data-filter-summary]").textContent = `${total} matching records`;
+  };
+
+  Object.values(controls).forEach((control) => {
+    control.addEventListener(control === controls.search ? "input" : "change", render);
+  });
+  document.querySelector("[data-filter-reset]").addEventListener("click", () => {
+    Object.values(controls).forEach((control) => { control.value = ""; });
+    render();
+    controls.search.focus();
+  });
+  render();
 }
 
 function renderReadiness(data) {

@@ -8,12 +8,24 @@
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header"><nav class="nav" aria-label="BullScouter2"><a class="brand" href="/v2/"><span class="brand-mark">V2</span><span>Bull Scouter<small>Governed research</small></span></a><div class="nav-links"><a href="/v2/">Overview</a><a aria-current="page" href="/v2/discoveries/">Discover</a><a href="/v2/readiness/">Shortlist</a><a href="/v2/investments/">Decide</a><a href="/v2/theses/">Theses</a><a href="/">Legacy site</a></div></nav></header>
   <main id="content" class="page">
-    <section class="hero"><div><p class="eyebrow">Stage 1 · Discover</p><h1>Evidence enters here.</h1><p class="lede">Canonical discoveries become reviewable candidates only after source, direction, horizon, and market-context gates.</p></div><aside class="status-card"><span class="pill info">Read only</span><strong>Public ledger view</strong><span class="meta">Updated <span data-updated>—</span></span></aside></section>
+    <section class="hero"><div><p class="eyebrow">Stage 1 · Discover</p><h1>Evidence enters here.</h1><p class="lede">Canonical discoveries become reviewable candidates only after source, direction, horizon, and market-context gates.</p></div><aside class="status-card"><span class="pill info">Read only</span><strong>Public ledger view</strong><span class="meta">Last updated <time data-updated>—</time></span></aside></section>
     <div data-error class="error" hidden></div>
-    <section class="grid" data-discovery-stats></section>
-    <section class="section"><div class="section-head"><h2>Research candidates</h2><span class="meta">Promotion blockers remain visible</span></div><div class="list" data-candidates></div></section>
-    <section class="section"><div class="section-head"><h2>Qualified opportunities</h2></div><div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Archetype</th><th>Direction</th><th>Qualification</th><th>Health</th></tr></thead><tbody data-opportunities></tbody></table></div></section>
-    <section class="section"><div class="section-head"><h2>Latest canonical discoveries</h2></div><div class="table-wrap"><table><thead><tr><th>Observed</th><th>Ticker</th><th>Discovery</th><th>Direction</th><th>Status</th></tr></thead><tbody data-discoveries></tbody></table></div></section>
+    <nav class="section-nav" aria-label="Discoveries sections"><a href="#discovery-overview">Overview</a><a href="#research-candidates">Research candidates</a><a href="#qualified-opportunities">Qualified opportunities</a><a href="#canonical-discoveries">Canonical discoveries</a></nav>
+    <section id="discovery-overview" class="section">
+      <div class="grid" data-discovery-stats></div>
+      <div class="panel filter-panel" role="search" aria-label="Filter discoveries">
+        <div class="filter-field"><label for="filter-search">Ticker or keyword</label><input id="filter-search" data-filter-search type="search" placeholder="e.g. MU, earnings, AI"></div>
+        <div class="filter-field"><label for="filter-type">Record type</label><select id="filter-type" data-filter-type><option value="">All sections</option><option value="candidates">Candidates</option><option value="opportunities">Opportunities</option><option value="discoveries">Discoveries</option></select></div>
+        <div class="filter-field"><label for="filter-direction">Direction</label><select id="filter-direction" data-filter-direction><option value="">All directions</option></select></div>
+        <div class="filter-field"><label for="filter-outcome">Status</label><select id="filter-outcome" data-filter-outcome><option value="">All statuses</option></select></div>
+        <div class="filter-field"><label for="filter-category">Strategy / archetype</label><select id="filter-category" data-filter-category><option value="">All categories</option></select></div>
+        <button class="filter-reset" data-filter-reset type="button">Reset</button>
+      </div>
+      <div class="filter-meta"><span class="meta" data-filter-summary aria-live="polite">Loading records…</span><span class="meta">Filters apply across every section below</span></div>
+    </section>
+    <section id="research-candidates" class="section" data-discovery-section="candidates"><div class="section-head"><h2>Research candidates</h2><span class="meta"><span data-result-count="candidates">0 shown</span> · promotion blockers remain visible</span></div><div class="list" data-candidates></div></section>
+    <section id="qualified-opportunities" class="section" data-discovery-section="opportunities"><div class="section-head"><h2>Qualified opportunities</h2><span class="meta" data-result-count="opportunities">0 shown</span></div><div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Archetype</th><th>Direction</th><th>Qualification</th><th>Health</th></tr></thead><tbody data-opportunities></tbody></table></div></section>
+    <section id="canonical-discoveries" class="section" data-discovery-section="discoveries"><div class="section-head"><h2>Canonical discoveries</h2><span class="meta" data-result-count="discoveries">0 shown</span></div><div class="table-wrap"><table><thead><tr><th>Observed</th><th>Ticker</th><th>Discovery</th><th>Direction</th><th>Status</th></tr></thead><tbody data-discoveries></tbody></table></div></section>
   </main>
   <footer class="footer">Discovery content is descriptive evidence, not an investment recommendation.</footer>
   <script src="/v2/assets/v2.js" defer></script>
