@@ -1,4 +1,6 @@
 const DATA_ROOT = "/data/v2";
+const copyPayloads = new Map();
+let copySequence = 0;
 
 const escapeHtml = (value) => String(value ?? "")
   .replaceAll("&", "&amp;")
@@ -41,6 +43,80 @@ const pill = (value) => {
 };
 
 const empty = (message) => `<div class="empty">${escapeHtml(message)}</div>`;
+
+const plainLabel = (value) => String(value ?? "—").replaceAll("_", " ");
+
+const markdownRecord = (title, fields) => [
+  `## ${title}`,
+  ...fields
+    .filter(([, value]) => value !== undefined && value !== null && value !== "")
+    .map(([label, value]) => `- ${label}: ${plainLabel(value)}`),
+].join("\n");
+
+const blockerText = (items) => (items || [])
+  .map((item) => `${item.label}: ${item.detail}`)
+  .join(" | ");
+
+const registerCopy = (text) => {
+  const id = `copy-${++copySequence}`;
+  copyPayloads.set(id, text);
+  return id;
+};
+
+const copyButton = (text, label = "Copy") => {
+  const id = registerCopy(text);
+  return `<button class="copy-button" type="button" data-copy-id="${id}" aria-label="${escapeHtml(label)}">${escapeHtml(label)}</button>`;
+};
+
+const setListCopy = (key, title, records, formatter, generatedAt) => {
+  const button = document.querySelector(`[data-copy-list="${key}"]`);
+  if (!button) return;
+  const id = button.dataset.copyId || registerCopy("");
+  button.dataset.copyId = id;
+  button.disabled = records.length === 0;
+  button.textContent = records.length ? `Copy ${records.length}` : "Nothing to copy";
+  copyPayloads.set(id, [
+    `# BullScouter2 — ${title}`,
+    `Last updated: ${dateText(generatedAt)}`,
+    "",
+    ...records.map(formatter),
+  ].join("\n\n"));
+};
+
+async function writeClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.append(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+}
+
+document.addEventListener("click", async (event) => {
+  const button = event.target.closest("[data-copy-id]");
+  if (!button || button.disabled) return;
+  const text = copyPayloads.get(button.dataset.copyId);
+  if (!text) return;
+  const original = button.textContent;
+  try {
+    await writeClipboard(text);
+    button.textContent = "Copied";
+    button.classList.add("copied");
+  } catch {
+    button.textContent = "Copy failed";
+  }
+  window.setTimeout(() => {
+    button.textContent = original;
+    button.classList.remove("copied");
+  }, 1600);
+});
 
 const blockerList = (items) => {
   if (!items?.length) return "";
@@ -98,6 +174,46 @@ function renderDiscoveries(data) {
   const candidates = data.candidates || [];
   const opportunities = data.opportunities || [];
   const discoveries = data.discoveries || [];
+  const candidateCopy = (item) => markdownRecord(
+    `${item.ticker || "—"} — ${item.title || "Research candidate"}`,
+    [
+      ["Record", "Research candidate"],
+      ["Direction", item.direction],
+      ["Strategy", item.strategy],
+      ["Status", item.promotion_eligible ? "promotion eligible" : item.status],
+      ["Score", item.score],
+      ["Horizon", item.horizon_days ? `${item.horizon_days} days` : null],
+      ["Why now", item.why_now],
+      ["Counter-case", item.counter_case],
+      ["Falsifier", item.falsifier],
+      ["Blockers", blockerText(item.promotion_blocker_explanations)],
+    ],
+  );
+  const opportunityCopy = (item) => markdownRecord(
+    `${item.ticker || "—"} — ${item.title || "Qualified opportunity"}`,
+    [
+      ["Record", "Qualified opportunity"],
+      ["Archetype", item.archetype],
+      ["Direction", item.direction],
+      ["Qualification", item.qualification?.state || item.state],
+      ["Company health", item.health?.health_status || "missing"],
+      ["Observed", dateText(item.observed_at)],
+      ["Blockers", blockerText(item.qualification?.blocker_explanations)],
+    ],
+  );
+  const discoveryCopy = (item) => markdownRecord(
+    `${item.ticker || "—"} — ${item.title || item.summary || "Discovery"}`,
+    [
+      ["Record", "Canonical discovery"],
+      ["Observed", dateText(item.observed_at)],
+      ["Direction", item.direction],
+      ["Status", item.status],
+      ["Strategy", item.strategy],
+      ["Source", item.source],
+      ["Strength", item.strength],
+      ["Summary", item.summary],
+    ],
+  );
   const controls = {
     search: document.querySelector("[data-filter-search]"),
     type: document.querySelector("[data-filter-type]"),
@@ -169,7 +285,7 @@ function renderDiscoveries(data) {
           <div><strong class="ticker">${escapeHtml(item.ticker || "—")}</strong><br>${pill(item.direction)}</div>
           <div><h3>${escapeHtml(item.title)}</h3><p class="muted">${escapeHtml(item.why_now || item.counter_case || "")}</p>
           ${blockerList(item.promotion_blocker_explanations)}</div>
-          <div>${pill(item.promotion_eligible ? "promotion eligible" : item.status)}</div>
+          <div class="copy-actions">${pill(item.promotion_eligible ? "promotion eligible" : item.status)}${copyButton(candidateCopy(item), `Copy ${item.ticker || "candidate"}`)}</div>
         </article>`).join("")
       : empty("No research candidates match these filters.");
 
@@ -180,8 +296,9 @@ function renderDiscoveries(data) {
           <td>${pill(item.direction)}</td>
           <td>${pill(item.qualification?.state || item.state)}</td>
           <td>${pill(item.health?.health_status || "missing")}</td>
+          <td>${copyButton(opportunityCopy(item), `Copy ${item.ticker || "opportunity"}`)}</td>
         </tr>`).join("")
-      : `<tr><td colspan="5">No opportunities match these filters.</td></tr>`;
+      : `<tr><td colspan="6">No opportunities match these filters.</td></tr>`;
 
     document.querySelector("[data-discoveries]").innerHTML = discoveryMatches.length
       ? discoveryMatches.map((item) => `<tr>
@@ -190,8 +307,22 @@ function renderDiscoveries(data) {
           <td>${escapeHtml(item.title || item.summary || "Untitled discovery")}</td>
           <td>${pill(item.direction)}</td>
           <td>${pill(item.status)}</td>
+          <td>${copyButton(discoveryCopy(item), `Copy ${item.ticker || "discovery"}`)}</td>
         </tr>`).join("")
-      : `<tr><td colspan="5">No discoveries match these filters.</td></tr>`;
+      : `<tr><td colspan="6">No discoveries match these filters.</td></tr>`;
+
+    setListCopy(
+      "candidates", "Filtered research candidates",
+      candidateMatches, candidateCopy, data.generated_at,
+    );
+    setListCopy(
+      "opportunities", "Filtered qualified opportunities",
+      opportunityMatches, opportunityCopy, data.generated_at,
+    );
+    setListCopy(
+      "discoveries", "Filtered canonical discoveries",
+      discoveryMatches, discoveryCopy, data.generated_at,
+    );
 
     const counts = {
       candidates: candidateMatches.length,
@@ -233,6 +364,18 @@ function renderReadiness(data) {
   ].map(([label, value]) => `<div class="card"><div class="metric">${escapeHtml(value ?? 0)}</div><span class="muted">${escapeHtml(label)}</span></div>`).join("");
 
   const items = data.items || [];
+  const readinessCopy = (item) => markdownRecord(
+    `#${item.rank} ${item.ticker} — ${item.title || "Readiness candidate"}`,
+    [
+      ["Lane", item.lane],
+      ["Direction", item.direction],
+      ["Readiness score", item.score],
+      ["Framework", item.framework_status],
+      ["Company health", item.health_status],
+      ["Next action", item.next_action],
+      ["Blockers", blockerText(item.blocker_explanations)],
+    ],
+  );
   document.querySelector("[data-readiness]").innerHTML = items.length
     ? items.map((item) => `<tr>
         <td>${escapeHtml(item.rank)}</td>
@@ -242,19 +385,29 @@ function renderReadiness(data) {
         <td>${pill(item.framework_status)}</td>
         <td>${pill(item.health_status)}</td>
         <td class="break">${escapeHtml(item.next_action || "—")}</td>
+        <td>${copyButton(readinessCopy(item), `Copy ${item.ticker}`)}</td>
       </tr>`).join("")
-    : `<tr><td colspan="7">No shortlist has been generated.</td></tr>`;
+    : `<tr><td colspan="8">No shortlist has been generated.</td></tr>`;
+  setListCopy(
+    "readiness", "Current readiness queue", items, readinessCopy, data.generated_at,
+  );
 
   const transitions = data.transitions || {};
   const entered = transitions.entered || [];
   const left = transitions.left || [];
   document.querySelector("[data-transitions]").innerHTML = `
     <div class="card">
-      <h3>Entered</h3>
+      <div class="section-head"><h3>Entered</h3>${copyButton(
+        entered.length ? `# BullScouter2 — Entered shortlist\n\n${entered.map((ticker) => `- ${ticker}`).join("\n")}` : "No names entered the shortlist.",
+        "Copy",
+      )}</div>
       <p>${entered.length ? entered.map(pill).join(" ") : '<span class="muted">None</span>'}</p>
     </div>
     <div class="card">
-      <h3>Left the shortlist</h3>
+      <div class="section-head"><h3>Left the shortlist</h3>${copyButton(
+        left.length ? `# BullScouter2 — Left shortlist\n\n${left.map((item) => `- ${item.ticker}: ${plainLabel(item.reason)}; current score ${fmt(item.current_score)}`).join("\n")}` : "No names left the shortlist.",
+        "Copy",
+      )}</div>
       ${left.length ? left.map((item) => `<p><strong>${escapeHtml(item.ticker)}</strong> · ${escapeHtml(item.reason.replaceAll("_", " "))} · current ${fmt(item.current_score)}</p>`).join("") : '<p class="muted">None</p>'}
     </div>`;
 }
@@ -268,29 +421,60 @@ function renderInvestments(data) {
   ].map(([label, value]) => `<div class="card"><div class="metric">${escapeHtml(value ?? 0)}</div><span class="muted">${escapeHtml(label)}</span></div>`).join("");
 
   const items = data.items || [];
+  const investmentCopy = (item) => markdownRecord(
+    `${item.ticker} — ${item.title || "Investment candidate"}`,
+    [
+      ["Grade", item.grade],
+      ["Recommendation", item.proposal?.recommendation || item.decision?.authoritative_decision || "unproposed"],
+      ["Lane", item.lane],
+      ["Risk tier", item.proposal?.risk_tier],
+      ["Company health", item.company_health?.health_status || "missing"],
+      ["Rationale", item.proposal?.rationale],
+      ["Entry condition", item.proposal?.entry_condition],
+      ["Invalidation", item.proposal?.invalidation_condition],
+      ["Blockers", blockerText(item.blocker_explanations)],
+      ["Warnings", (item.warnings || []).join(" | ")],
+    ],
+  );
   document.querySelector("[data-investments]").innerHTML = items.length
     ? items.map((item) => `<article class="card">
         <div class="section-head"><div><span class="ticker">${escapeHtml(item.ticker)}</span><h2>${escapeHtml(item.title)}</h2></div>
-        <div>${pill(`Grade ${item.grade || "—"}`)} ${pill(item.proposal?.recommendation || item.decision?.authoritative_decision || "unproposed")}</div></div>
+        <div class="copy-actions">${pill(`Grade ${item.grade || "—"}`)} ${pill(item.proposal?.recommendation || item.decision?.authoritative_decision || "unproposed")} ${copyButton(investmentCopy(item), `Copy ${item.ticker}`)}</div></div>
         <p class="muted">${escapeHtml(item.proposal?.rationale || "No public proposal rationale.")}</p>
         <p>${pill(item.lane)} ${pill(item.proposal?.risk_tier || "unrated")} ${pill(item.company_health?.health_status || "health missing")}</p>
         ${blockerList(item.blocker_explanations)}
         ${(item.warnings || []).length ? `<p class="meta break">Warnings: ${escapeHtml(item.warnings.join(" · "))}</p>` : ""}
       </article>`).join("")
     : empty("No candidates have reached investment grading.");
+  setListCopy(
+    "investments", "Graded investment candidates",
+    items, investmentCopy, data.generated_at,
+  );
 }
 
 function renderTheses(data) {
   setUpdated(data.generated_at);
   document.querySelector("[data-thesis-count]").textContent = data.count ?? 0;
   const items = data.items || [];
+  const thesisCopy = (item) => markdownRecord(
+    `${item.ticker || "MULTI"} — ${item.title || "Thesis"}`,
+    [
+      ["Status", item.status],
+      ["Direction", item.direction],
+      ["Confidence", item.confidence],
+      ["Attention required", item.attention ? "yes" : "no"],
+      ["Next checkpoint", item.next_checkpoint?.label],
+      ["Checkpoint due", dateText(item.next_checkpoint?.due_at)],
+    ],
+  );
   document.querySelector("[data-theses]").innerHTML = items.length
     ? items.map((item) => `<article class="card">
-        <div class="section-head"><div><span class="ticker">${escapeHtml(item.ticker || "MULTI")}</span><h2>${escapeHtml(item.title)}</h2></div>${pill(item.status)}</div>
+        <div class="section-head"><div><span class="ticker">${escapeHtml(item.ticker || "MULTI")}</span><h2>${escapeHtml(item.title)}</h2></div><div class="copy-actions">${pill(item.status)}${copyButton(thesisCopy(item), `Copy ${item.ticker || "thesis"}`)}</div></div>
         <p>${pill(item.direction)} ${pill(`confidence ${item.confidence ?? "—"}`)} ${item.attention ? pill("attention") : ""}</p>
         <p class="muted">${item.next_checkpoint ? `Next: ${escapeHtml(item.next_checkpoint.label || "checkpoint")} · ${dateText(item.next_checkpoint.due_at)}` : "No pending checkpoint."}</p>
       </article>`).join("")
     : empty("No activated theses.");
+  setListCopy("theses", "Active theses", items, thesisCopy, data.generated_at);
 }
 
 async function boot() {

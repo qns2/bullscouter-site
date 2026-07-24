@@ -1,15 +1,30 @@
 {
-  "as_of": "2026-07-23T20:20:02.660212+00:00",
-  "deduplicated_count": 203,
+  "as_of": "2026-07-24T06:14:34.530902+00:00",
+  "deduplicated_count": 204,
   "execution_enabled": false,
-  "generated_at": "2026-07-24T05:53:22.951159+00:00",
+  "generated_at": "2026-07-24T06:16:13.634748+00:00",
   "items": [
     {
       "blocker_explanations": [
         {
-          "code": "qualification_watch_only",
-          "detail": "The setup may be monitored but does not qualify for promotion.",
-          "label": "Watch-only qualification"
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
         },
         {
           "code": "reviewed_payoff_missing",
@@ -18,45 +33,48 @@
         }
       ],
       "blockers": [
-        "qualification_watch_only",
+        "framework_proposal_pending",
+        "catalyst_not_reviewed",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
       "direction": "bull",
-      "framework_status": "preregistered",
+      "framework_status": "proposal_pending",
       "health_status": "acceptable",
-      "lane": "contrarian",
-      "next_action": "Resolve the remaining qualification blockers.",
+      "lane": "catalyst",
+      "next_action": "Review the proposed company framework.",
       "rank": 1,
-      "score": 85.0,
+      "score": 83.732,
       "score_components": {
-        "age_days": 6.85,
-        "company_evidence": 25.0,
-        "governance_readiness": 15.0,
+        "age_days": 0.41,
+        "company_evidence": 22.5,
+        "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 20.0,
-        "total": 85.0
+        "source_evidence": 31.232,
+        "total": 83.732
       },
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_410ab1c16ccb11834409df6b",
-        "catalyst": "reviewed",
-        "catalyst_observation_id": "watchlist_catalyst_observation_b1e96c498adcdc51ef734b12",
-        "framework": "preregistered",
-        "investment_candidate_id": "investment_candidate_93d7c192acc71306cd20c01b",
-        "investment_grade": "C",
-        "investment_grade_id": "investment_grade_78a9e4168e884b5e1105e5e7",
-        "investment_proposal_id": "investment_proposal_327cb6a41af5dfaefd814483",
+        "capital_source_health_id": "capital_issuance_health_74f98221510aeb5ff1ef41b9",
+        "catalyst": "discovery_only",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "membership_id": "opportunity_watchlist_a873abeb8f45aff96b2456a0",
+        "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 2738,
-        "qualification": "watch_only",
-        "recommendation": "Watch"
+        "price_event_id": 1906,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
       },
-      "ticker": "CELH",
-      "title": "CELH · contrarian dislocation"
+      "ticker": "CTSH",
+      "title": "CTSH · news event:partnership"
     },
     {
       "blocker_explanations": [
@@ -89,7 +107,7 @@
       "rank": 2,
       "score": 82.5,
       "score_components": {
-        "age_days": 0.85,
+        "age_days": 1.26,
         "company_evidence": 22.5,
         "governance_readiness": 15.0,
         "recency": 25.0,
@@ -104,8 +122,8 @@
         "framework": "preregistered",
         "investment_candidate_id": "investment_candidate_61067a1f3a73ef18f2b3cefa",
         "investment_grade": "C",
-        "investment_grade_id": "investment_grade_56c30c4eb66ab28d7b3b69dc",
-        "investment_proposal_id": "investment_proposal_d08341445800d0756e5e6dc6",
+        "investment_grade_id": "investment_grade_9f030ee8fb70d7040b270b2f",
+        "investment_proposal_id": "investment_proposal_7ca4e15067b07d8e4ad22836",
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
         "membership_id": null,
@@ -121,14 +139,9 @@
     {
       "blocker_explanations": [
         {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
         },
         {
           "code": "catalyst_not_reviewed",
@@ -136,121 +149,9 @@
           "label": "Catalyst not reviewed"
         },
         {
-          "code": "qualification_rejected",
-          "detail": "The opportunity has been rejected from the actionable funnel.",
-          "label": "Qualification rejected"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:phase1c:market_context_pending",
-          "detail": "The event-date response versus SPY has not yet been observed.",
-          "label": "Market response pending"
-        },
-        {
-          "code": "qualification:human_disposition:rejected",
-          "detail": "An explicit human disposition rejects this opportunity.",
-          "label": "Rejected by human review"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
-        "catalyst_not_reviewed",
-        "qualification_rejected",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:phase1c:market_context_pending",
-        "qualification:human_disposition:rejected",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
-      "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
-      "rank": 3,
-      "score": 57.531,
-      "score_components": {
-        "age_days": 3.49,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 27.531,
-        "total": 57.531
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_78345a7b9383f99a348e6aff",
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2750,
-        "qualification": "rejected",
-        "recommendation": "none"
-      },
-      "ticker": "EQT",
-      "title": "EQT · news event:earnings beat"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
           "code": "qualification_enrichment_pending",
           "detail": "Qualification is waiting for missing company or source evidence.",
           "label": "More evidence required"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:phase1c:insufficient_independent_sources",
-          "detail": "The thesis lacks enough independent supporting events for promotion.",
-          "label": "Independent confirmation missing"
         },
         {
           "code": "watchlist_admission_required",
@@ -265,62 +166,192 @@
       ],
       "blockers": [
         "framework_proposal_pending",
-        "company_health_insufficient_data",
+        "catalyst_not_reviewed",
         "qualification_enrichment_pending",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:phase1c:insufficient_independent_sources",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
       "direction": "bull",
       "framework_status": "proposal_pending",
-      "health_status": "insufficient_data",
-      "lane": "thesis",
+      "health_status": "acceptable",
+      "lane": "catalyst",
       "next_action": "Review the proposed company framework.",
-      "rank": 4,
-      "score": 55.791,
+      "rank": 3,
+      "score": 81.752,
       "score_components": {
-        "age_days": 2.0,
-        "company_evidence": 0.0,
+        "age_days": 0.41,
+        "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 25.791,
-        "total": 55.791
+        "source_evidence": 29.252,
+        "total": 81.752
       },
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_0b265111d1c730cb31298107",
-        "catalyst": "not_required",
+        "capital_source_health_id": "capital_issuance_health_0893d3dfee15905de947cd6d",
+        "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
         "investment_candidate_id": null,
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
+        "issuer_fundamentals": "acceptable",
         "market_price": "available",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 2780,
+        "price_event_id": 1948,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
-      "ticker": "MU",
-      "title": "MU · news event:sector catalyst"
+      "ticker": "INTU",
+      "title": "INTU · news event:analyst upgrade"
     },
     {
       "blocker_explanations": [
         {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
         },
         {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
+          "code": "market_price_missing",
+          "detail": "No current adjusted market price is available for the candidate.",
+          "label": "Current price missing"
+        },
+        {
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
+        },
+        {
+          "code": "capital_issuance_source_missing",
+          "detail": "The SEC capital-issuance source has not produced a current result.",
+          "label": "Capital-issuance check missing"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "market_price_missing",
+        "catalyst_not_reviewed",
+        "capital_issuance_source_missing",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "direction": "bull",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
+      "lane": "catalyst",
+      "next_action": "Review the proposed company framework.",
+      "rank": 4,
+      "score": 78.249,
+      "score_components": {
+        "age_days": 0.41,
+        "company_evidence": 22.5,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 25.749,
+        "total": 78.249
+      },
+      "statuses": {
+        "capital_issuance": "missing",
+        "capital_source_health_id": null,
+        "catalyst": "discovery_only",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "missing",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": null,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "ticker": "TLX",
+      "title": "TLX · news event:analyst upgrade"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "qualification_watch_only",
+          "detail": "The setup may be monitored but does not qualify for promotion.",
+          "label": "Watch-only qualification"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "qualification_watch_only",
+        "reviewed_payoff_missing"
+      ],
+      "direction": "bull",
+      "framework_status": "preregistered",
+      "health_status": "acceptable",
+      "lane": "contrarian",
+      "next_action": "Resolve the remaining qualification blockers.",
+      "rank": 5,
+      "score": 78.0,
+      "score_components": {
+        "age_days": 7.26,
+        "company_evidence": 25.0,
+        "governance_readiness": 15.0,
+        "recency": 18.0,
+        "source_evidence": 20.0,
+        "total": 78.0
+      },
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_410ab1c16ccb11834409df6b",
+        "catalyst": "reviewed",
+        "catalyst_observation_id": "watchlist_catalyst_observation_b1e96c498adcdc51ef734b12",
+        "framework": "preregistered",
+        "investment_candidate_id": "investment_candidate_93d7c192acc71306cd20c01b",
+        "investment_grade": "C",
+        "investment_grade_id": "investment_grade_7360f271852ddf5c41c8cafc",
+        "investment_proposal_id": "investment_proposal_c74e0701c56602b8871984cd",
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "membership_id": "opportunity_watchlist_a873abeb8f45aff96b2456a0",
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2738,
+        "qualification": "watch_only",
+        "recommendation": "Watch"
+      },
+      "ticker": "CELH",
+      "title": "CELH · contrarian dislocation"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
         },
         {
           "code": "catalyst_not_reviewed",
@@ -333,21 +364,6 @@
           "label": "More evidence required"
         },
         {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:phase1c:insufficient_independent_sources",
-          "detail": "The thesis lacks enough independent supporting events for promotion.",
-          "label": "Independent confirmation missing"
-        },
-        {
           "code": "watchlist_admission_required",
           "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
           "label": "Governed watchlist admission required"
@@ -359,436 +375,48 @@
         }
       ],
       "blockers": [
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
+        "framework_proposal_pending",
         "catalyst_not_reviewed",
         "qualification_enrichment_pending",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:phase1c:insufficient_independent_sources",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
       "direction": "bull",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
-      "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
-      "rank": 5,
-      "score": 54.58,
-      "score_components": {
-        "age_days": 3.49,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 24.58,
-        "total": 54.58
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_273aa40b66dc78beb57bb474",
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2696,
-        "qualification": "enrichment_pending",
-        "recommendation": "none"
-      },
-      "ticker": "AVAV",
-      "title": "AVAV · news event:guidance change"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "qualification_watch_only",
-          "detail": "The setup may be monitored but does not qualify for promotion.",
-          "label": "Watch-only qualification"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:human_disposition:watch_only",
-          "detail": "An explicit human disposition limits this opportunity to monitoring.",
-          "label": "Limited to watch-only"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
-        "catalyst_not_reviewed",
-        "qualification_watch_only",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:human_disposition:watch_only",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
       "lane": "catalyst",
       "next_action": "Review the proposed company framework.",
       "rank": 6,
-      "score": 54.033,
+      "score": 76.174,
       "score_components": {
-        "age_days": 3.49,
-        "company_evidence": 0.0,
+        "age_days": 0.41,
+        "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 24.033,
-        "total": 54.033
+        "source_evidence": 26.174,
+        "total": 76.174
       },
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_d3da16704a032e0be413f92a",
+        "capital_source_health_id": "capital_issuance_health_78345a7b9383f99a348e6aff",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
+        "framework": "proposal_pending",
         "investment_candidate_id": null,
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
+        "issuer_fundamentals": "acceptable",
         "market_price": "available",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 2744,
-        "qualification": "watch_only",
-        "recommendation": "none"
-      },
-      "ticker": "CRWD",
-      "title": "CRWD · news event:partnership"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "qualification_enrichment_pending",
-          "detail": "Qualification is waiting for missing company or source evidence.",
-          "label": "More evidence required"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:phase1c:market_context_pending",
-          "detail": "The event-date response versus SPY has not yet been observed.",
-          "label": "Market response pending"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
-        "catalyst_not_reviewed",
-        "qualification_enrichment_pending",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:phase1c:market_context_pending",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
-      "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
-      "rank": 7,
-      "score": 53.771,
-      "score_components": {
-        "age_days": 3.49,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 23.771,
-        "total": 53.771
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_2b6d14eebaaf36885827bf88",
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2762,
+        "price_event_id": 2750,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
-      "ticker": "INMD",
-      "title": "INMD · news event:acquisition"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "qualification_watch_only",
-          "detail": "The setup may be monitored but does not qualify for promotion.",
-          "label": "Watch-only qualification"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:human_disposition:watch_only",
-          "detail": "An explicit human disposition limits this opportunity to monitoring.",
-          "label": "Limited to watch-only"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
-        "catalyst_not_reviewed",
-        "qualification_watch_only",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:human_disposition:watch_only",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
-      "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
-      "rank": 8,
-      "score": 53.508,
-      "score_components": {
-        "age_days": 3.49,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 23.508,
-        "total": 53.508
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_4b8da2e82de8f01e5b6934f2",
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2702,
-        "qualification": "watch_only",
-        "recommendation": "none"
-      },
-      "ticker": "BKR",
-      "title": "BKR · news event:acquisition"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "qualification_watch_only",
-          "detail": "The setup may be monitored but does not qualify for promotion.",
-          "label": "Watch-only qualification"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:human_disposition:watch_only",
-          "detail": "An explicit human disposition limits this opportunity to monitoring.",
-          "label": "Limited to watch-only"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
-        "catalyst_not_reviewed",
-        "qualification_watch_only",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:human_disposition:watch_only",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
-      "lane": "catalyst",
-      "next_action": "Review the proposed company framework.",
-      "rank": 9,
-      "score": 52.954,
-      "score_components": {
-        "age_days": 3.27,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 22.954,
-        "total": 52.954
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_ad6ac981d4ef5ad8451711e9",
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2792,
-        "qualification": "watch_only",
-        "recommendation": "none"
-      },
-      "ticker": "TEM",
-      "title": "TEM · news event:acquisition"
+      "ticker": "EQT",
+      "title": "EQT · news event:earnings beat"
     },
     {
       "blocker_explanations": [
@@ -798,39 +426,14 @@
           "label": "Direction unresolved"
         },
         {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
         },
         {
           "code": "qualification_rejected",
           "detail": "The opportunity has been rejected from the actionable funnel.",
           "label": "Qualification rejected"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:phase1c:source_gate",
-          "detail": "The candidate does not yet satisfy V2 source quality, direction, horizon, promotion, and market-context requirements. The Phase 1c evidence contract failed during Phase 1d qualification.",
-          "label": "Discovery evidence gate not met"
-        },
-        {
-          "code": "qualification:human_disposition:rejected",
-          "detail": "An explicit human disposition rejects this opportunity.",
-          "label": "Rejected by human review"
         },
         {
           "code": "watchlist_admission_required",
@@ -845,42 +448,37 @@
       ],
       "blockers": [
         "direction_unresolved",
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
+        "framework_proposal_pending",
         "qualification_rejected",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:phase1c:source_gate",
-        "qualification:human_disposition:rejected",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
       "direction": "unknown",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
       "lane": "thesis",
       "next_action": "Review the proposed company framework.",
-      "rank": 10,
-      "score": 50.106,
+      "rank": 7,
+      "score": 72.606,
       "score_components": {
-        "age_days": 4.54,
-        "company_evidence": 0.0,
+        "age_days": 4.96,
+        "company_evidence": 22.5,
         "governance_readiness": 0.0,
         "recency": 25.0,
         "source_evidence": 25.106,
-        "total": 50.106
+        "total": 72.606
       },
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_872e34eb5d21ba3bb71ce245",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
+        "framework": "proposal_pending",
         "investment_candidate_id": null,
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
+        "issuer_fundamentals": "acceptable",
         "market_price": "available",
         "membership_id": null,
         "payoff": "missing",
@@ -900,29 +498,9 @@
           "label": "Framework review pending"
         },
         {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
           "code": "qualification_enrichment_pending",
           "detail": "Qualification is waiting for missing company or source evidence.",
           "label": "More evidence required"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:contrarian_catalyst_not_observed",
-          "detail": "The drawdown is observable, but no reviewed catalyst or activist filing supports a turnaround.",
-          "label": "Contrarian catalyst missing"
         },
         {
           "code": "watchlist_admission_required",
@@ -937,28 +515,24 @@
       ],
       "blockers": [
         "framework_proposal_pending",
-        "company_health_insufficient_data",
         "qualification_enrichment_pending",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:contrarian_catalyst_not_observed",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
       "direction": "bull",
       "framework_status": "proposal_pending",
-      "health_status": "insufficient_data",
+      "health_status": "acceptable",
       "lane": "contrarian",
       "next_action": "Review the proposed company framework.",
-      "rank": 11,
-      "score": 50.0,
+      "rank": 8,
+      "score": 72.5,
       "score_components": {
-        "age_days": 0.85,
-        "company_evidence": 0.0,
+        "age_days": 1.26,
+        "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 20.0,
-        "total": 50.0
+        "total": 72.5
       },
       "statuses": {
         "capital_issuance": "healthy",
@@ -970,12 +544,12 @@
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
+        "issuer_fundamentals": "acceptable",
         "market_price": "available",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 2672,
+        "price_event_id": 2805,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -990,29 +564,9 @@
           "label": "Framework review pending"
         },
         {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
           "code": "qualification_enrichment_pending",
           "detail": "Qualification is waiting for missing company or source evidence.",
           "label": "More evidence required"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:contrarian_catalyst_not_observed",
-          "detail": "The drawdown is observable, but no reviewed catalyst or activist filing supports a turnaround.",
-          "label": "Contrarian catalyst missing"
         },
         {
           "code": "watchlist_admission_required",
@@ -1027,208 +581,24 @@
       ],
       "blockers": [
         "framework_proposal_pending",
-        "company_health_insufficient_data",
         "qualification_enrichment_pending",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:contrarian_catalyst_not_observed",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
       "direction": "bull",
       "framework_status": "proposal_pending",
-      "health_status": "insufficient_data",
+      "health_status": "acceptable",
       "lane": "contrarian",
       "next_action": "Review the proposed company framework.",
-      "rank": 12,
-      "score": 50.0,
+      "rank": 9,
+      "score": 72.5,
       "score_components": {
-        "age_days": 0.85,
-        "company_evidence": 0.0,
+        "age_days": 1.26,
+        "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 20.0,
-        "total": 50.0
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_b6b83f352c4a1f0b7b63ad18",
-        "catalyst": "not_required",
-        "catalyst_observation_id": null,
-        "framework": "proposal_pending",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2678,
-        "qualification": "enrichment_pending",
-        "recommendation": "none"
-      },
-      "ticker": "ACN",
-      "title": "ACN · contrarian dislocation"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "qualification_enrichment_pending",
-          "detail": "Qualification is waiting for missing company or source evidence.",
-          "label": "More evidence required"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:contrarian_catalyst_not_observed",
-          "detail": "The drawdown is observable, but no reviewed catalyst or activist filing supports a turnaround.",
-          "label": "Contrarian catalyst missing"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_pending",
-        "company_health_insufficient_data",
-        "qualification_enrichment_pending",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:contrarian_catalyst_not_observed",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_pending",
-      "health_status": "insufficient_data",
-      "lane": "contrarian",
-      "next_action": "Review the proposed company framework.",
-      "rank": 13,
-      "score": 50.0,
-      "score_components": {
-        "age_days": 0.85,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 20.0,
-        "total": 50.0
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_6d9c57af9f9897d929ae2981",
-        "catalyst": "not_required",
-        "catalyst_observation_id": null,
-        "framework": "proposal_pending",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2690,
-        "qualification": "enrichment_pending",
-        "recommendation": "none"
-      },
-      "ticker": "ASAN",
-      "title": "ASAN · contrarian dislocation"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_pending",
-          "detail": "A proposed company framework is waiting for human review.",
-          "label": "Framework review pending"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "qualification_enrichment_pending",
-          "detail": "Qualification is waiting for missing company or source evidence.",
-          "label": "More evidence required"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:contrarian_catalyst_not_observed",
-          "detail": "The drawdown is observable, but no reviewed catalyst or activist filing supports a turnaround.",
-          "label": "Contrarian catalyst missing"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_pending",
-        "company_health_insufficient_data",
-        "qualification_enrichment_pending",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:contrarian_catalyst_not_observed",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_pending",
-      "health_status": "insufficient_data",
-      "lane": "contrarian",
-      "next_action": "Review the proposed company framework.",
-      "rank": 14,
-      "score": 50.0,
-      "score_components": {
-        "age_days": 0.85,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 20.0,
-        "total": 50.0
+        "total": 72.5
       },
       "statuses": {
         "capital_issuance": "healthy",
@@ -1240,7 +610,7 @@
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
+        "issuer_fundamentals": "acceptable",
         "market_price": "available",
         "membership_id": null,
         "payoff": "missing",
@@ -1260,29 +630,9 @@
           "label": "Framework review pending"
         },
         {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
           "code": "qualification_enrichment_pending",
           "detail": "Qualification is waiting for missing company or source evidence.",
           "label": "More evidence required"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:contrarian_catalyst_not_observed",
-          "detail": "The drawdown is observable, but no reviewed catalyst or activist filing supports a turnaround.",
-          "label": "Contrarian catalyst missing"
         },
         {
           "code": "watchlist_admission_required",
@@ -1297,28 +647,24 @@
       ],
       "blockers": [
         "framework_proposal_pending",
-        "company_health_insufficient_data",
         "qualification_enrichment_pending",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:contrarian_catalyst_not_observed",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
       "direction": "bull",
       "framework_status": "proposal_pending",
-      "health_status": "insufficient_data",
+      "health_status": "acceptable",
       "lane": "contrarian",
       "next_action": "Review the proposed company framework.",
-      "rank": 15,
-      "score": 50.0,
+      "rank": 10,
+      "score": 72.5,
       "score_components": {
-        "age_days": 0.85,
-        "company_evidence": 0.0,
+        "age_days": 1.26,
+        "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 20.0,
-        "total": 50.0
+        "total": 72.5
       },
       "statuses": {
         "capital_issuance": "healthy",
@@ -1330,7 +676,7 @@
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
+        "issuer_fundamentals": "acceptable",
         "market_price": "available",
         "membership_id": null,
         "payoff": "missing",
@@ -1350,29 +696,9 @@
           "label": "Framework review pending"
         },
         {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "qualification_enrichment_pending",
-          "detail": "Qualification is waiting for missing company or source evidence.",
-          "label": "More evidence required"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:contrarian_catalyst_not_observed",
-          "detail": "The drawdown is observable, but no reviewed catalyst or activist filing supports a turnaround.",
-          "label": "Contrarian catalyst missing"
+          "code": "qualification_rejected",
+          "detail": "The opportunity has been rejected from the actionable funnel.",
+          "label": "Qualification rejected"
         },
         {
           "code": "watchlist_admission_required",
@@ -1387,32 +713,28 @@
       ],
       "blockers": [
         "framework_proposal_pending",
-        "company_health_insufficient_data",
-        "qualification_enrichment_pending",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:contrarian_catalyst_not_observed",
+        "qualification_rejected",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
       "direction": "bull",
       "framework_status": "proposal_pending",
-      "health_status": "insufficient_data",
-      "lane": "contrarian",
+      "health_status": "acceptable",
+      "lane": "thesis",
       "next_action": "Review the proposed company framework.",
-      "rank": 16,
-      "score": 50.0,
+      "rank": 11,
+      "score": 72.246,
       "score_components": {
-        "age_days": 0.85,
-        "company_evidence": 0.0,
+        "age_days": 3.91,
+        "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 20.0,
-        "total": 50.0
+        "source_evidence": 19.746,
+        "total": 72.246
       },
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_2c782808d72bd0daa450b61a",
+        "capital_source_health_id": "capital_issuance_health_1d7fb6c9663703ef7c1bcce7",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -1420,103 +742,7 @@
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2720,
-        "qualification": "enrichment_pending",
-        "recommendation": "none"
-      },
-      "ticker": "BRBR",
-      "title": "BRBR · contrarian dislocation"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "qualification_rejected",
-          "detail": "The opportunity has been rejected from the actionable funnel.",
-          "label": "Qualification rejected"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:phase1c:insufficient_independent_sources",
-          "detail": "The thesis lacks enough independent supporting events for promotion.",
-          "label": "Independent confirmation missing"
-        },
-        {
-          "code": "qualification:human_disposition:rejected",
-          "detail": "An explicit human disposition rejects this opportunity.",
-          "label": "Rejected by human review"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
-        "qualification_rejected",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:phase1c:insufficient_independent_sources",
-        "qualification:human_disposition:rejected",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
-      "lane": "thesis",
-      "next_action": "Review the proposed company framework.",
-      "rank": 17,
-      "score": 49.746,
-      "score_components": {
-        "age_days": 3.49,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 19.746,
-        "total": 49.746
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_1d7fb6c9663703ef7c1bcce7",
-        "catalyst": "not_required",
-        "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
+        "issuer_fundamentals": "acceptable",
         "market_price": "available",
         "membership_id": null,
         "payoff": "missing",
@@ -1531,39 +757,14 @@
     {
       "blocker_explanations": [
         {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
         },
         {
           "code": "qualification_rejected",
           "detail": "The opportunity has been rejected from the actionable funnel.",
           "label": "Qualification rejected"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:phase1c:insufficient_independent_sources",
-          "detail": "The thesis lacks enough independent supporting events for promotion.",
-          "label": "Independent confirmation missing"
-        },
-        {
-          "code": "qualification:human_disposition:rejected",
-          "detail": "An explicit human disposition rejects this opportunity.",
-          "label": "Rejected by human review"
         },
         {
           "code": "watchlist_admission_required",
@@ -1577,138 +778,37 @@
         }
       ],
       "blockers": [
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
+        "framework_proposal_pending",
         "qualification_rejected",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:phase1c:insufficient_independent_sources",
-        "qualification:human_disposition:rejected",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
       "direction": "bull",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
       "lane": "thesis",
       "next_action": "Review the proposed company framework.",
-      "rank": 18,
-      "score": 49.746,
+      "rank": 12,
+      "score": 71.327,
       "score_components": {
-        "age_days": 3.49,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 19.746,
-        "total": 49.746
-      },
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_0dce91e0a328897b6f66e9f5",
-        "catalyst": "not_required",
-        "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 2774,
-        "qualification": "rejected",
-        "recommendation": "none"
-      },
-      "ticker": "LRCX",
-      "title": "LRCX · news event:sector catalyst"
-    },
-    {
-      "blocker_explanations": [
-        {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "qualification_rejected",
-          "detail": "The opportunity has been rejected from the actionable funnel.",
-          "label": "Qualification rejected"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:phase1c:insufficient_independent_sources",
-          "detail": "The thesis lacks enough independent supporting events for promotion.",
-          "label": "Independent confirmation missing"
-        },
-        {
-          "code": "qualification:human_disposition:rejected",
-          "detail": "An explicit human disposition rejects this opportunity.",
-          "label": "Rejected by human review"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
-        "qualification_rejected",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:phase1c:insufficient_independent_sources",
-        "qualification:human_disposition:rejected",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "direction": "bull",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
-      "lane": "thesis",
-      "next_action": "Review the proposed company framework.",
-      "rank": 19,
-      "score": 48.827,
-      "score_components": {
-        "age_days": 3.49,
-        "company_evidence": 0.0,
+        "age_days": 3.91,
+        "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 18.827,
-        "total": 48.827
+        "total": 71.327
       },
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_802af3f9f4cf6b085391b2a3",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
+        "framework": "proposal_pending",
         "investment_candidate_id": null,
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
+        "issuer_fundamentals": "acceptable",
         "market_price": "available",
         "membership_id": null,
         "payoff": "missing",
@@ -1723,44 +823,14 @@
     {
       "blocker_explanations": [
         {
-          "code": "framework_proposal_rejected",
-          "detail": "The proposed company framework was rejected and must not be reused mechanically.",
-          "label": "Framework proposal rejected"
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
         },
         {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "qualification_rejected",
-          "detail": "The opportunity has been rejected from the actionable funnel.",
-          "label": "Qualification rejected"
-        },
-        {
-          "code": "qualification:framework_unclassified",
-          "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
-          "label": "Company framework not reviewed"
-        },
-        {
-          "code": "qualification:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "qualification:phase1c:rumor_only",
-          "detail": "No sufficiently authoritative supporting source has been recorded.",
-          "label": "Rumor-only evidence"
-        },
-        {
-          "code": "qualification:phase1c:insufficient_independent_sources",
-          "detail": "The thesis lacks enough independent supporting events for promotion.",
-          "label": "Independent confirmation missing"
-        },
-        {
-          "code": "qualification:human_disposition:rejected",
-          "detail": "An explicit human disposition rejects this opportunity.",
-          "label": "Rejected by human review"
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
         },
         {
           "code": "watchlist_admission_required",
@@ -1774,53 +844,563 @@
         }
       ],
       "blockers": [
-        "framework_proposal_rejected",
-        "company_health_insufficient_data",
-        "qualification_rejected",
-        "qualification:framework_unclassified",
-        "qualification:health_coverage_below_4_of_6",
-        "qualification:phase1c:rumor_only",
-        "qualification:phase1c:insufficient_independent_sources",
-        "qualification:human_disposition:rejected",
+        "framework_proposal_pending",
+        "qualification_enrichment_pending",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
       "direction": "bull",
-      "framework_status": "proposal_rejected",
-      "health_status": "insufficient_data",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
+      "lane": "contrarian",
+      "next_action": "Review the proposed company framework.",
+      "rank": 13,
+      "score": 70.0,
+      "score_components": {
+        "age_days": 1.26,
+        "company_evidence": 20.0,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 20.0,
+        "total": 70.0
+      },
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_b6b83f352c4a1f0b7b63ad18",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2678,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "ticker": "ACN",
+      "title": "ACN · contrarian dislocation"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "direction": "bull",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
+      "lane": "contrarian",
+      "next_action": "Review the proposed company framework.",
+      "rank": 14,
+      "score": 70.0,
+      "score_components": {
+        "age_days": 1.26,
+        "company_evidence": 20.0,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 20.0,
+        "total": 70.0
+      },
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_2c782808d72bd0daa450b61a",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2720,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "ticker": "BRBR",
+      "title": "BRBR · contrarian dislocation"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "qualification_rejected",
+          "detail": "The opportunity has been rejected from the actionable funnel.",
+          "label": "Qualification rejected"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "qualification_rejected",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "direction": "bull",
+      "framework_status": "proposal_pending",
+      "health_status": "acceptable",
       "lane": "thesis",
       "next_action": "Review the proposed company framework.",
-      "rank": 20,
-      "score": 46.435,
+      "rank": 15,
+      "score": 69.746,
       "score_components": {
-        "age_days": 3.49,
-        "company_evidence": 0.0,
+        "age_days": 3.91,
+        "company_evidence": 20.0,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 19.746,
+        "total": 69.746
+      },
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_0dce91e0a328897b6f66e9f5",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2774,
+        "qualification": "rejected",
+        "recommendation": "none"
+      },
+      "ticker": "LRCX",
+      "title": "LRCX · news event:sector catalyst"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "company_health_borderline",
+          "detail": "This governance requirement is not yet satisfied.",
+          "label": "Company health borderline"
+        },
+        {
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
+        },
+        {
+          "code": "qualification_watch_only",
+          "detail": "The setup may be monitored but does not qualify for promotion.",
+          "label": "Watch-only qualification"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "company_health_borderline",
+        "catalyst_not_reviewed",
+        "qualification_watch_only",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "direction": "bull",
+      "framework_status": "proposal_pending",
+      "health_status": "borderline",
+      "lane": "catalyst",
+      "next_action": "Review the proposed company framework.",
+      "rank": 16,
+      "score": 69.033,
+      "score_components": {
+        "age_days": 3.91,
+        "company_evidence": 15.0,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 24.033,
+        "total": 69.033
+      },
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_d3da16704a032e0be413f92a",
+        "catalyst": "discovery_only",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "borderline",
+        "market_price": "available",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2744,
+        "qualification": "watch_only",
+        "recommendation": "none"
+      },
+      "ticker": "CRWD",
+      "title": "CRWD · news event:partnership"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "company_health_unhealthy",
+          "detail": "The sourced company-health assessment is currently unhealthy.",
+          "label": "Company health failed"
+        },
+        {
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "company_health_unhealthy",
+        "catalyst_not_reviewed",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "direction": "bull",
+      "framework_status": "proposal_pending",
+      "health_status": "unhealthy",
+      "lane": "catalyst",
+      "next_action": "Review the proposed company framework.",
+      "rank": 17,
+      "score": 67.666,
+      "score_components": {
+        "age_days": 0.41,
+        "company_evidence": 10.0,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 27.666,
+        "total": 67.666
+      },
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_273aa40b66dc78beb57bb474",
+        "catalyst": "discovery_only",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "unhealthy",
+        "market_price": "available",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2696,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "ticker": "AVAV",
+      "title": "AVAV · news event:contract award"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "company_health_borderline",
+          "detail": "This governance requirement is not yet satisfied.",
+          "label": "Company health borderline"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "company_health_borderline",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "direction": "bull",
+      "framework_status": "proposal_pending",
+      "health_status": "borderline",
+      "lane": "contrarian",
+      "next_action": "Review the proposed company framework.",
+      "rank": 18,
+      "score": 67.5,
+      "score_components": {
+        "age_days": 1.26,
+        "company_evidence": 17.5,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 20.0,
+        "total": 67.5
+      },
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_6d9c57af9f9897d929ae2981",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "borderline",
+        "market_price": "available",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 2690,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "ticker": "ASAN",
+      "title": "ASAN · contrarian dislocation"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "company_health_unhealthy",
+          "detail": "The sourced company-health assessment is currently unhealthy.",
+          "label": "Company health failed"
+        },
+        {
+          "code": "qualification_rejected",
+          "detail": "The opportunity has been rejected from the actionable funnel.",
+          "label": "Qualification rejected"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "company_health_unhealthy",
+        "qualification_rejected",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "direction": "bull",
+      "framework_status": "proposal_pending",
+      "health_status": "unhealthy",
+      "lane": "thesis",
+      "next_action": "Review the proposed company framework.",
+      "rank": 19,
+      "score": 58.935,
+      "score_components": {
+        "age_days": 3.91,
+        "company_evidence": 12.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
         "source_evidence": 16.435,
-        "total": 46.435
+        "total": 58.935
       },
       "statuses": {
         "capital_issuance": "healthy",
         "capital_source_health_id": "capital_issuance_health_76b4193a00b0c42151b4cb6c",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
-        "framework": "proposal_rejected",
+        "framework": "proposal_pending",
         "investment_candidate_id": "investment_candidate_9ad0540ae3bc2728e6b24b98",
         "investment_grade": "not_graded",
         "investment_grade_id": null,
         "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
+        "issuer_fundamentals": "unhealthy",
         "market_price": "available",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 2756,
+        "price_event_id": 2812,
         "qualification": "rejected",
         "recommendation": "none"
       },
       "ticker": "IBRX",
       "title": "IBRX · news event:sector catalyst"
+    },
+    {
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "company_health_unhealthy",
+          "detail": "The sourced company-health assessment is currently unhealthy.",
+          "label": "Company health failed"
+        },
+        {
+          "code": "market_price_missing",
+          "detail": "No current adjusted market price is available for the candidate.",
+          "label": "Current price missing"
+        },
+        {
+          "code": "capital_issuance_source_missing",
+          "detail": "The SEC capital-issuance source has not produced a current result.",
+          "label": "Capital-issuance check missing"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "company_health_unhealthy",
+        "market_price_missing",
+        "capital_issuance_source_missing",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "direction": "bull",
+      "framework_status": "proposal_pending",
+      "health_status": "unhealthy",
+      "lane": "thesis",
+      "next_action": "Review the proposed company framework.",
+      "rank": 20,
+      "score": 53.533,
+      "score_components": {
+        "age_days": 3.69,
+        "company_evidence": 10.0,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 13.533,
+        "total": 53.533
+      },
+      "statuses": {
+        "capital_issuance": "missing",
+        "capital_source_health_id": null,
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "unhealthy",
+        "market_price": "missing",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": null,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "ticker": "EVEX",
+      "title": "EVEX · news event:sector catalyst"
     }
   ],
   "lane_counts": {
@@ -1832,49 +1412,31 @@
   "schema_version": "bullscouter2-public-site.v1",
   "selected_count": 20,
   "transitions": {
-    "entered": [
-      "ACM",
-      "BL"
-    ],
-    "left": [
-      {
-        "current_score": 50.0,
-        "lane": "contrarian",
-        "previous_rank": 15,
-        "previous_score": 50.0,
-        "reason": "below_lane_quota_or_global_cutoff",
-        "ticker": "CAR"
-      },
-      {
-        "current_score": 50.0,
-        "lane": "contrarian",
-        "previous_rank": 16,
-        "previous_score": 50.0,
-        "reason": "below_lane_quota_or_global_cutoff",
-        "ticker": "CNXC"
-      }
-    ],
-    "previous_as_of": "2026-07-23T09:42:12.172660+00:00",
+    "entered": [],
+    "left": [],
+    "previous_as_of": "2026-07-24T06:09:27.500773+00:00",
     "retained": [
+      "ACM",
       "ACN",
       "AMAT",
       "ASAN",
       "AVAV",
-      "BKR",
+      "BL",
       "BLKB",
       "BRBR",
       "CAI",
       "CEG",
       "CELH",
       "CRWD",
+      "CTSH",
       "EQT",
+      "EVEX",
       "IBRX",
-      "INMD",
+      "INTU",
       "KLAC",
       "LRCX",
-      "MU",
-      "TEM"
+      "TLX"
     ]
   },
-  "universe_count": 1373
+  "universe_count": 1384
 }

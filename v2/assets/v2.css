@@ -411,6 +411,44 @@ tbody tr:last-child td { border-bottom: 0; }
   cursor: pointer;
 }
 
+.copy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .4rem;
+}
+
+.copy-button {
+  min-height: 32px;
+  padding: .35rem .62rem;
+  border: 1px solid rgba(123, 182, 255, .3);
+  border-radius: 9px;
+  background: rgba(123, 182, 255, .08);
+  color: var(--blue);
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 760;
+  cursor: pointer;
+}
+
+.copy-button:hover,
+.copy-button:focus-visible {
+  border-color: var(--blue);
+  background: rgba(123, 182, 255, .15);
+  outline: none;
+}
+
+.copy-button.copied {
+  border-color: rgba(55, 228, 155, .4);
+  color: var(--green);
+}
+
+.copy-button:disabled {
+  cursor: default;
+  opacity: .45;
+}
+
 .filter-meta {
   display: flex;
   justify-content: space-between;
@@ -445,6 +483,7 @@ tbody tr:last-child td { border-bottom: 0; }
   .nav { align-items: flex-start; padding: .8rem 0; }
   .nav-links { flex-wrap: wrap; justify-content: flex-end; }
   .row-card { grid-template-columns: 1fr; gap: .4rem; }
+  .copy-actions { justify-content: flex-start; }
 }
 
 @media (max-width: 560px) {

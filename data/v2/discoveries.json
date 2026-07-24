@@ -57,16 +57,10 @@
           "code": "phase1d:framework_unclassified",
           "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
           "label": "Company framework not reviewed"
-        },
-        {
-          "code": "phase1d:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
         }
       ],
       "promotion_blockers": [
-        "phase1d:framework_unclassified",
-        "phase1d:health_coverage_below_4_of_6"
+        "phase1d:framework_unclassified"
       ],
       "promotion_eligible": false,
       "score": 0.892346,
@@ -135,16 +129,10 @@
           "code": "phase1d:framework_unclassified",
           "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
           "label": "Company framework not reviewed"
-        },
-        {
-          "code": "phase1d:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
         }
       ],
       "promotion_blockers": [
-        "phase1d:framework_unclassified",
-        "phase1d:health_coverage_below_4_of_6"
+        "phase1d:framework_unclassified"
       ],
       "promotion_eligible": false,
       "score": 0.835767,
@@ -218,9 +206,9 @@
           "label": "Company framework not reviewed"
         },
         {
-          "code": "phase1d:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
+          "code": "phase1d:company_health_unhealthy",
+          "detail": "The sourced company-health assessment is currently unhealthy.",
+          "label": "Company health failed"
         },
         {
           "code": "phase1d:phase1c:market_context_pending",
@@ -231,7 +219,7 @@
       "promotion_blockers": [
         "market_context_pending",
         "phase1d:framework_unclassified",
-        "phase1d:health_coverage_below_4_of_6",
+        "phase1d:company_health_unhealthy",
         "phase1d:phase1c:market_context_pending"
       ],
       "promotion_eligible": false,
@@ -400,11 +388,6 @@
           "label": "Company framework not reviewed"
         },
         {
-          "code": "phase1d:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
           "code": "phase1d:phase1c:insufficient_independent_sources",
           "detail": "The thesis lacks enough independent supporting events for promotion.",
           "label": "Independent confirmation missing"
@@ -413,7 +396,6 @@
       "promotion_blockers": [
         "insufficient_independent_sources",
         "phase1d:framework_unclassified",
-        "phase1d:health_coverage_below_4_of_6",
         "phase1d:phase1c:insufficient_independent_sources"
       ],
       "promotion_eligible": false,
@@ -553,11 +535,6 @@
           "label": "Company framework not reviewed"
         },
         {
-          "code": "phase1d:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
           "code": "phase1d:phase1c:insufficient_independent_sources",
           "detail": "The thesis lacks enough independent supporting events for promotion.",
           "label": "Independent confirmation missing"
@@ -566,7 +543,6 @@
       "promotion_blockers": [
         "insufficient_independent_sources",
         "phase1d:framework_unclassified",
-        "phase1d:health_coverage_below_4_of_6",
         "phase1d:phase1c:insufficient_independent_sources"
       ],
       "promotion_eligible": false,
@@ -628,14 +604,19 @@
           "label": "Company framework not reviewed"
         },
         {
-          "code": "phase1d:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
+          "code": "phase1d:phase1c:direction_unresolved",
+          "detail": "The evidence does not establish a sufficiently clear bull or bear direction.",
+          "label": "Direction unresolved"
         },
         {
-          "code": "phase1d:phase1c:source_gate",
-          "detail": "The candidate does not yet satisfy V2 source quality, direction, horizon, promotion, and market-context requirements. The Phase 1c evidence contract failed during Phase 1d qualification.",
-          "label": "Discovery evidence gate not met"
+          "code": "phase1d:phase1c:synthesis_version_stale",
+          "detail": "The candidate was created under an older evidence contract and must be resynthesized.",
+          "label": "Candidate synthesis is stale"
+        },
+        {
+          "code": "phase1d:phase1c:horizon_missing",
+          "detail": "The evidence does not specify a consistent research horizon.",
+          "label": "Investment horizon missing"
         },
         {
           "code": "phase1d:human_disposition:rejected",
@@ -645,8 +626,9 @@
       ],
       "promotion_blockers": [
         "phase1d:framework_unclassified",
-        "phase1d:health_coverage_below_4_of_6",
-        "phase1d:phase1c:source_gate",
+        "phase1d:phase1c:direction_unresolved",
+        "phase1d:phase1c:synthesis_version_stale",
+        "phase1d:phase1c:horizon_missing",
         "phase1d:human_disposition:rejected"
       ],
       "promotion_eligible": false,
@@ -1066,11 +1048,6 @@
           "label": "Company framework not reviewed"
         },
         {
-          "code": "phase1d:health_coverage_below_4_of_6",
-          "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-          "label": "Company evidence incomplete"
-        },
-        {
           "code": "phase1d:human_disposition:watch_only",
           "detail": "An explicit human disposition limits this opportunity to monitoring.",
           "label": "Limited to watch-only"
@@ -1078,7 +1055,6 @@
       ],
       "promotion_blockers": [
         "phase1d:framework_unclassified",
-        "phase1d:health_coverage_below_4_of_6",
         "phase1d:human_disposition:watch_only"
       ],
       "promotion_eligible": false,
@@ -2612,7 +2588,7 @@
     }
   ],
   "execution_enabled": false,
-  "generated_at": "2026-07-24T05:53:22.951159+00:00",
+  "generated_at": "2026-07-24T06:16:13.634748+00:00",
   "opportunities": [
     {
       "archetype": "catalyst_specific",
@@ -2668,38 +2644,31 @@
       "archetype": "catalyst_specific",
       "direction": "bull",
       "health": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blockers": [
-          "framework_unclassified",
-          "health_coverage_below_4_of_6"
+          "framework_unclassified"
         ],
-        "coverage_count": 0,
+        "coverage_count": 5,
         "fail_count": 0,
         "framework": null,
         "framework_status": "unclassified",
-        "health_status": "insufficient_data",
-        "missing_count": 6,
+        "health_status": "acceptable",
+        "missing_count": 1,
         "partial_count": 0,
-        "pass_count": 0
+        "pass_count": 5
       },
       "observed_at": "2026-07-23T20:20:02.967460+00:00",
       "qualification": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blocker_explanations": [
           {
             "code": "framework_unclassified",
             "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
             "label": "Company framework not reviewed"
-          },
-          {
-            "code": "health_coverage_below_4_of_6",
-            "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-            "label": "Company evidence incomplete"
           }
         ],
         "blockers": [
-          "framework_unclassified",
-          "health_coverage_below_4_of_6"
+          "framework_unclassified"
         ],
         "setup_status": "not_applicable",
         "state": "enrichment_pending"
@@ -2712,38 +2681,31 @@
       "archetype": "catalyst_specific",
       "direction": "bull",
       "health": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blockers": [
-          "framework_unclassified",
-          "health_coverage_below_4_of_6"
+          "framework_unclassified"
         ],
-        "coverage_count": 0,
+        "coverage_count": 5,
         "fail_count": 0,
         "framework": null,
         "framework_status": "unclassified",
-        "health_status": "insufficient_data",
-        "missing_count": 6,
+        "health_status": "acceptable",
+        "missing_count": 1,
         "partial_count": 0,
-        "pass_count": 0
+        "pass_count": 5
       },
       "observed_at": "2026-07-23T20:20:02.967460+00:00",
       "qualification": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blocker_explanations": [
           {
             "code": "framework_unclassified",
             "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
             "label": "Company framework not reviewed"
-          },
-          {
-            "code": "health_coverage_below_4_of_6",
-            "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-            "label": "Company evidence incomplete"
           }
         ],
         "blockers": [
-          "framework_unclassified",
-          "health_coverage_below_4_of_6"
+          "framework_unclassified"
         ],
         "setup_status": "not_applicable",
         "state": "enrichment_pending"
@@ -2806,33 +2768,27 @@
       "archetype": "catalyst_specific",
       "direction": "bull",
       "health": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blockers": [
-          "framework_unclassified",
-          "health_coverage_below_4_of_6"
+          "framework_unclassified"
         ],
-        "coverage_count": 0,
-        "fail_count": 0,
+        "coverage_count": 5,
+        "fail_count": 2,
         "framework": null,
         "framework_status": "unclassified",
-        "health_status": "insufficient_data",
-        "missing_count": 6,
+        "health_status": "acceptable",
+        "missing_count": 1,
         "partial_count": 0,
-        "pass_count": 0
+        "pass_count": 3
       },
       "observed_at": "2026-07-23T20:20:02.967460+00:00",
       "qualification": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blocker_explanations": [
           {
             "code": "framework_unclassified",
             "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
             "label": "Company framework not reviewed"
-          },
-          {
-            "code": "health_coverage_below_4_of_6",
-            "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-            "label": "Company evidence incomplete"
           },
           {
             "code": "phase1c:insufficient_independent_sources",
@@ -2842,7 +2798,6 @@
         ],
         "blockers": [
           "framework_unclassified",
-          "health_coverage_below_4_of_6",
           "phase1c:insufficient_independent_sources"
         ],
         "setup_status": "not_applicable",
@@ -2856,23 +2811,23 @@
       "archetype": "catalyst_specific",
       "direction": "bull",
       "health": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blockers": [
           "framework_unclassified",
-          "health_coverage_below_4_of_6"
+          "company_health_unhealthy"
         ],
-        "coverage_count": 0,
-        "fail_count": 0,
+        "coverage_count": 4,
+        "fail_count": 3,
         "framework": null,
         "framework_status": "unclassified",
-        "health_status": "insufficient_data",
-        "missing_count": 6,
+        "health_status": "unhealthy",
+        "missing_count": 2,
         "partial_count": 0,
-        "pass_count": 0
+        "pass_count": 1
       },
       "observed_at": "2026-07-23T20:20:02.967460+00:00",
       "qualification": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blocker_explanations": [
           {
             "code": "framework_unclassified",
@@ -2880,9 +2835,9 @@
             "label": "Company framework not reviewed"
           },
           {
-            "code": "health_coverage_below_4_of_6",
-            "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-            "label": "Company evidence incomplete"
+            "code": "company_health_unhealthy",
+            "detail": "The sourced company-health assessment is currently unhealthy.",
+            "label": "Company health failed"
           },
           {
             "code": "phase1c:market_context_pending",
@@ -2892,7 +2847,7 @@
         ],
         "blockers": [
           "framework_unclassified",
-          "health_coverage_below_4_of_6",
+          "company_health_unhealthy",
           "phase1c:market_context_pending"
         ],
         "setup_status": "not_applicable",
@@ -2956,33 +2911,27 @@
       "archetype": "catalyst_specific",
       "direction": "bull",
       "health": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blockers": [
-          "framework_unclassified",
-          "health_coverage_below_4_of_6"
+          "framework_unclassified"
         ],
-        "coverage_count": 0,
-        "fail_count": 0,
+        "coverage_count": 4,
+        "fail_count": 1,
         "framework": null,
         "framework_status": "unclassified",
-        "health_status": "insufficient_data",
-        "missing_count": 6,
+        "health_status": "acceptable",
+        "missing_count": 2,
         "partial_count": 0,
-        "pass_count": 0
+        "pass_count": 3
       },
       "observed_at": "2026-07-23T20:20:02.967460+00:00",
       "qualification": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blocker_explanations": [
           {
             "code": "framework_unclassified",
             "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
             "label": "Company framework not reviewed"
-          },
-          {
-            "code": "health_coverage_below_4_of_6",
-            "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-            "label": "Company evidence incomplete"
           },
           {
             "code": "phase1c:insufficient_independent_sources",
@@ -2992,7 +2941,6 @@
         ],
         "blockers": [
           "framework_unclassified",
-          "health_coverage_below_4_of_6",
           "phase1c:insufficient_independent_sources"
         ],
         "setup_status": "not_applicable",
@@ -3412,33 +3360,27 @@
       "archetype": "contrarian_dislocation",
       "direction": "bull",
       "health": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blockers": [
-          "framework_unclassified",
-          "health_coverage_below_4_of_6"
+          "framework_unclassified"
         ],
-        "coverage_count": 0,
+        "coverage_count": 4,
         "fail_count": 0,
         "framework": null,
         "framework_status": "unclassified",
-        "health_status": "insufficient_data",
-        "missing_count": 6,
+        "health_status": "acceptable",
+        "missing_count": 2,
         "partial_count": 0,
-        "pass_count": 0
+        "pass_count": 4
       },
       "observed_at": "2026-07-23T00:00:00+00:00",
       "qualification": {
-        "as_of": "2026-07-23T20:20:02.660212+00:00",
+        "as_of": "2026-07-24T06:14:34.530902+00:00",
         "blocker_explanations": [
           {
             "code": "framework_unclassified",
             "detail": "No reviewed V2 value, growth, or hybrid framework has been preregistered.",
             "label": "Company framework not reviewed"
-          },
-          {
-            "code": "health_coverage_below_4_of_6",
-            "detail": "Fewer than four of the six company-health criteria have current source-attributed evidence.",
-            "label": "Company evidence incomplete"
           },
           {
             "code": "contrarian_catalyst_not_observed",
@@ -3448,7 +3390,6 @@
         ],
         "blockers": [
           "framework_unclassified",
-          "health_coverage_below_4_of_6",
           "contrarian_catalyst_not_observed"
         ],
         "setup_status": "weak",
