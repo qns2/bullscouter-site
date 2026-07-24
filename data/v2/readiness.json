@@ -1,9 +1,9 @@
 {
   "approved_opportunities": [],
-  "as_of": "2026-07-24T15:52:33.152299+00:00",
+  "as_of": "2026-07-24T20:20:03.894619+00:00",
   "deduplicated_count": 227,
   "execution_enabled": false,
-  "generated_at": "2026-07-24T15:52:59.634498+00:00",
+  "generated_at": "2026-07-24T21:10:04.023018+00:00",
   "items": [],
   "lane_counts": {
     "catalyst": 6,
@@ -12,17 +12,17 @@
   },
   "policy_version": "phase1g-readiness-v2.2",
   "prepublication_research": {
-    "as_of": "2026-07-24T15:25:00+00:00",
-    "attempted_task_count": 21,
-    "completed_task_count": 14,
+    "as_of": "2026-07-24T20:20:03.894619+00:00",
+    "attempted_task_count": 95,
+    "completed_task_count": 40,
     "error": null,
     "model": null,
-    "policy_version": "prepublication-research-v1",
+    "policy_version": "prepublication-research-v2",
     "provider": "deterministic_web_research",
-    "requested_task_count": 35,
+    "requested_task_count": 95,
     "selected_count": 20,
     "status": "partial",
-    "unresolved_task_count": 21
+    "unresolved_task_count": 55
   },
   "research_queue": [
     {
@@ -244,12 +244,20 @@
           "total_volume": 27786
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T07:50:46.662093+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "New sourced company evidence or an explicit human disposition.",
+              "gate": "company_health",
+              "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": null,
               "evidence_required": "A specific alternative explanation grounded in the research packet.",
@@ -265,6 +273,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -400,7 +416,7 @@
       "research_rank": 1,
       "score": null,
       "score_components": {
-        "age_days": 7.66,
+        "age_days": 7.85,
         "company_evidence": 20.0,
         "governance_readiness": 15.0,
         "recency": 18.0,
@@ -410,13 +426,13 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_410ab1c16ccb11834409df6b",
+        "capital_source_health_id": "capital_issuance_health_87ae510308b6d99d5bd5dca0",
         "catalyst": "reviewed",
         "catalyst_observation_id": "watchlist_catalyst_observation_110ec937e322cf33434df77a",
         "framework": "preregistered",
         "investment_candidate_id": "investment_candidate_93d7c192acc71306cd20c01b",
         "investment_grade": "C",
-        "investment_grade_id": "investment_grade_15f14e6c18238dba03773e20",
+        "investment_grade_id": "investment_grade_24f5e68dcdfff721721854b5",
         "investment_proposal_id": null,
         "issuer_fundamentals": "borderline",
         "market_price": "available",
@@ -424,7 +440,7 @@
         "membership_id": "opportunity_watchlist_a873abeb8f45aff96b2456a0",
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4170,
+        "price_event_id": 4548,
         "qualification": "watch_only",
         "recommendation": "none"
       },
@@ -609,11 +625,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -630,6 +646,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -765,7 +789,7 @@
       "research_rank": 2,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -775,7 +799,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_b12015831a75d237885c9953",
+        "capital_source_health_id": "capital_issuance_health_bcfc8fc36fc50eb9dbac3f37",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -789,7 +813,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4122,
+        "price_event_id": 4500,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -974,11 +998,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -995,6 +1019,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -1130,7 +1162,7 @@
       "research_rank": 3,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -1140,7 +1172,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_1aa1fb9e86fc0ce3b1a7c083",
+        "capital_source_health_id": "capital_issuance_health_d74aeba2226d7cdd61a63190",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -1154,7 +1186,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4146,
+        "price_event_id": 4524,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -1177,12 +1209,10 @@
     {
       "analysis_packet": {
         "automatic_analysis": {
-          "missing_gate_count": 4,
+          "missing_gate_count": 2,
           "missing_gates": [
             "company_health",
-            "reviewed_payoff",
-            "counter_case",
-            "invalidation"
+            "reviewed_payoff"
           ],
           "status": "needs_research"
         },
@@ -1302,18 +1332,22 @@
           "status": "unhealthy"
         },
         "counter_case": {
-          "basis": [],
-          "status": "missing",
-          "text": null
+          "basis": [
+            "company_health:dilution_capital_allocation"
+          ],
+          "status": "complete",
+          "text": "CAI may be a correct repricing rather than a temporary dislocation because dilution capital allocation is currently fail: Pass requires annual diluted-share growth at most 2%; up to 5% is partial."
         },
         "framework": {
           "complete": true,
           "status": "preregistered"
         },
         "invalidation": {
-          "basis": [],
-          "status": "missing",
-          "text": null
+          "basis": [
+            "company_health:dilution_capital_allocation"
+          ],
+          "status": "complete",
+          "text": "Reject the CAI bull thesis within 60 days if dilution capital allocation remains fail or deteriorates in the next sourced company assessment."
         },
         "market_price": {
           "as_of": "2026-07-24",
@@ -1338,17 +1372,41 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
               "gate": "company_health",
               "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             }
@@ -1393,12 +1451,12 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
-      "counter_case": null,
+      "counter_case": "CAI may be a correct repricing rather than a temporary dislocation because dilution capital allocation is currently fail: Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
       "direction": "bull",
       "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
       "framework_status": "preregistered",
       "health_status": "unhealthy",
-      "invalidation": null,
+      "invalidation": "Reject the CAI bull thesis within 60 days if dilution capital allocation remains fail or deteriorates in the next sourced company assessment.",
       "investment_readiness_score": null,
       "lane": "contrarian",
       "materiality": {
@@ -1416,26 +1474,14 @@
           "code": "reviewed_payoff",
           "detail": "A human analyst must review entry, upside, invalidation, horizon, source, and rationale in Stage 2.",
           "label": "Reviewed payoff missing"
-        },
-        {
-          "code": "counter_case",
-          "detail": "State a credible explanation for why the opportunity thesis may be wrong.",
-          "label": "Counter-case missing"
-        },
-        {
-          "code": "invalidation",
-          "detail": "Define the sourced observation or outcome that would invalidate the thesis.",
-          "label": "Invalidation condition missing"
         }
       ],
       "missing_analysis_gates": [
         "company_health",
-        "reviewed_payoff",
-        "counter_case",
-        "invalidation"
+        "reviewed_payoff"
       ],
       "monitoring_label": "research validation",
-      "next_action": "Complete: company health, reviewed payoff, counter case, invalidation.",
+      "next_action": "Complete: company health, reviewed payoff.",
       "promotion_audit": {
         "atomic_event": {
           "passed": true,
@@ -1458,7 +1504,7 @@
           "required": true
         },
         "counter_case": {
-          "passed": false,
+          "passed": true,
           "required": true
         },
         "current_synthesis": {
@@ -1470,7 +1516,7 @@
           "required": true
         },
         "invalidation": {
-          "passed": false,
+          "passed": true,
           "required": true
         },
         "market_price": {
@@ -1504,7 +1550,7 @@
       "research_rank": 4,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 12.5,
         "governance_readiness": 15.0,
         "recency": 25.0,
@@ -1514,13 +1560,13 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_095f304c76ae1df88988bf4b",
+        "capital_source_health_id": "capital_issuance_health_f13dc59203e66eda642e0130",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "preregistered",
         "investment_candidate_id": "investment_candidate_61067a1f3a73ef18f2b3cefa",
         "investment_grade": "D",
-        "investment_grade_id": "investment_grade_9c3877a67b0452eb176b6233",
+        "investment_grade_id": "investment_grade_87d082b26ba6ee6ba9b444d8",
         "investment_proposal_id": null,
         "issuer_fundamentals": "unhealthy",
         "market_price": "available",
@@ -1528,7 +1574,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4032,
+        "price_event_id": 4536,
         "qualification": "possible_value_trap",
         "recommendation": "none"
       },
@@ -1713,11 +1759,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -1734,6 +1780,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -1869,7 +1923,7 @@
       "research_rank": 5,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -1879,7 +1933,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_74f98221510aeb5ff1ef41b9",
+        "capital_source_health_id": "capital_issuance_health_dbff983b3af94c02a2ee348f",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -1893,7 +1947,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4182,
+        "price_event_id": 4560,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -2078,11 +2132,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -2099,6 +2153,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -2234,7 +2296,7 @@
       "research_rank": 6,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -2244,7 +2306,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_0893d3dfee15905de947cd6d",
+        "capital_source_health_id": "capital_issuance_health_433102715987237aa8760ed9",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -2258,7 +2320,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4206,
+        "price_event_id": 4584,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -2443,11 +2505,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -2464,6 +2526,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -2599,7 +2669,7 @@
       "research_rank": 7,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -2609,7 +2679,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_b6b83f352c4a1f0b7b63ad18",
+        "capital_source_health_id": "capital_issuance_health_f1aa7998767c9a0873eb6dfa",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -2623,7 +2693,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4128,
+        "price_event_id": 4506,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -2800,11 +2870,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -2821,6 +2891,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -2956,7 +3034,7 @@
       "research_rank": 8,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -2966,7 +3044,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_2c782808d72bd0daa450b61a",
+        "capital_source_health_id": "capital_issuance_health_3f775ad3fb1eb98cd26ffcab",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -2980,7 +3058,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4026,
+        "price_event_id": 4530,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -3128,18 +3206,22 @@
           "status": "unhealthy"
         },
         "counter_case": {
-          "basis": [],
+          "basis": [
+            "company_health:cash_generation"
+          ],
           "status": "complete",
-          "text": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance."
+          "text": "TEM may be a correct repricing rather than a temporary dislocation because cash generation is currently fail: Pass requires positive annual operating cash flow less reported capital expenditure."
         },
         "framework": {
           "complete": true,
           "status": "proposal_pending"
         },
         "invalidation": {
-          "basis": [],
+          "basis": [
+            "company_health:cash_generation"
+          ],
           "status": "complete",
-          "text": "Reject if TEM fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver."
+          "text": "Reject the TEM bull thesis within 60 days if cash generation remains fail or deteriorates in the next sourced company assessment."
         },
         "market_price": {
           "as_of": "2026-07-24",
@@ -3165,17 +3247,57 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
               "gate": "company_health",
               "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             }
@@ -3232,12 +3354,12 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
-      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "counter_case": "TEM may be a correct repricing rather than a temporary dislocation because cash generation is currently fail: Pass requires positive annual operating cash flow less reported capital expenditure.",
       "direction": "bull",
       "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
       "framework_status": "proposal_pending",
       "health_status": "unhealthy",
-      "invalidation": "Reject if TEM fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "invalidation": "Reject the TEM bull thesis within 60 days if cash generation remains fail or deteriorates in the next sourced company assessment.",
       "investment_readiness_score": null,
       "lane": "catalyst",
       "materiality": {
@@ -3344,7 +3466,7 @@
       "research_rank": 9,
       "score": null,
       "score_components": {
-        "age_days": 3.66,
+        "age_days": 3.85,
         "company_evidence": 12.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -3354,7 +3476,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_ad6ac981d4ef5ad8451711e9",
+        "capital_source_health_id": "capital_issuance_health_c6aa2d7093e7af64dd5a9663",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -3368,7 +3490,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4236,
+        "price_event_id": 4614,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -3552,12 +3674,52 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "New sourced company evidence or an explicit human disposition.",
+              "gate": "company_health",
+              "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
             {
               "escalated_from": "research_agent",
               "evidence_required": "Quantified, operational, or exploratory materiality with cited evidence.",
@@ -3571,6 +3733,14 @@
               "evidence_required": "A reachable primary-source URL with a matching supporting excerpt.",
               "gate": "primary_source",
               "instruction": "Find direct issuer, counterparty, filing, regulator, or exchange evidence.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             },
@@ -3591,7 +3761,24 @@
           ],
           "current_synthesis": true,
           "primary_supporting_events": 0,
-          "researched_context_sources": [],
+          "researched_context_sources": [
+            {
+              "published_at": "2026-07-22",
+              "publisher": "Yahoo Finance UK",
+              "source_type": "secondary",
+              "supporting_excerpt": "EQT Corp (EQT) raises production guidance and reduces capital expenditure amid low natural gas prices and strategic investments.",
+              "title": "EQT Corp (EQT) Q2 2026 Earnings Call Highlights: Record Operational Performance and Strategic Moves",
+              "url": "https://uk.finance.yahoo.com/news/eqt-corp-eqt-q2-2026-210155233.html"
+            },
+            {
+              "published_at": "2026-07-22",
+              "publisher": "Yahoo Finance",
+              "source_type": "secondary",
+              "supporting_excerpt": "EQT (NYSE:EQT) executives said the company exceeded expectations across key operating and financial measures in the second quarter of 2026, citing stronger production, better price",
+              "title": "EQT Q2 Earnings Call Highlights",
+              "url": "https://finance.yahoo.com/energy/articles/eqt-q2-earnings-call-highlights-160629817.html"
+            }
+          ],
           "researched_primary_sources": [],
           "status": "needs_research",
           "synthesis_version": "2.3"
@@ -3767,7 +3954,7 @@
       "research_rank": 10,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 15.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -3777,7 +3964,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_78345a7b9383f99a348e6aff",
+        "capital_source_health_id": "capital_issuance_health_6f5d09c7ad2e00bee9a6ddf2",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -3791,7 +3978,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4062,
+        "price_event_id": 4566,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -3970,12 +4157,36 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": "research_agent",
               "evidence_required": "Direct event evidence that removes the active source-quality blocker.",
@@ -3993,7 +4204,16 @@
           ],
           "current_synthesis": true,
           "primary_supporting_events": 0,
-          "researched_context_sources": [],
+          "researched_context_sources": [
+            {
+              "published_at": "2026-07-23",
+              "publisher": "Benzinga.com",
+              "source_type": "secondary",
+              "supporting_excerpt": "The latest price target for KLA (NASDAQ:KLAC) was reported by UBS on July 20, 2026. The analyst firm set a price target for $240.00 expecting",
+              "title": "KLA Analyst Ratings and Price Targets | NASDAQ:KLAC | Benzinga",
+              "url": "https://www.benzinga.com/quote/KLAC/analyst-ratings"
+            }
+          ],
           "researched_primary_sources": [],
           "status": "needs_research",
           "synthesis_version": "2.3"
@@ -4126,7 +4346,7 @@
       "research_rank": 11,
       "score": null,
       "score_components": {
-        "age_days": 13.66,
+        "age_days": 13.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -4136,7 +4356,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_1d7fb6c9663703ef7c1bcce7",
+        "capital_source_health_id": "capital_issuance_health_0d0744850343237191c2dcdc",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -4150,7 +4370,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4212,
+        "price_event_id": 4590,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -4162,6 +4382,438 @@
       },
       "ticker": "KLAC",
       "title": "KLAC · analyst opinion · 2026-07-10"
+    },
+    {
+      "analysis_packet": {
+        "automatic_analysis": {
+          "missing_gate_count": 4,
+          "missing_gates": [
+            "company_health",
+            "company_assessment",
+            "catalyst_review",
+            "reviewed_payoff"
+          ],
+          "status": "needs_research"
+        },
+        "company_assessment": {
+          "catalysts": [],
+          "criteria": [
+            {
+              "criterion": "balance_sheet",
+              "rationale": "Pass requires liabilities/assets at most 75% or current ratio at least 1.2; the looser 90%/1.0 boundary is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "cash_generation",
+              "rationale": "Pass requires positive annual operating cash flow less reported capital expenditure.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "demand_durability",
+              "rationale": "Pass requires positive annual revenue growth; a decline no worse than 5% is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "dilution_capital_allocation",
+              "rationale": "Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "margins_efficiency",
+              "rationale": "No current source-attributed observation is available.",
+              "source_ref": null,
+              "status": "missing"
+            },
+            {
+              "criterion": "profitability",
+              "rationale": "Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            }
+          ],
+          "health_counts": {
+            "coverage_count": 5,
+            "fail_count": 4,
+            "missing_count": 1,
+            "partial_count": 0,
+            "pass_count": 1
+          },
+          "health_status": "unhealthy",
+          "metrics": [
+            {
+              "criterion": "demand_durability",
+              "display": "-17.7%",
+              "effective_at": "2025-12-31T00:00:00+00:00",
+              "label": "Annual revenue growth",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "profitability",
+              "display": "-81.3m",
+              "effective_at": "2025-12-31T00:00:00+00:00",
+              "label": "Annual net income",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "profitability",
+              "display": "-0.0%",
+              "effective_at": "2025-12-31T00:00:00+00:00",
+              "label": "Annual net-income change",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "cash_generation",
+              "display": "-79.5m",
+              "effective_at": "2025-12-31T00:00:00+00:00",
+              "label": "Annual free cash flow",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "dilution_capital_allocation",
+              "display": "50.6%",
+              "effective_at": "2025-12-31T00:00:00+00:00",
+              "label": "Diluted-share change",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            }
+          ],
+          "payoff_review": {
+            "instruction": "An authenticated human analyst must record PSNL's entry, upside, invalidation, horizon, source, and rationale before promotion.",
+            "owner": "human_analyst",
+            "required_fields": [
+              "upside_price",
+              "invalidation_price",
+              "entry_condition",
+              "invalidation_condition",
+              "horizon_days",
+              "source_ref",
+              "rationale"
+            ],
+            "status": "needs_human",
+            "workflow": "authenticated_stage2_payoff_review"
+          },
+          "scope": "Company-specific annual SEC screen plus approved catalyst evidence; this is not a substitute for reviewed payoff analysis.",
+          "status": "needs_human"
+        },
+        "company_health": {
+          "coverage_count": 5,
+          "evidence_complete": true,
+          "promotion_eligible": false,
+          "required_coverage_count": 4,
+          "status": "unhealthy"
+        },
+        "counter_case": {
+          "basis": [
+            "company_health:cash_generation"
+          ],
+          "status": "complete",
+          "text": "PSNL may be a correct repricing rather than a temporary dislocation because cash generation is currently fail: Pass requires positive annual operating cash flow less reported capital expenditure."
+        },
+        "framework": {
+          "complete": true,
+          "status": "proposal_pending"
+        },
+        "invalidation": {
+          "basis": [
+            "company_health:cash_generation"
+          ],
+          "status": "complete",
+          "text": "Reject the PSNL bull thesis within 60 days if cash generation remains fail or deteriorates in the next sourced company assessment."
+        },
+        "market_price": {
+          "as_of": "2026-07-24",
+          "status": "available"
+        },
+        "materiality": {
+          "quantified_commitment": true,
+          "signals": [],
+          "status": "quantified",
+          "summary": "The catalyst discloses a quantitative commercial commitment."
+        },
+        "options": {
+          "as_of": "2026-07-24",
+          "confidence": "low",
+          "expiry": "ALL",
+          "provider": "ThetaData",
+          "put_call_open_interest_ratio": null,
+          "put_call_volume_ratio": null,
+          "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+          "spot_price": 12.22,
+          "status": "unavailable",
+          "total_open_interest": null,
+          "total_volume": null
+        },
+        "prepublication_research": {
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
+          "error": null,
+          "model": null,
+          "provider": "deterministic_web_research",
+          "status": "partial",
+          "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "New sourced company evidence or an explicit human disposition.",
+              "gate": "company_health",
+              "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            }
+          ]
+        },
+        "source": {
+          "atomic_event": true,
+          "blockers": [],
+          "current_synthesis": true,
+          "primary_supporting_events": 1,
+          "researched_context_sources": [],
+          "researched_primary_sources": [],
+          "status": "complete",
+          "synthesis_version": "2.3"
+        }
+      },
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "company_health_unhealthy",
+          "detail": "The sourced company-health assessment is currently unhealthy.",
+          "label": "Company health failed"
+        },
+        {
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "company_health_unhealthy",
+        "catalyst_not_reviewed",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "PSNL may be a correct repricing rather than a temporary dislocation because cash generation is currently fail: Pass requires positive annual operating cash flow less reported capital expenditure.",
+      "direction": "bull",
+      "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
+      "framework_status": "proposal_pending",
+      "health_status": "unhealthy",
+      "invalidation": "Reject the PSNL bull thesis within 60 days if cash generation remains fail or deteriorates in the next sourced company assessment.",
+      "investment_readiness_score": null,
+      "lane": "catalyst",
+      "materiality": {
+        "quantified_commitment": true,
+        "signals": [],
+        "status": "quantified",
+        "summary": "The catalyst discloses a quantitative commercial commitment."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "company_health",
+          "detail": "The issuer has enough evidence to assess, but only an acceptable health result can advance.",
+          "label": "Company health blocks promotion"
+        },
+        {
+          "code": "company_assessment",
+          "detail": "Complete the issuer-specific health criteria and governed catalyst assessment in Stage 2.",
+          "label": "Company-specific assessment incomplete"
+        },
+        {
+          "code": "catalyst_review",
+          "detail": "Catalyst evidence must pass the governed review step before promotion.",
+          "label": "Catalyst review incomplete"
+        },
+        {
+          "code": "reviewed_payoff",
+          "detail": "A human analyst must review entry, upside, invalidation, horizon, source, and rationale in Stage 2.",
+          "label": "Reviewed payoff missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "company_health",
+        "company_assessment",
+        "catalyst_review",
+        "reviewed_payoff"
+      ],
+      "monitoring_label": "catalyst validation",
+      "next_action": "Complete: company health, company assessment, catalyst review, reviewed payoff.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": true
+        },
+        "catalyst_review": {
+          "passed": false,
+          "required": true
+        },
+        "company_assessment": {
+          "passed": false,
+          "required": true
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "company_health": {
+          "passed": false,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": true
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": true
+        },
+        "reviewed_payoff": {
+          "passed": false,
+          "required": true
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 12,
+      "recommendation": "review",
+      "research_priority_score": 64.812,
+      "research_rank": 12,
+      "score": null,
+      "score_components": {
+        "age_days": 3.85,
+        "company_evidence": 12.5,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 22.312,
+        "total": 64.812
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_3b4bc80dc4c778a748d9801a",
+        "catalyst": "discovery_only",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "unhealthy",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-24",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 4602,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 12.22,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "PSNL",
+      "title": "PSNL · acquisition · 2026-07-20"
     },
     {
       "analysis_packet": {
@@ -4322,12 +4974,36 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": "research_agent",
               "evidence_required": "Direct event evidence that removes the active source-quality blocker.",
@@ -4472,13 +5148,13 @@
           "required": true
         }
       },
-      "rank": 12,
+      "rank": 13,
       "recommendation": "review",
       "research_priority_score": 64.312,
-      "research_rank": 12,
+      "research_rank": 13,
       "score": null,
       "score_components": {
-        "age_days": 13.66,
+        "age_days": 13.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -4488,7 +5164,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_802af3f9f4cf6b085391b2a3",
+        "capital_source_health_id": "capital_issuance_health_020b87092e0e08c1052c6a3b",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -4502,7 +5178,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4134,
+        "price_event_id": 4512,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -4666,12 +5342,36 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
-          "error": null,
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
+          "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": "research_agent",
               "evidence_required": "Direct event evidence that removes the active source-quality blocker.",
@@ -4825,13 +5525,13 @@
           "required": true
         }
       },
-      "rank": 13,
+      "rank": 14,
       "recommendation": "review",
       "research_priority_score": 62.221,
-      "research_rank": 13,
+      "research_rank": 14,
       "score": null,
       "score_components": {
-        "age_days": 13.66,
+        "age_days": 13.85,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -4841,7 +5541,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_0dce91e0a328897b6f66e9f5",
+        "capital_source_health_id": "capital_issuance_health_e8ff5a15c50ac0162403e267",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -4855,7 +5555,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4218,
+        "price_event_id": 4596,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -4988,18 +5688,22 @@
           "status": "borderline"
         },
         "counter_case": {
-          "basis": [],
+          "basis": [
+            "company_health:profitability"
+          ],
           "status": "complete",
-          "text": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance."
+          "text": "CRWD may be a correct repricing rather than a temporary dislocation because profitability is currently fail: Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial."
         },
         "framework": {
           "complete": true,
           "status": "proposal_pending"
         },
         "invalidation": {
-          "basis": [],
+          "basis": [
+            "company_health:profitability"
+          ],
           "status": "complete",
-          "text": "Reject if CRWD fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver."
+          "text": "Reject the CRWD bull thesis within 60 days if profitability remains fail or deteriorates in the next sourced company assessment."
         },
         "market_price": {
           "as_of": "2026-07-24",
@@ -5027,12 +5731,61 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": null,
-          "error": null,
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
+          "error": "source verification failed: HTTPError",
           "model": null,
-          "provider": null,
-          "status": "not_run",
-          "tasks": []
+          "provider": "deterministic_web_research",
+          "status": "partial",
+          "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "New sourced company evidence or an explicit human disposition.",
+              "gate": "company_health",
+              "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            }
+          ]
         },
         "source": {
           "atomic_event": true,
@@ -5085,12 +5838,12 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
-      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "counter_case": "CRWD may be a correct repricing rather than a temporary dislocation because profitability is currently fail: Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
       "direction": "bull",
       "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
       "framework_status": "proposal_pending",
       "health_status": "borderline",
-      "invalidation": "Reject if CRWD fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "invalidation": "Reject the CRWD bull thesis within 60 days if profitability remains fail or deteriorates in the next sourced company assessment.",
       "investment_readiness_score": null,
       "lane": "catalyst",
       "materiality": {
@@ -5193,13 +5946,13 @@
           "required": true
         }
       },
-      "rank": 14,
+      "rank": 15,
       "recommendation": "watch_only",
       "research_priority_score": 61.392,
-      "research_rank": 14,
+      "research_rank": 15,
       "score": null,
       "score_components": {
-        "age_days": 7.66,
+        "age_days": 7.85,
         "company_evidence": 15.0,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -5209,7 +5962,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_d3da16704a032e0be413f92a",
+        "capital_source_health_id": "capital_issuance_health_744df6b01054c5db63a8b42a",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -5223,7 +5976,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4176,
+        "price_event_id": 4554,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -5409,12 +6162,28 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
@@ -5424,10 +6193,34 @@
               "status": "needs_human"
             },
             {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
               "escalated_from": "research_agent",
               "evidence_required": "A reachable primary-source URL with a matching supporting excerpt.",
               "gate": "primary_source",
               "instruction": "Find direct issuer, counterparty, filing, regulator, or exchange evidence.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             },
@@ -5471,11 +6264,6 @@
           "label": "Catalyst not reviewed"
         },
         {
-          "code": "capital_issuance_source_missing",
-          "detail": "The SEC capital-issuance source has not produced a current result.",
-          "label": "Capital-issuance check missing"
-        },
-        {
           "code": "qualification_enrichment_pending",
           "detail": "Qualification is waiting for missing company or source evidence.",
           "label": "More evidence required"
@@ -5495,7 +6283,6 @@
         "framework_proposal_pending",
         "company_health_unhealthy",
         "catalyst_not_reviewed",
-        "capital_issuance_source_missing",
         "qualification_enrichment_pending",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
@@ -5620,13 +6407,13 @@
           "required": true
         }
       },
-      "rank": 15,
+      "rank": 16,
       "recommendation": "watch_only",
       "research_priority_score": 61.108,
-      "research_rank": 15,
+      "research_rank": 16,
       "score": null,
       "score_components": {
-        "age_days": 1.66,
+        "age_days": 1.85,
         "company_evidence": 12.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -5635,8 +6422,8 @@
       },
       "stage": "research_queue",
       "statuses": {
-        "capital_issuance": "missing",
-        "capital_source_health_id": null,
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_d316e3798efce46ea74edd8d",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -5650,7 +6437,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 3990,
+        "price_event_id": 4620,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -5829,12 +6616,36 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": "research_agent",
               "evidence_required": "Direct event evidence that removes the active source-quality blocker.",
@@ -5980,13 +6791,13 @@
           "required": true
         }
       },
-      "rank": 16,
+      "rank": 17,
       "recommendation": "review",
       "research_priority_score": 60.04,
-      "research_rank": 16,
+      "research_rank": 17,
       "score": null,
       "score_components": {
-        "age_days": 20.66,
+        "age_days": 20.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -5996,7 +6807,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_872e34eb5d21ba3bb71ce245",
+        "capital_source_health_id": "capital_issuance_health_5c69648a6ba34c45d7953da9",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -6010,7 +6821,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4164,
+        "price_event_id": 4542,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -6182,17 +6993,41 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
               "gate": "company_health",
               "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             },
@@ -6232,11 +7067,6 @@
           "label": "Company health failed"
         },
         {
-          "code": "capital_issuance_source_missing",
-          "detail": "The SEC capital-issuance source has not produced a current result.",
-          "label": "Capital-issuance check missing"
-        },
-        {
           "code": "qualification_enrichment_pending",
           "detail": "Qualification is waiting for missing company or source evidence.",
           "label": "More evidence required"
@@ -6255,7 +7085,6 @@
       "blockers": [
         "framework_proposal_pending",
         "company_health_unhealthy",
-        "capital_issuance_source_missing",
         "qualification_enrichment_pending",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
@@ -6359,13 +7188,13 @@
           "required": true
         }
       },
-      "rank": 17,
+      "rank": 18,
       "recommendation": "review",
       "research_priority_score": 53.533,
-      "research_rank": 17,
+      "research_rank": 18,
       "score": null,
       "score_components": {
-        "age_days": 3.66,
+        "age_days": 3.85,
         "company_evidence": 10.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -6374,8 +7203,8 @@
       },
       "stage": "research_queue",
       "statuses": {
-        "capital_issuance": "missing",
-        "capital_source_health_id": null,
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_49dfddb6f1f3647fd163a40e",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -6389,7 +7218,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4194,
+        "price_event_id": 4572,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -6401,374 +7230,6 @@
       },
       "ticker": "EVEX",
       "title": "EVEX · sector catalyst · 2026-07-20"
-    },
-    {
-      "analysis_packet": {
-        "automatic_analysis": {
-          "missing_gate_count": 5,
-          "missing_gates": [
-            "company_evidence",
-            "company_assessment",
-            "catalyst_review",
-            "reviewed_payoff",
-            "framework_recommendation"
-          ],
-          "status": "needs_research"
-        },
-        "company_assessment": {
-          "catalysts": [],
-          "criteria": [
-            {
-              "criterion": "balance_sheet",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "cash_generation",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "demand_durability",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "dilution_capital_allocation",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "margins_efficiency",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "profitability",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            }
-          ],
-          "health_counts": {
-            "coverage_count": 0,
-            "fail_count": 0,
-            "missing_count": 6,
-            "partial_count": 0,
-            "pass_count": 0
-          },
-          "health_status": "insufficient_data",
-          "metrics": [],
-          "payoff_review": {
-            "instruction": "An authenticated human analyst must record PSNL's entry, upside, invalidation, horizon, source, and rationale before promotion.",
-            "owner": "human_analyst",
-            "required_fields": [
-              "upside_price",
-              "invalidation_price",
-              "entry_condition",
-              "invalidation_condition",
-              "horizon_days",
-              "source_ref",
-              "rationale"
-            ],
-            "status": "needs_human",
-            "workflow": "authenticated_stage2_payoff_review"
-          },
-          "scope": "Company-specific annual SEC screen plus approved catalyst evidence; this is not a substitute for reviewed payoff analysis.",
-          "status": "needs_human"
-        },
-        "company_health": {
-          "coverage_count": 0,
-          "evidence_complete": false,
-          "promotion_eligible": false,
-          "required_coverage_count": 4,
-          "status": "insufficient_data"
-        },
-        "counter_case": {
-          "basis": [],
-          "status": "complete",
-          "text": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance."
-        },
-        "framework": {
-          "complete": false,
-          "status": "missing"
-        },
-        "invalidation": {
-          "basis": [],
-          "status": "complete",
-          "text": "Reject if PSNL fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver."
-        },
-        "market_price": {
-          "as_of": "2026-07-24",
-          "status": "available"
-        },
-        "materiality": {
-          "quantified_commitment": true,
-          "signals": [],
-          "status": "quantified",
-          "summary": "The catalyst discloses a quantitative commercial commitment."
-        },
-        "options": {
-          "as_of": "2026-07-24",
-          "confidence": "low",
-          "expiry": "ALL",
-          "provider": "ThetaData",
-          "put_call_open_interest_ratio": null,
-          "put_call_volume_ratio": null,
-          "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 12.22,
-          "status": "unavailable",
-          "total_open_interest": null,
-          "total_volume": null
-        },
-        "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
-          "error": null,
-          "model": null,
-          "provider": "deterministic_web_research",
-          "status": "needs_human",
-          "tasks": [
-            {
-              "escalated_from": null,
-              "evidence_required": "At least four current, source-attributed health criteria.",
-              "gate": "company_evidence",
-              "instruction": "Refresh SEC Company Facts and the six company-health criteria.",
-              "owner": "pipeline",
-              "status": "needs_human"
-            },
-            {
-              "escalated_from": null,
-              "evidence_required": "A preregistered framework or a reviewable evidence-backed proposal.",
-              "gate": "framework_recommendation",
-              "instruction": "Review or create an evidence-backed company framework.",
-              "owner": "human_analyst",
-              "status": "needs_human"
-            }
-          ]
-        },
-        "source": {
-          "atomic_event": true,
-          "blockers": [],
-          "current_synthesis": true,
-          "primary_supporting_events": 1,
-          "researched_context_sources": [],
-          "researched_primary_sources": [],
-          "status": "complete",
-          "synthesis_version": "2.3"
-        }
-      },
-      "blocker_explanations": [
-        {
-          "code": "framework_missing",
-          "detail": "No preregistered framework or evidence-backed framework proposal is available.",
-          "label": "Company framework evidence missing"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "capital_issuance_source_missing",
-          "detail": "The SEC capital-issuance source has not produced a current result.",
-          "label": "Capital-issuance check missing"
-        },
-        {
-          "code": "qualification_enrichment_pending",
-          "detail": "Qualification is waiting for missing company or source evidence.",
-          "label": "More evidence required"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_missing",
-        "company_health_insufficient_data",
-        "catalyst_not_reviewed",
-        "capital_issuance_source_missing",
-        "qualification_enrichment_pending",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
-      "direction": "bull",
-      "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
-      "framework_status": "missing",
-      "health_status": "insufficient_data",
-      "invalidation": "Reject if PSNL fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
-      "investment_readiness_score": null,
-      "lane": "catalyst",
-      "materiality": {
-        "quantified_commitment": true,
-        "signals": [],
-        "status": "quantified",
-        "summary": "The catalyst discloses a quantitative commercial commitment."
-      },
-      "missing_analysis_gate_explanations": [
-        {
-          "code": "company_evidence",
-          "detail": "At least four of six current source-attributed company-health criteria are required.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "company_assessment",
-          "detail": "Complete the issuer-specific health criteria and governed catalyst assessment in Stage 2.",
-          "label": "Company-specific assessment incomplete"
-        },
-        {
-          "code": "catalyst_review",
-          "detail": "Catalyst evidence must pass the governed review step before promotion.",
-          "label": "Catalyst review incomplete"
-        },
-        {
-          "code": "reviewed_payoff",
-          "detail": "A human analyst must review entry, upside, invalidation, horizon, source, and rationale in Stage 2.",
-          "label": "Reviewed payoff missing"
-        },
-        {
-          "code": "framework_recommendation",
-          "detail": "Create an evidence-backed value, growth, or hybrid proposal for human review.",
-          "label": "Framework recommendation missing"
-        }
-      ],
-      "missing_analysis_gates": [
-        "company_evidence",
-        "company_assessment",
-        "catalyst_review",
-        "reviewed_payoff",
-        "framework_recommendation"
-      ],
-      "monitoring_label": "catalyst validation",
-      "next_action": "Complete: company evidence, company assessment, catalyst review, reviewed payoff, framework recommendation.",
-      "promotion_audit": {
-        "atomic_event": {
-          "passed": true,
-          "required": true
-        },
-        "catalyst_review": {
-          "passed": false,
-          "required": true
-        },
-        "company_assessment": {
-          "passed": false,
-          "required": true
-        },
-        "company_evidence": {
-          "passed": false,
-          "required": true
-        },
-        "company_health": {
-          "passed": false,
-          "required": false
-        },
-        "counter_case": {
-          "passed": true,
-          "required": true
-        },
-        "current_synthesis": {
-          "passed": true,
-          "required": true
-        },
-        "framework_recommendation": {
-          "passed": false,
-          "required": true
-        },
-        "invalidation": {
-          "passed": true,
-          "required": true
-        },
-        "market_price": {
-          "passed": true,
-          "required": true
-        },
-        "materiality_classified": {
-          "passed": true,
-          "required": true
-        },
-        "options_source_evaluated": {
-          "passed": true,
-          "required": true
-        },
-        "primary_source": {
-          "passed": true,
-          "required": true
-        },
-        "reviewed_payoff": {
-          "passed": false,
-          "required": true
-        },
-        "source_quality": {
-          "passed": true,
-          "required": true
-        }
-      },
-      "rank": 18,
-      "recommendation": "review",
-      "research_priority_score": 52.312,
-      "research_rank": 18,
-      "score": null,
-      "score_components": {
-        "age_days": 3.66,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 22.312,
-        "total": 52.312
-      },
-      "stage": "research_queue",
-      "statuses": {
-        "capital_issuance": "missing",
-        "capital_source_health_id": null,
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "missing",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "market_price_as_of": "2026-07-24",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 4224,
-        "qualification": "enrichment_pending",
-        "recommendation": "none"
-      },
-      "theta": {
-        "as_of": "2026-07-24",
-        "confidence": "low",
-        "expiry": "ALL",
-        "provider": "ThetaData",
-        "put_call_open_interest_ratio": null,
-        "put_call_volume_ratio": null,
-        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 12.22,
-        "status": "unavailable",
-        "total_open_interest": null,
-        "total_volume": null
-      },
-      "ticker": "PSNL",
-      "title": "PSNL · acquisition · 2026-07-20"
     },
     {
       "analysis_packet": {
@@ -6941,12 +7402,28 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
@@ -6956,10 +7433,34 @@
               "status": "needs_human"
             },
             {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
               "escalated_from": "research_agent",
               "evidence_required": "A reachable primary-source URL with a matching supporting excerpt.",
               "gate": "primary_source",
               "instruction": "Find direct issuer, counterparty, filing, regulator, or exchange evidence.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             },
@@ -7150,7 +7651,7 @@
       "research_rank": 19,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 10.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -7160,7 +7661,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_273aa40b66dc78beb57bb474",
+        "capital_source_health_id": "capital_issuance_health_34fa50ca57a0fdad6cac58e3",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -7174,7 +7675,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4140,
+        "price_event_id": 4518,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -7361,17 +7862,41 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
               "gate": "company_health",
               "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             },
@@ -7538,7 +8063,7 @@
       "research_rank": 20,
       "score": null,
       "score_components": {
-        "age_days": 7.66,
+        "age_days": 7.85,
         "company_evidence": 12.5,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -7548,7 +8073,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_76b4193a00b0c42151b4cb6c",
+        "capital_source_health_id": "capital_issuance_health_3767bf5171fb85556c7f5205",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -7562,7 +8087,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4200,
+        "price_event_id": 4578,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -7805,12 +8330,20 @@
           "total_volume": 27786
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T07:50:46.662093+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "New sourced company evidence or an explicit human disposition.",
+              "gate": "company_health",
+              "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": null,
               "evidence_required": "A specific alternative explanation grounded in the research packet.",
@@ -7826,6 +8359,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -7961,7 +8502,7 @@
       "research_rank": 1,
       "score": null,
       "score_components": {
-        "age_days": 7.66,
+        "age_days": 7.85,
         "company_evidence": 20.0,
         "governance_readiness": 15.0,
         "recency": 18.0,
@@ -7971,13 +8512,13 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_410ab1c16ccb11834409df6b",
+        "capital_source_health_id": "capital_issuance_health_87ae510308b6d99d5bd5dca0",
         "catalyst": "reviewed",
         "catalyst_observation_id": "watchlist_catalyst_observation_110ec937e322cf33434df77a",
         "framework": "preregistered",
         "investment_candidate_id": "investment_candidate_93d7c192acc71306cd20c01b",
         "investment_grade": "C",
-        "investment_grade_id": "investment_grade_15f14e6c18238dba03773e20",
+        "investment_grade_id": "investment_grade_24f5e68dcdfff721721854b5",
         "investment_proposal_id": null,
         "issuer_fundamentals": "borderline",
         "market_price": "available",
@@ -7985,7 +8526,7 @@
         "membership_id": "opportunity_watchlist_a873abeb8f45aff96b2456a0",
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4170,
+        "price_event_id": 4548,
         "qualification": "watch_only",
         "recommendation": "none"
       },
@@ -8170,11 +8711,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -8191,6 +8732,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -8326,7 +8875,7 @@
       "research_rank": 2,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -8336,7 +8885,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_b12015831a75d237885c9953",
+        "capital_source_health_id": "capital_issuance_health_bcfc8fc36fc50eb9dbac3f37",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -8350,7 +8899,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4122,
+        "price_event_id": 4500,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -8535,11 +9084,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -8556,6 +9105,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -8691,7 +9248,7 @@
       "research_rank": 3,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -8701,7 +9258,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_1aa1fb9e86fc0ce3b1a7c083",
+        "capital_source_health_id": "capital_issuance_health_d74aeba2226d7cdd61a63190",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -8715,7 +9272,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4146,
+        "price_event_id": 4524,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -8738,12 +9295,10 @@
     {
       "analysis_packet": {
         "automatic_analysis": {
-          "missing_gate_count": 4,
+          "missing_gate_count": 2,
           "missing_gates": [
             "company_health",
-            "reviewed_payoff",
-            "counter_case",
-            "invalidation"
+            "reviewed_payoff"
           ],
           "status": "needs_research"
         },
@@ -8863,18 +9418,22 @@
           "status": "unhealthy"
         },
         "counter_case": {
-          "basis": [],
-          "status": "missing",
-          "text": null
+          "basis": [
+            "company_health:dilution_capital_allocation"
+          ],
+          "status": "complete",
+          "text": "CAI may be a correct repricing rather than a temporary dislocation because dilution capital allocation is currently fail: Pass requires annual diluted-share growth at most 2%; up to 5% is partial."
         },
         "framework": {
           "complete": true,
           "status": "preregistered"
         },
         "invalidation": {
-          "basis": [],
-          "status": "missing",
-          "text": null
+          "basis": [
+            "company_health:dilution_capital_allocation"
+          ],
+          "status": "complete",
+          "text": "Reject the CAI bull thesis within 60 days if dilution capital allocation remains fail or deteriorates in the next sourced company assessment."
         },
         "market_price": {
           "as_of": "2026-07-24",
@@ -8899,17 +9458,41 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
               "gate": "company_health",
               "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             }
@@ -8954,12 +9537,12 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
-      "counter_case": null,
+      "counter_case": "CAI may be a correct repricing rather than a temporary dislocation because dilution capital allocation is currently fail: Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
       "direction": "bull",
       "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
       "framework_status": "preregistered",
       "health_status": "unhealthy",
-      "invalidation": null,
+      "invalidation": "Reject the CAI bull thesis within 60 days if dilution capital allocation remains fail or deteriorates in the next sourced company assessment.",
       "investment_readiness_score": null,
       "lane": "contrarian",
       "materiality": {
@@ -8977,26 +9560,14 @@
           "code": "reviewed_payoff",
           "detail": "A human analyst must review entry, upside, invalidation, horizon, source, and rationale in Stage 2.",
           "label": "Reviewed payoff missing"
-        },
-        {
-          "code": "counter_case",
-          "detail": "State a credible explanation for why the opportunity thesis may be wrong.",
-          "label": "Counter-case missing"
-        },
-        {
-          "code": "invalidation",
-          "detail": "Define the sourced observation or outcome that would invalidate the thesis.",
-          "label": "Invalidation condition missing"
         }
       ],
       "missing_analysis_gates": [
         "company_health",
-        "reviewed_payoff",
-        "counter_case",
-        "invalidation"
+        "reviewed_payoff"
       ],
       "monitoring_label": "research validation",
-      "next_action": "Complete: company health, reviewed payoff, counter case, invalidation.",
+      "next_action": "Complete: company health, reviewed payoff.",
       "promotion_audit": {
         "atomic_event": {
           "passed": true,
@@ -9019,7 +9590,7 @@
           "required": true
         },
         "counter_case": {
-          "passed": false,
+          "passed": true,
           "required": true
         },
         "current_synthesis": {
@@ -9031,7 +9602,7 @@
           "required": true
         },
         "invalidation": {
-          "passed": false,
+          "passed": true,
           "required": true
         },
         "market_price": {
@@ -9065,7 +9636,7 @@
       "research_rank": 4,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 12.5,
         "governance_readiness": 15.0,
         "recency": 25.0,
@@ -9075,13 +9646,13 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_095f304c76ae1df88988bf4b",
+        "capital_source_health_id": "capital_issuance_health_f13dc59203e66eda642e0130",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "preregistered",
         "investment_candidate_id": "investment_candidate_61067a1f3a73ef18f2b3cefa",
         "investment_grade": "D",
-        "investment_grade_id": "investment_grade_9c3877a67b0452eb176b6233",
+        "investment_grade_id": "investment_grade_87d082b26ba6ee6ba9b444d8",
         "investment_proposal_id": null,
         "issuer_fundamentals": "unhealthy",
         "market_price": "available",
@@ -9089,7 +9660,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4032,
+        "price_event_id": 4536,
         "qualification": "possible_value_trap",
         "recommendation": "none"
       },
@@ -9274,11 +9845,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -9295,6 +9866,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -9430,7 +10009,7 @@
       "research_rank": 5,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -9440,7 +10019,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_74f98221510aeb5ff1ef41b9",
+        "capital_source_health_id": "capital_issuance_health_dbff983b3af94c02a2ee348f",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -9454,7 +10033,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4182,
+        "price_event_id": 4560,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -9639,11 +10218,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -9660,6 +10239,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -9795,7 +10382,7 @@
       "research_rank": 6,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -9805,7 +10392,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_0893d3dfee15905de947cd6d",
+        "capital_source_health_id": "capital_issuance_health_433102715987237aa8760ed9",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -9819,7 +10406,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4206,
+        "price_event_id": 4584,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -10004,11 +10591,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -10025,6 +10612,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -10160,7 +10755,7 @@
       "research_rank": 7,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -10170,7 +10765,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_b6b83f352c4a1f0b7b63ad18",
+        "capital_source_health_id": "capital_issuance_health_f1aa7998767c9a0873eb6dfa",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -10184,7 +10779,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4128,
+        "price_event_id": 4506,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -10361,11 +10956,11 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:15:51.011938+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "complete",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
@@ -10382,6 +10977,14 @@
               "instruction": "Define a measurable observation that would invalidate the thesis.",
               "owner": "research_agent",
               "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
             }
           ]
         },
@@ -10517,7 +11120,7 @@
       "research_rank": 8,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -10527,7 +11130,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_2c782808d72bd0daa450b61a",
+        "capital_source_health_id": "capital_issuance_health_3f775ad3fb1eb98cd26ffcab",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -10541,7 +11144,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4026,
+        "price_event_id": 4530,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -10689,18 +11292,22 @@
           "status": "unhealthy"
         },
         "counter_case": {
-          "basis": [],
+          "basis": [
+            "company_health:cash_generation"
+          ],
           "status": "complete",
-          "text": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance."
+          "text": "TEM may be a correct repricing rather than a temporary dislocation because cash generation is currently fail: Pass requires positive annual operating cash flow less reported capital expenditure."
         },
         "framework": {
           "complete": true,
           "status": "proposal_pending"
         },
         "invalidation": {
-          "basis": [],
+          "basis": [
+            "company_health:cash_generation"
+          ],
           "status": "complete",
-          "text": "Reject if TEM fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver."
+          "text": "Reject the TEM bull thesis within 60 days if cash generation remains fail or deteriorates in the next sourced company assessment."
         },
         "market_price": {
           "as_of": "2026-07-24",
@@ -10726,17 +11333,57 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
               "gate": "company_health",
               "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             }
@@ -10793,12 +11440,12 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
-      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "counter_case": "TEM may be a correct repricing rather than a temporary dislocation because cash generation is currently fail: Pass requires positive annual operating cash flow less reported capital expenditure.",
       "direction": "bull",
       "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
       "framework_status": "proposal_pending",
       "health_status": "unhealthy",
-      "invalidation": "Reject if TEM fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "invalidation": "Reject the TEM bull thesis within 60 days if cash generation remains fail or deteriorates in the next sourced company assessment.",
       "investment_readiness_score": null,
       "lane": "catalyst",
       "materiality": {
@@ -10905,7 +11552,7 @@
       "research_rank": 9,
       "score": null,
       "score_components": {
-        "age_days": 3.66,
+        "age_days": 3.85,
         "company_evidence": 12.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -10915,7 +11562,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_ad6ac981d4ef5ad8451711e9",
+        "capital_source_health_id": "capital_issuance_health_c6aa2d7093e7af64dd5a9663",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -10929,7 +11576,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4236,
+        "price_event_id": 4614,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -11113,12 +11760,52 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "New sourced company evidence or an explicit human disposition.",
+              "gate": "company_health",
+              "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
             {
               "escalated_from": "research_agent",
               "evidence_required": "Quantified, operational, or exploratory materiality with cited evidence.",
@@ -11132,6 +11819,14 @@
               "evidence_required": "A reachable primary-source URL with a matching supporting excerpt.",
               "gate": "primary_source",
               "instruction": "Find direct issuer, counterparty, filing, regulator, or exchange evidence.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             },
@@ -11152,7 +11847,24 @@
           ],
           "current_synthesis": true,
           "primary_supporting_events": 0,
-          "researched_context_sources": [],
+          "researched_context_sources": [
+            {
+              "published_at": "2026-07-22",
+              "publisher": "Yahoo Finance UK",
+              "source_type": "secondary",
+              "supporting_excerpt": "EQT Corp (EQT) raises production guidance and reduces capital expenditure amid low natural gas prices and strategic investments.",
+              "title": "EQT Corp (EQT) Q2 2026 Earnings Call Highlights: Record Operational Performance and Strategic Moves",
+              "url": "https://uk.finance.yahoo.com/news/eqt-corp-eqt-q2-2026-210155233.html"
+            },
+            {
+              "published_at": "2026-07-22",
+              "publisher": "Yahoo Finance",
+              "source_type": "secondary",
+              "supporting_excerpt": "EQT (NYSE:EQT) executives said the company exceeded expectations across key operating and financial measures in the second quarter of 2026, citing stronger production, better price",
+              "title": "EQT Q2 Earnings Call Highlights",
+              "url": "https://finance.yahoo.com/energy/articles/eqt-q2-earnings-call-highlights-160629817.html"
+            }
+          ],
           "researched_primary_sources": [],
           "status": "needs_research",
           "synthesis_version": "2.3"
@@ -11328,7 +12040,7 @@
       "research_rank": 10,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 15.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -11338,7 +12050,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_78345a7b9383f99a348e6aff",
+        "capital_source_health_id": "capital_issuance_health_6f5d09c7ad2e00bee9a6ddf2",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -11352,7 +12064,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4062,
+        "price_event_id": 4566,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -11531,12 +12243,36 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": "research_agent",
               "evidence_required": "Direct event evidence that removes the active source-quality blocker.",
@@ -11554,7 +12290,16 @@
           ],
           "current_synthesis": true,
           "primary_supporting_events": 0,
-          "researched_context_sources": [],
+          "researched_context_sources": [
+            {
+              "published_at": "2026-07-23",
+              "publisher": "Benzinga.com",
+              "source_type": "secondary",
+              "supporting_excerpt": "The latest price target for KLA (NASDAQ:KLAC) was reported by UBS on July 20, 2026. The analyst firm set a price target for $240.00 expecting",
+              "title": "KLA Analyst Ratings and Price Targets | NASDAQ:KLAC | Benzinga",
+              "url": "https://www.benzinga.com/quote/KLAC/analyst-ratings"
+            }
+          ],
           "researched_primary_sources": [],
           "status": "needs_research",
           "synthesis_version": "2.3"
@@ -11687,7 +12432,7 @@
       "research_rank": 11,
       "score": null,
       "score_components": {
-        "age_days": 13.66,
+        "age_days": 13.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -11697,7 +12442,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_1d7fb6c9663703ef7c1bcce7",
+        "capital_source_health_id": "capital_issuance_health_0d0744850343237191c2dcdc",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -11711,7 +12456,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4212,
+        "price_event_id": 4590,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -11723,6 +12468,438 @@
       },
       "ticker": "KLAC",
       "title": "KLAC · analyst opinion · 2026-07-10"
+    },
+    {
+      "analysis_packet": {
+        "automatic_analysis": {
+          "missing_gate_count": 4,
+          "missing_gates": [
+            "company_health",
+            "company_assessment",
+            "catalyst_review",
+            "reviewed_payoff"
+          ],
+          "status": "needs_research"
+        },
+        "company_assessment": {
+          "catalysts": [],
+          "criteria": [
+            {
+              "criterion": "balance_sheet",
+              "rationale": "Pass requires liabilities/assets at most 75% or current ratio at least 1.2; the looser 90%/1.0 boundary is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "cash_generation",
+              "rationale": "Pass requires positive annual operating cash flow less reported capital expenditure.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "demand_durability",
+              "rationale": "Pass requires positive annual revenue growth; a decline no worse than 5% is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "dilution_capital_allocation",
+              "rationale": "Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "margins_efficiency",
+              "rationale": "No current source-attributed observation is available.",
+              "source_ref": null,
+              "status": "missing"
+            },
+            {
+              "criterion": "profitability",
+              "rationale": "Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            }
+          ],
+          "health_counts": {
+            "coverage_count": 5,
+            "fail_count": 4,
+            "missing_count": 1,
+            "partial_count": 0,
+            "pass_count": 1
+          },
+          "health_status": "unhealthy",
+          "metrics": [
+            {
+              "criterion": "demand_durability",
+              "display": "-17.7%",
+              "effective_at": "2025-12-31T00:00:00+00:00",
+              "label": "Annual revenue growth",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "profitability",
+              "display": "-81.3m",
+              "effective_at": "2025-12-31T00:00:00+00:00",
+              "label": "Annual net income",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "profitability",
+              "display": "-0.0%",
+              "effective_at": "2025-12-31T00:00:00+00:00",
+              "label": "Annual net-income change",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "cash_generation",
+              "display": "-79.5m",
+              "effective_at": "2025-12-31T00:00:00+00:00",
+              "label": "Annual free cash flow",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            },
+            {
+              "criterion": "dilution_capital_allocation",
+              "display": "50.6%",
+              "effective_at": "2025-12-31T00:00:00+00:00",
+              "label": "Diluted-share change",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527753.json",
+              "status": "fail"
+            }
+          ],
+          "payoff_review": {
+            "instruction": "An authenticated human analyst must record PSNL's entry, upside, invalidation, horizon, source, and rationale before promotion.",
+            "owner": "human_analyst",
+            "required_fields": [
+              "upside_price",
+              "invalidation_price",
+              "entry_condition",
+              "invalidation_condition",
+              "horizon_days",
+              "source_ref",
+              "rationale"
+            ],
+            "status": "needs_human",
+            "workflow": "authenticated_stage2_payoff_review"
+          },
+          "scope": "Company-specific annual SEC screen plus approved catalyst evidence; this is not a substitute for reviewed payoff analysis.",
+          "status": "needs_human"
+        },
+        "company_health": {
+          "coverage_count": 5,
+          "evidence_complete": true,
+          "promotion_eligible": false,
+          "required_coverage_count": 4,
+          "status": "unhealthy"
+        },
+        "counter_case": {
+          "basis": [
+            "company_health:cash_generation"
+          ],
+          "status": "complete",
+          "text": "PSNL may be a correct repricing rather than a temporary dislocation because cash generation is currently fail: Pass requires positive annual operating cash flow less reported capital expenditure."
+        },
+        "framework": {
+          "complete": true,
+          "status": "proposal_pending"
+        },
+        "invalidation": {
+          "basis": [
+            "company_health:cash_generation"
+          ],
+          "status": "complete",
+          "text": "Reject the PSNL bull thesis within 60 days if cash generation remains fail or deteriorates in the next sourced company assessment."
+        },
+        "market_price": {
+          "as_of": "2026-07-24",
+          "status": "available"
+        },
+        "materiality": {
+          "quantified_commitment": true,
+          "signals": [],
+          "status": "quantified",
+          "summary": "The catalyst discloses a quantitative commercial commitment."
+        },
+        "options": {
+          "as_of": "2026-07-24",
+          "confidence": "low",
+          "expiry": "ALL",
+          "provider": "ThetaData",
+          "put_call_open_interest_ratio": null,
+          "put_call_volume_ratio": null,
+          "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+          "spot_price": 12.22,
+          "status": "unavailable",
+          "total_open_interest": null,
+          "total_volume": null
+        },
+        "prepublication_research": {
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
+          "error": null,
+          "model": null,
+          "provider": "deterministic_web_research",
+          "status": "partial",
+          "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "New sourced company evidence or an explicit human disposition.",
+              "gate": "company_health",
+              "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            }
+          ]
+        },
+        "source": {
+          "atomic_event": true,
+          "blockers": [],
+          "current_synthesis": true,
+          "primary_supporting_events": 1,
+          "researched_context_sources": [],
+          "researched_primary_sources": [],
+          "status": "complete",
+          "synthesis_version": "2.3"
+        }
+      },
+      "blocker_explanations": [
+        {
+          "code": "framework_proposal_pending",
+          "detail": "A proposed company framework is waiting for human review.",
+          "label": "Framework review pending"
+        },
+        {
+          "code": "company_health_unhealthy",
+          "detail": "The sourced company-health assessment is currently unhealthy.",
+          "label": "Company health failed"
+        },
+        {
+          "code": "catalyst_not_reviewed",
+          "detail": "Catalyst evidence has not passed the governed review step.",
+          "label": "Catalyst not reviewed"
+        },
+        {
+          "code": "qualification_enrichment_pending",
+          "detail": "Qualification is waiting for missing company or source evidence.",
+          "label": "More evidence required"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "framework_proposal_pending",
+        "company_health_unhealthy",
+        "catalyst_not_reviewed",
+        "qualification_enrichment_pending",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "PSNL may be a correct repricing rather than a temporary dislocation because cash generation is currently fail: Pass requires positive annual operating cash flow less reported capital expenditure.",
+      "direction": "bull",
+      "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
+      "framework_status": "proposal_pending",
+      "health_status": "unhealthy",
+      "invalidation": "Reject the PSNL bull thesis within 60 days if cash generation remains fail or deteriorates in the next sourced company assessment.",
+      "investment_readiness_score": null,
+      "lane": "catalyst",
+      "materiality": {
+        "quantified_commitment": true,
+        "signals": [],
+        "status": "quantified",
+        "summary": "The catalyst discloses a quantitative commercial commitment."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "company_health",
+          "detail": "The issuer has enough evidence to assess, but only an acceptable health result can advance.",
+          "label": "Company health blocks promotion"
+        },
+        {
+          "code": "company_assessment",
+          "detail": "Complete the issuer-specific health criteria and governed catalyst assessment in Stage 2.",
+          "label": "Company-specific assessment incomplete"
+        },
+        {
+          "code": "catalyst_review",
+          "detail": "Catalyst evidence must pass the governed review step before promotion.",
+          "label": "Catalyst review incomplete"
+        },
+        {
+          "code": "reviewed_payoff",
+          "detail": "A human analyst must review entry, upside, invalidation, horizon, source, and rationale in Stage 2.",
+          "label": "Reviewed payoff missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "company_health",
+        "company_assessment",
+        "catalyst_review",
+        "reviewed_payoff"
+      ],
+      "monitoring_label": "catalyst validation",
+      "next_action": "Complete: company health, company assessment, catalyst review, reviewed payoff.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": true
+        },
+        "catalyst_review": {
+          "passed": false,
+          "required": true
+        },
+        "company_assessment": {
+          "passed": false,
+          "required": true
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "company_health": {
+          "passed": false,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": true
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": true
+        },
+        "reviewed_payoff": {
+          "passed": false,
+          "required": true
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 12,
+      "recommendation": "review",
+      "research_priority_score": 64.812,
+      "research_rank": 12,
+      "score": null,
+      "score_components": {
+        "age_days": 3.85,
+        "company_evidence": 12.5,
+        "governance_readiness": 5.0,
+        "recency": 25.0,
+        "source_evidence": 22.312,
+        "total": 64.812
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_3b4bc80dc4c778a748d9801a",
+        "catalyst": "discovery_only",
+        "catalyst_observation_id": null,
+        "framework": "proposal_pending",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "unhealthy",
+        "market_price": "available",
+        "market_price_as_of": "2026-07-24",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 4602,
+        "qualification": "enrichment_pending",
+        "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-07-24",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 12.22,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "PSNL",
+      "title": "PSNL · acquisition · 2026-07-20"
     },
     {
       "analysis_packet": {
@@ -11883,12 +13060,36 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": "research_agent",
               "evidence_required": "Direct event evidence that removes the active source-quality blocker.",
@@ -12033,13 +13234,13 @@
           "required": true
         }
       },
-      "rank": 12,
+      "rank": 13,
       "recommendation": "review",
       "research_priority_score": 64.312,
-      "research_rank": 12,
+      "research_rank": 13,
       "score": null,
       "score_components": {
-        "age_days": 13.66,
+        "age_days": 13.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -12049,7 +13250,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_802af3f9f4cf6b085391b2a3",
+        "capital_source_health_id": "capital_issuance_health_020b87092e0e08c1052c6a3b",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -12063,7 +13264,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4134,
+        "price_event_id": 4512,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -12227,12 +13428,36 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
-          "error": null,
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
+          "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": "research_agent",
               "evidence_required": "Direct event evidence that removes the active source-quality blocker.",
@@ -12386,13 +13611,13 @@
           "required": true
         }
       },
-      "rank": 13,
+      "rank": 14,
       "recommendation": "review",
       "research_priority_score": 62.221,
-      "research_rank": 13,
+      "research_rank": 14,
       "score": null,
       "score_components": {
-        "age_days": 13.66,
+        "age_days": 13.85,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -12402,7 +13627,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_0dce91e0a328897b6f66e9f5",
+        "capital_source_health_id": "capital_issuance_health_e8ff5a15c50ac0162403e267",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -12416,7 +13641,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4218,
+        "price_event_id": 4596,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -12549,18 +13774,22 @@
           "status": "borderline"
         },
         "counter_case": {
-          "basis": [],
+          "basis": [
+            "company_health:profitability"
+          ],
           "status": "complete",
-          "text": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance."
+          "text": "CRWD may be a correct repricing rather than a temporary dislocation because profitability is currently fail: Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial."
         },
         "framework": {
           "complete": true,
           "status": "proposal_pending"
         },
         "invalidation": {
-          "basis": [],
+          "basis": [
+            "company_health:profitability"
+          ],
           "status": "complete",
-          "text": "Reject if CRWD fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver."
+          "text": "Reject the CRWD bull thesis within 60 days if profitability remains fail or deteriorates in the next sourced company assessment."
         },
         "market_price": {
           "as_of": "2026-07-24",
@@ -12588,12 +13817,61 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": null,
-          "error": null,
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
+          "error": "source verification failed: HTTPError",
           "model": null,
-          "provider": null,
-          "status": "not_run",
-          "tasks": []
+          "provider": "deterministic_web_research",
+          "status": "partial",
+          "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "New sourced company evidence or an explicit human disposition.",
+              "gate": "company_health",
+              "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            }
+          ]
         },
         "source": {
           "atomic_event": true,
@@ -12646,12 +13924,12 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
-      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
+      "counter_case": "CRWD may be a correct repricing rather than a temporary dislocation because profitability is currently fail: Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
       "direction": "bull",
       "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
       "framework_status": "proposal_pending",
       "health_status": "borderline",
-      "invalidation": "Reject if CRWD fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
+      "invalidation": "Reject the CRWD bull thesis within 60 days if profitability remains fail or deteriorates in the next sourced company assessment.",
       "investment_readiness_score": null,
       "lane": "catalyst",
       "materiality": {
@@ -12754,13 +14032,13 @@
           "required": true
         }
       },
-      "rank": 14,
+      "rank": 15,
       "recommendation": "watch_only",
       "research_priority_score": 61.392,
-      "research_rank": 14,
+      "research_rank": 15,
       "score": null,
       "score_components": {
-        "age_days": 7.66,
+        "age_days": 7.85,
         "company_evidence": 15.0,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -12770,7 +14048,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_d3da16704a032e0be413f92a",
+        "capital_source_health_id": "capital_issuance_health_744df6b01054c5db63a8b42a",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -12784,7 +14062,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4176,
+        "price_event_id": 4554,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -12970,12 +14248,28 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
@@ -12985,10 +14279,34 @@
               "status": "needs_human"
             },
             {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
               "escalated_from": "research_agent",
               "evidence_required": "A reachable primary-source URL with a matching supporting excerpt.",
               "gate": "primary_source",
               "instruction": "Find direct issuer, counterparty, filing, regulator, or exchange evidence.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             },
@@ -13032,11 +14350,6 @@
           "label": "Catalyst not reviewed"
         },
         {
-          "code": "capital_issuance_source_missing",
-          "detail": "The SEC capital-issuance source has not produced a current result.",
-          "label": "Capital-issuance check missing"
-        },
-        {
           "code": "qualification_enrichment_pending",
           "detail": "Qualification is waiting for missing company or source evidence.",
           "label": "More evidence required"
@@ -13056,7 +14369,6 @@
         "framework_proposal_pending",
         "company_health_unhealthy",
         "catalyst_not_reviewed",
-        "capital_issuance_source_missing",
         "qualification_enrichment_pending",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
@@ -13181,13 +14493,13 @@
           "required": true
         }
       },
-      "rank": 15,
+      "rank": 16,
       "recommendation": "watch_only",
       "research_priority_score": 61.108,
-      "research_rank": 15,
+      "research_rank": 16,
       "score": null,
       "score_components": {
-        "age_days": 1.66,
+        "age_days": 1.85,
         "company_evidence": 12.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -13196,8 +14508,8 @@
       },
       "stage": "research_queue",
       "statuses": {
-        "capital_issuance": "missing",
-        "capital_source_health_id": null,
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_d316e3798efce46ea74edd8d",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -13211,7 +14523,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 3990,
+        "price_event_id": 4620,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -13390,12 +14702,36 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": "research_agent",
               "evidence_required": "Direct event evidence that removes the active source-quality blocker.",
@@ -13541,13 +14877,13 @@
           "required": true
         }
       },
-      "rank": 16,
+      "rank": 17,
       "recommendation": "review",
       "research_priority_score": 60.04,
-      "research_rank": 16,
+      "research_rank": 17,
       "score": null,
       "score_components": {
-        "age_days": 20.66,
+        "age_days": 20.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -13557,7 +14893,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_872e34eb5d21ba3bb71ce245",
+        "capital_source_health_id": "capital_issuance_health_5c69648a6ba34c45d7953da9",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -13571,7 +14907,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4164,
+        "price_event_id": 4542,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -13743,17 +15079,41 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
               "gate": "company_health",
               "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             },
@@ -13793,11 +15153,6 @@
           "label": "Company health failed"
         },
         {
-          "code": "capital_issuance_source_missing",
-          "detail": "The SEC capital-issuance source has not produced a current result.",
-          "label": "Capital-issuance check missing"
-        },
-        {
           "code": "qualification_enrichment_pending",
           "detail": "Qualification is waiting for missing company or source evidence.",
           "label": "More evidence required"
@@ -13816,7 +15171,6 @@
       "blockers": [
         "framework_proposal_pending",
         "company_health_unhealthy",
-        "capital_issuance_source_missing",
         "qualification_enrichment_pending",
         "watchlist_admission_required",
         "reviewed_payoff_missing"
@@ -13920,13 +15274,13 @@
           "required": true
         }
       },
-      "rank": 17,
+      "rank": 18,
       "recommendation": "review",
       "research_priority_score": 53.533,
-      "research_rank": 17,
+      "research_rank": 18,
       "score": null,
       "score_components": {
-        "age_days": 3.66,
+        "age_days": 3.85,
         "company_evidence": 10.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -13935,8 +15289,8 @@
       },
       "stage": "research_queue",
       "statuses": {
-        "capital_issuance": "missing",
-        "capital_source_health_id": null,
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_49dfddb6f1f3647fd163a40e",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -13950,7 +15304,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4194,
+        "price_event_id": 4572,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -13962,374 +15316,6 @@
       },
       "ticker": "EVEX",
       "title": "EVEX · sector catalyst · 2026-07-20"
-    },
-    {
-      "analysis_packet": {
-        "automatic_analysis": {
-          "missing_gate_count": 5,
-          "missing_gates": [
-            "company_evidence",
-            "company_assessment",
-            "catalyst_review",
-            "reviewed_payoff",
-            "framework_recommendation"
-          ],
-          "status": "needs_research"
-        },
-        "company_assessment": {
-          "catalysts": [],
-          "criteria": [
-            {
-              "criterion": "balance_sheet",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "cash_generation",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "demand_durability",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "dilution_capital_allocation",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "margins_efficiency",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "profitability",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            }
-          ],
-          "health_counts": {
-            "coverage_count": 0,
-            "fail_count": 0,
-            "missing_count": 6,
-            "partial_count": 0,
-            "pass_count": 0
-          },
-          "health_status": "insufficient_data",
-          "metrics": [],
-          "payoff_review": {
-            "instruction": "An authenticated human analyst must record PSNL's entry, upside, invalidation, horizon, source, and rationale before promotion.",
-            "owner": "human_analyst",
-            "required_fields": [
-              "upside_price",
-              "invalidation_price",
-              "entry_condition",
-              "invalidation_condition",
-              "horizon_days",
-              "source_ref",
-              "rationale"
-            ],
-            "status": "needs_human",
-            "workflow": "authenticated_stage2_payoff_review"
-          },
-          "scope": "Company-specific annual SEC screen plus approved catalyst evidence; this is not a substitute for reviewed payoff analysis.",
-          "status": "needs_human"
-        },
-        "company_health": {
-          "coverage_count": 0,
-          "evidence_complete": false,
-          "promotion_eligible": false,
-          "required_coverage_count": 4,
-          "status": "insufficient_data"
-        },
-        "counter_case": {
-          "basis": [],
-          "status": "complete",
-          "text": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance."
-        },
-        "framework": {
-          "complete": false,
-          "status": "missing"
-        },
-        "invalidation": {
-          "basis": [],
-          "status": "complete",
-          "text": "Reject if PSNL fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver."
-        },
-        "market_price": {
-          "as_of": "2026-07-24",
-          "status": "available"
-        },
-        "materiality": {
-          "quantified_commitment": true,
-          "signals": [],
-          "status": "quantified",
-          "summary": "The catalyst discloses a quantitative commercial commitment."
-        },
-        "options": {
-          "as_of": "2026-07-24",
-          "confidence": "low",
-          "expiry": "ALL",
-          "provider": "ThetaData",
-          "put_call_open_interest_ratio": null,
-          "put_call_volume_ratio": null,
-          "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 12.22,
-          "status": "unavailable",
-          "total_open_interest": null,
-          "total_volume": null
-        },
-        "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
-          "error": null,
-          "model": null,
-          "provider": "deterministic_web_research",
-          "status": "needs_human",
-          "tasks": [
-            {
-              "escalated_from": null,
-              "evidence_required": "At least four current, source-attributed health criteria.",
-              "gate": "company_evidence",
-              "instruction": "Refresh SEC Company Facts and the six company-health criteria.",
-              "owner": "pipeline",
-              "status": "needs_human"
-            },
-            {
-              "escalated_from": null,
-              "evidence_required": "A preregistered framework or a reviewable evidence-backed proposal.",
-              "gate": "framework_recommendation",
-              "instruction": "Review or create an evidence-backed company framework.",
-              "owner": "human_analyst",
-              "status": "needs_human"
-            }
-          ]
-        },
-        "source": {
-          "atomic_event": true,
-          "blockers": [],
-          "current_synthesis": true,
-          "primary_supporting_events": 1,
-          "researched_context_sources": [],
-          "researched_primary_sources": [],
-          "status": "complete",
-          "synthesis_version": "2.3"
-        }
-      },
-      "blocker_explanations": [
-        {
-          "code": "framework_missing",
-          "detail": "No preregistered framework or evidence-backed framework proposal is available.",
-          "label": "Company framework evidence missing"
-        },
-        {
-          "code": "company_health_insufficient_data",
-          "detail": "Current issuer evidence is insufficient to classify company health.",
-          "label": "Company health cannot be assessed"
-        },
-        {
-          "code": "catalyst_not_reviewed",
-          "detail": "Catalyst evidence has not passed the governed review step.",
-          "label": "Catalyst not reviewed"
-        },
-        {
-          "code": "capital_issuance_source_missing",
-          "detail": "The SEC capital-issuance source has not produced a current result.",
-          "label": "Capital-issuance check missing"
-        },
-        {
-          "code": "qualification_enrichment_pending",
-          "detail": "Qualification is waiting for missing company or source evidence.",
-          "label": "More evidence required"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "framework_missing",
-        "company_health_insufficient_data",
-        "catalyst_not_reviewed",
-        "capital_issuance_source_missing",
-        "qualification_enrichment_pending",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "counter_case": "The bull evidence may be idiosyncratic or already priced, and the market signal may reverse without producing durable relative performance.",
-      "direction": "bull",
-      "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
-      "framework_status": "missing",
-      "health_status": "insufficient_data",
-      "invalidation": "Reject if PSNL fails to outperform SPY by the 60-day horizon or new sourced evidence invalidates the driver.",
-      "investment_readiness_score": null,
-      "lane": "catalyst",
-      "materiality": {
-        "quantified_commitment": true,
-        "signals": [],
-        "status": "quantified",
-        "summary": "The catalyst discloses a quantitative commercial commitment."
-      },
-      "missing_analysis_gate_explanations": [
-        {
-          "code": "company_evidence",
-          "detail": "At least four of six current source-attributed company-health criteria are required.",
-          "label": "Company evidence incomplete"
-        },
-        {
-          "code": "company_assessment",
-          "detail": "Complete the issuer-specific health criteria and governed catalyst assessment in Stage 2.",
-          "label": "Company-specific assessment incomplete"
-        },
-        {
-          "code": "catalyst_review",
-          "detail": "Catalyst evidence must pass the governed review step before promotion.",
-          "label": "Catalyst review incomplete"
-        },
-        {
-          "code": "reviewed_payoff",
-          "detail": "A human analyst must review entry, upside, invalidation, horizon, source, and rationale in Stage 2.",
-          "label": "Reviewed payoff missing"
-        },
-        {
-          "code": "framework_recommendation",
-          "detail": "Create an evidence-backed value, growth, or hybrid proposal for human review.",
-          "label": "Framework recommendation missing"
-        }
-      ],
-      "missing_analysis_gates": [
-        "company_evidence",
-        "company_assessment",
-        "catalyst_review",
-        "reviewed_payoff",
-        "framework_recommendation"
-      ],
-      "monitoring_label": "catalyst validation",
-      "next_action": "Complete: company evidence, company assessment, catalyst review, reviewed payoff, framework recommendation.",
-      "promotion_audit": {
-        "atomic_event": {
-          "passed": true,
-          "required": true
-        },
-        "catalyst_review": {
-          "passed": false,
-          "required": true
-        },
-        "company_assessment": {
-          "passed": false,
-          "required": true
-        },
-        "company_evidence": {
-          "passed": false,
-          "required": true
-        },
-        "company_health": {
-          "passed": false,
-          "required": false
-        },
-        "counter_case": {
-          "passed": true,
-          "required": true
-        },
-        "current_synthesis": {
-          "passed": true,
-          "required": true
-        },
-        "framework_recommendation": {
-          "passed": false,
-          "required": true
-        },
-        "invalidation": {
-          "passed": true,
-          "required": true
-        },
-        "market_price": {
-          "passed": true,
-          "required": true
-        },
-        "materiality_classified": {
-          "passed": true,
-          "required": true
-        },
-        "options_source_evaluated": {
-          "passed": true,
-          "required": true
-        },
-        "primary_source": {
-          "passed": true,
-          "required": true
-        },
-        "reviewed_payoff": {
-          "passed": false,
-          "required": true
-        },
-        "source_quality": {
-          "passed": true,
-          "required": true
-        }
-      },
-      "rank": 18,
-      "recommendation": "review",
-      "research_priority_score": 52.312,
-      "research_rank": 18,
-      "score": null,
-      "score_components": {
-        "age_days": 3.66,
-        "company_evidence": 0.0,
-        "governance_readiness": 5.0,
-        "recency": 25.0,
-        "source_evidence": 22.312,
-        "total": 52.312
-      },
-      "stage": "research_queue",
-      "statuses": {
-        "capital_issuance": "missing",
-        "capital_source_health_id": null,
-        "catalyst": "discovery_only",
-        "catalyst_observation_id": null,
-        "framework": "missing",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "insufficient_data",
-        "market_price": "available",
-        "market_price_as_of": "2026-07-24",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 4224,
-        "qualification": "enrichment_pending",
-        "recommendation": "none"
-      },
-      "theta": {
-        "as_of": "2026-07-24",
-        "confidence": "low",
-        "expiry": "ALL",
-        "provider": "ThetaData",
-        "put_call_open_interest_ratio": null,
-        "put_call_volume_ratio": null,
-        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 12.22,
-        "status": "unavailable",
-        "total_open_interest": null,
-        "total_volume": null
-      },
-      "ticker": "PSNL",
-      "title": "PSNL · acquisition · 2026-07-20"
     },
     {
       "analysis_packet": {
@@ -14502,12 +15488,28 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "catalyst_review",
+              "instruction": "Resolve catalyst review.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "company_assessment",
+              "instruction": "Resolve company assessment.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
@@ -14517,10 +15519,34 @@
               "status": "needs_human"
             },
             {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
               "escalated_from": "research_agent",
               "evidence_required": "A reachable primary-source URL with a matching supporting excerpt.",
               "gate": "primary_source",
               "instruction": "Find direct issuer, counterparty, filing, regulator, or exchange evidence.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             },
@@ -14711,7 +15737,7 @@
       "research_rank": 19,
       "score": null,
       "score_components": {
-        "age_days": 0.66,
+        "age_days": 0.85,
         "company_evidence": 10.0,
         "governance_readiness": 5.0,
         "recency": 25.0,
@@ -14721,7 +15747,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_273aa40b66dc78beb57bb474",
+        "capital_source_health_id": "capital_issuance_health_34fa50ca57a0fdad6cac58e3",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -14735,7 +15761,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4140,
+        "price_event_id": 4518,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -14922,17 +15948,41 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-07-24T15:25:00+00:00",
+          "attempted_at": "2026-07-24T20:20:03.894619+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
-          "status": "needs_human",
+          "status": "partial",
           "tasks": [
             {
               "escalated_from": null,
               "evidence_required": "New sourced company evidence or an explicit human disposition.",
               "gate": "company_health",
               "instruction": "Review the unhealthy issuer assessment; do not promote automatically.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
               "owner": "human_analyst",
               "status": "needs_human"
             },
@@ -15099,7 +16149,7 @@
       "research_rank": 20,
       "score": null,
       "score_components": {
-        "age_days": 7.66,
+        "age_days": 7.85,
         "company_evidence": 12.5,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -15109,7 +16159,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_76b4193a00b0c42151b4cb6c",
+        "capital_source_health_id": "capital_issuance_health_3767bf5171fb85556c7f5205",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -15123,7 +16173,7 @@
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 4200,
+        "price_event_id": 4578,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -15152,7 +16202,7 @@
   "transitions": {
     "entered": [],
     "left": [],
-    "previous_as_of": "2026-07-24T15:20:41.376128+00:00",
+    "previous_as_of": "2026-07-24T16:09:42.045952+00:00",
     "retained": [
       "ACM",
       "ACN",
