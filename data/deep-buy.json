@@ -6,12 +6,12 @@
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 172,
-    "earnings_blackout": 151,
-    "rr_too_low": 10,
-    "frozen": 1
+    "below_cutoff": 170,
+    "earnings_blackout": 148,
+    "frozen": 1,
+    "rr_too_low": 10
   },
-  "candidates_evaluated": 335,
+  "candidates_evaluated": 330,
   "picks_count": 1,
   "picks": [
     {
@@ -55,7 +55,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -0.95,
+        "price_run_pct_30d": null,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -73,12 +73,12 @@
         "abstained": false
       },
       "oracle_note": {
-        "text": "deep_buy rank #1 composite 40 (path1+path5); P1 BUY 90/conf100 and P4 entry $270-$295. +5 supports limit-only starter, no chase.",
+        "text": "deep_buy rank #1 composite 40 (path1+path5); P1 BUY 94/conf100 and P4 entry $270-$295. +5 supports limit-only starter.",
         "written_at": "2026-07-27"
       }
     }
   ],
-  "oracle_watch_count": 5,
+  "oracle_watch_count": 6,
   "oracle_watch": [
     {
       "ticker": "ADBE",
@@ -88,7 +88,7 @@
       ],
       "spot_price": 212.17,
       "oracle_note": {
-        "text": "Rescan/watch: independent BUY/source=both, P4 entry $225-$240 target $320; needs fresh non-bearish flow before action.",
+        "text": "Independent source=both + Path5 + P4 zone $225-$240; flow.score=+3.51 is stale/no TD. +5 conf only for oracle_watch, not chase.",
         "written_at": "2026-07-27"
       },
       "filter_reason": "below_cutoff"
@@ -101,7 +101,20 @@
       ],
       "spot_price": 392.47,
       "oracle_note": {
-        "text": "Rescan/watch: P4 entry $360-$385 target $480 and independent STRONG BUY; confirm earnings-date freshness before alert.",
+        "text": "Rescan/watch: P4 target $480, entry $360-$385 and independent STRONG BUY; spot above zone, so no chase.",
+        "written_at": "2026-07-27"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "RKLB",
+      "composite": 10,
+      "convergence_paths": [
+        "catalyst_near"
+      ],
+      "spot_price": 69.99,
+      "oracle_note": {
+        "text": "Rescan/watch: independent BUY MED cites $266M Space Force award; speculative due negative FCF, so no positive modifier.",
         "written_at": "2026-07-27"
       },
       "filter_reason": "below_cutoff"
@@ -112,7 +125,7 @@
       "convergence_paths": [],
       "spot_price": 91.94,
       "oracle_note": {
-        "text": "Rescan only: independent BUY/source=both conflicts with P4 ghost-exit/unknown earnings and portfolio sync state; no entry until reconciled.",
+        "text": "Rescan only: independent source=both and P4 zone $80-$95, but ghost-exit/earnings-date sync conflict blocks entry until reconciled.",
         "written_at": "2026-07-27"
       },
       "filter_reason": "below_cutoff"
@@ -123,7 +136,7 @@
       "convergence_paths": [],
       "spot_price": 102.6,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: independent BUY cites Jul 24 insider cluster ~$1.1M after Synovus deal; regional bank macro risk keeps watch-only.",
+        "text": "Rescan/oracle_watch: independent BUY cites Jul 24 insider cluster ~$1.1M after Synovus deal; regional-bank macro risk keeps watch-only.",
         "written_at": "2026-07-27"
       },
       "filter_reason": "below_cutoff"
@@ -134,7 +147,7 @@
       "convergence_paths": [],
       "spot_price": 100.11,
       "oracle_note": {
-        "text": "Rescan/watch: P4 entry $105-$118 target $145; buyback thesis needs post-earnings validation and flow >+5.",
+        "text": "Rescan/watch: P4 target $145, entry $105-$118; buyback thesis needs post-earnings validation and flow >+5.",
         "written_at": "2026-07-27"
       },
       "filter_reason": "below_cutoff"
