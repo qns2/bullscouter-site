@@ -1,17 +1,17 @@
 {
   "date": "2026-07-27",
-  "version": "2.46.6",
+  "version": "2.46.7",
   "regime_label": "neutral",
   "regime_score": -11.1,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 164,
-    "earnings_blackout": 145,
-    "frozen": 1,
-    "rr_too_low": 9
+    "below_cutoff": 172,
+    "earnings_blackout": 151,
+    "rr_too_low": 10,
+    "frozen": 1
   },
-  "candidates_evaluated": 320,
+  "candidates_evaluated": 335,
   "picks_count": 1,
   "picks": [
     {
@@ -73,21 +73,69 @@
         "abstained": false
       },
       "oracle_note": {
-        "text": "deep_buy rank #1 composite 40 (path1+path5); P1 BUY 90/conf100 and P4 entry $270-$295. +5 supports limit-only starter.",
-        "written_at": "2026-07-24"
+        "text": "deep_buy rank #1 composite 40 (path1+path5); P1 BUY 90/conf100 and P4 entry $270-$295. +5 supports limit-only starter, no chase.",
+        "written_at": "2026-07-27"
       }
     }
   ],
-  "oracle_watch_count": 1,
+  "oracle_watch_count": 5,
   "oracle_watch": [
+    {
+      "ticker": "ADBE",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 212.17,
+      "oracle_note": {
+        "text": "Rescan/watch: independent BUY/source=both, P4 entry $225-$240 target $320; needs fresh non-bearish flow before action.",
+        "written_at": "2026-07-27"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "AVGO",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 392.47,
+      "oracle_note": {
+        "text": "Rescan/watch: P4 entry $360-$385 target $480 and independent STRONG BUY; confirm earnings-date freshness before alert.",
+        "written_at": "2026-07-27"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "NOW",
       "composite": 0,
       "convergence_paths": [],
       "spot_price": 91.94,
       "oracle_note": {
-        "text": "Rescan/watch: independent BUY with Q2 AI monetization; P4 ENTRY_ZONE $80-$95 but ghost-exit conflict needs cleanup.",
-        "written_at": "2026-07-24"
+        "text": "Rescan only: independent BUY/source=both conflicts with P4 ghost-exit/unknown earnings and portfolio sync state; no entry until reconciled.",
+        "written_at": "2026-07-27"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "PNFP",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 102.6,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: independent BUY cites Jul 24 insider cluster ~$1.1M after Synovus deal; regional bank macro risk keeps watch-only.",
+        "written_at": "2026-07-27"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "VC",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 100.11,
+      "oracle_note": {
+        "text": "Rescan/watch: P4 entry $105-$118 target $145; buyback thesis needs post-earnings validation and flow >+5.",
+        "written_at": "2026-07-27"
       },
       "filter_reason": "below_cutoff"
     }
