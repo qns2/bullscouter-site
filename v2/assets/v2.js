@@ -17,6 +17,10 @@ const fmt = (value, digits = 1) => {
 const dateText = (value) => {
   if (!value) return "—";
   const date = new Date(value);
+  // NOTE: the unparseable branch echoes raw input verbatim. That is correct for
+  // the textContent and markdown-clipboard callers, which must not receive
+  // entities — so escaping happens at the innerHTML interpolation sites, which
+  // use dateHtml() below. Do not escape here.
   return Number.isNaN(date.getTime())
     ? String(value).slice(0, 10)
     : date.toLocaleString([], {
@@ -28,6 +32,10 @@ const dateText = (value) => {
         timeZoneName: "short",
       });
 };
+
+// dateText for innerHTML contexts. Its unparseable branch returns raw input,
+// so any template interpolation must go through this.
+const dateHtml = (value) => escapeHtml(dateText(value));
 
 const pill = (value) => {
   const text = String(value || "unknown");
@@ -311,7 +319,7 @@ function renderDiscoveries(data) {
 
     document.querySelector("[data-discoveries]").innerHTML = discoveryMatches.length
       ? discoveryMatches.map((item) => `<tr>
-          <td>${dateText(item.observed_at)}</td>
+          <td>${dateHtml(item.observed_at)}</td>
           <td class="ticker">${escapeHtml(item.ticker || "—")}</td>
           <td>${escapeHtml(item.title || item.summary || "Untitled discovery")}</td>
           <td>${pill(item.direction)}</td>
@@ -681,7 +689,7 @@ function renderTheses(data) {
     ? items.map((item) => `<article class="card">
         <div class="section-head"><div><span class="ticker">${escapeHtml(item.ticker || "MULTI")}</span><h2>${escapeHtml(item.title)}</h2></div><div class="copy-actions">${pill(item.status)}${copyButton(thesisCopy(item), `Copy ${item.ticker || "thesis"}`)}</div></div>
         <p>${pill(item.direction)} ${pill(`confidence ${item.confidence ?? "—"}`)} ${item.attention ? pill("attention") : ""}</p>
-        <p class="muted">${item.next_checkpoint ? `Next: ${escapeHtml(item.next_checkpoint.label || "checkpoint")} · ${dateText(item.next_checkpoint.due_at)}` : "No pending checkpoint."}</p>
+        <p class="muted">${item.next_checkpoint ? `Next: ${escapeHtml(item.next_checkpoint.label || "checkpoint")} · ${dateHtml(item.next_checkpoint.due_at)}` : "No pending checkpoint."}</p>
       </article>`).join("")
     : empty("No activated theses.");
   setListCopy("theses", "Active theses", items, thesisCopy, data.generated_at);
