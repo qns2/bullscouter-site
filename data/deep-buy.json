@@ -60,7 +60,7 @@
         "latest_filings": []
       },
       "rationale_one_liner": "Tier 2 BUY conf 100 + Buffett quality. Earnings 16d.",
-      "watchlist_thesis": "Deep Buy #1 + P1 BUY + Path5 quality. Starter only inside $270-$295; no chase above zone.",
+      "watchlist_thesis": "Deep Buy #1 plus Path1 BUY and Path5 quality; starter only inside $270-$295 because flow_score is negative.",
       "rank": 1,
       "macro_filter": {
         "pass": true,
@@ -73,23 +73,22 @@
         "abstained": false
       },
       "oracle_note": {
-        "text": "deep_buy rank #1 composite 40 (path1+path5); P1 BUY 78/conf84 but flow.score=-0.99 and spot above $270-$295 zone; +3 only.",
+        "text": "deep_buy rank #1 composite 40 (path1+path5); +3 only because flow_score=-0.99 and spot is above $270-$295 zone.",
         "written_at": "2026-07-29"
       }
     }
   ],
-  "oracle_watch_count": 4,
+  "oracle_watch_count": 3,
   "oracle_watch": [
     {
-      "ticker": "ACM",
-      "composite": 30,
+      "ticker": "AVGO",
+      "composite": 15,
       "convergence_paths": [
-        "path3_strong_candidate",
-        "skew_bullish"
+        "path5_strong_quality"
       ],
-      "spot_price": 74.44,
+      "spot_price": 380.91,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: Path3 score=73, down=47.6%, P4 entry=$68-$74; prior G3 flag exists but needs fresh flow/liquidity validation.",
+        "text": "Rescan/watch: P4 ENTRY_ZONE $383 in $360-$385 and Path5=80; bid below $380 only while XLK -2.0% today.",
         "written_at": "2026-07-29"
       },
       "filter_reason": "below_cutoff"
@@ -100,29 +99,18 @@
       "convergence_paths": [],
       "spot_price": 181.5,
       "oracle_note": {
-        "text": "Independent source=both BUY + P4 entry=$165-$175; options-deep flow.score=+3.0. +5 supports limit-only watch, not chase.",
+        "text": "Independent source=both BUY + P4 entry=$165-$175 + flow_score=+3.0; +5 supports limit-only, no chase above $175.",
         "written_at": "2026-07-29"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "STX",
+      "ticker": "CVLT",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 747.3,
+      "spot_price": 120.02,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: independent source=both BUY after storage-cycle beat; no P4 entry zone and flow.score=-1.5, so no chase.",
-        "written_at": "2026-07-29"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "VC",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 106.93,
-      "oracle_note": {
-        "text": "Rescan/watch: P4 ENTRY_ZONE near $105.54, entry=$105-$118 target=$145; options-flow volume=133 too thin for confirmation.",
+        "text": "Rescan/oracle_watch: independent BUY after post-earnings selloff despite beat/raised guide; validate leverage/book-value metrics.",
         "written_at": "2026-07-29"
       },
       "filter_reason": "below_cutoff"
