@@ -200,7 +200,9 @@
             <th class="px-3 py-3 text-right">Entry $</th>
             <th class="px-3 py-3 text-right">Current $</th>
             <th class="px-3 py-3 text-right hidden sm:table-cell">Flow</th>
-            <th class="px-5 py-3 text-right">Change</th>
+            <th class="px-5 py-3 text-right" title="Change since this name entered the list. 0.0% means it entered today — not that it did not move.">Since entry</th>
+            <th class="px-3 py-3 text-right" title="Trailing 7 calendar days vs SPY over the same 7 days. n/a when no price anchors the window.">7d vs SPY</th>
+            <th class="px-3 py-3 text-right" title="Trailing 13 weeks vs SPY over the same 13 weeks. n/a when no price anchors the window.">13w vs SPY</th>
           </tr>
         </thead>
         <tbody id="portfolio-body" class="divide-y divide-gray-800/50"></tbody>
@@ -299,6 +301,13 @@ const BuyList = (() => {
     return (val > 0 ? '+' : '') + val.toFixed(1) + '%';
   }
 
+  // Distinct from fmtPct on purpose: a window with no price anchor is
+  // UNMEASURED, and must not be able to look like a flat or missing move.
+  function naPct(val) {
+    if (val == null) return '<span class="text-gray-600">n/a</span>';
+    return (val > 0 ? '+' : '') + val.toFixed(1) + '%';
+  }
+
   function fmtPrice(val) {
     if (val == null) return '-';
     return '$' + val.toFixed(2);
@@ -348,6 +357,8 @@ const BuyList = (() => {
         <td class="px-3 py-4 text-right font-mono">${fmtPrice(s.current_price)}</td>
         <td class="px-3 py-4 text-right font-mono hidden sm:table-cell ${s.flow_score > 2 ? 'text-green-400' : s.flow_score < -2 ? 'text-red-400' : 'text-gray-500'}">${s.flow_score != null ? (s.flow_score > 0 ? '+' : '') + s.flow_score.toFixed(1) : '-'}</td>
         <td class="px-5 py-4 text-right font-mono font-bold ${changeClass(s.change_pct)}">${fmtPct(s.change_pct)}</td>
+        <td class="px-3 py-4 text-right font-mono ${changeClass(s.excess_7d)}">${naPct(s.excess_7d)}</td>
+        <td class="px-3 py-4 text-right font-mono ${changeClass(s.excess_13w)}">${naPct(s.excess_13w)}</td>
       `;
       tbody.appendChild(tr);
     });
