@@ -7,11 +7,11 @@
   "strategic_context_block_reason": null,
   "filtered_summary": {
     "below_cutoff": 226,
-    "earnings_blackout": 149,
+    "earnings_blackout": 148,
     "rr_too_low": 15,
     "frozen": 1
   },
-  "candidates_evaluated": 392,
+  "candidates_evaluated": 391,
   "picks_count": 1,
   "picks": [
     {
@@ -68,7 +68,7 @@
         ]
       },
       "rationale_one_liner": "Tier 2 BUY conf 100 + Buffett quality. no earnings <45d.",
-      "watchlist_thesis": "P1 BUY 88/82 but DIP at $50.46 = BELOW zone floor. 0% WR 16 signals. Value 36% WR. Gate: flow >=+5 for 5d. Stop $47.",
+      "watchlist_thesis": "deep_buy rank #1 composite 40, but spot below $52-$63 zone and flow.score=0.0. Require zone reclaim and flow >+5.",
       "rank": 1,
       "macro_filter": {
         "pass": true,
@@ -81,13 +81,26 @@
         "abstained": false
       },
       "oracle_note": {
-        "text": "deep_buy rank #1 composite 40 (path1+path5); my -15 modifier reflects flow_score=0.0 plus guidance_cut/recall bearish catalyst rows.",
+        "text": "deep_buy rank #1 composite 40 (path1+path5); my -15/-8 reflects flow.score=0.0 and spot $46.04 below $52-$63 zone.",
         "written_at": "2026-07-30"
       }
     }
   ],
-  "oracle_watch_count": 5,
+  "oracle_watch_count": 7,
   "oracle_watch": [
+    {
+      "ticker": "AVGO",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 370.32,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: independent STRONG BUY source=both; P4 zone $360-$385, no positive modifier until in zone/flow confirmed.",
+        "written_at": "2026-07-30"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "MSFT",
       "composite": 15,
@@ -96,29 +109,29 @@
       ],
       "spot_price": 390.54,
       "oracle_note": {
-        "text": "Independent STRONG BUY source=both plus Path5 79 and liquid flow_score=+6.99; broker-held 4sh, +5 supports thesis not chase.",
+        "text": "Independent STRONG BUY source=both plus strategic holding and flow.score=+7.0; +5 supports thesis, not fresh chase without add zone.",
         "written_at": "2026-07-30"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "CRM",
+      "ticker": "ORCL",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 188.38,
+      "spot_price": 117.74,
       "oracle_note": {
-        "text": "P4 entry=$165-$175 plus liquid options flow_score=+5.52, volume=52284; +5 is limit-only support, no chase near $188.",
+        "text": "Rescan/oracle_watch: independent BUY on Pentagon/cloud and low forward valuation; debt/negative FCF keep conviction capped.",
         "written_at": "2026-07-30"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "SPGI",
+      "ticker": "SOFI",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 419.64,
+      "spot_price": 15.25,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: independent BUY source=both on $7B+ 2026 buyback plan and quality compounding.",
+        "text": "Rescan/watch: P4 zone $14.50-$16 and flow.score=+9.0, but TD=false and Muddy Waters unresolved; require >5K options volume.",
         "written_at": "2026-07-30"
       },
       "filter_reason": "below_cutoff"
@@ -129,7 +142,7 @@
       "convergence_paths": [],
       "spot_price": 764.43,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: independent STRONG BUY source=both after AI-storage beat; no chase, define post-spike entry zone.",
+        "text": "Rescan/oracle_watch: independent STRONG BUY source=both after AI-storage beat, but Path4 alert price $764 needs split/price sanity check.",
         "written_at": "2026-07-30"
       },
       "filter_reason": "below_cutoff"
@@ -140,7 +153,18 @@
       "convergence_paths": [],
       "spot_price": 319.41,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: independent BUY source=both on memory-test rebound; valuation >30x forward P/E needs pullback discipline.",
+        "text": "Rescan/oracle_watch: independent BUY source=both on memory-test rebound; valuation and Path4 price sanity need verification.",
+        "written_at": "2026-07-30"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "VRT",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 223.04,
+      "oracle_note": {
+        "text": "Rescan/watch: independent BUY source=both on AI infrastructure, but flow.score=-2.01 blocks positive modifier today.",
         "written_at": "2026-07-30"
       },
       "filter_reason": "below_cutoff"
