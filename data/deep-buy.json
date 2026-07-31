@@ -1,18 +1,18 @@
 {
-  "date": "2026-07-30",
+  "date": "2026-07-31",
   "version": "2.47.0",
   "regime_label": "neutral",
   "regime_score": 2.9,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 226,
-    "earnings_blackout": 149,
-    "rr_too_low": 15,
+    "below_cutoff": 284,
+    "earnings_blackout": 120,
+    "rr_too_low": 14,
     "frozen": 1
   },
-  "candidates_evaluated": 392,
-  "picks_count": 1,
+  "candidates_evaluated": 421,
+  "picks_count": 2,
   "picks": [
     {
       "ticker": "BSX",
@@ -21,19 +21,19 @@
         "path1_buy",
         "path5_strong_quality"
       ],
-      "spot_price": 46.04,
+      "spot_price": 46.0,
       "entry": {
         "low": 52.0,
         "high": 63.0,
         "mid": 57.5
       },
       "target": 95.0,
-      "stop": 42.36,
-      "rr_ratio": 13.3,
-      "rr_planned": 2.48,
+      "stop": 42.32,
+      "rr_ratio": 13.32,
+      "rr_planned": 2.47,
       "above_zone_pct": 0.0,
-      "below_zone_pct": 11.46,
-      "suggested_size_usd": 966.84,
+      "below_zone_pct": 11.54,
+      "suggested_size_usd": 966.0,
       "suggested_shares": 21,
       "position_risk_usd": 77.28,
       "earnings_date": null,
@@ -73,8 +73,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed hold, IWM 5d unknown, Sector Healthcare, Industry unknown",
-        "expires": "2026-08-13",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed cut, IWM 5d unknown, Sector Healthcare, Industry unknown",
+        "expires": "2026-08-14",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false,
@@ -82,6 +82,69 @@
       },
       "oracle_note": {
         "text": "deep_buy rank #1 composite 40 (path1+path5); my -15/-8 reflects flow.score=0.0 and spot $46.04 below $52-$63 zone.",
+        "written_at": "2026-07-30"
+      }
+    },
+    {
+      "ticker": "INTU",
+      "composite": 40,
+      "convergence_paths": [
+        "path1_buy",
+        "path5_strong_quality"
+      ],
+      "spot_price": 315.5,
+      "entry": {
+        "low": 270.0,
+        "high": 295.0,
+        "mid": 282.5
+      },
+      "target": 370.0,
+      "stop": 261.9,
+      "rr_ratio": 1.02,
+      "rr_planned": 4.25,
+      "above_zone_pct": 6.95,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 946.5,
+      "suggested_shares": 3,
+      "position_risk_usd": 160.8,
+      "earnings_date": "2026-08-20",
+      "earnings_days_away": 14,
+      "components": {
+        "path1": {
+          "score": 25
+        },
+        "path5": {
+          "score": 15
+        }
+      },
+      "dilution_risk": {
+        "ticker": "INTU",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": 18.56,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Tier 2 BUY conf 100 + Buffett quality. Earnings 14d.",
+      "watchlist_thesis": "Deep Buy #1 plus Path1 BUY and Path5 quality; starter only inside $270-$295 because flow_score is negative.",
+      "rank": 2,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
+        "expires": "2026-08-14",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false,
+        "abstained": false
+      },
+      "oracle_note": {
+        "text": "Path1 BUY 92/conf100 + Path5 88, but flow.score=-2.01 and spot above $270-$295 zone; -5 modifier enforces limit discipline.",
         "written_at": "2026-07-30"
       }
     }
@@ -94,7 +157,7 @@
       "convergence_paths": [
         "path5_strong_quality"
       ],
-      "spot_price": 370.32,
+      "spot_price": 387.84,
       "oracle_note": {
         "text": "Rescan/oracle_watch: independent STRONG BUY source=both; P4 zone $360-$385, no positive modifier until in zone/flow confirmed.",
         "written_at": "2026-07-30"
@@ -107,7 +170,7 @@
       "convergence_paths": [
         "path5_strong_quality"
       ],
-      "spot_price": 390.54,
+      "spot_price": 451.1,
       "oracle_note": {
         "text": "Independent STRONG BUY source=both plus strategic holding and flow.score=+7.0; +5 supports thesis, not fresh chase without add zone.",
         "written_at": "2026-07-30"
@@ -118,7 +181,7 @@
       "ticker": "ORCL",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 117.74,
+      "spot_price": 127.56,
       "oracle_note": {
         "text": "Rescan/oracle_watch: independent BUY on Pentagon/cloud and low forward valuation; debt/negative FCF keep conviction capped.",
         "written_at": "2026-07-30"
@@ -129,7 +192,7 @@
       "ticker": "SOFI",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 15.25,
+      "spot_price": 16.47,
       "oracle_note": {
         "text": "Rescan/watch: P4 zone $14.50-$16 and flow.score=+9.0, but TD=false and Muddy Waters unresolved; require >5K options volume.",
         "written_at": "2026-07-30"
@@ -140,7 +203,7 @@
       "ticker": "STX",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 764.43,
+      "spot_price": 851.68,
       "oracle_note": {
         "text": "Rescan/oracle_watch: independent STRONG BUY source=both after AI-storage beat, but Path4 alert price $764 needs split/price sanity check.",
         "written_at": "2026-07-30"
@@ -151,7 +214,7 @@
       "ticker": "TER",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 319.41,
+      "spot_price": 365.49,
       "oracle_note": {
         "text": "Rescan/oracle_watch: independent BUY source=both on memory-test rebound; valuation and Path4 price sanity need verification.",
         "written_at": "2026-07-30"
@@ -162,7 +225,7 @@
       "ticker": "VRT",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 223.04,
+      "spot_price": 227.5,
       "oracle_note": {
         "text": "Rescan/watch: independent BUY source=both on AI infrastructure, but flow.score=-2.01 blocks positive modifier today.",
         "written_at": "2026-07-30"
