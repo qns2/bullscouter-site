@@ -113,9 +113,18 @@ const Watchlist = (() => {
       ? `<span title="${esc(s.thesis)}">${esc(s.thesis.slice(0, 40))}${s.thesis.length > 40 ? '...' : ''}</span>`
       : '-';
 
+    // A stale thesis is the one thing this page exists to tell you: price has
+    // left the zone the thesis was written for. Rendered ON the ticker, not
+    // buried in a column, because a row that looks ordinary while its thesis is
+    // void is worse than no row at all.
+    const staleBadge = s.thesis_stale
+      ? `<span class="profile-badge" style="background:rgba(239,68,68,0.18);color:#f87171"
+              title="Thesis invalidated${s.thesis_stale_since ? ' since ' + esc(s.thesis_stale_since) : ''}: ${esc((s.thesis_stale_reason || 'zone left').replace(/_/g, ' '))}">STALE</span>`
+      : '';
+
     return `
       <tr class="border-b border-gray-800/50 hover:bg-gray-900/50">
-        <td class="py-2 pr-4 font-bold text-gray-200"><a href="ticker.html?t=${esc(s.ticker)}" class="hover:text-green-400 transition-colors">${esc(s.ticker)}</a></td>
+        <td class="py-2 pr-4 font-bold text-gray-200"><a href="ticker.html?t=${esc(s.ticker)}" class="hover:text-green-400 transition-colors">${esc(s.ticker)}</a> ${staleBadge}</td>
         <td class="py-2 pr-4 text-gray-400">${esc(s.name || '-')}</td>
         <td class="py-2 pr-4 text-gray-400">${esc(s.profile || '-')}</td>
         <td class="py-2 pr-4">${s.abs_target ? '$' + s.abs_target.toFixed(2) : '-'}</td>
