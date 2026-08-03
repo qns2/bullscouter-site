@@ -181,7 +181,7 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
   <div class="glass-card rounded-2xl overflow-hidden">
     <div class="p-5 border-b border-bull-border flex justify-between items-center">
-      <h2 class="font-bold uppercase tracking-wider text-sm">Active Portfolio</h2>
+      <h2 class="font-bold uppercase tracking-wider text-sm">Buy List <span class="text-bull-muted font-normal normal-case">— top <span id="portfolio-n">5</span> are the funded portfolio</span></h2>
       <span id="signal-count" class="text-xs text-bull-muted">0 signals</span>
     </div>
 
@@ -263,8 +263,8 @@
   <div class="glass-card rounded-2xl p-6">
     <h2 class="font-bold uppercase tracking-wider text-sm mb-4">Methodology</h2>
     <div class="text-xs text-gray-400 space-y-2 max-w-3xl">
-      <p><span class="text-white font-semibold">Unified portfolio:</span> Combines Path 1 (lifecycle signals, score 60-79, first detected in 10-day window) and Path 3 (contrarian deep-value, score 60-79, down 40%+ from high). Equal-weight across all surviving tickers.</p>
-      <p><span class="text-white font-semibold">Path 1:</span> Calibration analysis (742 signals, Feb-Mar 2026) shows Day 3-10 from first detection is the optimal entry window. Score 60-79 outperforms 80+.</p>
+      <p><span class="text-white font-semibold">Unified portfolio:</span> Combines Path 1 (lifecycle signals, score 0-89, first detected in a 10-market-day window) and Path 3 (contrarian deep-value, score 60-79, down 40%+ from high). Equal-weight across the funded top N.</p>
+      <p><span class="text-white font-semibold">Path 1:</span> Day 3-10 from first detection is the entry window under test. On a time-ordered walk-forward at two horizons (2026-07-29), only the <span class="text-white">0-59</span> band replicated out of sample; the earlier &ldquo;60-79 outperforms 80+&rdquo; claim did <span class="text-white">not</span> hold, and the 80-89 band held at 20d but not 60d. Score is treated as a band classifier, not a ranker.</p>
       <p><span class="text-white font-semibold">Path 3 (experimental):</span> Deep-value plays down 40%+ from 52-week high. Hypothesis under forward validation — not yet proven.</p>
       <p><span class="text-white font-semibold">Oracle curation:</span> AI analyst reviews every ticker. Can blocklist (remove) or rerank via score adjustments. Cannot add tickers — rules-based entry only.</p>
       <p><span class="text-white font-semibold">Risk controls:</span> $5 minimum price, -10% stop-loss. Market mood gauge (-100 to +100) informs position sizing caution.</p>
@@ -405,9 +405,16 @@ const BuyList = (() => {
       el.className = `font-mono font-bold ${changeClass(val)}`;
     };
     setBench('bench-buy', portfolio ? portfolio.portfolio_avg : benchmarks.buy_list_avg);
+    const pn = document.getElementById('portfolio-n');
+    if (pn && portfolio && portfolio.num_tickers != null) pn.textContent = portfolio.num_tickers;
     setBench('bench-spy', benchmarks.spy_avg);
     setBench('bench-mag7', benchmarks.mag7_avg);
-    setBench('bench-alpha', benchmarks.alpha_vs_spy);
+    // Pair alpha with the return actually displayed above it. bench-buy shows
+    // portfolio_avg, so alpha must be the PORTFOLIO alpha — using the whole-list
+    // alpha printed -0.48% vs SPY +0.10% with alpha +3.74%, which cannot all be
+    // true (#56). Falls back to the list figure only if the portfolio one is absent.
+    setBench('bench-alpha', (portfolio && portfolio.portfolio_alpha_vs_spy != null)
+      ? portfolio.portfolio_alpha_vs_spy : benchmarks.alpha_vs_spy);
 
     if (mood) {
       if (mood.spy_price) {

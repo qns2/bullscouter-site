@@ -92,7 +92,16 @@
   function actionRow(a) {
     if (!a) return '<span class="text-white/25">—</span>';
     const rr = a.rr_at_spot != null ? a.rr_at_spot : a.rr;
-    return `entry <span class="font-mono text-white">${fmt(a.entry_low, 2)}–${fmt(a.entry_high, 2)}</span> · target <span class="font-mono text-emerald-400">${fmt(a.target, 2)}</span> · stop <span class="font-mono text-red-400">${fmt(a.stop, 2)}</span> · <span class="font-mono ${rr != null && rr >= 1 ? 'text-emerald-400' : 'text-amber-400'}">R/R ${fmt(rr, 2)}</span>`;
+    // Dead levels must not read as live guidance. MU published entry 350-380
+    // and target 380 against a spot of 874.66, with target == entry_high so
+    // upside was zero by construction. The levels are still shown — they record
+    // what was once believed — but struck through and labelled (#56).
+    const broken = a.levels_stale || a.levels_degenerate;
+    const warn = broken
+      ? `<div class="mt-1 text-amber-400 text-[11px]">⚠ ${(a.level_warnings || []).map(esc).join(' · ')}${a.current_price != null ? ` · spot ${fmt(a.current_price, 2)}` : ''}</div>`
+      : '';
+    const dim = broken ? ' style="opacity:.45;text-decoration:line-through"' : '';
+    return `<span${dim}>` + `entry <span class="font-mono text-white">${fmt(a.entry_low, 2)}–${fmt(a.entry_high, 2)}</span> · target <span class="font-mono text-emerald-400">${fmt(a.target, 2)}</span> · stop <span class="font-mono text-red-400">${fmt(a.stop, 2)}</span> · <span class="font-mono ${rr != null && rr >= 1 ? 'text-emerald-400' : 'text-amber-400'}">R/R ${fmt(rr, 2)}</span>` + `</span>${warn}`;
   }
 
   function renderCard(o) {
