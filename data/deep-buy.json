@@ -1,53 +1,108 @@
 {
-  "date": "2026-08-03",
+  "date": "2026-08-04",
   "version": "2.47.0",
   "regime_label": "neutral",
   "regime_score": -3.4,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 321,
-    "earnings_blackout": 124,
-    "rr_too_low": 14,
+    "below_cutoff": 324,
+    "earnings_blackout": 131,
+    "rr_too_low": 17,
     "frozen": 1
   },
-  "candidates_evaluated": 461,
-  "picks_count": 1,
-  "picks": [
+  "candidates_evaluated": 473,
+  "picks_count": 0,
+  "picks": [],
+  "oracle_watch_count": 4,
+  "oracle_watch": [
     {
-      "ticker": "INTU",
-      "composite": 40,
-      "convergence_paths": [
-        "path1_buy",
-        "path5_strong_quality"
-      ],
-      "spot_price": 316.07,
-      "entry": {
-        "low": 270.0,
-        "high": 295.0,
-        "mid": 282.5
+      "ticker": "AUPH",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 14.57,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $14.50-$16.50 and CEO buy thesis, but prior monitor suppressed unknown earnings date. Verify calendar first.",
+        "written_at": "2026-08-03"
       },
-      "target": 370.0,
-      "stop": 261.9,
-      "rr_ratio": 1.0,
-      "rr_planned": 4.25,
-      "above_zone_pct": 7.14,
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "HII",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 325.95,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $310-$330 at $326.45; defense backlog thesis gives lower binary risk than biotech alerts.",
+        "written_at": "2026-08-03"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "LHX",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 277.86,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: independent source=both BUY; defense/missile-production catalyst with P4 entry zone $285-$300.",
+        "written_at": "2026-08-03"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "VRT",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 263.05,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: Path1 BUY 75/conf64 and independent source=both BUY after AI-infra selloff; use limit-only near $220-$225, no chase at $241.",
+        "written_at": "2026-08-03"
+      },
+      "filter_reason": "below_cutoff"
+    }
+  ],
+  "macro_blocked_count": 0,
+  "macro_blocked": [],
+  "tier0_watch": [
+    {
+      "ticker": "PTC",
+      "path": "flow_led",
+      "source": "spike",
+      "composite": 30,
+      "convergence_paths": [
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 0,
+      "tier_evidence": [],
+      "size_class": "none",
+      "spot_price": 139.85,
+      "entry": {
+        "low": 135.65,
+        "high": 140.55,
+        "mid": 138.1
+      },
+      "target": 167.82,
+      "stop": 128.66,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
       "below_zone_pct": 0.0,
-      "suggested_size_usd": 948.21,
-      "suggested_shares": 3,
-      "position_risk_usd": 162.51,
-      "earnings_date": "2026-08-25",
-      "earnings_days_away": 16,
+      "suggested_size_usd": null,
+      "suggested_shares": null,
+      "position_risk_usd": null,
+      "earnings_date": null,
+      "earnings_days_away": null,
       "components": {
-        "path1": {
-          "score": 25
+        "buffett_quality_strong": {
+          "score": 20
         },
-        "path5": {
-          "score": 15
+        "watchlist_dip": {
+          "score": 10
         }
       },
       "dilution_risk": {
-        "ticker": "INTU",
+        "ticker": "PTC",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -59,75 +114,85 @@
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "Tier 2 BUY conf 96 + Buffett quality. Earnings 16d.",
-      "watchlist_thesis": "Deep Buy #1 plus Path1 BUY and Path5 quality; starter only inside $270-$295 because flow_score is negative.",
-      "rank": 1,
+      "rationale_one_liner": "Buffett 68 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-08-17",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed hold, IWM 5d unknown, Sector Technology, Industry unknown",
+        "expires": "2026-08-18",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false,
         "abstained": false
+      }
+    },
+    {
+      "ticker": "HUBB",
+      "path": "flow_led",
+      "source": "spike",
+      "composite": 30,
+      "convergence_paths": [
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 0,
+      "tier_evidence": [],
+      "size_class": "none",
+      "spot_price": 476.04,
+      "entry": {
+        "low": 461.76,
+        "high": 478.42,
+        "mid": 470.09
       },
-      "oracle_note": {
-        "text": "deep_buy rank #1 composite 40 (path1_buy+path5); my -5 modifier reflects spot $316 above P4 $270-$295 zone and RR only 1.0:1.",
-        "written_at": "2026-08-03"
+      "target": 571.25,
+      "stop": 437.96,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": null,
+      "suggested_shares": null,
+      "position_risk_usd": null,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "HUBB",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Buffett 68 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-08-18",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false,
+        "abstained": false
       }
     }
   ],
-  "oracle_watch_count": 4,
-  "oracle_watch": [
-    {
-      "ticker": "AUPH",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 14.88,
-      "oracle_note": {
-        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $14.50-$16.50 and CEO buy thesis, but prior monitor suppressed unknown earnings date. Verify calendar first.",
-        "written_at": "2026-08-03"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "HII",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 326.45,
-      "oracle_note": {
-        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $310-$330 at $326.45; defense backlog thesis gives lower binary risk than biotech alerts.",
-        "written_at": "2026-08-03"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "LHX",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 277.06,
-      "oracle_note": {
-        "text": "Rescan/oracle_watch: independent source=both BUY; defense/missile-production catalyst with P4 entry zone $285-$300.",
-        "written_at": "2026-08-03"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "VRT",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 241.57,
-      "oracle_note": {
-        "text": "Rescan/oracle_watch: Path1 BUY 75/conf64 and independent source=both BUY after AI-infra selloff; use limit-only near $220-$225, no chase at $241.",
-        "written_at": "2026-08-03"
-      },
-      "filter_reason": "below_cutoff"
-    }
-  ],
-  "macro_blocked_count": 0,
-  "macro_blocked": [],
-  "tier0_watch": [],
   "flow_led_picks_count": 0,
   "flow_led_picks": [],
   "flow_extreme_picks_count": 0,
