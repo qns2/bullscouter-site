@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-03T17:22:25",
-  "source_generated_at": "2026-08-03T14:20:05.417358+00:00",
+  "generated_at": "2026-08-04T17:26:17",
+  "source_generated_at": "2026-08-04T14:20:05.066920+00:00",
   "mode": "daily_analysis_site_export",
   "oracle_model": "gpt-5.5",
   "title": "Portfolio news scan complete",
   "summary": "Found 0 held-position news events across 0 tickers: none.",
   "portfolio": {
-    "as_of": "2026-08-03T12:24:18Z",
+    "as_of": "2026-08-04T12:24:44Z",
     "position_count": 16,
     "tickers": [
       "COPX",
@@ -35,22 +35,22 @@
     "held_position_updates": []
   },
   "general": {
-    "summary": "General analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 15 generated read-through candidate(s), 3 read-through theme observation(s), ThetaData status=ok.",
+    "summary": "General analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 15 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.",
     "source_artifact": "data/gpt_news_discovery/latest.json",
-    "generated_at": "2026-08-03T13:40:06.368539+00:00",
+    "generated_at": "2026-08-04T13:40:03.496449+00:00",
     "macro_climate": {
       "status": "ok",
       "price_snapshot": {
-        "title": "Market price snapshot: SPY 751.67 (+0.62% last close); WTI oil 79.30 (-6.34% last close); Gold 4088.70 (+0.98% last close)",
+        "title": "Market price snapshot: SPY 761.96 (+0.57% last close); WTI oil 76.49 (-4.79% last close); Gold 4137.00 (+2.56% last close)",
         "url": "yfinance://SPY,CL=F,GC=F",
-        "published_at": "2026-08-03",
+        "published_at": "2026-08-04",
         "snippet": "Macro context only. Use this with Fed, geopolitical, oil, and gold headlines to infer sector read-throughs; do not treat ETFs or commodities as stock picks.",
         "category_hint": "macro_market_climate"
       },
       "price_moves": {
-        "SPY": 0.62,
-        "WTI oil": -6.34,
-        "Gold": 0.98
+        "SPY": 0.57,
+        "WTI oil": -4.79,
+        "Gold": 2.56
       },
       "tone": "mixed",
       "headlines": [
@@ -90,7 +90,7 @@
           "category_hint": "macro_market_climate"
         }
       ],
-      "summary": "Market price snapshot: SPY 751.67 (+0.62% last close); WTI oil 79.30 (-6.34% last close); Gold 4088.70 (+0.98% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed."
+      "summary": "Market price snapshot: SPY 761.96 (+0.57% last close); WTI oil 76.49 (-4.79% last close); Gold 4137.00 (+2.56% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed."
     },
     "market_wide_events": [],
     "notable_company_events": [],
@@ -153,6 +153,25 @@
         ]
       },
       {
+        "ticker": "MTZ",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MTZ could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "builders_engineering",
+        "parent_ticker": "EQT",
+        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
+            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+          }
+        ]
+      },
+      {
         "ticker": "J",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -172,29 +191,10 @@
         ]
       },
       {
-        "ticker": "GEV",
+        "ticker": "VRT",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "confidence": 0.6,
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "power_equipment",
-        "parent_ticker": "EQT",
-        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ]
-      },
-      {
-        "ticker": "HUBB",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: HUBB could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
         "confidence": 0.6,
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
@@ -248,6 +248,44 @@
         ]
       },
       {
+        "ticker": "BE",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: BE could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "EQT",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
+            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+          }
+        ]
+      },
+      {
+        "ticker": "OKLO",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: OKLO could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "EQT",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
+            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+          }
+        ]
+      },
+      {
         "ticker": "AMD",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -286,10 +324,10 @@
         ]
       },
       {
-        "ticker": "MRVL",
+        "ticker": "ANET",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "summary": "Indirect beneficiary thesis: ANET could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
         "confidence": 0.6,
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
@@ -305,48 +343,10 @@
         ]
       },
       {
-        "ticker": "GLW",
+        "ticker": "EQIX",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: GLW could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
-        "confidence": 0.6,
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "optics_cable_connectivity",
-        "parent_ticker": "EQT",
-        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ]
-      },
-      {
-        "ticker": "COHR",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
-        "confidence": 0.6,
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "optics_cable_connectivity",
-        "parent_ticker": "EQT",
-        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ]
-      },
-      {
-        "ticker": "DLR",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: DLR could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
+        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
         "confidence": 0.6,
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
@@ -464,31 +464,11 @@
           }
         ],
         "training_label": null
-      },
-      {
-        "theme_id": "data_center_ai_infrastructure",
-        "trigger_title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-        "trigger_url": "https://finnhub.io/api/news?id=47bcc432f85ace254d092849b7266b43df7798ba37542ef57c1e4ddfea99e8d9",
-        "matched_patterns": [
-          "data center"
-        ],
-        "generated_beneficiaries": [],
-        "training_label": null
-      },
-      {
-        "theme_id": "data_center_ai_infrastructure",
-        "trigger_title": "Earnings, PMI and Other Key Things to Watch this Week",
-        "trigger_url": "https://finnhub.io/api/news?id=76b29023b205127f17abac539d6fe371910583b31adc20a06953b4913097cc1d",
-        "matched_patterns": [
-          "ai infrastructure"
-        ],
-        "generated_beneficiaries": [],
-        "training_label": null
       }
     ],
     "theta_market": {
       "status": "ok",
-      "latest_scan_date": "2026-08-03",
+      "latest_scan_date": "2026-08-04",
       "min_total_volume": 500,
       "scanned_tickers": 0,
       "breadth": {
@@ -508,24 +488,24 @@
     "new_tickers": [
       "ACM",
       "AMD",
+      "ANET",
       "AVGO",
-      "COHR",
-      "DLR",
-      "GEV",
-      "GLW",
-      "HUBB",
+      "BE",
+      "EQIX",
       "IRM",
       "J",
-      "MRVL",
+      "MTZ",
       "MU",
       "NRG",
       "NVDA",
-      "POWL"
+      "OKLO",
+      "POWL",
+      "VRT"
     ],
     "portfolio_read_throughs": [],
     "scored_picks": [
       {
-        "pick_id": "33b403022d419a35",
+        "pick_id": "61e55283c48789b4",
         "ticker": "ACM",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -557,7 +537,39 @@
         }
       },
       {
-        "pick_id": "0f0cd12376a169da",
+        "pick_id": "837b10bf3297f047",
+        "ticker": "MTZ",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MTZ could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "7152ade226a47d68",
         "ticker": "J",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -589,11 +601,11 @@
         }
       },
       {
-        "pick_id": "cbd101af5c5ce51e",
-        "ticker": "GEV",
+        "pick_id": "8cb51e807aa93717",
+        "ticker": "VRT",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
         "confidence": 0.6,
         "theta_adjusted_confidence": 0.6,
         "pick_score": 29,
@@ -621,39 +633,7 @@
         }
       },
       {
-        "pick_id": "f80816bdb27562f3",
-        "ticker": "HUBB",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: HUBB could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "confidence": 0.6,
-        "theta_adjusted_confidence": 0.6,
-        "pick_score": 29,
-        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "69c284006c028e84",
+        "pick_id": "b25092c9e1f1e081",
         "ticker": "POWL",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -685,7 +665,7 @@
         }
       },
       {
-        "pick_id": "2282f99b26f15fab",
+        "pick_id": "57b42111382286f3",
         "ticker": "NRG",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -717,7 +697,71 @@
         }
       },
       {
-        "pick_id": "f5500bc08067711b",
+        "pick_id": "049eeed3fde8c82e",
+        "ticker": "BE",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: BE could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "cc526388f219e20f",
+        "ticker": "OKLO",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: OKLO could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "8597126bc8a6af59",
         "ticker": "NVDA",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -749,7 +793,7 @@
         }
       },
       {
-        "pick_id": "3567e88c593c26a1",
+        "pick_id": "2d397394b3e9b886",
         "ticker": "AMD",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -781,7 +825,7 @@
         }
       },
       {
-        "pick_id": "8ece893cb005ce1f",
+        "pick_id": "97de86f449d03fb7",
         "ticker": "AVGO",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -813,11 +857,11 @@
         }
       },
       {
-        "pick_id": "7b1be60f1f024c60",
-        "ticker": "MRVL",
+        "pick_id": "b951cd919dc2895d",
+        "ticker": "ANET",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "summary": "Indirect beneficiary thesis: ANET could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
         "confidence": 0.6,
         "theta_adjusted_confidence": 0.6,
         "pick_score": 29,
@@ -845,7 +889,7 @@
         }
       },
       {
-        "pick_id": "fee9dd459fec9315",
+        "pick_id": "4f21a2e071ef39c6",
         "ticker": "MU",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -877,11 +921,11 @@
         }
       },
       {
-        "pick_id": "1ee4d9fd32b7449f",
-        "ticker": "GLW",
+        "pick_id": "a22344faa78b9549",
+        "ticker": "EQIX",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: GLW could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
         "confidence": 0.6,
         "theta_adjusted_confidence": 0.6,
         "pick_score": 29,
@@ -909,71 +953,7 @@
         }
       },
       {
-        "pick_id": "798712086ed3d8b2",
-        "ticker": "COHR",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
-        "confidence": 0.6,
-        "theta_adjusted_confidence": 0.6,
-        "pick_score": 29,
-        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "0c83d4596c0dff8d",
-        "ticker": "DLR",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: DLR could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
-        "confidence": 0.6,
-        "theta_adjusted_confidence": 0.6,
-        "pick_score": 29,
-        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "045c7eb6dee26d14",
+        "pick_id": "0e29e9d04d9d7555",
         "ticker": "IRM",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -1027,23 +1007,23 @@
     "LLM oracle unavailable; deterministic fallback used."
   ],
   "general_news": {
-    "generated_at": "2026-08-03T13:40:06.368539+00:00",
+    "generated_at": "2026-08-04T13:40:03.496449+00:00",
     "seed_tickers": [
       "ACM",
       "ADSK",
+      "ALNY",
       "APP",
       "CTSH",
       "EQT",
       "FLUT",
-      "IBRX",
+      "INTU",
       "MU",
       "NVDA",
       "TLX",
-      "VRDN",
-      "ZTS"
+      "VRDN"
     ],
     "event_count": 15,
-    "theme_observation_count": 3,
+    "theme_observation_count": 1,
     "events": [
       {
         "ticker": "ACM",
@@ -1052,6 +1032,29 @@
         "direction": "bull",
         "confidence": 0.68,
         "summary": "Indirect beneficiary thesis: ACM could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=builders_engineering; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "builders_engineering",
+        "parent_ticker": "EQT",
+        "evidence": [
+          {
+            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
+            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "MTZ",
+        "type": "sector_catalyst",
+        "event_date": "2026-07-28",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: MTZ could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
         "note": "Read-through theme=data_center_ai_infrastructure bucket=builders_engineering; tracking-only until direct orders, customer wins, or guidance evidence appears.",
         "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
         "directness": "indirect",
@@ -1092,35 +1095,12 @@
         "scoring_eligible": 0
       },
       {
-        "ticker": "GEV",
+        "ticker": "VRT",
         "type": "sector_catalyst",
         "event_date": "2026-07-28",
         "direction": "bull",
         "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "power_equipment",
-        "parent_ticker": "EQT",
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "HUBB",
-        "type": "sector_catalyst",
-        "event_date": "2026-07-28",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: HUBB could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
         "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
         "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
         "directness": "indirect",
@@ -1167,6 +1147,52 @@
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: NRG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "EQT",
+        "evidence": [
+          {
+            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
+            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "BE",
+        "type": "sector_catalyst",
+        "event_date": "2026-07-28",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: BE could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "EQT",
+        "evidence": [
+          {
+            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
+            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "OKLO",
+        "type": "sector_catalyst",
+        "event_date": "2026-07-28",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: OKLO could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
         "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
         "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
         "directness": "indirect",
@@ -1253,12 +1279,12 @@
         "scoring_eligible": 0
       },
       {
-        "ticker": "MRVL",
+        "ticker": "ANET",
         "type": "sector_catalyst",
         "event_date": "2026-07-28",
         "direction": "bull",
         "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "summary": "Indirect beneficiary thesis: ANET could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
         "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
         "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
         "directness": "indirect",
@@ -1299,58 +1325,12 @@
         "scoring_eligible": 0
       },
       {
-        "ticker": "GLW",
+        "ticker": "EQIX",
         "type": "sector_catalyst",
         "event_date": "2026-07-28",
         "direction": "bull",
         "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: GLW could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=optics_cable_connectivity; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "optics_cable_connectivity",
-        "parent_ticker": "EQT",
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "COHR",
-        "type": "sector_catalyst",
-        "event_date": "2026-07-28",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=optics_cable_connectivity; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "optics_cable_connectivity",
-        "parent_ticker": "EQT",
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "DLR",
-        "type": "sector_catalyst",
-        "event_date": "2026-07-28",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: DLR could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
+        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
         "note": "Read-through theme=data_center_ai_infrastructure bucket=data_center_reits; tracking-only until direct orders, customer wins, or guidance evidence appears.",
         "beneficiary_reason": "leased data-center capacity and colocation demand",
         "directness": "indirect",
@@ -1394,7 +1374,7 @@
     "theme_observations": [
       {
         "theme_id": "data_center_ai_infrastructure",
-        "item_index": 22,
+        "item_index": 32,
         "matched_patterns": [
           "data center"
         ],
@@ -1584,47 +1564,11 @@
           }
         ],
         "training_label": null
-      },
-      {
-        "theme_id": "data_center_ai_infrastructure",
-        "item_index": 37,
-        "matched_patterns": [
-          "data center"
-        ],
-        "trigger": {
-          "source": "finnhub_company",
-          "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-          "url": "https://finnhub.io/api/news?id=47bcc432f85ace254d092849b7266b43df7798ba37542ef57c1e4ddfea99e8d9",
-          "published_at": "2026-07-28",
-          "tickers": [
-            "EQT"
-          ]
-        },
-        "generated_beneficiaries": [],
-        "training_label": null
-      },
-      {
-        "theme_id": "data_center_ai_infrastructure",
-        "item_index": 41,
-        "matched_patterns": [
-          "ai infrastructure"
-        ],
-        "trigger": {
-          "source": "finnhub_company",
-          "title": "Earnings, PMI and Other Key Things to Watch this Week",
-          "url": "https://finnhub.io/api/news?id=76b29023b205127f17abac539d6fe371910583b31adc20a06953b4913097cc1d",
-          "published_at": "2026-08-02",
-          "tickers": [
-            "APP"
-          ]
-        },
-        "generated_beneficiaries": [],
-        "training_label": null
       }
     ],
     "artifact": "/Users/antonis/Projects/bull-scouter/data/gpt_news_discovery/latest.json"
   },
-  "markdown": "# Portfolio news scan complete\n\nGenerated: 2026-08-03T14:20:05.417358+00:00\nPortfolio as of: 2026-08-03T12:24:18Z\n\nFound 0 held-position news events across 0 tickers: none.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 15 generated read-through candidate(s), 3 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 751.67 (+0.62% last close); WTI oil 79.30 (-6.34% last close); Gold 4088.70 (+0.98% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed.\n- Price snapshot: Market price snapshot: SPY 751.67 (+0.62% last close); WTI oil 79.30 (-6.34% last close); Gold 4088.70 (+0.98% last close)\nMacro headlines:\n- Stock Market Today: S&P 500, Nasdaq 100 Futures Gain as Fed's Preferred Gauge Core PCE Inflation Eases to - Benzinga (2026-07-30)\n- SPY falls as Fed holds rates steady, Iran tensions spike oil - eciks.org (2026-07-29)\n- Warsh Shooks Markets: 'There is No Soft Inflation Target' - State Street SPDR S&P 500 ETF Trust (ARCA:SPY - Benzinga (2026-07-29)\n- Gold rises on weaker U.S. dollar, soft inflation data - CNBC (2026-07-30)\n- Gold slips as higher US Treasury yields offset focus on Fed chair Warsh\u2019s inflation message - The Business Times (2026-07-29)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-03 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n### Read-Through Themes\n- Theme data_center_ai_infrastructure: trigger=How EQT Is Positioning for Data Center, Power & Global LNG Demand beneficiaries=ACM:builders_engineering, PWR:builders_engineering, MTZ:builders_engineering, J:builders_engineering, ETN:power_equipment, VRT:power_equipment, GEV:power_equipment, HUBB:power_equipment, POWL:power_equipment, CEG:energy_supply, VST:energy_supply, NRG:energy_supply\n- Theme data_center_ai_infrastructure: trigger=How EQT Is Positioning for Data Center, Power & Global LNG Demand beneficiaries=\n- Theme data_center_ai_infrastructure: trigger=Earnings, PMI and Other Key Things to Watch this Week beneficiaries=\nGenerated candidates require follow-up confirmation:\n- ACM: confidence=0.68 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- NVDA: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MU: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- J: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- GEV: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- HUBB: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- POWL: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- NRG: confidence=0.6 bucket=energy_supply - incremental electricity and firm-power demand from AI data centers\n\n## Held Position Updates\n\n## Connecting Opportunities\n\n## Watch Items\n\n## Caveats\n- LLM oracle unavailable; deterministic fallback used.\n",
+  "markdown": "# Portfolio news scan complete\n\nGenerated: 2026-08-04T14:20:05.066920+00:00\nPortfolio as of: 2026-08-04T12:24:44Z\n\nFound 0 held-position news events across 0 tickers: none.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 15 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 761.96 (+0.57% last close); WTI oil 76.49 (-4.79% last close); Gold 4137.00 (+2.56% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed.\n- Price snapshot: Market price snapshot: SPY 761.96 (+0.57% last close); WTI oil 76.49 (-4.79% last close); Gold 4137.00 (+2.56% last close)\nMacro headlines:\n- Stock Market Today: S&P 500, Nasdaq 100 Futures Gain as Fed's Preferred Gauge Core PCE Inflation Eases to - Benzinga (2026-07-30)\n- SPY falls as Fed holds rates steady, Iran tensions spike oil - eciks.org (2026-07-29)\n- Warsh Shooks Markets: 'There is No Soft Inflation Target' - State Street SPDR S&P 500 ETF Trust (ARCA:SPY - Benzinga (2026-07-29)\n- Gold rises on weaker U.S. dollar, soft inflation data - CNBC (2026-07-30)\n- Gold slips as higher US Treasury yields offset focus on Fed chair Warsh\u2019s inflation message - The Business Times (2026-07-29)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-04 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n### Read-Through Themes\n- Theme data_center_ai_infrastructure: trigger=How EQT Is Positioning for Data Center, Power & Global LNG Demand beneficiaries=ACM:builders_engineering, PWR:builders_engineering, MTZ:builders_engineering, J:builders_engineering, ETN:power_equipment, VRT:power_equipment, GEV:power_equipment, HUBB:power_equipment, POWL:power_equipment, CEG:energy_supply, VST:energy_supply, NRG:energy_supply\nGenerated candidates require follow-up confirmation:\n- ACM: confidence=0.68 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- NVDA: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MU: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MTZ: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- J: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- VRT: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- POWL: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- NRG: confidence=0.6 bucket=energy_supply - incremental electricity and firm-power demand from AI data centers\n\n## Held Position Updates\n\n## Connecting Opportunities\n\n## Watch Items\n\n## Caveats\n- LLM oracle unavailable; deterministic fallback used.\n",
   "artifacts": {
     "oracle_json": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.json",
     "oracle_markdown": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.md",
