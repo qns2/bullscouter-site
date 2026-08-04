@@ -1,22 +1,157 @@
 {
   "scan_date": "2026-08-04",
-  "generated_at": "2026-08-04T08:08:28",
+  "generated_at": "2026-08-04T16:30:10",
   "generated_by": "convergence-exporter-v1",
   "scanner_version": "2.47.0",
-  "session_id": "2026-08-04-am",
+  "session_id": "2026-08-04-pm",
   "today": {
     "discovery_stats": {
-      "unique_tickers": 40,
-      "overlap_count": 1
+      "unique_tickers": 68,
+      "overlap_count": 3
     },
     "overlaps": [
+      {
+        "ticker": "VRT",
+        "convergence_type": "aligned",
+        "conviction": "HIGH \u2014 multiple experts agree on same thesis",
+        "experts": [
+          "homer-discovery",
+          "ai_technology"
+        ],
+        "reasons": [
+          {
+            "expert": "ai_technology",
+            "reason": "Vertiv beat on earnings and raised full-year guidance even after a revenue miss tied to timing, reinforcing that AI data-center power and cooling demand remains strong enough to keep the growth story intact."
+          },
+          {
+            "expert": "homer-discovery",
+            "reason": "Vertiv sits in the center of AI data-center cooling and power spend, and even a post-earnings selloff still leaves it as one of the cleanest infrastructure beneficiaries."
+          },
+          {
+            "expert": "ai_technology",
+            "reason": "Vertiv said on July 21 it will double chiller capacity and add a large-scale AI cooling test lab in Italy, a direct signal that AI data center thermal demand is still outrunning supply."
+          }
+        ],
+        "streak": 1,
+        "name": null,
+        "sector": null,
+        "scanner_cross_ref": {
+          "recommendation": "WATCHLIST",
+          "total_score": 70,
+          "path": "path1",
+          "signal_date": "2026-08-04",
+          "entry_price": 263.05
+        },
+        "company_health": {
+          "market_cap": 101271134208.0,
+          "down_from_high_pct": 30.76,
+          "opm": 0.1788580533534052,
+          "rev_g": 0.2768541401432887,
+          "dilution": 0.011461045967647854,
+          "profit": true
+        },
+        "options_flow": {
+          "flow_score": 0.99,
+          "put_call_ratio": 0.609,
+          "iv_skew": -0.0706,
+          "scan_date": "2026-08-04",
+          "bullish_streak": 0,
+          "bullish_count_14d": 0
+        },
+        "news": {
+          "catalyst_events": [
+            {
+              "type": "sector_catalyst",
+              "date": "2026-07-28",
+              "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equip",
+              "source": "gpt_news",
+              "confidence": 0.6
+            },
+            {
+              "type": "sector_catalyst",
+              "date": "2026-07-08",
+              "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equip",
+              "source": "gpt_news",
+              "confidence": 0.6
+            },
+            {
+              "type": "sector_catalyst",
+              "date": "2026-07-06",
+              "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equip",
+              "source": "gpt_news",
+              "confidence": 0.6
+            }
+          ],
+          "nearest_catalyst_days": null
+        },
+        "action": {
+          "entry_low": 220.0,
+          "entry_high": 225.0,
+          "target": 315.66,
+          "stop": 213.4,
+          "rr": 10.24,
+          "rr_at_spot": 1.06,
+          "levels_stale": true,
+          "levels_degenerate": false,
+          "level_warnings": [
+            "levels stale: spot 263.05 is 17% above entry_high 225.00"
+          ],
+          "current_price": 263.05
+        }
+      },
+      {
+        "ticker": "HUN",
+        "convergence_type": "conflicting",
+        "conviction": "RESEARCH FLAG \u2014 experts found it for unrelated reasons",
+        "experts": [
+          "homer-discovery",
+          "insider_flow"
+        ],
+        "reasons": [
+          {
+            "expert": "homer-discovery",
+            "reason": "The CEO bought nearly $1 million of stock at depressed prices, which is the kind of open-market insider signal that tends to matter when a cyclical stock is still out of favor."
+          },
+          {
+            "expert": "homer-discovery",
+            "reason": "CEO Peter Huntsman bought 100,000 shares for about $981K, a large open-market purchase that stands out in a weak chemicals tape."
+          },
+          {
+            "expert": "insider_flow",
+            "reason": "Chairman, President and CEO Peter R. Huntsman bought 100,000 shares for $981,000 at $9.81 on Aug. 3, a large personal bet near a depressed price that reads as strong confidence in the name's setup."
+          }
+        ],
+        "streak": 1,
+        "name": null,
+        "sector": null,
+        "scanner_cross_ref": null,
+        "company_health": {
+          "opm": -0.023051205349287347,
+          "rev_g": -0.05848243870112657,
+          "dilution": -0.027057497181510737,
+          "profit": false
+        },
+        "options_flow": {
+          "flow_score": -3.51,
+          "put_call_ratio": 2.746,
+          "iv_skew": -0.0577,
+          "scan_date": "2026-08-04",
+          "bullish_streak": 0,
+          "bullish_count_14d": 0
+        },
+        "news": {
+          "catalyst_events": [],
+          "nearest_catalyst_days": null
+        },
+        "action": null
+      },
       {
         "ticker": "ACI",
         "convergence_type": "aligned",
         "conviction": "HIGH \u2014 multiple experts agree on same thesis",
         "experts": [
-          "homer-discovery",
-          "insider_flow"
+          "insider_flow",
+          "homer-discovery"
         ],
         "reasons": [
           {
@@ -26,21 +161,25 @@
           {
             "expert": "insider_flow",
             "reason": "Albertsons President and CFO Sharon McCollam bought 9,000 shares at $11.48 and EVP Thomas Moriarty bought 170,500 shares at $11.509 within four days, a two-insider open-market cluster after a sharp selloff and alongside a 15.52% short float with 6.16 days to cover."
+          },
+          {
+            "expert": "insider_flow",
+            "reason": "CEO Susan Morris bought 19,132 shares at $11.38 for $217,664.76 while the stock shows a 15.52% short float and 6.06 days to cover, so insider support is lining up with a potentially squeezeable setup if fundamentals stabilize."
           }
         ],
-        "streak": 3,
+        "streak": 4,
         "name": null,
         "sector": null,
         "scanner_cross_ref": {
-          "recommendation": "PASS",
-          "total_score": 56,
-          "path": "crush",
-          "signal_date": "2026-08-03",
-          "entry_price": 15.02
+          "recommendation": "MOMENTUM",
+          "total_score": 36,
+          "path": "path1",
+          "signal_date": "2026-08-04",
+          "entry_price": 11.5
         },
         "company_health": {
-          "market_cap": 7356472320.0,
-          "down_from_high_pct": 42.16,
+          "market_cap": 5632452096.0,
+          "down_from_high_pct": 42.56,
           "opm": 0.008748083801737354,
           "rev_g": 0.03460093119992447,
           "dilution": -0.05833763551884352,
@@ -55,21 +194,35 @@
           "nearest_catalyst_days": null
         },
         "action": {
-          "entry_low": 14.57,
-          "entry_high": 15.1,
-          "target": 18.02,
-          "stop": 13.82,
-          "rr": 3.14,
+          "entry_low": 11.15,
+          "entry_high": 11.56,
+          "target": 13.8,
+          "stop": 10.58,
+          "rr": 3.15,
           "rr_at_spot": 2.5,
           "levels_stale": false,
           "levels_degenerate": false,
           "level_warnings": [],
-          "current_price": 15.02
+          "current_price": 11.5
         }
       }
     ]
   },
   "history": [
+    {
+      "session_id": "2026-08-04-am",
+      "overlap_count": 1,
+      "overlaps": [
+        {
+          "ticker": "ACI",
+          "convergence_type": "aligned",
+          "experts": [
+            "homer-discovery",
+            "insider_flow"
+          ]
+        }
+      ]
+    },
     {
       "session_id": "2026-08-03-pm",
       "overlap_count": 9,
@@ -332,58 +485,20 @@
           ]
         }
       ]
-    },
-    {
-      "session_id": "2026-07-29-pm",
-      "overlap_count": 5,
-      "overlaps": [
-        {
-          "ticker": "CRM",
-          "convergence_type": "aligned",
-          "experts": [
-            "contrarian_value_antonis",
-            "ai_technology"
-          ]
-        },
-        {
-          "ticker": "AVO",
-          "convergence_type": "conflicting",
-          "experts": [
-            "insider_flow",
-            "homer-discovery"
-          ]
-        },
-        {
-          "ticker": "PNFP",
-          "convergence_type": "complementary",
-          "experts": [
-            "insider_flow",
-            "homer-discovery"
-          ]
-        },
-        {
-          "ticker": "APLD",
-          "convergence_type": "aligned",
-          "experts": [
-            "insider_flow",
-            "homer-discovery"
-          ]
-        },
-        {
-          "ticker": "IREN",
-          "convergence_type": "complementary",
-          "experts": [
-            "insider_flow",
-            "homer-discovery"
-          ]
-        }
-      ]
     }
   ],
   "streaks": [
     {
       "ticker": "ACI",
-      "sessions_converged": 3
+      "sessions_converged": 4
+    },
+    {
+      "ticker": "VRT",
+      "sessions_converged": 1
+    },
+    {
+      "ticker": "HUN",
+      "sessions_converged": 1
     }
   ]
 }
