@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-04T17:26:17",
-  "source_generated_at": "2026-08-04T14:20:05.066920+00:00",
+  "generated_at": "2026-08-05T18:04:06",
+  "source_generated_at": "2026-08-05T14:20:04.928354+00:00",
   "mode": "daily_analysis_site_export",
   "oracle_model": "gpt-5.5",
-  "title": "Portfolio news scan complete",
-  "summary": "Found 0 held-position news events across 0 tickers: none.",
+  "title": "High-end memory and biotech sales lead, but options confirmation is uneven",
+  "summary": "Fact: Direct held-name news was concentrated in SKHY and IBRX, with SKHY getting a bullish analyst read on high-end memory and IBRX reporting Q2 revenue above estimates while still posting a loss. Inference: The strongest theme connection is AI/data-center infrastructure feeding memory demand, but SKHY has no usable ThetaData/options confirmation and also carries policy supply-chain noise from Chinese equipment testing. Options evidence is more constructive in several held names without matching direct news, especially TEAM, NFLX, SOFI, NOW, DRTS, and VIVO, while IBRX has a bullish flow read paired with very high implied volatility. Portfolio-level watch posture is selective: confirmed news and options are aligned best for IBRX, while SKHY is news-led but options-blind.",
   "portfolio": {
-    "as_of": "2026-08-04T12:24:44Z",
-    "position_count": 16,
+    "as_of": "2026-08-05T12:25:10Z",
+    "position_count": 15,
     "tickers": [
       "COPX",
       "DRTS",
@@ -21,36 +21,173 @@
       "SKHY",
       "SOFI",
       "TEAM",
-      "TTD",
       "URNU",
       "VIVO",
       "VWCE"
     ]
   },
   "my_stocks": {
-    "summary": "Found 0 held-position news events across 0 tickers: none.",
+    "summary": "Fact: Direct held-name news was concentrated in SKHY and IBRX, with SKHY getting a bullish analyst read on high-end memory and IBRX reporting Q2 revenue above estimates while still posting a loss. Inference: The strongest theme connection is AI/data-center infrastructure feeding memory demand, but SKHY has no usable ThetaData/options confirmation and also carries policy supply-chain noise from Chinese equipment testing. Options evidence is more constructive in several held names without matching direct news, especially TEAM, NFLX, SOFI, NOW, DRTS, and VIVO, while IBRX has a bullish flow read paired with very high implied volatility. Portfolio-level watch posture is selective: confirmed news and options are aligned best for IBRX, while SKHY is news-led but options-blind.",
     "top_opportunities": [],
     "top_risks": [],
-    "scored_picks": [],
-    "held_position_updates": []
+    "scored_picks": [
+      {
+        "pick_id": "cb761eb6536b1733",
+        "ticker": "IBRX",
+        "direction": "bull",
+        "type": "earnings_beat",
+        "summary": "IBRX reported Q2 2026 revenue of $51.2 million, above the $49.7 million estimate, and said sales growth was driven by Anktiva even as it posted a quarterly loss.",
+        "confidence": 0.84,
+        "theta_adjusted_confidence": 0.84,
+        "pick_score": 52,
+        "pick_score_reason": "theta-adjusted confidence 0.84; ThetaData is unconfirmed; direct company catalyst; elevated IV risk",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "unconfirmed",
+          "flow_score": 3.99,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": 0.8039,
+          "cap": 70
+        },
+        "entry_price": 6.95,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        },
+        "event_count": 1
+      },
+      {
+        "pick_id": "9ff2651276f0d42c",
+        "ticker": "SKHY",
+        "direction": "bull",
+        "type": "analyst_upgrade",
+        "summary": "TipRanks reported that Bank of America called SK Hynix a buy, citing its dominant position in high-end memory.",
+        "confidence": 0.79,
+        "theta_adjusted_confidence": 0.79,
+        "pick_score": 45,
+        "pick_score_reason": "theta-adjusted confidence 0.79; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        },
+        "event_count": 2
+      }
+    ],
+    "held_position_updates": [
+      {
+        "ticker": "SKHY",
+        "stance": "opportunity",
+        "news": "Fact: Bank of America reportedly called SK Hynix a buy, citing dominant positioning in high-end memory; separate reporting says SK Hynix is testing Chinese semiconductor equipment while U.S. restrictions remain a concern.",
+        "theta": "No latest options snapshot; ThetaData/options context is stale with no positive confirmation allowed.",
+        "oracle_note": "Inference: AI/data-center memory demand supports the bullish analyst thesis, but the policy/equipment story keeps this from being clean confirmation."
+      },
+      {
+        "ticker": "IBRX",
+        "stance": "opportunity",
+        "news": "Fact: ImmunityBio reported Q2 2026 revenue of $51.2 million versus a $49.7 million estimate, with growth attributed to Anktiva, while still posting a quarterly loss.",
+        "theta": "2026-08-05 flow_score 3.99, put_call_ratio 0.693, spot 6.95; 30-day ATM IV was 0.8039 from 2026-08-04.",
+        "oracle_note": "Inference: News and options lean in the same bullish direction, but high IV means expectations are already expensive and the loss tempers the revenue beat."
+      },
+      {
+        "ticker": "NFLX",
+        "stance": "neutral",
+        "news": "Fact: No bounded direct NFLX news event was provided in the discovery packet.",
+        "theta": "2026-08-05 flow_score 6.99, put_call_ratio 0.331, 187704 call volume versus 62173 put volume; 30-day ATM IV 0.3915.",
+        "oracle_note": "Inference: Options flow is constructive without a matching news catalyst, so this is momentum evidence rather than a news-confirmed opportunity."
+      },
+      {
+        "ticker": "NOW",
+        "stance": "opportunity",
+        "news": "Fact: No bounded direct NOW news event was provided in the discovery packet.",
+        "theta": "2026-08-05 flow_score 4.02, put_call_ratio 0.337, bullish_streak 1; 30-day ATM IV 0.6376.",
+        "oracle_note": "Inference: Bullish options align loosely with enterprise AI/software demand, but the absence of direct news makes it a watch rather than a confirmed thesis."
+      },
+      {
+        "ticker": "TEAM",
+        "stance": "opportunity",
+        "news": "Fact: No bounded direct TEAM news event was provided in the discovery packet.",
+        "theta": "2026-08-05 flow_score 8.49, put_call_ratio 0.318; 30-day ATM IV 0.9913.",
+        "oracle_note": "Inference: Very strong call-skewed flow is notable, but high IV and no direct catalyst raise event-risk and sentiment-reversal risk."
+      },
+      {
+        "ticker": "SOFI",
+        "stance": "neutral",
+        "news": "Fact: No bounded direct SOFI news event was provided in the discovery packet.",
+        "theta": "2026-08-05 flow_score 6.0, put_call_ratio 0.483, high total options volume; 30-day ATM IV 0.5062.",
+        "oracle_note": "Inference: Options are supportive, but without a news trigger the signal is isolated from today\u2019s discovery themes."
+      },
+      {
+        "ticker": "COPX",
+        "stance": "neutral",
+        "news": "Fact: No bounded direct COPX news event was provided in the discovery packet.",
+        "theta": "2026-08-05 flow_score 3.0, put_call_ratio 1.001, 30-day ATM IV 0.5599.",
+        "oracle_note": "Inference: The flow score is mildly positive despite balanced call and put volume, so copper exposure remains a monitor rather than a clean catalyst."
+      },
+      {
+        "ticker": "SAP",
+        "stance": "neutral",
+        "news": "Fact: No bounded direct SAP news event was provided in the discovery packet.",
+        "theta": "2026-08-05 flow_score -0.51, put_call_ratio 0.967.",
+        "oracle_note": "Inference: Options are roughly balanced to slightly cautious, diverging from the stronger software flow seen in NOW and TEAM."
+      },
+      {
+        "ticker": "DRTS",
+        "stance": "risk",
+        "news": "Fact: No bounded direct DRTS news event was provided in the discovery packet.",
+        "theta": "2026-08-05 flow_score 9.0, put_call_ratio 0.13, but total option volume was low at 295 and IV snapshot is stale from 2026-07-15 at 0.9402.",
+        "oracle_note": "Inference: The flow looks bullish but is low-volume and stale-IV, so treat as fragile signal quality."
+      },
+      {
+        "ticker": "VIVO",
+        "stance": "risk",
+        "news": "Fact: No bounded direct VIVO news event was provided in the discovery packet.",
+        "theta": "2026-08-05 flow_score 9.0, put_call_ratio 0.27, but total option volume was low at 329 and IV snapshot is stale from 2026-07-14 at 1.6689.",
+        "oracle_note": "Inference: Call-skewed flow is outweighed by stale, extremely high IV evidence and no news catalyst."
+      }
+    ]
   },
   "general": {
-    "summary": "General analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 15 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.",
+    "summary": "General analysis is macro-first: 5 macro headline(s), 0 macro event(s), 9 direct company event(s), 15 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.",
     "source_artifact": "data/gpt_news_discovery/latest.json",
-    "generated_at": "2026-08-04T13:40:03.496449+00:00",
+    "generated_at": "2026-08-05T13:41:16.938085+00:00",
     "macro_climate": {
       "status": "ok",
       "price_snapshot": {
-        "title": "Market price snapshot: SPY 761.96 (+0.57% last close); WTI oil 76.49 (-4.79% last close); Gold 4137.00 (+2.56% last close)",
+        "title": "Market price snapshot: SPY 776.39 (+0.66% last close); WTI oil 75.77 (+0.00% last close); Gold 4258.20 (+3.98% last close)",
         "url": "yfinance://SPY,CL=F,GC=F",
-        "published_at": "2026-08-04",
+        "published_at": "2026-08-05",
         "snippet": "Macro context only. Use this with Fed, geopolitical, oil, and gold headlines to infer sector read-throughs; do not treat ETFs or commodities as stock picks.",
         "category_hint": "macro_market_climate"
       },
       "price_moves": {
-        "SPY": 0.57,
-        "WTI oil": -4.79,
-        "Gold": 2.56
+        "SPY": 0.66,
+        "WTI oil": 0.0,
+        "Gold": 3.98
       },
       "tone": "mixed",
       "headlines": [
@@ -90,10 +227,182 @@
           "category_hint": "macro_market_climate"
         }
       ],
-      "summary": "Market price snapshot: SPY 761.96 (+0.57% last close); WTI oil 76.49 (-4.79% last close); Gold 4137.00 (+2.56% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed."
+      "summary": "Market price snapshot: SPY 776.39 (+0.66% last close); WTI oil 75.77 (+0.00% last close); Gold 4258.20 (+3.98% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed."
     },
     "market_wide_events": [],
-    "notable_company_events": [],
+    "notable_company_events": [
+      {
+        "ticker": "INTU",
+        "direction": "bear",
+        "type": "analyst_downgrade",
+        "summary": "Truist Securities downgraded Intuit to Hold from Buy and lowered its price target to $350 from $410.",
+        "confidence": 0.91,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Intuit cut to Hold at Truist on softening growth outlook; shares dip",
+            "url": "https://finnhub.io/api/news?id=282cb7f467119e8963928dcb5b839aecd41c70bcb95eb8534465feb31947c0ca"
+          }
+        ]
+      },
+      {
+        "ticker": "ADSK",
+        "direction": "neutral",
+        "type": "earnings",
+        "summary": "Autodesk scheduled a live webcast for its fiscal second-quarter results on August 27, 2026.",
+        "confidence": 0.9,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Autodesk sets live webcast for fiscal Q2 results Aug. 27 - Stock Titan",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNbGduOUJzMkMxdEhPUVNQLWpyZlh3aG5mdlBfRDhaemxNQVFSMnBra0U2RWNOWGlSU0ZCTm5aR0owUVFJOHloSUR0Vkh3Y205enRKZk5LS3FTRF8yemZLX0dSZEMtUVhsRGZiTmFkM2QyUkxYWFJCSndMeEFITkRGRThvZ0dSaFlzbjJaMHByQkg3VkdiV3BCR2FRYXlRQ1FNdndDem5PUnRwel8weGhYQUd0QXczZ195OHRN?oc=5"
+          }
+        ]
+      },
+      {
+        "ticker": "EQT",
+        "direction": "bull",
+        "type": "buyback",
+        "summary": "EQT AB repurchased 582,510 own ordinary shares during week 31 of 2026, covering 2026-07-27 to 2026-07-31.",
+        "confidence": 0.88,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Repurchases of shares by EQT AB during week 31, 2026",
+            "url": "https://finnhub.io/api/news?id=508db952306bb421a37ab446603794c9c94c9c228280197c0b8f1dc9fdc29d1b"
+          }
+        ]
+      },
+      {
+        "ticker": "ALNY",
+        "direction": "bear",
+        "type": "guidance_change",
+        "summary": "ALNY reported a Q2 earnings miss and cut its '26 sales view.",
+        "confidence": 0.84,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "ALNY Stock Tanks 28% as Q2 Earnings Miss Estimates, '26 Sales View Cut - Yahoo Finance",
+            "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYkM0bXFDY3FLb0N2V2JZZVpKSVhienJuYkVlb3JIOHUxTGxkZWNMNjVBZGtEN1NtZ1FJN1FXZnNaU1hZbUlmeWlUS1plSG40MG9jYnZOb2VWbkFibWFqdDFTa0pzZ1ZydjJWYV9aQy04MUdETmh6SHQ4QTlsQ3dqTFZZVmdHZHVyMzdz?oc=5"
+          }
+        ]
+      },
+      {
+        "ticker": "ALNY",
+        "direction": "bull",
+        "type": "earnings_beat",
+        "summary": "Alnylam's Q2 2026 earnings call transcript said TTR franchise revenues topped $1 billion for the first time as AMVUTTRA gained traction.",
+        "confidence": 0.84,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Alnylam (ALNY) Q2 2026 Earnings Call Transcript",
+            "url": "https://www.fool.com/earnings/call-transcripts/2026/08/03/alnylam-alny-q2-2026-earnings-call-transcript/"
+          }
+        ]
+      },
+      {
+        "ticker": "TLX",
+        "direction": "neutral",
+        "type": "earnings",
+        "summary": "Telix announced an August investor call for its H1 2026 results.",
+        "confidence": 0.79,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Telix Sets August Investor Call for H1 2026 Results - The Globe and Mail",
+            "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOc2RGZmdSLUthb3ZsSjJSZmQ3ZC04YmlTZXE1Wmd6QzdIdUpOdHZsTFNaVF9pR05mclZOb1pTb0VoaXY1eUFnMDdBa09ORGJsX1dtUF9wYkpOdUJNaHVqNWxjTTZ2RkJqal9ZXzFSSmJGQWw3Ty1hempqMk9wOXpuLVB6NDluWDdaclZWd19RVDkwV0FCMXNSM3NobVlma0t5UlJHMjFnTjRkQnplRlRwdERRQ2RlX2JfY094ZzNRZ2xwT09rcFZ6MkQ1ZW5uc1l6UUN3?oc=5"
+          }
+        ]
+      },
+      {
+        "ticker": "APP",
+        "direction": "neutral",
+        "type": "earnings",
+        "summary": "AppLovin is heading into Q2 earnings with double-digit EPS growth expected, while weak price trends and a high valuation keep investors cautious.",
+        "confidence": 0.71,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Should Applovin Stock Be in Your Portfolio Before Q2 Earnings?",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/applovin-stock-portfolio-q2-earnings-164500978.html"
+          }
+        ]
+      },
+      {
+        "ticker": "ALNY",
+        "direction": "bear",
+        "type": "analyst_downgrade",
+        "summary": "Truist Securities maintained a Buy rating on Alnylam Pharmaceuticals while lowering its price target from $410 to $315.",
+        "confidence": 0.69,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Truist Securities Maintains Buy on Alnylam Pharmaceuticals, Lowers Price Target to $315",
+            "url": "https://finnhub.io/api/news?id=131f96ddfa6776435cb678330bc5045b4c0c47336a2c2f89083c02324e7de017"
+          }
+        ]
+      },
+      {
+        "ticker": "ADSK",
+        "direction": "bull",
+        "type": "partnership",
+        "summary": "Autodesk and the University of Florida opened a robotics industrialized construction lab aimed at addressing housing and labor shortages.",
+        "confidence": 0.68,
+        "directness": "direct",
+        "theme_id": null,
+        "theme_bucket": null,
+        "parent_ticker": null,
+        "beneficiary_reason": null,
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "Autodesk and the University of Florida open the most advanced robotics industrialized construction lab in the U.S. to tackle housing and labor shortages",
+            "url": "https://finnhub.io/api/news?id=781de6d44c87edd6180089eafe1450880b6ce8265665fb8584f9911365e711ff"
+          }
+        ]
+      }
+    ],
     "read_through_candidates": [
       {
         "ticker": "ACM",
@@ -104,13 +413,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "builders_engineering",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -123,13 +432,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -142,13 +451,32 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "PWR",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: PWR could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "builders_engineering",
+        "parent_ticker": "CLSK",
+        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -161,32 +489,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "builders_engineering",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ]
-      },
-      {
-        "ticker": "J",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: J could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
-        "confidence": 0.6,
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "builders_engineering",
-        "parent_ticker": "EQT",
-        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -199,13 +508,32 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "power_equipment",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "HUBB",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: HUBB could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "CLSK",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -218,13 +546,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "power_equipment",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -237,13 +565,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "energy_supply",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -256,13 +584,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "energy_supply",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -275,13 +603,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "energy_supply",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -294,13 +622,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -313,13 +641,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
@@ -332,51 +660,32 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       },
       {
-        "ticker": "EQIX",
+        "ticker": "COHR",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
+        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
         "confidence": 0.6,
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "data_center_reits",
-        "parent_ticker": "EQT",
-        "beneficiary_reason": "leased data-center capacity and colocation demand",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "CLSK",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
         "macro_only": false,
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ]
-      },
-      {
-        "ticker": "IRM",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: IRM could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
-        "confidence": 0.6,
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "data_center_reits",
-        "parent_ticker": "EQT",
-        "beneficiary_reason": "leased data-center capacity and colocation demand",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ]
       }
@@ -384,8 +693,8 @@
     "theme_observations": [
       {
         "theme_id": "data_center_ai_infrastructure",
-        "trigger_title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-        "trigger_url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html",
+        "trigger_title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+        "trigger_url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
         "matched_patterns": [
           "data center"
         ],
@@ -468,44 +777,354 @@
     ],
     "theta_market": {
       "status": "ok",
-      "latest_scan_date": "2026-08-04",
+      "latest_scan_date": "2026-08-05",
       "min_total_volume": 500,
-      "scanned_tickers": 0,
+      "scanned_tickers": 1,
       "breadth": {
         "bullish_count": 0,
-        "bearish_count": 0,
+        "bearish_count": 1,
         "neutral_count": 0,
         "held_bullish_count": 0,
         "held_bearish_count": 0,
-        "weighted_put_call_ratio": null,
-        "avg_flow_score_v2": null,
-        "tone": "mixed"
+        "weighted_put_call_ratio": 2.398,
+        "avg_flow_score_v2": -3.99,
+        "tone": "risk_off"
       },
       "bullish_flow": [],
-      "bearish_flow": [],
+      "bearish_flow": [
+        {
+          "ticker": "CLBK",
+          "scan_date": "2026-08-05",
+          "flow_score": -3.99,
+          "flow_score_v2": null,
+          "td_put_call_ratio": 33.132,
+          "td_put_call_oi_ratio": null,
+          "total_call_volume": 344,
+          "total_put_volume": 825,
+          "total_volume": 1169,
+          "total_call_oi": 7967,
+          "total_put_oi": 2874,
+          "spot_price": 10.74,
+          "is_held": false
+        }
+      ],
       "held_overlap": []
     },
     "new_tickers": [
       "ACM",
+      "ADSK",
+      "ALNY",
       "AMD",
       "ANET",
+      "APP",
       "AVGO",
       "BE",
-      "EQIX",
-      "IRM",
-      "J",
+      "COHR",
+      "EQT",
+      "HUBB",
+      "INTU",
       "MTZ",
       "MU",
       "NRG",
       "NVDA",
       "OKLO",
       "POWL",
+      "PWR",
+      "TLX",
       "VRT"
     ],
     "portfolio_read_throughs": [],
     "scored_picks": [
       {
-        "pick_id": "61e55283c48789b4",
+        "pick_id": "95e3d50fda6773e9",
+        "ticker": "ALNY",
+        "direction": "bear",
+        "type": "analyst_downgrade",
+        "summary": "Truist Securities maintained a Buy rating on Alnylam Pharmaceuticals while lowering its price target from $410 to $315.",
+        "confidence": 0.69,
+        "theta_adjusted_confidence": 0.69,
+        "pick_score": 40,
+        "pick_score_reason": "theta-adjusted confidence 0.69; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bear",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "b7ada1a3df4d7601",
+        "ticker": "ADSK",
+        "direction": "bull",
+        "type": "partnership",
+        "summary": "Autodesk and the University of Florida opened a robotics industrialized construction lab aimed at addressing housing and labor shortages.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 39,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "115e8551eb2a5bda",
+        "ticker": "INTU",
+        "direction": "bear",
+        "type": "analyst_downgrade",
+        "summary": "Truist Securities downgraded Intuit to Hold from Buy and lowered its price target to $350 from $410.",
+        "confidence": 0.91,
+        "theta_adjusted_confidence": 0.91,
+        "pick_score": 52,
+        "pick_score_reason": "theta-adjusted confidence 0.91; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bear",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "9bf60ad4ecc9b90b",
+        "ticker": "EQT",
+        "direction": "bull",
+        "type": "buyback",
+        "summary": "EQT AB repurchased 582,510 own ordinary shares during week 31 of 2026, covering 2026-07-27 to 2026-07-31.",
+        "confidence": 0.88,
+        "theta_adjusted_confidence": 0.88,
+        "pick_score": 50,
+        "pick_score_reason": "theta-adjusted confidence 0.88; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "8530739d3f5850ab",
+        "ticker": "ALNY",
+        "direction": "bear",
+        "type": "guidance_change",
+        "summary": "ALNY reported a Q2 earnings miss and cut its '26 sales view.",
+        "confidence": 0.84,
+        "theta_adjusted_confidence": 0.84,
+        "pick_score": 48,
+        "pick_score_reason": "theta-adjusted confidence 0.84; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bear",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "ceaa4ce7b0896c88",
+        "ticker": "TLX",
+        "direction": "neutral",
+        "type": "earnings",
+        "summary": "Telix announced an August investor call for its H1 2026 results.",
+        "confidence": 0.79,
+        "theta_adjusted_confidence": 0.79,
+        "pick_score": 45,
+        "pick_score_reason": "theta-adjusted confidence 0.79; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "neutral",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 58
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "5664d35917759235",
+        "ticker": "ADSK",
+        "direction": "neutral",
+        "type": "earnings",
+        "summary": "Autodesk scheduled a live webcast for its fiscal second-quarter results on August 27, 2026.",
+        "confidence": 0.9,
+        "theta_adjusted_confidence": 0.9,
+        "pick_score": 52,
+        "pick_score_reason": "theta-adjusted confidence 0.90; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "neutral",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 58
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "66e0f123831d7550",
+        "ticker": "APP",
+        "direction": "neutral",
+        "type": "earnings",
+        "summary": "AppLovin is heading into Q2 earnings with double-digit EPS growth expected, while weak price trends and a high valuation keep investors cautious.",
+        "confidence": 0.71,
+        "theta_adjusted_confidence": 0.71,
+        "pick_score": 41,
+        "pick_score_reason": "theta-adjusted confidence 0.71; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "neutral",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 58
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "0b3568130b1b3bf0",
+        "ticker": "ALNY",
+        "direction": "bull",
+        "type": "earnings_beat",
+        "summary": "Alnylam's Q2 2026 earnings call transcript said TTR franchise revenues topped $1 billion for the first time as AMVUTTRA gained traction.",
+        "confidence": 0.84,
+        "theta_adjusted_confidence": 0.84,
+        "pick_score": 48,
+        "pick_score_reason": "theta-adjusted confidence 0.84; no usable ThetaData confirmation; direct company catalyst",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "direct",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "c01f87d535226f1d",
         "ticker": "ACM",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -537,7 +1156,39 @@
         }
       },
       {
-        "pick_id": "837b10bf3297f047",
+        "pick_id": "1ee2bf845f4f1807",
+        "ticker": "PWR",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: PWR could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "1f97ebf3820a460d",
         "ticker": "MTZ",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -569,39 +1220,7 @@
         }
       },
       {
-        "pick_id": "7152ade226a47d68",
-        "ticker": "J",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: J could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
-        "confidence": 0.6,
-        "theta_adjusted_confidence": 0.6,
-        "pick_score": 29,
-        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "8cb51e807aa93717",
+        "pick_id": "08a785574705e2ce",
         "ticker": "VRT",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -633,7 +1252,39 @@
         }
       },
       {
-        "pick_id": "b25092c9e1f1e081",
+        "pick_id": "54b38caac664f92e",
+        "ticker": "HUBB",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: HUBB could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "0a37474541be3b80",
         "ticker": "POWL",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -665,7 +1316,7 @@
         }
       },
       {
-        "pick_id": "57b42111382286f3",
+        "pick_id": "a49a61a3ddedd084",
         "ticker": "NRG",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -697,7 +1348,7 @@
         }
       },
       {
-        "pick_id": "049eeed3fde8c82e",
+        "pick_id": "6f377af6226ec8f0",
         "ticker": "BE",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -729,7 +1380,7 @@
         }
       },
       {
-        "pick_id": "cc526388f219e20f",
+        "pick_id": "60193026a7f74a0f",
         "ticker": "OKLO",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -761,7 +1412,7 @@
         }
       },
       {
-        "pick_id": "8597126bc8a6af59",
+        "pick_id": "413c738c0f5996f5",
         "ticker": "NVDA",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -793,7 +1444,7 @@
         }
       },
       {
-        "pick_id": "2d397394b3e9b886",
+        "pick_id": "0d0635e8134521ec",
         "ticker": "AMD",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -825,7 +1476,7 @@
         }
       },
       {
-        "pick_id": "97de86f449d03fb7",
+        "pick_id": "782704cdab6eb668",
         "ticker": "AVGO",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -857,7 +1508,7 @@
         }
       },
       {
-        "pick_id": "b951cd919dc2895d",
+        "pick_id": "bcfe310891f4a8b7",
         "ticker": "ANET",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -889,7 +1540,7 @@
         }
       },
       {
-        "pick_id": "4f21a2e071ef39c6",
+        "pick_id": "2a246b8dc856200b",
         "ticker": "MU",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -921,11 +1572,11 @@
         }
       },
       {
-        "pick_id": "a22344faa78b9549",
-        "ticker": "EQIX",
+        "pick_id": "9d0c681f615771d3",
+        "ticker": "COHR",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
+        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
         "confidence": 0.6,
         "theta_adjusted_confidence": 0.6,
         "pick_score": 29,
@@ -951,38 +1602,35 @@
           "latest_judgment": null,
           "history": []
         }
+      }
+    ],
+    "llm_summary": "Today\u2019s strongest direct negative reads are INTU, hit by a high-confidence Truist downgrade tied to a softer growth outlook, and ALNY, where a guidance cut and earnings miss outweigh the positive TTR franchise milestone. Opportunity signals are more selective: EQT has direct buyback support, ADSK has a robotics construction partnership plus an upcoming earnings date, and the CleanSpark data-center lease creates broader but indirect infrastructure read-throughs. ThetaData did not provide usable options confirmation, so conviction rests on news quality rather than flow alignment.",
+    "top_opportunities": [
+      {
+        "ticker": "EQT",
+        "why": "Fact: EQT AB repurchased 582,510 ordinary shares in week 31 of 2026. Inference: direct capital-return support gives this one of the cleaner bullish reads in the feed, though options confirmation is unavailable."
       },
       {
-        "pick_id": "0e29e9d04d9d7555",
-        "ticker": "IRM",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: IRM could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
-        "confidence": 0.6,
-        "theta_adjusted_confidence": 0.6,
-        "pick_score": 29,
-        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
+        "ticker": "ADSK",
+        "why": "Fact: Autodesk and the University of Florida opened a robotics industrialized construction lab, and ADSK reports fiscal Q2 results on August 27, 2026. Inference: the partnership supports a long-term construction automation narrative, but the near-term earnings event may dominate."
+      },
+      {
+        "ticker": "ACM",
+        "why": "Fact: CleanSpark signed a $6.6B data-center lease. Inference: engineering and construction names such as ACM could benefit indirectly from AI/data-center buildout demand, with lower confidence because the catalyst is read-through rather than company-specific."
+      }
+    ],
+    "top_risks": [
+      {
+        "ticker": "INTU",
+        "why": "Fact: Truist downgraded Intuit to Hold from Buy and cut its target to $350 from $410 on a softer growth outlook. Inference: this is the highest-confidence direct bearish signal in the set, with no ThetaData offset."
+      },
+      {
+        "ticker": "ALNY",
+        "why": "Fact: ALNY missed Q2 estimates, cut its 2026 sales view, and Truist lowered its price target to $315, despite maintaining Buy. Inference: positive TTR franchise revenue commentary is offset by guidance pressure, leaving the risk signal dominant."
+      },
+      {
+        "ticker": "APP",
+        "why": "Fact: AppLovin heads into Q2 earnings with expected double-digit EPS growth, but weak price trends and high valuation are noted. Inference: expectations and valuation leave APP vulnerable to disappointment around earnings."
       }
     ],
     "general_stale": false,
@@ -1000,35 +1648,343 @@
     "Outcome snapshots are appended every 5 trading days for as long as the pick remains active.",
     "Future calibration should compare direction-aware return against SPY-relative return."
   ],
-  "held_position_updates": [],
-  "connecting_opportunities": [],
-  "watch_items": [],
+  "held_position_updates": [
+    {
+      "ticker": "SKHY",
+      "stance": "opportunity",
+      "news": "Fact: Bank of America reportedly called SK Hynix a buy, citing dominant positioning in high-end memory; separate reporting says SK Hynix is testing Chinese semiconductor equipment while U.S. restrictions remain a concern.",
+      "theta": "No latest options snapshot; ThetaData/options context is stale with no positive confirmation allowed.",
+      "oracle_note": "Inference: AI/data-center memory demand supports the bullish analyst thesis, but the policy/equipment story keeps this from being clean confirmation."
+    },
+    {
+      "ticker": "IBRX",
+      "stance": "opportunity",
+      "news": "Fact: ImmunityBio reported Q2 2026 revenue of $51.2 million versus a $49.7 million estimate, with growth attributed to Anktiva, while still posting a quarterly loss.",
+      "theta": "2026-08-05 flow_score 3.99, put_call_ratio 0.693, spot 6.95; 30-day ATM IV was 0.8039 from 2026-08-04.",
+      "oracle_note": "Inference: News and options lean in the same bullish direction, but high IV means expectations are already expensive and the loss tempers the revenue beat."
+    },
+    {
+      "ticker": "NFLX",
+      "stance": "neutral",
+      "news": "Fact: No bounded direct NFLX news event was provided in the discovery packet.",
+      "theta": "2026-08-05 flow_score 6.99, put_call_ratio 0.331, 187704 call volume versus 62173 put volume; 30-day ATM IV 0.3915.",
+      "oracle_note": "Inference: Options flow is constructive without a matching news catalyst, so this is momentum evidence rather than a news-confirmed opportunity."
+    },
+    {
+      "ticker": "NOW",
+      "stance": "opportunity",
+      "news": "Fact: No bounded direct NOW news event was provided in the discovery packet.",
+      "theta": "2026-08-05 flow_score 4.02, put_call_ratio 0.337, bullish_streak 1; 30-day ATM IV 0.6376.",
+      "oracle_note": "Inference: Bullish options align loosely with enterprise AI/software demand, but the absence of direct news makes it a watch rather than a confirmed thesis."
+    },
+    {
+      "ticker": "TEAM",
+      "stance": "opportunity",
+      "news": "Fact: No bounded direct TEAM news event was provided in the discovery packet.",
+      "theta": "2026-08-05 flow_score 8.49, put_call_ratio 0.318; 30-day ATM IV 0.9913.",
+      "oracle_note": "Inference: Very strong call-skewed flow is notable, but high IV and no direct catalyst raise event-risk and sentiment-reversal risk."
+    },
+    {
+      "ticker": "SOFI",
+      "stance": "neutral",
+      "news": "Fact: No bounded direct SOFI news event was provided in the discovery packet.",
+      "theta": "2026-08-05 flow_score 6.0, put_call_ratio 0.483, high total options volume; 30-day ATM IV 0.5062.",
+      "oracle_note": "Inference: Options are supportive, but without a news trigger the signal is isolated from today\u2019s discovery themes."
+    },
+    {
+      "ticker": "COPX",
+      "stance": "neutral",
+      "news": "Fact: No bounded direct COPX news event was provided in the discovery packet.",
+      "theta": "2026-08-05 flow_score 3.0, put_call_ratio 1.001, 30-day ATM IV 0.5599.",
+      "oracle_note": "Inference: The flow score is mildly positive despite balanced call and put volume, so copper exposure remains a monitor rather than a clean catalyst."
+    },
+    {
+      "ticker": "SAP",
+      "stance": "neutral",
+      "news": "Fact: No bounded direct SAP news event was provided in the discovery packet.",
+      "theta": "2026-08-05 flow_score -0.51, put_call_ratio 0.967.",
+      "oracle_note": "Inference: Options are roughly balanced to slightly cautious, diverging from the stronger software flow seen in NOW and TEAM."
+    },
+    {
+      "ticker": "DRTS",
+      "stance": "risk",
+      "news": "Fact: No bounded direct DRTS news event was provided in the discovery packet.",
+      "theta": "2026-08-05 flow_score 9.0, put_call_ratio 0.13, but total option volume was low at 295 and IV snapshot is stale from 2026-07-15 at 0.9402.",
+      "oracle_note": "Inference: The flow looks bullish but is low-volume and stale-IV, so treat as fragile signal quality."
+    },
+    {
+      "ticker": "VIVO",
+      "stance": "risk",
+      "news": "Fact: No bounded direct VIVO news event was provided in the discovery packet.",
+      "theta": "2026-08-05 flow_score 9.0, put_call_ratio 0.27, but total option volume was low at 329 and IV snapshot is stale from 2026-07-14 at 1.6689.",
+      "oracle_note": "Inference: Call-skewed flow is outweighed by stale, extremely high IV evidence and no news catalyst."
+    }
+  ],
+  "connecting_opportunities": [
+    {
+      "theme": "AI data-center infrastructure and high-end memory",
+      "trigger": "CleanSpark signed a $6.6B data-center lease; SKHY also had a bullish analyst catalyst citing high-end memory leadership.",
+      "held_tickers": [
+        "SKHY"
+      ],
+      "beneficiaries_or_risks": [
+        "beneficiary: high-end memory demand tied to AI infrastructure",
+        "risk: no SKHY options confirmation",
+        "risk: U.S. restrictions and China equipment sourcing uncertainty"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "theme": "Biotech revenue traction with speculative call support",
+      "trigger": "IBRX Q2 revenue beat driven by Anktiva sales growth.",
+      "held_tickers": [
+        "IBRX"
+      ],
+      "beneficiaries_or_risks": [
+        "beneficiary: revenue beat aligns with positive options flow",
+        "risk: quarterly loss remains unresolved",
+        "risk: 80%+ 30-day IV can punish disappointment"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "theme": "Enterprise software options strength without direct news",
+      "trigger": "General software news included caution around INTU growth and APP valuation, while held software names showed mixed options tone.",
+      "held_tickers": [
+        "NOW",
+        "TEAM",
+        "SAP"
+      ],
+      "beneficiaries_or_risks": [
+        "beneficiary: NOW and TEAM show call-skewed flow",
+        "risk: SAP options are near-neutral/slightly negative",
+        "risk: broader software growth caution could cap multiple expansion"
+      ],
+      "confidence": 0.48
+    },
+    {
+      "theme": "Options-only momentum in consumer/fintech names",
+      "trigger": "No direct bounded news, but 2026-08-05 options snapshots showed bullish flow in NFLX and SOFI.",
+      "held_tickers": [
+        "NFLX",
+        "SOFI"
+      ],
+      "beneficiaries_or_risks": [
+        "beneficiary: strong call volume and low put-call ratios",
+        "risk: signal lacks a news catalyst and may be positioning-driven"
+      ],
+      "confidence": 0.44
+    }
+  ],
+  "watch_items": [
+    "Wait for next SKHY options snapshot before upgrading the high-end memory thesis from news-led to confirmed.",
+    "Track whether IBRX follow-through is driven by Anktiva sales commentary or fades because of loss and high IV.",
+    "Monitor NOW and TEAM for direct company catalysts that explain the bullish options flow.",
+    "Check whether SAP continues to diverge from bullish enterprise software options flow.",
+    "Treat DRTS and VIVO options signals cautiously until fresher IV and higher-volume confirmation appear.",
+    "Watch whether the CleanSpark data-center lease theme produces direct order, backlog, or guidance evidence for held or adjacent AI infrastructure names."
+  ],
   "caveats": [
-    "LLM oracle unavailable; deterministic fallback used."
+    "No browsing was used; this JSON relies only on the bounded evidence provided.",
+    "Several held names have no direct news in today\u2019s packet, so their notes are options-led rather than news-confirmed.",
+    "SKHY has stale or missing options context, so ThetaData cannot confirm the bullish analyst catalyst.",
+    "General ThetaData market breadth scanned only one ticker and showed no held overlap, limiting portfolio-wide inference.",
+    "Some IV snapshots for DRTS and VIVO are stale from July 2026."
   ],
   "general_news": {
-    "generated_at": "2026-08-04T13:40:03.496449+00:00",
+    "generated_at": "2026-08-05T13:41:16.938085+00:00",
     "seed_tickers": [
       "ACM",
       "ADSK",
       "ALNY",
       "APP",
-      "CTSH",
       "EQT",
       "FLUT",
       "INTU",
       "MU",
       "NVDA",
       "TLX",
-      "VRDN"
+      "VRDN",
+      "ZTS"
     ],
-    "event_count": 15,
+    "event_count": 24,
     "theme_observation_count": 1,
     "events": [
       {
+        "ticker": "ALNY",
+        "type": "analyst_downgrade",
+        "event_date": "2026-08-04",
+        "direction": "bear",
+        "confidence": 0.69,
+        "summary": "Truist Securities maintained a Buy rating on Alnylam Pharmaceuticals while lowering its price target from $410 to $315.",
+        "evidence": [
+          {
+            "title": "Truist Securities Maintains Buy on Alnylam Pharmaceuticals, Lowers Price Target to $315",
+            "url": "https://finnhub.io/api/news?id=131f96ddfa6776435cb678330bc5045b4c0c47336a2c2f89083c02324e7de017"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_2",
+        "scoring_eligible": 1,
+        "note": "The rating stayed positive, but the lower target points to reduced upside expectations.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "ADSK",
+        "type": "partnership",
+        "event_date": "2026-08-04",
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Autodesk and the University of Florida opened a robotics industrialized construction lab aimed at addressing housing and labor shortages.",
+        "evidence": [
+          {
+            "title": "Autodesk and the University of Florida open the most advanced robotics industrialized construction lab in the U.S. to tackle housing and labor shortages",
+            "url": "https://finnhub.io/api/news?id=781de6d44c87edd6180089eafe1450880b6ce8265665fb8584f9911365e711ff"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_7",
+        "scoring_eligible": 1,
+        "note": "Strategic collaboration and lab opening; no revenue, guidance, or contract value is disclosed.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "INTU",
+        "type": "analyst_downgrade",
+        "event_date": "2026-08-04",
+        "direction": "bear",
+        "confidence": 0.91,
+        "summary": "Truist Securities downgraded Intuit to Hold from Buy and lowered its price target to $350 from $410.",
+        "evidence": [
+          {
+            "title": "Intuit cut to Hold at Truist on softening growth outlook; shares dip",
+            "url": "https://finnhub.io/api/news?id=282cb7f467119e8963928dcb5b839aecd41c70bcb95eb8534465feb31947c0ca"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_9",
+        "scoring_eligible": 1,
+        "note": "The article attributes the move to a softening growth outlook and fewer near-term catalysts.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "EQT",
+        "type": "buyback",
+        "event_date": null,
+        "direction": "bull",
+        "confidence": 0.88,
+        "summary": "EQT AB repurchased 582,510 own ordinary shares during week 31 of 2026, covering 2026-07-27 to 2026-07-31.",
+        "evidence": [
+          {
+            "title": "Repurchases of shares by EQT AB during week 31, 2026",
+            "url": "https://finnhub.io/api/news?id=508db952306bb421a37ab446603794c9c94c9c228280197c0b8f1dc9fdc29d1b"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_finnhub_company_10",
+        "scoring_eligible": 1,
+        "note": "Routine buyback disclosure; the packet does not give program size or remaining authorization.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "ALNY",
+        "type": "guidance_change",
+        "event_date": "2026-07-31",
+        "direction": "bear",
+        "confidence": 0.84,
+        "summary": "ALNY reported a Q2 earnings miss and cut its '26 sales view.",
+        "evidence": [
+          {
+            "title": "ALNY Stock Tanks 28% as Q2 Earnings Miss Estimates, '26 Sales View Cut - Yahoo Finance",
+            "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYkM0bXFDY3FLb0N2V2JZZVpKSVhienJuYkVlb3JIOHUxTGxkZWNMNjVBZGtEN1NtZ1FJN1FXZnNaU1hZbUlmeWlUS1plSG40MG9jYnZOb2VWbkFibWFqdDFTa0pzZ1ZydjJWYV9aQy04MUdETmh6SHQ4QTlsQ3dqTFZZVmdHZHVyMzdz?oc=5"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_google_news_3",
+        "scoring_eligible": 1,
+        "note": "Headline-only evidence; no full article text was provided.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "TLX",
+        "type": "earnings",
+        "event_date": null,
+        "direction": "neutral",
+        "confidence": 0.79,
+        "summary": "Telix announced an August investor call for its H1 2026 results.",
+        "evidence": [
+          {
+            "title": "Telix Sets August Investor Call for H1 2026 Results - The Globe and Mail",
+            "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOc2RGZmdSLUthb3ZsSjJSZmQ3ZC04YmlTZXE1Wmd6QzdIdUpOdHZsTFNaVF9pR05mclZOb1pTb0VoaXY1eUFnMDdBa09ORGJsX1dtUF9wYkpOdUJNaHVqNWxjTTZ2RkJqal9ZXzFSSmJGQWw3Ty1hempqMk9wOXpuLVB6NDluWDdaclZWd19RVDkwV0FCMXNSM3NobVlma0t5UlJHMjFnTjRkQnplRlRwdERRQ2RlX2JfY094ZzNRZ2xwT09rcFZ6MkQ1ZW5uc1l6UUN3?oc=5"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_google_news_10",
+        "scoring_eligible": 1,
+        "note": "The exact call date is not stated in the evidence, so timing is only month-level.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "ADSK",
+        "type": "earnings",
+        "event_date": "2026-08-27",
+        "direction": "neutral",
+        "confidence": 0.9,
+        "summary": "Autodesk scheduled a live webcast for its fiscal second-quarter results on August 27, 2026.",
+        "evidence": [
+          {
+            "title": "Autodesk sets live webcast for fiscal Q2 results Aug. 27 - Stock Titan",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNbGduOUJzMkMxdEhPUVNQLWpyZlh3aG5mdlBfRDhaemxNQVFSMnBra0U2RWNOWGlSU0ZCTm5aR0owUVFJOHloSUR0Vkh3Y205enRKZk5LS3FTRF8yemZLX0dSZEMtUVhsRGZiTmFkM2QyUkxYWFJCSndMeEFITkRGRThvZ0dSaFlzbjJaMHByQkg3VkdiV3BCR2FRYXlRQ1FNdndDem5PUnRwel8weGhYQUd0QXczZ195OHRN?oc=5"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_google_news_14",
+        "scoring_eligible": 1,
+        "note": "This is a scheduled earnings catalyst, not the results themselves.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "APP",
+        "type": "earnings",
+        "event_date": null,
+        "direction": "neutral",
+        "confidence": 0.71,
+        "summary": "AppLovin is heading into Q2 earnings with double-digit EPS growth expected, while weak price trends and a high valuation keep investors cautious.",
+        "evidence": [
+          {
+            "title": "Should Applovin Stock Be in Your Portfolio Before Q2 Earnings?",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/applovin-stock-portfolio-q2-earnings-164500978.html"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_yfinance",
+        "scoring_eligible": 1,
+        "note": "Preview coverage only; no reported results or explicit earnings date is provided in the evidence.",
+        "directness": "direct"
+      },
+      {
+        "ticker": "ALNY",
+        "type": "earnings_beat",
+        "event_date": "2026-08-04",
+        "direction": "bull",
+        "confidence": 0.84,
+        "summary": "Alnylam's Q2 2026 earnings call transcript said TTR franchise revenues topped $1 billion for the first time as AMVUTTRA gained traction.",
+        "evidence": [
+          {
+            "title": "Alnylam (ALNY) Q2 2026 Earnings Call Transcript",
+            "url": "https://www.fool.com/earnings/call-transcripts/2026/08/03/alnylam-alny-q2-2026-earnings-call-transcript/"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "stock_news_yfinance_2",
+        "scoring_eligible": 1,
+        "note": "Transcript-level positive operating milestone; no separate release details are provided in the packet.",
+        "directness": "direct"
+      },
+      {
         "ticker": "ACM",
         "type": "sector_catalyst",
-        "event_date": "2026-07-28",
+        "event_date": "2026-08-05",
         "direction": "bull",
         "confidence": 0.68,
         "summary": "Indirect beneficiary thesis: ACM could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
@@ -1037,11 +1993,34 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "builders_engineering",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "PWR",
+        "type": "sector_catalyst",
+        "event_date": "2026-08-05",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: PWR could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=builders_engineering; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "builders_engineering",
+        "parent_ticker": "CLSK",
+        "evidence": [
+          {
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ],
         "source": "gpt_news",
@@ -1051,7 +2030,7 @@
       {
         "ticker": "MTZ",
         "type": "sector_catalyst",
-        "event_date": "2026-07-28",
+        "event_date": "2026-08-05",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: MTZ could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
@@ -1060,34 +2039,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "builders_engineering",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "J",
-        "type": "sector_catalyst",
-        "event_date": "2026-07-28",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: J could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=builders_engineering; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "builders_engineering",
-        "parent_ticker": "EQT",
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ],
         "source": "gpt_news",
@@ -1097,7 +2053,7 @@
       {
         "ticker": "VRT",
         "type": "sector_catalyst",
-        "event_date": "2026-07-28",
+        "event_date": "2026-08-05",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
@@ -1106,11 +2062,34 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "power_equipment",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "HUBB",
+        "type": "sector_catalyst",
+        "event_date": "2026-08-05",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: HUBB could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "CLSK",
+        "evidence": [
+          {
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ],
         "source": "gpt_news",
@@ -1120,7 +2099,7 @@
       {
         "ticker": "POWL",
         "type": "sector_catalyst",
-        "event_date": "2026-07-28",
+        "event_date": "2026-08-05",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: POWL could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
@@ -1129,11 +2108,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "power_equipment",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ],
         "source": "gpt_news",
@@ -1143,7 +2122,7 @@
       {
         "ticker": "NRG",
         "type": "sector_catalyst",
-        "event_date": "2026-07-28",
+        "event_date": "2026-08-05",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: NRG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
@@ -1152,11 +2131,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "energy_supply",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ],
         "source": "gpt_news",
@@ -1166,7 +2145,7 @@
       {
         "ticker": "BE",
         "type": "sector_catalyst",
-        "event_date": "2026-07-28",
+        "event_date": "2026-08-05",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: BE could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
@@ -1175,11 +2154,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "energy_supply",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ],
         "source": "gpt_news",
@@ -1189,7 +2168,7 @@
       {
         "ticker": "OKLO",
         "type": "sector_catalyst",
-        "event_date": "2026-07-28",
+        "event_date": "2026-08-05",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: OKLO could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
@@ -1198,11 +2177,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "energy_supply",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ],
         "source": "gpt_news",
@@ -1212,7 +2191,7 @@
       {
         "ticker": "NVDA",
         "type": "sector_catalyst",
-        "event_date": "2026-07-28",
+        "event_date": "2026-08-05",
         "direction": "bull",
         "confidence": 0.68,
         "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
@@ -1221,11 +2200,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ],
         "source": "gpt_news",
@@ -1235,7 +2214,7 @@
       {
         "ticker": "AMD",
         "type": "sector_catalyst",
-        "event_date": "2026-07-28",
+        "event_date": "2026-08-05",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: AMD could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
@@ -1244,126 +2223,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "EQT",
+        "parent_ticker": "CLSK",
         "evidence": [
           {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "AVGO",
-        "type": "sector_catalyst",
-        "event_date": "2026-07-28",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: AVGO could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "chips_networking",
-        "parent_ticker": "EQT",
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "ANET",
-        "type": "sector_catalyst",
-        "event_date": "2026-07-28",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: ANET could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "chips_networking",
-        "parent_ticker": "EQT",
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "MU",
-        "type": "sector_catalyst",
-        "event_date": "2026-07-28",
-        "direction": "bull",
-        "confidence": 0.68,
-        "summary": "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "chips_networking",
-        "parent_ticker": "EQT",
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "EQIX",
-        "type": "sector_catalyst",
-        "event_date": "2026-07-28",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=data_center_reits; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "leased data-center capacity and colocation demand",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "data_center_reits",
-        "parent_ticker": "EQT",
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "IRM",
-        "type": "sector_catalyst",
-        "event_date": "2026-07-28",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: IRM could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=data_center_reits; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "leased data-center capacity and colocation demand",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "data_center_reits",
-        "parent_ticker": "EQT",
-        "evidence": [
-          {
-            "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-            "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html"
+            "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+            "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
           }
         ],
         "source": "gpt_news",
@@ -1374,17 +2238,17 @@
     "theme_observations": [
       {
         "theme_id": "data_center_ai_infrastructure",
-        "item_index": 32,
+        "item_index": 4,
         "matched_patterns": [
           "data center"
         ],
         "trigger": {
-          "source": "yfinance",
-          "title": "How EQT Is Positioning for Data Center, Power & Global LNG Demand",
-          "url": "https://finance.yahoo.com/energy/articles/eqt-positioning-data-center-power-173100435.html",
-          "published_at": "2026-07-28",
+          "source": "seeking_alpha",
+          "title": "CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins",
+          "url": "https://seekingalpha.com/news/4626027-cleanspark-signs-66b-data-center-lease-july-bitcoin-production-hits-586-coins?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+          "published_at": "2026-08-05",
           "tickers": [
-            "EQT"
+            "CLSK"
           ]
         },
         "generated_beneficiaries": [
@@ -1568,7 +2432,7 @@
     ],
     "artifact": "/Users/antonis/Projects/bull-scouter/data/gpt_news_discovery/latest.json"
   },
-  "markdown": "# Portfolio news scan complete\n\nGenerated: 2026-08-04T14:20:05.066920+00:00\nPortfolio as of: 2026-08-04T12:24:44Z\n\nFound 0 held-position news events across 0 tickers: none.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 15 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 761.96 (+0.57% last close); WTI oil 76.49 (-4.79% last close); Gold 4137.00 (+2.56% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed.\n- Price snapshot: Market price snapshot: SPY 761.96 (+0.57% last close); WTI oil 76.49 (-4.79% last close); Gold 4137.00 (+2.56% last close)\nMacro headlines:\n- Stock Market Today: S&P 500, Nasdaq 100 Futures Gain as Fed's Preferred Gauge Core PCE Inflation Eases to - Benzinga (2026-07-30)\n- SPY falls as Fed holds rates steady, Iran tensions spike oil - eciks.org (2026-07-29)\n- Warsh Shooks Markets: 'There is No Soft Inflation Target' - State Street SPDR S&P 500 ETF Trust (ARCA:SPY - Benzinga (2026-07-29)\n- Gold rises on weaker U.S. dollar, soft inflation data - CNBC (2026-07-30)\n- Gold slips as higher US Treasury yields offset focus on Fed chair Warsh\u2019s inflation message - The Business Times (2026-07-29)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-04 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n### Read-Through Themes\n- Theme data_center_ai_infrastructure: trigger=How EQT Is Positioning for Data Center, Power & Global LNG Demand beneficiaries=ACM:builders_engineering, PWR:builders_engineering, MTZ:builders_engineering, J:builders_engineering, ETN:power_equipment, VRT:power_equipment, GEV:power_equipment, HUBB:power_equipment, POWL:power_equipment, CEG:energy_supply, VST:energy_supply, NRG:energy_supply\nGenerated candidates require follow-up confirmation:\n- ACM: confidence=0.68 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- NVDA: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MU: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MTZ: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- J: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- VRT: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- POWL: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- NRG: confidence=0.6 bucket=energy_supply - incremental electricity and firm-power demand from AI data centers\n\n## Held Position Updates\n\n## Connecting Opportunities\n\n## Watch Items\n\n## Caveats\n- LLM oracle unavailable; deterministic fallback used.\n",
+  "markdown": "# High-end memory and biotech sales lead, but options confirmation is uneven\n\nGenerated: 2026-08-05T14:20:04.928354+00:00\nPortfolio as of: 2026-08-05T12:25:10Z\n\nFact: Direct held-name news was concentrated in SKHY and IBRX, with SKHY getting a bullish analyst read on high-end memory and IBRX reporting Q2 revenue above estimates while still posting a loss. Inference: The strongest theme connection is AI/data-center infrastructure feeding memory demand, but SKHY has no usable ThetaData/options confirmation and also carries policy supply-chain noise from Chinese equipment testing. Options evidence is more constructive in several held names without matching direct news, especially TEAM, NFLX, SOFI, NOW, DRTS, and VIVO, while IBRX has a bullish flow read paired with very high implied volatility. Portfolio-level watch posture is selective: confirmed news and options are aligned best for IBRX, while SKHY is news-led but options-blind.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 5 macro headline(s), 0 macro event(s), 9 direct company event(s), 15 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 776.39 (+0.66% last close); WTI oil 75.77 (+0.00% last close); Gold 4258.20 (+3.98% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed.\n- Price snapshot: Market price snapshot: SPY 776.39 (+0.66% last close); WTI oil 75.77 (+0.00% last close); Gold 4258.20 (+3.98% last close)\nMacro headlines:\n- Stock Market Today: S&P 500, Nasdaq 100 Futures Gain as Fed's Preferred Gauge Core PCE Inflation Eases to - Benzinga (2026-07-30)\n- SPY falls as Fed holds rates steady, Iran tensions spike oil - eciks.org (2026-07-29)\n- Warsh Shooks Markets: 'There is No Soft Inflation Target' - State Street SPDR S&P 500 ETF Trust (ARCA:SPY - Benzinga (2026-07-29)\n- Gold rises on weaker U.S. dollar, soft inflation data - CNBC (2026-07-30)\n- Gold slips as higher US Treasury yields offset focus on Fed chair Warsh\u2019s inflation message - The Business Times (2026-07-29)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-05 status=ok scanned_tickers=1 min_total_volume=500\nBreadth: tone=risk_off bullish=0 bearish=1 neutral=0 weighted_p/c=2.398 avg_flow_v2=-3.99 held_bullish=0 held_bearish=0\nFlow extremes, not standalone picks:\n- Bearish extreme CLBK: flow_v2=None flow=-3.99 p/c=33.132 vol=1169 held=False\n\n### Notable Company Events\n- Company INTU: bear confidence=0.91 theme=analyst_downgrade - Truist Securities downgraded Intuit to Hold from Buy and lowered its price target to $350 from $410.\n- Company ADSK: neutral confidence=0.9 theme=earnings - Autodesk scheduled a live webcast for its fiscal second-quarter results on August 27, 2026.\n- Company EQT: bull confidence=0.88 theme=buyback - EQT AB repurchased 582,510 own ordinary shares during week 31 of 2026, covering 2026-07-27 to 2026-07-31.\n- Company ALNY: bear confidence=0.84 theme=guidance_change - ALNY reported a Q2 earnings miss and cut its '26 sales view.\n- Company ALNY: bull confidence=0.84 theme=earnings_beat - Alnylam's Q2 2026 earnings call transcript said TTR franchise revenues topped $1 billion for the first time as AMVUTTRA gained traction.\n- Company TLX: neutral confidence=0.79 theme=earnings - Telix announced an August investor call for its H1 2026 results.\n\n### Read-Through Themes\n- Theme data_center_ai_infrastructure: trigger=CleanSpark signs $6.6B data center lease; July Bitcoin production hits 586 coins beneficiaries=ACM:builders_engineering, PWR:builders_engineering, MTZ:builders_engineering, J:builders_engineering, ETN:power_equipment, VRT:power_equipment, GEV:power_equipment, HUBB:power_equipment, POWL:power_equipment, CEG:energy_supply, VST:energy_supply, NRG:energy_supply\nGenerated candidates require follow-up confirmation:\n- ACM: confidence=0.68 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- NVDA: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MU: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- PWR: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- MTZ: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- VRT: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- HUBB: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- POWL: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n\n## Held Position Updates\n- SKHY: opportunity - Fact: Bank of America reportedly called SK Hynix a buy, citing dominant positioning in high-end memory; separate reporting says SK Hynix is testing Chinese semiconductor equipment while U.S. restrictions remain a concern. Theta: No latest options snapshot; ThetaData/options context is stale with no positive confirmation allowed. Note: Inference: AI/data-center memory demand supports the bullish analyst thesis, but the policy/equipment story keeps this from being clean confirmation.\n- IBRX: opportunity - Fact: ImmunityBio reported Q2 2026 revenue of $51.2 million versus a $49.7 million estimate, with growth attributed to Anktiva, while still posting a quarterly loss. Theta: 2026-08-05 flow_score 3.99, put_call_ratio 0.693, spot 6.95; 30-day ATM IV was 0.8039 from 2026-08-04. Note: Inference: News and options lean in the same bullish direction, but high IV means expectations are already expensive and the loss tempers the revenue beat.\n- NFLX: neutral - Fact: No bounded direct NFLX news event was provided in the discovery packet. Theta: 2026-08-05 flow_score 6.99, put_call_ratio 0.331, 187704 call volume versus 62173 put volume; 30-day ATM IV 0.3915. Note: Inference: Options flow is constructive without a matching news catalyst, so this is momentum evidence rather than a news-confirmed opportunity.\n- NOW: opportunity - Fact: No bounded direct NOW news event was provided in the discovery packet. Theta: 2026-08-05 flow_score 4.02, put_call_ratio 0.337, bullish_streak 1; 30-day ATM IV 0.6376. Note: Inference: Bullish options align loosely with enterprise AI/software demand, but the absence of direct news makes it a watch rather than a confirmed thesis.\n- TEAM: opportunity - Fact: No bounded direct TEAM news event was provided in the discovery packet. Theta: 2026-08-05 flow_score 8.49, put_call_ratio 0.318; 30-day ATM IV 0.9913. Note: Inference: Very strong call-skewed flow is notable, but high IV and no direct catalyst raise event-risk and sentiment-reversal risk.\n- SOFI: neutral - Fact: No bounded direct SOFI news event was provided in the discovery packet. Theta: 2026-08-05 flow_score 6.0, put_call_ratio 0.483, high total options volume; 30-day ATM IV 0.5062. Note: Inference: Options are supportive, but without a news trigger the signal is isolated from today\u2019s discovery themes.\n- COPX: neutral - Fact: No bounded direct COPX news event was provided in the discovery packet. Theta: 2026-08-05 flow_score 3.0, put_call_ratio 1.001, 30-day ATM IV 0.5599. Note: Inference: The flow score is mildly positive despite balanced call and put volume, so copper exposure remains a monitor rather than a clean catalyst.\n- SAP: neutral - Fact: No bounded direct SAP news event was provided in the discovery packet. Theta: 2026-08-05 flow_score -0.51, put_call_ratio 0.967. Note: Inference: Options are roughly balanced to slightly cautious, diverging from the stronger software flow seen in NOW and TEAM.\n- DRTS: risk - Fact: No bounded direct DRTS news event was provided in the discovery packet. Theta: 2026-08-05 flow_score 9.0, put_call_ratio 0.13, but total option volume was low at 295 and IV snapshot is stale from 2026-07-15 at 0.9402. Note: Inference: The flow looks bullish but is low-volume and stale-IV, so treat as fragile signal quality.\n- VIVO: risk - Fact: No bounded direct VIVO news event was provided in the discovery packet. Theta: 2026-08-05 flow_score 9.0, put_call_ratio 0.27, but total option volume was low at 329 and IV snapshot is stale from 2026-07-14 at 1.6689. Note: Inference: Call-skewed flow is outweighed by stale, extremely high IV evidence and no news catalyst.\n\n## Connecting Opportunities\n- AI data-center infrastructure and high-end memory: CleanSpark signed a $6.6B data-center lease; SKHY also had a bullish analyst catalyst citing high-end memory leadership. held=['SKHY'] confidence=0.62\n- Biotech revenue traction with speculative call support: IBRX Q2 revenue beat driven by Anktiva sales growth. held=['IBRX'] confidence=0.7\n- Enterprise software options strength without direct news: General software news included caution around INTU growth and APP valuation, while held software names showed mixed options tone. held=['NOW', 'TEAM', 'SAP'] confidence=0.48\n- Options-only momentum in consumer/fintech names: No direct bounded news, but 2026-08-05 options snapshots showed bullish flow in NFLX and SOFI. held=['NFLX', 'SOFI'] confidence=0.44\n\n## Watch Items\n- Wait for next SKHY options snapshot before upgrading the high-end memory thesis from news-led to confirmed.\n- Track whether IBRX follow-through is driven by Anktiva sales commentary or fades because of loss and high IV.\n- Monitor NOW and TEAM for direct company catalysts that explain the bullish options flow.\n- Check whether SAP continues to diverge from bullish enterprise software options flow.\n- Treat DRTS and VIVO options signals cautiously until fresher IV and higher-volume confirmation appear.\n- Watch whether the CleanSpark data-center lease theme produces direct order, backlog, or guidance evidence for held or adjacent AI infrastructure names.\n\n## Caveats\n- No browsing was used; this JSON relies only on the bounded evidence provided.\n- Several held names have no direct news in today\u2019s packet, so their notes are options-led rather than news-confirmed.\n- SKHY has stale or missing options context, so ThetaData cannot confirm the bullish analyst catalyst.\n- General ThetaData market breadth scanned only one ticker and showed no held overlap, limiting portfolio-wide inference.\n- Some IV snapshots for DRTS and VIVO are stale from July 2026.\n",
   "artifacts": {
     "oracle_json": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.json",
     "oracle_markdown": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.md",
