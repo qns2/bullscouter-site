@@ -1,26 +1,26 @@
 {
-  "date": "2026-08-05",
+  "date": "2026-08-06",
   "version": "2.48.0",
   "regime_label": "risk_on",
   "regime_score": 33.0,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 384,
-    "earnings_blackout": 127,
-    "rr_too_low": 22,
+    "below_cutoff": 398,
+    "earnings_blackout": 73,
+    "rr_too_low": 28,
     "frozen": 1
   },
-  "candidates_evaluated": 534,
+  "candidates_evaluated": 500,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 4,
+  "oracle_watch_count": 5,
   "oracle_watch": [
     {
       "ticker": "DVN",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 44.05,
+      "spot_price": 42.09,
       "oracle_note": {
         "text": "Rescan/oracle_watch: live ENTRY_ZONE+ABS_TARGET at $43.40, P4 zone=$38-$44, dual activist thesis, independent BUY MED.",
         "written_at": "2026-08-05"
@@ -31,7 +31,7 @@
       "ticker": "IBRX",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 6.95,
+      "spot_price": 7.25,
       "oracle_note": {
         "text": "Heatmap=71 and alert at $6.96, but earnings=2026-08-04 passed and flow faded to +4.0 from prior +12. No blind add.",
         "written_at": "2026-08-05"
@@ -42,9 +42,20 @@
       "ticker": "LHX",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 285.3,
+      "spot_price": 286.12,
       "oracle_note": {
         "text": "Rescan/oracle_watch: independent source=both BUY/HIGH and defense restocking catalyst; P4 zone $275-$286, prior alert $278.04.",
+        "written_at": "2026-08-05"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "RDW",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 10.72,
+      "oracle_note": {
+        "text": "Rescan post-print only: flow=+12.0, total_volume=30975, skew=bullish/extreme +9.8vp, but earnings=2026-08-05 binary.",
         "written_at": "2026-08-05"
       },
       "filter_reason": "below_cutoff"
@@ -53,7 +64,7 @@
       "ticker": "SNAP",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 5.79,
+      "spot_price": 5.33,
       "oracle_note": {
         "text": "Live ENTRY_ZONE $5.74 inside $5.50-$5.80, but flow deteriorated +12.0 to +4.0. -3 score until 3d flow confirms.",
         "written_at": "2026-08-05"
@@ -76,14 +87,14 @@
       "tier": 0,
       "tier_evidence": [],
       "size_class": "none",
-      "spot_price": 168.41,
+      "spot_price": 163.41,
       "entry": {
-        "low": 163.36,
-        "high": 169.25,
-        "mid": 166.31
+        "low": 158.51,
+        "high": 164.23,
+        "mid": 161.37
       },
-      "target": 202.09,
-      "stop": 154.94,
+      "target": 196.09,
+      "stop": 150.34,
       "rr_ratio": 2.5,
       "rr_planned": 3.15,
       "above_zone_pct": 0.0,
@@ -136,135 +147,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-08-19",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false,
-        "abstained": false
-      }
-    },
-    {
-      "ticker": "PTC",
-      "path": "flow_led",
-      "source": "spike",
-      "composite": 30,
-      "convergence_paths": [
-        "buffett_strong",
-        "watchlist_dip"
-      ],
-      "tier": 0,
-      "tier_evidence": [],
-      "size_class": "none",
-      "spot_price": 141.68,
-      "entry": {
-        "low": 137.43,
-        "high": 142.39,
-        "mid": 139.91
-      },
-      "target": 170.02,
-      "stop": 130.35,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "below_zone_pct": 0.0,
-      "suggested_size_usd": null,
-      "suggested_shares": null,
-      "position_risk_usd": null,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "buffett_quality_strong": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "dilution_risk": {
-        "ticker": "PTC",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "Buffett 68 STRONG + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-08-19",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false,
-        "abstained": false
-      }
-    },
-    {
-      "ticker": "OLED",
-      "path": "flow_led",
-      "source": "spike",
-      "composite": 30,
-      "convergence_paths": [
-        "buffett_strong",
-        "watchlist_dip"
-      ],
-      "tier": 0,
-      "tier_evidence": [],
-      "size_class": "none",
-      "spot_price": 86.22,
-      "entry": {
-        "low": 83.63,
-        "high": 86.65,
-        "mid": 85.14
-      },
-      "target": 103.46,
-      "stop": 79.32,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "below_zone_pct": 0.0,
-      "suggested_size_usd": null,
-      "suggested_shares": null,
-      "position_risk_usd": null,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "buffett_quality_strong": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "dilution_risk": {
-        "ticker": "OLED",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": 0.72,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "Buffett 66 STRONG + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "BUY LIST day 1. CEO+CLO $1.4M cluster buy 5/7 + $400M buyback (10% mcap). 74% GM zero debt. Rescan oracle_watch.",
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-08-19",
+        "expires": "2026-08-20",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false,
