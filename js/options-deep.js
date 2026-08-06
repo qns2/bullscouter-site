@@ -151,11 +151,32 @@
       </div>`;
   }
 
+  function renderDilutionWarning(dr) {
+    if (!dr || !['MEDIUM', 'HIGH'].includes(dr.risk_level)) return '';
+    const note = dr.warning_note || (dr.reasons?.length
+      ? `DILUTION RISK - ${dr.reasons[0]}`
+      : `DILUTION RISK - ${dr.risk_level}`);
+    const cls = dr.risk_level === 'HIGH'
+      ? 'border-red-500/25 bg-red-500/10 text-red-200'
+      : 'border-amber-500/25 bg-amber-500/10 text-amber-100';
+    const filings = (dr.latest_filings || [])
+      .slice(0, 2)
+      .map(f => [f.date, f.form || f.type].filter(Boolean).join(' '))
+      .filter(Boolean)
+      .join(' | ');
+    return `
+      <div class="mt-3 rounded border ${cls} px-3 py-2">
+        <div class="text-[10px] font-bold uppercase tracking-wider">${esc(note)}</div>
+        ${filings ? `<div class="mt-1 text-[10px] opacity-70">${esc(filings)}</div>` : ''}
+      </div>`;
+  }
+
   // ---------- card renderer ----------
   function renderCard(entry) {
     const { ticker, flow, skew, gex, earnings_date } = entry;
     const ivM = entry.iv_metrics || null;
     const volReg = entry.vol_regime || null;
+    const dilutionHtml = renderDilutionWarning(entry.dilution_risk);
     const s = flow?.score;
     const flowExt = flowMap[ticker] || null;
     // Spot fallback chain: options-flow snapshot (freshest) → skew.spot → gex.spot.
@@ -412,6 +433,8 @@
 
       ${flowStatsHtml}
 
+      ${dilutionHtml}
+
       ${ivHtml}
 
       ${volRegimeHtml}
@@ -577,6 +600,7 @@
     if (e.skew) parts.push(`skew ${e.skew.direction} ${fmt(e.skew.risk_reversal_vp)}vp (${e.skew.magnitude})`);
     if (e.gex) parts.push(`${e.gex.regime} Γ₀${fmt(e.gex.zero_gamma_distance_pct)}% ${e.gex.buffer}`);
     if (e.earnings_date) parts.push(`E:${String(e.earnings_date).slice(0, 10)}`);
+    if (e.dilution_risk?.warning_note) parts.push(e.dilution_risk.warning_note);
     return parts.join(' | ');
   }
 
@@ -635,6 +659,9 @@
         suffix = days >= 0 ? ` (${days}d)` : ' (past)';
       }
       lines.push(`Earnings: ${dateStr}${suffix}`);
+    }
+    if (entry.dilution_risk?.warning_note) {
+      lines.push(`Dilution: ${entry.dilution_risk.warning_note}`);
     }
 
     return navigator.clipboard.writeText(lines.join('\n'));
