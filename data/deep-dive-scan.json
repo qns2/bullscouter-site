@@ -1,20 +1,55 @@
 {
-  "scan_date": "2026-07-28",
+  "scan_date": "2026-08-07",
   "status": "rejected",
   "verification": {
     "status": "rejected",
-    "hard_error_count": 2,
-    "soft_warning_count": 20,
+    "hard_error_count": 9,
+    "soft_warning_count": 7,
     "hard_errors": [
       {
-        "ticker": "AEM",
-        "field": "options.oi",
-        "message": "claimed OI=24782, not found in any expiry"
+        "ticker": "WDC",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-07-31, not found in input expiries"
       },
       {
-        "ticker": "MU",
-        "field": "options.oi",
-        "message": "claimed OI=989245, not found in any expiry"
+        "ticker": "WDC",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-08-07, not found in input expiries"
+      },
+      {
+        "ticker": "WDC",
+        "field": "comparables.STX.forward_pe",
+        "message": "claimed=13.5, actual=15.404162"
+      },
+      {
+        "ticker": "WDC",
+        "field": "comparables.STX.growth",
+        "message": "claimed=5.0%, actual=48.5%"
+      },
+      {
+        "ticker": "INTU",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-08-07, not found in input expiries"
+      },
+      {
+        "ticker": "INTU",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-08-06, not found in input expiries"
+      },
+      {
+        "ticker": "ALNY",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-08-07, not found in input expiries"
+      },
+      {
+        "ticker": "OLED",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-08-07, not found in input expiries"
+      },
+      {
+        "ticker": "OLED",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-08-06, not found in input expiries"
       }
     ],
     "reason": null
@@ -23,6 +58,6 @@
   "growth_picks": [],
   "rejected_pick_counts": {
     "value": 6,
-    "growth": 6
+    "growth": 0
   }
 }
