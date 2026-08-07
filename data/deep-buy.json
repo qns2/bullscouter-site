@@ -1,26 +1,94 @@
 {
-  "date": "2026-08-06",
+  "date": "2026-08-07",
   "version": "2.48.0",
   "regime_label": "risk_on",
   "regime_score": 29.3,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 424,
-    "earnings_blackout": 72,
-    "rr_too_low": 28,
+    "below_cutoff": 428,
+    "earnings_blackout": 31,
+    "rr_too_low": 32,
     "frozen": 1
   },
-  "candidates_evaluated": 525,
-  "picks_count": 0,
-  "picks": [],
+  "candidates_evaluated": 493,
+  "picks_count": 1,
+  "picks": [
+    {
+      "ticker": "ZTS",
+      "composite": 55,
+      "convergence_paths": [
+        "path1_buy",
+        "path3_strong_candidate",
+        "catalyst_near"
+      ],
+      "spot_price": 77.27,
+      "entry": {
+        "low": 74.0,
+        "high": 82.0,
+        "mid": 78.0
+      },
+      "target": 149.0,
+      "stop": 71.09,
+      "rr_ratio": 11.61,
+      "rr_planned": 10.27,
+      "above_zone_pct": 0.0,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 927.24,
+      "suggested_shares": 12,
+      "position_risk_usd": 74.16,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "path1": {
+          "score": 25
+        },
+        "path3": {
+          "score": 20
+        },
+        "catalyst": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "ZTS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -4.84,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Tier 2 BUY conf 100 + catalyst near + Path 3 strong. no earnings <45d.",
+      "watchlist_thesis": "Moat/value in zone; flow.score=-1.98 is above prior -3 repair threshold. Prefer $74-$78 starter, earnings-aware.",
+      "rank": 1,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-08-21",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false,
+        "abstained": false
+      },
+      "oracle_note": {
+        "text": "Path1 BUY 90/conf100 + Path3 score=72 + P4 zone=$74-$82 + insider STRONG; earnings today, so post-print limit $74-$76 only.",
+        "written_at": "2026-08-06"
+      }
+    }
+  ],
   "oracle_watch_count": 2,
   "oracle_watch": [
     {
       "ticker": "GPK",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 11.9,
+      "spot_price": 11.87,
       "oracle_note": {
         "text": "Rescan/oracle_watch: Path3 score=66 plus P4 notes 66.7% WR on 39 P3 signals. Action only inside $10.80-$11.30.",
         "written_at": "2026-08-06"
@@ -31,7 +99,7 @@
       "ticker": "IBRX",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 7.25,
+      "spot_price": 7.32,
       "oracle_note": {
         "text": "Rescan post-print: heatmap=59, earnings=2026-08-04 passed, latest catalyst says Q2 revenue beat. Held-risk review, no blind add.",
         "written_at": "2026-08-06"
@@ -43,7 +111,7 @@
   "macro_blocked": [],
   "tier0_watch": [
     {
-      "ticker": "BR",
+      "ticker": "APP",
       "path": "flow_led",
       "source": "spike",
       "composite": 30,
@@ -54,18 +122,18 @@
       "tier": 0,
       "tier_evidence": [],
       "size_class": "none",
-      "spot_price": 163.41,
+      "spot_price": 335.67,
       "entry": {
-        "low": 158.51,
-        "high": 164.23,
-        "mid": 161.37
+        "low": 380.0,
+        "high": 420.0,
+        "mid": 400.0
       },
-      "target": 196.09,
-      "stop": 150.34,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
+      "target": 460.0,
+      "stop": 308.82,
+      "rr_ratio": 4.63,
+      "rr_planned": 0.66,
       "above_zone_pct": 0.0,
-      "below_zone_pct": 0.0,
+      "below_zone_pct": 11.67,
       "suggested_size_usd": null,
       "suggested_shares": null,
       "position_risk_usd": null,
@@ -80,105 +148,44 @@
         }
       },
       "dilution_risk": {
-        "ticker": "BR",
+        "ticker": "APP",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
         "warning_note": null,
         "active_offering": false,
-        "shelf_active": false,
+        "shelf_active": true,
         "shelf_plus_run": false,
-        "price_run_pct_30d": null,
+        "price_run_pct_30d": -10.14,
         "insider_selling_signal": null,
         "latest_filings": [
           {
-            "date": "2026-05-06",
-            "type": "secondary_offering",
-            "form": "424B5",
-            "summary": "BR filed 424B5; prospectus supplement indicates an active offering.",
-            "source": "sec_edgar"
+            "date": "2026-07-08",
+            "type": "dilution_risk",
+            "form": null,
+            "summary": "A Stock Titan item reported Rule 10b5-1 sales trimming AppLovin director holdings.",
+            "source": "gpt_news"
           },
           {
-            "date": "2026-05-04",
-            "type": "secondary_offering",
-            "form": "424B5",
-            "summary": "BR filed 424B5; prospectus supplement indicates an active offering.",
+            "date": "2026-05-06",
+            "type": "s-3asr_shelf_registration",
+            "form": "S-3ASR",
+            "summary": "APP filed S-3ASR; shelf registration is active/dormant dilution risk.",
             "source": "sec_edgar"
           }
         ]
       },
-      "rationale_one_liner": "Buffett 76 STRONG + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
+      "rationale_one_liner": "Buffett 72 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "SEC probe + $74M insider selling. AVOID.",
+      "oracle_note": {
+        "text": "Path1 WATCHLIST 99/conf100 but P4 flags SEC probe + $74M insider selling. -8 conf/-5 score suppresses chase.",
+        "written_at": "2026-08-06"
+      },
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-08-20",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false,
-        "abstained": false
-      }
-    },
-    {
-      "ticker": "DUOL",
-      "path": "flow_led",
-      "source": "spike",
-      "composite": 30,
-      "convergence_paths": [
-        "buffett_strong",
-        "watchlist_dip"
-      ],
-      "tier": 0,
-      "tier_evidence": [],
-      "size_class": "none",
-      "spot_price": 135.32,
-      "entry": {
-        "low": 131.26,
-        "high": 136.0,
-        "mid": 133.63
-      },
-      "target": 162.38,
-      "stop": 124.49,
-      "rr_ratio": 2.5,
-      "rr_planned": 3.15,
-      "above_zone_pct": 0.0,
-      "below_zone_pct": 0.0,
-      "suggested_size_usd": null,
-      "suggested_shares": null,
-      "position_risk_usd": null,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "buffett_quality_strong": {
-          "score": 20
-        },
-        "watchlist_dip": {
-          "score": 10
-        }
-      },
-      "dilution_risk": {
-        "ticker": "DUOL",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": null,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "Buffett 76 STRONG + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": null,
-      "oracle_note": null,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
-        "expires": "2026-08-20",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed hold, IWM 5d unknown, Sector Communication Services, Industry unknown",
+        "expires": "2026-08-21",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false,
