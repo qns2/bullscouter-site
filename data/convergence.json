@@ -1,100 +1,135 @@
 {
-  "scan_date": "2026-08-06",
-  "generated_at": "2026-08-07T16:01:24",
+  "scan_date": "2026-08-10",
+  "generated_at": "2026-08-10T08:04:09",
   "generated_by": "convergence-exporter-v1",
   "scanner_version": "2.48.0",
-  "session_id": "2026-08-06-am",
+  "session_id": "2026-08-10-am",
   "today": {
     "discovery_stats": {
-      "unique_tickers": 41,
+      "unique_tickers": 40,
       "overlap_count": 2
     },
     "overlaps": [
       {
-        "ticker": "TRI",
-        "convergence_type": "complementary",
-        "conviction": "HIGH \u2014 different angles all point to same stock",
+        "ticker": "AMAT",
+        "convergence_type": "conflicting",
+        "conviction": "RESEARCH FLAG \u2014 experts found it for unrelated reasons",
         "experts": [
-          "homer-discovery",
-          "ai_technology"
+          "ai_technology",
+          "contrarian_value_antonis"
         ],
         "reasons": [
           {
             "expert": "ai_technology",
-            "reason": "Thomson Reuters raised full-year guidance after Q2 growth and is embedding Claude into CoCounsel, which makes AI an actual upsell in a sticky workflow business."
+            "reason": "Applied Materials' record Q2 revenue and upcoming Q3 guide are tied to AI-driven DRAM, logic, and advanced packaging capex, making it a direct equipment beneficiary of the next fab-spending wave."
           },
-          {
-            "expert": "homer-discovery",
-            "reason": "Thomson Reuters got a fresh capital-return catalyst after Reuters reported a $600 million buyback announcement, which can support EPS and signal management confidence."
-          }
-        ],
-        "streak": 1,
-        "name": null,
-        "sector": null,
-        "scanner_cross_ref": null,
-        "company_health": {},
-        "options_flow": {
-          "bullish_streak": 0,
-          "bullish_count_14d": 0
-        },
-        "news": {
-          "catalyst_events": [],
-          "nearest_catalyst_days": null
-        },
-        "action": null,
-        "catalyst_reaction": {
-          "verdict": "rejected",
-          "sessions": 6,
-          "window": [
-            "2026-07-30",
-            "2026-08-06"
-          ],
-          "spike_day": "2026-08-04",
-          "spike_excess_pct": 5.62,
-          "net_excess_pct": -2.29,
-          "last_excess_pct": 1.72,
-          "benchmark": "SPY",
-          "source": "live"
-        },
-        "conviction_effective": "RESEARCH FLAG \u2014 the market already sold this catalyst"
-      },
-      {
-        "ticker": "GTM",
-        "convergence_type": "complementary",
-        "conviction": "HIGH \u2014 different angles all point to same stock",
-        "experts": [
-          "contrarian_value_antonis",
-          "ai_technology"
-        ],
-        "reasons": [
           {
             "expert": "contrarian_value_antonis",
-            "reason": "ZoomInfo is still about 70% below its 52-week high and only a few percent above today's low, while today's Q2 2026 earnings beat plus the February $1B buyback authorization give it a real reset catalyst; bear case is that the legacy seat-based model is still shrinking and the stock can look cheap for a reason."
-          },
-          {
-            "expert": "ai_technology",
-            "reason": "ZoomInfo's AI-headwind downgrade and near-flat growth suggest its data-sales model is being commoditized faster than management can reaccelerate revenue."
+            "reason": "Applied Materials is 27.1% below its 52-week high, remains highly profitable, and reports on August 13, 2026 AMC; with AI-driven DRAM/logic spend still a tailwind, the setup is attractive if management confirms demand strength, though export controls remain the main bear case."
           }
         ],
         "streak": 1,
         "name": null,
         "sector": null,
         "scanner_cross_ref": {
-          "recommendation": "CANDIDATE",
-          "total_score": 62,
-          "path": "path3",
-          "signal_date": "2026-03-26",
-          "entry_price": 5.81
+          "recommendation": "STRONG_QUALITY",
+          "total_score": 74,
+          "path": "path5",
+          "signal_date": "2026-07-25",
+          "entry_price": 536.25
         },
         "company_health": {
-          "market_cap": 1773761920.0,
-          "down_from_high_pct": 53.55715427657874,
-          "opm": 0.18063225290116047,
-          "rev_g": 0.028987894260067426,
-          "dilution": -0.18482938094630375,
+          "market_cap": 425760751616.0,
+          "opm": 0.2921954314720812,
+          "rev_g": 0.04386223138063006,
+          "dilution": -0.043786982248520734,
           "profit": true
         },
         "options_flow": {
+          "bullish_streak": 0,
+          "bullish_count_14d": 0
+        },
+        "news": {
+          "catalyst_events": [
+            {
+              "type": "sector_catalyst",
+              "date": "2026-07-10",
+              "summary": "Stifel said Applied Materials is among the semiconductor equipment names benefiting from a prolonged demand cycle.",
+              "source": "gpt_news",
+              "confidence": 0.69
+            }
+          ],
+          "nearest_catalyst_days": null
+        },
+        "action": {
+          "entry_low": 492.44,
+          "entry_high": 510.21,
+          "target": 609.2,
+          "stop": 467.06,
+          "rr": 3.15,
+          "rr_at_spot": 2.5,
+          "levels_stale": false,
+          "levels_degenerate": false,
+          "level_warnings": [],
+          "current_price": 507.67,
+          "price_source": "prices_daily",
+          "price_as_of": "2026-07-31"
+        },
+        "catalyst_reaction": {
+          "verdict": "already_moved",
+          "sessions": 6,
+          "window": [
+            "2026-07-31",
+            "2026-08-07"
+          ],
+          "spike_day": "2026-08-04",
+          "spike_excess_pct": 3.68,
+          "net_excess_pct": 2.69,
+          "last_excess_pct": 1.6,
+          "benchmark": "SPY",
+          "source": "live"
+        },
+        "conviction_effective": "RESEARCH FLAG \u2014 the market already bought this catalyst"
+      },
+      {
+        "ticker": "CSGP",
+        "convergence_type": "conflicting",
+        "conviction": "RESEARCH FLAG \u2014 experts found it for unrelated reasons",
+        "experts": [
+          "insider_flow",
+          "homer-discovery"
+        ],
+        "reasons": [
+          {
+            "expert": "homer-discovery",
+            "reason": "CoStar has been punished to roughly 69% below its 52-week high even after a recent earnings beat and buyback support, which makes the valuation reset look disconnected from the long-term franchise quality."
+          },
+          {
+            "expert": "insider_flow",
+            "reason": "Founder and CEO Andrew Florance bought 83,300 shares for $2,489,837 in a recent open-market transaction, which is a high-conviction signal from the top executive."
+          }
+        ],
+        "streak": 1,
+        "name": null,
+        "sector": null,
+        "scanner_cross_ref": {
+          "recommendation": "DIP",
+          "total_score": 0,
+          "path": "path4",
+          "signal_date": "2026-07-15",
+          "entry_price": 27.68000030517578
+        },
+        "company_health": {
+          "opm": -0.02217431475207884,
+          "rev_g": 0.1867690058479532,
+          "dilution": 0.033914966822315096,
+          "profit": true
+        },
+        "options_flow": {
+          "flow_score": 6.0,
+          "put_call_ratio": 0.264,
+          "iv_skew": 0.0251,
+          "scan_date": "2026-08-08",
           "bullish_streak": 0,
           "bullish_count_14d": 0
         },
@@ -103,38 +138,60 @@
           "nearest_catalyst_days": null
         },
         "action": {
-          "entry_low": 2.73,
-          "entry_high": 2.82,
-          "target": 3.37,
-          "stop": 2.59,
-          "rr": 3.23,
-          "rr_at_spot": 2.55,
+          "entry_low": 28.69,
+          "entry_high": 29.73,
+          "target": 35.5,
+          "stop": 27.21,
+          "rr": 3.14,
+          "rr_at_spot": 2.5,
           "levels_stale": false,
           "levels_degenerate": false,
           "level_warnings": [],
-          "current_price": 2.81,
+          "current_price": 29.58,
           "price_source": "prices_daily",
-          "price_as_of": "2026-06-18"
+          "price_as_of": "2026-08-06"
         },
         "catalyst_reaction": {
-          "verdict": "already_moved",
-          "sessions": 6,
+          "verdict": "unreacted",
+          "sessions": 5,
           "window": [
-            "2026-07-30",
+            "2026-07-31",
             "2026-08-06"
           ],
-          "spike_day": "2026-08-06",
-          "spike_excess_pct": 13.27,
-          "net_excess_pct": 21.08,
-          "last_excess_pct": 13.27,
+          "spike_day": null,
+          "spike_excess_pct": null,
+          "net_excess_pct": -0.03,
+          "last_excess_pct": -1.93,
           "benchmark": "SPY",
-          "source": "live"
+          "source": "prices_daily"
         },
-        "conviction_effective": "HIGH \u2014 the market already bought this catalyst"
+        "conviction_effective": "RESEARCH FLAG \u2014 experts found it for unrelated reasons"
       }
     ]
   },
   "history": [
+    {
+      "session_id": "2026-08-06-am",
+      "overlap_count": 2,
+      "overlaps": [
+        {
+          "ticker": "TRI",
+          "convergence_type": "complementary",
+          "experts": [
+            "homer-discovery",
+            "ai_technology"
+          ]
+        },
+        {
+          "ticker": "GTM",
+          "convergence_type": "complementary",
+          "experts": [
+            "contrarian_value_antonis",
+            "ai_technology"
+          ]
+        }
+      ]
+    },
     {
       "session_id": "2026-08-05-pm",
       "overlap_count": 3,
@@ -337,79 +394,15 @@
           ]
         }
       ]
-    },
-    {
-      "session_id": "2026-07-31-pm",
-      "overlap_count": 7,
-      "overlaps": [
-        {
-          "ticker": "MU",
-          "convergence_type": "conflicting",
-          "experts": [
-            "homer-discovery",
-            "ai_technology"
-          ]
-        },
-        {
-          "ticker": "MSFT",
-          "convergence_type": "aligned",
-          "experts": [
-            "ai_technology",
-            "insider_flow"
-          ]
-        },
-        {
-          "ticker": "ADBE",
-          "convergence_type": "aligned",
-          "experts": [
-            "contrarian_value_antonis",
-            "homer-discovery",
-            "ai_technology"
-          ]
-        },
-        {
-          "ticker": "NKE",
-          "convergence_type": "conflicting",
-          "experts": [
-            "contrarian_value_antonis",
-            "homer-discovery"
-          ]
-        },
-        {
-          "ticker": "LHX",
-          "convergence_type": "aligned",
-          "experts": [
-            "contrarian_value_antonis",
-            "geopolitics"
-          ]
-        },
-        {
-          "ticker": "IBM",
-          "convergence_type": "aligned",
-          "experts": [
-            "contrarian_value_antonis",
-            "homer-discovery"
-          ]
-        },
-        {
-          "ticker": "TSM",
-          "convergence_type": "aligned",
-          "experts": [
-            "geopolitics",
-            "homer-discovery",
-            "insider_flow"
-          ]
-        }
-      ]
     }
   ],
   "streaks": [
     {
-      "ticker": "TRI",
+      "ticker": "AMAT",
       "sessions_converged": 1
     },
     {
-      "ticker": "GTM",
+      "ticker": "CSGP",
       "sessions_converged": 1
     }
   ]
