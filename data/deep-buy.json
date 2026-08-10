@@ -2,98 +2,52 @@
   "date": "2026-08-10",
   "version": "2.48.0",
   "regime_label": "risk_on",
-  "regime_score": 31.0,
+  "regime_score": 29.0,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 365,
-    "earnings_blackout": 28,
+    "below_cutoff": 364,
+    "earnings_blackout": 30,
     "rr_too_low": 32,
     "frozen": 1
   },
-  "candidates_evaluated": 426,
-  "picks_count": 0,
-  "picks": [],
-  "oracle_watch_count": 3,
-  "oracle_watch": [
+  "candidates_evaluated": 428,
+  "picks_count": 1,
+  "picks": [
     {
-      "ticker": "ZTS",
-      "composite": 20,
+      "ticker": "FOUR",
+      "composite": 45,
       "convergence_paths": [
+        "path1_buy",
         "path3_strong_candidate"
       ],
-      "spot_price": 72.66,
-      "oracle_note": {
-        "text": "Path1 BUY 90/conf100 + Path3 score=72 + P4 zone=$74-$82 + insider STRONG; earnings today, so post-print limit $74-$76 only.",
-        "written_at": "2026-08-06"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "GPK",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 12.1,
-      "oracle_note": {
-        "text": "Rescan/oracle_watch: Path3 score=66 plus P4 notes 66.7% WR on 39 P3 signals. Action only inside $10.80-$11.30.",
-        "written_at": "2026-08-06"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "IBRX",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 7.64,
-      "oracle_note": {
-        "text": "Rescan post-print: heatmap=59, earnings=2026-08-04 passed, latest catalyst says Q2 revenue beat. Held-risk review, no blind add.",
-        "written_at": "2026-08-06"
-      },
-      "filter_reason": "below_cutoff"
-    }
-  ],
-  "macro_blocked_count": 0,
-  "macro_blocked": [],
-  "tier0_watch": [
-    {
-      "ticker": "TTD",
-      "path": "flow_led",
-      "source": "spike",
-      "composite": 30,
-      "convergence_paths": [
-        "buffett_strong",
-        "watchlist_dip"
-      ],
-      "tier": 0,
-      "tier_evidence": [],
-      "size_class": "none",
-      "spot_price": 13.8,
+      "spot_price": 41.26,
       "entry": {
-        "low": 19.0,
-        "high": 22.0,
-        "mid": 20.5
+        "low": 33.0,
+        "high": 38.0,
+        "mid": 35.5
       },
-      "target": 40.0,
-      "stop": 12.7,
-      "rr_ratio": 23.82,
-      "rr_planned": 2.5,
-      "above_zone_pct": 0.0,
-      "below_zone_pct": 27.37,
-      "suggested_size_usd": null,
-      "suggested_shares": null,
-      "position_risk_usd": null,
+      "target": 65.0,
+      "stop": 32.01,
+      "rr_ratio": 2.57,
+      "rr_planned": 8.45,
+      "above_zone_pct": 8.58,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 990.24,
+      "suggested_shares": 24,
+      "position_risk_usd": 222.0,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
-        "buffett_quality_strong": {
-          "score": 20
+        "path1": {
+          "score": 25
         },
-        "watchlist_dip": {
-          "score": 10
+        "path3": {
+          "score": 20
         }
       },
       "dilution_risk": {
-        "ticker": "TTD",
+        "ticker": "FOUR",
         "risk_level": "LOW",
         "penalty": 0,
         "reasons": [],
@@ -101,25 +55,57 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": 1.96,
+        "price_run_pct_30d": -13.41,
         "insider_selling_signal": null,
         "latest_filings": []
       },
-      "rationale_one_liner": "Buffett 67 STRONG + watchlist dip alert. no earnings <45d.",
-      "watchlist_thesis": "HELD basis $28.92; spot alerted near $17.58 below stated $19-$20 stop. Risk-review only, no add.",
-      "oracle_note": null,
+      "rationale_one_liner": "Tier 2 BUY conf 95 + Path 3 strong. no earnings <45d.",
+      "watchlist_thesis": "CEO $23.9M buy plus Path3 score=77; current spot is far above zone. Rescan/watch, no chase.",
+      "rank": 1,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed hold, IWM 5d unknown, Sector Communication Services, Industry unknown",
+        "log": "MACRO FILTER: PASS - CPI stable, PPI stable, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
         "expires": "2026-08-24",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false,
         "abstained": false
+      },
+      "oracle_note": {
+        "text": "Path1 BUY 85/conf95 + Path3 78, but P4 entry_low/high=$33/$38 vs spot $41.26 and low_margin=-10; -5 confidence to prevent chase.",
+        "written_at": "2026-08-10"
       }
     }
   ],
+  "oracle_watch_count": 2,
+  "oracle_watch": [
+    {
+      "ticker": "ISRG",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 378.81,
+      "oracle_note": {
+        "text": "P4 ENTRY_ZONE at $378.81 within $375-$415 and independent blind spot BUY HIGH. Rescan for oracle_watch before any starter.",
+        "written_at": "2026-08-10"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "RDDT",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 161.7,
+      "oracle_note": {
+        "text": "P4 ENTRY_ZONE at $161.70 within $155-$163 with target $240; director buyback thesis. Rescan for cross-path validation.",
+        "written_at": "2026-08-10"
+      },
+      "filter_reason": "below_cutoff"
+    }
+  ],
+  "macro_blocked_count": 0,
+  "macro_blocked": [],
+  "tier0_watch": [],
   "flow_led_picks_count": 0,
   "flow_led_picks": [],
   "flow_extreme_picks_count": 0,
