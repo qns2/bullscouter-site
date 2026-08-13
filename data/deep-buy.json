@@ -1,29 +1,68 @@
 {
   "date": "2026-08-13",
   "version": "2.48.0",
-  "regime_label": "neutral",
-  "regime_score": 7.5,
+  "regime_label": "risk_on",
+  "regime_score": 31.3,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 332,
-    "rr_too_low": 38,
-    "earnings_blackout": 17,
+    "below_cutoff": 334,
+    "rr_too_low": 37,
+    "earnings_blackout": 18,
     "frozen": 1
   },
-  "candidates_evaluated": 388,
+  "candidates_evaluated": 390,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 5,
+  "oracle_watch_count": 8,
   "oracle_watch": [
     {
-      "ticker": "AMRC",
+      "ticker": "BSX",
+      "composite": 25,
+      "convergence_paths": [
+        "path1_buy"
+      ],
+      "spot_price": 51.42,
+      "oracle_note": {
+        "text": "P1 BUY 85/conf92 and flow_score=+9.0, but options volume=223 and spot $51.42 below $52-$63 zone. Require reclaim + liquidity.",
+        "written_at": "2026-08-13"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ADBE",
+      "composite": 20,
+      "convergence_paths": [
+        "path3_strong_candidate"
+      ],
+      "spot_price": 258.75,
+      "oracle_note": {
+        "text": "Independent source=both BUY + buyback/insider thesis; current $258.75 is above $225-$240 zone, so +5 is oracle_watch only.",
+        "written_at": "2026-08-13"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "BR",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 169.27,
+      "oracle_note": {
+        "text": "Independent source=both STRONG BUY + buyback/dividend thesis; rescan for oracle_watch, but no immediate buy without P4 zone.",
+        "written_at": "2026-08-13"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "APTV",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 25.65,
+      "spot_price": 48.48,
       "oracle_note": {
-        "text": "Independent blind spot: CEO/director open-market buying cluster Aug7-11 after earnings. Rescan; speculative due leverage/FCF.",
-        "written_at": "2026-08-12"
+        "text": "Independent source=both BUY + Path3 score=62 + flow_score=+9.0, but volume=2908 below 5K rule; rescan/watch, not flow-led entry.",
+        "written_at": "2026-08-13"
       },
       "filter_reason": "below_cutoff"
     },
@@ -33,8 +72,8 @@
       "convergence_paths": [],
       "spot_price": 401.27,
       "oracle_note": {
-        "text": "Independent blind spot + P4 ENTRY_ZONE $375-$415; quality installed-base thesis. Rescan for scanner coverage.",
-        "written_at": "2026-08-12"
+        "text": "P4 ENTRY_ZONE $401.27 inside $375-$415; scanner blind spot with Da Vinci 5 thesis. Rescan for evidence, no positive score boost yet.",
+        "written_at": "2026-08-13"
       },
       "filter_reason": "below_cutoff"
     },
@@ -44,19 +83,19 @@
       "convergence_paths": [],
       "spot_price": 54.11,
       "oracle_note": {
-        "text": "Independent source=both BUY + P4 ENTRY_ZONE $54-$57 + rare-earth/DoD catalyst; rescan for oracle_watch, starter limit only.",
-        "written_at": "2026-08-12"
+        "text": "Independent source=both BUY + P4 ENTRY_ZONE $54.11 in $54-$57 zone; flow_score=0.0 but liquid. +5 for disciplined limit setup.",
+        "written_at": "2026-08-13"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "SMMT",
+      "ticker": "NCLH",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 15.1,
+      "spot_price": 18.92,
       "oracle_note": {
-        "text": "Heatmap score=36 with earnings+FDA+insider_buy cluster; rescan to verify fresh insider/catalyst evidence before elevation.",
-        "written_at": "2026-08-12"
+        "text": "P4 ENTRY_ZONE $18.92 in $18-$21, liquid options volume=17163 and activist/CEO-buy thesis. Half-size only after earnings refresh.",
+        "written_at": "2026-08-13"
       },
       "filter_reason": "below_cutoff"
     },
@@ -66,8 +105,8 @@
       "convergence_paths": [],
       "spot_price": 73.54,
       "oracle_note": {
-        "text": "P3 portfolio + P4 ENTRY_ZONE $74-$82; moat/value setup with flow_score=+3.51. Rescan for oracle_watch; prefer $74-$78.",
-        "written_at": "2026-08-12"
+        "text": "P4 DIP/ABS_TARGET at $73.54, just below $74-$82 zone; moat/value setup with flow_score=+3.5. Bid only after reclaim $74.",
+        "written_at": "2026-08-13"
       },
       "filter_reason": "below_cutoff"
     }
