@@ -2,19 +2,19 @@
   "date": "2026-08-18",
   "version": "2.48.0",
   "regime_label": "neutral",
-  "regime_score": 14.7,
+  "regime_score": 21.4,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
     "earnings_blackout": 16,
-    "below_cutoff": 287,
+    "below_cutoff": 289,
     "rr_too_low": 35,
     "frozen": 1
   },
-  "candidates_evaluated": 339,
+  "candidates_evaluated": 341,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 10,
+  "oracle_watch_count": 6,
   "oracle_watch": [
     {
       "ticker": "BSX",
@@ -24,8 +24,8 @@
       ],
       "spot_price": 51.43,
       "oracle_note": {
-        "text": "P1 BUY 83/conf92 + P4 zone=$52-$63, spot=$51.83, but options-deep flow.score=-2.01, signal=bear, scan_date=2026-08-14. Require reclaim $52 + flow >0.",
-        "written_at": "2026-08-17"
+        "text": "Rescan: Path1 BUY score=86/conf=92 + P4 zone=$52-$63; alert $51.83. Starter only after $52 reclaim/hold.",
+        "written_at": "2026-08-18"
       },
       "filter_reason": "below_cutoff"
     },
@@ -37,52 +37,19 @@
       ],
       "spot_price": 50.04,
       "oracle_note": {
-        "text": "Rescan for oracle_watch: Daily Buy + Path3 70 + P4 zone=$50-$55 + independent source=both, but options volume below 5K standing rule.",
-        "written_at": "2026-08-17"
+        "text": "Rescan: Daily Buy + Path3 score=70 + P4 zone=$50-$55 + independent insider-buy thesis. Require >5K options volume.",
+        "written_at": "2026-08-18"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "AUPH",
+      "ticker": "HII",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 15.29,
+      "spot_price": 318.34,
       "oracle_note": {
-        "text": "Rescan for oracle_watch: P4 ENTRY_ZONE alert $15.47 inside $14.50-$16.50; insider/Phase 3 kidney thesis, biotech sizing only.",
-        "written_at": "2026-08-17"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "CELH",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 29.95,
-      "oracle_note": {
-        "text": "Rescan for oracle_watch: Daily Buy + Path3 score=62 + prior liquid bullish flow; needs P4 entry zone before real-capital entry.",
-        "written_at": "2026-08-17"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "FSLR",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 217.85,
-      "oracle_note": {
-        "text": "Independent source=both BUY HIGH and midday DIP alert; no clean P4 entry zone in context. Rescan for oracle_watch measurement.",
-        "written_at": "2026-08-17"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "GPK",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 11.0,
-      "oracle_note": {
-        "text": "Rescan for oracle_watch: Path3 survivor + P4 rescued thesis with entry=$10.80-$11.30; half-size, stop discipline near $10.",
-        "written_at": "2026-08-17"
+        "text": "Rescan: P4 ENTRY_ZONE=$310-$330, alert=$327.71, defense backlog thesis. Verify earnings TODAY BMO before entry.",
+        "written_at": "2026-08-18"
       },
       "filter_reason": "below_cutoff"
     },
@@ -92,41 +59,30 @@
       "convergence_paths": [],
       "spot_price": 390.33,
       "oracle_note": {
-        "text": "Rescan for oracle_watch: P4 ENTRY_ZONE alert $394.51 inside $375-$415 Da Vinci 5 quality thesis; half-size only after fresh-news validation.",
-        "written_at": "2026-08-17"
+        "text": "Rescan: P4 ENTRY_ZONE=$375-$415, alert=$394.51; high-quality medtech blind spot. Starter only inside zone.",
+        "written_at": "2026-08-18"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "MP",
+      "ticker": "ONON",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 58.51,
+      "spot_price": 31.31,
       "oracle_note": {
-        "text": "Rescan for oracle_watch: P4 entry=$54-$57 + independent source=both BUY; alert price $58.74 is above zone, so bid lower only.",
-        "written_at": "2026-08-17"
+        "text": "Path1 WATCHLIST score=88/conf=94 plus independent BUY HIGH and founder buying cluster. +5 conf only; needs defined entry zone.",
+        "written_at": "2026-08-18"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "ULTA",
+      "ticker": "RDDT",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 510.75,
+      "spot_price": 164.5,
       "oracle_note": {
-        "text": "Independent blind spot BUY MEDIUM with earnings=2026-08-27. Rescan, but enforce earnings blackout and entry-zone discipline.",
-        "written_at": "2026-08-17"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "VC",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 107.8,
-      "oracle_note": {
-        "text": "Rescan for oracle_watch: P4 ENTRY_ZONE alert $108.22 inside $105-$118; $800M buyback thesis, but options liquidity too thin.",
-        "written_at": "2026-08-17"
+        "text": "Rescan: independent STRONG BUY HIGH, S&P 500 inclusion + AI licensing; P4 entry_zone=$155-$163, not a chase at $178.",
+        "written_at": "2026-08-18"
       },
       "filter_reason": "below_cutoff"
     }
