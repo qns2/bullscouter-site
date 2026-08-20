@@ -2,19 +2,19 @@
   "date": "2026-08-20",
   "version": "2.48.0",
   "regime_label": "neutral",
-  "regime_score": 14.3,
+  "regime_score": 5.2,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
     "earnings_blackout": 9,
-    "below_cutoff": 453,
+    "below_cutoff": 458,
     "rr_too_low": 35,
     "frozen": 1
   },
-  "candidates_evaluated": 498,
+  "candidates_evaluated": 503,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 4,
+  "oracle_watch_count": 6,
   "oracle_watch": [
     {
       "ticker": "BSX",
@@ -24,8 +24,8 @@
       ],
       "spot_price": 52.01,
       "oracle_note": {
-        "text": "Path1 BUY score=90/conf=96 + P4 entry_zone=$52-$63, but spot=$50.47 below zone. Rescan; starter only after $52 reclaim.",
-        "written_at": "2026-08-19"
+        "text": "Path1 BUY score=91/conf=96 + P4 entry_zone=$52-$63, spot=$52.01. Rescan; starter only $52-$54 in defensive stance.",
+        "written_at": "2026-08-20"
       },
       "filter_reason": "below_cutoff"
     },
@@ -37,8 +37,19 @@
       ],
       "spot_price": 48.92,
       "oracle_note": {
-        "text": "Daily Buy + Path3 score=70 + P4 entry_zone=$50-$55 + options flow=+10.5, volume=7807. +5 conf; require $50 reclaim.",
-        "written_at": "2026-08-19"
+        "text": "Daily Buy + Path3 score=70 + P4 zone=$50-$55 + independent source=both, but spot=$48.04 below reclaim. Rescan/watch only.",
+        "written_at": "2026-08-20"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ISRG",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 397.72,
+      "oracle_note": {
+        "text": "Independent action=BUY/source=both + P4 entry_zone=$375-$415, spot=$397.72. Rescan/watch for quality drawdown setup.",
+        "written_at": "2026-08-20"
       },
       "filter_reason": "below_cutoff"
     },
@@ -48,19 +59,30 @@
       "convergence_paths": [],
       "spot_price": 56.68,
       "oracle_note": {
-        "text": "Independent source=both BUY + P4 ENTRY_ZONE alert=$56.67, entry_zone=$54-$57. Rescan for oracle_watch; prefer $54-$55 limit.",
-        "written_at": "2026-08-19"
+        "text": "P4 entry_zone=$54-$57 + independent source=both rare-earth catalyst; spot=$56.68. Rescan, prefer $54-$55 limit.",
+        "written_at": "2026-08-20"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "REZI",
+      "ticker": "SMMT",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 21.02,
+      "spot_price": 13.11,
       "oracle_note": {
-        "text": "Independent blind spot: CEO/SVP buys near $20.5 after pullback. Rescan Path3/insider; negative FCF and leverage cap sizing.",
-        "written_at": "2026-08-19"
+        "text": "Heatmap score=40 signals=earnings/fda/insider_buy; P4 says flow_score=+9.0 volume=10786 but no entry zone. Rescan/watch.",
+        "written_at": "2026-08-20"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "SNDK",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 1568.87,
+      "oracle_note": {
+        "text": "Independent action=STRONG BUY/source=both, but P4 alert price=$1568.87 indicates split/price normalization bug. Validate before ranking.",
+        "written_at": "2026-08-20"
       },
       "filter_reason": "below_cutoff"
     }
