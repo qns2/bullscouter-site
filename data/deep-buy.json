@@ -2,19 +2,19 @@
   "date": "2026-08-21",
   "version": "2.48.0",
   "regime_label": "neutral",
-  "regime_score": 5.2,
+  "regime_score": -0.4,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
     "earnings_blackout": 10,
-    "below_cutoff": 427,
+    "below_cutoff": 428,
     "rr_too_low": 32,
     "frozen": 1
   },
-  "candidates_evaluated": 470,
+  "candidates_evaluated": 471,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 7,
+  "oracle_watch_count": 10,
   "oracle_watch": [
     {
       "ticker": "BSX",
@@ -24,8 +24,8 @@
       ],
       "spot_price": 49.37,
       "oracle_note": {
-        "text": "Path1 BUY score=91/conf=96 + P4 entry_zone=$52-$63, spot=$52.01. Rescan; starter only $52-$54 in defensive stance.",
-        "written_at": "2026-08-20"
+        "text": "Path1 BUY 100/conf100 + P4 zone=$50-$52 + alert price=$49.37; +5 conf supports starter limit only, no chase >$54.",
+        "written_at": "2026-08-21"
       },
       "filter_reason": "below_cutoff"
     },
@@ -38,8 +38,8 @@
       ],
       "spot_price": 248.7,
       "oracle_note": {
-        "text": "Ziihera PDUFA confirmed 2026-08-25; heatmap fda signal valid. Rescan binary watch, no full-size pre-event entry.",
-        "written_at": "2026-08-20"
+        "text": "Rescan/oracle_watch: independent confirms Ziihera sBLA PDUFA=2026-08-25; binary catalyst watch, not full-size pre-event buy.",
+        "written_at": "2026-08-21"
       },
       "filter_reason": "below_cutoff"
     },
@@ -51,19 +51,32 @@
       ],
       "spot_price": 47.03,
       "oracle_note": {
-        "text": "Daily Buy + Path3 score=70 + P4 zone=$50-$55 + independent source=both, but spot=$48.04 below reclaim. Rescan/watch only.",
-        "written_at": "2026-08-20"
+        "text": "Rescan/oracle_watch: Daily Buy + Path3 70 + P4 zone=$47-$50 + independent source=both + insider STRONG; half-size only.",
+        "written_at": "2026-08-21"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "ISRG",
+      "ticker": "AVGO",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 364.03,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: independent STRONG BUY source=both + Path5 quality + P4 zone=$360-$385; small limit, tech tape soft.",
+        "written_at": "2026-08-21"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ACM",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 374.48,
+      "spot_price": 65.18,
       "oracle_note": {
-        "text": "Independent action=BUY/source=both + P4 entry_zone=$375-$415, spot=$397.72. Rescan/watch for quality drawdown setup.",
-        "written_at": "2026-08-20"
+        "text": "Rescan/oracle_watch: contrarian portfolio fresh + P4 zone=$68-$74 + insider STRONG; needs live price/flow confirmation.",
+        "written_at": "2026-08-21"
       },
       "filter_reason": "below_cutoff"
     },
@@ -73,8 +86,8 @@
       "convergence_paths": [],
       "spot_price": 55.04,
       "oracle_note": {
-        "text": "P4 entry_zone=$54-$57 + independent source=both rare-earth catalyst; spot=$56.68. Rescan, prefer $54-$55 limit.",
-        "written_at": "2026-08-20"
+        "text": "Rescan/oracle_watch: independent source=both + P4 zone=$54-$57; rare-earth policy catalyst valid, negative FCF caps size.",
+        "written_at": "2026-08-21"
       },
       "filter_reason": "below_cutoff"
     },
@@ -84,19 +97,41 @@
       "convergence_paths": [],
       "spot_price": 12.43,
       "oracle_note": {
-        "text": "Heatmap score=40 signals=earnings/fda/insider_buy; P4 says flow_score=+9.0 volume=10786 but no entry zone. Rescan/watch.",
-        "written_at": "2026-08-20"
+        "text": "Rescan/oracle_watch: heatmap score=40 with earnings+fda+insider_buy and P4-cited flow +9, volume=10786; verify blackout.",
+        "written_at": "2026-08-21"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "SNDK",
+      "ticker": "TRIP",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 1600.62,
+      "spot_price": 10.03,
       "oracle_note": {
-        "text": "Independent action=STRONG BUY/source=both, but P4 alert price=$1568.87 indicates split/price normalization bug. Validate before ranking.",
-        "written_at": "2026-08-20"
+        "text": "Rescan/oracle_watch: Path3 score=70 + activist Yes + P4 ENTRY_ZONE/DIP at $10.03; actionable only inside $9-$10.50.",
+        "written_at": "2026-08-21"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "VC",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 105.86,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $105.34 in $105-$118 with buyback thesis; validate fundamentals/news before capital.",
+        "written_at": "2026-08-21"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ZTS",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 75.02,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $75.02 inside $74-$82 moat/value setup; defensive starter only, no Path1/Path3 overlap.",
+        "written_at": "2026-08-21"
       },
       "filter_reason": "below_cutoff"
     }
