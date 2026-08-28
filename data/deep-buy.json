@@ -1,20 +1,20 @@
 {
   "date": "2026-08-28",
   "version": "2.48.0",
-  "regime_label": "neutral",
-  "regime_score": 19.4,
+  "regime_label": "risk_on",
+  "regime_score": 26.6,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 323,
+    "below_cutoff": 328,
     "rr_too_low": 34,
     "earnings_blackout": 10,
     "frozen": 1
   },
-  "candidates_evaluated": 368,
+  "candidates_evaluated": 373,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 4,
+  "oracle_watch_count": 6,
   "oracle_watch": [
     {
       "ticker": "BSX",
@@ -24,8 +24,21 @@
       ],
       "spot_price": 46.67,
       "oracle_note": {
-        "text": "Deep Buy oracle_watch composite 25 (path1_buy); Path1 BUY score=93/conf96, P4 entry_zone=$48.25-$49.50, flow.score=3.0.",
-        "written_at": "2026-08-27"
+        "text": "deep_buy oracle_watch composite 25 (path1_buy); Path1 BUY score=100/conf=100 and P4 DIP price=$46.67. Best native setup.",
+        "written_at": "2026-08-28"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ACN",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 187.38,
+      "oracle_note": {
+        "text": "Rescan: P4 entry_zone=$185-$200, Path5 score=82, independent source=both BUY; context says Path1 anchors stale 153d.",
+        "written_at": "2026-08-28"
       },
       "filter_reason": "below_cutoff"
     },
@@ -37,8 +50,19 @@
       ],
       "spot_price": 153.95,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: Path5 score=80 + P4 entry_zone=$155-$163 + director buy/$1B buyback; wait for flow.score>0.",
-        "written_at": "2026-08-27"
+        "text": "Rescan/oracle_watch: P4 entry_zone=$150-$154 + Path5 score=80 + director buy/$1B buyback; wait for flow_score >0.",
+        "written_at": "2026-08-28"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "IONS",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 62.43,
+      "oracle_note": {
+        "text": "PDUFA=2026-09-22, heatmap score=44, independent BUY/HIGH; strongest binary watch but entry only in $58-$60 zone.",
+        "written_at": "2026-08-28"
       },
       "filter_reason": "below_cutoff"
     },
@@ -48,19 +72,19 @@
       "convergence_paths": [],
       "spot_price": 14.33,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: heatmap score=40 signals=earnings,fda,insider_buy; verify event dates and blackout before promotion.",
-        "written_at": "2026-08-27"
+        "text": "Rescan/oracle_watch: heatmap score=40 signals=earnings,fda,insider_buy; validate dates and blackout before promotion.",
+        "written_at": "2026-08-28"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "TMUS",
+      "ticker": "WDC",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 179.61,
+      "spot_price": 462.0,
       "oracle_note": {
-        "text": "Independent blind spot BUY/MED: quality cash-flow compounder after ~31% drawdown; rescan for valuation and entry-zone only.",
-        "written_at": "2026-08-27"
+        "text": "Independent blind spot on AI storage scarcity; rescan/build zone before entry because no current P4/Path1 confirmation.",
+        "written_at": "2026-08-28"
       },
       "filter_reason": "below_cutoff"
     }
