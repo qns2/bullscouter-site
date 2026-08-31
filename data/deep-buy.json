@@ -1,21 +1,35 @@
 {
   "date": "2026-08-31",
   "version": "2.48.0",
-  "regime_label": "risk_on",
-  "regime_score": 26.6,
+  "regime_label": "neutral",
+  "regime_score": 11.9,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 321,
-    "rr_too_low": 32,
+    "below_cutoff": 324,
+    "rr_too_low": 33,
     "earnings_blackout": 10,
     "frozen": 1
   },
-  "candidates_evaluated": 364,
+  "candidates_evaluated": 368,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 6,
+  "oracle_watch_count": 10,
   "oracle_watch": [
+    {
+      "ticker": "CRUS",
+      "composite": 35,
+      "convergence_paths": [
+        "path3_strong_candidate",
+        "path5_strong_quality"
+      ],
+      "spot_price": 108.48,
+      "oracle_note": {
+        "text": "Rescan blind spot: independent BUY on low valuation/cash generation; handset/Apple concentration keeps this oracle_watch, not BUY.",
+        "written_at": "2026-08-31"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "BSX",
       "composite": 25,
@@ -24,8 +38,34 @@
       ],
       "spot_price": 46.84,
       "oracle_note": {
-        "text": "deep_buy oracle_watch composite 25 (path1_buy); Path1 BUY score=100/conf=100 and P4 DIP price=$46.67. Best native setup.",
-        "written_at": "2026-08-28"
+        "text": "deep_buy oracle_watch composite 25 (path1_buy); Path1 BUY 83/conf94 + buyback + streak=16, but flow_score=0.99 neutral.",
+        "written_at": "2026-08-31"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "SMMT",
+      "composite": 25,
+      "convergence_paths": [
+        "path1_buy"
+      ],
+      "spot_price": 13.73,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: Path1 BUY 82/conf98 + heatmap_score=40, but PDUFA=2026-11-14 and flow volume=2377 fail 5K rule.",
+        "written_at": "2026-08-31"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "DKS",
+      "composite": 20,
+      "convergence_paths": [
+        "path3_strong_candidate"
+      ],
+      "spot_price": 135.09,
+      "oracle_note": {
+        "text": "Rescan blind spot: independent BUY cites Aug 26-27 director buying after collapse; Foot Locker leverage/FCF risk needs validation.",
+        "written_at": "2026-08-31"
       },
       "filter_reason": "below_cutoff"
     },
@@ -37,8 +77,8 @@
       ],
       "spot_price": 189.61,
       "oracle_note": {
-        "text": "Rescan: P4 entry_zone=$185-$200, Path5 score=82, independent source=both BUY; context says Path1 anchors stale 153d.",
-        "written_at": "2026-08-28"
+        "text": "Rescan: independent source=both + Path5=82 + P4 entry_zone=$185-$200, but flow_score=0.51 neutral and Path1 anchors stale.",
+        "written_at": "2026-08-31"
       },
       "filter_reason": "below_cutoff"
     },
@@ -50,8 +90,8 @@
       ],
       "spot_price": 153.0,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: P4 entry_zone=$150-$154 + Path5 score=80 + director buy/$1B buyback; wait for flow_score >0.",
-        "written_at": "2026-08-28"
+        "text": "Rescan/oracle_watch: P4 zone=$150-$154 + Path5 score=80 + buyback; flow_score=0.0 neutral, use low bid only.",
+        "written_at": "2026-08-31"
       },
       "filter_reason": "below_cutoff"
     },
@@ -61,30 +101,41 @@
       "convergence_paths": [],
       "spot_price": 61.05,
       "oracle_note": {
-        "text": "PDUFA=2026-09-22, heatmap score=44, independent BUY/HIGH; strongest binary watch but entry only in $58-$60 zone.",
-        "written_at": "2026-08-28"
+        "text": "Rescan: PDUFA=2026-09-22, heatmap_score=44, flow_score=6.0, volume=5514; best binary watch, entry only $58-$60.",
+        "written_at": "2026-08-31"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "SMMT",
+      "ticker": "MP",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 13.73,
+      "spot_price": 56.13,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: heatmap score=40 signals=earnings,fda,insider_buy; validate dates and blackout before promotion.",
-        "written_at": "2026-08-28"
+        "text": "Rescan: independent source=both BUY + P4 zone=$54-$57 + flow_score=3.51 volume=11312; negative FCF/valuation cap size.",
+        "written_at": "2026-08-31"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "WDC",
+      "ticker": "RDW",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 459.45,
+      "spot_price": 10.87,
       "oracle_note": {
-        "text": "Independent blind spot on AI storage scarcity; rescan/build zone before entry because no current P4/Path1 confirmation.",
-        "written_at": "2026-08-28"
+        "text": "Rescan: P4 entry_zone=$10.80-$11.10 with flow_score=9.0 volume=13916; no market order, small GTC tranche only.",
+        "written_at": "2026-08-31"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "SNAP",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 5.43,
+      "oracle_note": {
+        "text": "Rescan: ENTRY_ZONE=$5.50-$5.80 and flow_score=9.0 volume=20959, but TD=false and bullish_streak=0; speculative watch only.",
+        "written_at": "2026-08-31"
       },
       "filter_reason": "below_cutoff"
     }
