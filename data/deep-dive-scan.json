@@ -1,10 +1,10 @@
 {
-  "scan_date": "2026-08-31",
+  "scan_date": "2026-09-01",
   "status": "rejected",
   "verification": {
     "status": "rejected",
-    "hard_error_count": 3,
-    "soft_warning_count": 17,
+    "hard_error_count": 7,
+    "soft_warning_count": 16,
     "hard_errors": [
       {
         "ticker": "XYL",
@@ -17,9 +17,29 @@
         "message": "claimed=0.015%, actual=1.5%"
       },
       {
+        "ticker": "NVDA",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-09-01, not found in input expiries"
+      },
+      {
+        "ticker": "NVDA",
+        "field": "comparables.MU.growth",
+        "message": "claimed=3.457%, actual=345.7%"
+      },
+      {
         "ticker": "MU",
         "field": "analyst_distribution.buy",
         "message": "claimed=2026, actual buy=34, buy_total=43"
+      },
+      {
+        "ticker": "MU",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-09-01, not found in input expiries"
+      },
+      {
+        "ticker": "MU",
+        "field": "comparables.NVDA.growth",
+        "message": "claimed=1.059%, actual=105.9%"
       }
     ],
     "reason": null
