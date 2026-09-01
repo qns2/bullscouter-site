@@ -1,11 +1,11 @@
 {
-  "scan_date": "2026-08-31",
-  "scan_time": "16:33",
+  "scan_date": "2026-09-01",
+  "scan_time": "16:11",
   "version": "2.48.0",
   "stats": {
     "stocks_monitored": 350,
-    "recent_alerts": 691,
-    "tickers_alerted": 154
+    "recent_alerts": 673,
+    "tickers_alerted": 155
   },
   "stocks": [
     {
@@ -80,7 +80,7 @@
       "ticker": "ACN",
       "name": "Accenture plc",
       "profile": "quality",
-      "thesis": "Independent source=both BUY and Path5 82, but Path1 context is STALE 153d and price anchors conflict. Reconcile before entry.",
+      "thesis": "Independent source=both + Path5 82, but flow_score=0.51 neutral and Path1 anchors stale; starter only after rescan.",
       "abs_target": 205.0,
       "entry_low": 185.0,
       "entry_high": 200.0,
@@ -386,7 +386,7 @@
       "ticker": "APTV",
       "name": null,
       "profile": null,
-      "thesis": "Path3/P4 convergence and flow_score=9.0, but volume=746 fails 5K rule; half-size/tiny limit only.",
+      "thesis": "Independent source=both and contrarian reset setup; auto cyclicality and prior sub-5K options volume cap sizing.",
       "abs_target": 62.0,
       "entry_low": 46.0,
       "entry_high": 48.5,
@@ -573,7 +573,7 @@
       "ticker": "AVGO",
       "name": null,
       "profile": null,
-      "thesis": "Independent STRONG BUY + Path5 80 + flow_score=5.01, but earnings=2026-09-02; starter only, no oversized pre-print bet.",
+      "thesis": "Independent STRONG BUY + Path5 80 + P4 zone, but earnings=2026-09-02; starter only or wait post-print.",
       "abs_target": 480.0,
       "entry_low": 360.0,
       "entry_high": 385.0,
@@ -732,7 +732,7 @@
       "entry_high": null,
       "fwd_pe": null,
       "score": 34,
-      "earnings_date": "2026-08-06",
+      "earnings_date": "2026-10-26",
       "thesis_stale": false,
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
@@ -753,7 +753,7 @@
       "thesis_stale": false,
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
-      "zone_stale": true,
+      "zone_stale": false,
       "target_stale": false
     },
     {
@@ -811,9 +811,9 @@
       "ticker": "BSX",
       "name": null,
       "profile": "acceleration",
-      "thesis": "Best native setup: Path1 BUY score=100/conf=100 + P4 zone; flow_score=0.99 neutral, so small GTC starter only.",
+      "thesis": "Best native setup: Path1 BUY 83/conf94 + buyback + streak=16; flow.score=8.01 but td_data_exists=false, so GTC starter only.",
       "abs_target": 95.0,
-      "entry_low": 48.25,
+      "entry_low": 46.0,
       "entry_high": 49.5,
       "fwd_pe": null,
       "score": 66,
@@ -1410,7 +1410,7 @@
       "entry_high": 414.0,
       "fwd_pe": null,
       "score": 0,
-      "earnings_date": "2026-08-26",
+      "earnings_date": "2026-11-30",
       "thesis_stale": false,
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
@@ -2241,7 +2241,7 @@
       "entry_high": 33.0,
       "fwd_pe": null,
       "score": null,
-      "earnings_date": "2026-08-28",
+      "earnings_date": "2026-11-30",
       "thesis_stale": false,
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
@@ -2439,10 +2439,10 @@
       "ticker": "GPK",
       "name": null,
       "profile": null,
-      "thesis": "RESCUED. 66.7% WR on 39 P3 signals. Enter limit $10.80-11.30. Half-size. Stop $10.00.",
+      "thesis": "Contrarian rescue: 66.7% WR on 39 P3 signals; flow.score=9.0 but td_data_exists=false. Half-size, stop $10.00.",
       "abs_target": null,
-      "entry_low": null,
-      "entry_high": null,
+      "entry_low": 10.8,
+      "entry_high": 11.3,
       "fwd_pe": null,
       "score": null,
       "earnings_date": "2026-11-03",
@@ -2813,7 +2813,7 @@
       "ticker": "IONS",
       "name": null,
       "profile": null,
-      "thesis": "PDUFA=2026-09-22 + heatmap_score=44 + flow_score=6.0 volume=5514; catalyst tranche only.",
+      "thesis": "PDUFA=2026-09-22, heatmap_score=44, flow.score=6.0; catalyst tranche only on dip back into zone.",
       "abs_target": null,
       "entry_low": 58.0,
       "entry_high": 60.0,
@@ -3499,7 +3499,7 @@
       "entry_high": 52.0,
       "fwd_pe": null,
       "score": null,
-      "earnings_date": "2026-10-06",
+      "earnings_date": "2026-10-01",
       "thesis_stale": false,
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
@@ -3578,7 +3578,7 @@
       "ticker": "MP",
       "name": null,
       "profile": "recovery",
-      "thesis": "Independent source=both BUY plus rare-earth policy catalyst; flow_score=3.51 volume=11312, negative FCF caps sizing.",
+      "thesis": "Independent source=both + rare-earth policy catalyst; flow_score=3.51, volume=11312, negative FCF caps sizing.",
       "abs_target": 85.0,
       "entry_low": 54.0,
       "entry_high": 57.0,
@@ -3618,7 +3618,7 @@
       "entry_high": null,
       "fwd_pe": null,
       "score": 0,
-      "earnings_date": "2026-08-27",
+      "earnings_date": "2026-11-30",
       "thesis_stale": false,
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
@@ -3697,7 +3697,7 @@
       "ticker": "MU",
       "name": null,
       "profile": null,
-      "thesis": "Independent STRONG BUY, but P4 levels are stale/degenerate: target=$380 vs spot~$933. Rebuild split-adjusted zone before entry.",
+      "thesis": "Independent STRONG BUY and Path1 WATCHLIST 89/conf100, but P4 target=$380 vs spot~$933-$959 is price_anchor_broken; repair before alerts.",
       "abs_target": 380.0,
       "entry_low": 350.0,
       "entry_high": 380.0,
@@ -3844,7 +3844,7 @@
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
       "zone_stale": true,
-      "target_stale": false
+      "target_stale": true
     },
     {
       "ticker": "NUE",
@@ -3907,7 +3907,7 @@
       "entry_high": null,
       "fwd_pe": null,
       "score": 48,
-      "earnings_date": "2026-10-27",
+      "earnings_date": "2026-10-26",
       "thesis_stale": false,
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
@@ -4268,7 +4268,7 @@
       "thesis_stale": false,
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
-      "zone_stale": true,
+      "zone_stale": false,
       "target_stale": true
     },
     {
@@ -4354,7 +4354,7 @@
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
       "zone_stale": true,
-      "target_stale": true
+      "target_stale": false
     },
     {
       "ticker": "Q",
@@ -4388,7 +4388,7 @@
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
       "zone_stale": true,
-      "target_stale": false
+      "target_stale": true
     },
     {
       "ticker": "QLYS",
@@ -4479,7 +4479,7 @@
       "ticker": "RDDT",
       "name": null,
       "profile": null,
-      "thesis": "P4 zone + Path5 score=80 + director buy/$1B buyback; flow_score=0.0, so low bid only or wait for flow >0.",
+      "thesis": "P4 zone + Path5 score=80 + buyback; flow_score=0.0 neutral, use low bid only or wait for flow >0.",
       "abs_target": 240.0,
       "entry_low": 150.0,
       "entry_high": 154.0,
@@ -4513,9 +4513,9 @@
       "ticker": "RDW",
       "name": "Redwire Corp",
       "profile": "growth",
-      "thesis": "Finviz IBRX-pattern (space, vol surge, 2026-05-09). STRONGEST setup of the cohort: skew +7.62vp extreme bullish, ndv +284, rviv +0.32 (options CHEAP). GEX safe but 18.7% buffer to zero-\u03b3 $9 (tighter t",
+      "thesis": "Best pure P4 setup: entry_zone=$10.70-$11.10, flow.score=9.0, td_data_exists=false; small GTC tranche only.",
       "abs_target": 14.0,
-      "entry_low": 10.8,
+      "entry_low": 10.7,
       "entry_high": 11.1,
       "fwd_pe": null,
       "score": null,
@@ -4779,7 +4779,7 @@
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
       "zone_stale": true,
-      "target_stale": true
+      "target_stale": false
     },
     {
       "ticker": "SATS",
@@ -4853,7 +4853,7 @@
       "ticker": "SMMT",
       "name": null,
       "profile": "recovery",
-      "thesis": "Heatmap score=40 earnings+fda+insider_buy; verify earnings blackout and catalyst freshness before action.",
+      "thesis": "Path1 BUY 82/conf98 + heatmap_score=40, but PDUFA=2026-11-14 and flow.score=4.5/td_data_exists=false; watch/rescan.",
       "abs_target": null,
       "entry_low": null,
       "entry_high": null,
@@ -4904,7 +4904,7 @@
       "ticker": "SNAP",
       "name": "Snap Inc.",
       "profile": "growth",
-      "thesis": "P4 zone-adjacent with options-deep flow.score=8.01, but TD=false and bullish_streak=0d; monitor until persistence.",
+      "thesis": "In P4 zone with flow.score=10.5, but td_data_exists=false and bullish_streak=0; speculative watch, no auto-entry.",
       "abs_target": 7.0,
       "entry_low": 5.5,
       "entry_high": 5.8,
@@ -4921,7 +4921,7 @@
       "ticker": "SNDK",
       "name": null,
       "profile": "quality_growth",
-      "thesis": "DATA VETO: Path1 BUY score=84/conf=85 is stale 10d; spot=$1600.62 and P4 flags split/price-normalization bug.",
+      "thesis": "DATA VETO: Path1 WATCHLIST still shows spot around $1500-$1600; split/price-normalization bug.",
       "abs_target": null,
       "entry_low": null,
       "entry_high": null,
@@ -5827,7 +5827,7 @@
       "thesis_stale_reason": null,
       "thesis_stale_since": null,
       "zone_stale": true,
-      "target_stale": true
+      "target_stale": false
     },
     {
       "ticker": "WM",
@@ -5950,6 +5950,1134 @@
     }
   ],
   "alerts": [
+    {
+      "ticker": "VIVO",
+      "alert_type": "DIP",
+      "price": 4.070000171661377,
+      "high_5d": 4.5,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.568837"
+    },
+    {
+      "ticker": "VC",
+      "alert_type": "ABS_TARGET",
+      "price": 101.81999969482422,
+      "high_5d": 104.2300033569336,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.567950"
+    },
+    {
+      "ticker": "UPST",
+      "alert_type": "DIP",
+      "price": 28.68000030517578,
+      "high_5d": 31.799999237060547,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.567410"
+    },
+    {
+      "ticker": "TTD",
+      "alert_type": "ABS_TARGET",
+      "price": 13.720000267028809,
+      "high_5d": 14.170000076293945,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.566441"
+    },
+    {
+      "ticker": "TRIP",
+      "alert_type": "ENTRY_ZONE",
+      "price": 9.520000457763672,
+      "high_5d": 10.289999961853027,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.565873"
+    },
+    {
+      "ticker": "TRIP",
+      "alert_type": "DIP",
+      "price": 9.520000457763672,
+      "high_5d": 10.289999961853027,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.564690"
+    },
+    {
+      "ticker": "TOST",
+      "alert_type": "DIP",
+      "price": 34.09000015258789,
+      "high_5d": 37.20000076293945,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.552886"
+    },
+    {
+      "ticker": "TER",
+      "alert_type": "DIP",
+      "price": 349.8299865722656,
+      "high_5d": 378.75,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.552065"
+    },
+    {
+      "ticker": "STLD",
+      "alert_type": "ENTRY_ZONE",
+      "price": 232.6199951171875,
+      "high_5d": 239.3699951171875,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.551371"
+    },
+    {
+      "ticker": "STLD",
+      "alert_type": "ABS_TARGET",
+      "price": 232.6199951171875,
+      "high_5d": 239.3699951171875,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.550815"
+    },
+    {
+      "ticker": "STE",
+      "alert_type": "ABS_TARGET",
+      "price": 232.63999938964844,
+      "high_5d": 240.33999633789062,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.550058"
+    },
+    {
+      "ticker": "SOFI",
+      "alert_type": "ABS_TARGET",
+      "price": 17.8799991607666,
+      "high_5d": 19.4950008392334,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.549517"
+    },
+    {
+      "ticker": "SOFI",
+      "alert_type": "DIP",
+      "price": 17.8799991607666,
+      "high_5d": 19.4950008392334,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.548538"
+    },
+    {
+      "ticker": "SNAP",
+      "alert_type": "ENTRY_ZONE",
+      "price": 5.550000190734863,
+      "high_5d": 6.0,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.547936"
+    },
+    {
+      "ticker": "SNAP",
+      "alert_type": "ABS_TARGET",
+      "price": 5.550000190734863,
+      "high_5d": 6.0,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.547609"
+    },
+    {
+      "ticker": "SNAP",
+      "alert_type": "DIP",
+      "price": 5.550000190734863,
+      "high_5d": 6.0,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.546802"
+    },
+    {
+      "ticker": "SMR",
+      "alert_type": "DIP",
+      "price": 9.270000457763672,
+      "high_5d": 10.255000114440918,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.545890"
+    },
+    {
+      "ticker": "SMMT",
+      "alert_type": "DIP",
+      "price": 13.619999885559082,
+      "high_5d": 15.100000381469727,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.545073"
+    },
+    {
+      "ticker": "SLS",
+      "alert_type": "DIP",
+      "price": 13.34000015258789,
+      "high_5d": 15.5600004196167,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.544058"
+    },
+    {
+      "ticker": "RYTM",
+      "alert_type": "ABS_TARGET",
+      "price": 106.12999725341797,
+      "high_5d": 114.75,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.543595"
+    },
+    {
+      "ticker": "RYTM",
+      "alert_type": "DIP",
+      "price": 106.12999725341797,
+      "high_5d": 114.75,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.542590"
+    },
+    {
+      "ticker": "RLMD",
+      "alert_type": "DIP",
+      "price": 4.360000133514404,
+      "high_5d": 4.724999904632568,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.541987"
+    },
+    {
+      "ticker": "RKLB",
+      "alert_type": "DIP",
+      "price": 63.91999816894531,
+      "high_5d": 70.0,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.541007"
+    },
+    {
+      "ticker": "RDW",
+      "alert_type": "ABS_TARGET",
+      "price": 10.699999809265137,
+      "high_5d": 11.880000114440918,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.540595"
+    },
+    {
+      "ticker": "RDW",
+      "alert_type": "DIP",
+      "price": 10.699999809265137,
+      "high_5d": 11.880000114440918,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.539690"
+    },
+    {
+      "ticker": "RDDT",
+      "alert_type": "ABS_TARGET",
+      "price": 147.80999755859375,
+      "high_5d": 165.91000366210938,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.539103"
+    },
+    {
+      "ticker": "RDDT",
+      "alert_type": "DIP",
+      "price": 147.80999755859375,
+      "high_5d": 165.91000366210938,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.538051"
+    },
+    {
+      "ticker": "RCL",
+      "alert_type": "DIP",
+      "price": 268.739990234375,
+      "high_5d": 297.2300109863281,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.537037"
+    },
+    {
+      "ticker": "QS",
+      "alert_type": "DIP",
+      "price": 5.590000152587891,
+      "high_5d": 6.074999809265137,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.535579"
+    },
+    {
+      "ticker": "Q",
+      "alert_type": "DIP",
+      "price": 119.43000030517578,
+      "high_5d": 129.41384788703675,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.534402"
+    },
+    {
+      "ticker": "PYPL",
+      "alert_type": "DEEP_VALUE",
+      "price": 52.665000915527344,
+      "high_5d": 62.3849983215332,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.534092"
+    },
+    {
+      "ticker": "PYPL",
+      "alert_type": "ABS_TARGET",
+      "price": 52.665000915527344,
+      "high_5d": 62.3849983215332,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.533793"
+    },
+    {
+      "ticker": "PYPL",
+      "alert_type": "DIP",
+      "price": 52.665000915527344,
+      "high_5d": 62.3849983215332,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.532881"
+    },
+    {
+      "ticker": "POET",
+      "alert_type": "DIP",
+      "price": 7.460000038146973,
+      "high_5d": 8.420000076293945,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.530962"
+    },
+    {
+      "ticker": "PHIO",
+      "alert_type": "DIP",
+      "price": 1.090000033378601,
+      "high_5d": 1.2200000286102295,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.529834"
+    },
+    {
+      "ticker": "ONDS",
+      "alert_type": "DIP",
+      "price": 7.65500020980835,
+      "high_5d": 8.84000015258789,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.529116"
+    },
+    {
+      "ticker": "OBIO",
+      "alert_type": "DIP",
+      "price": 5.039999961853027,
+      "high_5d": 5.5,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.528252"
+    },
+    {
+      "ticker": "NVAX",
+      "alert_type": "ABS_TARGET",
+      "price": 9.369999885559082,
+      "high_5d": 9.989999771118164,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.527166"
+    },
+    {
+      "ticker": "NCLH",
+      "alert_type": "ABS_TARGET",
+      "price": 16.139999389648438,
+      "high_5d": 17.670000076293945,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.526653"
+    },
+    {
+      "ticker": "NCLH",
+      "alert_type": "DIP",
+      "price": 16.139999389648438,
+      "high_5d": 17.670000076293945,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.525190"
+    },
+    {
+      "ticker": "MP",
+      "alert_type": "ENTRY_ZONE",
+      "price": 54.75,
+      "high_5d": 62.470001220703125,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.524581"
+    },
+    {
+      "ticker": "MP",
+      "alert_type": "ABS_TARGET",
+      "price": 54.75,
+      "high_5d": 62.470001220703125,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.523893"
+    },
+    {
+      "ticker": "MP",
+      "alert_type": "DIP",
+      "price": 54.75,
+      "high_5d": 62.470001220703125,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.523068"
+    },
+    {
+      "ticker": "MOBX",
+      "alert_type": "DEEP_VALUE",
+      "price": 1.3200000524520874,
+      "high_5d": 1.5800000429153442,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.522509"
+    },
+    {
+      "ticker": "MOBX",
+      "alert_type": "DIP",
+      "price": 1.3200000524520874,
+      "high_5d": 1.5800000429153442,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.520595"
+    },
+    {
+      "ticker": "META",
+      "alert_type": "ABS_TARGET",
+      "price": 572.3400268554688,
+      "high_5d": 593.3400268554688,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.519714"
+    },
+    {
+      "ticker": "MESO",
+      "alert_type": "DIP",
+      "price": 16.760000228881836,
+      "high_5d": 18.329999923706055,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.518989"
+    },
+    {
+      "ticker": "MA",
+      "alert_type": "ABS_TARGET",
+      "price": 589.3099975585938,
+      "high_5d": 601.22998046875,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.517278"
+    },
+    {
+      "ticker": "LVS",
+      "alert_type": "DIP",
+      "price": 43.810001373291016,
+      "high_5d": 47.5,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.516403"
+    },
+    {
+      "ticker": "LUV",
+      "alert_type": "DIP",
+      "price": 38.529998779296875,
+      "high_5d": 41.84000015258789,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.515952"
+    },
+    {
+      "ticker": "LUNR",
+      "alert_type": "DIP",
+      "price": 15.359999656677246,
+      "high_5d": 16.969999313354492,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.515021"
+    },
+    {
+      "ticker": "LOAR",
+      "alert_type": "ABS_TARGET",
+      "price": 70.19000244140625,
+      "high_5d": 76.45999908447266,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.514483"
+    },
+    {
+      "ticker": "LOAR",
+      "alert_type": "DIP",
+      "price": 70.19000244140625,
+      "high_5d": 76.45999908447266,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.513401"
+    },
+    {
+      "ticker": "KRMN",
+      "alert_type": "DEEP_VALUE",
+      "price": 41.45000076293945,
+      "high_5d": 52.77000045776367,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.512757"
+    },
+    {
+      "ticker": "KRMN",
+      "alert_type": "DIP",
+      "price": 41.45000076293945,
+      "high_5d": 52.77000045776367,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.511779"
+    },
+    {
+      "ticker": "ISRG",
+      "alert_type": "ENTRY_ZONE",
+      "price": 376.8599853515625,
+      "high_5d": 378.2300109863281,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.511184"
+    },
+    {
+      "ticker": "ISRG",
+      "alert_type": "ABS_TARGET",
+      "price": 376.8599853515625,
+      "high_5d": 378.2300109863281,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.510446"
+    },
+    {
+      "ticker": "IRM",
+      "alert_type": "DIP",
+      "price": 115.3499984741211,
+      "high_5d": 125.4000015258789,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.509759"
+    },
+    {
+      "ticker": "IREN",
+      "alert_type": "ENTRY_ZONE",
+      "price": 37.1150016784668,
+      "high_5d": 42.404998779296875,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.509325"
+    },
+    {
+      "ticker": "IREN",
+      "alert_type": "DIP",
+      "price": 37.1150016784668,
+      "high_5d": 42.404998779296875,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.508227"
+    },
+    {
+      "ticker": "IQ",
+      "alert_type": "DIP",
+      "price": 0.9340000152587891,
+      "high_5d": 1.0399999618530273,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.507407"
+    },
+    {
+      "ticker": "INTU",
+      "alert_type": "ABS_TARGET",
+      "price": 359.29998779296875,
+      "high_5d": 367.8500061035156,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.506010"
+    },
+    {
+      "ticker": "IFF",
+      "alert_type": "ABS_TARGET",
+      "price": 86.33000183105469,
+      "high_5d": 88.63999938964844,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.505295"
+    },
+    {
+      "ticker": "IBRX",
+      "alert_type": "ABS_TARGET",
+      "price": 7.949999809265137,
+      "high_5d": 8.760000228881836,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.504868"
+    },
+    {
+      "ticker": "IBRX",
+      "alert_type": "DIP",
+      "price": 7.949999809265137,
+      "high_5d": 8.760000228881836,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.503671"
+    },
+    {
+      "ticker": "HIMS",
+      "alert_type": "DIP",
+      "price": 29.579999923706055,
+      "high_5d": 32.5099983215332,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.502623"
+    },
+    {
+      "ticker": "HII",
+      "alert_type": "ABS_TARGET",
+      "price": 291.20001220703125,
+      "high_5d": 297.60208249448107,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.501555"
+    },
+    {
+      "ticker": "GPK",
+      "alert_type": "ENTRY_ZONE",
+      "price": 11.199999809265137,
+      "high_5d": 11.6899995803833,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.500443"
+    },
+    {
+      "ticker": "GILD",
+      "alert_type": "ABS_TARGET",
+      "price": 146.33999633789062,
+      "high_5d": 149.6199951171875,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.499442"
+    },
+    {
+      "ticker": "GEHC",
+      "alert_type": "ABS_TARGET",
+      "price": 71.2300033569336,
+      "high_5d": 74.38999938964844,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.497897"
+    },
+    {
+      "ticker": "FOUR",
+      "alert_type": "DEEP_VALUE",
+      "price": 42.279998779296875,
+      "high_5d": 51.06999969482422,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.497401"
+    },
+    {
+      "ticker": "FOUR",
+      "alert_type": "ABS_TARGET",
+      "price": 42.279998779296875,
+      "high_5d": 51.06999969482422,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.497082"
+    },
+    {
+      "ticker": "FOUR",
+      "alert_type": "DIP",
+      "price": 42.279998779296875,
+      "high_5d": 51.06999969482422,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.495865"
+    },
+    {
+      "ticker": "FIX",
+      "alert_type": "DIP",
+      "price": 1545.6199951171875,
+      "high_5d": 1664.280029296875,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.494419"
+    },
+    {
+      "ticker": "EXPE",
+      "alert_type": "DIP",
+      "price": 317.1199951171875,
+      "high_5d": 341.5076975794428,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.493682"
+    },
+    {
+      "ticker": "ETON",
+      "alert_type": "DIP",
+      "price": 60.439998626708984,
+      "high_5d": 65.5,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.492351"
+    },
+    {
+      "ticker": "EQNR",
+      "alert_type": "ABS_TARGET",
+      "price": 42.79999923706055,
+      "high_5d": 43.060001373291016,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.490971"
+    },
+    {
+      "ticker": "ENPH",
+      "alert_type": "DIP",
+      "price": 36.41999816894531,
+      "high_5d": 39.38999938964844,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.489236"
+    },
+    {
+      "ticker": "ELAB",
+      "alert_type": "DEEP_VALUE",
+      "price": 5.190000057220459,
+      "high_5d": 6.400000095367432,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.488606"
+    },
+    {
+      "ticker": "ELAB",
+      "alert_type": "DIP",
+      "price": 5.190000057220459,
+      "high_5d": 6.400000095367432,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.487193"
+    },
+    {
+      "ticker": "DVN",
+      "alert_type": "ABS_TARGET",
+      "price": 48.5099983215332,
+      "high_5d": 49.0099983215332,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.485886"
+    },
+    {
+      "ticker": "DPZ",
+      "alert_type": "ABS_TARGET",
+      "price": 342.05999755859375,
+      "high_5d": 353.92999267578125,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.484438"
+    },
+    {
+      "ticker": "DOCN",
+      "alert_type": "DIP",
+      "price": 110.69000244140625,
+      "high_5d": 123.99500274658203,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.482843"
+    },
+    {
+      "ticker": "DNLI",
+      "alert_type": "ABS_TARGET",
+      "price": 23.760000228881836,
+      "high_5d": 25.260000228881836,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.481194"
+    },
+    {
+      "ticker": "CRWV",
+      "alert_type": "DIP",
+      "price": 84.88999938964844,
+      "high_5d": 91.80999755859375,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.480202"
+    },
+    {
+      "ticker": "CRWD",
+      "alert_type": "ABS_TARGET",
+      "price": 231.0,
+      "high_5d": 233.8800048828125,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.479084"
+    },
+    {
+      "ticker": "CORT",
+      "alert_type": "DIP",
+      "price": 113.3499984741211,
+      "high_5d": 126.37999725341797,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.477450"
+    },
+    {
+      "ticker": "CELC",
+      "alert_type": "ENTRY_ZONE",
+      "price": 89.05999755859375,
+      "high_5d": 96.16000366210938,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.475993"
+    },
+    {
+      "ticker": "CELC",
+      "alert_type": "ABS_TARGET",
+      "price": 89.05999755859375,
+      "high_5d": 96.16000366210938,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.475380"
+    },
+    {
+      "ticker": "CELC",
+      "alert_type": "DIP",
+      "price": 89.05999755859375,
+      "high_5d": 96.16000366210938,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.474125"
+    },
+    {
+      "ticker": "CEG",
+      "alert_type": "ABS_TARGET",
+      "price": 274.7699890136719,
+      "high_5d": 285.260009765625,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.472643"
+    },
+    {
+      "ticker": "CDE",
+      "alert_type": "DIP",
+      "price": 20.780000686645508,
+      "high_5d": 22.450000762939453,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.471040"
+    },
+    {
+      "ticker": "CAPR",
+      "alert_type": "ABS_TARGET",
+      "price": 9.90999984741211,
+      "high_5d": 10.609999656677246,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.469635"
+    },
+    {
+      "ticker": "BX",
+      "alert_type": "ABS_TARGET",
+      "price": 143.24000549316406,
+      "high_5d": 145.77000427246094,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.467559"
+    },
+    {
+      "ticker": "BSX",
+      "alert_type": "ENTRY_ZONE",
+      "price": 48.29999923706055,
+      "high_5d": 50.040000915527344,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.466434"
+    },
+    {
+      "ticker": "BSX",
+      "alert_type": "ABS_TARGET",
+      "price": 48.29999923706055,
+      "high_5d": 50.040000915527344,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.465022"
+    },
+    {
+      "ticker": "BNTX",
+      "alert_type": "ABS_TARGET",
+      "price": 101.61000061035156,
+      "high_5d": 116.87000274658203,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.464190"
+    },
+    {
+      "ticker": "BNTX",
+      "alert_type": "DIP",
+      "price": 101.61000061035156,
+      "high_5d": 116.87000274658203,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.461895"
+    },
+    {
+      "ticker": "BKNG",
+      "alert_type": "DIP",
+      "price": 199.08999633789062,
+      "high_5d": 217.32000732421875,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.460264"
+    },
+    {
+      "ticker": "B",
+      "alert_type": "DIP",
+      "price": 44.83000183105469,
+      "high_5d": 48.95162074295935,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.458485"
+    },
+    {
+      "ticker": "AUPH",
+      "alert_type": "ENTRY_ZONE",
+      "price": 16.110000610351562,
+      "high_5d": 16.829999923706055,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.371845"
+    },
+    {
+      "ticker": "ARM",
+      "alert_type": "DIP",
+      "price": 241.91000366210938,
+      "high_5d": 267.69000244140625,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.370201"
+    },
+    {
+      "ticker": "APP",
+      "alert_type": "ABS_TARGET",
+      "price": 312.05999755859375,
+      "high_5d": 335.45001220703125,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.368851"
+    },
+    {
+      "ticker": "APLD",
+      "alert_type": "DIP",
+      "price": 25.40999984741211,
+      "high_5d": 28.926000595092773,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.367545"
+    },
+    {
+      "ticker": "ALKT",
+      "alert_type": "ABS_TARGET",
+      "price": 20.399999618530273,
+      "high_5d": 20.850000381469727,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.365550"
+    },
+    {
+      "ticker": "AEM",
+      "alert_type": "DIP",
+      "price": 203.11000061035156,
+      "high_5d": 224.42999267578125,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.364425"
+    },
+    {
+      "ticker": "ADBE",
+      "alert_type": "ABS_TARGET",
+      "price": 292.7900085449219,
+      "high_5d": 294.1300048828125,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.362897"
+    },
+    {
+      "ticker": "ACN",
+      "alert_type": "ENTRY_ZONE",
+      "price": 189.75999450683594,
+      "high_5d": 191.89999389648438,
+      "priority": "CRITICAL",
+      "created_at": "2026-09-01T16:02:52.361430"
+    },
+    {
+      "ticker": "ACN",
+      "alert_type": "ABS_TARGET",
+      "price": 189.75999450683594,
+      "high_5d": 191.89999389648438,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.359855"
+    },
+    {
+      "ticker": "ABT",
+      "alert_type": "ABS_TARGET",
+      "price": 110.36000061035156,
+      "high_5d": 116.72000122070312,
+      "priority": "NORMAL",
+      "created_at": "2026-09-01T16:02:52.353363"
+    },
+    {
+      "ticker": "ISRG",
+      "alert_type": "ENTRY_ZONE",
+      "price": 375.4649963378906,
+      "high_5d": 378.2300109863281,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T22:31:11.464160"
+    },
+    {
+      "ticker": "BIRK",
+      "alert_type": "WATCHLIST_ENTRY",
+      "price": 34.91999816894531,
+      "high_5d": 36.99700164794922,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T22:31:11.461036"
+    },
+    {
+      "ticker": "TRIP",
+      "alert_type": "DIP",
+      "price": 9.555000305175781,
+      "high_5d": 10.289999961853027,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T21:46:17.113495"
+    },
+    {
+      "ticker": "FLUT",
+      "alert_type": "ENTRY_ZONE",
+      "price": 99.51000213623047,
+      "high_5d": 104.30999755859375,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T21:46:17.106685"
+    },
+    {
+      "ticker": "WDC",
+      "alert_type": "DIP",
+      "price": 445.5400085449219,
+      "high_5d": 479.8500061035156,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T19:16:15.533996"
+    },
+    {
+      "ticker": "STX",
+      "alert_type": "DIP",
+      "price": 813.2449951171875,
+      "high_5d": 875.75,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T19:16:15.532536"
+    },
+    {
+      "ticker": "TER",
+      "alert_type": "DIP",
+      "price": 352.07000732421875,
+      "high_5d": 378.75,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T18:46:15.714385"
+    },
+    {
+      "ticker": "SYM",
+      "alert_type": "DIP",
+      "price": 39.189998626708984,
+      "high_5d": 42.150001525878906,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T18:16:11.161974"
+    },
+    {
+      "ticker": "OBIO",
+      "alert_type": "DIP",
+      "price": 5.070000171661377,
+      "high_5d": 5.5,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T18:01:19.836321"
+    },
+    {
+      "ticker": "QNCX",
+      "alert_type": "DIP",
+      "price": 32.80009841918945,
+      "high_5d": 35.34000015258789,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T17:31:19.196306"
+    },
+    {
+      "ticker": "DLR",
+      "alert_type": "DIP",
+      "price": 182.625,
+      "high_5d": 196.8300018310547,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T17:31:19.193148"
+    },
+    {
+      "ticker": "TPR",
+      "alert_type": "DIP",
+      "price": 122.88500213623047,
+      "high_5d": 132.3800048828125,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T17:16:18.973086"
+    },
+    {
+      "ticker": "NVAX",
+      "alert_type": "ENTRY_ZONE",
+      "price": 9.940500259399414,
+      "high_5d": 9.984999656677246,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T17:16:18.969119"
+    },
+    {
+      "ticker": "LVS",
+      "alert_type": "DIP",
+      "price": 43.970001220703125,
+      "high_5d": 47.5,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T17:01:23.616185"
+    },
+    {
+      "ticker": "FOUR",
+      "alert_type": "DEEP_VALUE",
+      "price": 43.38999938964844,
+      "high_5d": 51.06999969482422,
+      "priority": "CRITICAL",
+      "created_at": "2026-08-31T17:01:23.615247"
+    },
+    {
+      "ticker": "ARVN",
+      "alert_type": "DIP",
+      "price": 9.039999961853027,
+      "high_5d": 9.739999771118164,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T17:01:23.613007"
+    },
+    {
+      "ticker": "ARE",
+      "alert_type": "DIP",
+      "price": 50.73500061035156,
+      "high_5d": 54.65999984741211,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T17:01:23.612814"
+    },
+    {
+      "ticker": "A",
+      "alert_type": "DIP",
+      "price": 152.27999877929688,
+      "high_5d": 163.75,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T17:01:23.610529"
+    },
+    {
+      "ticker": "TOST",
+      "alert_type": "DIP",
+      "price": 34.30500030517578,
+      "high_5d": 37.20000076293945,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.489350"
+    },
+    {
+      "ticker": "TLX",
+      "alert_type": "CATALYST_ENTRY",
+      "price": 11.119999885559082,
+      "high_5d": 11.770000457763672,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.489014"
+    },
+    {
+      "ticker": "RGNX",
+      "alert_type": "DIP",
+      "price": 9.319999694824219,
+      "high_5d": 10.100000381469727,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.487757"
+    },
+    {
+      "ticker": "RCL",
+      "alert_type": "DIP",
+      "price": 272.80999755859375,
+      "high_5d": 297.2300109863281,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.487270"
+    },
+    {
+      "ticker": "PYPL",
+      "alert_type": "DEEP_VALUE",
+      "price": 52.04999923706055,
+      "high_5d": 62.3849983215332,
+      "priority": "CRITICAL",
+      "created_at": "2026-08-31T16:46:20.486781"
+    },
+    {
+      "ticker": "MNKD",
+      "alert_type": "DIP",
+      "price": 3.938999891281128,
+      "high_5d": 4.239999771118164,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.485921"
+    },
+    {
+      "ticker": "IRM",
+      "alert_type": "DIP",
+      "price": 116.37999725341797,
+      "high_5d": 125.4000015258789,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.484836"
+    },
+    {
+      "ticker": "ENPH",
+      "alert_type": "DIP",
+      "price": 36.625,
+      "high_5d": 39.38999938964844,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.483988"
+    },
+    {
+      "ticker": "CDE",
+      "alert_type": "DIP",
+      "price": 20.485000610351562,
+      "high_5d": 22.450000762939453,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.482880"
+    },
+    {
+      "ticker": "BSX",
+      "alert_type": "ENTRY_ZONE",
+      "price": 46.84000015258789,
+      "high_5d": 50.040000915527344,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.482514"
+    },
+    {
+      "ticker": "BKNG",
+      "alert_type": "DIP",
+      "price": 200.82000732421875,
+      "high_5d": 217.32000732421875,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.482044"
+    },
+    {
+      "ticker": "APP",
+      "alert_type": "DIP",
+      "price": 309.3999938964844,
+      "high_5d": 335.45001220703125,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.481389"
+    },
+    {
+      "ticker": "AGI",
+      "alert_type": "DIP",
+      "price": 36.02000045776367,
+      "high_5d": 39.11000061035156,
+      "priority": "HIGH",
+      "created_at": "2026-08-31T16:46:20.480742"
+    },
     {
       "ticker": "SNAP",
       "alert_type": "ENTRY_ZONE",
@@ -10205,1434 +11333,163 @@
       "high_5d": 117.33999633789062,
       "priority": "NORMAL",
       "created_at": "2026-08-25T16:00:05.619326"
-    },
-    {
-      "ticker": "SNAP",
-      "alert_type": "ENTRY_ZONE",
-      "price": 5.53000020980835,
-      "high_5d": 5.559999942779541,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T23:01:09.688008"
-    },
-    {
-      "ticker": "BSX",
-      "alert_type": "DIP",
-      "price": 48.875,
-      "high_5d": 52.560001373291016,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T21:31:07.520813"
-    },
-    {
-      "ticker": "BIRK",
-      "alert_type": "WATCHLIST_ENTRY",
-      "price": 34.970001220703125,
-      "high_5d": 38.32500076293945,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T20:46:05.904378"
-    },
-    {
-      "ticker": "ATEC",
-      "alert_type": "DIP",
-      "price": 9.274999618530273,
-      "high_5d": 10.0,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T20:31:09.516776"
-    },
-    {
-      "ticker": "PHIO",
-      "alert_type": "DIP",
-      "price": 1.1349999904632568,
-      "high_5d": 1.2400000095367432,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T20:16:09.442398"
-    },
-    {
-      "ticker": "ISRG",
-      "alert_type": "DIP",
-      "price": 376.6700134277344,
-      "high_5d": 405.3399963378906,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T18:31:09.276195"
-    },
-    {
-      "ticker": "MP",
-      "alert_type": "DIP",
-      "price": 56.20000076293945,
-      "high_5d": 60.59000015258789,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T18:16:17.232210"
-    },
-    {
-      "ticker": "MP",
-      "alert_type": "ENTRY_ZONE",
-      "price": 56.70610046386719,
-      "high_5d": 60.59000015258789,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T18:01:14.613440"
-    },
-    {
-      "ticker": "IBRX",
-      "alert_type": "ENTRY_ZONE",
-      "price": 7.489999771118164,
-      "high_5d": 8.270000457763672,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T17:16:12.796309"
-    },
-    {
-      "ticker": "IBRX",
-      "alert_type": "DIP",
-      "price": 7.489999771118164,
-      "high_5d": 8.270000457763672,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T17:16:12.795967"
-    },
-    {
-      "ticker": "DLR",
-      "alert_type": "DIP",
-      "price": 184.39500427246094,
-      "high_5d": 199.2100067138672,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T17:16:12.794585"
-    },
-    {
-      "ticker": "CNP",
-      "alert_type": "DIP",
-      "price": 38.51499938964844,
-      "high_5d": 41.529998779296875,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T17:16:12.792882"
-    },
-    {
-      "ticker": "SMMT",
-      "alert_type": "DIP",
-      "price": 12.4399995803833,
-      "high_5d": 13.529999732971191,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T17:01:18.241594"
-    },
-    {
-      "ticker": "SLS",
-      "alert_type": "DIP",
-      "price": 14.289899826049805,
-      "high_5d": 15.670000076293945,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T17:01:18.241422"
-    },
-    {
-      "ticker": "SMR",
-      "alert_type": "DIP",
-      "price": 8.8149995803833,
-      "high_5d": 9.645000457763672,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.043492"
-    },
-    {
-      "ticker": "SMMT",
-      "alert_type": "CATALYST_ENTRY",
-      "price": 12.654999732971191,
-      "high_5d": 13.529999732971191,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:46:14.043162"
-    },
-    {
-      "ticker": "SMCI",
-      "alert_type": "DIP",
-      "price": 34.720001220703125,
-      "high_5d": 38.7400016784668,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.042803"
-    },
-    {
-      "ticker": "SKHY",
-      "alert_type": "WATCHLIST_ENTRY",
-      "price": 151.92999267578125,
-      "high_5d": 167.4600067138672,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.042600"
-    },
-    {
-      "ticker": "PLUG",
-      "alert_type": "DIP",
-      "price": 2.150099992752075,
-      "high_5d": 2.3399999141693115,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.041199"
-    },
-    {
-      "ticker": "NVAX",
-      "alert_type": "DIP",
-      "price": 8.424500465393066,
-      "high_5d": 9.199999809265137,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.040646"
-    },
-    {
-      "ticker": "MNKD",
-      "alert_type": "DIP",
-      "price": 4.079999923706055,
-      "high_5d": 4.400000095367432,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.039731"
-    },
-    {
-      "ticker": "MESO",
-      "alert_type": "DIP",
-      "price": 16.469999313354492,
-      "high_5d": 17.969999313354492,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.039394"
-    },
-    {
-      "ticker": "IRM",
-      "alert_type": "DIP",
-      "price": 120.8550033569336,
-      "high_5d": 130.0,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.038230"
-    },
-    {
-      "ticker": "HIMS",
-      "alert_type": "DIP",
-      "price": 30.600000381469727,
-      "high_5d": 34.45600128173828,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.037546"
-    },
-    {
-      "ticker": "FSLR",
-      "alert_type": "DIP",
-      "price": 209.110107421875,
-      "high_5d": 225.0,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.037122"
-    },
-    {
-      "ticker": "ACN",
-      "alert_type": "ENTRY_ZONE",
-      "price": 186.15499877929688,
-      "high_5d": 188.4499969482422,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:46:14.033029"
-    },
-    {
-      "ticker": "BABA",
-      "alert_type": "INSIDER_BUY",
-      "price": 14.24,
-      "high_5d": null,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:44:31.388107"
-    },
-    {
-      "ticker": "BABA",
-      "alert_type": "INSIDER_BUY",
-      "price": 14.29,
-      "high_5d": null,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:44:31.384854"
-    },
-    {
-      "ticker": "TLX",
-      "alert_type": "CATALYST_ENTRY",
-      "price": 11.600000381469727,
-      "high_5d": 12.479999542236328,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:31:13.450878"
-    },
-    {
-      "ticker": "RKLB",
-      "alert_type": "CATALYST_ENTRY",
-      "price": 69.55000305175781,
-      "high_5d": 81.04000091552734,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:31:13.450069"
-    },
-    {
-      "ticker": "ONDS",
-      "alert_type": "DIP",
-      "price": 8.419899940490723,
-      "high_5d": 9.3149995803833,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:31:13.449292"
-    },
-    {
-      "ticker": "NUVB",
-      "alert_type": "CATALYST_ENTRY",
-      "price": 6.809999942779541,
-      "high_5d": 7.579999923706055,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:31:13.448767"
-    },
-    {
-      "ticker": "MU",
-      "alert_type": "CATALYST_ENTRY",
-      "price": 925.119873046875,
-      "high_5d": 989.9600219726562,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:31:13.448404"
-    },
-    {
-      "ticker": "CIEN",
-      "alert_type": "DIP",
-      "price": 375.0400085449219,
-      "high_5d": 427.739990234375,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:31:13.445783"
-    },
-    {
-      "ticker": "AUPH",
-      "alert_type": "ENTRY_ZONE",
-      "price": 16.472400665283203,
-      "high_5d": 17.799999237060547,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:31:13.445316"
-    },
-    {
-      "ticker": "AUPH",
-      "alert_type": "DIP",
-      "price": 16.472400665283203,
-      "high_5d": 17.799999237060547,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:31:13.445114"
-    },
-    {
-      "ticker": "AGI",
-      "alert_type": "WATCHLIST_ENTRY",
-      "price": 38.650001525878906,
-      "high_5d": 38.650001525878906,
-      "priority": "HIGH",
-      "created_at": "2026-08-24T16:31:13.443999"
-    },
-    {
-      "ticker": "ACN",
-      "alert_type": "ABS_TARGET",
-      "price": 184.11000061035156,
-      "high_5d": 188.4499969482422,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:31:13.443294"
-    },
-    {
-      "ticker": "ZTS",
-      "alert_type": "ENTRY_ZONE",
-      "price": 77.7300033569336,
-      "high_5d": 78.58999633789062,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.555613"
-    },
-    {
-      "ticker": "ZTS",
-      "alert_type": "ABS_TARGET",
-      "price": 77.7300033569336,
-      "high_5d": 78.58999633789062,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.554861"
-    },
-    {
-      "ticker": "WMB",
-      "alert_type": "DIP",
-      "price": 70.48999786376953,
-      "high_5d": 75.87999725341797,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.554404"
-    },
-    {
-      "ticker": "WDC",
-      "alert_type": "DEEP_VALUE",
-      "price": 459.44000244140625,
-      "high_5d": 548.5999755859375,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.553785"
-    },
-    {
-      "ticker": "WDC",
-      "alert_type": "DIP",
-      "price": 459.44000244140625,
-      "high_5d": 548.5999755859375,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.553218"
-    },
-    {
-      "ticker": "VRT",
-      "alert_type": "DIP",
-      "price": 261.95001220703125,
-      "high_5d": 300.29998779296875,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.552532"
-    },
-    {
-      "ticker": "VIVO",
-      "alert_type": "DEEP_VALUE",
-      "price": 4.360000133514404,
-      "high_5d": 5.150000095367432,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.552342"
-    },
-    {
-      "ticker": "VIVO",
-      "alert_type": "DIP",
-      "price": 4.360000133514404,
-      "high_5d": 5.150000095367432,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.548500"
-    },
-    {
-      "ticker": "VC",
-      "alert_type": "ENTRY_ZONE",
-      "price": 105.94000244140625,
-      "high_5d": 108.51000213623047,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.547380"
-    },
-    {
-      "ticker": "VC",
-      "alert_type": "ABS_TARGET",
-      "price": 105.94000244140625,
-      "high_5d": 108.51000213623047,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.546936"
-    },
-    {
-      "ticker": "TTD",
-      "alert_type": "ABS_TARGET",
-      "price": 13.180000305175781,
-      "high_5d": 13.970000267028809,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.546436"
-    },
-    {
-      "ticker": "TRIP",
-      "alert_type": "ENTRY_ZONE",
-      "price": 10.0,
-      "high_5d": 10.680000305175781,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.545696"
-    },
-    {
-      "ticker": "TLX",
-      "alert_type": "DIP",
-      "price": 11.329999923706055,
-      "high_5d": 12.479999542236328,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.545204"
-    },
-    {
-      "ticker": "TER",
-      "alert_type": "DEEP_VALUE",
-      "price": 375.739990234375,
-      "high_5d": 444.1700134277344,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.545056"
-    },
-    {
-      "ticker": "TER",
-      "alert_type": "DIP",
-      "price": 375.739990234375,
-      "high_5d": 444.1700134277344,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.544618"
-    },
-    {
-      "ticker": "TDY",
-      "alert_type": "DIP",
-      "price": 636.1500244140625,
-      "high_5d": 685.739990234375,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.544215"
-    },
-    {
-      "ticker": "STX",
-      "alert_type": "DEEP_VALUE",
-      "price": 850.0,
-      "high_5d": 1013.989990234375,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.543847"
-    },
-    {
-      "ticker": "STX",
-      "alert_type": "DIP",
-      "price": 850.0,
-      "high_5d": 1013.989990234375,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.543521"
-    },
-    {
-      "ticker": "STLD",
-      "alert_type": "ENTRY_ZONE",
-      "price": 228.67999267578125,
-      "high_5d": 259.0400085449219,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.543335"
-    },
-    {
-      "ticker": "STLD",
-      "alert_type": "DIP",
-      "price": 228.67999267578125,
-      "high_5d": 259.0400085449219,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.536964"
-    },
-    {
-      "ticker": "STE",
-      "alert_type": "ABS_TARGET",
-      "price": 237.92999267578125,
-      "high_5d": 238.77999877929688,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.536511"
-    },
-    {
-      "ticker": "STAA",
-      "alert_type": "DIP",
-      "price": 23.139999389648438,
-      "high_5d": 25.959999084472656,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.536012"
-    },
-    {
-      "ticker": "SOFI",
-      "alert_type": "ABS_TARGET",
-      "price": 18.90999984741211,
-      "high_5d": 19.170000076293945,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.535157"
-    },
-    {
-      "ticker": "SNAP",
-      "alert_type": "ABS_TARGET",
-      "price": 5.239999771118164,
-      "high_5d": 5.329999923706055,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.528748"
-    },
-    {
-      "ticker": "RYTM",
-      "alert_type": "ABS_TARGET",
-      "price": 110.0,
-      "high_5d": 118.30999755859375,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.527449"
-    },
-    {
-      "ticker": "RYTM",
-      "alert_type": "DIP",
-      "price": 110.0,
-      "high_5d": 118.30999755859375,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.525382"
-    },
-    {
-      "ticker": "RTX",
-      "alert_type": "DIP",
-      "price": 209.91000366210938,
-      "high_5d": 226.41000366210938,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.524021"
-    },
-    {
-      "ticker": "RMBS",
-      "alert_type": "DIP",
-      "price": 91.23999786376953,
-      "high_5d": 104.11000061035156,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.522760"
-    },
-    {
-      "ticker": "RLMD",
-      "alert_type": "DIP",
-      "price": 4.630000114440918,
-      "high_5d": 4.980000019073486,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.522353"
-    },
-    {
-      "ticker": "RKLB",
-      "alert_type": "DEEP_VALUE",
-      "price": 72.56999969482422,
-      "high_5d": 85.55000305175781,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.522214"
-    },
-    {
-      "ticker": "RKLB",
-      "alert_type": "DIP",
-      "price": 72.56999969482422,
-      "high_5d": 85.55000305175781,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.521808"
-    },
-    {
-      "ticker": "RGNX",
-      "alert_type": "DIP",
-      "price": 10.720000267028809,
-      "high_5d": 12.079999923706055,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.520998"
-    },
-    {
-      "ticker": "RDW",
-      "alert_type": "DEEP_VALUE",
-      "price": 12.020000457763672,
-      "high_5d": 14.1899995803833,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.517112"
-    },
-    {
-      "ticker": "RDW",
-      "alert_type": "ABS_TARGET",
-      "price": 12.020000457763672,
-      "high_5d": 14.1899995803833,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.516699"
-    },
-    {
-      "ticker": "RDW",
-      "alert_type": "DIP",
-      "price": 12.020000457763672,
-      "high_5d": 14.1899995803833,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.515883"
-    },
-    {
-      "ticker": "RDDT",
-      "alert_type": "ABS_TARGET",
-      "price": 153.2899932861328,
-      "high_5d": 178.33999633789062,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.515591"
-    },
-    {
-      "ticker": "RDDT",
-      "alert_type": "DIP",
-      "price": 153.2899932861328,
-      "high_5d": 178.33999633789062,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.515047"
-    },
-    {
-      "ticker": "Q",
-      "alert_type": "DIP",
-      "price": 128.8800048828125,
-      "high_5d": 144.9199981689453,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.513903"
-    },
-    {
-      "ticker": "POET",
-      "alert_type": "DEEP_VALUE",
-      "price": 8.25,
-      "high_5d": 10.0,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.513624"
-    },
-    {
-      "ticker": "POET",
-      "alert_type": "DIP",
-      "price": 8.25,
-      "high_5d": 10.0,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.512961"
-    },
-    {
-      "ticker": "OBIO",
-      "alert_type": "DIP",
-      "price": 5.360000133514404,
-      "high_5d": 5.78000020980835,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.512239"
-    },
-    {
-      "ticker": "NVAX",
-      "alert_type": "ABS_TARGET",
-      "price": 8.9399995803833,
-      "high_5d": 9.199999809265137,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.511295"
-    },
-    {
-      "ticker": "NUE",
-      "alert_type": "DIP",
-      "price": 243.6300048828125,
-      "high_5d": 272.8599853515625,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.510687"
-    },
-    {
-      "ticker": "NCLH",
-      "alert_type": "ABS_TARGET",
-      "price": 17.239999771118164,
-      "high_5d": 18.93000030517578,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.510400"
-    },
-    {
-      "ticker": "NCLH",
-      "alert_type": "DIP",
-      "price": 17.239999771118164,
-      "high_5d": 18.93000030517578,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.509506"
-    },
-    {
-      "ticker": "MSFT",
-      "alert_type": "ABS_TARGET",
-      "price": 483.239990234375,
-      "high_5d": 491.73431632358415,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.508536"
-    },
-    {
-      "ticker": "MPWR",
-      "alert_type": "DIP",
-      "price": 1316.280029296875,
-      "high_5d": 1448.760009765625,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.508144"
-    },
-    {
-      "ticker": "MP",
-      "alert_type": "ABS_TARGET",
-      "price": 60.04999923706055,
-      "high_5d": 60.59000015258789,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.506794"
-    },
-    {
-      "ticker": "MOBX",
-      "alert_type": "DIP",
-      "price": 1.2100000381469727,
-      "high_5d": 1.409999966621399,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.505924"
-    },
-    {
-      "ticker": "META",
-      "alert_type": "ABS_TARGET",
-      "price": 549.9000244140625,
-      "high_5d": 590.239990234375,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.505080"
-    },
-    {
-      "ticker": "MDT",
-      "alert_type": "ABS_TARGET",
-      "price": 93.3499984741211,
-      "high_5d": 94.72000122070312,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.504162"
-    },
-    {
-      "ticker": "MA",
-      "alert_type": "ABS_TARGET",
-      "price": 580.6300048828125,
-      "high_5d": 582.9299926757812,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.503259"
-    },
-    {
-      "ticker": "LUV",
-      "alert_type": "DIP",
-      "price": 40.380001068115234,
-      "high_5d": 44.09000015258789,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.502822"
-    },
-    {
-      "ticker": "LUNR",
-      "alert_type": "DIP",
-      "price": 18.31999969482422,
-      "high_5d": 20.84000015258789,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.502066"
-    },
-    {
-      "ticker": "LOAR",
-      "alert_type": "ABS_TARGET",
-      "price": 75.0,
-      "high_5d": 78.08999633789062,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.501135"
-    },
-    {
-      "ticker": "LNTH",
-      "alert_type": "ABS_TARGET",
-      "price": 99.97000122070312,
-      "high_5d": 101.0,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.500117"
-    },
-    {
-      "ticker": "LMT",
-      "alert_type": "DIP",
-      "price": 563.5700073242188,
-      "high_5d": 612.75,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.499485"
-    },
-    {
-      "ticker": "LINK",
-      "alert_type": "DEEP_VALUE",
-      "price": 5.074999809265137,
-      "high_5d": 6.053999900817871,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.499122"
-    },
-    {
-      "ticker": "LINK",
-      "alert_type": "DIP",
-      "price": 5.074999809265137,
-      "high_5d": 6.053999900817871,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.498085"
-    },
-    {
-      "ticker": "KRMN",
-      "alert_type": "DEEP_VALUE",
-      "price": 53.400001525878906,
-      "high_5d": 63.72999954223633,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.497798"
-    },
-    {
-      "ticker": "KRMN",
-      "alert_type": "ENTRY_ZONE",
-      "price": 53.400001525878906,
-      "high_5d": 63.72999954223633,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.497520"
-    },
-    {
-      "ticker": "KRMN",
-      "alert_type": "DIP",
-      "price": 53.400001525878906,
-      "high_5d": 63.72999954223633,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.496985"
-    },
-    {
-      "ticker": "KLAR",
-      "alert_type": "DEEP_VALUE",
-      "price": 14.329999923706055,
-      "high_5d": 20.8700008392334,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.496657"
-    },
-    {
-      "ticker": "KLAR",
-      "alert_type": "DIP",
-      "price": 14.329999923706055,
-      "high_5d": 20.8700008392334,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.495975"
-    },
-    {
-      "ticker": "ISRG",
-      "alert_type": "ENTRY_ZONE",
-      "price": 378.80999755859375,
-      "high_5d": 405.3399963378906,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.495250"
-    },
-    {
-      "ticker": "ISRG",
-      "alert_type": "ABS_TARGET",
-      "price": 378.80999755859375,
-      "high_5d": 405.3399963378906,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.494659"
-    },
-    {
-      "ticker": "IQ",
-      "alert_type": "DEEP_VALUE",
-      "price": 1.0549999475479126,
-      "high_5d": 1.3600000143051147,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.493986"
-    },
-    {
-      "ticker": "IQ",
-      "alert_type": "DIP",
-      "price": 1.0549999475479126,
-      "high_5d": 1.3600000143051147,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.493071"
-    },
-    {
-      "ticker": "IFF",
-      "alert_type": "ABS_TARGET",
-      "price": 84.27999877929688,
-      "high_5d": 85.20999908447266,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.491624"
-    },
-    {
-      "ticker": "IBRX",
-      "alert_type": "ABS_TARGET",
-      "price": 7.789999961853027,
-      "high_5d": 8.270000457763672,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.490552"
-    },
-    {
-      "ticker": "HUBB",
-      "alert_type": "DIP",
-      "price": 470.0299987792969,
-      "high_5d": 512.9824829101562,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.489505"
-    },
-    {
-      "ticker": "HII",
-      "alert_type": "ABS_TARGET",
-      "price": 298.20001220703125,
-      "high_5d": 327.25,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.489001"
-    },
-    {
-      "ticker": "HII",
-      "alert_type": "DIP",
-      "price": 298.20001220703125,
-      "high_5d": 327.25,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.488330"
-    },
-    {
-      "ticker": "GLW",
-      "alert_type": "DEEP_VALUE",
-      "price": 149.83999633789062,
-      "high_5d": 176.94000244140625,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.487683"
-    },
-    {
-      "ticker": "GLW",
-      "alert_type": "DIP",
-      "price": 149.83999633789062,
-      "high_5d": 176.94000244140625,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.487046"
-    },
-    {
-      "ticker": "GILD",
-      "alert_type": "ABS_TARGET",
-      "price": 146.1199951171875,
-      "high_5d": 148.97000122070312,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.486146"
-    },
-    {
-      "ticker": "GEHC",
-      "alert_type": "ABS_TARGET",
-      "price": 74.81999969482422,
-      "high_5d": 75.6500015258789,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.484723"
-    },
-    {
-      "ticker": "FOUR",
-      "alert_type": "ABS_TARGET",
-      "price": 47.93000030517578,
-      "high_5d": 49.5,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.482920"
-    },
-    {
-      "ticker": "FIX",
-      "alert_type": "DIP",
-      "price": 1655.6099853515625,
-      "high_5d": 1883.699951171875,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.482140"
-    },
-    {
-      "ticker": "EQNR",
-      "alert_type": "ABS_TARGET",
-      "price": 42.86000061035156,
-      "high_5d": 43.16999816894531,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.480977"
-    },
-    {
-      "ticker": "ELAB",
-      "alert_type": "DEEP_VALUE",
-      "price": 6.659999847412109,
-      "high_5d": 9.300000190734863,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.480403"
-    },
-    {
-      "ticker": "ELAB",
-      "alert_type": "DIP",
-      "price": 6.659999847412109,
-      "high_5d": 9.300000190734863,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.479801"
-    },
-    {
-      "ticker": "DVN",
-      "alert_type": "ABS_TARGET",
-      "price": 49.099998474121094,
-      "high_5d": 49.720001220703125,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.478759"
-    },
-    {
-      "ticker": "DPZ",
-      "alert_type": "ABS_TARGET",
-      "price": 341.8500061035156,
-      "high_5d": 345.82000732421875,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.477686"
-    },
-    {
-      "ticker": "DOCN",
-      "alert_type": "DEEP_VALUE",
-      "price": 115.63999938964844,
-      "high_5d": 138.30999755859375,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.477061"
-    },
-    {
-      "ticker": "DOCN",
-      "alert_type": "DIP",
-      "price": 115.63999938964844,
-      "high_5d": 138.30999755859375,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.476418"
-    },
-    {
-      "ticker": "DNLI",
-      "alert_type": "ABS_TARGET",
-      "price": 24.920000076293945,
-      "high_5d": 25.700000762939453,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.475404"
-    },
-    {
-      "ticker": "DELL",
-      "alert_type": "DIP",
-      "price": 442.0799865722656,
-      "high_5d": 496.8599853515625,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.473854"
-    },
-    {
-      "ticker": "CRWV",
-      "alert_type": "DEEP_VALUE",
-      "price": 87.8499984741211,
-      "high_5d": 109.9000015258789,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.473150"
-    },
-    {
-      "ticker": "CRWV",
-      "alert_type": "DIP",
-      "price": 87.8499984741211,
-      "high_5d": 109.9000015258789,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.472022"
-    },
-    {
-      "ticker": "CRSR",
-      "alert_type": "DIP",
-      "price": 10.930000305175781,
-      "high_5d": 12.795000076293945,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.470306"
-    },
-    {
-      "ticker": "CRDO",
-      "alert_type": "DEEP_VALUE",
-      "price": 230.57000732421875,
-      "high_5d": 286.239990234375,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.469070"
-    },
-    {
-      "ticker": "CRDO",
-      "alert_type": "DIP",
-      "price": 230.57000732421875,
-      "high_5d": 286.239990234375,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.467460"
-    },
-    {
-      "ticker": "CFG",
-      "alert_type": "DIP",
-      "price": 69.86000061035156,
-      "high_5d": 75.33000183105469,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.465798"
-    },
-    {
-      "ticker": "CELC",
-      "alert_type": "ENTRY_ZONE",
-      "price": 93.52999877929688,
-      "high_5d": 96.00499725341797,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.465041"
-    },
-    {
-      "ticker": "CELC",
-      "alert_type": "ABS_TARGET",
-      "price": 93.52999877929688,
-      "high_5d": 96.00499725341797,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.463612"
-    },
-    {
-      "ticker": "CEG",
-      "alert_type": "ABS_TARGET",
-      "price": 272.8800048828125,
-      "high_5d": 285.8605533982776,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.462247"
-    },
-    {
-      "ticker": "CAPR",
-      "alert_type": "DEEP_VALUE",
-      "price": 6.289999961853027,
-      "high_5d": 8.289999961853027,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.461224"
-    },
-    {
-      "ticker": "CAPR",
-      "alert_type": "ABS_TARGET",
-      "price": 6.289999961853027,
-      "high_5d": 8.289999961853027,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.460770"
-    },
-    {
-      "ticker": "CAPR",
-      "alert_type": "DIP",
-      "price": 6.289999961853027,
-      "high_5d": 8.289999961853027,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.459730"
-    },
-    {
-      "ticker": "BX",
-      "alert_type": "ABS_TARGET",
-      "price": 143.3800048828125,
-      "high_5d": 146.8699951171875,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.458542"
-    },
-    {
-      "ticker": "BULL",
-      "alert_type": "DIP",
-      "price": 8.779999732971191,
-      "high_5d": 9.949999809265137,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.457734"
-    },
-    {
-      "ticker": "BSX",
-      "alert_type": "ENTRY_ZONE",
-      "price": 50.369998931884766,
-      "high_5d": 52.560001373291016,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.457370"
-    },
-    {
-      "ticker": "BSX",
-      "alert_type": "ABS_TARGET",
-      "price": 50.369998931884766,
-      "high_5d": 52.560001373291016,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.456144"
-    },
-    {
-      "ticker": "BNTX",
-      "alert_type": "ABS_TARGET",
-      "price": 116.56999969482422,
-      "high_5d": 120.33000183105469,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.454953"
-    },
-    {
-      "ticker": "BABA",
-      "alert_type": "DIP",
-      "price": 119.33999633789062,
-      "high_5d": 130.6199951171875,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.444611"
-    },
-    {
-      "ticker": "AVGO",
-      "alert_type": "ENTRY_ZONE",
-      "price": 368.45001220703125,
-      "high_5d": 399.3599853515625,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.443468"
-    },
-    {
-      "ticker": "AVGO",
-      "alert_type": "ABS_TARGET",
-      "price": 368.45001220703125,
-      "high_5d": 399.3599853515625,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.442603"
-    },
-    {
-      "ticker": "AVGO",
-      "alert_type": "DIP",
-      "price": 368.45001220703125,
-      "high_5d": 399.3599853515625,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.439568"
-    },
-    {
-      "ticker": "ARM",
-      "alert_type": "DEEP_VALUE",
-      "price": 243.32000732421875,
-      "high_5d": 287.1499938964844,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.437050"
-    },
-    {
-      "ticker": "ARM",
-      "alert_type": "DIP",
-      "price": 243.32000732421875,
-      "high_5d": 287.1499938964844,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.434950"
-    },
-    {
-      "ticker": "APTV",
-      "alert_type": "ENTRY_ZONE",
-      "price": 48.279998779296875,
-      "high_5d": 50.5099983215332,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.433497"
-    },
-    {
-      "ticker": "APTV",
-      "alert_type": "ABS_TARGET",
-      "price": 48.279998779296875,
-      "high_5d": 50.5099983215332,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.429473"
-    },
-    {
-      "ticker": "APP",
-      "alert_type": "ABS_TARGET",
-      "price": 305.7699890136719,
-      "high_5d": 326.19500732421875,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.205110"
-    },
-    {
-      "ticker": "APLD",
-      "alert_type": "DIP",
-      "price": 27.209999084472656,
-      "high_5d": 31.850000381469727,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.109825"
-    },
-    {
-      "ticker": "AMD",
-      "alert_type": "DIP",
-      "price": 473.25,
-      "high_5d": 517.3499755859375,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.108483"
-    },
-    {
-      "ticker": "ALKT",
-      "alert_type": "ABS_TARGET",
-      "price": 20.3799991607666,
-      "high_5d": 20.68000030517578,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.106867"
-    },
-    {
-      "ticker": "AKAM",
-      "alert_type": "DIP",
-      "price": 110.41999816894531,
-      "high_5d": 125.58000183105469,
-      "priority": "CRITICAL",
-      "created_at": "2026-08-24T16:08:00.104793"
-    },
-    {
-      "ticker": "AGIO",
-      "alert_type": "DIP",
-      "price": 33.09000015258789,
-      "high_5d": 35.97999954223633,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.101544"
-    },
-    {
-      "ticker": "ADBE",
-      "alert_type": "ABS_TARGET",
-      "price": 275.29998779296875,
-      "high_5d": 277.1000061035156,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.098655"
-    },
-    {
-      "ticker": "ABT",
-      "alert_type": "ABS_TARGET",
-      "price": 116.63999938964844,
-      "high_5d": 116.66000366210938,
-      "priority": "NORMAL",
-      "created_at": "2026-08-24T16:08:00.093218"
     }
   ],
   "alerts_by_ticker": {
-    "SNAP": 14,
-    "SMMT": 9,
-    "SMCI": 2,
-    "RKLB": 13,
-    "QDEL": 1,
-    "NUVB": 5,
-    "NCLH": 8,
-    "MESO": 2,
-    "LUV": 2,
-    "IONS": 2,
-    "HLF": 1,
-    "AGI": 7,
-    "VIVO": 6,
-    "VC": 7,
-    "UPST": 2,
+    "VIVO": 5,
+    "VC": 6,
+    "UPST": 3,
     "TTD": 6,
-    "TRIP": 5,
+    "TRIP": 7,
+    "TOST": 2,
+    "TER": 4,
     "STLD": 14,
     "STE": 6,
-    "SOFI": 7,
+    "SOFI": 8,
+    "SNAP": 15,
     "SMR": 4,
+    "SMMT": 8,
     "SLS": 6,
     "RYTM": 3,
-    "RMBS": 4,
     "RLMD": 5,
-    "RDW": 16,
+    "RKLB": 11,
+    "RDW": 15,
     "RDDT": 16,
-    "QS": 3,
+    "RCL": 2,
+    "QS": 4,
     "Q": 3,
-    "PYPL": 3,
-    "PTGX": 1,
-    "POET": 4,
+    "PYPL": 7,
+    "POET": 3,
     "PHIO": 4,
     "ONDS": 5,
+    "OBIO": 4,
     "NVAX": 7,
-    "MSTR": 2,
+    "NCLH": 8,
     "MP": 12,
-    "MOBX": 5,
+    "MOBX": 6,
     "META": 6,
+    "MESO": 2,
     "MA": 6,
+    "LVS": 3,
+    "LUV": 2,
     "LUNR": 6,
-    "LOAR": 6,
-    "KRMN": 14,
-    "JAZZ": 1,
+    "LOAR": 7,
+    "KRMN": 13,
     "ISRG": 11,
-    "IREN": 5,
-    "IQ": 7,
-    "INTU": 5,
+    "IRM": 2,
+    "IREN": 7,
+    "IQ": 6,
+    "INTU": 6,
     "IFF": 6,
-    "IBRX": 9,
+    "IBRX": 8,
     "HIMS": 6,
-    "HII": 9,
+    "HII": 8,
+    "GPK": 1,
     "GILD": 6,
     "GEHC": 6,
-    "FOUR": 8,
+    "FOUR": 11,
     "FIX": 4,
-    "ETON": 3,
+    "EXPE": 2,
+    "ETON": 4,
     "EQNR": 5,
+    "ENPH": 3,
     "ELAB": 12,
     "DVN": 6,
     "DPZ": 8,
-    "DOCN": 5,
+    "DOCN": 4,
     "DNLI": 4,
-    "DG": 2,
-    "CRWV": 6,
-    "CRWD": 4,
-    "CORT": 2,
-    "COIN": 3,
-    "CELC": 13,
+    "CRWV": 5,
+    "CRWD": 5,
+    "CORT": 3,
+    "CELC": 14,
     "CEG": 6,
-    "CAPR": 12,
+    "CDE": 2,
+    "CAPR": 10,
     "BX": 6,
     "BSX": 14,
-    "BNTX": 6,
-    "B": 2,
-    "AUPH": 6,
-    "ARM": 6,
-    "APP": 6,
+    "BNTX": 7,
+    "BKNG": 2,
+    "B": 3,
+    "AUPH": 5,
+    "ARM": 5,
+    "APP": 7,
     "APLD": 5,
     "ALKT": 3,
-    "AEM": 2,
+    "AEM": 3,
     "ADBE": 6,
     "ACN": 9,
-    "ACM": 2,
     "ABT": 6,
-    "LINK": 5,
+    "BIRK": 1,
+    "FLUT": 6,
+    "WDC": 3,
+    "STX": 4,
+    "SYM": 1,
+    "QNCX": 4,
+    "DLR": 1,
+    "TPR": 3,
+    "ARVN": 1,
+    "ARE": 1,
+    "A": 1,
+    "TLX": 3,
+    "RGNX": 9,
+    "MNKD": 3,
+    "AGI": 7,
+    "SMCI": 1,
+    "QDEL": 1,
+    "NUVB": 4,
+    "IONS": 2,
+    "HLF": 1,
+    "RMBS": 3,
+    "PTGX": 1,
+    "MSTR": 2,
+    "JAZZ": 1,
+    "DG": 2,
+    "COIN": 3,
+    "ACM": 2,
+    "LINK": 3,
     "DJT": 1,
     "SBSW": 1,
     "RIVN": 2,
-    "KLAR": 3,
-    "OBIO": 3,
+    "KLAR": 1,
     "ALNY": 1,
-    "TPR": 2,
-    "RGNX": 9,
-    "MDT": 5,
-    "FLUT": 5,
+    "MDT": 4,
     "DRI": 2,
-    "BABA": 8,
-    "AVGO": 10,
-    "LVS": 1,
-    "SKHY": 2,
-    "EXPE": 1,
+    "BABA": 5,
+    "AVGO": 7,
+    "SKHY": 1,
     "NGVC": 1,
     "MOS": 1,
     "CF": 1,
-    "MNKD": 3,
-    "MU": 5,
+    "MU": 4,
     "ERIE": 1,
-    "TLX": 4,
     "TEN": 2,
-    "STAA": 4,
-    "QNCX": 3,
-    "PLUG": 3,
+    "STAA": 3,
+    "PLUG": 2,
     "NMM": 1,
-    "MSFT": 4,
-    "FSLR": 4,
+    "MSFT": 3,
+    "FSLR": 3,
     "FANG": 3,
     "CRM": 1,
-    "BULL": 4,
+    "BULL": 3,
     "DUOL": 1,
     "SNDK": 2,
     "TRGP": 1,
     "IOT": 1,
-    "VRT": 3,
-    "TER": 4,
-    "STX": 5,
-    "RTX": 3,
-    "NUE": 2,
-    "LMT": 3,
-    "GLW": 4,
-    "CRDO": 5,
-    "AKAM": 3,
+    "VRT": 2,
+    "RTX": 2,
+    "NUE": 1,
+    "LMT": 2,
+    "GLW": 2,
+    "CRDO": 3,
+    "AKAM": 2,
     "TEAM": 1,
     "TXT": 1,
-    "ENPH": 1,
-    "ZTS": 4,
-    "WDC": 4,
-    "DELL": 2,
-    "CRSR": 2,
-    "CIEN": 2,
-    "ATEC": 2,
-    "AMD": 2,
-    "AGIO": 2,
-    "BIRK": 1,
-    "DLR": 1,
-    "CNP": 1,
-    "IRM": 1,
-    "WMB": 1,
-    "TDY": 1,
-    "MPWR": 1,
-    "LNTH": 1,
-    "HUBB": 1,
-    "CFG": 1,
-    "APTV": 2
+    "ZTS": 2,
+    "DELL": 1,
+    "CRSR": 1,
+    "CIEN": 1,
+    "ATEC": 1,
+    "AMD": 1,
+    "AGIO": 1
   }
 }
