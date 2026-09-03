@@ -1,10 +1,10 @@
 {
-  "scan_date": "2026-09-02",
+  "scan_date": "2026-09-03",
   "status": "rejected",
   "verification": {
     "status": "rejected",
-    "hard_error_count": 4,
-    "soft_warning_count": 17,
+    "hard_error_count": 5,
+    "soft_warning_count": 16,
     "hard_errors": [
       {
         "ticker": "XYL",
@@ -13,18 +13,23 @@
       },
       {
         "ticker": "POWL",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-09-03, not found in input expiries"
+      },
+      {
+        "ticker": "POWL",
         "field": "comparables.XYL.growth",
         "message": "claimed=0.015%, actual=1.5%"
+      },
+      {
+        "ticker": "CRUS",
+        "field": "options.expiry",
+        "message": "claimed expiry=2026-09-03, not found in input expiries"
       },
       {
         "ticker": "MU",
         "field": "analyst_distribution.buy",
         "message": "claimed=2026, actual buy=35, buy_total=44"
-      },
-      {
-        "ticker": "MU",
-        "field": "options.oi",
-        "message": "claimed OI=323, not found in any expiry"
       }
     ],
     "reason": null
