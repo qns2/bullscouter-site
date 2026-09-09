@@ -2,34 +2,20 @@
   "date": "2026-09-09",
   "version": "2.48.0",
   "regime_label": "neutral",
-  "regime_score": 12.7,
+  "regime_score": 16.7,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 317,
+    "below_cutoff": 313,
     "earnings_blackout": 7,
     "rr_too_low": 33,
     "frozen": 1
   },
-  "candidates_evaluated": 358,
+  "candidates_evaluated": 354,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 13,
+  "oracle_watch_count": 10,
   "oracle_watch": [
-    {
-      "ticker": "ALNY",
-      "composite": 35,
-      "convergence_paths": [
-        "path1_buy",
-        "catalyst_near"
-      ],
-      "spot_price": 260.1,
-      "oracle_note": {
-        "text": "P1 BUY 91/conf93 and pdufa_date=2026-09-15, but options flow_score=0.48/volume=4876 and no P4 zone. Penalize pre-binary chase.",
-        "written_at": "2026-09-08"
-      },
-      "filter_reason": "below_cutoff"
-    },
     {
       "ticker": "CRUS",
       "composite": 35,
@@ -39,8 +25,8 @@
       ],
       "spot_price": 110.76,
       "oracle_note": {
-        "text": "Daily Buy + Path3 score=66 + Path5=80; best quality/contrarian overlap. Rescan/oracle_watch, buy only near P4 entry_zone=$106-$110.",
-        "written_at": "2026-09-08"
+        "text": "Daily Buy + fresh Path3 score=69 + Path5=83; P4 entry_zone=$106-$110, spot=$110.76. +4 only if limit stays inside zone.",
+        "written_at": "2026-09-09"
       },
       "filter_reason": "below_cutoff"
     },
@@ -52,21 +38,8 @@
       ],
       "spot_price": 132.37,
       "oracle_note": {
-        "text": "Daily Buy + Path3 + independent BUY/source=both, but spot=$139.15 is above P4 zone=$128-$133 and flow_score=-3.51. Wait for zone.",
-        "written_at": "2026-09-08"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "ACN",
-      "composite": 15,
-      "convergence_paths": [
-        "path5_strong_quality"
-      ],
-      "spot_price": 179.03,
-      "oracle_note": {
-        "text": "Rescan: P4 entry_zone=$185-$200, Path5=82, independent support, but options flow_score=0.99 neutral. Starter watch only.",
-        "written_at": "2026-09-08"
+        "text": "Daily Buy + fresh Path3 score=69 + P4 ENTRY_ZONE $128-$133 + independent BUY/source=both; options flow_score=2.01, so starter/limit only.",
+        "written_at": "2026-09-09"
       },
       "filter_reason": "below_cutoff"
     },
@@ -78,8 +51,8 @@
       ],
       "spot_price": 368.56,
       "oracle_note": {
-        "text": "Independent BUY/source=both + Path5=80 + P4 zone=$360-$385; spot=$357.90. +5 only because latest options volume=803 is light.",
-        "written_at": "2026-09-08"
+        "text": "P4 entry_zone=$360-$385 + independent BUY/source=both + Path5=80; options flow_score=3.99, volume=214337. +4 reflects weaker flow.",
+        "written_at": "2026-09-09"
       },
       "filter_reason": "below_cutoff"
     },
@@ -89,10 +62,10 @@
       "convergence_paths": [
         "path5_strong_quality"
       ],
-      "spot_price": 85.81,
+      "spot_price": 82.6,
       "oracle_note": {
-        "text": "Independent discovery BUY; Path5=78 quality. Rescan for watchlist zone and flow before adding to oracle_watch.",
-        "written_at": "2026-09-08"
+        "text": "Independent discovery BUY; low-teens valuation and Oct earnings catalyst. Rescan for watchlist zone before capital.",
+        "written_at": "2026-09-09"
       },
       "filter_reason": "below_cutoff"
     },
@@ -100,21 +73,10 @@
       "ticker": "COHR",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 281.86,
+      "spot_price": 301.88,
       "oracle_note": {
-        "text": "Independent discovery BUY tied to AI/physical-infrastructure cycle; rescan for Path1/Path5 confirmation and entry zone.",
-        "written_at": "2026-09-08"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "FCN",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 151.01,
-      "oracle_note": {
-        "text": "Rescan: P4 entry_zone=$143-$150 with CEO+CFO+CSO insider cluster; options volume=572, so GTC near $146 only.",
-        "written_at": "2026-09-08"
+        "text": "Independent discovery BUY tied to AI optical demand; rescan for Path1/Path5 confirmation and entry zone.",
+        "written_at": "2026-09-09"
       },
       "filter_reason": "below_cutoff"
     },
@@ -124,8 +86,8 @@
       "convergence_paths": [],
       "spot_price": 287.67,
       "oracle_note": {
-        "text": "Independent BUY/source=both defense backlog thesis; P4 target=$435 but needs current zone/flow validation before capital.",
-        "written_at": "2026-09-08"
+        "text": "Independent BUY/source=both and P4 target=$435, but earnings are 2026-09-09. Rescan post-print before any entry.",
+        "written_at": "2026-09-09"
       },
       "filter_reason": "below_cutoff"
     },
@@ -135,8 +97,19 @@
       "convergence_paths": [],
       "spot_price": 56.71,
       "oracle_note": {
-        "text": "Rescan: P4 entry_zone=$58-$60, spot=$58.09, PDUFA=2026-09-22, options flow_score=6.0/volume=5614. Independent action=HOLD, size small.",
-        "written_at": "2026-09-08"
+        "text": "Rescan: P4 entry_zone=$58-$60, spot=$56.71, PDUFA=2026-09-22, options flow_score=4.5/volume=6554. Independent action=HOLD.",
+        "written_at": "2026-09-09"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "LMT",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 536.15,
+      "oracle_note": {
+        "text": "Independent source=both defense support + heatmap_score=26, but P4 says price anchor high/no local zone. Rescan only.",
+        "written_at": "2026-09-09"
       },
       "filter_reason": "below_cutoff"
     },
@@ -146,8 +119,8 @@
       "convergence_paths": [],
       "spot_price": 55.37,
       "oracle_note": {
-        "text": "P4 entry_zone=$54-$57, spot=$54.53; independent BUY/source=both; options flow_score=6.0, volume=20998. +5 only due negative FCF sizing cap.",
-        "written_at": "2026-09-08"
+        "text": "P4 entry_zone=$54-$57, spot=$55.37; independent BUY/source=both; options flow_score=7.5, volume=18362. +5 only due negative FCF sizing cap.",
+        "written_at": "2026-09-09"
       },
       "filter_reason": "below_cutoff"
     },
@@ -157,19 +130,8 @@
       "convergence_paths": [],
       "spot_price": 15.3,
       "oracle_note": {
-        "text": "Independent discovery BUY with UX111 PDUFA=2026-09-19; binary small-cap. Rescan only for catalyst tracking, not full-size entry.",
-        "written_at": "2026-09-08"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "RDW",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 10.53,
-      "oracle_note": {
-        "text": "Rescan: P4 entry_zone=$10.70-$11.10, but P4 says td_data_exists=false and latest flow row is weak/stale. Tiny spec only.",
-        "written_at": "2026-09-08"
+        "text": "Independent discovery BUY with UX111 PDUFA=2026-09-19; binary small-cap. Rescan for catalyst tracking, not full-size entry.",
+        "written_at": "2026-09-09"
       },
       "filter_reason": "below_cutoff"
     }
