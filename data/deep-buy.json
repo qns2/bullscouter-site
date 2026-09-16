@@ -6,54 +6,91 @@
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 362,
+    "below_cutoff": 359,
     "rr_too_low": 29,
     "earnings_blackout": 4,
     "frozen": 1
   },
-  "candidates_evaluated": 396,
-  "picks_count": 0,
-  "picks": [],
-  "oracle_watch_count": 16,
-  "oracle_watch": [
+  "candidates_evaluated": 394,
+  "picks_count": 1,
+  "picks": [
     {
-      "ticker": "ALNY",
-      "composite": 35,
+      "ticker": "APTV",
+      "composite": 45,
       "convergence_paths": [
         "path1_buy",
-        "catalyst_near"
+        "path3_strong_candidate"
       ],
-      "spot_price": 238.27,
-      "oracle_note": {
-        "text": "P1 BUY score=83/conf93 and heatmap=62, but FDA event_date duplicated 2026-09-15/2026-10-15 and flow_score=2.49. Rescan before entry.",
-        "written_at": "2026-09-15"
+      "spot_price": 43.75,
+      "entry": {
+        "low": 46.0,
+        "high": 48.5,
+        "mid": 47.25
       },
-      "filter_reason": "below_cutoff"
-    },
+      "target": 62.0,
+      "stop": 40.25,
+      "rr_ratio": 5.21,
+      "rr_planned": 2.11,
+      "above_zone_pct": 0.0,
+      "below_zone_pct": 4.89,
+      "suggested_size_usd": 962.5,
+      "suggested_shares": 22,
+      "position_risk_usd": 77.0,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "path1": {
+          "score": 25
+        },
+        "path3": {
+          "score": 20
+        }
+      },
+      "dilution_risk": {
+        "ticker": "APTV",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Tier 2 BUY conf 100 + Path 3 strong. no earnings <45d.",
+      "watchlist_thesis": "P1 watchlist score=86/conf=100 + Path3 + P4 zone=$46-$48.50 + independent source=both. Current below zone; wait for reclaim/stabilization.",
+      "rank": 1,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-09-30",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false,
+        "abstained": false
+      },
+      "oracle_note": {
+        "text": "Path1 BUY score=78/conf=100 buy_streak=3 plus Path3 score=70/down=50.8%. P4 zone=$46-$48.50; current $43.75 below zone, so +5 conf but reclaim only.",
+        "written_at": "2026-09-16"
+      }
+    }
+  ],
+  "oracle_watch_count": 12,
+  "oracle_watch": [
     {
-      "ticker": "CRUS",
+      "ticker": "DECK",
       "composite": 35,
       "convergence_paths": [
         "path3_strong_candidate",
         "path5_strong_quality"
       ],
-      "spot_price": 122.21,
+      "spot_price": 77.51,
       "oracle_note": {
-        "text": "Rescan/watch: Daily Buy +6.7%, Path3 score=66, Path5=80, flow_score=6.51, but price $116.34 above P4 zone=$106-$110.",
-        "written_at": "2026-09-15"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "APTV",
-      "composite": 25,
-      "convergence_paths": [
-        "path1_buy"
-      ],
-      "spot_price": 43.75,
-      "oracle_note": {
-        "text": "P1 BUY score=79/conf=100, insider buys=6/sells=0, target_upside=48.7%, P4 zone=$46-$48.50; current $44.79 below zone, wait reclaim.",
-        "written_at": "2026-09-15"
+        "text": "Rescan/oracle_watch: Daily Buy -3.4%, Path5 score=81, independent BUY/MED. No P4 zone/flow, so watch-size only.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
@@ -65,8 +102,8 @@
       ],
       "spot_price": 123.72,
       "oracle_note": {
-        "text": "Best convergence: P1 WATCHLIST 71/conf88, Path3 score=68, P4 zone=$128-$133, insider buys=6/sells=0. +10 conf; bid $128-$132 only.",
-        "written_at": "2026-09-15"
+        "text": "Daily Buy + Path3 score=70 + independent BUY/high insider-cluster thesis. Current $123.72 below P4 zone=$128-$133; +5 conf, no averaging down before reclaim.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
@@ -78,34 +115,21 @@
       ],
       "spot_price": 339.27,
       "oracle_note": {
-        "text": "Rescan: Path5=80 and independent source=both, but P4 flags export spot $344.72 below legacy zone=$360-$385. Validate quote/zone before capital.",
-        "written_at": "2026-09-15"
+        "text": "Rescan: Path5=80 and independent BUY/source=both, but no clean midday entry and P4 quote/zone conflicts remain. Validate anchor first.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "DECK",
+      "ticker": "CRUS",
       "composite": 15,
       "convergence_paths": [
         "path5_strong_quality"
       ],
-      "spot_price": 77.51,
+      "spot_price": 122.21,
       "oracle_note": {
-        "text": "Daily Buy near flat, Path5 score=81, independent discovery BUY; flow_score=2.01 mild. +3 conf only for watch-size near $80.",
-        "written_at": "2026-09-15"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "BIIB",
-      "composite": 10,
-      "convergence_paths": [
-        "catalyst_near"
-      ],
-      "spot_price": 216.17,
-      "oracle_note": {
-        "text": "Heatmap score=38 with FDA event_date=2026-09-15 for subQ lecanemab, but down_from_high=3.7% and no entry support. Track outcome only.",
-        "written_at": "2026-09-15"
+        "text": "Rescan/watch: Daily Buy +12.0%, Path3+Path5=80, but P4 zone=$106-$110 is below current $122.21. Winner, not chase.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
@@ -117,30 +141,19 @@
       ],
       "spot_price": 47.25,
       "oracle_note": {
-        "text": "Heatmap score=38 with FDA event_date=2026-09-22 and P4 zone $58-$60; independent says status may have resolved. Rescan.",
-        "written_at": "2026-09-15"
+        "text": "PDUFA event_date=2026-09-22 plus CATALYST_ENTRY/DEEP_VALUE alerts, but spot ~$47 is far below old P4 zone=$58-$60. Binary watch; refresh zone first.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "FCN",
+      "ticker": "FLUT",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 146.92,
+      "spot_price": 99.91,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: P4 zone=$143-$150 with CEO+CFO+CSO cluster note; verify quality/liquidity before any capital.",
-        "written_at": "2026-09-15"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "KRMN",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 37.47,
-      "oracle_note": {
-        "text": "Rescan blind spot: P4 cites recent IPO defense, 51% revenue growth and $1B backlog; current below $48-$55 zone needs validation.",
-        "written_at": "2026-09-15"
+        "text": "P4 ENTRY_ZONE price=$99.91 in $90-$100, but catalysts mixed: guidance_change=bear offsets upgrades/policy positives. Rescan/watch only until flow >+5.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
@@ -150,8 +163,8 @@
       "convergence_paths": [],
       "spot_price": 249.66,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: independent source=both defense thesis, P4 zone=$275-$286, current below zone needs price/flow validation.",
-        "written_at": "2026-09-15"
+        "text": "Rescan/oracle_watch: independent BUY/source=both defense thesis; P4 target=$360 and zone=$275-$286. Validate current price/flow first.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
@@ -161,8 +174,8 @@
       "convergence_paths": [],
       "spot_price": 23.4,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: Daily Buy -1.5% with independent strategic-review value thesis; guidance-cut risk keeps this watch-size only.",
-        "written_at": "2026-09-15"
+        "text": "Rescan/oracle_watch: Daily Buy -2.9%, independent strategic-review value thesis. Guidance-cut risk keeps it watch-only.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
@@ -170,10 +183,10 @@
       "ticker": "NPB",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 16.98,
+      "spot_price": 16.91,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: Daily Buy -1.4%, insider buys=3, independent CEO/trust-buy thesis; check small-bank liquidity and credit risk.",
-        "written_at": "2026-09-15"
+        "text": "Rescan/oracle_watch: Daily Buy -1.8%, independent insider-bank thesis. Small-cap bank liquidity and credit risk need validation.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
@@ -183,8 +196,8 @@
       "convergence_paths": [],
       "spot_price": 13.07,
       "oracle_note": {
-        "text": "Independent discovery says UX111 PDUFA=2026-09-19; not top heatmap. Binary speculative watch only, rescan event status.",
-        "written_at": "2026-09-15"
+        "text": "Independent blind spot: UX111 PDUFA=2026-09-19. Speculative binary watch only; not enough scanner convergence for a buy.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
@@ -194,8 +207,8 @@
       "convergence_paths": [],
       "spot_price": 195.5,
       "oracle_note": {
-        "text": "Rescan/watch: independent defense read-through valid, but context says price above P4 zone=$165-$175. No chase.",
-        "written_at": "2026-09-15"
+        "text": "Rescan/watch: independent defense thesis valid, but P4 says price above $165-$175 zone. No chase without zone reclaim.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     },
@@ -205,8 +218,8 @@
       "convergence_paths": [],
       "spot_price": 239.22,
       "oracle_note": {
-        "text": "P4 ENTRY_ZONE $234.53 in $225-$245 and independent BUY/MED, but flow_score=4.5 and prior volume note low. Tiny/watch only.",
-        "written_at": "2026-09-15"
+        "text": "Midday best live entry: P4 ENTRY_ZONE price=$239.22 inside $225-$245 plus independent BUY/MED. Rescan; keep small unless flow improves.",
+        "written_at": "2026-09-16"
       },
       "filter_reason": "below_cutoff"
     }
