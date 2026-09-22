@@ -1,17 +1,17 @@
 {
   "date": "2026-09-22",
   "version": "2.48.0",
-  "regime_label": "neutral",
-  "regime_score": 1.2,
+  "regime_label": "risk_on",
+  "regime_score": 33.7,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 360,
-    "earnings_blackout": 4,
+    "below_cutoff": 358,
+    "earnings_blackout": 5,
     "rr_too_low": 26,
     "frozen": 1
   },
-  "candidates_evaluated": 393,
+  "candidates_evaluated": 392,
   "picks_count": 2,
   "picks": [
     {
@@ -55,7 +55,7 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -12.03,
+        "price_run_pct_30d": -12.53,
         "insider_selling_signal": null,
         "latest_filings": []
       },
@@ -73,8 +73,8 @@
         "abstained": false
       },
       "oracle_note": {
-        "text": "deep_buy rank #1 composite 45 (path1+path3); +5 conf reflects Path1 BUY 75/conf100 + Path3 70. Half-size only; no independent confirmation.",
-        "written_at": "2026-09-21"
+        "text": "deep_buy rank #1 composite 45 (path1+path3); spot $43.57 below P4 zone $46-$48.50. +5 only; half-size until reclaim/stability.",
+        "written_at": "2026-09-22"
       }
     },
     {
@@ -118,12 +118,12 @@
         "active_offering": false,
         "shelf_active": false,
         "shelf_plus_run": false,
-        "price_run_pct_30d": -41.99,
+        "price_run_pct_30d": -42.26,
         "insider_selling_signal": null,
         "latest_filings": []
       },
       "rationale_one_liner": "Tier 2 BUY conf 89 + Path 3 strong. no earnings <45d.",
-      "watchlist_thesis": "Best current convergence: Daily Buy + Path3 + P4 zone=$128-$133 + independent source=both. Bid $128-$132 only; pass above $133-$135.",
+      "watchlist_thesis": "Path1+Path3+insider thesis intact, but P4 still flags options-flow contradiction. No fresh entry until flow repairs or price reclaims $128-$133.",
       "rank": 2,
       "macro_filter": {
         "pass": true,
@@ -136,24 +136,36 @@
         "abstained": false
       },
       "oracle_note": {
-        "text": "deep_buy rank #2 composite 45 (path1+path3); +5 conf reflects Path1 BUY 76/conf89 + Path3 73 + independent source=both/director buys. Starter $121-$124.",
-        "written_at": "2026-09-21"
+        "text": "deep_buy rank #2 composite 45 (path1+path3); independent director-buy thesis valid, but P4 flags options-flow contradiction. -5 conf/-3 score until repair.",
+        "written_at": "2026-09-22"
       }
     }
   ],
-  "oracle_watch_count": 4,
+  "oracle_watch_count": 5,
   "oracle_watch": [
     {
-      "ticker": "DECK",
-      "composite": 35,
+      "ticker": "AVGO",
+      "composite": 15,
       "convergence_paths": [
-        "path3_strong_candidate",
+        "path5_strong_quality"
+      ],
+      "spot_price": 362.66,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $360-$385, spot $362.66, Path5=80, independent source=both AI thesis. Watch-size, no chase above zone.",
+        "written_at": "2026-09-22"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "DECK",
+      "composite": 15,
+      "convergence_paths": [
         "path5_strong_quality"
       ],
       "spot_price": 80.23,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: Daily Buy -2.2%, Path5 score=81, independent BUY/MED. Quality watch near $76-$78; no chase.",
-        "written_at": "2026-09-21"
+        "text": "Rescan/oracle_watch: Daily Buy flat, Path5 quality, independent BUY/MED. Watch near $78-$80; no full-size without flow/P4 zone.",
+        "written_at": "2026-09-22"
       },
       "filter_reason": "below_cutoff"
     },
@@ -163,19 +175,19 @@
       "convergence_paths": [],
       "spot_price": 321.52,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: Daily Buy +5.1% and independent AI optics thesis. Volatile beta/FCF risk; require refreshed entry zone.",
-        "written_at": "2026-09-21"
+        "text": "Rescan/oracle_watch: Daily Buy +6.5% and independent AI optics thesis. Volatile beta/FCF risk; require refreshed entry zone.",
+        "written_at": "2026-09-22"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "RARE",
+      "ticker": "FLUT",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 14.65,
+      "spot_price": 86.86,
       "oracle_note": {
-        "text": "Rescan/outcome check: independent UX111 PDUFA=2026-09-19 is now past. Speculative only; require official outcome before scoring.",
-        "written_at": "2026-09-21"
+        "text": "Rescan/watch: heatmap score=39 and P4 zone $90-$100, but signals are mixed and flow confirmation absent. Wait for sustained flow >+5.",
+        "written_at": "2026-09-22"
       },
       "filter_reason": "below_cutoff"
     },
@@ -185,8 +197,8 @@
       "convergence_paths": [],
       "spot_price": 229.99,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $235.26 inside $225-$245 plus independent/materials thesis. Watch-size only; not Path1/Deep Buy.",
-        "written_at": "2026-09-21"
+        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $225-$245 with alert at $229.99 and independent/materials thesis. Watch-size only.",
+        "written_at": "2026-09-22"
       },
       "filter_reason": "below_cutoff"
     }
