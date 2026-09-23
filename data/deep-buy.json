@@ -2,147 +2,33 @@
   "date": "2026-09-23",
   "version": "2.48.0",
   "regime_label": "risk_on",
-  "regime_score": 33.7,
+  "regime_score": 31.0,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 327,
+    "below_cutoff": 329,
     "earnings_blackout": 5,
     "rr_too_low": 26,
     "frozen": 1
   },
   "candidates_evaluated": 361,
-  "picks_count": 2,
-  "picks": [
-    {
-      "ticker": "APTV",
-      "composite": 45,
-      "convergence_paths": [
-        "path1_buy",
-        "path3_strong_candidate"
-      ],
-      "spot_price": 44.61,
-      "entry": {
-        "low": 46.0,
-        "high": 48.5,
-        "mid": 47.25
-      },
-      "target": 62.0,
-      "stop": 41.04,
-      "rr_ratio": 4.87,
-      "rr_planned": 2.38,
-      "above_zone_pct": 0.0,
-      "below_zone_pct": 3.02,
-      "suggested_size_usd": 981.42,
-      "suggested_shares": 22,
-      "position_risk_usd": 78.54,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "path1": {
-          "score": 25
-        },
-        "path3": {
-          "score": 20
-        }
-      },
-      "dilution_risk": {
-        "ticker": "APTV",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": -12.53,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "Tier 2 BUY conf 100 + Path 3 strong. no earnings <45d.",
-      "watchlist_thesis": "P1 watchlist score=86/conf=100 + Path3 + P4 zone=$46-$48.50 + independent source=both. Current below zone; wait for reclaim/stabilization.",
-      "rank": 1,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-10-07",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false,
-        "abstained": false
-      },
-      "oracle_note": {
-        "text": "deep_buy rank #1 composite 45 (path1+path3); spot $43.57 below P4 zone $46-$48.50. +5 only; half-size until reclaim/stability.",
-        "written_at": "2026-09-22"
-      }
-    },
+  "picks_count": 0,
+  "picks": [],
+  "oracle_watch_count": 6,
+  "oracle_watch": [
     {
       "ticker": "DKS",
-      "composite": 45,
+      "composite": 20,
       "convergence_paths": [
-        "path1_buy",
         "path3_strong_candidate"
       ],
       "spot_price": 133.94,
-      "entry": {
-        "low": 128.0,
-        "high": 133.0,
-        "mid": 130.5
-      },
-      "target": 160.73,
-      "stop": 123.22,
-      "rr_ratio": 2.5,
-      "rr_planned": 4.15,
-      "above_zone_pct": 0.71,
-      "below_zone_pct": 0.0,
-      "suggested_size_usd": 937.58,
-      "suggested_shares": 7,
-      "position_risk_usd": 75.04,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "path1": {
-          "score": 25
-        },
-        "path3": {
-          "score": 20
-        }
-      },
-      "dilution_risk": {
-        "ticker": "DKS",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": -42.26,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "Tier 2 BUY conf 89 + Path 3 strong. no earnings <45d.",
-      "watchlist_thesis": "Path1+Path3+insider thesis intact, but P4 still flags options-flow contradiction. No fresh entry until flow repairs or price reclaims $128-$133.",
-      "rank": 2,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-10-07",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false,
-        "abstained": false
-      },
       "oracle_note": {
-        "text": "deep_buy rank #2 composite 45 (path1+path3); independent director-buy thesis valid, but P4 flags options-flow contradiction. -5 conf/-3 score until repair.",
-        "written_at": "2026-09-22"
-      }
-    }
-  ],
-  "oracle_watch_count": 5,
-  "oracle_watch": [
+        "text": "deep_buy rank #2 composite 45 (path1+path3); independent BUY/HIGH, but spot data conflicts and flow_score=-0.99. GTC bid $128-$133 only.",
+        "written_at": "2026-09-23"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "AVGO",
       "composite": 15,
@@ -151,8 +37,8 @@
       ],
       "spot_price": 364.54,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $360-$385, spot $362.66, Path5=80, independent source=both AI thesis. Watch-size, no chase above zone.",
-        "written_at": "2026-09-22"
+        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $360-$385, Path5=80, independent source=both AI thesis. Watch-size, no chase above zone.",
+        "written_at": "2026-09-23"
       },
       "filter_reason": "below_cutoff"
     },
@@ -164,19 +50,19 @@
       ],
       "spot_price": 79.83,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: Daily Buy flat, Path5 quality, independent BUY/MED. Watch near $78-$80; no full-size without flow/P4 zone.",
-        "written_at": "2026-09-22"
+        "text": "Rescan/oracle_watch: Daily Buy flat, Path5=81, independent BUY/MED, P4 ENTRY_ZONE $78-$80 and flow_score=6.0. Watch-size only.",
+        "written_at": "2026-09-23"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "COHR",
+      "ticker": "APTV",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 310.39,
+      "spot_price": 44.61,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: Daily Buy +6.5% and independent AI optics thesis. Volatile beta/FCF risk; require refreshed entry zone.",
-        "written_at": "2026-09-22"
+        "text": "deep_buy rank #1 composite 45 (path1+path3); flow_score=7.5 and Path3 down=51%. +5 modifier, but starter only <=$44 or reclaim $46-$48.50.",
+        "written_at": "2026-09-23"
       },
       "filter_reason": "below_cutoff"
     },
@@ -186,8 +72,8 @@
       "convergence_paths": [],
       "spot_price": 88.62,
       "oracle_note": {
-        "text": "Rescan/watch: heatmap score=39 and P4 zone $90-$100, but signals are mixed and flow confirmation absent. Wait for sustained flow >+5.",
-        "written_at": "2026-09-22"
+        "text": "Rescan/watch: heatmap score=39 but signals mixed: guidance_change bear vs NFL/FIFA/policy bull. Wait for sustained flow_score>5.",
+        "written_at": "2026-09-23"
       },
       "filter_reason": "below_cutoff"
     },
@@ -197,8 +83,8 @@
       "convergence_paths": [],
       "spot_price": 233.99,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $225-$245 with alert at $229.99 and independent/materials thesis. Watch-size only.",
-        "written_at": "2026-09-22"
+        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $225-$245 with independent materials thesis. Watch-size only while inside zone.",
+        "written_at": "2026-09-23"
       },
       "filter_reason": "below_cutoff"
     }
