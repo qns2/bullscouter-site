@@ -1,8 +1,8 @@
 {
   "date": "2026-09-24",
   "version": "2.48.0",
-  "regime_label": "risk_on",
-  "regime_score": 31.0,
+  "regime_label": "neutral",
+  "regime_score": 14.7,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
@@ -14,8 +14,35 @@
   "candidates_evaluated": 392,
   "picks_count": 0,
   "picks": [],
-  "oracle_watch_count": 6,
+  "oracle_watch_count": 12,
   "oracle_watch": [
+    {
+      "ticker": "DECK",
+      "composite": 35,
+      "convergence_paths": [
+        "path3_strong_candidate",
+        "path5_strong_quality"
+      ],
+      "spot_price": 78.59,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $78-$80, independent BUY/MED, Path5 quality, flow.score=4.5. Watch-size only.",
+        "written_at": "2026-09-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ALNY",
+      "composite": 25,
+      "convergence_paths": [
+        "path1_buy"
+      ],
+      "spot_price": 246.51,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: Path1 BUY 89/conf97 + heatmap score=32; event_date=2026-10-15 PDUFA and flow.score=7.5, td_data_exists=false.",
+        "written_at": "2026-09-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
     {
       "ticker": "DKS",
       "composite": 20,
@@ -24,8 +51,8 @@
       ],
       "spot_price": 132.36,
       "oracle_note": {
-        "text": "deep_buy rank #2 composite 45 (path1+path3); independent BUY/HIGH, but spot data conflicts and flow_score=-0.99. GTC bid $128-$133 only.",
-        "written_at": "2026-09-23"
+        "text": "Rescan/oracle_watch: Path3 score=68 + independent BUY/HIGH + insider cluster; flow.score=-4.5 bear, so GTC $128-$133 only.",
+        "written_at": "2026-09-24"
       },
       "filter_reason": "below_cutoff"
     },
@@ -37,21 +64,34 @@
       ],
       "spot_price": 354.99,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $360-$385, Path5=80, independent source=both AI thesis. Watch-size, no chase above zone.",
-        "written_at": "2026-09-23"
+        "text": "Rescan/oracle_watch: independent source=both and Path5=80; recent P4 zone=$360-$385. Limit-only in zone, no chase.",
+        "written_at": "2026-09-24"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "DECK",
+      "ticker": "INTU",
       "composite": 15,
       "convergence_paths": [
         "path5_strong_quality"
       ],
-      "spot_price": 78.59,
+      "spot_price": 286.8,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: Daily Buy flat, Path5=81, independent BUY/MED, P4 ENTRY_ZONE $78-$80 and flow_score=6.0. Watch-size only.",
-        "written_at": "2026-09-23"
+        "text": "Rescan/watch: P4 ENTRY_ZONE $270-$295 at $286.80 and Path5 score=85, but current Deep Buy has picks_count=0; starter only.",
+        "written_at": "2026-09-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "RKLB",
+      "composite": 10,
+      "convergence_paths": [
+        "catalyst_near"
+      ],
+      "spot_price": 70.31,
+      "oracle_note": {
+        "text": "Rescan/watch: launch event_date=2026-09-26 and heatmap score=31; valuation/forward_pe extreme, so catalyst monitor only.",
+        "written_at": "2026-09-24"
       },
       "filter_reason": "below_cutoff"
     },
@@ -61,8 +101,19 @@
       "convergence_paths": [],
       "spot_price": 45.17,
       "oracle_note": {
-        "text": "deep_buy rank #1 composite 45 (path1+path3); flow_score=7.5 and Path3 down=51%. +5 modifier, but starter only <=$44 or reclaim $46-$48.50.",
-        "written_at": "2026-09-23"
+        "text": "Rescan/oracle_watch: Path3/P4/insider setup remains, but spot below $46-$48.50 zone. Wait for reclaim/stabilization.",
+        "written_at": "2026-09-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "CEG",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 263.88,
+      "oracle_note": {
+        "text": "Rescan/watch: P4 ENTRY_ZONE $245-$265 at $263.88; nuclear/AI thesis intact, but no options-deep confirmation. No chase above zone.",
+        "written_at": "2026-09-24"
       },
       "filter_reason": "below_cutoff"
     },
@@ -72,8 +123,30 @@
       "convergence_paths": [],
       "spot_price": 85.89,
       "oracle_note": {
-        "text": "Rescan/watch: heatmap score=39 but signals mixed: guidance_change bear vs NFL/FIFA/policy bull. Wait for sustained flow_score>5.",
-        "written_at": "2026-09-23"
+        "text": "Rescan/watch: heatmap score=39 but signals conflict: guidance_change/analyst_downgrade bearish vs NFL/FIFA/policy bullish.",
+        "written_at": "2026-09-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "ONDS",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 7.4,
+      "oracle_note": {
+        "text": "Rescan/watch: heatmap score=34 includes dilution_risk weight=-8 plus defense/revenue positives. High-vol watch only.",
+        "written_at": "2026-09-24"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "RYAN",
+      "composite": 0,
+      "convergence_paths": [],
+      "spot_price": 36.17,
+      "oracle_note": {
+        "text": "Rescan/oracle_watch: founder $4.2M cluster buy, P4 zone=$33-$36, flow.score=12; td_data_exists=false so small only in zone.",
+        "written_at": "2026-09-24"
       },
       "filter_reason": "below_cutoff"
     },
@@ -83,8 +156,8 @@
       "convergence_paths": [],
       "spot_price": 234.29,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: P4 ENTRY_ZONE $225-$245 with independent materials thesis. Watch-size only while inside zone.",
-        "written_at": "2026-09-23"
+        "text": "Rescan/oracle_watch: P4 zone=$225-$245 plus Daily Buy/materials thesis; flow.score=7.5 but td_data_exists=false. Prefer $225-$235.",
+        "written_at": "2026-09-24"
       },
       "filter_reason": "below_cutoff"
     }
