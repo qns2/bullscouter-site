@@ -1,17 +1,17 @@
 {
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "version": "2.48.0",
   "regime_label": "neutral",
   "regime_score": 18.3,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 363,
-    "earnings_blackout": 3,
+    "below_cutoff": 343,
+    "earnings_blackout": 5,
     "rr_too_low": 25,
     "frozen": 1
   },
-  "candidates_evaluated": 392,
+  "candidates_evaluated": 374,
   "picks_count": 0,
   "picks": [],
   "oracle_watch_count": 8,
@@ -23,7 +23,7 @@
         "path3_strong_candidate",
         "path5_strong_quality"
       ],
-      "spot_price": 78.67,
+      "spot_price": 78.36,
       "oracle_note": {
         "text": "P3 score=65 + P4 ENTRY_ZONE price=$78.67 + Path5 quality + independent BUY/MED. +5 conf/+3 score for clean convergence.",
         "written_at": "2026-09-28"
@@ -36,7 +36,7 @@
       "convergence_paths": [
         "path1_buy"
       ],
-      "spot_price": 255.96,
+      "spot_price": 255.36,
       "oracle_note": {
         "text": "Rescan/watch: Path1 BUY score=98/conf=97 plus heatmap fda event_date=2026-10-15; entry_timing.label=Stretched, so tiny binary sizing.",
         "written_at": "2026-09-28"
@@ -49,7 +49,7 @@
       "convergence_paths": [
         "path1_buy"
       ],
-      "spot_price": 44.79,
+      "spot_price": 43.64,
       "oracle_note": {
         "text": "Rescan/watch: Path1 BUY score=82/conf=100 + Path3 portfolio + insider.signal=STRONG; current $44.79 below P4 zone=$46-$48.50.",
         "written_at": "2026-09-28"
@@ -62,7 +62,7 @@
       "convergence_paths": [
         "path1_buy"
       ],
-      "spot_price": 263.27,
+      "spot_price": 260.43,
       "oracle_note": {
         "text": "Path1 BUY score=94/conf=100 + P4 ENTRY_ZONE price=$263.27 + insider.signal=STRONG. +5 conf/+3 score while in $245-$265 zone.",
         "written_at": "2026-09-28"
@@ -75,7 +75,7 @@
       "convergence_paths": [
         "path3_strong_candidate"
       ],
-      "spot_price": 14.46,
+      "spot_price": 14.13,
       "oracle_note": {
         "text": "Rescan/watch: fresh Path3 score=75, down_from_high=49.6%, price=$14.46. Needs P4 zone/activist confirmation before action.",
         "written_at": "2026-09-28"
@@ -88,7 +88,7 @@
       "convergence_paths": [
         "path5_strong_quality"
       ],
-      "spot_price": 352.81,
+      "spot_price": 349.57,
       "oracle_note": {
         "text": "Rescan/watch: Daily Buy + Path5=80 + independent source=both; P4 zone=$360-$385 vs current $352.81 needs target refresh before boost.",
         "written_at": "2026-09-28"
@@ -99,7 +99,7 @@
       "ticker": "ADBE",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 235.47,
+      "spot_price": 231.01,
       "oracle_note": {
         "text": "Rescan/oracle_watch: independent source=both BUY, P4 ENTRY_ZONE price=$235.47 inside $225-$240; flow unconfirmed, so small limit only.",
         "written_at": "2026-09-28"
@@ -110,7 +110,7 @@
       "ticker": "STLD",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 233.66,
+      "spot_price": 230.39,
       "oracle_note": {
         "text": "Rescan/oracle_watch: Daily Buy and P4 ENTRY_ZONE price=$233.66; P4 note says flow.score=9.0 but td_data_exists=false. Watch-size only.",
         "written_at": "2026-09-28"
@@ -120,7 +120,75 @@
   ],
   "macro_blocked_count": 0,
   "macro_blocked": [],
-  "tier0_watch": [],
+  "tier0_watch": [
+    {
+      "ticker": "AGI",
+      "path": "flow_led",
+      "source": "spike",
+      "composite": 30,
+      "convergence_paths": [
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 0,
+      "tier_evidence": [],
+      "size_class": "none",
+      "spot_price": 32.72,
+      "entry": {
+        "low": 31.74,
+        "high": 32.88,
+        "mid": 32.31
+      },
+      "target": 39.26,
+      "stop": 30.1,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": null,
+      "suggested_shares": null,
+      "position_risk_usd": null,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "AGI",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": null,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Buffett 74 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "STALE 34d. quality_growth 46% WR. Gold macro only. -15 conf -8 score.",
+      "oracle_note": {
+        "text": "WATCHLIST score=91/conf=60 is STALE 171d; catalyst appears macro-gold only, not fresh company event. -10 conf/-6 score.",
+        "written_at": "2026-09-28"
+      },
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-10-13",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false,
+        "abstained": false
+      }
+    }
+  ],
   "flow_led_picks_count": 0,
   "flow_led_picks": [],
   "flow_extreme_picks_count": 0,
