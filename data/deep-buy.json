@@ -2,16 +2,15 @@
   "date": "2026-09-29",
   "version": "2.48.0",
   "regime_label": "neutral",
-  "regime_score": 18.3,
+  "regime_score": 0.0,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 343,
+    "below_cutoff": 342,
     "earnings_blackout": 5,
-    "rr_too_low": 25,
-    "frozen": 1
+    "rr_too_low": 25
   },
-  "candidates_evaluated": 374,
+  "candidates_evaluated": 372,
   "picks_count": 0,
   "picks": [],
   "oracle_watch_count": 8,
@@ -25,8 +24,8 @@
       ],
       "spot_price": 78.36,
       "oracle_note": {
-        "text": "P3 score=65 + P4 ENTRY_ZONE price=$78.67 + Path5 quality + independent BUY/MED. +5 conf/+3 score for clean convergence.",
-        "written_at": "2026-09-28"
+        "text": "P4 ENTRY_ZONE=$78-$80 at $78.36 and watchlist cites P3+Path5+independent convergence. Small starter only; +3/+2.",
+        "written_at": "2026-09-29"
       },
       "filter_reason": "below_cutoff"
     },
@@ -38,21 +37,8 @@
       ],
       "spot_price": 255.36,
       "oracle_note": {
-        "text": "Rescan/watch: Path1 BUY score=98/conf=97 plus heatmap fda event_date=2026-10-15; entry_timing.label=Stretched, so tiny binary sizing.",
-        "written_at": "2026-09-28"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "APTV",
-      "composite": 25,
-      "convergence_paths": [
-        "path1_buy"
-      ],
-      "spot_price": 43.64,
-      "oracle_note": {
-        "text": "Rescan/watch: Path1 BUY score=82/conf=100 + Path3 portfolio + insider.signal=STRONG; current $44.79 below P4 zone=$46-$48.50.",
-        "written_at": "2026-09-28"
+        "text": "Rescan/watch: Path1 BUY score=90/conf=97 plus heatmap fda+earnings score=34. Binary-sized only; no clean P4 zone.",
+        "written_at": "2026-09-29"
       },
       "filter_reason": "below_cutoff"
     },
@@ -64,8 +50,21 @@
       ],
       "spot_price": 260.43,
       "oracle_note": {
-        "text": "Path1 BUY score=94/conf=100 + P4 ENTRY_ZONE price=$263.27 + insider.signal=STRONG. +5 conf/+3 score while in $245-$265 zone.",
-        "written_at": "2026-09-28"
+        "text": "Path1 BUY score=79/conf=100 + P4 zone=$245-$265; current=$260.43 inside zone. +5/+2 for zone convergence; no add above zone.",
+        "written_at": "2026-09-29"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "SOFI",
+      "composite": 25,
+      "convergence_paths": [
+        "path1_buy"
+      ],
+      "spot_price": 15.93,
+      "oracle_note": {
+        "text": "Path1 BUY score=82/conf=97 + P4 ENTRY_ZONE/DIP at $15.93, zone=$14.50-$16.00. +5/+2 reflects liquid zone convergence, not chase above $16.",
+        "written_at": "2026-09-29"
       },
       "filter_reason": "below_cutoff"
     },
@@ -77,8 +76,8 @@
       ],
       "spot_price": 14.13,
       "oracle_note": {
-        "text": "Rescan/watch: fresh Path3 score=75, down_from_high=49.6%, price=$14.46. Needs P4 zone/activist confirmation before action.",
-        "written_at": "2026-09-28"
+        "text": "Rescan/watch: fresh Path3 score=78, down_from_high=50.7%, Daily Buy entry=$14.13. Need P4 zone or activist/insider confirmation.",
+        "written_at": "2026-09-29"
       },
       "filter_reason": "below_cutoff"
     },
@@ -90,19 +89,19 @@
       ],
       "spot_price": 349.57,
       "oracle_note": {
-        "text": "Rescan/watch: Daily Buy + Path5=80 + independent source=both; P4 zone=$360-$385 vs current $352.81 needs target refresh before boost.",
-        "written_at": "2026-09-28"
+        "text": "Daily Buy + Path5=80 + P4 cites liquid flow support; current=$349.57 below legacy zone=$360-$385, so refresh target before size.",
+        "written_at": "2026-09-29"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "ADBE",
+      "ticker": "FOUR",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 231.01,
+      "spot_price": 37.03,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: independent source=both BUY, P4 ENTRY_ZONE price=$235.47 inside $225-$240; flow unconfirmed, so small limit only.",
-        "written_at": "2026-09-28"
+        "text": "Path3 portfolio + P4 ENTRY_ZONE=$33-$38 at $37.03; watchlist cites CEO $23.9M buy. +3 score for contrarian/zone convergence.",
+        "written_at": "2026-09-29"
       },
       "filter_reason": "below_cutoff"
     },
@@ -112,8 +111,8 @@
       "convergence_paths": [],
       "spot_price": 230.39,
       "oracle_note": {
-        "text": "Rescan/oracle_watch: Daily Buy and P4 ENTRY_ZONE price=$233.66; P4 note says flow.score=9.0 but td_data_exists=false. Watch-size only.",
-        "written_at": "2026-09-28"
+        "text": "Daily Buy + P4 ENTRY_ZONE=$225-$245 at $230.39, but options volume is below 5K rule. +3/+2 only for watch-size setup.",
+        "written_at": "2026-09-29"
       },
       "filter_reason": "below_cutoff"
     }
@@ -173,10 +172,7 @@
       },
       "rationale_one_liner": "Buffett 74 STRONG + watchlist dip alert. no earnings <45d.",
       "watchlist_thesis": "STALE 34d. quality_growth 46% WR. Gold macro only. -15 conf -8 score.",
-      "oracle_note": {
-        "text": "WATCHLIST score=91/conf=60 is STALE 171d; catalyst appears macro-gold only, not fresh company event. -10 conf/-6 score.",
-        "written_at": "2026-09-28"
-      },
+      "oracle_note": null,
       "macro_filter": {
         "pass": true,
         "result": "PASS",
