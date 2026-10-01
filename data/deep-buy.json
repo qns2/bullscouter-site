@@ -2,29 +2,121 @@
   "date": "2026-10-01",
   "version": "2.48.0",
   "regime_label": "neutral",
-  "regime_score": 4.8,
+  "regime_score": -7.6,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 343,
+    "below_cutoff": 345,
     "earnings_blackout": 3,
-    "rr_too_low": 22
+    "rr_too_low": 21
   },
-  "candidates_evaluated": 368,
-  "picks_count": 0,
-  "picks": [],
-  "oracle_watch_count": 7,
+  "candidates_evaluated": 370,
+  "picks_count": 1,
+  "picks": [
+    {
+      "ticker": "DKS",
+      "composite": 45,
+      "convergence_paths": [
+        "path1_buy",
+        "path3_strong_candidate"
+      ],
+      "spot_price": 134.29,
+      "entry": {
+        "low": 128.0,
+        "high": 133.0,
+        "mid": 130.5
+      },
+      "target": 161.15,
+      "stop": 123.55,
+      "rr_ratio": 2.5,
+      "rr_planned": 4.41,
+      "above_zone_pct": 0.97,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 940.03,
+      "suggested_shares": 7,
+      "position_risk_usd": 75.18,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "path1": {
+          "score": 25
+        },
+        "path3": {
+          "score": 20
+        }
+      },
+      "dilution_risk": {
+        "ticker": "DKS",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -29.8,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Tier 2 BUY conf 87 + Path 3 strong. no earnings <45d.",
+      "watchlist_thesis": "Path1 BUY + P3 + independent BUY + insider heat, but spot above zone and prior flow bearish. Alert only low-zone and flow improving.",
+      "rank": 1,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed hike, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-10-15",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false,
+        "abstained": false
+      },
+      "oracle_note": {
+        "text": "Path1+P3+independent+insider thesis valid, but spot $134.29 above $128-$133 zone and prior flow bearish. -5/-4 until pullback/flow turn.",
+        "written_at": "2026-10-01"
+      }
+    }
+  ],
+  "oracle_watch_count": 8,
   "oracle_watch": [
     {
       "ticker": "ALNY",
+      "composite": 35,
+      "convergence_paths": [
+        "path1_buy",
+        "catalyst_near"
+      ],
+      "spot_price": 246.74,
+      "oracle_note": {
+        "text": "Path1 BUY 90/conf97 + heatmap fda,earnings score=34, but no P4 entry zone. -3 conf reflects entry-plan gap, not thesis break.",
+        "written_at": "2026-10-01"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "DECK",
+      "composite": 35,
+      "convergence_paths": [
+        "path3_strong_candidate",
+        "path5_strong_quality"
+      ],
+      "spot_price": 78.14,
+      "oracle_note": {
+        "text": "P3 + P4 zone=$78-$80 + Path5=81 + independent BUY. Half-size due earnings 2026-10-22; +4/+3.",
+        "written_at": "2026-10-01"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "APTV",
       "composite": 25,
       "convergence_paths": [
         "path1_buy"
       ],
-      "spot_price": 246.74,
+      "spot_price": 43.02,
       "oracle_note": {
-        "text": "Path1 BUY score=100/conf=100 + heatmap fda+earnings, but PDUFA rows conflict (2026-08-31/09-15/10-15) and volume=193. -5 conf.",
-        "written_at": "2026-09-30"
+        "text": "Path1 BUY 82/conf100 + Path3 overlap + heatmap insider_buy, but spot $43.02 below P4 zone $46-$48.50. Wait for reclaim.",
+        "written_at": "2026-10-01"
       },
       "filter_reason": "below_cutoff"
     },
@@ -36,8 +128,8 @@
       ],
       "spot_price": 254.02,
       "oracle_note": {
-        "text": "Rescan/watch: Path1 BUY score=77/conf=100 + P4 zone=$245-$265, but options flow_score=0.51 neutral. Bid low, no chase >$265.",
-        "written_at": "2026-09-30"
+        "text": "Path1 BUY score=84/conf=100 + P4 zone=$245-$265, but flow_score=-0.48 neutral. Small +3/+2; bid low/mid-zone only.",
+        "written_at": "2026-10-01"
       },
       "filter_reason": "below_cutoff"
     },
@@ -49,21 +141,8 @@
       ],
       "spot_price": 15.72,
       "oracle_note": {
-        "text": "Path1 BUY score=80/conf=97 + P4 zone=$14.50-$16.00 + options flow_score=7.5, volume=190353. Best liquid setup; +6/+3.",
-        "written_at": "2026-09-30"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "DKS",
-      "composite": 20,
-      "convergence_paths": [
-        "path3_strong_candidate"
-      ],
-      "spot_price": 134.29,
-      "oracle_note": {
-        "text": "P1/P3/independent thesis valid, but options flow_score=-2.49 and spot=$134.70 above P4 zone=$128-$133. Limit-only; -4/-2.",
-        "written_at": "2026-09-30"
+        "text": "Path1 BUY score=100/conf=100 + P4 zone=$14.50-$16.00 + options flow_score=7.5. Best liquid setup; +5 conf/+3 score.",
+        "written_at": "2026-10-01"
       },
       "filter_reason": "below_cutoff"
     },
@@ -75,8 +154,21 @@
       ],
       "spot_price": 351.19,
       "oracle_note": {
-        "text": "Daily Buy + Path5=80 + options flow_score=7.5, volume=158736. Refresh entry zone to $345-$360; modest +3 confidence only.",
-        "written_at": "2026-09-30"
+        "text": "Daily Buy + Path5=80 + independent BUY + P4 zone=$345-$360. Modest +3/+2 only because Deep Buy has 0 picks today.",
+        "written_at": "2026-10-01"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "RKLB",
+      "composite": 10,
+      "convergence_paths": [
+        "catalyst_near"
+      ],
+      "spot_price": 69.68,
+      "oracle_note": {
+        "text": "Heatmap score=43 partnership,earnings,launch. Rescan/watch for P4 zone; no blind chase without entry discipline.",
+        "written_at": "2026-10-01"
       },
       "filter_reason": "below_cutoff"
     },
@@ -86,19 +178,8 @@
       "convergence_paths": [],
       "spot_price": 13.57,
       "oracle_note": {
-        "text": "Rescan/watch: fresh Path3 score=78/down_from_high=50.7% + Daily Buy, but no P4 zone and flow_score=4.5. Need confirmation.",
-        "written_at": "2026-09-30"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "FOUR",
-      "composite": 0,
-      "convergence_paths": [],
-      "spot_price": 36.17,
-      "oracle_note": {
-        "text": "Rescan/watch: Path3+P4 zone=$33-$38, but options flow_score=-0.51 and volume=593. Needs flow/liquidity before full entry.",
-        "written_at": "2026-09-30"
+        "text": "Rescan/watch: Daily Buy + Path3 score=78/down_from_high=50.7%, but no P4 zone or strong flow confirmation yet.",
+        "written_at": "2026-10-01"
       },
       "filter_reason": "below_cutoff"
     }
