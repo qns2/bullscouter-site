@@ -1,16 +1,16 @@
 {
-  "date": "2026-10-02",
+  "date": "2026-10-05",
   "version": "2.48.0",
   "regime_label": "neutral",
   "regime_score": -2.5,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 334,
+    "below_cutoff": 324,
     "rr_too_low": 23,
     "earnings_blackout": 3
   },
-  "candidates_evaluated": 361,
+  "candidates_evaluated": 351,
   "picks_count": 1,
   "picks": [
     {
@@ -20,21 +20,21 @@
         "path1_buy",
         "path3_strong_candidate"
       ],
-      "spot_price": 132.85,
+      "spot_price": 136.08,
       "entry": {
         "low": 128.0,
         "high": 133.0,
         "mid": 130.5
       },
-      "target": 159.42,
-      "stop": 122.22,
+      "target": 163.3,
+      "stop": 125.19,
       "rr_ratio": 2.5,
-      "rr_planned": 3.49,
-      "above_zone_pct": 0.0,
+      "rr_planned": 6.18,
+      "above_zone_pct": 2.32,
       "below_zone_pct": 0.0,
-      "suggested_size_usd": 929.95,
+      "suggested_size_usd": 952.56,
       "suggested_shares": 7,
-      "position_risk_usd": 74.41,
+      "position_risk_usd": 76.23,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -64,8 +64,8 @@
       "macro_filter": {
         "pass": true,
         "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-10-16",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-10-19",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false,
@@ -86,7 +86,7 @@
         "path1_buy",
         "catalyst_near"
       ],
-      "spot_price": 231.18,
+      "spot_price": 219.72,
       "oracle_note": {
         "text": "Path1 BUY 100/conf100 + heatmap fda,earnings score=34, but no P4 entry zone. Watch until level defined.",
         "written_at": "2026-10-02"
@@ -99,7 +99,7 @@
       "convergence_paths": [
         "path1_buy"
       ],
-      "spot_price": 43.97,
+      "spot_price": 43.54,
       "oracle_note": {
         "text": "Path1 BUY 81/conf100 + Path3 overlap + heatmap insider_buy, but spot=$43.97 below P4 zone=$46-$48.50. Wait for reclaim.",
         "written_at": "2026-10-02"
@@ -112,7 +112,7 @@
       "convergence_paths": [
         "path1_buy"
       ],
-      "spot_price": 15.84,
+      "spot_price": 15.77,
       "oracle_note": {
         "text": "Path1 BUY 100/conf97 + P4 zone=$14.50-$16.00 + options flow_score=7.5. Best liquid setup; +5 conf/+3 score.",
         "written_at": "2026-10-02"
@@ -125,7 +125,7 @@
       "convergence_paths": [
         "path5_strong_quality"
       ],
-      "spot_price": 343.64,
+      "spot_price": 355.14,
       "oracle_note": {
         "text": "Daily Buy + Path5=80 + independent BUY + P4 zone=$345-$360; spot=$343.64 near low edge. Small boost; bid low-zone.",
         "written_at": "2026-10-02"
@@ -138,7 +138,7 @@
       "convergence_paths": [
         "path5_strong_quality"
       ],
-      "spot_price": 79.57,
+      "spot_price": 79.12,
       "oracle_note": {
         "text": "P4 zone=$78-$80 + Path5=81 + independent BUY; earnings=2026-10-22. Half-size setup; +4 conf/+2 score.",
         "written_at": "2026-10-02"
@@ -149,7 +149,7 @@
       "ticker": "CC",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 13.48,
+      "spot_price": 13.71,
       "oracle_note": {
         "text": "Rescan/watch: Daily Buy + Path3 score=78/down_from_high=50.7%, but no P4 zone or flow trigger in midday context.",
         "written_at": "2026-10-02"
@@ -160,7 +160,7 @@
       "ticker": "CEG",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 258.92,
+      "spot_price": 257.49,
       "oracle_note": {
         "text": "Path1 BUY + P4 zone=$245-$265 + heatmap sector_catalyst, but P4 says flow_score=-0.48 neutral. Small +2 conf only.",
         "written_at": "2026-10-02"
@@ -193,7 +193,7 @@
       "ticker": "STLD",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 226.17,
+      "spot_price": 231.99,
       "oracle_note": {
         "text": "Daily Buy + P4 zone=$225-$245 + flow_score=9.0, but P4 says options liquidity appears below 5K rule. Watch only.",
         "written_at": "2026-10-02"
@@ -203,7 +203,72 @@
   ],
   "macro_blocked_count": 0,
   "macro_blocked": [],
-  "tier0_watch": [],
+  "tier0_watch": [
+    {
+      "ticker": "WDC",
+      "path": "flow_led",
+      "source": "spike",
+      "composite": 30,
+      "convergence_paths": [
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 0,
+      "tier_evidence": [],
+      "size_class": "none",
+      "spot_price": 415.29,
+      "entry": {
+        "low": 402.83,
+        "high": 417.37,
+        "mid": 410.1
+      },
+      "target": 498.35,
+      "stop": 382.07,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": null,
+      "suggested_shares": null,
+      "position_risk_usd": null,
+      "earnings_date": "2026-10-29",
+      "earnings_days_away": 18,
+      "components": {
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "WDC",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -1.38,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Buffett 70 STRONG + watchlist dip alert. Earnings 18d.",
+      "watchlist_thesis": null,
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
+        "expires": "2026-10-19",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false,
+        "abstained": false
+      }
+    }
+  ],
   "flow_led_picks_count": 0,
   "flow_led_picks": [],
   "flow_extreme_picks_count": 0,
