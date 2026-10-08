@@ -1,83 +1,19 @@
 {
   "date": "2026-10-08",
   "version": "2.48.0",
-  "regime_label": "risk_on",
-  "regime_score": 28.2,
+  "regime_label": "neutral",
+  "regime_score": 23.4,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 279,
-    "rr_too_low": 24,
+    "below_cutoff": 280,
+    "rr_too_low": 23,
     "earnings_blackout": 10
   },
-  "candidates_evaluated": 314,
-  "picks_count": 1,
-  "picks": [
-    {
-      "ticker": "DKS",
-      "composite": 45,
-      "convergence_paths": [
-        "path1_buy",
-        "path3_strong_candidate"
-      ],
-      "spot_price": 131.18,
-      "entry": {
-        "low": 128.0,
-        "high": 133.0,
-        "mid": 130.5
-      },
-      "target": 163.3,
-      "stop": 120.69,
-      "rr_ratio": 3.06,
-      "rr_planned": 3.34,
-      "above_zone_pct": 0.0,
-      "below_zone_pct": 0.0,
-      "suggested_size_usd": 918.26,
-      "suggested_shares": 7,
-      "position_risk_usd": 73.43,
-      "earnings_date": null,
-      "earnings_days_away": null,
-      "components": {
-        "path1": {
-          "score": 25
-        },
-        "path3": {
-          "score": 20
-        }
-      },
-      "dilution_risk": {
-        "ticker": "DKS",
-        "risk_level": "LOW",
-        "penalty": 0,
-        "reasons": [],
-        "warning_note": null,
-        "active_offering": false,
-        "shelf_active": false,
-        "shelf_plus_run": false,
-        "price_run_pct_30d": 8.5,
-        "insider_selling_signal": null,
-        "latest_filings": []
-      },
-      "rationale_one_liner": "Tier 2 BUY conf 93 + Path 3 strong. no earnings <45d.",
-      "watchlist_thesis": "Deep Buy #1 + Path1/Path3/P4/insider convergence. Buy only on pullback into $128-$133.",
-      "rank": 1,
-      "macro_filter": {
-        "pass": true,
-        "result": "PASS",
-        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-10-22",
-        "reasons": [],
-        "override_eligible": false,
-        "override_applied": false,
-        "abstained": false
-      },
-      "oracle_note": {
-        "text": "deep_buy rank #1 composite 45 (path1+path3); P4 entry_zone=$128-$133 and heatmap insider_buy. Best setup, but limit only.",
-        "written_at": "2026-10-07"
-      }
-    }
-  ],
-  "oracle_watch_count": 7,
+  "candidates_evaluated": 313,
+  "picks_count": 0,
+  "picks": [],
+  "oracle_watch_count": 9,
   "oracle_watch": [
     {
       "ticker": "ALNY",
@@ -88,21 +24,47 @@
       ],
       "spot_price": 224.41,
       "oracle_note": {
-        "text": "Path1 score=83/conf=98 + heatmap=34 + options flow=+9.0, volume=653. -3 conf until FDA/earnings row is verified.",
-        "written_at": "2026-10-07"
+        "text": "Path1 BUY 79/conf96 and heatmap=40, but catalyst_events conflict: PDUFA 2026-09-15 and 2026-10-15. -5 conf until resolved.",
+        "written_at": "2026-10-08"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "AVGO",
+      "ticker": "DKS",
+      "composite": 20,
+      "convergence_paths": [
+        "path3_strong_candidate"
+      ],
+      "spot_price": 131.18,
+      "oracle_note": {
+        "text": "deep_buy rank #1 composite 45 (path1+path3); P4 entry_zone=$128-$133, heatmap insider_buy. Starter only; no positive boost.",
+        "written_at": "2026-10-08"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "CRUS",
       "composite": 15,
       "convergence_paths": [
         "path5_strong_quality"
       ],
-      "spot_price": 376.51,
+      "spot_price": 112.68,
       "oracle_note": {
-        "text": "Daily Buy + Path5 quality + P4 zone=$345-$360 + old independent BUY; spot=$375.81 is above preferred entry. Rescan, no chase.",
-        "written_at": "2026-10-07"
+        "text": "P4/DB ENTRY_ZONE around $106-$110, but options flow table volume=250, below 5K liquidity rule. Watch only.",
+        "written_at": "2026-10-08"
+      },
+      "filter_reason": "below_cutoff"
+    },
+    {
+      "ticker": "RDDT",
+      "composite": 15,
+      "convergence_paths": [
+        "path5_strong_quality"
+      ],
+      "spot_price": 152.71,
+      "oracle_note": {
+        "text": "P4 entry_zone=$150-$154, spot=$152.71. Watch only; needs fresh convergence and earnings-risk check before entry.",
+        "written_at": "2026-10-08"
       },
       "filter_reason": "below_cutoff"
     },
@@ -112,8 +74,8 @@
       "convergence_paths": [],
       "spot_price": 232.77,
       "oracle_note": {
-        "text": "P4 ENTRY_ZONE price=$238.12 inside $225-$240, target=$320, but P4 note has flow_score=-3. Lower-half bid only.",
-        "written_at": "2026-10-07"
+        "text": "P4 entry_zone=$225-$240, spot=$232.77, but flow_score=-3. Lower-half bid only; no confidence boost.",
+        "written_at": "2026-10-08"
       },
       "filter_reason": "below_cutoff"
     },
@@ -123,8 +85,8 @@
       "convergence_paths": [],
       "spot_price": 44.22,
       "oracle_note": {
-        "text": "Path3 score=70/down=51% + P4 target=$62 + heatmap insider_buy. Current $44.72 below $46-$48.50 zone; wait for reclaim.",
-        "written_at": "2026-10-07"
+        "text": "Path3 score=70/down=51% + P4 target=$62 + heatmap earnings, insider_buy. Wait reclaim into $46-$48.50 zone.",
+        "written_at": "2026-10-08"
       },
       "filter_reason": "below_cutoff"
     },
@@ -134,19 +96,19 @@
       "convergence_paths": [],
       "spot_price": 13.98,
       "oracle_note": {
-        "text": "Path3 score=78/down_from_high=50.7% + Daily Buy + heatmap earnings, insider_buy. Rescan for entry framework before action.",
-        "written_at": "2026-10-07"
+        "text": "Path3 score=78/down=50.7% + Daily Buy + heatmap earnings, insider_buy. No clean options support; rescan/watch only.",
+        "written_at": "2026-10-08"
       },
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "ISRG",
+      "ticker": "FCN",
       "composite": 0,
       "convergence_paths": [],
-      "spot_price": 414.52,
+      "spot_price": 137.73,
       "oracle_note": {
-        "text": "P4 ENTRY_ZONE price=$404.76 inside $375-$415, target=$540. Verify options volume before any upgrade.",
-        "written_at": "2026-10-07"
+        "text": "P4 note cites CEO+CFO+CSO $2.08M cluster buy and entry_zone=$143-$150. Rescan current flow/catalyst before promotion.",
+        "written_at": "2026-10-08"
       },
       "filter_reason": "below_cutoff"
     },
@@ -156,8 +118,8 @@
       "convergence_paths": [],
       "spot_price": 15.66,
       "oracle_note": {
-        "text": "P4 ENTRY_ZONE price=$15.76 inside $14.50-$16.00, target=$19.50. No positive modifier because current Path1 table omits SOFI.",
-        "written_at": "2026-10-07"
+        "text": "P4 ENTRY_ZONE at $15.66 inside $14.50-$16.00, but no Path1 confirmation. Watch/starter only; no confidence boost.",
+        "written_at": "2026-10-08"
       },
       "filter_reason": "below_cutoff"
     }
