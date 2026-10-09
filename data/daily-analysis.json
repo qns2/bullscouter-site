@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-08T17:23:02",
-  "source_generated_at": "2026-10-08T14:20:05.117272+00:00",
+  "generated_at": "2026-10-09T17:23:11",
+  "source_generated_at": "2026-10-09T14:20:04.558314+00:00",
   "mode": "daily_analysis_site_export",
   "oracle_model": "gpt-5.5",
-  "title": "Options Signals Lead Without News Confirmation",
-  "summary": "Fact: bounded news discovery returned zero portfolio news events, zero theme observations, and zero new tickers, so today\u2019s oracle read is driven almost entirely by per-ticker options evidence. Inference: the clearest opportunity-style flow is in COPX, NFLX, IBRX, and VIVO, while the clearest risk-style flow is in DRTS and TEAM. Inference: enterprise software is mixed, with NOW showing constructive call-skewed flow, SAP near-balanced, and TEAM put-heavy. Watch the gap between fresh per-ticker options scans from October 6-8, 2026 and stale portfolio/general-market context dated August 12, 2026.",
+  "title": "Options flow leads while news feed is quiet",
+  "summary": "Fact: bounded news discovery returned zero portfolio-specific events and zero theme observations for 2026-10-09. Fact: options evidence is strongest in COPX, IBRX, SOFI, and SKHY, while TEAM and DRTS show bearish put-heavy flow. Inference: today\u2019s oracle read is mostly a positioning tape, not a news-confirmed catalyst tape, so confidence is lower where options flow has no matching source event. Watch the divergence between bullish commodity/biotech/fintech flow and the absence of fresh news confirmation.",
   "portfolio": {
     "as_of": "2026-08-12T12:24:26Z",
     "position_count": 15,
@@ -27,137 +27,88 @@
     ]
   },
   "my_stocks": {
-    "summary": "Fact: bounded news discovery returned zero portfolio news events, zero theme observations, and zero new tickers, so today\u2019s oracle read is driven almost entirely by per-ticker options evidence. Inference: the clearest opportunity-style flow is in COPX, NFLX, IBRX, and VIVO, while the clearest risk-style flow is in DRTS and TEAM. Inference: enterprise software is mixed, with NOW showing constructive call-skewed flow, SAP near-balanced, and TEAM put-heavy. Watch the gap between fresh per-ticker options scans from October 6-8, 2026 and stale portfolio/general-market context dated August 12, 2026.",
+    "summary": "Fact: bounded news discovery returned zero portfolio-specific events and zero theme observations for 2026-10-09. Fact: options evidence is strongest in COPX, IBRX, SOFI, and SKHY, while TEAM and DRTS show bearish put-heavy flow. Inference: today\u2019s oracle read is mostly a positioning tape, not a news-confirmed catalyst tape, so confidence is lower where options flow has no matching source event. Watch the divergence between bullish commodity/biotech/fintech flow and the absence of fresh news confirmation.",
     "top_opportunities": [],
     "top_risks": [],
     "scored_picks": [],
     "held_position_updates": [
       {
-        "ticker": "VWCE",
-        "stance": "neutral",
-        "news": "Fact: no bounded news event was found for VWCE.",
-        "theta": "No latest options, IV, or flow signal available in the provided ThetaData evidence.",
-        "oracle_note": "Inference: broad equity ETF exposure has no fresh catalyst confirmation in this artifact."
-      },
-      {
-        "ticker": "IGLD",
-        "stance": "neutral",
-        "news": "Fact: no bounded news event was found for IGLD.",
-        "theta": "October 8 options scan shows flow_score 6.0, put_call_ratio 0.113, 142 calls versus 16 puts, but spot_price 19.9 differs sharply from the portfolio market price 76.56 EUR.",
-        "oracle_note": "Inference: the options signal looks call-skewed, but the ticker or price mismatch makes it low-confidence until symbol mapping is verified."
-      },
-      {
-        "ticker": "NFLX",
+        "ticker": "COPX",
         "stance": "opportunity",
-        "news": "Fact: no bounded news event was found for NFLX.",
-        "theta": "October 8 options scan shows flow_score 5.49, put_call_ratio 0.323, 172481 call volume versus 55762 put volume, and 30-day ATM IV of 47.89%.",
-        "oracle_note": "Inference: options flow is constructive and liquid, but it lacks a matched news catalyst in the bounded discovery output."
-      },
-      {
-        "ticker": "SKHY",
-        "stance": "neutral",
-        "news": "Fact: no bounded news event was found for SKHY.",
-        "theta": "October 8 options scan shows flow_score 2.49, put_call_ratio 0.669, 97479 calls versus 65249 puts, and October 7 30-day ATM IV of 51.99%.",
-        "oracle_note": "Inference: flow is mildly constructive but not decisive, and elevated IV suggests event or momentum sensitivity without a named source event here."
-      },
-      {
-        "ticker": "EXUS",
-        "stance": "neutral",
-        "news": "Fact: no bounded news event was found for EXUS.",
-        "theta": "No latest options, IV, or flow signal available in the provided ThetaData evidence.",
-        "oracle_note": "Inference: no portfolio-specific confirmation beyond existing position-level performance."
+        "news": "Fact: no bounded news event was supplied for COPX today.",
+        "theta": "Fact: 2026-10-09 flow_score 9.0, put_call_ratio 0.381, call volume 4051 vs put volume 1545, 30d ATM IV 0.4209.",
+        "oracle_note": "Inference: copper exposure has one of the clearest bullish options reads in the portfolio, but it remains options-only without a confirming news trigger."
       },
       {
         "ticker": "IBRX",
         "stance": "opportunity",
-        "news": "Fact: no bounded news event was found for IBRX.",
-        "theta": "October 8 options scan shows flow_score 5.01, put_call_ratio 0.387, 4368 calls versus 1689 puts, and stale September 24 30-day ATM IV of 92.77%.",
-        "oracle_note": "Inference: biotech-style upside demand appears present, but high IV and stale IV date make this a volatile, catalyst-sensitive read rather than a confirmed news-driven setup."
-      },
-      {
-        "ticker": "SAP",
-        "stance": "neutral",
-        "news": "Fact: no bounded news event was found for SAP.",
-        "theta": "October 8 options scan shows flow_score 2.01, near-balanced put_call_ratio 0.989, 460 calls versus 455 puts.",
-        "oracle_note": "Inference: options market is not expressing a strong directional view despite the portfolio\u2019s positive unrealized PnL."
-      },
-      {
-        "ticker": "URNU",
-        "stance": "neutral",
-        "news": "Fact: no bounded news event was found for URNU.",
-        "theta": "No latest options, IV, or flow signal available in the provided ThetaData evidence.",
-        "oracle_note": "Inference: uranium exposure has no options confirmation in this artifact, so any resource-theme read must come from external news not present here."
-      },
-      {
-        "ticker": "COPX",
-        "stance": "opportunity",
-        "news": "Fact: no bounded news event was found for COPX.",
-        "theta": "October 8 options scan shows flow_score 6.51, put_call_ratio 0.55, 5036 calls versus 2768 puts, high call open interest of 159488 versus 25362 put open interest, and 30-day ATM IV of 42.32%.",
-        "oracle_note": "Inference: this is the strongest clean options opportunity signal in the evidence, though it is options-led rather than news-confirmed."
-      },
-      {
-        "ticker": "IBM",
-        "stance": "neutral",
-        "news": "Fact: no bounded news event was found for IBM.",
-        "theta": "No latest options, IV, or flow signal available in the provided ThetaData evidence.",
-        "oracle_note": "Inference: no fresh options or news signal is available for the holding today."
-      },
-      {
-        "ticker": "NOW",
-        "stance": "opportunity",
-        "news": "Fact: no bounded news event was found for NOW.",
-        "theta": "October 8 options scan shows flow_score 4.02, put_call_ratio 0.468, 37201 calls versus 17397 puts, and stale October 3 30-day ATM IV of 56.79%.",
-        "oracle_note": "Inference: constructive software flow aligns with momentum-style positioning, but no source event explains the demand in the bounded news set."
+        "news": "Fact: no bounded news event was supplied for IBRX today.",
+        "theta": "Fact: 2026-10-09 flow_score 9.99, put_call_ratio 0.493, call volume 2528 vs put volume 1247; IV snapshot is stale at 2026-09-24 with 30d ATM IV 0.9277.",
+        "oracle_note": "Inference: strong call-skewed flow aligns with high-volatility biotech optionality, but stale IV and no news catalyst limit conviction."
       },
       {
         "ticker": "SOFI",
-        "stance": "neutral",
-        "news": "Fact: no bounded news event was found for SOFI.",
-        "theta": "October 8 options scan shows flow_score 2.49, put_call_ratio 0.736, 174566 calls versus 128409 puts, and October 7 30-day ATM IV of 54.5%.",
-        "oracle_note": "Inference: flow is active but only mildly constructive; the WATCHLIST scanner status fits a monitor-not-conclude posture."
+        "stance": "opportunity",
+        "news": "Fact: no bounded news event was supplied for SOFI today.",
+        "theta": "Fact: 2026-10-09 flow_score 7.5, put_call_ratio 0.281, call volume 176902 vs put volume 49623, 30d ATM IV 0.545 from 2026-10-07.",
+        "oracle_note": "Inference: SOFI shows high-volume bullish options interest and a strong scanner score, suggesting active risk appetite without a bounded news confirmation."
+      },
+      {
+        "ticker": "SKHY",
+        "stance": "opportunity",
+        "news": "Fact: no bounded news event was supplied for SKHY today.",
+        "theta": "Fact: 2026-10-09 flow_score 6.0, put_call_ratio 0.436, call volume 90668 vs put volume 39538; 30d ATM IV 0.5199 from 2026-10-07.",
+        "oracle_note": "Inference: bullish flow supports the scanner BUY signal, though the portfolio price and theta spot differ materially, making data alignment a watch item."
       },
       {
         "ticker": "TEAM",
         "stance": "risk",
-        "news": "Fact: no bounded news event was found for TEAM.",
-        "theta": "October 6 options scan shows flow_score -4.5, put_call_ratio 1.867, 2220 calls versus 4144 puts, while October 8 30-day ATM IV is 59.21%.",
-        "oracle_note": "Inference: put-heavy flow diverges from the portfolio\u2019s strong unrealized gain and flags software-specific downside hedging or concern."
+        "news": "Fact: no bounded news event was supplied for TEAM today.",
+        "theta": "Fact: 2026-10-09 flow_score -3.0, put_call_ratio 1.394, put volume 3431 vs call volume 2462, 30d ATM IV 0.6375.",
+        "oracle_note": "Inference: TEAM is the clearest software-positioning divergence, with no news event but options flow leaning defensive."
       },
       {
         "ticker": "DRTS",
         "stance": "risk",
-        "news": "Fact: no bounded news event was found for DRTS.",
-        "theta": "October 8 options scan shows flow_score -3.0, put_call_ratio 10.54, 100 calls versus 1054 puts, and stale August 11 30-day ATM IV of 66.78%.",
-        "oracle_note": "Inference: the options tape is the clearest single-name risk flag, but the small absolute call volume and stale IV snapshot limit confidence."
+        "news": "Fact: no bounded news event was supplied for DRTS today.",
+        "theta": "Fact: 2026-10-09 flow_score -3.0, put_call_ratio 7.875, put volume 1071 vs call volume 136; IV snapshot is stale at 2026-08-11.",
+        "oracle_note": "Inference: put-heavy flow is a risk flag, but stale IV and small absolute call volume make this a monitor item rather than a confirmed deterioration signal."
       },
       {
-        "ticker": "VIVO",
-        "stance": "opportunity",
-        "news": "Fact: no bounded news event was found for VIVO.",
-        "theta": "October 6 options scan shows flow_score 6.99, put_call_ratio 0.349, 241 calls versus 84 puts, and stale August 11 30-day ATM IV of 174.2%.",
-        "oracle_note": "Inference: options flow is sharply call-skewed, but tiny-dollar biotech-style optionality and very stale/high IV make this a speculative signal."
+        "ticker": "NFLX",
+        "stance": "neutral",
+        "news": "Fact: no bounded news event was supplied for NFLX today.",
+        "theta": "Fact: 2026-10-09 flow_score 3.99, put_call_ratio 0.307, call volume 129104 vs put volume 39694, 30d ATM IV 0.489.",
+        "oracle_note": "Inference: options flow is constructive, but scanner confidence is low and no news catalyst was provided."
+      },
+      {
+        "ticker": "NOW",
+        "stance": "neutral",
+        "news": "Fact: no bounded news event was supplied for NOW today.",
+        "theta": "Fact: 2026-10-09 flow_score 4.02, put_call_ratio 0.442, call volume 27329 vs put volume 12091, 30d ATM IV 0.5679 from 2026-10-03.",
+        "oracle_note": "Inference: options flow is moderately constructive, but TEAM weakness creates a mixed software tape."
       }
     ]
   },
   "general": {
-    "summary": "General analysis is macro-first: 1 macro headline(s), 0 macro event(s), 0 direct company event(s), 0 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.",
+    "summary": "General analysis is macro-first: 4 macro headline(s), 0 macro event(s), 0 direct company event(s), 0 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.",
     "source_artifact": "data/gpt_news_discovery/latest.json",
-    "generated_at": "2026-10-08T13:40:06.145214+00:00",
+    "generated_at": "2026-10-09T13:40:06.341944+00:00",
     "macro_climate": {
       "status": "ok",
       "price_snapshot": {
-        "title": "Market price snapshot: SPY 774.72 (-0.32% last close); WTI oil 91.78 (+3.96% last close); Gold 4147.00 (+0.15% last close)",
+        "title": "Market price snapshot: SPY 776.54 (+0.34% last close); WTI oil 90.89 (-0.66% last close); Gold 4212.90 (+1.34% last close)",
         "url": "yfinance://SPY,CL=F,GC=F",
-        "published_at": "2026-10-08",
+        "published_at": "2026-10-09",
         "snippet": "Macro context only. Use this with Fed, geopolitical, oil, and gold headlines to infer sector read-throughs; do not treat ETFs or commodities as stock picks.",
         "category_hint": "macro_market_climate"
       },
       "price_moves": {
-        "SPY": -0.32,
-        "WTI oil": 3.96,
-        "Gold": 0.15
+        "SPY": 0.34,
+        "WTI oil": -0.66,
+        "Gold": 1.34
       },
-      "tone": "commodity_driven",
+      "tone": "mixed",
       "headlines": [
         {
           "title": "Jim Cramer Says \u2018Interest Rates Can Fall, Too!!\u2019 as October Fed Hike Odds Fall to 21.6% \u2014 Here\u2019s What Traders Are Betting On - TradingView",
@@ -165,9 +116,30 @@
           "published_at": "2026-10-06",
           "snippet": "Jim Cramer Says \u2018Interest Rates Can Fall, Too!!\u2019 as October Fed Hike Odds Fall to 21.6% \u2014 Here\u2019s What Traders Are Betting On &nbsp;&nbsp; TradingView",
           "category_hint": "macro_market_climate"
+        },
+        {
+          "title": "Gold adds over 1% on easing oil prices, softer dollar - Reuters",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVl80MTVLVXR1WWd1MGxyNFRNN1VaNlJ2WFNIeGlrLS1HTGwzc1pZZ3FqaFZyOFBZcDk0VGRnMzVvSUtiSGFyR3c2Z29Fa25XZk1xX0JlWGpJZVlNaEJhWXhoenc3enFGZGZ3QnVUaGg1U2ZTNE9GZGxfTDIyb3hoMl9ycTNsOHpHeWdKRXk1VmdZZ1VITnhMR29NQ3JYUmV4TXJpemVRaw?oc=5",
+          "published_at": "2026-10-09",
+          "snippet": "Gold adds over 1% on easing oil prices, softer dollar &nbsp;&nbsp; Reuters",
+          "category_hint": "macro_market_climate"
+        },
+        {
+          "title": "Gold adds over 1% on easing oil prices, softer dollar - CNBC",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeXpwdHFDS2pPOFFDTjJvWlpvMGtNVlEzVlY2WF94Yk5IMFFrT2N0cUs5dVVzS1pqVjB0MjYwVHVoclFWVHZjMU40UzJpY3hMc1NhM0t5LWNSQ0w0SU96dGdId0ZqYnI3T0VrN2lmdHJlNW9rNGxrY2hhbHZVZV9tWTBSUnRsQ1g1MFJQMVFLSXJBZFpGVlZPVzFQU28xUTg50gGmAUFVX3lxTE5lODhsb205Z0tmRGkwUEY4amlKdEI1LTJFZjBJY1N6OThLX1loQU8yTGI0WS1idmszcHRHdXBiN011TFg0WDZRV1FkMFVEZ1NhOUdHTENFQlNUYlE3VHRsaVgycnEwbThxel9JTXdib3JYUG5RMS1kY3hWZFM2Rzl3TWh4eThnR1BTWFdtbG5XYVhhZklkTE85bW1IRmFxTGtSak1jUHc?oc=5",
+          "published_at": "2026-10-09",
+          "snippet": "Gold adds over 1% on easing oil prices, softer dollar &nbsp;&nbsp; CNBC",
+          "category_hint": "macro_market_climate"
+        },
+        {
+          "title": "Dubai gold prices rise as treasury yields cool-off - Gulf News",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQSm9EeUJjTGx0M3lPVkl0T01nRmVwUmVSZ3pWXzctU21kdml6NkxWUDl0RTg0RzJFS2pMaHlTel8xMXAweDVrVVNFY1RIV3VTRlNIdXpDTHJhb3M1SzlpS0VGa0RVWnVoMlQ0aFhNM3FLOFNXVnRDUFpMZEFzdFBILW9IQkFHX2tMTDNFNU5pM3FqZ2NWVTNjTFpTdXZ0c0c20gGzAUFVX3lxTE1WOE1IVVlZOEpWYzc3UjU1aW9PTnhpa016cEN3a1dHQ0ZkdGFIOWlYVkpsc3JZZGNBaWpPVlh6ODFpQ3k4c2pIaDlFWF9kUVE5Q3kyY3pUVkVJV0FZZ1FLNHlKOHNyMnpRUXg4MGZtN2x2TzFsc01vaUpUenRjQlRuX3JXMDI2WmZoRlpsQ1lLLXNBNFVJRjh4R0JZR1dVQWxfUDBpbWR2Z28zM0V5X3BGUVRj?oc=5",
+          "published_at": "2026-10-09",
+          "snippet": "Dubai gold prices rise as treasury yields cool-off &nbsp;&nbsp; Gulf News",
+          "category_hint": "macro_market_climate"
         }
       ],
-      "summary": "Market price snapshot: SPY 774.72 (-0.32% last close); WTI oil 91.78 (+3.96% last close); Gold 4147.00 (+0.15% last close) 1 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: commodity_driven."
+      "summary": "Market price snapshot: SPY 776.54 (+0.34% last close); WTI oil 90.89 (-0.66% last close); Gold 4212.90 (+1.34% last close) 4 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed."
     },
     "market_wide_events": [],
     "notable_company_events": [],
@@ -195,7 +167,7 @@
     "new_tickers": [],
     "portfolio_read_throughs": [],
     "scored_picks": [],
-    "llm_summary": "No high-confidence stock-news events or scored picks were provided for today, so there is no evidence-backed portfolio signal to synthesize. With the discovery set empty, the market read is neutral and should be treated as a placeholder until fresh news or ThetaData/options evidence is available.",
+    "llm_summary": "No high-confidence stock-news events or scored picks were provided for today, so there is no fresh fact pattern to elevate into a portfolio-level opportunity or risk call. With discovery empty, the prudent read is neutral: treat today\u2019s market-news signal as unavailable rather than benign.",
     "top_opportunities": [],
     "top_risks": [],
     "general_stale": false,
@@ -215,203 +187,144 @@
   ],
   "held_position_updates": [
     {
-      "ticker": "VWCE",
-      "stance": "neutral",
-      "news": "Fact: no bounded news event was found for VWCE.",
-      "theta": "No latest options, IV, or flow signal available in the provided ThetaData evidence.",
-      "oracle_note": "Inference: broad equity ETF exposure has no fresh catalyst confirmation in this artifact."
-    },
-    {
-      "ticker": "IGLD",
-      "stance": "neutral",
-      "news": "Fact: no bounded news event was found for IGLD.",
-      "theta": "October 8 options scan shows flow_score 6.0, put_call_ratio 0.113, 142 calls versus 16 puts, but spot_price 19.9 differs sharply from the portfolio market price 76.56 EUR.",
-      "oracle_note": "Inference: the options signal looks call-skewed, but the ticker or price mismatch makes it low-confidence until symbol mapping is verified."
-    },
-    {
-      "ticker": "NFLX",
+      "ticker": "COPX",
       "stance": "opportunity",
-      "news": "Fact: no bounded news event was found for NFLX.",
-      "theta": "October 8 options scan shows flow_score 5.49, put_call_ratio 0.323, 172481 call volume versus 55762 put volume, and 30-day ATM IV of 47.89%.",
-      "oracle_note": "Inference: options flow is constructive and liquid, but it lacks a matched news catalyst in the bounded discovery output."
-    },
-    {
-      "ticker": "SKHY",
-      "stance": "neutral",
-      "news": "Fact: no bounded news event was found for SKHY.",
-      "theta": "October 8 options scan shows flow_score 2.49, put_call_ratio 0.669, 97479 calls versus 65249 puts, and October 7 30-day ATM IV of 51.99%.",
-      "oracle_note": "Inference: flow is mildly constructive but not decisive, and elevated IV suggests event or momentum sensitivity without a named source event here."
-    },
-    {
-      "ticker": "EXUS",
-      "stance": "neutral",
-      "news": "Fact: no bounded news event was found for EXUS.",
-      "theta": "No latest options, IV, or flow signal available in the provided ThetaData evidence.",
-      "oracle_note": "Inference: no portfolio-specific confirmation beyond existing position-level performance."
+      "news": "Fact: no bounded news event was supplied for COPX today.",
+      "theta": "Fact: 2026-10-09 flow_score 9.0, put_call_ratio 0.381, call volume 4051 vs put volume 1545, 30d ATM IV 0.4209.",
+      "oracle_note": "Inference: copper exposure has one of the clearest bullish options reads in the portfolio, but it remains options-only without a confirming news trigger."
     },
     {
       "ticker": "IBRX",
       "stance": "opportunity",
-      "news": "Fact: no bounded news event was found for IBRX.",
-      "theta": "October 8 options scan shows flow_score 5.01, put_call_ratio 0.387, 4368 calls versus 1689 puts, and stale September 24 30-day ATM IV of 92.77%.",
-      "oracle_note": "Inference: biotech-style upside demand appears present, but high IV and stale IV date make this a volatile, catalyst-sensitive read rather than a confirmed news-driven setup."
-    },
-    {
-      "ticker": "SAP",
-      "stance": "neutral",
-      "news": "Fact: no bounded news event was found for SAP.",
-      "theta": "October 8 options scan shows flow_score 2.01, near-balanced put_call_ratio 0.989, 460 calls versus 455 puts.",
-      "oracle_note": "Inference: options market is not expressing a strong directional view despite the portfolio\u2019s positive unrealized PnL."
-    },
-    {
-      "ticker": "URNU",
-      "stance": "neutral",
-      "news": "Fact: no bounded news event was found for URNU.",
-      "theta": "No latest options, IV, or flow signal available in the provided ThetaData evidence.",
-      "oracle_note": "Inference: uranium exposure has no options confirmation in this artifact, so any resource-theme read must come from external news not present here."
-    },
-    {
-      "ticker": "COPX",
-      "stance": "opportunity",
-      "news": "Fact: no bounded news event was found for COPX.",
-      "theta": "October 8 options scan shows flow_score 6.51, put_call_ratio 0.55, 5036 calls versus 2768 puts, high call open interest of 159488 versus 25362 put open interest, and 30-day ATM IV of 42.32%.",
-      "oracle_note": "Inference: this is the strongest clean options opportunity signal in the evidence, though it is options-led rather than news-confirmed."
-    },
-    {
-      "ticker": "IBM",
-      "stance": "neutral",
-      "news": "Fact: no bounded news event was found for IBM.",
-      "theta": "No latest options, IV, or flow signal available in the provided ThetaData evidence.",
-      "oracle_note": "Inference: no fresh options or news signal is available for the holding today."
-    },
-    {
-      "ticker": "NOW",
-      "stance": "opportunity",
-      "news": "Fact: no bounded news event was found for NOW.",
-      "theta": "October 8 options scan shows flow_score 4.02, put_call_ratio 0.468, 37201 calls versus 17397 puts, and stale October 3 30-day ATM IV of 56.79%.",
-      "oracle_note": "Inference: constructive software flow aligns with momentum-style positioning, but no source event explains the demand in the bounded news set."
+      "news": "Fact: no bounded news event was supplied for IBRX today.",
+      "theta": "Fact: 2026-10-09 flow_score 9.99, put_call_ratio 0.493, call volume 2528 vs put volume 1247; IV snapshot is stale at 2026-09-24 with 30d ATM IV 0.9277.",
+      "oracle_note": "Inference: strong call-skewed flow aligns with high-volatility biotech optionality, but stale IV and no news catalyst limit conviction."
     },
     {
       "ticker": "SOFI",
-      "stance": "neutral",
-      "news": "Fact: no bounded news event was found for SOFI.",
-      "theta": "October 8 options scan shows flow_score 2.49, put_call_ratio 0.736, 174566 calls versus 128409 puts, and October 7 30-day ATM IV of 54.5%.",
-      "oracle_note": "Inference: flow is active but only mildly constructive; the WATCHLIST scanner status fits a monitor-not-conclude posture."
+      "stance": "opportunity",
+      "news": "Fact: no bounded news event was supplied for SOFI today.",
+      "theta": "Fact: 2026-10-09 flow_score 7.5, put_call_ratio 0.281, call volume 176902 vs put volume 49623, 30d ATM IV 0.545 from 2026-10-07.",
+      "oracle_note": "Inference: SOFI shows high-volume bullish options interest and a strong scanner score, suggesting active risk appetite without a bounded news confirmation."
+    },
+    {
+      "ticker": "SKHY",
+      "stance": "opportunity",
+      "news": "Fact: no bounded news event was supplied for SKHY today.",
+      "theta": "Fact: 2026-10-09 flow_score 6.0, put_call_ratio 0.436, call volume 90668 vs put volume 39538; 30d ATM IV 0.5199 from 2026-10-07.",
+      "oracle_note": "Inference: bullish flow supports the scanner BUY signal, though the portfolio price and theta spot differ materially, making data alignment a watch item."
     },
     {
       "ticker": "TEAM",
       "stance": "risk",
-      "news": "Fact: no bounded news event was found for TEAM.",
-      "theta": "October 6 options scan shows flow_score -4.5, put_call_ratio 1.867, 2220 calls versus 4144 puts, while October 8 30-day ATM IV is 59.21%.",
-      "oracle_note": "Inference: put-heavy flow diverges from the portfolio\u2019s strong unrealized gain and flags software-specific downside hedging or concern."
+      "news": "Fact: no bounded news event was supplied for TEAM today.",
+      "theta": "Fact: 2026-10-09 flow_score -3.0, put_call_ratio 1.394, put volume 3431 vs call volume 2462, 30d ATM IV 0.6375.",
+      "oracle_note": "Inference: TEAM is the clearest software-positioning divergence, with no news event but options flow leaning defensive."
     },
     {
       "ticker": "DRTS",
       "stance": "risk",
-      "news": "Fact: no bounded news event was found for DRTS.",
-      "theta": "October 8 options scan shows flow_score -3.0, put_call_ratio 10.54, 100 calls versus 1054 puts, and stale August 11 30-day ATM IV of 66.78%.",
-      "oracle_note": "Inference: the options tape is the clearest single-name risk flag, but the small absolute call volume and stale IV snapshot limit confidence."
+      "news": "Fact: no bounded news event was supplied for DRTS today.",
+      "theta": "Fact: 2026-10-09 flow_score -3.0, put_call_ratio 7.875, put volume 1071 vs call volume 136; IV snapshot is stale at 2026-08-11.",
+      "oracle_note": "Inference: put-heavy flow is a risk flag, but stale IV and small absolute call volume make this a monitor item rather than a confirmed deterioration signal."
     },
     {
-      "ticker": "VIVO",
-      "stance": "opportunity",
-      "news": "Fact: no bounded news event was found for VIVO.",
-      "theta": "October 6 options scan shows flow_score 6.99, put_call_ratio 0.349, 241 calls versus 84 puts, and stale August 11 30-day ATM IV of 174.2%.",
-      "oracle_note": "Inference: options flow is sharply call-skewed, but tiny-dollar biotech-style optionality and very stale/high IV make this a speculative signal."
+      "ticker": "NFLX",
+      "stance": "neutral",
+      "news": "Fact: no bounded news event was supplied for NFLX today.",
+      "theta": "Fact: 2026-10-09 flow_score 3.99, put_call_ratio 0.307, call volume 129104 vs put volume 39694, 30d ATM IV 0.489.",
+      "oracle_note": "Inference: options flow is constructive, but scanner confidence is low and no news catalyst was provided."
+    },
+    {
+      "ticker": "NOW",
+      "stance": "neutral",
+      "news": "Fact: no bounded news event was supplied for NOW today.",
+      "theta": "Fact: 2026-10-09 flow_score 4.02, put_call_ratio 0.442, call volume 27329 vs put volume 12091, 30d ATM IV 0.5679 from 2026-10-03.",
+      "oracle_note": "Inference: options flow is moderately constructive, but TEAM weakness creates a mixed software tape."
     }
   ],
   "connecting_opportunities": [
     {
-      "theme": "copper and resource optionality",
-      "trigger": "ThetaData options flow without matched bounded news event: COPX had the strongest positive flow_score at 6.51 with call-heavy open interest, while URNU had no options evidence.",
+      "theme": "copper and electrification exposure",
+      "trigger": "Fact: no bounded news event; COPX 2026-10-09 options flow_score 9.0 with call volume exceeding put volume.",
       "held_tickers": [
-        "COPX",
-        "URNU"
+        "COPX"
       ],
       "beneficiaries_or_risks": [
-        "COPX beneficiary if resource risk appetite persists",
-        "URNU unconfirmed by options evidence"
+        "Beneficiary: COPX if commodity risk appetite persists",
+        "Risk: options signal may fade without news or macro confirmation"
       ],
-      "confidence": 0.62
+      "confidence": 0.48
     },
     {
-      "theme": "enterprise software dispersion",
-      "trigger": "ThetaData divergence without matched bounded news event: NOW call-skewed, SAP balanced, TEAM put-heavy.",
+      "theme": "speculative growth and high-IV risk appetite",
+      "trigger": "Fact: no bounded news event; IBRX, SOFI, and SKHY all show positive options flow with call volume above put volume.",
+      "held_tickers": [
+        "IBRX",
+        "SOFI",
+        "SKHY"
+      ],
+      "beneficiaries_or_risks": [
+        "Beneficiaries: IBRX, SOFI, SKHY",
+        "Risk: high IV can reflect event uncertainty rather than durable sponsorship"
+      ],
+      "confidence": 0.42
+    },
+    {
+      "theme": "software divergence",
+      "trigger": "Fact: no bounded news event; NOW has positive flow while TEAM has negative flow and put_call_ratio above 1.0.",
       "held_tickers": [
         "NOW",
-        "SAP",
         "TEAM"
       ],
       "beneficiaries_or_risks": [
-        "NOW beneficiary from constructive options flow",
-        "TEAM risk from put-heavy flow",
-        "SAP neutral read"
+        "Beneficiary: NOW relative positioning",
+        "Risk: TEAM defensive flow may indicate sector-specific caution or single-name concern"
       ],
-      "confidence": 0.58
+      "confidence": 0.36
     },
     {
-      "theme": "high-beta healthcare optionality",
-      "trigger": "ThetaData options flow without matched bounded news event: IBRX and VIVO both showed positive call-skewed flow, while IV evidence is stale and elevated.",
+      "theme": "data quality divergence",
+      "trigger": "Fact: several portfolio market prices differ materially from ThetaData spot prices, especially SKHY and SAP.",
       "held_tickers": [
-        "IBRX",
+        "SKHY",
+        "SAP",
+        "NFLX",
         "VIVO"
       ],
       "beneficiaries_or_risks": [
-        "IBRX beneficiary if speculative healthcare flow continues",
-        "VIVO beneficiary but with high volatility risk"
+        "Risk: stale or mismatched ticker/share-class mapping can distort oracle interpretation"
       ],
-      "confidence": 0.46
-    },
-    {
-      "theme": "consumer internet momentum",
-      "trigger": "ThetaData options flow without matched bounded news event: NFLX showed large call volume and a 5.49 flow_score.",
-      "held_tickers": [
-        "NFLX"
-      ],
-      "beneficiaries_or_risks": [
-        "NFLX beneficiary from liquid call-skewed flow"
-      ],
-      "confidence": 0.55
-    },
-    {
-      "theme": "risk sentiment in smaller holdings",
-      "trigger": "ThetaData options flow without matched bounded news event: DRTS showed a 10.54 put_call_ratio and negative flow_score.",
-      "held_tickers": [
-        "DRTS"
-      ],
-      "beneficiaries_or_risks": [
-        "DRTS risk from put-heavy options activity"
-      ],
-      "confidence": 0.5
+      "confidence": 0.7
     }
   ],
   "watch_items": [
-    "Verify IGLD symbol and price mapping because options spot_price 19.9 conflicts with the portfolio market price near 76.56 EUR.",
-    "Monitor whether fresh news events appear for COPX, NFLX, IBRX, NOW, or VIVO to confirm options-led strength.",
-    "Monitor TEAM and DRTS for follow-through in put-heavy activity or any delayed source event explaining the risk signal.",
-    "Refresh portfolio marks because the portfolio as_of timestamp is August 12, 2026 while per-ticker options evidence is mostly October 6-8, 2026.",
-    "Refresh general Theta market scan because scanned_tickers is 0 and latest_scan_date is August 12, 2026 despite fresh per-ticker scans."
+    "Monitor whether COPX bullish options flow repeats over multiple sessions or gets confirmed by copper/mining news.",
+    "Check IBRX for a fresh company or regulatory catalyst because options flow is strong while IV data is stale.",
+    "Watch SOFI call volume for persistence versus one-day speculative flow.",
+    "Track TEAM for continued put-heavy flow or any software-sector catalyst explaining the divergence from NOW.",
+    "Validate ticker mapping and spot-price alignment for SKHY, SAP, IGLD, NFLX, and VIVO before treating options reads as portfolio-precise."
   ],
   "caveats": [
-    "No internet browsing was used, per instruction.",
-    "Bounded news discovery returned zero events and zero theme observations, so all connecting opportunities are inference from options evidence rather than confirmed news themes.",
-    "Portfolio holdings and market values are stale as of August 12, 2026.",
-    "Several IV snapshots are stale, especially DRTS and VIVO from August 11, 2026 and IBRX from September 24, 2026.",
-    "This oracle item does not recommend trades."
+    "No browsing was performed, per instruction.",
+    "Bounded news discovery returned zero events and zero theme observations, so all connecting opportunities are options-led inferences rather than news-confirmed themes.",
+    "Portfolio positions are as of 2026-08-12, while most options scans are dated 2026-10-09.",
+    "General theta market scan shows scanned_tickers 0 and latest_scan_date 2026-08-12, limiting market-breadth context.",
+    "Some IV snapshots are stale, including IBRX from 2026-09-24 and DRTS/VIVO from 2026-08-11."
   ],
   "general_news": {
-    "generated_at": "2026-10-08T13:40:06.145214+00:00",
+    "generated_at": "2026-10-09T13:40:06.341944+00:00",
     "seed_tickers": [
       "APTV",
       "AVGO",
       "BSX",
+      "CEG",
       "EQT",
       "FLUT",
       "GME",
-      "IBRX",
       "MIR",
       "MU",
-      "ONDS",
+      "PLTR",
       "T",
       "TLX"
     ],
@@ -421,7 +334,7 @@
     "theme_observations": [],
     "artifact": "/Users/antonis/Projects/bull-scouter/data/gpt_news_discovery/latest.json"
   },
-  "markdown": "# Options Signals Lead Without News Confirmation\n\nGenerated: 2026-10-08T14:20:05.117272+00:00\nPortfolio as of: 2026-08-12T12:24:26Z\n\nFact: bounded news discovery returned zero portfolio news events, zero theme observations, and zero new tickers, so today\u2019s oracle read is driven almost entirely by per-ticker options evidence. Inference: the clearest opportunity-style flow is in COPX, NFLX, IBRX, and VIVO, while the clearest risk-style flow is in DRTS and TEAM. Inference: enterprise software is mixed, with NOW showing constructive call-skewed flow, SAP near-balanced, and TEAM put-heavy. Watch the gap between fresh per-ticker options scans from October 6-8, 2026 and stale portfolio/general-market context dated August 12, 2026.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 1 macro headline(s), 0 macro event(s), 0 direct company event(s), 0 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 774.72 (-0.32% last close); WTI oil 91.78 (+3.96% last close); Gold 4147.00 (+0.15% last close) 1 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: commodity_driven.\n- Price snapshot: Market price snapshot: SPY 774.72 (-0.32% last close); WTI oil 91.78 (+3.96% last close); Gold 4147.00 (+0.15% last close)\nMacro headlines:\n- Jim Cramer Says \u2018Interest Rates Can Fall, Too!!\u2019 as October Fed Hike Odds Fall to 21.6% \u2014 Here\u2019s What Traders Are Betting On - TradingView (2026-10-06)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-12 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n## Held Position Updates\n- VWCE: neutral - Fact: no bounded news event was found for VWCE. Theta: No latest options, IV, or flow signal available in the provided ThetaData evidence. Note: Inference: broad equity ETF exposure has no fresh catalyst confirmation in this artifact.\n- IGLD: neutral - Fact: no bounded news event was found for IGLD. Theta: October 8 options scan shows flow_score 6.0, put_call_ratio 0.113, 142 calls versus 16 puts, but spot_price 19.9 differs sharply from the portfolio market price 76.56 EUR. Note: Inference: the options signal looks call-skewed, but the ticker or price mismatch makes it low-confidence until symbol mapping is verified.\n- NFLX: opportunity - Fact: no bounded news event was found for NFLX. Theta: October 8 options scan shows flow_score 5.49, put_call_ratio 0.323, 172481 call volume versus 55762 put volume, and 30-day ATM IV of 47.89%. Note: Inference: options flow is constructive and liquid, but it lacks a matched news catalyst in the bounded discovery output.\n- SKHY: neutral - Fact: no bounded news event was found for SKHY. Theta: October 8 options scan shows flow_score 2.49, put_call_ratio 0.669, 97479 calls versus 65249 puts, and October 7 30-day ATM IV of 51.99%. Note: Inference: flow is mildly constructive but not decisive, and elevated IV suggests event or momentum sensitivity without a named source event here.\n- EXUS: neutral - Fact: no bounded news event was found for EXUS. Theta: No latest options, IV, or flow signal available in the provided ThetaData evidence. Note: Inference: no portfolio-specific confirmation beyond existing position-level performance.\n- IBRX: opportunity - Fact: no bounded news event was found for IBRX. Theta: October 8 options scan shows flow_score 5.01, put_call_ratio 0.387, 4368 calls versus 1689 puts, and stale September 24 30-day ATM IV of 92.77%. Note: Inference: biotech-style upside demand appears present, but high IV and stale IV date make this a volatile, catalyst-sensitive read rather than a confirmed news-driven setup.\n- SAP: neutral - Fact: no bounded news event was found for SAP. Theta: October 8 options scan shows flow_score 2.01, near-balanced put_call_ratio 0.989, 460 calls versus 455 puts. Note: Inference: options market is not expressing a strong directional view despite the portfolio\u2019s positive unrealized PnL.\n- URNU: neutral - Fact: no bounded news event was found for URNU. Theta: No latest options, IV, or flow signal available in the provided ThetaData evidence. Note: Inference: uranium exposure has no options confirmation in this artifact, so any resource-theme read must come from external news not present here.\n- COPX: opportunity - Fact: no bounded news event was found for COPX. Theta: October 8 options scan shows flow_score 6.51, put_call_ratio 0.55, 5036 calls versus 2768 puts, high call open interest of 159488 versus 25362 put open interest, and 30-day ATM IV of 42.32%. Note: Inference: this is the strongest clean options opportunity signal in the evidence, though it is options-led rather than news-confirmed.\n- IBM: neutral - Fact: no bounded news event was found for IBM. Theta: No latest options, IV, or flow signal available in the provided ThetaData evidence. Note: Inference: no fresh options or news signal is available for the holding today.\n- NOW: opportunity - Fact: no bounded news event was found for NOW. Theta: October 8 options scan shows flow_score 4.02, put_call_ratio 0.468, 37201 calls versus 17397 puts, and stale October 3 30-day ATM IV of 56.79%. Note: Inference: constructive software flow aligns with momentum-style positioning, but no source event explains the demand in the bounded news set.\n- SOFI: neutral - Fact: no bounded news event was found for SOFI. Theta: October 8 options scan shows flow_score 2.49, put_call_ratio 0.736, 174566 calls versus 128409 puts, and October 7 30-day ATM IV of 54.5%. Note: Inference: flow is active but only mildly constructive; the WATCHLIST scanner status fits a monitor-not-conclude posture.\n- TEAM: risk - Fact: no bounded news event was found for TEAM. Theta: October 6 options scan shows flow_score -4.5, put_call_ratio 1.867, 2220 calls versus 4144 puts, while October 8 30-day ATM IV is 59.21%. Note: Inference: put-heavy flow diverges from the portfolio\u2019s strong unrealized gain and flags software-specific downside hedging or concern.\n- DRTS: risk - Fact: no bounded news event was found for DRTS. Theta: October 8 options scan shows flow_score -3.0, put_call_ratio 10.54, 100 calls versus 1054 puts, and stale August 11 30-day ATM IV of 66.78%. Note: Inference: the options tape is the clearest single-name risk flag, but the small absolute call volume and stale IV snapshot limit confidence.\n- VIVO: opportunity - Fact: no bounded news event was found for VIVO. Theta: October 6 options scan shows flow_score 6.99, put_call_ratio 0.349, 241 calls versus 84 puts, and stale August 11 30-day ATM IV of 174.2%. Note: Inference: options flow is sharply call-skewed, but tiny-dollar biotech-style optionality and very stale/high IV make this a speculative signal.\n\n## Connecting Opportunities\n- copper and resource optionality: ThetaData options flow without matched bounded news event: COPX had the strongest positive flow_score at 6.51 with call-heavy open interest, while URNU had no options evidence. held=['COPX', 'URNU'] confidence=0.62\n- enterprise software dispersion: ThetaData divergence without matched bounded news event: NOW call-skewed, SAP balanced, TEAM put-heavy. held=['NOW', 'SAP', 'TEAM'] confidence=0.58\n- high-beta healthcare optionality: ThetaData options flow without matched bounded news event: IBRX and VIVO both showed positive call-skewed flow, while IV evidence is stale and elevated. held=['IBRX', 'VIVO'] confidence=0.46\n- consumer internet momentum: ThetaData options flow without matched bounded news event: NFLX showed large call volume and a 5.49 flow_score. held=['NFLX'] confidence=0.55\n- risk sentiment in smaller holdings: ThetaData options flow without matched bounded news event: DRTS showed a 10.54 put_call_ratio and negative flow_score. held=['DRTS'] confidence=0.5\n\n## Watch Items\n- Verify IGLD symbol and price mapping because options spot_price 19.9 conflicts with the portfolio market price near 76.56 EUR.\n- Monitor whether fresh news events appear for COPX, NFLX, IBRX, NOW, or VIVO to confirm options-led strength.\n- Monitor TEAM and DRTS for follow-through in put-heavy activity or any delayed source event explaining the risk signal.\n- Refresh portfolio marks because the portfolio as_of timestamp is August 12, 2026 while per-ticker options evidence is mostly October 6-8, 2026.\n- Refresh general Theta market scan because scanned_tickers is 0 and latest_scan_date is August 12, 2026 despite fresh per-ticker scans.\n\n## Caveats\n- No internet browsing was used, per instruction.\n- Bounded news discovery returned zero events and zero theme observations, so all connecting opportunities are inference from options evidence rather than confirmed news themes.\n- Portfolio holdings and market values are stale as of August 12, 2026.\n- Several IV snapshots are stale, especially DRTS and VIVO from August 11, 2026 and IBRX from September 24, 2026.\n- This oracle item does not recommend trades.\n",
+  "markdown": "# Options flow leads while news feed is quiet\n\nGenerated: 2026-10-09T14:20:04.558314+00:00\nPortfolio as of: 2026-08-12T12:24:26Z\n\nFact: bounded news discovery returned zero portfolio-specific events and zero theme observations for 2026-10-09. Fact: options evidence is strongest in COPX, IBRX, SOFI, and SKHY, while TEAM and DRTS show bearish put-heavy flow. Inference: today\u2019s oracle read is mostly a positioning tape, not a news-confirmed catalyst tape, so confidence is lower where options flow has no matching source event. Watch the divergence between bullish commodity/biotech/fintech flow and the absence of fresh news confirmation.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 4 macro headline(s), 0 macro event(s), 0 direct company event(s), 0 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 776.54 (+0.34% last close); WTI oil 90.89 (-0.66% last close); Gold 4212.90 (+1.34% last close) 4 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed.\n- Price snapshot: Market price snapshot: SPY 776.54 (+0.34% last close); WTI oil 90.89 (-0.66% last close); Gold 4212.90 (+1.34% last close)\nMacro headlines:\n- Jim Cramer Says \u2018Interest Rates Can Fall, Too!!\u2019 as October Fed Hike Odds Fall to 21.6% \u2014 Here\u2019s What Traders Are Betting On - TradingView (2026-10-06)\n- Gold adds over 1% on easing oil prices, softer dollar - Reuters (2026-10-09)\n- Gold adds over 1% on easing oil prices, softer dollar - CNBC (2026-10-09)\n- Dubai gold prices rise as treasury yields cool-off - Gulf News (2026-10-09)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-12 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n## Held Position Updates\n- COPX: opportunity - Fact: no bounded news event was supplied for COPX today. Theta: Fact: 2026-10-09 flow_score 9.0, put_call_ratio 0.381, call volume 4051 vs put volume 1545, 30d ATM IV 0.4209. Note: Inference: copper exposure has one of the clearest bullish options reads in the portfolio, but it remains options-only without a confirming news trigger.\n- IBRX: opportunity - Fact: no bounded news event was supplied for IBRX today. Theta: Fact: 2026-10-09 flow_score 9.99, put_call_ratio 0.493, call volume 2528 vs put volume 1247; IV snapshot is stale at 2026-09-24 with 30d ATM IV 0.9277. Note: Inference: strong call-skewed flow aligns with high-volatility biotech optionality, but stale IV and no news catalyst limit conviction.\n- SOFI: opportunity - Fact: no bounded news event was supplied for SOFI today. Theta: Fact: 2026-10-09 flow_score 7.5, put_call_ratio 0.281, call volume 176902 vs put volume 49623, 30d ATM IV 0.545 from 2026-10-07. Note: Inference: SOFI shows high-volume bullish options interest and a strong scanner score, suggesting active risk appetite without a bounded news confirmation.\n- SKHY: opportunity - Fact: no bounded news event was supplied for SKHY today. Theta: Fact: 2026-10-09 flow_score 6.0, put_call_ratio 0.436, call volume 90668 vs put volume 39538; 30d ATM IV 0.5199 from 2026-10-07. Note: Inference: bullish flow supports the scanner BUY signal, though the portfolio price and theta spot differ materially, making data alignment a watch item.\n- TEAM: risk - Fact: no bounded news event was supplied for TEAM today. Theta: Fact: 2026-10-09 flow_score -3.0, put_call_ratio 1.394, put volume 3431 vs call volume 2462, 30d ATM IV 0.6375. Note: Inference: TEAM is the clearest software-positioning divergence, with no news event but options flow leaning defensive.\n- DRTS: risk - Fact: no bounded news event was supplied for DRTS today. Theta: Fact: 2026-10-09 flow_score -3.0, put_call_ratio 7.875, put volume 1071 vs call volume 136; IV snapshot is stale at 2026-08-11. Note: Inference: put-heavy flow is a risk flag, but stale IV and small absolute call volume make this a monitor item rather than a confirmed deterioration signal.\n- NFLX: neutral - Fact: no bounded news event was supplied for NFLX today. Theta: Fact: 2026-10-09 flow_score 3.99, put_call_ratio 0.307, call volume 129104 vs put volume 39694, 30d ATM IV 0.489. Note: Inference: options flow is constructive, but scanner confidence is low and no news catalyst was provided.\n- NOW: neutral - Fact: no bounded news event was supplied for NOW today. Theta: Fact: 2026-10-09 flow_score 4.02, put_call_ratio 0.442, call volume 27329 vs put volume 12091, 30d ATM IV 0.5679 from 2026-10-03. Note: Inference: options flow is moderately constructive, but TEAM weakness creates a mixed software tape.\n\n## Connecting Opportunities\n- copper and electrification exposure: Fact: no bounded news event; COPX 2026-10-09 options flow_score 9.0 with call volume exceeding put volume. held=['COPX'] confidence=0.48\n- speculative growth and high-IV risk appetite: Fact: no bounded news event; IBRX, SOFI, and SKHY all show positive options flow with call volume above put volume. held=['IBRX', 'SOFI', 'SKHY'] confidence=0.42\n- software divergence: Fact: no bounded news event; NOW has positive flow while TEAM has negative flow and put_call_ratio above 1.0. held=['NOW', 'TEAM'] confidence=0.36\n- data quality divergence: Fact: several portfolio market prices differ materially from ThetaData spot prices, especially SKHY and SAP. held=['SKHY', 'SAP', 'NFLX', 'VIVO'] confidence=0.7\n\n## Watch Items\n- Monitor whether COPX bullish options flow repeats over multiple sessions or gets confirmed by copper/mining news.\n- Check IBRX for a fresh company or regulatory catalyst because options flow is strong while IV data is stale.\n- Watch SOFI call volume for persistence versus one-day speculative flow.\n- Track TEAM for continued put-heavy flow or any software-sector catalyst explaining the divergence from NOW.\n- Validate ticker mapping and spot-price alignment for SKHY, SAP, IGLD, NFLX, and VIVO before treating options reads as portfolio-precise.\n\n## Caveats\n- No browsing was performed, per instruction.\n- Bounded news discovery returned zero events and zero theme observations, so all connecting opportunities are options-led inferences rather than news-confirmed themes.\n- Portfolio positions are as of 2026-08-12, while most options scans are dated 2026-10-09.\n- General theta market scan shows scanned_tickers 0 and latest_scan_date 2026-08-12, limiting market-breadth context.\n- Some IV snapshots are stale, including IBRX from 2026-09-24 and DRTS/VIVO from 2026-08-11.\n",
   "artifacts": {
     "oracle_json": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.json",
     "oracle_markdown": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.md",
