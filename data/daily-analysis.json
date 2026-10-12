@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-09T17:23:11",
-  "source_generated_at": "2026-10-09T14:20:04.558314+00:00",
+  "generated_at": "2026-10-12T17:23:23",
+  "source_generated_at": "2026-10-12T14:20:02.426174+00:00",
   "mode": "daily_analysis_site_export",
   "oracle_model": "gpt-5.5",
-  "title": "Options flow leads while news feed is quiet",
-  "summary": "Fact: bounded news discovery returned zero portfolio-specific events and zero theme observations for 2026-10-09. Fact: options evidence is strongest in COPX, IBRX, SOFI, and SKHY, while TEAM and DRTS show bearish put-heavy flow. Inference: today\u2019s oracle read is mostly a positioning tape, not a news-confirmed catalyst tape, so confidence is lower where options flow has no matching source event. Watch the divergence between bullish commodity/biotech/fintech flow and the absence of fresh news confirmation.",
+  "title": "AI infrastructure read-through meets uneven portfolio options tone",
+  "summary": "Fact: today's bounded news set has no direct held-position news, but general discovery flagged AMD Helion/open-rack AI infrastructure as a cross-sector catalyst. Inference: the strongest thematic bridge into the held portfolio is indirect, via data-center electricity, copper, uranium, enterprise automation, and AI software workloads rather than a named portfolio holding. Theta/options evidence is most aligned with COPX, SOFI, and IBRX bullish flow, while SAP and DRTS show cautionary divergence. Watch items should therefore focus on whether the AI infrastructure theme starts producing direct orders, guidance, or higher-confidence read-throughs for held names.",
   "portfolio": {
     "as_of": "2026-08-12T12:24:26Z",
     "position_count": 15,
@@ -27,7 +27,7 @@
     ]
   },
   "my_stocks": {
-    "summary": "Fact: bounded news discovery returned zero portfolio-specific events and zero theme observations for 2026-10-09. Fact: options evidence is strongest in COPX, IBRX, SOFI, and SKHY, while TEAM and DRTS show bearish put-heavy flow. Inference: today\u2019s oracle read is mostly a positioning tape, not a news-confirmed catalyst tape, so confidence is lower where options flow has no matching source event. Watch the divergence between bullish commodity/biotech/fintech flow and the absence of fresh news confirmation.",
+    "summary": "Fact: today's bounded news set has no direct held-position news, but general discovery flagged AMD Helion/open-rack AI infrastructure as a cross-sector catalyst. Inference: the strongest thematic bridge into the held portfolio is indirect, via data-center electricity, copper, uranium, enterprise automation, and AI software workloads rather than a named portfolio holding. Theta/options evidence is most aligned with COPX, SOFI, and IBRX bullish flow, while SAP and DRTS show cautionary divergence. Watch items should therefore focus on whether the AI infrastructure theme starts producing direct orders, guidance, or higher-confidence read-throughs for held names.",
     "top_opportunities": [],
     "top_risks": [],
     "scored_picks": [],
@@ -35,116 +35,514 @@
       {
         "ticker": "COPX",
         "stance": "opportunity",
-        "news": "Fact: no bounded news event was supplied for COPX today.",
-        "theta": "Fact: 2026-10-09 flow_score 9.0, put_call_ratio 0.381, call volume 4051 vs put volume 1545, 30d ATM IV 0.4209.",
-        "oracle_note": "Inference: copper exposure has one of the clearest bullish options reads in the portfolio, but it remains options-only without a confirming news trigger."
+        "news": "No direct COPX news in the bounded portfolio feed; general news flagged AI data-center infrastructure demand from AMD Helion/open-rack architecture.",
+        "theta": "2026-10-10 options scan: flow_score 8.01, put_call_ratio 0.473, 30d ATM IV 0.4431.",
+        "oracle_note": "Inference: COPX is not named in the theme output, but copper demand can plausibly connect to AI data-center power and cabling buildouts; bullish options tone aligns with that indirect theme."
       },
       {
-        "ticker": "IBRX",
-        "stance": "opportunity",
-        "news": "Fact: no bounded news event was supplied for IBRX today.",
-        "theta": "Fact: 2026-10-09 flow_score 9.99, put_call_ratio 0.493, call volume 2528 vs put volume 1247; IV snapshot is stale at 2026-09-24 with 30d ATM IV 0.9277.",
-        "oracle_note": "Inference: strong call-skewed flow aligns with high-volatility biotech optionality, but stale IV and no news catalyst limit conviction."
-      },
-      {
-        "ticker": "SOFI",
-        "stance": "opportunity",
-        "news": "Fact: no bounded news event was supplied for SOFI today.",
-        "theta": "Fact: 2026-10-09 flow_score 7.5, put_call_ratio 0.281, call volume 176902 vs put volume 49623, 30d ATM IV 0.545 from 2026-10-07.",
-        "oracle_note": "Inference: SOFI shows high-volume bullish options interest and a strong scanner score, suggesting active risk appetite without a bounded news confirmation."
-      },
-      {
-        "ticker": "SKHY",
-        "stance": "opportunity",
-        "news": "Fact: no bounded news event was supplied for SKHY today.",
-        "theta": "Fact: 2026-10-09 flow_score 6.0, put_call_ratio 0.436, call volume 90668 vs put volume 39538; 30d ATM IV 0.5199 from 2026-10-07.",
-        "oracle_note": "Inference: bullish flow supports the scanner BUY signal, though the portfolio price and theta spot differ materially, making data alignment a watch item."
-      },
-      {
-        "ticker": "TEAM",
-        "stance": "risk",
-        "news": "Fact: no bounded news event was supplied for TEAM today.",
-        "theta": "Fact: 2026-10-09 flow_score -3.0, put_call_ratio 1.394, put volume 3431 vs call volume 2462, 30d ATM IV 0.6375.",
-        "oracle_note": "Inference: TEAM is the clearest software-positioning divergence, with no news event but options flow leaning defensive."
-      },
-      {
-        "ticker": "DRTS",
-        "stance": "risk",
-        "news": "Fact: no bounded news event was supplied for DRTS today.",
-        "theta": "Fact: 2026-10-09 flow_score -3.0, put_call_ratio 7.875, put volume 1071 vs call volume 136; IV snapshot is stale at 2026-08-11.",
-        "oracle_note": "Inference: put-heavy flow is a risk flag, but stale IV and small absolute call volume make this a monitor item rather than a confirmed deterioration signal."
-      },
-      {
-        "ticker": "NFLX",
+        "ticker": "URNU",
         "stance": "neutral",
-        "news": "Fact: no bounded news event was supplied for NFLX today.",
-        "theta": "Fact: 2026-10-09 flow_score 3.99, put_call_ratio 0.307, call volume 129104 vs put volume 39694, 30d ATM IV 0.489.",
-        "oracle_note": "Inference: options flow is constructive, but scanner confidence is low and no news catalyst was provided."
+        "news": "No direct URNU news; general discovery flagged incremental electricity and firm-power demand from AI data centers as a theme for energy suppliers.",
+        "theta": "No latest options or IV evidence available for URNU in the bounded ThetaData set.",
+        "oracle_note": "Inference: uranium may be a long-cycle power-read-through, but absence of local options evidence keeps this as a watch item rather than a confirmed signal."
+      },
+      {
+        "ticker": "IBM",
+        "stance": "neutral",
+        "news": "No direct IBM news; AI infrastructure theme was present in general discovery but IBM was not listed as a generated beneficiary.",
+        "theta": "No latest options or IV evidence available for IBM in the bounded ThetaData set.",
+        "oracle_note": "Inference: IBM can be monitored for enterprise AI and hybrid-cloud read-throughs, but today there is no direct bounded evidence or options confirmation."
       },
       {
         "ticker": "NOW",
         "stance": "neutral",
-        "news": "Fact: no bounded news event was supplied for NOW today.",
-        "theta": "Fact: 2026-10-09 flow_score 4.02, put_call_ratio 0.442, call volume 27329 vs put volume 12091, 30d ATM IV 0.5679 from 2026-10-03.",
-        "oracle_note": "Inference: options flow is moderately constructive, but TEAM weakness creates a mixed software tape."
+        "news": "No direct NOW news; broader AI infrastructure theme may indirectly support enterprise automation and IT workflow demand.",
+        "theta": "2026-10-10 options scan: flow_score 1.5, put_call_ratio 0.673, IV snapshot from 2026-10-03 at 0.5679.",
+        "oracle_note": "Inference: options tone is mildly constructive but not forceful; theme alignment is indirect and needs direct software-demand evidence."
+      },
+      {
+        "ticker": "TEAM",
+        "stance": "neutral",
+        "news": "No direct TEAM news; AI infrastructure theme may indirectly support software collaboration and developer workflow demand.",
+        "theta": "2026-10-10 options scan: flow_score 3.0, put_call_ratio 0.857, 30d ATM IV 0.8062.",
+        "oracle_note": "Inference: positive flow is offset by high implied volatility, so the signal is constructive but noisy."
+      },
+      {
+        "ticker": "SAP",
+        "stance": "risk",
+        "news": "No direct SAP news; AI infrastructure theme is indirect for enterprise software.",
+        "theta": "2026-10-10 options scan: flow_score -2.01, put_call_ratio 1.25.",
+        "oracle_note": "Inference: SAP diverges from the broader AI/software read-through because local options activity is put-heavy."
+      },
+      {
+        "ticker": "SOFI",
+        "stance": "opportunity",
+        "news": "No direct SOFI news and no clear connection to the AI infrastructure theme in the bounded evidence.",
+        "theta": "2026-10-10 options scan: flow_score 7.5, put_call_ratio 0.249, heavy call volume 221955 versus put volume 55193, IV 0.545.",
+        "oracle_note": "Fact/inference split: the bullish options signal is strong, but it is not news-confirmed in this evidence set."
+      },
+      {
+        "ticker": "IBRX",
+        "stance": "opportunity",
+        "news": "No direct IBRX news and no connection to today's AI infrastructure theme in the bounded evidence.",
+        "theta": "2026-10-10 options scan: flow_score 8.01, put_call_ratio 0.178, IV snapshot from 2026-09-24 at 0.9277.",
+        "oracle_note": "Bullish flow is notable but high IV makes this a speculative options-led signal without news confirmation."
+      },
+      {
+        "ticker": "DRTS",
+        "stance": "risk",
+        "news": "No direct DRTS news in the bounded evidence.",
+        "theta": "2026-10-10 options scan: flow_score -6.0, put_call_ratio 9.962; IV snapshot is stale from 2026-08-11 at 0.6678.",
+        "oracle_note": "Options evidence is strongly risk-leaning and not offset by any bounded news catalyst."
+      },
+      {
+        "ticker": "NFLX",
+        "stance": "neutral",
+        "news": "No direct NFLX news and no AI infrastructure link in the bounded evidence.",
+        "theta": "2026-10-10 options scan: flow_score 2.49, put_call_ratio 0.584, 30d ATM IV 0.4639.",
+        "oracle_note": "Mildly positive options tone, but no thematic or news confirmation today."
+      },
+      {
+        "ticker": "SKHY",
+        "stance": "neutral",
+        "news": "No direct SKHY news in the bounded evidence.",
+        "theta": "2026-10-10 options scan: flow_score 2.49, put_call_ratio 0.683; IV snapshot from 2026-10-07 at 0.5199.",
+        "oracle_note": "Constructive but non-specific options tone; no connecting news theme was supplied."
+      },
+      {
+        "ticker": "VIVO",
+        "stance": "neutral",
+        "news": "No direct VIVO news in the bounded evidence.",
+        "theta": "2026-10-10 options scan: flow_score 3.0, put_call_ratio 1.061; IV snapshot is stale from 2026-08-11 at 1.7420.",
+        "oracle_note": "Mixed signal: flow score is positive, but put/call ratio is near balanced and IV evidence is stale."
+      },
+      {
+        "ticker": "IGLD",
+        "stance": "neutral",
+        "news": "No direct IGLD news in the bounded evidence.",
+        "theta": "2026-10-10 options scan: flow_score 3.0, put_call_ratio 0.105, but total option volume is small at 168 contracts.",
+        "oracle_note": "Call-skewed activity is present, but small volume limits conviction."
+      },
+      {
+        "ticker": "VWCE",
+        "stance": "neutral",
+        "news": "No direct VWCE news in the bounded evidence.",
+        "theta": "No latest options or IV evidence available for VWCE.",
+        "oracle_note": "Broad-market holding with no local news/options signal in this package."
+      },
+      {
+        "ticker": "EXUS",
+        "stance": "neutral",
+        "news": "No direct EXUS news in the bounded evidence.",
+        "theta": "No latest options or IV evidence available for EXUS.",
+        "oracle_note": "No actionable oracle read from the bounded evidence."
       }
     ]
   },
   "general": {
-    "summary": "General analysis is macro-first: 4 macro headline(s), 0 macro event(s), 0 direct company event(s), 0 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.",
+    "summary": "General analysis is macro-first: 1 macro headline(s), 0 macro event(s), 0 direct company event(s), 15 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.",
     "source_artifact": "data/gpt_news_discovery/latest.json",
-    "generated_at": "2026-10-09T13:40:06.341944+00:00",
+    "generated_at": "2026-10-12T13:40:02.553693+00:00",
     "macro_climate": {
       "status": "ok",
       "price_snapshot": {
-        "title": "Market price snapshot: SPY 776.54 (+0.34% last close); WTI oil 90.89 (-0.66% last close); Gold 4212.90 (+1.34% last close)",
+        "title": "Market price snapshot: SPY 779.24 (+0.09% last close); WTI oil 93.65 (+1.96% last close); Gold 4197.10 (-0.46% last close)",
         "url": "yfinance://SPY,CL=F,GC=F",
-        "published_at": "2026-10-09",
+        "published_at": "2026-10-12",
         "snippet": "Macro context only. Use this with Fed, geopolitical, oil, and gold headlines to infer sector read-throughs; do not treat ETFs or commodities as stock picks.",
         "category_hint": "macro_market_climate"
       },
       "price_moves": {
-        "SPY": 0.34,
-        "WTI oil": -0.66,
-        "Gold": 1.34
+        "SPY": 0.09,
+        "WTI oil": 1.96,
+        "Gold": -0.46
       },
       "tone": "mixed",
       "headlines": [
         {
-          "title": "Jim Cramer Says \u2018Interest Rates Can Fall, Too!!\u2019 as October Fed Hike Odds Fall to 21.6% \u2014 Here\u2019s What Traders Are Betting On - TradingView",
-          "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOMEJ4YXJTbDBFREdKVTVva05KdlNjZDNuYjNnNFhYSDczN21lSXh4bm5FVWNWX3lJbTlCQzBYU0pKLTFLdkUwRHg0RTcyakdIOHpLcVp5Ni1ES1FFU2JFQ1lpbDVhSm1zdWktQzR4aFl6YlJWY0pENlJqR2Z0a29kZlktdFRUeUZjTElmMUJtckFRaUtCREJ3eUFwc2Fhd1JtTXN2d3JXT0Q4ZGVXS05TTjlqY3B6VXRVNFRwMllYQWlHZDBRYlp4eUt6d0IxaWIzSEoxTGVjU2VPLWZ0TVUtNDNGOUFjaEJVdGp4RWh0QUU0cUxETUlnNGlzOHk4MnBMdHZaZUVn?oc=5",
-          "published_at": "2026-10-06",
-          "snippet": "Jim Cramer Says \u2018Interest Rates Can Fall, Too!!\u2019 as October Fed Hike Odds Fall to 21.6% \u2014 Here\u2019s What Traders Are Betting On &nbsp;&nbsp; TradingView",
-          "category_hint": "macro_market_climate"
-        },
-        {
-          "title": "Gold adds over 1% on easing oil prices, softer dollar - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVl80MTVLVXR1WWd1MGxyNFRNN1VaNlJ2WFNIeGlrLS1HTGwzc1pZZ3FqaFZyOFBZcDk0VGRnMzVvSUtiSGFyR3c2Z29Fa25XZk1xX0JlWGpJZVlNaEJhWXhoenc3enFGZGZ3QnVUaGg1U2ZTNE9GZGxfTDIyb3hoMl9ycTNsOHpHeWdKRXk1VmdZZ1VITnhMR29NQ3JYUmV4TXJpemVRaw?oc=5",
-          "published_at": "2026-10-09",
-          "snippet": "Gold adds over 1% on easing oil prices, softer dollar &nbsp;&nbsp; Reuters",
-          "category_hint": "macro_market_climate"
-        },
-        {
-          "title": "Gold adds over 1% on easing oil prices, softer dollar - CNBC",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeXpwdHFDS2pPOFFDTjJvWlpvMGtNVlEzVlY2WF94Yk5IMFFrT2N0cUs5dVVzS1pqVjB0MjYwVHVoclFWVHZjMU40UzJpY3hMc1NhM0t5LWNSQ0w0SU96dGdId0ZqYnI3T0VrN2lmdHJlNW9rNGxrY2hhbHZVZV9tWTBSUnRsQ1g1MFJQMVFLSXJBZFpGVlZPVzFQU28xUTg50gGmAUFVX3lxTE5lODhsb205Z0tmRGkwUEY4amlKdEI1LTJFZjBJY1N6OThLX1loQU8yTGI0WS1idmszcHRHdXBiN011TFg0WDZRV1FkMFVEZ1NhOUdHTENFQlNUYlE3VHRsaVgycnEwbThxel9JTXdib3JYUG5RMS1kY3hWZFM2Rzl3TWh4eThnR1BTWFdtbG5XYVhhZklkTE85bW1IRmFxTGtSak1jUHc?oc=5",
-          "published_at": "2026-10-09",
-          "snippet": "Gold adds over 1% on easing oil prices, softer dollar &nbsp;&nbsp; CNBC",
-          "category_hint": "macro_market_climate"
-        },
-        {
-          "title": "Dubai gold prices rise as treasury yields cool-off - Gulf News",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQSm9EeUJjTGx0M3lPVkl0T01nRmVwUmVSZ3pWXzctU21kdml6NkxWUDl0RTg0RzJFS2pMaHlTel8xMXAweDVrVVNFY1RIV3VTRlNIdXpDTHJhb3M1SzlpS0VGa0RVWnVoMlQ0aFhNM3FLOFNXVnRDUFpMZEFzdFBILW9IQkFHX2tMTDNFNU5pM3FqZ2NWVTNjTFpTdXZ0c0c20gGzAUFVX3lxTE1WOE1IVVlZOEpWYzc3UjU1aW9PTnhpa016cEN3a1dHQ0ZkdGFIOWlYVkpsc3JZZGNBaWpPVlh6ODFpQ3k4c2pIaDlFWF9kUVE5Q3kyY3pUVkVJV0FZZ1FLNHlKOHNyMnpRUXg4MGZtN2x2TzFsc01vaUpUenRjQlRuX3JXMDI2WmZoRlpsQ1lLLXNBNFVJRjh4R0JZR1dVQWxfUDBpbWR2Z28zM0V5X3BGUVRj?oc=5",
-          "published_at": "2026-10-09",
-          "snippet": "Dubai gold prices rise as treasury yields cool-off &nbsp;&nbsp; Gulf News",
+          "title": "Every Fed Official Backed September\u2019s Hike. Most Want One More Before New Year\u2019s - 24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPazRqdTA4d0llUTNIeHVxZktiVVJDemRVU3liZHZWVmxuaUtPVnJNZ3E5UllqWU9PcEhJRThrS21mdDFCTWtVbXczeTl4eG9oQmI3bjZHcjRXTHlDdXdLd21jbTNPUVFCZm04VXpfU3QxbExvU3NXN20wdzNkNnNIWUwxend0Uk9KTXltcjAyeS15MWYzdXJOWDNhU2haaGIxV3owV1NvVUVtVXN2cUgyWjNmWnBKM1VxTDNfQXVR?oc=5",
+          "published_at": "2026-10-08",
+          "snippet": "Every Fed Official Backed September\u2019s Hike. Most Want One More Before New Year\u2019s &nbsp;&nbsp; 24/7 Wall St.",
           "category_hint": "macro_market_climate"
         }
       ],
-      "summary": "Market price snapshot: SPY 776.54 (+0.34% last close); WTI oil 90.89 (-0.66% last close); Gold 4212.90 (+1.34% last close) 4 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed."
+      "summary": "Market price snapshot: SPY 779.24 (+0.09% last close); WTI oil 93.65 (+1.96% last close); Gold 4197.10 (-0.46% last close) 1 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed."
     },
     "market_wide_events": [],
     "notable_company_events": [],
-    "read_through_candidates": [],
-    "theme_observations": [],
+    "read_through_candidates": [
+      {
+        "ticker": "AVGO",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: AVGO could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "MRVL",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "MU",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "J",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: J could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "builders_engineering",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "VRT",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "GEV",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "POWL",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: POWL could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "CEG",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: CEG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "NRG",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: NRG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "NVDA",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "AMD",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: AMD could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "GLW",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: GLW could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "COHR",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "DLR",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: DLR could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "data_center_reits",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "leased data-center capacity and colocation demand",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      },
+      {
+        "ticker": "EQIX",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "data_center_reits",
+        "parent_ticker": "CSCO",
+        "beneficiary_reason": "leased data-center capacity and colocation demand",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ]
+      }
+    ],
+    "theme_observations": [
+      {
+        "theme_id": "data_center_ai_infrastructure",
+        "trigger_title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+        "trigger_url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+        "matched_patterns": [
+          "ai infrastructure"
+        ],
+        "generated_beneficiaries": [
+          {
+            "ticker": "ACM",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "PWR",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "MTZ",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "J",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "ETN",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "VRT",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "GEV",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "HUBB",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "POWL",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "CEG",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "VST",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "NRG",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          }
+        ],
+        "training_label": null
+      }
+    ],
     "theta_market": {
       "status": "ok",
       "latest_scan_date": "2026-08-12",
@@ -164,12 +562,539 @@
       "bearish_flow": [],
       "held_overlap": []
     },
-    "new_tickers": [],
+    "new_tickers": [
+      "AMD",
+      "AVGO",
+      "CEG",
+      "COHR",
+      "DLR",
+      "EQIX",
+      "GEV",
+      "GLW",
+      "J",
+      "MRVL",
+      "MU",
+      "NRG",
+      "NVDA",
+      "POWL",
+      "VRT"
+    ],
     "portfolio_read_throughs": [],
-    "scored_picks": [],
-    "llm_summary": "No high-confidence stock-news events or scored picks were provided for today, so there is no fresh fact pattern to elevate into a portfolio-level opportunity or risk call. With discovery empty, the prudent read is neutral: treat today\u2019s market-news signal as unavailable rather than benign.",
-    "top_opportunities": [],
-    "top_risks": [],
+    "scored_picks": [
+      {
+        "pick_id": "f2e5b92a726e092b",
+        "ticker": "J",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: J could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "19ca8366ca52bd7b",
+        "ticker": "VRT",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "515652b297fef58e",
+        "ticker": "GEV",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "f1777dfa4b040728",
+        "ticker": "POWL",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: POWL could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "4998ab57d2c6ab8d",
+        "ticker": "CEG",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: CEG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "7abb170c1597bf9f",
+        "ticker": "NRG",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: NRG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "d5256c1d3b7a7af4",
+        "ticker": "NVDA",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "d7ef1a774952fc43",
+        "ticker": "AMD",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: AMD could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "05cf5d117fc257fc",
+        "ticker": "AVGO",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: AVGO could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 33,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "6f0597faeeb3fdfe",
+        "ticker": "MRVL",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 33,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "68e74f7a67fa4c5e",
+        "ticker": "MU",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 33,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "cb03bed25a063562",
+        "ticker": "GLW",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: GLW could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "350c6888073f59a9",
+        "ticker": "COHR",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "e85066fb3f0aeda1",
+        "ticker": "DLR",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: DLR could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "c43d6d2360957229",
+        "ticker": "EQIX",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      }
+    ],
+    "llm_summary": "Today's bounded discovery is a concentrated AI data-center infrastructure read-through, anchored by AMD's Helion open-rack blueprint and spreading across chips, networking, power equipment, energy supply, engineering, optics, and data-center capacity. The strongest opportunities are still indirect rather than company-specific, and the scored picks explicitly lack usable ThetaData confirmation, so confidence is thematic rather than flow-supported.",
+    "top_opportunities": [
+      {
+        "ticker": "AVGO",
+        "why": "Highest scored read-through group: AI infrastructure demand could support accelerator, switching, networking, and custom silicon content; confidence 0.68 with pick score 33."
+      },
+      {
+        "ticker": "MRVL",
+        "why": "Highest scored read-through group: AI data-center buildouts could lift switching, connectivity, and custom silicon demand; confidence 0.68 with pick score 33."
+      },
+      {
+        "ticker": "MU",
+        "why": "Highest scored read-through group: expanding AI infrastructure supports memory demand tied to accelerators and data-center workloads; confidence 0.68 with pick score 33."
+      },
+      {
+        "ticker": "VRT",
+        "why": "Power distribution, backup power, switchgear, and thermal-management demand remain a direct infrastructure bottleneck for AI data centers, though this signal is indirect."
+      }
+    ],
+    "top_risks": [
+      {
+        "ticker": "J",
+        "why": "The opportunity depends on indirect engineering and construction demand from data-center buildouts, with no usable ThetaData confirmation and a lower pick score of 29."
+      },
+      {
+        "ticker": "VRT",
+        "why": "The bullish case is thematic and may already be crowded in AI-infrastructure exposed power equipment; no usable ThetaData confirmation was available."
+      },
+      {
+        "ticker": "NVDA",
+        "why": "The event source is AMD's infrastructure blueprint, so the read-through to NVDA is positive for AI demand but could also sharpen competitive positioning around open-rack AI systems."
+      }
+    ],
     "general_stale": false,
     "watch_items": [],
     "caveats": [
@@ -189,152 +1114,753 @@
     {
       "ticker": "COPX",
       "stance": "opportunity",
-      "news": "Fact: no bounded news event was supplied for COPX today.",
-      "theta": "Fact: 2026-10-09 flow_score 9.0, put_call_ratio 0.381, call volume 4051 vs put volume 1545, 30d ATM IV 0.4209.",
-      "oracle_note": "Inference: copper exposure has one of the clearest bullish options reads in the portfolio, but it remains options-only without a confirming news trigger."
+      "news": "No direct COPX news in the bounded portfolio feed; general news flagged AI data-center infrastructure demand from AMD Helion/open-rack architecture.",
+      "theta": "2026-10-10 options scan: flow_score 8.01, put_call_ratio 0.473, 30d ATM IV 0.4431.",
+      "oracle_note": "Inference: COPX is not named in the theme output, but copper demand can plausibly connect to AI data-center power and cabling buildouts; bullish options tone aligns with that indirect theme."
     },
     {
-      "ticker": "IBRX",
-      "stance": "opportunity",
-      "news": "Fact: no bounded news event was supplied for IBRX today.",
-      "theta": "Fact: 2026-10-09 flow_score 9.99, put_call_ratio 0.493, call volume 2528 vs put volume 1247; IV snapshot is stale at 2026-09-24 with 30d ATM IV 0.9277.",
-      "oracle_note": "Inference: strong call-skewed flow aligns with high-volatility biotech optionality, but stale IV and no news catalyst limit conviction."
-    },
-    {
-      "ticker": "SOFI",
-      "stance": "opportunity",
-      "news": "Fact: no bounded news event was supplied for SOFI today.",
-      "theta": "Fact: 2026-10-09 flow_score 7.5, put_call_ratio 0.281, call volume 176902 vs put volume 49623, 30d ATM IV 0.545 from 2026-10-07.",
-      "oracle_note": "Inference: SOFI shows high-volume bullish options interest and a strong scanner score, suggesting active risk appetite without a bounded news confirmation."
-    },
-    {
-      "ticker": "SKHY",
-      "stance": "opportunity",
-      "news": "Fact: no bounded news event was supplied for SKHY today.",
-      "theta": "Fact: 2026-10-09 flow_score 6.0, put_call_ratio 0.436, call volume 90668 vs put volume 39538; 30d ATM IV 0.5199 from 2026-10-07.",
-      "oracle_note": "Inference: bullish flow supports the scanner BUY signal, though the portfolio price and theta spot differ materially, making data alignment a watch item."
-    },
-    {
-      "ticker": "TEAM",
-      "stance": "risk",
-      "news": "Fact: no bounded news event was supplied for TEAM today.",
-      "theta": "Fact: 2026-10-09 flow_score -3.0, put_call_ratio 1.394, put volume 3431 vs call volume 2462, 30d ATM IV 0.6375.",
-      "oracle_note": "Inference: TEAM is the clearest software-positioning divergence, with no news event but options flow leaning defensive."
-    },
-    {
-      "ticker": "DRTS",
-      "stance": "risk",
-      "news": "Fact: no bounded news event was supplied for DRTS today.",
-      "theta": "Fact: 2026-10-09 flow_score -3.0, put_call_ratio 7.875, put volume 1071 vs call volume 136; IV snapshot is stale at 2026-08-11.",
-      "oracle_note": "Inference: put-heavy flow is a risk flag, but stale IV and small absolute call volume make this a monitor item rather than a confirmed deterioration signal."
-    },
-    {
-      "ticker": "NFLX",
+      "ticker": "URNU",
       "stance": "neutral",
-      "news": "Fact: no bounded news event was supplied for NFLX today.",
-      "theta": "Fact: 2026-10-09 flow_score 3.99, put_call_ratio 0.307, call volume 129104 vs put volume 39694, 30d ATM IV 0.489.",
-      "oracle_note": "Inference: options flow is constructive, but scanner confidence is low and no news catalyst was provided."
+      "news": "No direct URNU news; general discovery flagged incremental electricity and firm-power demand from AI data centers as a theme for energy suppliers.",
+      "theta": "No latest options or IV evidence available for URNU in the bounded ThetaData set.",
+      "oracle_note": "Inference: uranium may be a long-cycle power-read-through, but absence of local options evidence keeps this as a watch item rather than a confirmed signal."
+    },
+    {
+      "ticker": "IBM",
+      "stance": "neutral",
+      "news": "No direct IBM news; AI infrastructure theme was present in general discovery but IBM was not listed as a generated beneficiary.",
+      "theta": "No latest options or IV evidence available for IBM in the bounded ThetaData set.",
+      "oracle_note": "Inference: IBM can be monitored for enterprise AI and hybrid-cloud read-throughs, but today there is no direct bounded evidence or options confirmation."
     },
     {
       "ticker": "NOW",
       "stance": "neutral",
-      "news": "Fact: no bounded news event was supplied for NOW today.",
-      "theta": "Fact: 2026-10-09 flow_score 4.02, put_call_ratio 0.442, call volume 27329 vs put volume 12091, 30d ATM IV 0.5679 from 2026-10-03.",
-      "oracle_note": "Inference: options flow is moderately constructive, but TEAM weakness creates a mixed software tape."
+      "news": "No direct NOW news; broader AI infrastructure theme may indirectly support enterprise automation and IT workflow demand.",
+      "theta": "2026-10-10 options scan: flow_score 1.5, put_call_ratio 0.673, IV snapshot from 2026-10-03 at 0.5679.",
+      "oracle_note": "Inference: options tone is mildly constructive but not forceful; theme alignment is indirect and needs direct software-demand evidence."
+    },
+    {
+      "ticker": "TEAM",
+      "stance": "neutral",
+      "news": "No direct TEAM news; AI infrastructure theme may indirectly support software collaboration and developer workflow demand.",
+      "theta": "2026-10-10 options scan: flow_score 3.0, put_call_ratio 0.857, 30d ATM IV 0.8062.",
+      "oracle_note": "Inference: positive flow is offset by high implied volatility, so the signal is constructive but noisy."
+    },
+    {
+      "ticker": "SAP",
+      "stance": "risk",
+      "news": "No direct SAP news; AI infrastructure theme is indirect for enterprise software.",
+      "theta": "2026-10-10 options scan: flow_score -2.01, put_call_ratio 1.25.",
+      "oracle_note": "Inference: SAP diverges from the broader AI/software read-through because local options activity is put-heavy."
+    },
+    {
+      "ticker": "SOFI",
+      "stance": "opportunity",
+      "news": "No direct SOFI news and no clear connection to the AI infrastructure theme in the bounded evidence.",
+      "theta": "2026-10-10 options scan: flow_score 7.5, put_call_ratio 0.249, heavy call volume 221955 versus put volume 55193, IV 0.545.",
+      "oracle_note": "Fact/inference split: the bullish options signal is strong, but it is not news-confirmed in this evidence set."
+    },
+    {
+      "ticker": "IBRX",
+      "stance": "opportunity",
+      "news": "No direct IBRX news and no connection to today's AI infrastructure theme in the bounded evidence.",
+      "theta": "2026-10-10 options scan: flow_score 8.01, put_call_ratio 0.178, IV snapshot from 2026-09-24 at 0.9277.",
+      "oracle_note": "Bullish flow is notable but high IV makes this a speculative options-led signal without news confirmation."
+    },
+    {
+      "ticker": "DRTS",
+      "stance": "risk",
+      "news": "No direct DRTS news in the bounded evidence.",
+      "theta": "2026-10-10 options scan: flow_score -6.0, put_call_ratio 9.962; IV snapshot is stale from 2026-08-11 at 0.6678.",
+      "oracle_note": "Options evidence is strongly risk-leaning and not offset by any bounded news catalyst."
+    },
+    {
+      "ticker": "NFLX",
+      "stance": "neutral",
+      "news": "No direct NFLX news and no AI infrastructure link in the bounded evidence.",
+      "theta": "2026-10-10 options scan: flow_score 2.49, put_call_ratio 0.584, 30d ATM IV 0.4639.",
+      "oracle_note": "Mildly positive options tone, but no thematic or news confirmation today."
+    },
+    {
+      "ticker": "SKHY",
+      "stance": "neutral",
+      "news": "No direct SKHY news in the bounded evidence.",
+      "theta": "2026-10-10 options scan: flow_score 2.49, put_call_ratio 0.683; IV snapshot from 2026-10-07 at 0.5199.",
+      "oracle_note": "Constructive but non-specific options tone; no connecting news theme was supplied."
+    },
+    {
+      "ticker": "VIVO",
+      "stance": "neutral",
+      "news": "No direct VIVO news in the bounded evidence.",
+      "theta": "2026-10-10 options scan: flow_score 3.0, put_call_ratio 1.061; IV snapshot is stale from 2026-08-11 at 1.7420.",
+      "oracle_note": "Mixed signal: flow score is positive, but put/call ratio is near balanced and IV evidence is stale."
+    },
+    {
+      "ticker": "IGLD",
+      "stance": "neutral",
+      "news": "No direct IGLD news in the bounded evidence.",
+      "theta": "2026-10-10 options scan: flow_score 3.0, put_call_ratio 0.105, but total option volume is small at 168 contracts.",
+      "oracle_note": "Call-skewed activity is present, but small volume limits conviction."
+    },
+    {
+      "ticker": "VWCE",
+      "stance": "neutral",
+      "news": "No direct VWCE news in the bounded evidence.",
+      "theta": "No latest options or IV evidence available for VWCE.",
+      "oracle_note": "Broad-market holding with no local news/options signal in this package."
+    },
+    {
+      "ticker": "EXUS",
+      "stance": "neutral",
+      "news": "No direct EXUS news in the bounded evidence.",
+      "theta": "No latest options or IV evidence available for EXUS.",
+      "oracle_note": "No actionable oracle read from the bounded evidence."
     }
   ],
   "connecting_opportunities": [
     {
-      "theme": "copper and electrification exposure",
-      "trigger": "Fact: no bounded news event; COPX 2026-10-09 options flow_score 9.0 with call volume exceeding put volume.",
+      "theme": "AI data-center infrastructure to copper and power materials",
+      "trigger": "AMD Helion open-rack blueprint for agentic AI infrastructure, published 2026-10-12, generated read-throughs to power equipment, energy supply, chips/networking, and optical connectivity.",
       "held_tickers": [
-        "COPX"
+        "COPX",
+        "URNU"
       ],
       "beneficiaries_or_risks": [
-        "Beneficiary: COPX if commodity risk appetite persists",
-        "Risk: options signal may fade without news or macro confirmation"
+        "COPX options flow aligns with an indirect data-center electrification/cabling thesis",
+        "URNU has thematic power-demand exposure but no confirming options evidence",
+        "Generated non-held beneficiaries include VRT, GEV, POWL, CEG, NRG, NVDA, AMD, AVGO, MRVL, MU, and GLW"
       ],
-      "confidence": 0.48
+      "confidence": 0.58
     },
     {
-      "theme": "speculative growth and high-IV risk appetite",
-      "trigger": "Fact: no bounded news event; IBRX, SOFI, and SKHY all show positive options flow with call volume above put volume.",
+      "theme": "AI infrastructure to enterprise software workloads",
+      "trigger": "Same AMD Helion/open-rack AI infrastructure event; inference is that more AI infrastructure can support enterprise automation, cloud, and developer workflows.",
       "held_tickers": [
-        "IBRX",
-        "SOFI",
-        "SKHY"
+        "IBM",
+        "NOW",
+        "TEAM",
+        "SAP"
       ],
       "beneficiaries_or_risks": [
-        "Beneficiaries: IBRX, SOFI, SKHY",
-        "Risk: high IV can reflect event uncertainty rather than durable sponsorship"
+        "NOW has mild positive options flow",
+        "TEAM has positive flow but high IV",
+        "SAP diverges with negative flow and put-heavy activity",
+        "IBM has no local ThetaData confirmation"
       ],
       "confidence": 0.42
     },
     {
-      "theme": "software divergence",
-      "trigger": "Fact: no bounded news event; NOW has positive flow while TEAM has negative flow and put_call_ratio above 1.0.",
+      "theme": "Options-led momentum without news confirmation",
+      "trigger": "No portfolio-specific news events were found, but several held names showed strong call-skewed options flow on 2026-10-10.",
       "held_tickers": [
-        "NOW",
-        "TEAM"
+        "IBRX",
+        "SOFI",
+        "COPX"
       ],
       "beneficiaries_or_risks": [
-        "Beneficiary: NOW relative positioning",
-        "Risk: TEAM defensive flow may indicate sector-specific caution or single-name concern"
+        "IBRX flow_score 8.01 with high IV and no news catalyst",
+        "SOFI flow_score 7.5 with heavy call volume but no theme link",
+        "COPX has both bullish flow and an indirect AI infrastructure materials read-through"
       ],
-      "confidence": 0.36
+      "confidence": 0.55
     },
     {
-      "theme": "data quality divergence",
-      "trigger": "Fact: several portfolio market prices differ materially from ThetaData spot prices, especially SKHY and SAP.",
+      "theme": "Risk divergence in small or idiosyncratic holdings",
+      "trigger": "ThetaData/options evidence shows put-heavy or negative flow without offsetting bounded news.",
       "held_tickers": [
-        "SKHY",
+        "DRTS",
         "SAP",
-        "NFLX",
         "VIVO"
       ],
       "beneficiaries_or_risks": [
-        "Risk: stale or mismatched ticker/share-class mapping can distort oracle interpretation"
+        "DRTS has flow_score -6.0 and put_call_ratio 9.962",
+        "SAP has flow_score -2.01 and put_call_ratio 1.25",
+        "VIVO has positive flow_score but near-balanced put/call and stale IV"
       ],
-      "confidence": 0.7
+      "confidence": 0.62
     }
   ],
   "watch_items": [
-    "Monitor whether COPX bullish options flow repeats over multiple sessions or gets confirmed by copper/mining news.",
-    "Check IBRX for a fresh company or regulatory catalyst because options flow is strong while IV data is stale.",
-    "Watch SOFI call volume for persistence versus one-day speculative flow.",
-    "Track TEAM for continued put-heavy flow or any software-sector catalyst explaining the divergence from NOW.",
-    "Validate ticker mapping and spot-price alignment for SKHY, SAP, IGLD, NFLX, and VIVO before treating options reads as portfolio-precise."
+    "Look for direct order, customer-win, backlog, or guidance mentions tying held names to AI data-center infrastructure rather than relying on indirect read-throughs.",
+    "Monitor whether COPX bullish options flow persists after 2026-10-10 and whether copper-linked news confirms the data-center demand thesis.",
+    "Check whether URNU gains fresh options or spot/sector evidence around firm-power demand from AI data centers.",
+    "Watch SAP for continued put-heavy flow, especially if enterprise software peers show stronger AI-linked demand.",
+    "Watch DRTS for follow-through risk because the latest options scan is strongly put-heavy with no offsetting news catalyst.",
+    "Refresh the portfolio snapshot because holdings and market prices are dated 2026-08-12 while the oracle item is for 2026-10-12."
   ],
   "caveats": [
-    "No browsing was performed, per instruction.",
-    "Bounded news discovery returned zero events and zero theme observations, so all connecting opportunities are options-led inferences rather than news-confirmed themes.",
-    "Portfolio positions are as of 2026-08-12, while most options scans are dated 2026-10-09.",
-    "General theta market scan shows scanned_tickers 0 and latest_scan_date 2026-08-12, limiting market-breadth context.",
-    "Some IV snapshots are stale, including IBRX from 2026-09-24 and DRTS/VIVO from 2026-08-11."
+    "No browsing was used; this oracle item only uses the supplied bounded evidence.",
+    "Portfolio-level news_events, theme_observations, and connecting_opportunities arrays were empty in the source artifact.",
+    "General Theta market scan is stale or incomplete: latest_scan_date is 2026-08-12 and scanned_tickers is 0.",
+    "Most held-name options scans are from 2026-10-10, two days before the 2026-10-12 oracle date.",
+    "Some IV snapshots are stale, especially DRTS and VIVO from 2026-08-11.",
+    "Several thematic links are inference, not fact, because the generated AI infrastructure beneficiaries did not directly include held tickers except via broader sector exposure."
   ],
   "general_news": {
-    "generated_at": "2026-10-09T13:40:06.341944+00:00",
+    "generated_at": "2026-10-12T13:40:02.553693+00:00",
     "seed_tickers": [
-      "APTV",
       "AVGO",
       "BSX",
-      "CEG",
+      "BULL",
       "EQT",
       "FLUT",
       "GME",
-      "MIR",
+      "MNKD",
+      "MRVL",
       "MU",
-      "PLTR",
+      "RCAT",
       "T",
       "TLX"
     ],
-    "event_count": 0,
-    "theme_observation_count": 0,
-    "events": [],
-    "theme_observations": [],
+    "event_count": 15,
+    "theme_observation_count": 1,
+    "events": [
+      {
+        "ticker": "J",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: J could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=builders_engineering; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "builders_engineering",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "VRT",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "GEV",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "POWL",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: POWL could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "CEG",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: CEG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "NRG",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: NRG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "NVDA",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "AMD",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: AMD could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "AVGO",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Indirect beneficiary thesis: AVGO could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "MRVL",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "MU",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "GLW",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: GLW could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=optics_cable_connectivity; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "COHR",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=optics_cable_connectivity; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "DLR",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: DLR could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=data_center_reits; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "leased data-center capacity and colocation demand",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "data_center_reits",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "EQIX",
+        "type": "sector_catalyst",
+        "event_date": "2026-10-12",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=data_center_reits; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "leased data-center capacity and colocation demand",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "data_center_reits",
+        "parent_ticker": "CSCO",
+        "evidence": [
+          {
+            "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+            "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      }
+    ],
+    "theme_observations": [
+      {
+        "theme_id": "data_center_ai_infrastructure",
+        "item_index": 1,
+        "matched_patterns": [
+          "ai infrastructure"
+        ],
+        "trigger": {
+          "source": "seeking_alpha",
+          "title": "AMD unveils Helion open rack blueprint for agentic AI infrastructure",
+          "url": "https://seekingalpha.com/news/4652092-amd-unveils-helion-open-rack-blueprint-for-agentic-ai-infrastructure?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+          "published_at": "2026-10-12",
+          "tickers": [
+            "CSCO",
+            "HPE",
+            "DELL"
+          ]
+        },
+        "generated_beneficiaries": [
+          {
+            "ticker": "ACM",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "PWR",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "MTZ",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "J",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "ETN",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "VRT",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "GEV",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "HUBB",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "POWL",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "CEG",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "VST",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "NRG",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "TLN",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "BE",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "OKLO",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "NVDA",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "AMD",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "AVGO",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.68
+          },
+          {
+            "ticker": "MRVL",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.68
+          },
+          {
+            "ticker": "ANET",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "MU",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.68
+          },
+          {
+            "ticker": "GLW",
+            "bucket": "optics_cable_connectivity",
+            "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "APH",
+            "bucket": "optics_cable_connectivity",
+            "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "LITE",
+            "bucket": "optics_cable_connectivity",
+            "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "COHR",
+            "bucket": "optics_cable_connectivity",
+            "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "BELFB",
+            "bucket": "optics_cable_connectivity",
+            "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "DLR",
+            "bucket": "data_center_reits",
+            "reason": "leased data-center capacity and colocation demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "EQIX",
+            "bucket": "data_center_reits",
+            "reason": "leased data-center capacity and colocation demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "IRM",
+            "bucket": "data_center_reits",
+            "reason": "leased data-center capacity and colocation demand",
+            "confidence": 0.6
+          }
+        ],
+        "training_label": null
+      }
+    ],
     "artifact": "/Users/antonis/Projects/bull-scouter/data/gpt_news_discovery/latest.json"
   },
-  "markdown": "# Options flow leads while news feed is quiet\n\nGenerated: 2026-10-09T14:20:04.558314+00:00\nPortfolio as of: 2026-08-12T12:24:26Z\n\nFact: bounded news discovery returned zero portfolio-specific events and zero theme observations for 2026-10-09. Fact: options evidence is strongest in COPX, IBRX, SOFI, and SKHY, while TEAM and DRTS show bearish put-heavy flow. Inference: today\u2019s oracle read is mostly a positioning tape, not a news-confirmed catalyst tape, so confidence is lower where options flow has no matching source event. Watch the divergence between bullish commodity/biotech/fintech flow and the absence of fresh news confirmation.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 4 macro headline(s), 0 macro event(s), 0 direct company event(s), 0 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 776.54 (+0.34% last close); WTI oil 90.89 (-0.66% last close); Gold 4212.90 (+1.34% last close) 4 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed.\n- Price snapshot: Market price snapshot: SPY 776.54 (+0.34% last close); WTI oil 90.89 (-0.66% last close); Gold 4212.90 (+1.34% last close)\nMacro headlines:\n- Jim Cramer Says \u2018Interest Rates Can Fall, Too!!\u2019 as October Fed Hike Odds Fall to 21.6% \u2014 Here\u2019s What Traders Are Betting On - TradingView (2026-10-06)\n- Gold adds over 1% on easing oil prices, softer dollar - Reuters (2026-10-09)\n- Gold adds over 1% on easing oil prices, softer dollar - CNBC (2026-10-09)\n- Dubai gold prices rise as treasury yields cool-off - Gulf News (2026-10-09)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-12 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n## Held Position Updates\n- COPX: opportunity - Fact: no bounded news event was supplied for COPX today. Theta: Fact: 2026-10-09 flow_score 9.0, put_call_ratio 0.381, call volume 4051 vs put volume 1545, 30d ATM IV 0.4209. Note: Inference: copper exposure has one of the clearest bullish options reads in the portfolio, but it remains options-only without a confirming news trigger.\n- IBRX: opportunity - Fact: no bounded news event was supplied for IBRX today. Theta: Fact: 2026-10-09 flow_score 9.99, put_call_ratio 0.493, call volume 2528 vs put volume 1247; IV snapshot is stale at 2026-09-24 with 30d ATM IV 0.9277. Note: Inference: strong call-skewed flow aligns with high-volatility biotech optionality, but stale IV and no news catalyst limit conviction.\n- SOFI: opportunity - Fact: no bounded news event was supplied for SOFI today. Theta: Fact: 2026-10-09 flow_score 7.5, put_call_ratio 0.281, call volume 176902 vs put volume 49623, 30d ATM IV 0.545 from 2026-10-07. Note: Inference: SOFI shows high-volume bullish options interest and a strong scanner score, suggesting active risk appetite without a bounded news confirmation.\n- SKHY: opportunity - Fact: no bounded news event was supplied for SKHY today. Theta: Fact: 2026-10-09 flow_score 6.0, put_call_ratio 0.436, call volume 90668 vs put volume 39538; 30d ATM IV 0.5199 from 2026-10-07. Note: Inference: bullish flow supports the scanner BUY signal, though the portfolio price and theta spot differ materially, making data alignment a watch item.\n- TEAM: risk - Fact: no bounded news event was supplied for TEAM today. Theta: Fact: 2026-10-09 flow_score -3.0, put_call_ratio 1.394, put volume 3431 vs call volume 2462, 30d ATM IV 0.6375. Note: Inference: TEAM is the clearest software-positioning divergence, with no news event but options flow leaning defensive.\n- DRTS: risk - Fact: no bounded news event was supplied for DRTS today. Theta: Fact: 2026-10-09 flow_score -3.0, put_call_ratio 7.875, put volume 1071 vs call volume 136; IV snapshot is stale at 2026-08-11. Note: Inference: put-heavy flow is a risk flag, but stale IV and small absolute call volume make this a monitor item rather than a confirmed deterioration signal.\n- NFLX: neutral - Fact: no bounded news event was supplied for NFLX today. Theta: Fact: 2026-10-09 flow_score 3.99, put_call_ratio 0.307, call volume 129104 vs put volume 39694, 30d ATM IV 0.489. Note: Inference: options flow is constructive, but scanner confidence is low and no news catalyst was provided.\n- NOW: neutral - Fact: no bounded news event was supplied for NOW today. Theta: Fact: 2026-10-09 flow_score 4.02, put_call_ratio 0.442, call volume 27329 vs put volume 12091, 30d ATM IV 0.5679 from 2026-10-03. Note: Inference: options flow is moderately constructive, but TEAM weakness creates a mixed software tape.\n\n## Connecting Opportunities\n- copper and electrification exposure: Fact: no bounded news event; COPX 2026-10-09 options flow_score 9.0 with call volume exceeding put volume. held=['COPX'] confidence=0.48\n- speculative growth and high-IV risk appetite: Fact: no bounded news event; IBRX, SOFI, and SKHY all show positive options flow with call volume above put volume. held=['IBRX', 'SOFI', 'SKHY'] confidence=0.42\n- software divergence: Fact: no bounded news event; NOW has positive flow while TEAM has negative flow and put_call_ratio above 1.0. held=['NOW', 'TEAM'] confidence=0.36\n- data quality divergence: Fact: several portfolio market prices differ materially from ThetaData spot prices, especially SKHY and SAP. held=['SKHY', 'SAP', 'NFLX', 'VIVO'] confidence=0.7\n\n## Watch Items\n- Monitor whether COPX bullish options flow repeats over multiple sessions or gets confirmed by copper/mining news.\n- Check IBRX for a fresh company or regulatory catalyst because options flow is strong while IV data is stale.\n- Watch SOFI call volume for persistence versus one-day speculative flow.\n- Track TEAM for continued put-heavy flow or any software-sector catalyst explaining the divergence from NOW.\n- Validate ticker mapping and spot-price alignment for SKHY, SAP, IGLD, NFLX, and VIVO before treating options reads as portfolio-precise.\n\n## Caveats\n- No browsing was performed, per instruction.\n- Bounded news discovery returned zero events and zero theme observations, so all connecting opportunities are options-led inferences rather than news-confirmed themes.\n- Portfolio positions are as of 2026-08-12, while most options scans are dated 2026-10-09.\n- General theta market scan shows scanned_tickers 0 and latest_scan_date 2026-08-12, limiting market-breadth context.\n- Some IV snapshots are stale, including IBRX from 2026-09-24 and DRTS/VIVO from 2026-08-11.\n",
+  "markdown": "# AI infrastructure read-through meets uneven portfolio options tone\n\nGenerated: 2026-10-12T14:20:02.426174+00:00\nPortfolio as of: 2026-08-12T12:24:26Z\n\nFact: today's bounded news set has no direct held-position news, but general discovery flagged AMD Helion/open-rack AI infrastructure as a cross-sector catalyst. Inference: the strongest thematic bridge into the held portfolio is indirect, via data-center electricity, copper, uranium, enterprise automation, and AI software workloads rather than a named portfolio holding. Theta/options evidence is most aligned with COPX, SOFI, and IBRX bullish flow, while SAP and DRTS show cautionary divergence. Watch items should therefore focus on whether the AI infrastructure theme starts producing direct orders, guidance, or higher-confidence read-throughs for held names.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 1 macro headline(s), 0 macro event(s), 0 direct company event(s), 15 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 779.24 (+0.09% last close); WTI oil 93.65 (+1.96% last close); Gold 4197.10 (-0.46% last close) 1 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed.\n- Price snapshot: Market price snapshot: SPY 779.24 (+0.09% last close); WTI oil 93.65 (+1.96% last close); Gold 4197.10 (-0.46% last close)\nMacro headlines:\n- Every Fed Official Backed September\u2019s Hike. Most Want One More Before New Year\u2019s - 24/7 Wall St. (2026-10-08)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-12 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n### Read-Through Themes\n- Theme data_center_ai_infrastructure: trigger=AMD unveils Helion open rack blueprint for agentic AI infrastructure beneficiaries=ACM:builders_engineering, PWR:builders_engineering, MTZ:builders_engineering, J:builders_engineering, ETN:power_equipment, VRT:power_equipment, GEV:power_equipment, HUBB:power_equipment, POWL:power_equipment, CEG:energy_supply, VST:energy_supply, NRG:energy_supply\nGenerated candidates require follow-up confirmation:\n- AVGO: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MRVL: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MU: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- J: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- VRT: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- GEV: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- POWL: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- CEG: confidence=0.6 bucket=energy_supply - incremental electricity and firm-power demand from AI data centers\n\n## Held Position Updates\n- COPX: opportunity - No direct COPX news in the bounded portfolio feed; general news flagged AI data-center infrastructure demand from AMD Helion/open-rack architecture. Theta: 2026-10-10 options scan: flow_score 8.01, put_call_ratio 0.473, 30d ATM IV 0.4431. Note: Inference: COPX is not named in the theme output, but copper demand can plausibly connect to AI data-center power and cabling buildouts; bullish options tone aligns with that indirect theme.\n- URNU: neutral - No direct URNU news; general discovery flagged incremental electricity and firm-power demand from AI data centers as a theme for energy suppliers. Theta: No latest options or IV evidence available for URNU in the bounded ThetaData set. Note: Inference: uranium may be a long-cycle power-read-through, but absence of local options evidence keeps this as a watch item rather than a confirmed signal.\n- IBM: neutral - No direct IBM news; AI infrastructure theme was present in general discovery but IBM was not listed as a generated beneficiary. Theta: No latest options or IV evidence available for IBM in the bounded ThetaData set. Note: Inference: IBM can be monitored for enterprise AI and hybrid-cloud read-throughs, but today there is no direct bounded evidence or options confirmation.\n- NOW: neutral - No direct NOW news; broader AI infrastructure theme may indirectly support enterprise automation and IT workflow demand. Theta: 2026-10-10 options scan: flow_score 1.5, put_call_ratio 0.673, IV snapshot from 2026-10-03 at 0.5679. Note: Inference: options tone is mildly constructive but not forceful; theme alignment is indirect and needs direct software-demand evidence.\n- TEAM: neutral - No direct TEAM news; AI infrastructure theme may indirectly support software collaboration and developer workflow demand. Theta: 2026-10-10 options scan: flow_score 3.0, put_call_ratio 0.857, 30d ATM IV 0.8062. Note: Inference: positive flow is offset by high implied volatility, so the signal is constructive but noisy.\n- SAP: risk - No direct SAP news; AI infrastructure theme is indirect for enterprise software. Theta: 2026-10-10 options scan: flow_score -2.01, put_call_ratio 1.25. Note: Inference: SAP diverges from the broader AI/software read-through because local options activity is put-heavy.\n- SOFI: opportunity - No direct SOFI news and no clear connection to the AI infrastructure theme in the bounded evidence. Theta: 2026-10-10 options scan: flow_score 7.5, put_call_ratio 0.249, heavy call volume 221955 versus put volume 55193, IV 0.545. Note: Fact/inference split: the bullish options signal is strong, but it is not news-confirmed in this evidence set.\n- IBRX: opportunity - No direct IBRX news and no connection to today's AI infrastructure theme in the bounded evidence. Theta: 2026-10-10 options scan: flow_score 8.01, put_call_ratio 0.178, IV snapshot from 2026-09-24 at 0.9277. Note: Bullish flow is notable but high IV makes this a speculative options-led signal without news confirmation.\n- DRTS: risk - No direct DRTS news in the bounded evidence. Theta: 2026-10-10 options scan: flow_score -6.0, put_call_ratio 9.962; IV snapshot is stale from 2026-08-11 at 0.6678. Note: Options evidence is strongly risk-leaning and not offset by any bounded news catalyst.\n- NFLX: neutral - No direct NFLX news and no AI infrastructure link in the bounded evidence. Theta: 2026-10-10 options scan: flow_score 2.49, put_call_ratio 0.584, 30d ATM IV 0.4639. Note: Mildly positive options tone, but no thematic or news confirmation today.\n- SKHY: neutral - No direct SKHY news in the bounded evidence. Theta: 2026-10-10 options scan: flow_score 2.49, put_call_ratio 0.683; IV snapshot from 2026-10-07 at 0.5199. Note: Constructive but non-specific options tone; no connecting news theme was supplied.\n- VIVO: neutral - No direct VIVO news in the bounded evidence. Theta: 2026-10-10 options scan: flow_score 3.0, put_call_ratio 1.061; IV snapshot is stale from 2026-08-11 at 1.7420. Note: Mixed signal: flow score is positive, but put/call ratio is near balanced and IV evidence is stale.\n- IGLD: neutral - No direct IGLD news in the bounded evidence. Theta: 2026-10-10 options scan: flow_score 3.0, put_call_ratio 0.105, but total option volume is small at 168 contracts. Note: Call-skewed activity is present, but small volume limits conviction.\n- VWCE: neutral - No direct VWCE news in the bounded evidence. Theta: No latest options or IV evidence available for VWCE. Note: Broad-market holding with no local news/options signal in this package.\n- EXUS: neutral - No direct EXUS news in the bounded evidence. Theta: No latest options or IV evidence available for EXUS. Note: No actionable oracle read from the bounded evidence.\n\n## Connecting Opportunities\n- AI data-center infrastructure to copper and power materials: AMD Helion open-rack blueprint for agentic AI infrastructure, published 2026-10-12, generated read-throughs to power equipment, energy supply, chips/networking, and optical connectivity. held=['COPX', 'URNU'] confidence=0.58\n- AI infrastructure to enterprise software workloads: Same AMD Helion/open-rack AI infrastructure event; inference is that more AI infrastructure can support enterprise automation, cloud, and developer workflows. held=['IBM', 'NOW', 'TEAM', 'SAP'] confidence=0.42\n- Options-led momentum without news confirmation: No portfolio-specific news events were found, but several held names showed strong call-skewed options flow on 2026-10-10. held=['IBRX', 'SOFI', 'COPX'] confidence=0.55\n- Risk divergence in small or idiosyncratic holdings: ThetaData/options evidence shows put-heavy or negative flow without offsetting bounded news. held=['DRTS', 'SAP', 'VIVO'] confidence=0.62\n\n## Watch Items\n- Look for direct order, customer-win, backlog, or guidance mentions tying held names to AI data-center infrastructure rather than relying on indirect read-throughs.\n- Monitor whether COPX bullish options flow persists after 2026-10-10 and whether copper-linked news confirms the data-center demand thesis.\n- Check whether URNU gains fresh options or spot/sector evidence around firm-power demand from AI data centers.\n- Watch SAP for continued put-heavy flow, especially if enterprise software peers show stronger AI-linked demand.\n- Watch DRTS for follow-through risk because the latest options scan is strongly put-heavy with no offsetting news catalyst.\n- Refresh the portfolio snapshot because holdings and market prices are dated 2026-08-12 while the oracle item is for 2026-10-12.\n\n## Caveats\n- No browsing was used; this oracle item only uses the supplied bounded evidence.\n- Portfolio-level news_events, theme_observations, and connecting_opportunities arrays were empty in the source artifact.\n- General Theta market scan is stale or incomplete: latest_scan_date is 2026-08-12 and scanned_tickers is 0.\n- Most held-name options scans are from 2026-10-10, two days before the 2026-10-12 oracle date.\n- Some IV snapshots are stale, especially DRTS and VIVO from 2026-08-11.\n- Several thematic links are inference, not fact, because the generated AI infrastructure beneficiaries did not directly include held tickers except via broader sector exposure.\n",
   "artifacts": {
     "oracle_json": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.json",
     "oracle_markdown": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.md",
