@@ -1,9 +1,9 @@
 {
   "approved_opportunities": [],
-  "as_of": "2026-10-13T20:20:05.691948+00:00",
-  "deduplicated_count": 345,
+  "as_of": "2026-10-14T20:20:05.117766+00:00",
+  "deduplicated_count": 346,
   "execution_enabled": false,
-  "generated_at": "2026-10-13T21:10:04.810085+00:00",
+  "generated_at": "2026-10-14T21:10:03.084258+00:00",
   "items": [],
   "lane_counts": {
     "catalyst": 6,
@@ -12,7 +12,7 @@
   },
   "policy_version": "phase1g-readiness-v2.2",
   "prepublication_research": {
-    "as_of": "2026-10-13T20:20:05.691948+00:00",
+    "as_of": "2026-10-14T20:20:05.117766+00:00",
     "attempted_task_count": 91,
     "completed_task_count": 40,
     "error": null,
@@ -28,382 +28,6 @@
     {
       "analysis_packet": {
         "automatic_analysis": {
-          "missing_gate_count": 1,
-          "missing_gates": [
-            "reviewed_payoff"
-          ],
-          "status": "needs_research"
-        },
-        "company_assessment": {
-          "catalysts": [],
-          "criteria": [
-            {
-              "criterion": "balance_sheet",
-              "rationale": "Pass requires liabilities/assets at most 75% or current ratio at least 1.2; the looser 90%/1.0 boundary is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "cash_generation",
-              "rationale": "Pass requires positive annual operating cash flow less reported capital expenditure.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "demand_durability",
-              "rationale": "Pass requires positive annual revenue growth; a decline no worse than 5% is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "dilution_capital_allocation",
-              "rationale": "Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "margins_efficiency",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "profitability",
-              "rationale": "Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            }
-          ],
-          "health_counts": {
-            "coverage_count": 5,
-            "fail_count": 0,
-            "missing_count": 1,
-            "partial_count": 0,
-            "pass_count": 5
-          },
-          "health_status": "acceptable",
-          "metrics": [
-            {
-              "criterion": "demand_durability",
-              "display": "13.9%",
-              "effective_at": "2026-07-31T00:00:00+00:00",
-              "label": "Annual revenue growth",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "profitability",
-              "display": "4,566.0m",
-              "effective_at": "2026-07-31T00:00:00+00:00",
-              "label": "Annual net income",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "profitability",
-              "display": "18.0%",
-              "effective_at": "2026-07-31T00:00:00+00:00",
-              "label": "Annual net-income change",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "cash_generation",
-              "display": "8,663.0m",
-              "effective_at": "2026-07-31T00:00:00+00:00",
-              "label": "Annual free cash flow",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "dilution_capital_allocation",
-              "display": "-2.1%",
-              "effective_at": "2026-07-31T00:00:00+00:00",
-              "label": "Diluted-share change",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            }
-          ],
-          "payoff_review": {
-            "instruction": "An authenticated human analyst must record INTU's entry, upside, invalidation, horizon, source, and rationale before promotion.",
-            "owner": "human_analyst",
-            "required_fields": [
-              "upside_price",
-              "invalidation_price",
-              "entry_condition",
-              "invalidation_condition",
-              "horizon_days",
-              "source_ref",
-              "rationale"
-            ],
-            "status": "needs_human",
-            "workflow": "authenticated_stage2_payoff_review"
-          },
-          "scope": "Company-specific annual SEC screen plus approved catalyst evidence; this is not a substitute for reviewed payoff analysis.",
-          "status": "needs_human"
-        },
-        "company_health": {
-          "coverage_count": 5,
-          "evidence_complete": true,
-          "promotion_eligible": true,
-          "required_coverage_count": 4,
-          "status": "acceptable"
-        },
-        "counter_case": {
-          "basis": [
-            "company_health:margins_efficiency"
-          ],
-          "status": "complete",
-          "text": "INTU may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available."
-        },
-        "framework": {
-          "complete": true,
-          "status": "preregistered"
-        },
-        "invalidation": {
-          "basis": [
-            "company_health:margins_efficiency"
-          ],
-          "status": "complete",
-          "text": "Reject the INTU bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
-        },
-        "market_price": {
-          "as_of": "2026-10-13",
-          "status": "available"
-        },
-        "materiality": {
-          "signals": [],
-          "status": "not_required",
-          "summary": "Catalyst materiality is not required for this lane."
-        },
-        "options": {
-          "as_of": "2026-10-13",
-          "confidence": "low",
-          "expiry": "ALL",
-          "provider": "ThetaData",
-          "put_call_open_interest_ratio": null,
-          "put_call_volume_ratio": null,
-          "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 305.99,
-          "status": "unavailable",
-          "total_open_interest": null,
-          "total_volume": null
-        },
-        "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
-          "error": "source verification failed: HTTPError; supporting excerpt was not found on the cited page",
-          "model": null,
-          "provider": "deterministic_web_research",
-          "status": "partial",
-          "tasks": [
-            {
-              "escalated_from": null,
-              "evidence_required": "A specific alternative explanation grounded in the research packet.",
-              "gate": "counter_case",
-              "instruction": "Write a company- and event-specific sourced counter-case.",
-              "owner": "research_agent",
-              "status": "completed"
-            },
-            {
-              "escalated_from": null,
-              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
-              "gate": "invalidation",
-              "instruction": "Define a measurable observation that would invalidate the thesis.",
-              "owner": "research_agent",
-              "status": "completed"
-            },
-            {
-              "escalated_from": null,
-              "evidence_required": "Reviewed evidence that satisfies the gate.",
-              "gate": "reviewed_payoff",
-              "instruction": "Resolve reviewed payoff.",
-              "owner": "human_analyst",
-              "status": "needs_human"
-            }
-          ]
-        },
-        "source": {
-          "atomic_event": true,
-          "blockers": [],
-          "current_synthesis": true,
-          "primary_supporting_events": 0,
-          "researched_context_sources": [
-            {
-              "published_at": "2026-09-30",
-              "publisher": "Yahoo Finance",
-              "source_type": "secondary",
-              "supporting_excerpt": "Intuit (NasdaqGS:INTU) expanded its AI-powered IDEAS accelerator with a new LA28 Olympics cohort focused on small business procurement opportunities. The LA28 cohort aims to help",
-              "title": "Intuit (INTU) Expands IDEAS Accelerator With LA28 Olympics Cohort",
-              "url": "https://finance.yahoo.com/small-business/articles/intuit-intu-expands-ideas-accelerator-101108053.html"
-            }
-          ],
-          "researched_primary_sources": [],
-          "status": "complete",
-          "synthesis_version": null
-        }
-      },
-      "blocker_explanations": [
-        {
-          "code": "qualification_watch_only",
-          "detail": "The setup may be monitored but does not qualify for promotion.",
-          "label": "Watch-only qualification"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "qualification_watch_only",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "counter_case": "INTU may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available.",
-      "direction": "bull",
-      "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
-      "framework_status": "preregistered",
-      "health_status": "acceptable",
-      "invalidation": "Reject the INTU bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment.",
-      "investment_readiness_score": null,
-      "lane": "contrarian",
-      "materiality": {
-        "signals": [],
-        "status": "not_required",
-        "summary": "Catalyst materiality is not required for this lane."
-      },
-      "missing_analysis_gate_explanations": [
-        {
-          "code": "reviewed_payoff",
-          "detail": "A human analyst must review entry, upside, invalidation, horizon, source, and rationale in Stage 2.",
-          "label": "Reviewed payoff missing"
-        }
-      ],
-      "missing_analysis_gates": [
-        "reviewed_payoff"
-      ],
-      "monitoring_label": "research validation",
-      "next_action": "Complete: reviewed payoff.",
-      "promotion_audit": {
-        "atomic_event": {
-          "passed": true,
-          "required": false
-        },
-        "catalyst_review": {
-          "passed": true,
-          "required": false
-        },
-        "company_assessment": {
-          "passed": true,
-          "required": true
-        },
-        "company_evidence": {
-          "passed": true,
-          "required": true
-        },
-        "company_health": {
-          "passed": true,
-          "required": true
-        },
-        "counter_case": {
-          "passed": true,
-          "required": true
-        },
-        "current_synthesis": {
-          "passed": true,
-          "required": true
-        },
-        "framework_recommendation": {
-          "passed": true,
-          "required": true
-        },
-        "invalidation": {
-          "passed": true,
-          "required": true
-        },
-        "market_price": {
-          "passed": true,
-          "required": true
-        },
-        "materiality_classified": {
-          "passed": true,
-          "required": false
-        },
-        "options_source_evaluated": {
-          "passed": true,
-          "required": true
-        },
-        "primary_source": {
-          "passed": true,
-          "required": false
-        },
-        "reviewed_payoff": {
-          "passed": false,
-          "required": true
-        },
-        "source_quality": {
-          "passed": true,
-          "required": true
-        }
-      },
-      "rank": 1,
-      "recommendation": "review",
-      "research_priority_score": 82.5,
-      "research_rank": 1,
-      "score": null,
-      "score_components": {
-        "age_days": 6.85,
-        "company_evidence": 22.5,
-        "governance_readiness": 15.0,
-        "recency": 25.0,
-        "source_evidence": 20.0,
-        "total": 82.5
-      },
-      "stage": "research_queue",
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_cd04af0a5203037348a38c0c",
-        "catalyst": "not_required",
-        "catalyst_observation_id": null,
-        "framework": "preregistered",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "acceptable",
-        "market_price": "available",
-        "market_price_as_of": "2026-10-13",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 164505,
-        "qualification": "watch_only",
-        "recommendation": "none"
-      },
-      "theta": {
-        "as_of": "2026-10-13",
-        "confidence": "low",
-        "expiry": "ALL",
-        "provider": "ThetaData",
-        "put_call_open_interest_ratio": null,
-        "put_call_volume_ratio": null,
-        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 305.99,
-        "status": "unavailable",
-        "total_open_interest": null,
-        "total_volume": null
-      },
-      "ticker": "INTU",
-      "title": "INTU · contrarian dislocation"
-    },
-    {
-      "analysis_packet": {
-        "automatic_analysis": {
           "missing_gate_count": 2,
           "missing_gates": [
             "company_health",
@@ -561,7 +185,7 @@
           "text": "Reject the CELH bull thesis within 60 days if dilution capital allocation remains fail or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -570,20 +194,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 28.39,
+          "spot_price": 27.93,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -764,10 +388,10 @@
           "required": true
         }
       },
-      "rank": 2,
+      "rank": 1,
       "recommendation": "review",
       "research_priority_score": 80.0,
-      "research_rank": 2,
+      "research_rank": 1,
       "score": null,
       "score_components": {
         "age_days": 0.85,
@@ -780,39 +404,415 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_5ae36b673e00997ed9af5e9b",
+        "capital_source_health_id": "capital_issuance_health_5c1bfbc4e5b85c49496a71ee",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "preregistered",
         "investment_candidate_id": "investment_candidate_93d7c192acc71306cd20c01b",
         "investment_grade": "C",
-        "investment_grade_id": "investment_grade_4231cf27245ffc9062f30738",
+        "investment_grade_id": "investment_grade_ecec7d55e2552acc6da76f57",
         "investment_proposal_id": null,
         "issuer_fundamentals": "borderline",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164449,
+        "price_event_id": 164648,
         "qualification": "watch_only",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 28.39,
+        "spot_price": 27.93,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
       },
       "ticker": "CELH",
       "title": "CELH · contrarian dislocation"
+    },
+    {
+      "analysis_packet": {
+        "automatic_analysis": {
+          "missing_gate_count": 1,
+          "missing_gates": [
+            "reviewed_payoff"
+          ],
+          "status": "needs_research"
+        },
+        "company_assessment": {
+          "catalysts": [],
+          "criteria": [
+            {
+              "criterion": "balance_sheet",
+              "rationale": "Pass requires liabilities/assets at most 75% or current ratio at least 1.2; the looser 90%/1.0 boundary is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "cash_generation",
+              "rationale": "Pass requires positive annual operating cash flow less reported capital expenditure.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "demand_durability",
+              "rationale": "Pass requires positive annual revenue growth; a decline no worse than 5% is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "dilution_capital_allocation",
+              "rationale": "Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "margins_efficiency",
+              "rationale": "No current source-attributed observation is available.",
+              "source_ref": null,
+              "status": "missing"
+            },
+            {
+              "criterion": "profitability",
+              "rationale": "Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            }
+          ],
+          "health_counts": {
+            "coverage_count": 5,
+            "fail_count": 0,
+            "missing_count": 1,
+            "partial_count": 0,
+            "pass_count": 5
+          },
+          "health_status": "acceptable",
+          "metrics": [
+            {
+              "criterion": "demand_durability",
+              "display": "13.9%",
+              "effective_at": "2026-07-31T00:00:00+00:00",
+              "label": "Annual revenue growth",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "profitability",
+              "display": "4,566.0m",
+              "effective_at": "2026-07-31T00:00:00+00:00",
+              "label": "Annual net income",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "profitability",
+              "display": "18.0%",
+              "effective_at": "2026-07-31T00:00:00+00:00",
+              "label": "Annual net-income change",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "cash_generation",
+              "display": "8,663.0m",
+              "effective_at": "2026-07-31T00:00:00+00:00",
+              "label": "Annual free cash flow",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "dilution_capital_allocation",
+              "display": "-2.1%",
+              "effective_at": "2026-07-31T00:00:00+00:00",
+              "label": "Diluted-share change",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            }
+          ],
+          "payoff_review": {
+            "instruction": "An authenticated human analyst must record INTU's entry, upside, invalidation, horizon, source, and rationale before promotion.",
+            "owner": "human_analyst",
+            "required_fields": [
+              "upside_price",
+              "invalidation_price",
+              "entry_condition",
+              "invalidation_condition",
+              "horizon_days",
+              "source_ref",
+              "rationale"
+            ],
+            "status": "needs_human",
+            "workflow": "authenticated_stage2_payoff_review"
+          },
+          "scope": "Company-specific annual SEC screen plus approved catalyst evidence; this is not a substitute for reviewed payoff analysis.",
+          "status": "needs_human"
+        },
+        "company_health": {
+          "coverage_count": 5,
+          "evidence_complete": true,
+          "promotion_eligible": true,
+          "required_coverage_count": 4,
+          "status": "acceptable"
+        },
+        "counter_case": {
+          "basis": [
+            "company_health:margins_efficiency"
+          ],
+          "status": "complete",
+          "text": "INTU may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available."
+        },
+        "framework": {
+          "complete": true,
+          "status": "preregistered"
+        },
+        "invalidation": {
+          "basis": [
+            "company_health:margins_efficiency"
+          ],
+          "status": "complete",
+          "text": "Reject the INTU bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
+        },
+        "market_price": {
+          "as_of": "2026-10-14",
+          "status": "available"
+        },
+        "materiality": {
+          "signals": [],
+          "status": "not_required",
+          "summary": "Catalyst materiality is not required for this lane."
+        },
+        "options": {
+          "as_of": "2026-10-14",
+          "confidence": "low",
+          "expiry": "ALL",
+          "provider": "ThetaData",
+          "put_call_open_interest_ratio": null,
+          "put_call_volume_ratio": null,
+          "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+          "spot_price": 301.45,
+          "status": "unavailable",
+          "total_open_interest": null,
+          "total_volume": null
+        },
+        "prepublication_research": {
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
+          "error": "source verification failed: HTTPError; supporting excerpt was not found on the cited page",
+          "model": null,
+          "provider": "deterministic_web_research",
+          "status": "partial",
+          "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            }
+          ]
+        },
+        "source": {
+          "atomic_event": true,
+          "blockers": [],
+          "current_synthesis": true,
+          "primary_supporting_events": 0,
+          "researched_context_sources": [
+            {
+              "published_at": "2026-09-30",
+              "publisher": "Yahoo Finance",
+              "source_type": "secondary",
+              "supporting_excerpt": "Intuit (NasdaqGS:INTU) expanded its AI-powered IDEAS accelerator with a new LA28 Olympics cohort focused on small business procurement opportunities. The LA28 cohort aims to help",
+              "title": "Intuit (INTU) Expands IDEAS Accelerator With LA28 Olympics Cohort",
+              "url": "https://finance.yahoo.com/small-business/articles/intuit-intu-expands-ideas-accelerator-101108053.html"
+            }
+          ],
+          "researched_primary_sources": [],
+          "status": "complete",
+          "synthesis_version": null
+        }
+      },
+      "blocker_explanations": [
+        {
+          "code": "qualification_watch_only",
+          "detail": "The setup may be monitored but does not qualify for promotion.",
+          "label": "Watch-only qualification"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "qualification_watch_only",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "INTU may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available.",
+      "direction": "bull",
+      "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
+      "framework_status": "preregistered",
+      "health_status": "acceptable",
+      "invalidation": "Reject the INTU bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment.",
+      "investment_readiness_score": null,
+      "lane": "contrarian",
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "reviewed_payoff",
+          "detail": "A human analyst must review entry, upside, invalidation, horizon, source, and rationale in Stage 2.",
+          "label": "Reviewed payoff missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "reviewed_payoff"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: reviewed payoff.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "catalyst_review": {
+          "passed": true,
+          "required": false
+        },
+        "company_assessment": {
+          "passed": true,
+          "required": true
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "company_health": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "reviewed_payoff": {
+          "passed": false,
+          "required": true
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 2,
+      "recommendation": "review",
+      "research_priority_score": 75.5,
+      "research_rank": 2,
+      "score": null,
+      "score_components": {
+        "age_days": 7.85,
+        "company_evidence": 22.5,
+        "governance_readiness": 15.0,
+        "recency": 18.0,
+        "source_evidence": 20.0,
+        "total": 75.5
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_999b7bbc50dd4a3e27fe6d1d",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "preregistered",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "market_price_as_of": "2026-10-14",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 164697,
+        "qualification": "watch_only",
+        "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-10-14",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 301.45,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "INTU",
+      "title": "INTU · contrarian dislocation"
     },
     {
       "analysis_packet": {
@@ -957,7 +957,7 @@
           "text": "Reject the AMKR bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -979,7 +979,7 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "source verification failed: HTTPError",
           "model": null,
           "provider": "deterministic_web_research",
@@ -1153,7 +1153,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_d65446017f302ff5d2a1afaf",
+        "capital_source_health_id": "capital_issuance_health_b1112dfc8d7f3bc0d6d0c208",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -1163,11 +1163,11 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164435,
+        "price_event_id": 164634,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -1330,7 +1330,7 @@
           "text": "Reject the DUOL bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -1339,20 +1339,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 147.74,
+          "spot_price": 140.1,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "source verification failed: HTTPError",
           "model": null,
           "provider": "deterministic_web_research",
@@ -1526,7 +1526,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_324c7e0d8ee588ec73b309d1",
+        "capital_source_health_id": "capital_issuance_health_e15c24b5bf207d25eb337b67",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -1536,23 +1536,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164463,
+        "price_event_id": 164662,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 147.74,
+        "spot_price": 140.1,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -1703,7 +1703,7 @@
           "text": "Reject the DY bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -1712,21 +1712,21 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 266.99,
+          "spot_price": 269.64,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
-          "error": null,
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
+          "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
           "status": "partial",
@@ -1762,16 +1762,7 @@
           "blockers": [],
           "current_synthesis": true,
           "primary_supporting_events": 0,
-          "researched_context_sources": [
-            {
-              "published_at": "2026-10-13",
-              "publisher": "newsbomb",
-              "source_type": "secondary",
-              "supporting_excerpt": "Dy efektivë të Komisariatit 4 në Tiranë janë arrestuar në kushtet e flagrancës nga Agjencia e Mbikëqyrjes Policore, pasi dyshohet se i kanë kërkuar dhe",
-              "title": "Agjencia e Mbikëqyrjes Policore arreston në flagrancë dy efektivë të Komisariatit 4 në Tiranë",
-              "url": "https://newsbomb.al/aktualitet/agjencia-e-mbikeqyrjes-policore-arreston-ne-flagrance-dy-efektive-te--i403075"
-            }
-          ],
+          "researched_context_sources": [],
           "researched_primary_sources": [],
           "status": "complete",
           "synthesis_version": null
@@ -1908,7 +1899,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_f1924a8efbc7d399afffe4fd",
+        "capital_source_health_id": "capital_issuance_health_892a561c368dd8c32d729b3c",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -1918,23 +1909,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164470,
+        "price_event_id": 164669,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 266.99,
+        "spot_price": 269.64,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -2085,7 +2076,7 @@
           "text": "Reject the FOUR bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -2094,20 +2085,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 39.85,
+          "spot_price": 38.84,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "source verification failed: HTTPError",
           "model": null,
           "provider": "deterministic_web_research",
@@ -2267,7 +2258,7 @@
       },
       "rank": 6,
       "recommendation": "review",
-      "research_priority_score": 72.122,
+      "research_priority_score": 72.5,
       "research_rank": 6,
       "score": null,
       "score_components": {
@@ -2275,13 +2266,13 @@
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 19.622,
-        "total": 72.122
+        "source_evidence": 20.0,
+        "total": 72.5
       },
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_3bf6d043a255d21f9d5b646d",
+        "capital_source_health_id": "capital_issuance_health_5ff826542dd8a0705c8521d6",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -2291,23 +2282,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164477,
+        "price_event_id": 164676,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 39.85,
+        "spot_price": 38.84,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -2458,7 +2449,7 @@
           "text": "Reject the LVS bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -2467,21 +2458,21 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 36.15,
+          "spot_price": 37.04,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
-          "error": "source verification failed: URLError",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
+          "error": null,
           "model": null,
           "provider": "deterministic_web_research",
           "status": "partial",
@@ -2640,7 +2631,7 @@
       },
       "rank": 7,
       "recommendation": "review",
-      "research_priority_score": 71.975,
+      "research_priority_score": 71.469,
       "research_rank": 7,
       "score": null,
       "score_components": {
@@ -2648,13 +2639,13 @@
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 19.475,
-        "total": 71.975
+        "source_evidence": 18.969,
+        "total": 71.469
       },
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_47c326e65088c3c698895ae4",
+        "capital_source_health_id": "capital_issuance_health_d3d24713f803c88751f90793",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -2664,23 +2655,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164526,
+        "price_event_id": 164718,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 36.15,
+        "spot_price": 37.04,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -2703,25 +2694,25 @@
             {
               "criterion": "balance_sheet",
               "rationale": "Pass requires liabilities/assets at most 75% or current ratio at least 1.2; the looser 90%/1.0 boundary is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "cash_generation",
               "rationale": "Pass requires positive annual operating cash flow less reported capital expenditure.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "demand_durability",
               "rationale": "Pass requires positive annual revenue growth; a decline no worse than 5% is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "dilution_capital_allocation",
               "rationale": "Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
@@ -2733,7 +2724,7 @@
             {
               "criterion": "profitability",
               "rationale": "Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             }
           ],
@@ -2748,47 +2739,47 @@
           "metrics": [
             {
               "criterion": "demand_durability",
-              "display": "24.1%",
-              "effective_at": "2025-12-31T00:00:00+00:00",
+              "display": "14.1%",
+              "effective_at": "2025-12-28T00:00:00+00:00",
               "label": "Annual revenue growth",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "profitability",
-              "display": "1,528.2m",
-              "effective_at": "2025-12-31T00:00:00+00:00",
+              "display": "523.7m",
+              "effective_at": "2025-12-28T00:00:00+00:00",
               "label": "Annual net income",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "profitability",
-              "display": "18.3%",
-              "effective_at": "2025-12-31T00:00:00+00:00",
+              "display": "37.6%",
+              "effective_at": "2025-12-28T00:00:00+00:00",
               "label": "Annual net-income change",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "cash_generation",
-              "display": "1,187.2m",
-              "effective_at": "2025-12-31T00:00:00+00:00",
+              "display": "467.7m",
+              "effective_at": "2025-12-28T00:00:00+00:00",
               "label": "Annual free cash flow",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "dilution_capital_allocation",
-              "display": "0.0%",
-              "effective_at": "2025-12-31T00:00:00+00:00",
+              "display": "-2.6%",
+              "effective_at": "2025-12-28T00:00:00+00:00",
               "label": "Diluted-share change",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             }
           ],
           "payoff_review": {
-            "instruction": "An authenticated human analyst must record FSLR's entry, upside, invalidation, horizon, source, and rationale before promotion.",
+            "instruction": "An authenticated human analyst must record SFM's entry, upside, invalidation, horizon, source, and rationale before promotion.",
             "owner": "human_analyst",
             "required_fields": [
               "upside_price",
@@ -2817,7 +2808,7 @@
             "company_health:margins_efficiency"
           ],
           "status": "complete",
-          "text": "FSLR may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available."
+          "text": "SFM may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available."
         },
         "framework": {
           "complete": true,
@@ -2828,10 +2819,10 @@
             "company_health:margins_efficiency"
           ],
           "status": "complete",
-          "text": "Reject the FSLR bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
+          "text": "Reject the SFM bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -2840,21 +2831,21 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-03",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 179.72,
+          "spot_price": 64.47,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
-          "error": "supporting excerpt was not found on the cited page",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
+          "error": null,
           "model": null,
           "provider": "deterministic_web_research",
           "status": "partial",
@@ -2924,12 +2915,12 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
-      "counter_case": "FSLR may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available.",
+      "counter_case": "SFM may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available.",
       "direction": "bull",
       "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
       "framework_status": "proposal_pending",
       "health_status": "acceptable",
-      "invalidation": "Reject the FSLR bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment.",
+      "invalidation": "Reject the SFM bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment.",
       "investment_readiness_score": null,
       "lane": "contrarian",
       "materiality": {
@@ -3013,7 +3004,7 @@
       },
       "rank": 8,
       "recommendation": "review",
-      "research_priority_score": 70.101,
+      "research_priority_score": 70.251,
       "research_rank": 8,
       "score": null,
       "score_components": {
@@ -3021,13 +3012,13 @@
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 17.601,
-        "total": 70.101
+        "source_evidence": 17.751,
+        "total": 70.251
       },
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_a7767e701b57ed03990302d9",
+        "capital_source_health_id": "capital_issuance_health_41bc51f82d9c512d2aee20aa",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -3037,29 +3028,29 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164484,
+        "price_event_id": 164746,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-03",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 179.72,
+        "spot_price": 64.47,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
       },
-      "ticker": "FSLR",
-      "title": "FSLR · contrarian dislocation"
+      "ticker": "SFM",
+      "title": "SFM · contrarian dislocation"
     },
     {
       "analysis_packet": {
@@ -3205,7 +3196,7 @@
           "text": "Reject the CTSH bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -3214,20 +3205,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 59.68,
+          "spot_price": 61.33,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -3416,7 +3407,7 @@
       "research_rank": 9,
       "score": null,
       "score_components": {
-        "age_days": 22.0,
+        "age_days": 23.0,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -3426,7 +3417,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_59cb960ffb7841ff47b0ff97",
+        "capital_source_health_id": "capital_issuance_health_81835fb971b0f54a5df65eb3",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -3436,23 +3427,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164456,
+        "price_event_id": 164655,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 59.68,
+        "spot_price": 61.33,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -3606,7 +3597,7 @@
           "text": "Reject the GE bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -3622,7 +3613,7 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -3844,7 +3835,7 @@
       "research_rank": 10,
       "score": null,
       "score_components": {
-        "age_days": 34.85,
+        "age_days": 35.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -3854,7 +3845,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_d6c91e28822bed0f074f6fef",
+        "capital_source_health_id": "capital_issuance_health_41a560e4dc56d37b8b8a4184",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -3864,11 +3855,11 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164491,
+        "price_event_id": 164683,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -4026,7 +4017,7 @@
           "text": "Reject the NVT bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -4036,20 +4027,20 @@
           "summary": "The catalyst discloses a quantitative commercial commitment."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 162.78,
+          "spot_price": 161.47,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -4257,7 +4248,7 @@
       "research_rank": 11,
       "score": null,
       "score_components": {
-        "age_days": 49.85,
+        "age_days": 50.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -4267,7 +4258,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_cb947f0312b576fc64577cc4",
+        "capital_source_health_id": "capital_issuance_health_37c90696b5f40756c0fa7a4d",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -4277,23 +4268,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164547,
+        "price_event_id": 164739,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 162.78,
+        "spot_price": 161.47,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -4449,7 +4440,7 @@
           "text": "Reject the T bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -4459,20 +4450,20 @@
           "summary": "The available evidence does not establish commercial materiality."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 22.49,
+          "spot_price": 22.85,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "source verification failed: HTTPError",
           "model": null,
           "provider": "deterministic_web_research",
@@ -4724,7 +4715,7 @@
       "research_rank": 12,
       "score": null,
       "score_components": {
-        "age_days": 47.85,
+        "age_days": 48.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -4734,7 +4725,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_caad0efd7e65f68e7c2980fe",
+        "capital_source_health_id": "capital_issuance_health_19755fdf3132cf9c70924034",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -4744,23 +4735,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164561,
+        "price_event_id": 164760,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 22.49,
+        "spot_price": 22.85,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -4916,7 +4907,7 @@
           "text": "Reject the APP bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -4926,20 +4917,20 @@
           "summary": "The available evidence does not establish commercial materiality."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 270.87,
+          "spot_price": 272.28,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -5191,7 +5182,7 @@
       "research_rank": 13,
       "score": null,
       "score_components": {
-        "age_days": 61.85,
+        "age_days": 62.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -5201,7 +5192,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_7a660659b69e7c1fd484fccf",
+        "capital_source_health_id": "capital_issuance_health_e3aa1e318d92475fd6a16fb0",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -5211,23 +5202,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164442,
+        "price_event_id": 164641,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 270.87,
+        "spot_price": 272.28,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -5383,7 +5374,7 @@
           "text": "Reject the NDAQ bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -5393,20 +5384,20 @@
           "summary": "The available evidence does not establish commercial materiality."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 94.29,
+          "spot_price": 93.48,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -5658,7 +5649,7 @@
       "research_rank": 14,
       "score": null,
       "score_components": {
-        "age_days": 62.85,
+        "age_days": 63.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -5668,7 +5659,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_e3d6c82818ccae3272bb50fe",
+        "capital_source_health_id": "capital_issuance_health_6cb6b8c1cee9b252593dc7be",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -5678,23 +5669,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164540,
+        "price_event_id": 164732,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 94.29,
+        "spot_price": 93.48,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -5842,7 +5833,7 @@
           "text": "Reject the INCY bull thesis within 60 days if cash generation remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -5852,20 +5843,20 @@
           "summary": "The available evidence does not establish commercial materiality."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 111.36,
+          "spot_price": 108.62,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -6117,7 +6108,7 @@
       "research_rank": 15,
       "score": null,
       "score_components": {
-        "age_days": 76.85,
+        "age_days": 77.85,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -6127,7 +6118,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_cd97d501661a6d648490d22f",
+        "capital_source_health_id": "capital_issuance_health_d518f1fa004f22abb4564f42",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -6137,23 +6128,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164498,
+        "price_event_id": 164690,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 111.36,
+        "spot_price": 108.62,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -6305,7 +6296,7 @@
           "text": "Reject the MU bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -6314,20 +6305,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 989.04,
+          "spot_price": 953.19,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -6516,7 +6507,7 @@
       "research_rank": 16,
       "score": null,
       "score_components": {
-        "age_days": 35.85,
+        "age_days": 36.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -6526,7 +6517,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_81b410eba0cd9597866515c6",
+        "capital_source_health_id": "capital_issuance_health_2a591b83099b5d1266e53b7a",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -6536,23 +6527,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164533,
+        "price_event_id": 164725,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 989.04,
+        "spot_price": 953.19,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -6696,7 +6687,7 @@
           "text": "Reject the ISRG bull thesis within 60 days if cash generation remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -6705,20 +6696,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 427.64,
+          "spot_price": 422.06,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -6907,7 +6898,7 @@
       "research_rank": 17,
       "score": null,
       "score_components": {
-        "age_days": 35.85,
+        "age_days": 36.85,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -6917,7 +6908,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_c1d9e1da47bb978681ca724e",
+        "capital_source_health_id": "capital_issuance_health_bb23b8bd4b3280a3d4b8e0f1",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -6927,23 +6918,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164512,
+        "price_event_id": 164704,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 427.64,
+        "spot_price": 422.06,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -7094,7 +7085,7 @@
           "text": "Reject the KLAC bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -7103,20 +7094,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 190.12,
+          "spot_price": 184.0,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -7298,7 +7289,7 @@
       "research_rank": 18,
       "score": null,
       "score_components": {
-        "age_days": 94.85,
+        "age_days": 95.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 0.0,
@@ -7308,7 +7299,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_27dacec98b579257238824da",
+        "capital_source_health_id": "capital_issuance_health_1a7eaee54f435c0c210af5b3",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -7318,23 +7309,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164519,
+        "price_event_id": 164711,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 190.12,
+        "spot_price": 184.0,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -7487,7 +7478,7 @@
           "text": "Reject the TE bull thesis within 60 days if dilution capital allocation remains fail or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -7496,20 +7487,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 3.21,
+          "spot_price": 3.16,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -7709,7 +7700,7 @@
       "research_rank": 19,
       "score": null,
       "score_components": {
-        "age_days": 46.85,
+        "age_days": 47.85,
         "company_evidence": 12.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -7719,7 +7710,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_00887af0deae55cc50d072ce",
+        "capital_source_health_id": "capital_issuance_health_f800849fb625653ba5b02f7b",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -7729,23 +7720,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "unhealthy",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164568,
+        "price_event_id": 164767,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 3.21,
+        "spot_price": 3.16,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -7896,7 +7887,7 @@
           "text": "Reject the AMAT bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -7905,20 +7896,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 497.53,
+          "spot_price": 464.24,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -8100,7 +8091,7 @@
       "research_rank": 20,
       "score": null,
       "score_components": {
-        "age_days": 94.85,
+        "age_days": 95.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 0.0,
@@ -8110,7 +8101,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_3ce433e786c08351f907a40d",
+        "capital_source_health_id": "capital_issuance_health_974b6124c7949eba10229f91",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -8120,23 +8111,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164428,
+        "price_event_id": 164627,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 497.53,
+        "spot_price": 464.24,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -8151,382 +8142,6 @@
     {
       "analysis_packet": {
         "automatic_analysis": {
-          "missing_gate_count": 1,
-          "missing_gates": [
-            "reviewed_payoff"
-          ],
-          "status": "needs_research"
-        },
-        "company_assessment": {
-          "catalysts": [],
-          "criteria": [
-            {
-              "criterion": "balance_sheet",
-              "rationale": "Pass requires liabilities/assets at most 75% or current ratio at least 1.2; the looser 90%/1.0 boundary is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "cash_generation",
-              "rationale": "Pass requires positive annual operating cash flow less reported capital expenditure.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "demand_durability",
-              "rationale": "Pass requires positive annual revenue growth; a decline no worse than 5% is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "dilution_capital_allocation",
-              "rationale": "Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "margins_efficiency",
-              "rationale": "No current source-attributed observation is available.",
-              "source_ref": null,
-              "status": "missing"
-            },
-            {
-              "criterion": "profitability",
-              "rationale": "Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            }
-          ],
-          "health_counts": {
-            "coverage_count": 5,
-            "fail_count": 0,
-            "missing_count": 1,
-            "partial_count": 0,
-            "pass_count": 5
-          },
-          "health_status": "acceptable",
-          "metrics": [
-            {
-              "criterion": "demand_durability",
-              "display": "13.9%",
-              "effective_at": "2026-07-31T00:00:00+00:00",
-              "label": "Annual revenue growth",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "profitability",
-              "display": "4,566.0m",
-              "effective_at": "2026-07-31T00:00:00+00:00",
-              "label": "Annual net income",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "profitability",
-              "display": "18.0%",
-              "effective_at": "2026-07-31T00:00:00+00:00",
-              "label": "Annual net-income change",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "cash_generation",
-              "display": "8,663.0m",
-              "effective_at": "2026-07-31T00:00:00+00:00",
-              "label": "Annual free cash flow",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            },
-            {
-              "criterion": "dilution_capital_allocation",
-              "display": "-2.1%",
-              "effective_at": "2026-07-31T00:00:00+00:00",
-              "label": "Diluted-share change",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
-              "status": "pass"
-            }
-          ],
-          "payoff_review": {
-            "instruction": "An authenticated human analyst must record INTU's entry, upside, invalidation, horizon, source, and rationale before promotion.",
-            "owner": "human_analyst",
-            "required_fields": [
-              "upside_price",
-              "invalidation_price",
-              "entry_condition",
-              "invalidation_condition",
-              "horizon_days",
-              "source_ref",
-              "rationale"
-            ],
-            "status": "needs_human",
-            "workflow": "authenticated_stage2_payoff_review"
-          },
-          "scope": "Company-specific annual SEC screen plus approved catalyst evidence; this is not a substitute for reviewed payoff analysis.",
-          "status": "needs_human"
-        },
-        "company_health": {
-          "coverage_count": 5,
-          "evidence_complete": true,
-          "promotion_eligible": true,
-          "required_coverage_count": 4,
-          "status": "acceptable"
-        },
-        "counter_case": {
-          "basis": [
-            "company_health:margins_efficiency"
-          ],
-          "status": "complete",
-          "text": "INTU may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available."
-        },
-        "framework": {
-          "complete": true,
-          "status": "preregistered"
-        },
-        "invalidation": {
-          "basis": [
-            "company_health:margins_efficiency"
-          ],
-          "status": "complete",
-          "text": "Reject the INTU bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
-        },
-        "market_price": {
-          "as_of": "2026-10-13",
-          "status": "available"
-        },
-        "materiality": {
-          "signals": [],
-          "status": "not_required",
-          "summary": "Catalyst materiality is not required for this lane."
-        },
-        "options": {
-          "as_of": "2026-10-13",
-          "confidence": "low",
-          "expiry": "ALL",
-          "provider": "ThetaData",
-          "put_call_open_interest_ratio": null,
-          "put_call_volume_ratio": null,
-          "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 305.99,
-          "status": "unavailable",
-          "total_open_interest": null,
-          "total_volume": null
-        },
-        "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
-          "error": "source verification failed: HTTPError; supporting excerpt was not found on the cited page",
-          "model": null,
-          "provider": "deterministic_web_research",
-          "status": "partial",
-          "tasks": [
-            {
-              "escalated_from": null,
-              "evidence_required": "A specific alternative explanation grounded in the research packet.",
-              "gate": "counter_case",
-              "instruction": "Write a company- and event-specific sourced counter-case.",
-              "owner": "research_agent",
-              "status": "completed"
-            },
-            {
-              "escalated_from": null,
-              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
-              "gate": "invalidation",
-              "instruction": "Define a measurable observation that would invalidate the thesis.",
-              "owner": "research_agent",
-              "status": "completed"
-            },
-            {
-              "escalated_from": null,
-              "evidence_required": "Reviewed evidence that satisfies the gate.",
-              "gate": "reviewed_payoff",
-              "instruction": "Resolve reviewed payoff.",
-              "owner": "human_analyst",
-              "status": "needs_human"
-            }
-          ]
-        },
-        "source": {
-          "atomic_event": true,
-          "blockers": [],
-          "current_synthesis": true,
-          "primary_supporting_events": 0,
-          "researched_context_sources": [
-            {
-              "published_at": "2026-09-30",
-              "publisher": "Yahoo Finance",
-              "source_type": "secondary",
-              "supporting_excerpt": "Intuit (NasdaqGS:INTU) expanded its AI-powered IDEAS accelerator with a new LA28 Olympics cohort focused on small business procurement opportunities. The LA28 cohort aims to help",
-              "title": "Intuit (INTU) Expands IDEAS Accelerator With LA28 Olympics Cohort",
-              "url": "https://finance.yahoo.com/small-business/articles/intuit-intu-expands-ideas-accelerator-101108053.html"
-            }
-          ],
-          "researched_primary_sources": [],
-          "status": "complete",
-          "synthesis_version": null
-        }
-      },
-      "blocker_explanations": [
-        {
-          "code": "qualification_watch_only",
-          "detail": "The setup may be monitored but does not qualify for promotion.",
-          "label": "Watch-only qualification"
-        },
-        {
-          "code": "watchlist_admission_required",
-          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
-          "label": "Governed watchlist admission required"
-        },
-        {
-          "code": "reviewed_payoff_missing",
-          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
-          "label": "Payoff and invalidation not reviewed"
-        }
-      ],
-      "blockers": [
-        "qualification_watch_only",
-        "watchlist_admission_required",
-        "reviewed_payoff_missing"
-      ],
-      "counter_case": "INTU may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available.",
-      "direction": "bull",
-      "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
-      "framework_status": "preregistered",
-      "health_status": "acceptable",
-      "invalidation": "Reject the INTU bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment.",
-      "investment_readiness_score": null,
-      "lane": "contrarian",
-      "materiality": {
-        "signals": [],
-        "status": "not_required",
-        "summary": "Catalyst materiality is not required for this lane."
-      },
-      "missing_analysis_gate_explanations": [
-        {
-          "code": "reviewed_payoff",
-          "detail": "A human analyst must review entry, upside, invalidation, horizon, source, and rationale in Stage 2.",
-          "label": "Reviewed payoff missing"
-        }
-      ],
-      "missing_analysis_gates": [
-        "reviewed_payoff"
-      ],
-      "monitoring_label": "research validation",
-      "next_action": "Complete: reviewed payoff.",
-      "promotion_audit": {
-        "atomic_event": {
-          "passed": true,
-          "required": false
-        },
-        "catalyst_review": {
-          "passed": true,
-          "required": false
-        },
-        "company_assessment": {
-          "passed": true,
-          "required": true
-        },
-        "company_evidence": {
-          "passed": true,
-          "required": true
-        },
-        "company_health": {
-          "passed": true,
-          "required": true
-        },
-        "counter_case": {
-          "passed": true,
-          "required": true
-        },
-        "current_synthesis": {
-          "passed": true,
-          "required": true
-        },
-        "framework_recommendation": {
-          "passed": true,
-          "required": true
-        },
-        "invalidation": {
-          "passed": true,
-          "required": true
-        },
-        "market_price": {
-          "passed": true,
-          "required": true
-        },
-        "materiality_classified": {
-          "passed": true,
-          "required": false
-        },
-        "options_source_evaluated": {
-          "passed": true,
-          "required": true
-        },
-        "primary_source": {
-          "passed": true,
-          "required": false
-        },
-        "reviewed_payoff": {
-          "passed": false,
-          "required": true
-        },
-        "source_quality": {
-          "passed": true,
-          "required": true
-        }
-      },
-      "rank": 1,
-      "recommendation": "review",
-      "research_priority_score": 82.5,
-      "research_rank": 1,
-      "score": null,
-      "score_components": {
-        "age_days": 6.85,
-        "company_evidence": 22.5,
-        "governance_readiness": 15.0,
-        "recency": 25.0,
-        "source_evidence": 20.0,
-        "total": 82.5
-      },
-      "stage": "research_queue",
-      "statuses": {
-        "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_cd04af0a5203037348a38c0c",
-        "catalyst": "not_required",
-        "catalyst_observation_id": null,
-        "framework": "preregistered",
-        "investment_candidate_id": null,
-        "investment_grade": "not_graded",
-        "investment_grade_id": null,
-        "investment_proposal_id": null,
-        "issuer_fundamentals": "acceptable",
-        "market_price": "available",
-        "market_price_as_of": "2026-10-13",
-        "membership_id": null,
-        "payoff": "missing",
-        "payoff_assumption_id": null,
-        "price_event_id": 164505,
-        "qualification": "watch_only",
-        "recommendation": "none"
-      },
-      "theta": {
-        "as_of": "2026-10-13",
-        "confidence": "low",
-        "expiry": "ALL",
-        "provider": "ThetaData",
-        "put_call_open_interest_ratio": null,
-        "put_call_volume_ratio": null,
-        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 305.99,
-        "status": "unavailable",
-        "total_open_interest": null,
-        "total_volume": null
-      },
-      "ticker": "INTU",
-      "title": "INTU · contrarian dislocation"
-    },
-    {
-      "analysis_packet": {
-        "automatic_analysis": {
           "missing_gate_count": 2,
           "missing_gates": [
             "company_health",
@@ -8684,7 +8299,7 @@
           "text": "Reject the CELH bull thesis within 60 days if dilution capital allocation remains fail or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -8693,20 +8308,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 28.39,
+          "spot_price": 27.93,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -8887,10 +8502,10 @@
           "required": true
         }
       },
-      "rank": 2,
+      "rank": 1,
       "recommendation": "review",
       "research_priority_score": 80.0,
-      "research_rank": 2,
+      "research_rank": 1,
       "score": null,
       "score_components": {
         "age_days": 0.85,
@@ -8903,39 +8518,415 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_5ae36b673e00997ed9af5e9b",
+        "capital_source_health_id": "capital_issuance_health_5c1bfbc4e5b85c49496a71ee",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "preregistered",
         "investment_candidate_id": "investment_candidate_93d7c192acc71306cd20c01b",
         "investment_grade": "C",
-        "investment_grade_id": "investment_grade_4231cf27245ffc9062f30738",
+        "investment_grade_id": "investment_grade_ecec7d55e2552acc6da76f57",
         "investment_proposal_id": null,
         "issuer_fundamentals": "borderline",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164449,
+        "price_event_id": 164648,
         "qualification": "watch_only",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 28.39,
+        "spot_price": 27.93,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
       },
       "ticker": "CELH",
       "title": "CELH · contrarian dislocation"
+    },
+    {
+      "analysis_packet": {
+        "automatic_analysis": {
+          "missing_gate_count": 1,
+          "missing_gates": [
+            "reviewed_payoff"
+          ],
+          "status": "needs_research"
+        },
+        "company_assessment": {
+          "catalysts": [],
+          "criteria": [
+            {
+              "criterion": "balance_sheet",
+              "rationale": "Pass requires liabilities/assets at most 75% or current ratio at least 1.2; the looser 90%/1.0 boundary is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "cash_generation",
+              "rationale": "Pass requires positive annual operating cash flow less reported capital expenditure.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "demand_durability",
+              "rationale": "Pass requires positive annual revenue growth; a decline no worse than 5% is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "dilution_capital_allocation",
+              "rationale": "Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "margins_efficiency",
+              "rationale": "No current source-attributed observation is available.",
+              "source_ref": null,
+              "status": "missing"
+            },
+            {
+              "criterion": "profitability",
+              "rationale": "Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            }
+          ],
+          "health_counts": {
+            "coverage_count": 5,
+            "fail_count": 0,
+            "missing_count": 1,
+            "partial_count": 0,
+            "pass_count": 5
+          },
+          "health_status": "acceptable",
+          "metrics": [
+            {
+              "criterion": "demand_durability",
+              "display": "13.9%",
+              "effective_at": "2026-07-31T00:00:00+00:00",
+              "label": "Annual revenue growth",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "profitability",
+              "display": "4,566.0m",
+              "effective_at": "2026-07-31T00:00:00+00:00",
+              "label": "Annual net income",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "profitability",
+              "display": "18.0%",
+              "effective_at": "2026-07-31T00:00:00+00:00",
+              "label": "Annual net-income change",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "cash_generation",
+              "display": "8,663.0m",
+              "effective_at": "2026-07-31T00:00:00+00:00",
+              "label": "Annual free cash flow",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            },
+            {
+              "criterion": "dilution_capital_allocation",
+              "display": "-2.1%",
+              "effective_at": "2026-07-31T00:00:00+00:00",
+              "label": "Diluted-share change",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+              "status": "pass"
+            }
+          ],
+          "payoff_review": {
+            "instruction": "An authenticated human analyst must record INTU's entry, upside, invalidation, horizon, source, and rationale before promotion.",
+            "owner": "human_analyst",
+            "required_fields": [
+              "upside_price",
+              "invalidation_price",
+              "entry_condition",
+              "invalidation_condition",
+              "horizon_days",
+              "source_ref",
+              "rationale"
+            ],
+            "status": "needs_human",
+            "workflow": "authenticated_stage2_payoff_review"
+          },
+          "scope": "Company-specific annual SEC screen plus approved catalyst evidence; this is not a substitute for reviewed payoff analysis.",
+          "status": "needs_human"
+        },
+        "company_health": {
+          "coverage_count": 5,
+          "evidence_complete": true,
+          "promotion_eligible": true,
+          "required_coverage_count": 4,
+          "status": "acceptable"
+        },
+        "counter_case": {
+          "basis": [
+            "company_health:margins_efficiency"
+          ],
+          "status": "complete",
+          "text": "INTU may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available."
+        },
+        "framework": {
+          "complete": true,
+          "status": "preregistered"
+        },
+        "invalidation": {
+          "basis": [
+            "company_health:margins_efficiency"
+          ],
+          "status": "complete",
+          "text": "Reject the INTU bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
+        },
+        "market_price": {
+          "as_of": "2026-10-14",
+          "status": "available"
+        },
+        "materiality": {
+          "signals": [],
+          "status": "not_required",
+          "summary": "Catalyst materiality is not required for this lane."
+        },
+        "options": {
+          "as_of": "2026-10-14",
+          "confidence": "low",
+          "expiry": "ALL",
+          "provider": "ThetaData",
+          "put_call_open_interest_ratio": null,
+          "put_call_volume_ratio": null,
+          "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+          "spot_price": 301.45,
+          "status": "unavailable",
+          "total_open_interest": null,
+          "total_volume": null
+        },
+        "prepublication_research": {
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
+          "error": "source verification failed: HTTPError; supporting excerpt was not found on the cited page",
+          "model": null,
+          "provider": "deterministic_web_research",
+          "status": "partial",
+          "tasks": [
+            {
+              "escalated_from": null,
+              "evidence_required": "A specific alternative explanation grounded in the research packet.",
+              "gate": "counter_case",
+              "instruction": "Write a company- and event-specific sourced counter-case.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "A ticker-specific, falsifiable condition with a time or measurable outcome.",
+              "gate": "invalidation",
+              "instruction": "Define a measurable observation that would invalidate the thesis.",
+              "owner": "research_agent",
+              "status": "completed"
+            },
+            {
+              "escalated_from": null,
+              "evidence_required": "Reviewed evidence that satisfies the gate.",
+              "gate": "reviewed_payoff",
+              "instruction": "Resolve reviewed payoff.",
+              "owner": "human_analyst",
+              "status": "needs_human"
+            }
+          ]
+        },
+        "source": {
+          "atomic_event": true,
+          "blockers": [],
+          "current_synthesis": true,
+          "primary_supporting_events": 0,
+          "researched_context_sources": [
+            {
+              "published_at": "2026-09-30",
+              "publisher": "Yahoo Finance",
+              "source_type": "secondary",
+              "supporting_excerpt": "Intuit (NasdaqGS:INTU) expanded its AI-powered IDEAS accelerator with a new LA28 Olympics cohort focused on small business procurement opportunities. The LA28 cohort aims to help",
+              "title": "Intuit (INTU) Expands IDEAS Accelerator With LA28 Olympics Cohort",
+              "url": "https://finance.yahoo.com/small-business/articles/intuit-intu-expands-ideas-accelerator-101108053.html"
+            }
+          ],
+          "researched_primary_sources": [],
+          "status": "complete",
+          "synthesis_version": null
+        }
+      },
+      "blocker_explanations": [
+        {
+          "code": "qualification_watch_only",
+          "detail": "The setup may be monitored but does not qualify for promotion.",
+          "label": "Watch-only qualification"
+        },
+        {
+          "code": "watchlist_admission_required",
+          "detail": "The opportunity has not been explicitly admitted to the governed watchlist.",
+          "label": "Governed watchlist admission required"
+        },
+        {
+          "code": "reviewed_payoff_missing",
+          "detail": "Upside, entry, and invalidation assumptions have not been reviewed.",
+          "label": "Payoff and invalidation not reviewed"
+        }
+      ],
+      "blockers": [
+        "qualification_watch_only",
+        "watchlist_admission_required",
+        "reviewed_payoff_missing"
+      ],
+      "counter_case": "INTU may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available.",
+      "direction": "bull",
+      "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
+      "framework_status": "preregistered",
+      "health_status": "acceptable",
+      "invalidation": "Reject the INTU bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment.",
+      "investment_readiness_score": null,
+      "lane": "contrarian",
+      "materiality": {
+        "signals": [],
+        "status": "not_required",
+        "summary": "Catalyst materiality is not required for this lane."
+      },
+      "missing_analysis_gate_explanations": [
+        {
+          "code": "reviewed_payoff",
+          "detail": "A human analyst must review entry, upside, invalidation, horizon, source, and rationale in Stage 2.",
+          "label": "Reviewed payoff missing"
+        }
+      ],
+      "missing_analysis_gates": [
+        "reviewed_payoff"
+      ],
+      "monitoring_label": "research validation",
+      "next_action": "Complete: reviewed payoff.",
+      "promotion_audit": {
+        "atomic_event": {
+          "passed": true,
+          "required": false
+        },
+        "catalyst_review": {
+          "passed": true,
+          "required": false
+        },
+        "company_assessment": {
+          "passed": true,
+          "required": true
+        },
+        "company_evidence": {
+          "passed": true,
+          "required": true
+        },
+        "company_health": {
+          "passed": true,
+          "required": true
+        },
+        "counter_case": {
+          "passed": true,
+          "required": true
+        },
+        "current_synthesis": {
+          "passed": true,
+          "required": true
+        },
+        "framework_recommendation": {
+          "passed": true,
+          "required": true
+        },
+        "invalidation": {
+          "passed": true,
+          "required": true
+        },
+        "market_price": {
+          "passed": true,
+          "required": true
+        },
+        "materiality_classified": {
+          "passed": true,
+          "required": false
+        },
+        "options_source_evaluated": {
+          "passed": true,
+          "required": true
+        },
+        "primary_source": {
+          "passed": true,
+          "required": false
+        },
+        "reviewed_payoff": {
+          "passed": false,
+          "required": true
+        },
+        "source_quality": {
+          "passed": true,
+          "required": true
+        }
+      },
+      "rank": 2,
+      "recommendation": "review",
+      "research_priority_score": 75.5,
+      "research_rank": 2,
+      "score": null,
+      "score_components": {
+        "age_days": 7.85,
+        "company_evidence": 22.5,
+        "governance_readiness": 15.0,
+        "recency": 18.0,
+        "source_evidence": 20.0,
+        "total": 75.5
+      },
+      "stage": "research_queue",
+      "statuses": {
+        "capital_issuance": "healthy",
+        "capital_source_health_id": "capital_issuance_health_999b7bbc50dd4a3e27fe6d1d",
+        "catalyst": "not_required",
+        "catalyst_observation_id": null,
+        "framework": "preregistered",
+        "investment_candidate_id": null,
+        "investment_grade": "not_graded",
+        "investment_grade_id": null,
+        "investment_proposal_id": null,
+        "issuer_fundamentals": "acceptable",
+        "market_price": "available",
+        "market_price_as_of": "2026-10-14",
+        "membership_id": null,
+        "payoff": "missing",
+        "payoff_assumption_id": null,
+        "price_event_id": 164697,
+        "qualification": "watch_only",
+        "recommendation": "none"
+      },
+      "theta": {
+        "as_of": "2026-10-14",
+        "confidence": "low",
+        "expiry": "ALL",
+        "provider": "ThetaData",
+        "put_call_open_interest_ratio": null,
+        "put_call_volume_ratio": null,
+        "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
+        "spot_price": 301.45,
+        "status": "unavailable",
+        "total_open_interest": null,
+        "total_volume": null
+      },
+      "ticker": "INTU",
+      "title": "INTU · contrarian dislocation"
     },
     {
       "analysis_packet": {
@@ -9080,7 +9071,7 @@
           "text": "Reject the AMKR bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -9102,7 +9093,7 @@
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "source verification failed: HTTPError",
           "model": null,
           "provider": "deterministic_web_research",
@@ -9276,7 +9267,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_d65446017f302ff5d2a1afaf",
+        "capital_source_health_id": "capital_issuance_health_b1112dfc8d7f3bc0d6d0c208",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -9286,11 +9277,11 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164435,
+        "price_event_id": 164634,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -9453,7 +9444,7 @@
           "text": "Reject the DUOL bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -9462,20 +9453,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 147.74,
+          "spot_price": 140.1,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "source verification failed: HTTPError",
           "model": null,
           "provider": "deterministic_web_research",
@@ -9649,7 +9640,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_324c7e0d8ee588ec73b309d1",
+        "capital_source_health_id": "capital_issuance_health_e15c24b5bf207d25eb337b67",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -9659,23 +9650,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164463,
+        "price_event_id": 164662,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 147.74,
+        "spot_price": 140.1,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -9826,7 +9817,7 @@
           "text": "Reject the DY bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -9835,21 +9826,21 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 266.99,
+          "spot_price": 269.64,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
-          "error": null,
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
+          "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
           "status": "partial",
@@ -9885,16 +9876,7 @@
           "blockers": [],
           "current_synthesis": true,
           "primary_supporting_events": 0,
-          "researched_context_sources": [
-            {
-              "published_at": "2026-10-13",
-              "publisher": "newsbomb",
-              "source_type": "secondary",
-              "supporting_excerpt": "Dy efektivë të Komisariatit 4 në Tiranë janë arrestuar në kushtet e flagrancës nga Agjencia e Mbikëqyrjes Policore, pasi dyshohet se i kanë kërkuar dhe",
-              "title": "Agjencia e Mbikëqyrjes Policore arreston në flagrancë dy efektivë të Komisariatit 4 në Tiranë",
-              "url": "https://newsbomb.al/aktualitet/agjencia-e-mbikeqyrjes-policore-arreston-ne-flagrance-dy-efektive-te--i403075"
-            }
-          ],
+          "researched_context_sources": [],
           "researched_primary_sources": [],
           "status": "complete",
           "synthesis_version": null
@@ -10031,7 +10013,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_f1924a8efbc7d399afffe4fd",
+        "capital_source_health_id": "capital_issuance_health_892a561c368dd8c32d729b3c",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -10041,23 +10023,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164470,
+        "price_event_id": 164669,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 266.99,
+        "spot_price": 269.64,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -10208,7 +10190,7 @@
           "text": "Reject the FOUR bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -10217,20 +10199,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 39.85,
+          "spot_price": 38.84,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "source verification failed: HTTPError",
           "model": null,
           "provider": "deterministic_web_research",
@@ -10390,7 +10372,7 @@
       },
       "rank": 6,
       "recommendation": "review",
-      "research_priority_score": 72.122,
+      "research_priority_score": 72.5,
       "research_rank": 6,
       "score": null,
       "score_components": {
@@ -10398,13 +10380,13 @@
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 19.622,
-        "total": 72.122
+        "source_evidence": 20.0,
+        "total": 72.5
       },
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_3bf6d043a255d21f9d5b646d",
+        "capital_source_health_id": "capital_issuance_health_5ff826542dd8a0705c8521d6",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -10414,23 +10396,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164477,
+        "price_event_id": 164676,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 39.85,
+        "spot_price": 38.84,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -10581,7 +10563,7 @@
           "text": "Reject the LVS bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -10590,21 +10572,21 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 36.15,
+          "spot_price": 37.04,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
-          "error": "source verification failed: URLError",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
+          "error": null,
           "model": null,
           "provider": "deterministic_web_research",
           "status": "partial",
@@ -10763,7 +10745,7 @@
       },
       "rank": 7,
       "recommendation": "review",
-      "research_priority_score": 71.975,
+      "research_priority_score": 71.469,
       "research_rank": 7,
       "score": null,
       "score_components": {
@@ -10771,13 +10753,13 @@
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 19.475,
-        "total": 71.975
+        "source_evidence": 18.969,
+        "total": 71.469
       },
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_47c326e65088c3c698895ae4",
+        "capital_source_health_id": "capital_issuance_health_d3d24713f803c88751f90793",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -10787,23 +10769,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164526,
+        "price_event_id": 164718,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 36.15,
+        "spot_price": 37.04,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -10826,25 +10808,25 @@
             {
               "criterion": "balance_sheet",
               "rationale": "Pass requires liabilities/assets at most 75% or current ratio at least 1.2; the looser 90%/1.0 boundary is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "cash_generation",
               "rationale": "Pass requires positive annual operating cash flow less reported capital expenditure.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "demand_durability",
               "rationale": "Pass requires positive annual revenue growth; a decline no worse than 5% is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "dilution_capital_allocation",
               "rationale": "Pass requires annual diluted-share growth at most 2%; up to 5% is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
@@ -10856,7 +10838,7 @@
             {
               "criterion": "profitability",
               "rationale": "Pass requires positive annual net income without a decline greater than 20%; a larger positive-income decline is partial.",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             }
           ],
@@ -10871,47 +10853,47 @@
           "metrics": [
             {
               "criterion": "demand_durability",
-              "display": "24.1%",
-              "effective_at": "2025-12-31T00:00:00+00:00",
+              "display": "14.1%",
+              "effective_at": "2025-12-28T00:00:00+00:00",
               "label": "Annual revenue growth",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "profitability",
-              "display": "1,528.2m",
-              "effective_at": "2025-12-31T00:00:00+00:00",
+              "display": "523.7m",
+              "effective_at": "2025-12-28T00:00:00+00:00",
               "label": "Annual net income",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "profitability",
-              "display": "18.3%",
-              "effective_at": "2025-12-31T00:00:00+00:00",
+              "display": "37.6%",
+              "effective_at": "2025-12-28T00:00:00+00:00",
               "label": "Annual net-income change",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "cash_generation",
-              "display": "1,187.2m",
-              "effective_at": "2025-12-31T00:00:00+00:00",
+              "display": "467.7m",
+              "effective_at": "2025-12-28T00:00:00+00:00",
               "label": "Annual free cash flow",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             },
             {
               "criterion": "dilution_capital_allocation",
-              "display": "0.0%",
-              "effective_at": "2025-12-31T00:00:00+00:00",
+              "display": "-2.6%",
+              "effective_at": "2025-12-28T00:00:00+00:00",
               "label": "Diluted-share change",
-              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001274494.json",
+              "source_ref": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001575515.json",
               "status": "pass"
             }
           ],
           "payoff_review": {
-            "instruction": "An authenticated human analyst must record FSLR's entry, upside, invalidation, horizon, source, and rationale before promotion.",
+            "instruction": "An authenticated human analyst must record SFM's entry, upside, invalidation, horizon, source, and rationale before promotion.",
             "owner": "human_analyst",
             "required_fields": [
               "upside_price",
@@ -10940,7 +10922,7 @@
             "company_health:margins_efficiency"
           ],
           "status": "complete",
-          "text": "FSLR may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available."
+          "text": "SFM may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available."
         },
         "framework": {
           "complete": true,
@@ -10951,10 +10933,10 @@
             "company_health:margins_efficiency"
           ],
           "status": "complete",
-          "text": "Reject the FSLR bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
+          "text": "Reject the SFM bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -10963,21 +10945,21 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-03",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 179.72,
+          "spot_price": 64.47,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
-          "error": "supporting excerpt was not found on the cited page",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
+          "error": null,
           "model": null,
           "provider": "deterministic_web_research",
           "status": "partial",
@@ -11047,12 +11029,12 @@
         "watchlist_admission_required",
         "reviewed_payoff_missing"
       ],
-      "counter_case": "FSLR may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available.",
+      "counter_case": "SFM may be a correct repricing rather than a temporary dislocation because margins efficiency is currently missing: No current source-attributed observation is available.",
       "direction": "bull",
       "entry_condition": "Not reviewed — complete the Stage 2 payoff review before promotion.",
       "framework_status": "proposal_pending",
       "health_status": "acceptable",
-      "invalidation": "Reject the FSLR bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment.",
+      "invalidation": "Reject the SFM bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment.",
       "investment_readiness_score": null,
       "lane": "contrarian",
       "materiality": {
@@ -11136,7 +11118,7 @@
       },
       "rank": 8,
       "recommendation": "review",
-      "research_priority_score": 70.101,
+      "research_priority_score": 70.251,
       "research_rank": 8,
       "score": null,
       "score_components": {
@@ -11144,13 +11126,13 @@
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 25.0,
-        "source_evidence": 17.601,
-        "total": 70.101
+        "source_evidence": 17.751,
+        "total": 70.251
       },
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_a7767e701b57ed03990302d9",
+        "capital_source_health_id": "capital_issuance_health_41bc51f82d9c512d2aee20aa",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -11160,29 +11142,29 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164484,
+        "price_event_id": 164746,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-03",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 179.72,
+        "spot_price": 64.47,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
       },
-      "ticker": "FSLR",
-      "title": "FSLR · contrarian dislocation"
+      "ticker": "SFM",
+      "title": "SFM · contrarian dislocation"
     },
     {
       "analysis_packet": {
@@ -11328,7 +11310,7 @@
           "text": "Reject the CTSH bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -11337,20 +11319,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 59.68,
+          "spot_price": 61.33,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -11539,7 +11521,7 @@
       "research_rank": 9,
       "score": null,
       "score_components": {
-        "age_days": 22.0,
+        "age_days": 23.0,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 18.0,
@@ -11549,7 +11531,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_59cb960ffb7841ff47b0ff97",
+        "capital_source_health_id": "capital_issuance_health_81835fb971b0f54a5df65eb3",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -11559,23 +11541,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164456,
+        "price_event_id": 164655,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 59.68,
+        "spot_price": 61.33,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -11729,7 +11711,7 @@
           "text": "Reject the GE bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -11745,7 +11727,7 @@
           "status": "unavailable"
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -11967,7 +11949,7 @@
       "research_rank": 10,
       "score": null,
       "score_components": {
-        "age_days": 34.85,
+        "age_days": 35.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -11977,7 +11959,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_d6c91e28822bed0f074f6fef",
+        "capital_source_health_id": "capital_issuance_health_41a560e4dc56d37b8b8a4184",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -11987,11 +11969,11 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164491,
+        "price_event_id": 164683,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
@@ -12149,7 +12131,7 @@
           "text": "Reject the NVT bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -12159,20 +12141,20 @@
           "summary": "The catalyst discloses a quantitative commercial commitment."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 162.78,
+          "spot_price": 161.47,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -12380,7 +12362,7 @@
       "research_rank": 11,
       "score": null,
       "score_components": {
-        "age_days": 49.85,
+        "age_days": 50.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -12390,7 +12372,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_cb947f0312b576fc64577cc4",
+        "capital_source_health_id": "capital_issuance_health_37c90696b5f40756c0fa7a4d",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -12400,23 +12382,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164547,
+        "price_event_id": 164739,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 162.78,
+        "spot_price": 161.47,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -12572,7 +12554,7 @@
           "text": "Reject the T bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -12582,20 +12564,20 @@
           "summary": "The available evidence does not establish commercial materiality."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 22.49,
+          "spot_price": 22.85,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "source verification failed: HTTPError",
           "model": null,
           "provider": "deterministic_web_research",
@@ -12847,7 +12829,7 @@
       "research_rank": 12,
       "score": null,
       "score_components": {
-        "age_days": 47.85,
+        "age_days": 48.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -12857,7 +12839,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_caad0efd7e65f68e7c2980fe",
+        "capital_source_health_id": "capital_issuance_health_19755fdf3132cf9c70924034",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -12867,23 +12849,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164561,
+        "price_event_id": 164760,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 22.49,
+        "spot_price": 22.85,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -13039,7 +13021,7 @@
           "text": "Reject the APP bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -13049,20 +13031,20 @@
           "summary": "The available evidence does not establish commercial materiality."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 270.87,
+          "spot_price": 272.28,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -13314,7 +13296,7 @@
       "research_rank": 13,
       "score": null,
       "score_components": {
-        "age_days": 61.85,
+        "age_days": 62.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -13324,7 +13306,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_7a660659b69e7c1fd484fccf",
+        "capital_source_health_id": "capital_issuance_health_e3aa1e318d92475fd6a16fb0",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -13334,23 +13316,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164442,
+        "price_event_id": 164641,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 270.87,
+        "spot_price": 272.28,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -13506,7 +13488,7 @@
           "text": "Reject the NDAQ bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -13516,20 +13498,20 @@
           "summary": "The available evidence does not establish commercial materiality."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 94.29,
+          "spot_price": 93.48,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -13781,7 +13763,7 @@
       "research_rank": 14,
       "score": null,
       "score_components": {
-        "age_days": 62.85,
+        "age_days": 63.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -13791,7 +13773,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_e3d6c82818ccae3272bb50fe",
+        "capital_source_health_id": "capital_issuance_health_6cb6b8c1cee9b252593dc7be",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -13801,23 +13783,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164540,
+        "price_event_id": 164732,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 94.29,
+        "spot_price": 93.48,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -13965,7 +13947,7 @@
           "text": "Reject the INCY bull thesis within 60 days if cash generation remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -13975,20 +13957,20 @@
           "summary": "The available evidence does not establish commercial materiality."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 111.36,
+          "spot_price": 108.62,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -14240,7 +14222,7 @@
       "research_rank": 15,
       "score": null,
       "score_components": {
-        "age_days": 76.85,
+        "age_days": 77.85,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -14250,7 +14232,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_cd97d501661a6d648490d22f",
+        "capital_source_health_id": "capital_issuance_health_d518f1fa004f22abb4564f42",
         "catalyst": "discovery_only",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -14260,23 +14242,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164498,
+        "price_event_id": 164690,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 111.36,
+        "spot_price": 108.62,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -14428,7 +14410,7 @@
           "text": "Reject the MU bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -14437,20 +14419,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 989.04,
+          "spot_price": 953.19,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -14639,7 +14621,7 @@
       "research_rank": 16,
       "score": null,
       "score_components": {
-        "age_days": 35.85,
+        "age_days": 36.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -14649,7 +14631,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_81b410eba0cd9597866515c6",
+        "capital_source_health_id": "capital_issuance_health_2a591b83099b5d1266e53b7a",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -14659,23 +14641,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164533,
+        "price_event_id": 164725,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 989.04,
+        "spot_price": 953.19,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -14819,7 +14801,7 @@
           "text": "Reject the ISRG bull thesis within 60 days if cash generation remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -14828,20 +14810,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 427.64,
+          "spot_price": 422.06,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -15030,7 +15012,7 @@
       "research_rank": 17,
       "score": null,
       "score_components": {
-        "age_days": 35.85,
+        "age_days": 36.85,
         "company_evidence": 20.0,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -15040,7 +15022,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_c1d9e1da47bb978681ca724e",
+        "capital_source_health_id": "capital_issuance_health_bb23b8bd4b3280a3d4b8e0f1",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -15050,23 +15032,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164512,
+        "price_event_id": 164704,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 427.64,
+        "spot_price": 422.06,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -15217,7 +15199,7 @@
           "text": "Reject the KLAC bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -15226,20 +15208,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 190.12,
+          "spot_price": 184.0,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": "supporting excerpt was not found on the cited page",
           "model": null,
           "provider": "deterministic_web_research",
@@ -15421,7 +15403,7 @@
       "research_rank": 18,
       "score": null,
       "score_components": {
-        "age_days": 94.85,
+        "age_days": 95.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 0.0,
@@ -15431,7 +15413,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_27dacec98b579257238824da",
+        "capital_source_health_id": "capital_issuance_health_1a7eaee54f435c0c210af5b3",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -15441,23 +15423,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164519,
+        "price_event_id": 164711,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 190.12,
+        "spot_price": 184.0,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -15610,7 +15592,7 @@
           "text": "Reject the TE bull thesis within 60 days if dilution capital allocation remains fail or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -15619,20 +15601,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 3.21,
+          "spot_price": 3.16,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -15832,7 +15814,7 @@
       "research_rank": 19,
       "score": null,
       "score_components": {
-        "age_days": 46.85,
+        "age_days": 47.85,
         "company_evidence": 12.5,
         "governance_readiness": 5.0,
         "recency": 9.0,
@@ -15842,7 +15824,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_00887af0deae55cc50d072ce",
+        "capital_source_health_id": "capital_issuance_health_f800849fb625653ba5b02f7b",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -15852,23 +15834,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "unhealthy",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164568,
+        "price_event_id": 164767,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 3.21,
+        "spot_price": 3.16,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -16019,7 +16001,7 @@
           "text": "Reject the AMAT bull thesis within 60 days if margins efficiency remains missing or deteriorates in the next sourced company assessment."
         },
         "market_price": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "status": "available"
         },
         "materiality": {
@@ -16028,20 +16010,20 @@
           "summary": "Catalyst materiality is not required for this lane."
         },
         "options": {
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "confidence": "low",
           "expiry": "ALL",
           "provider": "ThetaData",
           "put_call_open_interest_ratio": null,
           "put_call_volume_ratio": null,
           "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-          "spot_price": 497.53,
+          "spot_price": 464.24,
           "status": "unavailable",
           "total_open_interest": null,
           "total_volume": null
         },
         "prepublication_research": {
-          "attempted_at": "2026-10-13T20:20:05.691948+00:00",
+          "attempted_at": "2026-10-14T20:20:05.117766+00:00",
           "error": null,
           "model": null,
           "provider": "deterministic_web_research",
@@ -16223,7 +16205,7 @@
       "research_rank": 20,
       "score": null,
       "score_components": {
-        "age_days": 94.85,
+        "age_days": 95.85,
         "company_evidence": 22.5,
         "governance_readiness": 5.0,
         "recency": 0.0,
@@ -16233,7 +16215,7 @@
       "stage": "research_queue",
       "statuses": {
         "capital_issuance": "healthy",
-        "capital_source_health_id": "capital_issuance_health_3ce433e786c08351f907a40d",
+        "capital_source_health_id": "capital_issuance_health_974b6124c7949eba10229f91",
         "catalyst": "not_required",
         "catalyst_observation_id": null,
         "framework": "proposal_pending",
@@ -16243,23 +16225,23 @@
         "investment_proposal_id": null,
         "issuer_fundamentals": "acceptable",
         "market_price": "available",
-        "market_price_as_of": "2026-10-13",
+        "market_price_as_of": "2026-10-14",
         "membership_id": null,
         "payoff": "missing",
         "payoff_assumption_id": null,
-        "price_event_id": 164428,
+        "price_event_id": 164627,
         "qualification": "enrichment_pending",
         "recommendation": "none"
       },
       "theta": {
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "confidence": "low",
         "expiry": "ALL",
         "provider": "ThetaData",
         "put_call_open_interest_ratio": null,
         "put_call_volume_ratio": null,
         "reason": "A generic options snapshot exists, but no ThetaData-confirmed fields are present.",
-        "spot_price": 497.53,
+        "spot_price": 464.24,
         "status": "unavailable",
         "total_open_interest": null,
         "total_volume": null
@@ -16275,28 +16257,28 @@
   },
   "transitions": {
     "entered": [
-      "AMKR"
+      "SFM"
     ],
     "left": [
       {
-        "current_score": 70.0,
+        "current_score": 69.244,
         "lane": "contrarian",
         "previous_rank": 8,
-        "previous_score": 70.0,
+        "previous_score": 70.101,
         "reason": "below_lane_quota_or_global_cutoff",
-        "ticker": "RH"
+        "ticker": "FSLR"
       }
     ],
-    "previous_as_of": "2026-10-12T20:20:05.256385+00:00",
+    "previous_as_of": "2026-10-13T20:20:05.691948+00:00",
     "retained": [
       "AMAT",
+      "AMKR",
       "APP",
       "CELH",
       "CTSH",
       "DUOL",
       "DY",
       "FOUR",
-      "FSLR",
       "GE",
       "INCY",
       "INTU",
@@ -16310,5 +16292,5 @@
       "TE"
     ]
   },
-  "universe_count": 4624
+  "universe_count": 4674
 }
