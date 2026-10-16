@@ -2,18 +2,82 @@
   "date": "2026-10-16",
   "version": "2.48.0",
   "regime_label": "neutral",
-  "regime_score": -10.5,
+  "regime_score": -5.5,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "below_cutoff": 218,
-    "earnings_blackout": 54,
+    "below_cutoff": 214,
+    "earnings_blackout": 57,
     "rr_too_low": 24
   },
   "candidates_evaluated": 296,
-  "picks_count": 0,
-  "picks": [],
-  "oracle_watch_count": 6,
+  "picks_count": 1,
+  "picks": [
+    {
+      "ticker": "DY",
+      "composite": 45,
+      "convergence_paths": [
+        "path1_buy",
+        "path3_strong_candidate"
+      ],
+      "spot_price": 257.78,
+      "entry": {
+        "low": 250.05,
+        "high": 259.07,
+        "mid": 254.56
+      },
+      "target": 309.34,
+      "stop": 237.16,
+      "rr_ratio": 2.5,
+      "rr_planned": 3.15,
+      "above_zone_pct": 0.0,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": 773.34,
+      "suggested_shares": 3,
+      "position_risk_usd": 61.86,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "path1": {
+          "score": 25
+        },
+        "path3": {
+          "score": 20
+        }
+      },
+      "dilution_risk": {
+        "ticker": "DY",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -12.78,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Tier 2 BUY conf 100 + Path 3 strong. no earnings <45d.",
+      "watchlist_thesis": null,
+      "rank": 1,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed hold, IWM 5d unknown, Sector unknown, Industry unknown",
+        "expires": "2026-10-30",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false,
+        "abstained": false
+      },
+      "oracle_note": {
+        "text": "Rescan/watch: fresh Path3 score=70, down_from_high=52.4%, insider_signal=15; no P4/options confirmation yet, so no positive modifier.",
+        "written_at": "2026-10-14"
+      }
+    }
+  ],
+  "oracle_watch_count": 4,
   "oracle_watch": [
     {
       "ticker": "CELH",
@@ -42,37 +106,9 @@
       "filter_reason": "below_cutoff"
     },
     {
-      "ticker": "DY",
-      "composite": 20,
-      "convergence_paths": [
-        "path3_strong_candidate"
-      ],
-      "spot_price": 257.78,
-      "oracle_note": {
-        "text": "Rescan/watch: fresh Path3 score=70, down_from_high=52.4%, insider_signal=15; no P4/options confirmation yet, so no positive modifier.",
-        "written_at": "2026-10-14"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
-      "ticker": "CRUS",
-      "composite": 15,
-      "convergence_paths": [
-        "path5_strong_quality"
-      ],
-      "spot_price": 108.4,
-      "oracle_note": {
-        "text": "Rescan/watch: Path3 candidate + Path5 score=88 + zone=$106-$110, but flow_score=+4.5 and chain thin. Watch-size only.",
-        "written_at": "2026-10-14"
-      },
-      "filter_reason": "below_cutoff"
-    },
-    {
       "ticker": "ALNY",
-      "composite": 10,
-      "convergence_paths": [
-        "catalyst_near"
-      ],
+      "composite": 0,
+      "convergence_paths": [],
       "spot_price": 234.03,
       "oracle_note": {
         "text": "Path1 BUY 92/conf89 + heatmap=40, but PDUFA=2026-10-15 is binary and options-deep flow_score=-1.5 neutral with no skew/GEX. No chase.",
