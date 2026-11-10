@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-09T17:21:15",
-  "source_generated_at": "2026-11-09T15:20:05.022439+00:00",
+  "generated_at": "2026-11-10T17:21:24",
+  "source_generated_at": "2026-11-10T15:20:05.421789+00:00",
   "mode": "daily_analysis_site_export",
   "oracle_model": "gpt-5.5",
   "title": "Portfolio news scan complete",
@@ -34,25 +34,39 @@
     "held_position_updates": []
   },
   "general": {
-    "summary": "General analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 0 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.",
+    "summary": "General analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 16 generated read-through candidate(s), 2 read-through theme observation(s), ThetaData status=ok.",
     "source_artifact": "data/gpt_news_discovery/latest.json",
-    "generated_at": "2026-11-09T14:40:04.899804+00:00",
+    "generated_at": "2026-11-10T14:40:05.472436+00:00",
     "macro_climate": {
       "status": "ok",
       "price_snapshot": {
-        "title": "Market price snapshot: SPY 745.04 (+1.33% last close); WTI oil 86.87 (-4.36% last close); Gold 4138.00 (+1.55% last close)",
+        "title": "Market price snapshot: SPY 749.43 (-0.43% last close); WTI oil 84.65 (-2.53% last close); Gold 4063.40 (-1.24% last close)",
         "url": "yfinance://SPY,CL=F,GC=F",
-        "published_at": "2026-11-09",
+        "published_at": "2026-11-10",
         "snippet": "Macro context only. Use this with Fed, geopolitical, oil, and gold headlines to infer sector read-throughs; do not treat ETFs or commodities as stock picks.",
         "category_hint": "macro_market_climate"
       },
       "price_moves": {
-        "SPY": 1.33,
-        "WTI oil": -4.36,
-        "Gold": 1.55
+        "SPY": -0.43,
+        "WTI oil": -2.53,
+        "Gold": -1.24
       },
-      "tone": "risk_on",
+      "tone": "commodity_driven",
       "headlines": [
+        {
+          "title": "CPI Report Today: Fed\u2019s Waller Says 50-Basis-Point Rate Hike \u2018Should Be Considered\u2019 If Core Inflation Remains Elevated - Stocktwits",
+          "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQM2lZemhQTzB6Mk0zMjdOMkI5MHRaODU4ZVE1MS14bUlVdzdoemk0aHc0VXFkSUNxWmpGWEdZNS0yQzZEN1ZKaXNBNWcwMUY0dTBSTmI3cGlfZzN6TWFmNkFJWXM4ckVUbnJuNGo4NGxybVlPbmxLQjhFOVd6dXhiaElVVnhnUzNOay1OYnl6ZFB4TXl5ZTNCMmJ0d0R3T1ZMU1FWaW5RWTRCQXRseEZyS2xMOGtOVmlpV05MaW02TzlibWc3MjhXRHpVR0d2Mjl1Y2Fqbmh0cUVWYWFNQVZuRjBHTy1MRFBuOVQwZTVoQW1NTXAxdlI1X2l3VDBmMGJOdDR1YUZQdDBPNVU?oc=5",
+          "published_at": "2026-11-10",
+          "snippet": "CPI Report Today: Fed\u2019s Waller Says 50-Basis-Point Rate Hike \u2018Should Be Considered\u2019 If Core Inflation Remains Elevated &nbsp;&nbsp; Stocktwits",
+          "category_hint": "macro_market_climate"
+        },
+        {
+          "title": "Market Movers blog: Nvidia shares sink after investigation into CEO over affair with suspected spy - Investment Week",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5mZHNUUnlOeExDV2hSRjhxWEs0blpwaGhqUzIzQ054d1JaTnNIcGZWbkhtTDVwZFdwUXM5ekRkX2Z5UFJEWW5uMGtRSzVnd2NwZDFRUWZnYm9JWHFlTUptZzJGSHdKOS1oTEJxOUk0bFRWdw?oc=5",
+          "published_at": "2026-11-10",
+          "snippet": "Market Movers blog: Nvidia shares sink after investigation into CEO over affair with suspected spy &nbsp;&nbsp; Investment Week",
+          "category_hint": "macro_market_climate"
+        },
         {
           "title": "Odds of a December Rate Hike Jump to 77% After a Blowout Jobs Report - 24/7 Wall St.",
           "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNN3JLcjlXdHpQdzVkWV9ISHdHNHBiU2FTLTRra24zcEFPejQ1SU50RTNZQmtFYmxZYWxyWnVoc2FoSjhGREh2ODNtdVg4ZnhUQldWQ2ZYR05KOGZTeXotZWhDZ2hjM0g5b2paR2ZwTThoOENzSE1Ua0pSWENMcndldk1tYm5VOWdHX1ZIeHNPbE0yRDhDWkIwTFJjN182MVY4RWMwQ1ZISmIwWjFnamgyNQ?oc=5",
@@ -61,40 +75,425 @@
           "category_hint": "macro_market_climate"
         },
         {
-          "title": "Gold gains as lower oil prices temper inflation fears; US inflation in focus - CNBC",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeUI1TW05YjFMZ2ttT3hUYnJfdE5fNFVOcHZsVTJldlU1Zy1kbUpTT18wdW9UVDRvYXNXRU9rLWdQZDUyeTQ2emxzb3hCd0VJMkpMalRuOGVKaGFKUXgtdFlTZGdiY2RmVWFxdXdzUlhkTGVwazh3d1hGbWd3dU50QVNOc0NDNUlTMmVMbXBaZ2xZbmRHTG16dFNxYjlvWWhnRVVtdzBwa3J0cVBqd2E0?oc=5",
-          "published_at": "2026-11-09",
-          "snippet": "Gold gains as lower oil prices temper inflation fears; US inflation in focus &nbsp;&nbsp; CNBC",
+          "title": "Gold price, silver rate today: Why is gold rate down on Tuesday? Check latest bullion outlook - The Economic Times",
+          "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPa3g1aTM5eFUwZ3VtSjdpTjV0R1hnM0lMazRGMlF3MGlQTXlFUVc1Z2t1NTFzeTlSMFY1YXlnV1BfamlLb2IyeTdNaElmZDFpd25xdW1EbXhERzlRZ20wbjdPZUZtMEhEUU1YMmZmWURZNjdwNjNYMTdLV3ZiaW5QeXFsVWlSeVBLZFpFdjlxdEM1WkpsMTdLQ3dsU2dIUTdXZU9NbEZEdVRGQWY1YmZ3TV9FUW5TWjRTdW11WkkwV0hWVl95b3RFanQxb0RmdVI1Sno5N0h3cG9qSm5BbG8zeFVEQmFhbklCV0FqYlZRRkx6Zkd0cWhoZXRR0gH_AUFVX3lxTE9HMHlOY2V1eEpxWFJUX0NlVlY0TFh5b1FBbEhaNENJbUo0aTFsN2IwRWZ0Q25FeUNETlRsYTh0M3N4ckVwQk10WU5JY0pZUmdkbFlGYmU4elIwalJuT0RkN3dweGNBQUREMG1XWk5Wakx2czdjT3JJbTBpVDVJVnJMbVJPblhTN0gtTUVHbHhaMDNqVDVIc3Z2NDFrQXBBd1duS3hIRVFrRmVac2lZRjZseW5VY2xhMjdUNHduMWxYbHpoTFZzSHpka3p1TWJrZmlOMUpZbUFfTXdlZEtoM0NhbUl4OHZpdTdtdTNtWDFCSkg3N2VXcUE3TEU4ZTA5TQ?oc=5",
+          "published_at": "2026-11-10",
+          "snippet": "Gold price, silver rate today: Why is gold rate down on Tuesday? Check latest bullion outlook &nbsp;&nbsp; The Economic Times",
           "category_hint": "macro_market_climate"
         },
         {
-          "title": "Gold Holds Decline as US Jobs Data Fan December Rate Hike Bets - Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOalBuZXBLSkx6bEJtdVU0djlRbHRwdlVRNWdTbWJDM2NrRmZVcGg4SV9mdEVONXVWeml3OFgxZWRKMEoxenRCLXVaSXhDdUdRNG55V3ZWS0drMzJwaUJYN3A5cFlpWEt5anBMMEtoa0R1LTIxa3BnS3luNUdPWFIweTY0NEJhS2thcnpqY0YyVEJwZHhxclFyQ3c0OTNETy1aQlFaeHN2R1A3dXg1T0NDU21ycw?oc=5",
-          "published_at": "2026-11-09",
-          "snippet": "Gold Holds Decline as US Jobs Data Fan December Rate Hike Bets &nbsp;&nbsp; Bloomberg.com",
-          "category_hint": "macro_market_climate"
-        },
-        {
-          "title": "Gold gains as lower oil prices ease inflation fears - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbEdIVXlJc2RaUEw2RmFrR2FZcXYzYlBKUG9Cdl9WUVFfalVxT0hGcGFCdW1DS3JMT2daanhDYktBeXVGNGt5TGlsOGZJVWVSMFpnT3ZVa2RBUjZYakRlVlQ3SXd1ZkpTQVNXVkpoNUZoemdycWY0MG02dVk0cWRuWG4taG5VMm9kbEluSHctTVZVMXJwWXNWSWdVcmxQeWtRSW1EWDQ2dTJ6QVV2TzhoeQ?oc=5",
-          "published_at": "2026-11-09",
-          "snippet": "Gold gains as lower oil prices ease inflation fears &nbsp;&nbsp; Reuters",
-          "category_hint": "macro_market_climate"
-        },
-        {
-          "title": "Gold rebounds as weaker dollar offsets bets on December Fed rate hike - Investing.com",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNQVR2b0M2R1dsSW1ZV1RtdzNMbjUyLVp4a2JPdzBMcllIeF9FeHNWUm90Q2lNeEVtOUZDSDNSeEZKZVZDZmZSbDVCR2RvbktBREVjSG1UNE8yQVQ4cjJ3R19VeXZuMXR0RHBwTEFJQ1Z5blBnZjFsZXBzM0NVaEY0STBtV2pQMmhtb3dzYUVFWEZ4bVk5WkhCckpiSXlRX1NmTWpSWFNUOC01bXJfUzJYN0N6dFYyc1VrVC1DQmZyMUxpSFZHUTZTWm45Yw?oc=5",
-          "published_at": "2026-11-09",
-          "snippet": "Gold rebounds as weaker dollar offsets bets on December Fed rate hike &nbsp;&nbsp; Investing.com",
+          "title": "Today\u2019s Market Recap: Oil Plunge Boosts US Stocks as Dow Surges 1,100 Points, Nasdaq Rises 2.74%; AMD Jumps Over 13%, Nvidia Falls Over 4% - TradingKey",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWElqTFpTVzhkLWtpQVlnSzJuNUdIdlFFT1dyZmxvZ212cmNMWGZNMEpqQ1BOV2w1TThQTXI5OEdCVUhOZDZLUThiMEExbzNiSmx2bWwzVnY0bVgtQk90REZIbHhxek9KeldPVnp1aWY4WXRIQXJYX2xWdEpmeHgxalVPVklqUFltamRqaUFvY01vazVYSzJlZ0paN1F5MlotalREZWt1WkV2cTRhbnZER21Sa0JQVGtYNVo1d3lnb2M?oc=5",
+          "published_at": "2026-11-10",
+          "snippet": "Today\u2019s Market Recap: Oil Plunge Boosts US Stocks as Dow Surges 1,100 Points, Nasdaq Rises 2.74%; AMD Jumps Over 13%, Nvidia Falls Over 4% &nbsp;&nbsp; TradingKey",
           "category_hint": "macro_market_climate"
         }
       ],
-      "summary": "Market price snapshot: SPY 745.04 (+1.33% last close); WTI oil 86.87 (-4.36% last close); Gold 4138.00 (+1.55% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: risk_on."
+      "summary": "Market price snapshot: SPY 749.43 (-0.43% last close); WTI oil 84.65 (-2.53% last close); Gold 4063.40 (-1.24% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: commodity_driven."
     },
     "market_wide_events": [],
     "notable_company_events": [],
-    "read_through_candidates": [],
-    "theme_observations": [],
+    "read_through_candidates": [
+      {
+        "ticker": "AVGO",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: AVGO could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "MRVL",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "MU",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "COHR",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.68,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "PWR",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: PWR could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "builders_engineering",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "ETN",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: ETN could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "VRT",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "GEV",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "NRG",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: NRG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "BE",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: BE could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "OKLO",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: OKLO could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "NVDA",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "AMD",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: AMD could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "GLW",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: GLW could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "APH",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: APH could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      },
+      {
+        "ticker": "BELFB",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: BELFB could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "APLD",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ]
+      }
+    ],
+    "theme_observations": [
+      {
+        "theme_id": "data_center_ai_infrastructure",
+        "trigger_title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+        "trigger_url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e",
+        "matched_patterns": [
+          "data center"
+        ],
+        "generated_beneficiaries": [
+          {
+            "ticker": "ACM",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "PWR",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "MTZ",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "J",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "ETN",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "VRT",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "GEV",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "HUBB",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "POWL",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "CEG",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "VST",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "NRG",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          }
+        ],
+        "training_label": null
+      },
+      {
+        "theme_id": "data_center_ai_infrastructure",
+        "trigger_title": "SpaceX Soars 5% as Stifel Calls It the \u201cBuyer of Last Resort\u201d for Stalled Data Centers",
+        "trigger_url": "https://finnhub.io/api/news?id=d3247fa0b2e308d2b47655634b610921d978db17f83c4d52714a1228419b6c14",
+        "matched_patterns": [
+          "data center"
+        ],
+        "generated_beneficiaries": [],
+        "training_label": null
+      }
+    ],
     "theta_market": {
       "status": "ok",
       "latest_scan_date": "2026-08-12",
@@ -114,9 +513,539 @@
       "bearish_flow": [],
       "held_overlap": []
     },
-    "new_tickers": [],
+    "new_tickers": [
+      "AMD",
+      "APH",
+      "AVGO",
+      "BE",
+      "BELFB",
+      "COHR",
+      "ETN",
+      "GEV",
+      "GLW",
+      "MRVL",
+      "MU",
+      "NRG",
+      "NVDA",
+      "OKLO",
+      "PWR",
+      "VRT"
+    ],
     "portfolio_read_throughs": [],
-    "scored_picks": [],
+    "scored_picks": [
+      {
+        "pick_id": "47e8f0c2f58c60d7",
+        "ticker": "PWR",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: PWR could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "9e5ef1a70d51680e",
+        "ticker": "ETN",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: ETN could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "330b4bb71ea74a9f",
+        "ticker": "VRT",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "93bde8a2af8f11c3",
+        "ticker": "GEV",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "a651ab67cdea770d",
+        "ticker": "NRG",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: NRG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "7cd2bf2565cd4e0b",
+        "ticker": "BE",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: BE could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "40ac4f57a9d16d89",
+        "ticker": "OKLO",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: OKLO could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "200d70c374ededed",
+        "ticker": "NVDA",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "e49e5aee090cb7c3",
+        "ticker": "AMD",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: AMD could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "0a6682c4daed5d00",
+        "ticker": "AVGO",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: AVGO could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 33,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "cb3a9438b236b3e2",
+        "ticker": "MRVL",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 33,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "61078ce5bc6dabb6",
+        "ticker": "MU",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 33,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "5e387f8d20cbd693",
+        "ticker": "GLW",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: GLW could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "d371a079acf7056f",
+        "ticker": "APH",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: APH could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "83f64b2bb7066e32",
+        "ticker": "COHR",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 33,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "f0510212512b3b9a",
+        "ticker": "BELFB",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: BELFB could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      }
+    ],
     "general_stale": false,
     "watch_items": [],
     "caveats": [
@@ -139,28 +1068,609 @@
     "LLM oracle unavailable; deterministic fallback used."
   ],
   "general_news": {
-    "generated_at": "2026-11-09T14:40:04.899804+00:00",
+    "generated_at": "2026-11-10T14:40:05.472436+00:00",
     "seed_tickers": [
       "APLD",
       "AVGO",
-      "CEG",
+      "BULL",
       "COHR",
+      "DC",
       "EQT",
       "FLUT",
-      "IBRX",
       "MRVL",
       "MU",
-      "NVDA",
+      "T",
       "TLX",
       "UBER"
     ],
-    "event_count": 0,
-    "theme_observation_count": 0,
-    "events": [],
-    "theme_observations": [],
+    "event_count": 16,
+    "theme_observation_count": 2,
+    "events": [
+      {
+        "ticker": "PWR",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: PWR could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=builders_engineering; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "builders_engineering",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "ETN",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: ETN could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "VRT",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "GEV",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "power_equipment",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "NRG",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: NRG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "BE",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: BE could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "OKLO",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: OKLO could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "NVDA",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "AMD",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: AMD could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "AVGO",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Indirect beneficiary thesis: AVGO could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "MRVL",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "MU",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "GLW",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: GLW could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=optics_cable_connectivity; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "APH",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: APH could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=optics_cable_connectivity; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "COHR",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=optics_cable_connectivity; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "BELFB",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-09",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: BELFB could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=optics_cable_connectivity; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "APLD",
+        "evidence": [
+          {
+            "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+            "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      }
+    ],
+    "theme_observations": [
+      {
+        "theme_id": "data_center_ai_infrastructure",
+        "item_index": 12,
+        "matched_patterns": [
+          "data center"
+        ],
+        "trigger": {
+          "source": "finnhub_company",
+          "title": "These Former Bitcoin Miners Embraced AI. Was That the Right Move?",
+          "url": "https://finnhub.io/api/news?id=e8ee82d2fc7f1f6ef9998df55055d4245fd0f0425f71af9dac3b17e83c67462e",
+          "published_at": "2026-11-09",
+          "tickers": [
+            "APLD"
+          ]
+        },
+        "generated_beneficiaries": [
+          {
+            "ticker": "ACM",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "PWR",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "MTZ",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "J",
+            "bucket": "builders_engineering",
+            "reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "ETN",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "VRT",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "GEV",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "HUBB",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "POWL",
+            "bucket": "power_equipment",
+            "reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "CEG",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "VST",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "NRG",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "TLN",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "BE",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "OKLO",
+            "bucket": "energy_supply",
+            "reason": "incremental electricity and firm-power demand from AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "NVDA",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "AMD",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "AVGO",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.68
+          },
+          {
+            "ticker": "MRVL",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.68
+          },
+          {
+            "ticker": "ANET",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "MU",
+            "bucket": "chips_networking",
+            "reason": "accelerator, memory, switching, and networking content for AI workloads",
+            "confidence": 0.68
+          },
+          {
+            "ticker": "GLW",
+            "bucket": "optics_cable_connectivity",
+            "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "APH",
+            "bucket": "optics_cable_connectivity",
+            "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "LITE",
+            "bucket": "optics_cable_connectivity",
+            "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "COHR",
+            "bucket": "optics_cable_connectivity",
+            "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+            "confidence": 0.68
+          },
+          {
+            "ticker": "BELFB",
+            "bucket": "optics_cable_connectivity",
+            "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "DLR",
+            "bucket": "data_center_reits",
+            "reason": "leased data-center capacity and colocation demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "EQIX",
+            "bucket": "data_center_reits",
+            "reason": "leased data-center capacity and colocation demand",
+            "confidence": 0.6
+          },
+          {
+            "ticker": "IRM",
+            "bucket": "data_center_reits",
+            "reason": "leased data-center capacity and colocation demand",
+            "confidence": 0.6
+          }
+        ],
+        "training_label": null
+      },
+      {
+        "theme_id": "data_center_ai_infrastructure",
+        "item_index": 13,
+        "matched_patterns": [
+          "data center"
+        ],
+        "trigger": {
+          "source": "finnhub_company",
+          "title": "SpaceX Soars 5% as Stifel Calls It the \u201cBuyer of Last Resort\u201d for Stalled Data Centers",
+          "url": "https://finnhub.io/api/news?id=d3247fa0b2e308d2b47655634b610921d978db17f83c4d52714a1228419b6c14",
+          "published_at": "2026-11-09",
+          "tickers": [
+            "APLD"
+          ]
+        },
+        "generated_beneficiaries": [],
+        "training_label": null
+      }
+    ],
     "artifact": "/Users/antonis/Projects/bull-scouter/data/gpt_news_discovery/latest.json"
   },
-  "markdown": "# Portfolio news scan complete\n\nGenerated: 2026-11-09T15:20:05.022439+00:00\nPortfolio as of: 2026-08-12T12:24:26Z\n\nFound 0 held-position news events across 0 tickers: none.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 0 generated read-through candidate(s), 0 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 745.04 (+1.33% last close); WTI oil 86.87 (-4.36% last close); Gold 4138.00 (+1.55% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: risk_on.\n- Price snapshot: Market price snapshot: SPY 745.04 (+1.33% last close); WTI oil 86.87 (-4.36% last close); Gold 4138.00 (+1.55% last close)\nMacro headlines:\n- Odds of a December Rate Hike Jump to 77% After a Blowout Jobs Report - 24/7 Wall St. (2026-11-07)\n- Gold gains as lower oil prices temper inflation fears; US inflation in focus - CNBC (2026-11-09)\n- Gold Holds Decline as US Jobs Data Fan December Rate Hike Bets - Bloomberg.com (2026-11-09)\n- Gold gains as lower oil prices ease inflation fears - Reuters (2026-11-09)\n- Gold rebounds as weaker dollar offsets bets on December Fed rate hike - Investing.com (2026-11-09)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-12 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n## Held Position Updates\n\n## Connecting Opportunities\n\n## Watch Items\n\n## Caveats\n- LLM oracle unavailable; deterministic fallback used.\n",
+  "markdown": "# Portfolio news scan complete\n\nGenerated: 2026-11-10T15:20:05.421789+00:00\nPortfolio as of: 2026-08-12T12:24:26Z\n\nFound 0 held-position news events across 0 tickers: none.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 16 generated read-through candidate(s), 2 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 749.43 (-0.43% last close); WTI oil 84.65 (-2.53% last close); Gold 4063.40 (-1.24% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: commodity_driven.\n- Price snapshot: Market price snapshot: SPY 749.43 (-0.43% last close); WTI oil 84.65 (-2.53% last close); Gold 4063.40 (-1.24% last close)\nMacro headlines:\n- CPI Report Today: Fed\u2019s Waller Says 50-Basis-Point Rate Hike \u2018Should Be Considered\u2019 If Core Inflation Remains Elevated - Stocktwits (2026-11-10)\n- Market Movers blog: Nvidia shares sink after investigation into CEO over affair with suspected spy - Investment Week (2026-11-10)\n- Odds of a December Rate Hike Jump to 77% After a Blowout Jobs Report - 24/7 Wall St. (2026-11-07)\n- Gold price, silver rate today: Why is gold rate down on Tuesday? Check latest bullion outlook - The Economic Times (2026-11-10)\n- Today\u2019s Market Recap: Oil Plunge Boosts US Stocks as Dow Surges 1,100 Points, Nasdaq Rises 2.74%; AMD Jumps Over 13%, Nvidia Falls Over 4% - TradingKey (2026-11-10)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-12 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n### Read-Through Themes\n- Theme data_center_ai_infrastructure: trigger=These Former Bitcoin Miners Embraced AI. Was That the Right Move? beneficiaries=ACM:builders_engineering, PWR:builders_engineering, MTZ:builders_engineering, J:builders_engineering, ETN:power_equipment, VRT:power_equipment, GEV:power_equipment, HUBB:power_equipment, POWL:power_equipment, CEG:energy_supply, VST:energy_supply, NRG:energy_supply\n- Theme data_center_ai_infrastructure: trigger=SpaceX Soars 5% as Stifel Calls It the \u201cBuyer of Last Resort\u201d for Stalled Data Centers beneficiaries=\nGenerated candidates require follow-up confirmation:\n- AVGO: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MRVL: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MU: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- COHR: confidence=0.68 bucket=optics_cable_connectivity - fiber, optical components, connectors, and high-speed cabling inside AI data centers\n- PWR: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- ETN: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- VRT: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- GEV: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n\n## Held Position Updates\n\n## Connecting Opportunities\n\n## Watch Items\n\n## Caveats\n- LLM oracle unavailable; deterministic fallback used.\n",
   "artifacts": {
     "oracle_json": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.json",
     "oracle_markdown": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.md",
