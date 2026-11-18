@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-17T17:21:41",
-  "source_generated_at": "2026-11-17T15:20:05.379228+00:00",
+  "generated_at": "2026-11-18T17:21:46",
+  "source_generated_at": "2026-11-18T15:20:04.020803+00:00",
   "mode": "daily_analysis_site_export",
   "oracle_model": "gpt-5.5",
   "title": "Portfolio news scan complete",
@@ -34,62 +34,76 @@
     "held_position_updates": []
   },
   "general": {
-    "summary": "General analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 16 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.",
+    "summary": "General analysis is macro-first: 7 macro headline(s), 0 macro event(s), 0 direct company event(s), 16 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.",
     "source_artifact": "data/gpt_news_discovery/latest.json",
-    "generated_at": "2026-11-17T14:40:04.604249+00:00",
+    "generated_at": "2026-11-18T14:40:05.015058+00:00",
     "macro_climate": {
       "status": "ok",
       "price_snapshot": {
-        "title": "Market price snapshot: SPY 737.94 (-0.27% last close); WTI oil 87.14 (+1.66% last close); Gold 3865.50 (+0.32% last close)",
+        "title": "Market price snapshot: SPY 732.14 (-0.04% last close); WTI oil 84.07 (-2.26% last close); Gold 3781.40 (-2.14% last close)",
         "url": "yfinance://SPY,CL=F,GC=F",
-        "published_at": "2026-11-17",
+        "published_at": "2026-11-18",
         "snippet": "Macro context only. Use this with Fed, geopolitical, oil, and gold headlines to infer sector read-throughs; do not treat ETFs or commodities as stock picks.",
         "category_hint": "macro_market_climate"
       },
       "price_moves": {
-        "SPY": -0.27,
-        "WTI oil": 1.66,
-        "Gold": 0.32
+        "SPY": -0.04,
+        "WTI oil": -2.26,
+        "Gold": -2.14
       },
-      "tone": "mixed",
+      "tone": "commodity_driven",
       "headlines": [
         {
-          "title": "European shares fall as Deutsche Bank slides, tech stocks tumble ahead of Nvidia earnings - WTVB",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOalVyU2o2MTM3WTZ6NjFsX250RWkxVUhPWWh3eEYwWG5jalBlOVRNQUF5d2dwZ1NYNGpPV3FGTXhPZXdza3lqMktWdk1oUmJPWUF5bDE2T3NDTjB5RWR3UHF0U21LQnpwY0xwd2N3eXJFN2xnYnEyc0paSDdfRTdEQ00waHRnRG96Zlk2eEk4N1RhUHppbkQ4?oc=5",
+          "title": "The 10-Year/2-Year Yield Curve Is Flattening. Will It Invert? If So, Will It Signal A Recession? - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNS2lyaVZkdkYzYjZMZ2JpdlJLVjEzWm4zYjVqUkY3N0UzUEJ0Mk83d0VhQnkzZ0owWFVEWWNnZXVyYVBVVHBiUnk3ckU3VTBsUldVaXhiMjNVZ3VfM3g3MF9NQ3VlQjE4eklPTXg0Mk4yTkRFTnA0cFI2c0E2NHE3NFFHTW5PMFYwSFpOQ2cySDRfQWZBckoyX21yeXdqaW1zVm15U191aDI4Mnk4Vk4yWWZzMUFaaGJFd2Y2X2hfNGFod2pI?oc=5",
           "published_at": "2026-11-17",
-          "snippet": "European shares fall as Deutsche Bank slides, tech stocks tumble ahead of Nvidia earnings &nbsp;&nbsp; WTVB",
+          "snippet": "The 10-Year/2-Year Yield Curve Is Flattening. Will It Invert? If So, Will It Signal A Recession? &nbsp;&nbsp; Seeking Alpha",
+          "category_hint": "macro_market_climate"
+        },
+        {
+          "title": "Stock Market Today: Nasdaq-100 Sinks 1% as Nvidia Faces Its First Earnings Without Jensen Huang - 24/7 Wall St.",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQX1pMLWRxb0QydVI2UlFfTlpnVVdzeW1mYXFuNlhjZHc1WEswdjlJLW5DMDlZTWRxZjRIcDZYdGZpb19rdTZIYnBrdlg2ZGZaeHNrdFhqSFdCRzBxVEFTRkNXdTdIcUVtb01SYVNMaEtTRFYzWjRpSVhxV3V1T2Y4eElPOUFSaEZRaFJldG9Ddm1PS0Z1bzFJMkk3RXlRN3BRNVozX2NQY2FtMnNSc0JSS1dKbXZseENST2pjVlBMZ1BfeFRIR0lFZGNUQ3hTbmc0dENz?oc=5",
+          "published_at": "2026-11-16",
+          "snippet": "Stock Market Today: Nasdaq-100 Sinks 1% as Nvidia Faces Its First Earnings Without Jensen Huang &nbsp;&nbsp; 24/7 Wall St.",
           "category_hint": "guidance_earnings"
         },
         {
-          "title": "Bessent Tells the Fed Not to Hike \u201cToo Much\u201d - 24/7 Wall St.",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTWl1Rk5zN0lnaU5qOU1ZQllsUGFNcWlKZmpyRFhHREJDeDA4cWx2SDlhUnFweV81bzlQMlRGYXdYUFYzQkRKeXJHZVBMNWZNYWFING11Rkl6ZXZpUG9MTVA0ejktbnlGbnZhcTBiZ1l1cHAtVHNjUWpvQ0llT3JqdEI2VC0xMWw2cnhLc0pSdw?oc=5",
-          "published_at": "2026-11-14",
-          "snippet": "Bessent Tells the Fed Not to Hike \u201cToo Much\u201d &nbsp;&nbsp; 24/7 Wall St.",
-          "category_hint": "macro_market_climate"
-        },
-        {
-          "title": "CPI, The Fed, And An Incredible Opportunity In Bond Investing (SPY) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVndybVFjMmVnR0drQVNHUEVONVN5UUNJM2ZUakR2TVY2dHR6WXQ1RlpPTVpqRmFiR3k0Mk9lV0NZWGhVSmtaMU4wV0NKSXdOTzZnUm9sWUZyV1ktMzZFYkMxWS0wNm5mQkRLaTVndm80OG5PM3BOMHlDSzBER3hHdXJSSWJKSElIWUF0VldJUFNZNUlISFdlZg?oc=5",
-          "published_at": "2026-11-14",
-          "snippet": "CPI, The Fed, And An Incredible Opportunity In Bond Investing (SPY) &nbsp;&nbsp; Seeking Alpha",
-          "category_hint": "macro_market_climate"
-        },
-        {
-          "title": "Oil Crisis: The Gold Paradox - GoldBroker",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1NVlFJMzlDNTU1cDV3NlRoa3A3YUV3T2IyVXVmZWdjblR0NTN2eUxFT0dxdUJGSnlFZXdsNEQ0QVdBbFhkRTRoUlVWU1daUndVa1M2enE3S21lNXY1RGZIal9Bel96V1Na?oc=5",
+          "title": "Gold struggles near one-year lows, silver rebounds as stocks slide, Fed hike bets persist - Kitco PM Report - Kitco",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPV1BJTVFELVMzTzdSNWZydElEbzRtUDFsQ2RET0dab0lTM3VNZDVSVHgxeVdDbDhENmktSk5IbVlXVHkwSjZaOURlTUkza0dVSXBISTV4eTFUbmZyR3JwcU9aTE9jbDFKdnphSkdLbkdndjg0eUctNUI4MGczTEJEV1I4ZUduWWVIY1FZeEpfMVB2SzJILXJqcGFvazVLY29ZU2JSLWJKWWdCRGp1OUZ0QlBGSHhQSlM5?oc=5",
           "published_at": "2026-11-17",
-          "snippet": "Oil Crisis: The Gold Paradox &nbsp;&nbsp; GoldBroker",
+          "snippet": "Gold struggles near one-year lows, silver rebounds as stocks slide, Fed hike bets persist - Kitco PM Report &nbsp;&nbsp; Kitco",
           "category_hint": "macro_market_climate"
         },
         {
-          "title": "Gold faces sharp weekly losses as elevated US yields bolster bets on a Fed rate hike - www.tmgm.com",
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPN2RyT25tU3I0V09HTHBuT3RJY2ZzMjN4U2VsRjdabjM0SWtnU2NnUkxqd0hyd3B4R3JhMTBZMEtIelhFWjQxM3E0bU1lVmNyem5GQXdyR0FOWFdZbDJIQlRmNXkzQ293eXo2UWtIb2NOTEtSM3ZNa1lDckxVNGVoMTQwV1p6T2VIRHcyRUljUV9GbVhCMVJlMlFtZ2VqMUhxTWpEb0haaVZ2RzRqNVM2NXdGVl9id2NEeS0tUU4wUkcyUUZKOU81eVZUZ1RiQQ?oc=5",
-          "published_at": "2026-11-13",
-          "snippet": "Gold faces sharp weekly losses as elevated US yields bolster bets on a Fed rate hike &nbsp;&nbsp; www.tmgm.com",
+          "title": "Crude Oil Weekly Outlook: Geopolitics vs Oversupply Risks - FOREX.com",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQQk41QTBJOHBRVkFYdVlVZ0xmNnZlRVVIN3BWNkJNdmMyRWo1TUd4UXlvS2U3dzc3cGVHYTczVXBIV3JUcFZ4TVhlVkZQcXJ2aVFzSTBQWkxBNXRQMmkxbXg1aGRjblQ4RlZMOW1FbzBtNVkyQURVaU16cVBSN2F3eEFrTWVkdXFqSU9MX0xYcHhSLTd1elJYbDZzUG42SWtnNGU2NzJ3?oc=5",
+          "published_at": "2026-11-16",
+          "snippet": "Crude Oil Weekly Outlook: Geopolitics vs Oversupply Risks &nbsp;&nbsp; FOREX.com",
+          "category_hint": "macro_market_climate"
+        },
+        {
+          "title": "Gold Falls Below $3,800 as Federal Reserve Rate Hike Expectations Pressure Precious Metals - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPc3p0dVVGejlpZFd2UVJtUk9Ubm16VlhneEdkRENzektLWklwN2JEUkYteXplTmlnY2F1UEc4OEdxY0VlNTdHZlN0QUFETlhxOVhSa3BHbnRvQ0FOTDNNc3NOSUE0aFpVeW1SNk85Zm1RNWJNT3hEVU9RUlI3SVNIckRVMEN3YWNhSnA3YkxsZHRvMUc3M3pB?oc=5",
+          "published_at": "2026-11-18",
+          "snippet": "Gold Falls Below $3,800 as Federal Reserve Rate Hike Expectations Pressure Precious Metals &nbsp;&nbsp; Yahoo Finance",
+          "category_hint": "macro_market_climate"
+        },
+        {
+          "title": "Gold tumbles to its lowest in over a year as Fed rate hike bets build - FXStreet",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQRHdPVUR5QjJ5U083QUozRDZ1NUs0c0NaU2pFSDdzSGFVWlpsSGlydFZxV21jWjJlOGQ4NVZ1bkNMT1J4ME5UN3BPTzlOdkhQTnpvNVd4WVBya2RRWlhFX0R2dURaVnR6NnJVT0RJcGxfc2piZ2hiYjVmRkdLOHNDb1VPV3YyRjdsenM1M2t6SHA5ekVOc0duZTFpRWNkUTBXUF81c2JRU2toRHlxZGstYUxB?oc=5",
+          "published_at": "2026-11-18",
+          "snippet": "Gold tumbles to its lowest in over a year as Fed rate hike bets build &nbsp;&nbsp; FXStreet",
+          "category_hint": "macro_market_climate"
+        },
+        {
+          "title": "US Dollar Rallies as Fed Rate Risks Pressure Global Markets - FXEmpire",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRW5sYi1KT0JlMy05aEdRd1pKRWlRcFBKQnZ0OEJNOVZLaHAtbDNxWV9FbTdqZU9SVGtxeXRGRFNVVWJaNUdNSThzX1FPaGdjZzU4YzY1SHdhN0p6NUxZSlB5SFIwZlNlM19CMnREbkpra0NEeUVjLXM5MGlyZ1RmNFJYdjVqQjk4RFJnVFdlVTZLY3gzbV93SEV1WHhjeXJfZXF1OExCQXR6bHo2emNB?oc=5",
+          "published_at": "2026-11-17",
+          "snippet": "US Dollar Rallies as Fed Rate Risks Pressure Global Markets &nbsp;&nbsp; FXEmpire",
           "category_hint": "macro_market_climate"
         }
       ],
-      "summary": "Market price snapshot: SPY 737.94 (-0.27% last close); WTI oil 87.14 (+1.66% last close); Gold 3865.50 (+0.32% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed."
+      "summary": "Market price snapshot: SPY 732.14 (-0.04% last close); WTI oil 84.07 (-2.26% last close); Gold 3781.40 (-2.14% last close) 7 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: commodity_driven."
     },
     "market_wide_events": [],
     "notable_company_events": [],
@@ -103,32 +117,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "power_equipment",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
-          }
-        ]
-      },
-      {
-        "ticker": "NVDA",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
-        "confidence": 0.68,
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "chips_networking",
-        "parent_ticker": "COHR",
-        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       },
@@ -141,13 +136,32 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
+          }
+        ]
+      },
+      {
+        "ticker": "MRVL",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "MU",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       },
@@ -160,32 +174,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
-          }
-        ]
-      },
-      {
-        "ticker": "COHR",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
-        "confidence": 0.68,
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "optics_cable_connectivity",
-        "parent_ticker": "COHR",
-        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       },
@@ -198,70 +193,32 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "builders_engineering",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       },
       {
-        "ticker": "J",
+        "ticker": "VST",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: J could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
+        "summary": "Indirect beneficiary thesis: VST could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
         "confidence": 0.6,
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "builders_engineering",
-        "parent_ticker": "COHR",
-        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "MU",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
-          }
-        ]
-      },
-      {
-        "ticker": "VRT",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "confidence": 0.6,
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "power_equipment",
-        "parent_ticker": "COHR",
-        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
-          }
-        ]
-      },
-      {
-        "ticker": "GEV",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "confidence": 0.6,
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "power_equipment",
-        "parent_ticker": "COHR",
-        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       },
@@ -274,13 +231,32 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "energy_supply",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
+          }
+        ]
+      },
+      {
+        "ticker": "TLN",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: TLN could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "MU",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       },
@@ -293,13 +269,51 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "energy_supply",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
+          }
+        ]
+      },
+      {
+        "ticker": "OKLO",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: OKLO could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "MU",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
+          }
+        ]
+      },
+      {
+        "ticker": "NVDA",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "MU",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       },
@@ -312,13 +326,32 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
+          }
+        ]
+      },
+      {
+        "ticker": "APH",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: APH could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "MU",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "macro_only": false,
+        "evidence": [
+          {
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       },
@@ -331,13 +364,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "optics_cable_connectivity",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       },
@@ -350,13 +383,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "optics_cable_connectivity",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       },
@@ -369,32 +402,13 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "data_center_reits",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "beneficiary_reason": "leased data-center capacity and colocation demand",
         "macro_only": false,
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
-          }
-        ]
-      },
-      {
-        "ticker": "EQIX",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
-        "confidence": 0.6,
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "data_center_reits",
-        "parent_ticker": "COHR",
-        "beneficiary_reason": "leased data-center capacity and colocation demand",
-        "macro_only": false,
-        "evidence": [
-          {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ]
       }
@@ -402,10 +416,10 @@
     "theme_observations": [
       {
         "theme_id": "data_center_ai_infrastructure",
-        "trigger_title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-        "trigger_url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc",
+        "trigger_title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+        "trigger_url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb",
         "matched_patterns": [
-          "datacenter"
+          "ai factory"
         ],
         "generated_beneficiaries": [
           {
@@ -506,25 +520,25 @@
     "new_tickers": [
       "ACM",
       "AMD",
+      "APH",
       "AVGO",
       "BE",
       "BELFB",
-      "COHR",
       "DLR",
-      "EQIX",
-      "GEV",
-      "J",
       "LITE",
+      "MRVL",
       "MU",
       "NRG",
       "NVDA",
+      "OKLO",
       "POWL",
-      "VRT"
+      "TLN",
+      "VST"
     ],
     "portfolio_read_throughs": [],
     "scored_picks": [
       {
-        "pick_id": "c360bbeeccde11b1",
+        "pick_id": "43f6ab1bd531119f",
         "ticker": "ACM",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -556,103 +570,7 @@
         }
       },
       {
-        "pick_id": "abcc3931f8922563",
-        "ticker": "J",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: J could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
-        "confidence": 0.6,
-        "theta_adjusted_confidence": 0.6,
-        "pick_score": 29,
-        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "ee587cc9c7ca21c2",
-        "ticker": "VRT",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "confidence": 0.6,
-        "theta_adjusted_confidence": 0.6,
-        "pick_score": 29,
-        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "dd33fc408b5fafe2",
-        "ticker": "GEV",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "confidence": 0.6,
-        "theta_adjusted_confidence": 0.6,
-        "pick_score": 29,
-        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "4da38ab55249c5f9",
+        "pick_id": "4fd38a808fe749aa",
         "ticker": "POWL",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -684,7 +602,39 @@
         }
       },
       {
-        "pick_id": "1a311d11dc8575fa",
+        "pick_id": "7845186a93c59138",
+        "ticker": "VST",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: VST could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "245fe87e1d2f3ed2",
         "ticker": "NRG",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -716,7 +666,39 @@
         }
       },
       {
-        "pick_id": "85a9eab2d5c1d394",
+        "pick_id": "e3c063bd8f294865",
+        "ticker": "TLN",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: TLN could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "50316e7f4cff40c8",
         "ticker": "BE",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -748,15 +730,15 @@
         }
       },
       {
-        "pick_id": "db587d3adb930515",
-        "ticker": "NVDA",
+        "pick_id": "29e6e4edd36d08ca",
+        "ticker": "OKLO",
         "direction": "bull",
         "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
-        "confidence": 0.68,
-        "theta_adjusted_confidence": 0.68,
-        "pick_score": 33,
-        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; indirect read-through",
+        "summary": "Indirect beneficiary thesis: OKLO could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
         "pick_score_features": {
           "direction": "bull",
           "directness": "indirect",
@@ -780,7 +762,39 @@
         }
       },
       {
-        "pick_id": "70b92323a430adc1",
+        "pick_id": "207bbc71b4673eaa",
+        "ticker": "NVDA",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "75ec71e13db6a724",
         "ticker": "AMD",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -812,7 +826,7 @@
         }
       },
       {
-        "pick_id": "d0bc902c4d6799a9",
+        "pick_id": "b1795a2a31e01074",
         "ticker": "AVGO",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -844,7 +858,39 @@
         }
       },
       {
-        "pick_id": "07c4d8d23267a7a3",
+        "pick_id": "838bed24a76eb2f2",
+        "ticker": "MRVL",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "confidence": 0.68,
+        "theta_adjusted_confidence": 0.68,
+        "pick_score": 33,
+        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "43a6e2cbaf6ebfd1",
         "ticker": "MU",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -876,7 +922,39 @@
         }
       },
       {
-        "pick_id": "96c4b4583db966e4",
+        "pick_id": "52f2d4db9f5597dd",
+        "ticker": "APH",
+        "direction": "bull",
+        "type": "sector_catalyst",
+        "summary": "Indirect beneficiary thesis: APH could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "confidence": 0.6,
+        "theta_adjusted_confidence": 0.6,
+        "pick_score": 29,
+        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
+        "pick_score_features": {
+          "direction": "bull",
+          "directness": "indirect",
+          "macro_only": false,
+          "theta_alignment": "no_data",
+          "flow_score": null,
+          "flow_score_v2": null,
+          "td_put_call_ratio": null,
+          "bullish_streak": 0,
+          "bearish_streak": 0,
+          "atm_iv_30d": null,
+          "cap": 70
+        },
+        "entry_price": null,
+        "outcome_tracking": {
+          "status": "active",
+          "cadence_trading_days": 5,
+          "next_horizon_trading_days": 5,
+          "latest_judgment": null,
+          "history": []
+        }
+      },
+      {
+        "pick_id": "8bbce28032686430",
         "ticker": "LITE",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -908,39 +986,7 @@
         }
       },
       {
-        "pick_id": "ebfff56b1134d2b1",
-        "ticker": "COHR",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
-        "confidence": 0.68,
-        "theta_adjusted_confidence": 0.68,
-        "pick_score": 33,
-        "pick_score_reason": "theta-adjusted confidence 0.68; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "ad076d3b7d850878",
+        "pick_id": "c7af06007bd52348",
         "ticker": "BELFB",
         "direction": "bull",
         "type": "sector_catalyst",
@@ -972,43 +1018,11 @@
         }
       },
       {
-        "pick_id": "608f53bd0fff8e52",
+        "pick_id": "1ed23d7b713483f6",
         "ticker": "DLR",
         "direction": "bull",
         "type": "sector_catalyst",
         "summary": "Indirect beneficiary thesis: DLR could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
-        "confidence": 0.6,
-        "theta_adjusted_confidence": 0.6,
-        "pick_score": 29,
-        "pick_score_reason": "theta-adjusted confidence 0.60; no usable ThetaData confirmation; indirect read-through",
-        "pick_score_features": {
-          "direction": "bull",
-          "directness": "indirect",
-          "macro_only": false,
-          "theta_alignment": "no_data",
-          "flow_score": null,
-          "flow_score_v2": null,
-          "td_put_call_ratio": null,
-          "bullish_streak": 0,
-          "bearish_streak": 0,
-          "atm_iv_30d": null,
-          "cap": 70
-        },
-        "entry_price": null,
-        "outcome_tracking": {
-          "status": "active",
-          "cadence_trading_days": 5,
-          "next_horizon_trading_days": 5,
-          "latest_judgment": null,
-          "history": []
-        }
-      },
-      {
-        "pick_id": "6723e9de40feb6b9",
-        "ticker": "EQIX",
-        "direction": "bull",
-        "type": "sector_catalyst",
-        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
         "confidence": 0.6,
         "theta_adjusted_confidence": 0.6,
         "pick_score": 29,
@@ -1058,17 +1072,17 @@
     "LLM oracle unavailable; deterministic fallback used."
   ],
   "general_news": {
-    "generated_at": "2026-11-17T14:40:04.604249+00:00",
+    "generated_at": "2026-11-18T14:40:05.015058+00:00",
     "seed_tickers": [
       "AVGO",
-      "COHR",
+      "BULL",
       "DC",
       "EQT",
-      "ET",
       "FLUT",
+      "MRVL",
       "MU",
-      "NVDA",
       "POWL",
+      "RCAT",
       "T",
       "TLX",
       "UBER"
@@ -1079,7 +1093,7 @@
       {
         "ticker": "ACM",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: ACM could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
@@ -1088,80 +1102,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "builders_engineering",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "J",
-        "type": "sector_catalyst",
-        "event_date": "2026-11-16",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: J could benefit from data center ai infrastructure via engineering, construction, and electrical contracting demand from data-center buildouts.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=builders_engineering; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "engineering, construction, and electrical contracting demand from data-center buildouts",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "builders_engineering",
-        "parent_ticker": "COHR",
-        "evidence": [
-          {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "VRT",
-        "type": "sector_catalyst",
-        "event_date": "2026-11-16",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: VRT could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "power_equipment",
-        "parent_ticker": "COHR",
-        "evidence": [
-          {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "GEV",
-        "type": "sector_catalyst",
-        "event_date": "2026-11-16",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: GEV could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=power_equipment; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "power distribution, backup power, switchgear, and thermal-management equipment demand",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "power_equipment",
-        "parent_ticker": "COHR",
-        "evidence": [
-          {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1171,7 +1116,7 @@
       {
         "ticker": "POWL",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
         "confidence": 0.68,
         "summary": "Indirect beneficiary thesis: POWL could benefit from data center ai infrastructure via power distribution, backup power, switchgear, and thermal-management equipment demand.",
@@ -1180,11 +1125,34 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "power_equipment",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "VST",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-18",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: VST could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "MU",
+        "evidence": [
+          {
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1194,7 +1162,7 @@
       {
         "ticker": "NRG",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: NRG could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
@@ -1203,11 +1171,34 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "energy_supply",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "TLN",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-18",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: TLN could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "MU",
+        "evidence": [
+          {
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1217,7 +1208,7 @@
       {
         "ticker": "BE",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: BE could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
@@ -1226,11 +1217,34 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "energy_supply",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "OKLO",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-18",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: OKLO could benefit from data center ai infrastructure via incremental electricity and firm-power demand from AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=energy_supply; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "incremental electricity and firm-power demand from AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "energy_supply",
+        "parent_ticker": "MU",
+        "evidence": [
+          {
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1240,20 +1254,20 @@
       {
         "ticker": "NVDA",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
-        "confidence": 0.68,
+        "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: NVDA could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
         "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
         "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1263,7 +1277,7 @@
       {
         "ticker": "AMD",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: AMD could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
@@ -1272,11 +1286,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1286,7 +1300,7 @@
       {
         "ticker": "AVGO",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
         "confidence": 0.68,
         "summary": "Indirect beneficiary thesis: AVGO could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
@@ -1295,11 +1309,34 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "MRVL",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-18",
+        "direction": "bull",
+        "confidence": 0.68,
+        "summary": "Indirect beneficiary thesis: MRVL could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=chips_networking; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "accelerator, memory, switching, and networking content for AI workloads",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "chips_networking",
+        "parent_ticker": "MU",
+        "evidence": [
+          {
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1309,7 +1346,7 @@
       {
         "ticker": "MU",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
         "confidence": 0.68,
         "summary": "Indirect beneficiary thesis: MU could benefit from data center ai infrastructure via accelerator, memory, switching, and networking content for AI workloads.",
@@ -1318,11 +1355,34 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "chips_networking",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
+          }
+        ],
+        "source": "gpt_news",
+        "query_id": "read_through_data_center_ai_infrastructure",
+        "scoring_eligible": 0
+      },
+      {
+        "ticker": "APH",
+        "type": "sector_catalyst",
+        "event_date": "2026-11-18",
+        "direction": "bull",
+        "confidence": 0.6,
+        "summary": "Indirect beneficiary thesis: APH could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
+        "note": "Read-through theme=data_center_ai_infrastructure bucket=optics_cable_connectivity; tracking-only until direct orders, customer wins, or guidance evidence appears.",
+        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
+        "directness": "indirect",
+        "theme_id": "data_center_ai_infrastructure",
+        "theme_bucket": "optics_cable_connectivity",
+        "parent_ticker": "MU",
+        "evidence": [
+          {
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1332,7 +1392,7 @@
       {
         "ticker": "LITE",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: LITE could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
@@ -1341,34 +1401,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "optics_cable_connectivity",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "COHR",
-        "type": "sector_catalyst",
-        "event_date": "2026-11-16",
-        "direction": "bull",
-        "confidence": 0.68,
-        "summary": "Indirect beneficiary thesis: COHR could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=optics_cable_connectivity; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "optics_cable_connectivity",
-        "parent_ticker": "COHR",
-        "evidence": [
-          {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1378,7 +1415,7 @@
       {
         "ticker": "BELFB",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: BELFB could benefit from data center ai infrastructure via fiber, optical components, connectors, and high-speed cabling inside AI data centers.",
@@ -1387,11 +1424,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "optics_cable_connectivity",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1401,7 +1438,7 @@
       {
         "ticker": "DLR",
         "type": "sector_catalyst",
-        "event_date": "2026-11-16",
+        "event_date": "2026-11-18",
         "direction": "bull",
         "confidence": 0.6,
         "summary": "Indirect beneficiary thesis: DLR could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
@@ -1410,34 +1447,11 @@
         "directness": "indirect",
         "theme_id": "data_center_ai_infrastructure",
         "theme_bucket": "data_center_reits",
-        "parent_ticker": "COHR",
+        "parent_ticker": "MU",
         "evidence": [
           {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
-          }
-        ],
-        "source": "gpt_news",
-        "query_id": "read_through_data_center_ai_infrastructure",
-        "scoring_eligible": 0
-      },
-      {
-        "ticker": "EQIX",
-        "type": "sector_catalyst",
-        "event_date": "2026-11-16",
-        "direction": "bull",
-        "confidence": 0.6,
-        "summary": "Indirect beneficiary thesis: EQIX could benefit from data center ai infrastructure via leased data-center capacity and colocation demand.",
-        "note": "Read-through theme=data_center_ai_infrastructure bucket=data_center_reits; tracking-only until direct orders, customer wins, or guidance evidence appears.",
-        "beneficiary_reason": "leased data-center capacity and colocation demand",
-        "directness": "indirect",
-        "theme_id": "data_center_ai_infrastructure",
-        "theme_bucket": "data_center_reits",
-        "parent_ticker": "COHR",
-        "evidence": [
-          {
-            "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-            "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc"
+            "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+            "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb"
           }
         ],
         "source": "gpt_news",
@@ -1448,17 +1462,17 @@
     "theme_observations": [
       {
         "theme_id": "data_center_ai_infrastructure",
-        "item_index": 31,
+        "item_index": 25,
         "matched_patterns": [
-          "datacenter"
+          "ai factory"
         ],
         "trigger": {
           "source": "finnhub_company",
-          "title": "Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth",
-          "url": "https://finnhub.io/api/news?id=505511fccfd00e2ee988ae4ef52dd3bef353d69986ddd1e01d859cd2cd1d47fc",
-          "published_at": "2026-11-16",
+          "title": "AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships",
+          "url": "https://finnhub.io/api/news?id=3e641cd49b5191916f81311a931645021988bce7ba0f88073b297c90f56c59cb",
+          "published_at": "2026-11-18",
           "tickers": [
-            "COHR"
+            "MU"
           ]
         },
         "generated_beneficiaries": [
@@ -1556,7 +1570,7 @@
             "ticker": "NVDA",
             "bucket": "chips_networking",
             "reason": "accelerator, memory, switching, and networking content for AI workloads",
-            "confidence": 0.68
+            "confidence": 0.6
           },
           {
             "ticker": "AMD",
@@ -1574,7 +1588,7 @@
             "ticker": "MRVL",
             "bucket": "chips_networking",
             "reason": "accelerator, memory, switching, and networking content for AI workloads",
-            "confidence": 0.6
+            "confidence": 0.68
           },
           {
             "ticker": "ANET",
@@ -1610,7 +1624,7 @@
             "ticker": "COHR",
             "bucket": "optics_cable_connectivity",
             "reason": "fiber, optical components, connectors, and high-speed cabling inside AI data centers",
-            "confidence": 0.68
+            "confidence": 0.6
           },
           {
             "ticker": "BELFB",
@@ -1642,7 +1656,7 @@
     ],
     "artifact": "/Users/antonis/Projects/bull-scouter/data/gpt_news_discovery/latest.json"
   },
-  "markdown": "# Portfolio news scan complete\n\nGenerated: 2026-11-17T15:20:05.379228+00:00\nPortfolio as of: 2026-08-12T12:24:26Z\n\nFound 0 held-position news events across 0 tickers: none.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 5 macro headline(s), 0 macro event(s), 0 direct company event(s), 16 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 737.94 (-0.27% last close); WTI oil 87.14 (+1.66% last close); Gold 3865.50 (+0.32% last close) 5 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: mixed.\n- Price snapshot: Market price snapshot: SPY 737.94 (-0.27% last close); WTI oil 87.14 (+1.66% last close); Gold 3865.50 (+0.32% last close)\nMacro headlines:\n- European shares fall as Deutsche Bank slides, tech stocks tumble ahead of Nvidia earnings - WTVB (2026-11-17)\n- Bessent Tells the Fed Not to Hike \u201cToo Much\u201d - 24/7 Wall St. (2026-11-14)\n- CPI, The Fed, And An Incredible Opportunity In Bond Investing (SPY) - Seeking Alpha (2026-11-14)\n- Oil Crisis: The Gold Paradox - GoldBroker (2026-11-17)\n- Gold faces sharp weekly losses as elevated US yields bolster bets on a Fed rate hike - www.tmgm.com (2026-11-13)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-12 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n### Read-Through Themes\n- Theme data_center_ai_infrastructure: trigger=Coherent Stocks Sink 6.83% Despite Insider Buying and 79% Datacenter Growth beneficiaries=ACM:builders_engineering, PWR:builders_engineering, MTZ:builders_engineering, J:builders_engineering, ETN:power_equipment, VRT:power_equipment, GEV:power_equipment, HUBB:power_equipment, POWL:power_equipment, CEG:energy_supply, VST:energy_supply, NRG:energy_supply\nGenerated candidates require follow-up confirmation:\n- POWL: confidence=0.68 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- NVDA: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- AVGO: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MU: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- COHR: confidence=0.68 bucket=optics_cable_connectivity - fiber, optical components, connectors, and high-speed cabling inside AI data centers\n- ACM: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- J: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- VRT: confidence=0.6 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n\n## Held Position Updates\n\n## Connecting Opportunities\n\n## Watch Items\n\n## Caveats\n- LLM oracle unavailable; deterministic fallback used.\n",
+  "markdown": "# Portfolio news scan complete\n\nGenerated: 2026-11-18T15:20:04.020803+00:00\nPortfolio as of: 2026-08-12T12:24:26Z\n\nFound 0 held-position news events across 0 tickers: none.\n\n## Daily Analysis - My Stocks\n\nOutcome tracking: every 5 trading days. Judge every active pick every 5 trading days, append a new outcome snapshot, and keep the original pick_score immutable.\n\n## Daily Analysis - General\nGeneral analysis is macro-first: 7 macro headline(s), 0 macro event(s), 0 direct company event(s), 16 generated read-through candidate(s), 1 read-through theme observation(s), ThetaData status=ok.\n\n### Macro Climate\nMarket price snapshot: SPY 732.14 (-0.04% last close); WTI oil 84.07 (-2.26% last close); Gold 3781.40 (-2.14% last close) 7 macro headline(s) cover rates, geopolitics, oil, gold, or broad market climate. Deterministic macro tone: commodity_driven.\n- Price snapshot: Market price snapshot: SPY 732.14 (-0.04% last close); WTI oil 84.07 (-2.26% last close); Gold 3781.40 (-2.14% last close)\nMacro headlines:\n- The 10-Year/2-Year Yield Curve Is Flattening. Will It Invert? If So, Will It Signal A Recession? - Seeking Alpha (2026-11-17)\n- Stock Market Today: Nasdaq-100 Sinks 1% as Nvidia Faces Its First Earnings Without Jensen Huang - 24/7 Wall St. (2026-11-16)\n- Gold struggles near one-year lows, silver rebounds as stocks slide, Fed hike bets persist - Kitco PM Report - Kitco (2026-11-17)\n- Crude Oil Weekly Outlook: Geopolitics vs Oversupply Risks - FOREX.com (2026-11-16)\n- Gold Falls Below $3,800 as Federal Reserve Rate Hike Expectations Pressure Precious Metals - Yahoo Finance (2026-11-18)\n- Gold tumbles to its lowest in over a year as Fed rate hike bets build - FXStreet (2026-11-18)\n\n### ThetaData Market Breadth\nLatest confirmed scan: 2026-08-12 status=ok scanned_tickers=0 min_total_volume=500\nBreadth: tone=mixed bullish=0 bearish=0 neutral=0 weighted_p/c=None avg_flow_v2=None held_bullish=0 held_bearish=0\n\n### Read-Through Themes\n- Theme data_center_ai_infrastructure: trigger=AI Chips Update - Unlocking AI Potential Through Supercomputing Partnerships beneficiaries=ACM:builders_engineering, PWR:builders_engineering, MTZ:builders_engineering, J:builders_engineering, ETN:power_equipment, VRT:power_equipment, GEV:power_equipment, HUBB:power_equipment, POWL:power_equipment, CEG:energy_supply, VST:energy_supply, NRG:energy_supply\nGenerated candidates require follow-up confirmation:\n- POWL: confidence=0.68 bucket=power_equipment - power distribution, backup power, switchgear, and thermal-management equipment demand\n- AVGO: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MRVL: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- MU: confidence=0.68 bucket=chips_networking - accelerator, memory, switching, and networking content for AI workloads\n- ACM: confidence=0.6 bucket=builders_engineering - engineering, construction, and electrical contracting demand from data-center buildouts\n- VST: confidence=0.6 bucket=energy_supply - incremental electricity and firm-power demand from AI data centers\n- NRG: confidence=0.6 bucket=energy_supply - incremental electricity and firm-power demand from AI data centers\n- TLN: confidence=0.6 bucket=energy_supply - incremental electricity and firm-power demand from AI data centers\n\n## Held Position Updates\n\n## Connecting Opportunities\n\n## Watch Items\n\n## Caveats\n- LLM oracle unavailable; deterministic fallback used.\n",
   "artifacts": {
     "oracle_json": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.json",
     "oracle_markdown": "/Users/antonis/Projects/bull-scouter/data/portfolio_news_oracle/latest.md",
