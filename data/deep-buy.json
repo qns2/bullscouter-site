@@ -1,17 +1,17 @@
 {
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "version": "2.48.0",
   "regime_label": "risk_off",
   "regime_score": -39.9,
   "strategic_context_blocks_new_entries": false,
   "strategic_context_block_reason": null,
   "filtered_summary": {
-    "earnings_blackout": 12,
-    "below_cutoff": 271,
+    "below_cutoff": 275,
+    "earnings_blackout": 13,
     "rr_too_low": 16,
     "rescan_below_cutoff_no_note": 5
   },
-  "candidates_evaluated": 300,
+  "candidates_evaluated": 305,
   "picks_count": 1,
   "picks": [
     {
@@ -21,21 +21,21 @@
         "path1_buy",
         "path3_strong_candidate"
       ],
-      "spot_price": 58.85,
+      "spot_price": 68.57,
       "entry": {
-        "low": 57.08,
-        "high": 59.14,
-        "mid": 58.11
+        "low": 66.51,
+        "high": 68.91,
+        "mid": 67.71
       },
-      "target": 70.62,
-      "stop": 54.14,
+      "target": 82.28,
+      "stop": 63.08,
       "rr_ratio": 2.5,
       "rr_planned": 3.15,
       "above_zone_pct": 0.0,
       "below_zone_pct": 0.0,
-      "suggested_size_usd": 941.6,
-      "suggested_shares": 16,
-      "position_risk_usd": 75.36,
+      "suggested_size_usd": 959.98,
+      "suggested_shares": 14,
+      "position_risk_usd": 76.86,
       "earnings_date": null,
       "earnings_days_away": null,
       "components": {
@@ -66,7 +66,7 @@
         "pass": true,
         "result": "PASS",
         "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed cut, IWM 5d unknown, Sector unknown, Industry unknown",
-        "expires": "2026-12-07",
+        "expires": "2026-12-08",
         "reasons": [],
         "override_eligible": false,
         "override_applied": false,
@@ -79,7 +79,72 @@
   "oracle_watch": [],
   "macro_blocked_count": 0,
   "macro_blocked": [],
-  "tier0_watch": [],
+  "tier0_watch": [
+    {
+      "ticker": "NVDA",
+      "path": "flow_led",
+      "source": "spike",
+      "composite": 30,
+      "convergence_paths": [
+        "buffett_strong",
+        "watchlist_dip"
+      ],
+      "tier": 0,
+      "tier_evidence": [],
+      "size_class": "none",
+      "spot_price": 165.05,
+      "entry": {
+        "low": 145.0,
+        "high": 160.0,
+        "mid": 152.5
+      },
+      "target": 200.0,
+      "stop": 140.65,
+      "rr_ratio": 1.43,
+      "rr_planned": 4.01,
+      "above_zone_pct": 3.16,
+      "below_zone_pct": 0.0,
+      "suggested_size_usd": null,
+      "suggested_shares": null,
+      "position_risk_usd": null,
+      "earnings_date": null,
+      "earnings_days_away": null,
+      "components": {
+        "buffett_quality_strong": {
+          "score": 20
+        },
+        "watchlist_dip": {
+          "score": 10
+        }
+      },
+      "dilution_risk": {
+        "ticker": "NVDA",
+        "risk_level": "LOW",
+        "penalty": 0,
+        "reasons": [],
+        "warning_note": null,
+        "active_offering": false,
+        "shelf_active": false,
+        "shelf_plus_run": false,
+        "price_run_pct_30d": -44.53,
+        "insider_selling_signal": null,
+        "latest_filings": []
+      },
+      "rationale_one_liner": "Buffett 81 STRONG + watchlist dip alert. no earnings <45d.",
+      "watchlist_thesis": "Path1 BUY quality, but spot $228.86 is far above $145-$160 contrarian zone. No fresh entry.",
+      "oracle_note": null,
+      "macro_filter": {
+        "pass": true,
+        "result": "PASS",
+        "log": "MACRO FILTER: PASS - CPI rising, PPI stable, Fed cut, IWM 5d unknown, Sector Technology, Industry unknown",
+        "expires": "2026-12-08",
+        "reasons": [],
+        "override_eligible": false,
+        "override_applied": false,
+        "abstained": false
+      }
+    }
+  ],
   "flow_led_picks_count": 0,
   "flow_led_picks": [],
   "flow_extreme_picks_count": 0,
